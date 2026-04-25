@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GenogramIA</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="search_records">Buscar registros históricos...</string>
+    <string name="preserve_heritage">Preserva tu herencia</string>
+    <string name="discover_stories">Descubre las historias que te formaron. Comienza a construir tu árbol genealógico y explora siglos de historia.</string>
+    <string name="guest_preview">VISTA PREVIA</string>
+    <string name="sample_tree">Árbol genealógico de ejemplo</string>
+    <string name="sample_tree_desc">Descubre cómo GenogramIA te ayuda a visualizar tus raíces con diseños impresionantes.</string>
+    <string name="explore_example">Explorar ejemplo</string>
+    <string name="start_first_tree">Comienza tu primer árbol</string>
+    <string name="start_first_tree_desc">Empieza un nuevo viaje hoy. Solo toma unos minutos agregar a tus primeros antepasados.</string>
+    <string name="trees">Árboles</string>
+    <string name="legends">Leyendas</string>
+</resources>
