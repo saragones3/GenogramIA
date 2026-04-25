@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.stringResource
 import genogramia.composeapp.generated.resources.Res
@@ -190,5 +191,17 @@ fun GuestHomeScreen(
                 }
             }
         }
+    }
+}
+
+@Preview
+@Composable
+fun GuestHomeScreenPreview() {
+    MaterialTheme {
+        GuestHomeScreen(
+            onNavigateToLogin = {},
+            onNavigateToSampleTree = {},
+            onNavigateToCreateTree = {}
+        )
     }
 }
