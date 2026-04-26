@@ -35,6 +35,7 @@ Este documento define el contexto, las reglas y las directrices arquitectónicas
 - Escribe código seguro contra nulos y utiliza las características funcionales de Kotlin.
 - Escribe el código (nombres de variables, clases, métodos) en **inglés**. La interfaz de usuario (textos visibles) debe ser en español.
 - No debe haber ningún texto "hardcodeado", deben estar todos alojados en los recursos.
+- **Orden y Visibilidad de Funciones**: Las funciones públicas deben ir al principio del archivo/clase y las privadas al final. Por defecto, todas las funciones deben ser `private` a no ser que se utilicen fuera de su archivo o clase, en cuyo caso serán públicas.
 
 ### 4. Persistencia y Modo Invitado
 - Soporta dos modos de almacenamiento según `REQUIREMENTS.md`:
