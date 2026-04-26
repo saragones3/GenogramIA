@@ -8,8 +8,18 @@
     <string name="nav_settings">SETTINGS</string>
     
     <!-- Guest Home -->
+    <string name="login">Log In</string>
     <string name="guest_home_welcome">Welcome to GenogramIA</string>
-    <string name="guest_home_start_tree">Start Your First Tree</string>
+    <string name="search_records">Search historical records...</string>
+    <string name="preserve_heritage">Preserve Your Heritage</string>
+    <string name="discover_stories">Discover the stories that shaped you. Start building your family tree and explore centuries of history.</string>
+    <string name="guest_preview">GUEST PREVIEW</string>
+    <string name="sample_tree">Sample Family Tree</string>
+    <string name="sample_tree_desc">See how GenogramIA helps you visualize your roots with stunning tree layouts.</string>
+    <string name="explore_example">Explore Example</string>
+    <string name="start_first_tree">Start Your First Tree</string>
+    <string name="start_first_tree_desc">Begin a new journey today. It only takes a few minutes to add your first ancestors.</string>
+    <string name="trees">Trees</string>
     
     <!-- Authenticated Home -->
     <string name="auth_home_title">My trees</string>

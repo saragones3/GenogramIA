@@ -158,6 +158,8 @@ fun AppNavGraph() {
                 is NavRoute.GuestHome -> {
                     GuestHomeScreen(
                         onLoginClick = { backStack.push(NavRoute.Login) },
+                        onGoToTree = {},
+                        onCreateTree = {},
                     )
                 }
                 is NavRoute.Login -> {
