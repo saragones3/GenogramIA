@@ -1,0 +1,38 @@
+<resources>
+    <!-- App General -->
+    <string name="app_name">GenogramIA</string>
+    
+    <!-- Navigation -->
+    <string name="nav_trees">TREES</string>
+    <string name="nav_legends">LEGENDS</string>
+    <string name="nav_settings">SETTINGS</string>
+    
+    <!-- Guest Home -->
+    <string name="guest_home_welcome">Welcome to GenogramIA</string>
+    <string name="guest_home_start_tree">Start Your First Tree</string>
+    
+    <!-- Authenticated Home -->
+    <string name="auth_home_title">My trees</string>
+    <string name="auth_home_welcome">Welcome back, %s</string>
+    <string name="auth_home_start_tree">Start New Tree</string>
+    
+    <!-- Login -->
+    <string name="login_title">Log In</string>
+    <string name="login_screen_placeholder">Login screen</string>
+    <string name="login_button">Log In</string>
+    
+    <!-- Registration -->
+    <string name="registration_title">Registration</string>
+    <string name="registration_screen_placeholder">Registration screen</string>
+    <string name="registration_button">Register</string>
+    
+    <!-- Legends -->
+    <string name="legends_title">Legends</string>
+    <string name="legends_screen_placeholder">Legends screen</string>
+    <string name="legends_description">Here you will see genogram visual vocabulary.</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_screen_placeholder">Settings screen</string>
+    <string name="settings_description">Profile settings, theme and synchronization.</string>
+</resources>
