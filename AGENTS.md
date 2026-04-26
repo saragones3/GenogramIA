@@ -46,6 +46,11 @@ Este documento define el contexto, las reglas y las directrices arquitectónicas
 ### 5. Gestión de Dependencias
 - Utiliza únicamente dependencias estables. Queda estrictamente prohibido el uso de versiones alpha, beta o release candidate (RC) en el archivo de catálogo de versiones o archivos build.gradle.
 
+### 6. Calidad de Código y Linting
+- **Spotless**: Antes de realizar un commit o abrir una Pull Request, es **obligatorio** ejecutar `./gradlew spotlessApply` para asegurar que el código cumple con las reglas de formato (ktlint).
+- **Detekt**: El código debe pasar el análisis estático sin errores. Ejecuta `./gradlew detekt` para verificar la calidad del código y detectar code smells.
+- Estos checks se ejecutan automáticamente en el pipeline de CI/CD para cada Pull Request a la rama `master`.
+
 ## 🎭 Roles de Agentes
 
 Cuando se te asigne una tarea en este proyecto, adopta uno de los siguientes enfoques según el contexto:
