@@ -42,6 +42,9 @@ Este documento define el contexto, las reglas y las directrices arquitectónicas
   - **Invitado**: Guarda temporalmente en memoria.
 - Utiliza el patrón Repositorio para abstraer de dónde provienen o dónde se guardan los datos.
 
+### 5. Gestión de Dependencias
+- Utiliza únicamente dependencias estables. Queda estrictamente prohibido el uso de versiones alpha, beta o release candidate (RC) en el archivo de catálogo de versiones o archivos build.gradle.
+
 ## 🎭 Roles de Agentes
 
 Cuando se te asigne una tarea en este proyecto, adopta uno de los siguientes enfoques según el contexto:
