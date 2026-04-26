@@ -18,10 +18,11 @@ import genogramia.composeapp.generated.resources.settings_description
 import genogramia.composeapp.generated.resources.settings_screen_placeholder
 import genogramia.composeapp.generated.resources.settings_title
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingsScreen() {
+fun SettingsScreen(viewModel: SettingsViewModel = koinViewModel()) {
     Scaffold(
         topBar = {
             TopAppBar(
