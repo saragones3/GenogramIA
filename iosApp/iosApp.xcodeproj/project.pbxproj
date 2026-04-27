@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DBF888842F9FEDCF00FBD27C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DBF888832F9FEDCF00FBD27C /* FirebaseAnalytics */; };
+		DBF888862F9FEDD500FBD27C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DBF888852F9FEDD500FBD27C /* FirebaseAuth */; };
+		DBF888AE2F9FEF4A00FBD27C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBF888AD2F9FEF4A00FBD27C /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D4AAC54E7E36FBE3C1167323 /* GenogramIA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenogramIA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBF888AD2F9FEF4A00FBD27C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -41,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF888842F9FEDCF00FBD27C /* FirebaseAnalytics in Frameworks */,
+				DBF888862F9FEDD500FBD27C /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,10 +67,19 @@
 		6F056C9B48C3FBC41C942D7D = {
 			isa = PBXGroup;
 			children = (
+				DBF888AD2F9FEF4A00FBD27C /* GoogleService-Info.plist */,
 				4DD7D87C905578DE2FEA3A81 /* Configuration */,
 				2803C1605D37497A66E73384 /* iosApp */,
+				DBF888822F9FEDCF00FBD27C /* Frameworks */,
 				6B391DF9624D78C5C8354CCC /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		DBF888822F9FEDCF00FBD27C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +103,8 @@
 			);
 			name = iosApp;
 			packageProductDependencies = (
+				DBF888832F9FEDCF00FBD27C /* FirebaseAnalytics */,
+				DBF888852F9FEDD500FBD27C /* FirebaseAuth */,
 			);
 			productName = iosApp;
 			productReference = D4AAC54E7E36FBE3C1167323 /* GenogramIA.app */;
@@ -114,6 +134,9 @@
 			);
 			mainGroup = 6F056C9B48C3FBC41C942D7D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DBB1C14B2F9FEA3100ED14F8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6B391DF9624D78C5C8354CCC /* Products */;
 			projectDirPath = "";
@@ -129,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF888AE2F9FEF4A00FBD27C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +200,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "${TEAM_ID}";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -192,8 +216,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.saragones3.genogramia;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -277,7 +305,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "${TEAM_ID}";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -293,8 +321,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.saragones3.genogramia;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -384,6 +416,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBB1C14B2F9FEA3100ED14F8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.12.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBF888832F9FEDCF00FBD27C /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBB1C14B2F9FEA3100ED14F8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		DBF888852F9FEDD500FBD27C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBB1C14B2F9FEA3100ED14F8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 709C5918E5BBA1337AC392D5 /* Project object */;
 }

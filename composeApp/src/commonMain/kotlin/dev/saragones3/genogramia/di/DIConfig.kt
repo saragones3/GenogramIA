@@ -12,7 +12,7 @@ import org.koin.dsl.module
 
 val dataModule =
     module {
-        // TODO: Add repository implementations, Firebase, Ktor
+        // TODO: Add repository implementations, Ktor
     }
 
 val domainModule =
@@ -32,6 +32,7 @@ val appModule =
 
 fun getSharedModules(): List<Module> =
     listOf(
+        platformDataModule(),
         dataModule,
         domainModule,
         appModule,
