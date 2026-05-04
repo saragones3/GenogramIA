@@ -24,6 +24,10 @@ kotlin {
                 withIosArm64()
                 withIosSimulatorArm64()
             }
+            group("web") {
+                withJs()
+                withWasmJs()
+            }
         }
     }
 
@@ -79,6 +83,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.androidx.navigation3.runtime)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.kotlinx.coroutines.core)
 
             // Koin
             implementation(libs.koin.core)
@@ -91,6 +96,9 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
+        }
+        webMain.dependencies {
+            implementation(npm("firebase", "10.12.0"))
         }
     }
 }
