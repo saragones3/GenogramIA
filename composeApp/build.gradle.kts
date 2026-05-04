@@ -1,4 +1,7 @@
+@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
+
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -9,9 +12,25 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.composeHotReload)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.googleServices)
 }
 
 kotlin {
+    applyHierarchyTemplate {
+        common {
+            withAndroidTarget()
+            withJvm()
+            group("ios") {
+                withIosArm64()
+                withIosSimulatorArm64()
+            }
+            group("web") {
+                withJs()
+                withWasmJs()
+            }
+        }
+    }
+
     androidTarget {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
@@ -46,6 +65,11 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.android)
+            implementation(project.dependencies.platform(libs.firebase.bom))
+            implementation(libs.firebase.auth.android)
+            implementation(libs.kotlinx.coroutines.play.services)
+        }
+        iosMain.dependencies {
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -59,6 +83,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.androidx.navigation3.runtime)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.kotlinx.coroutines.core)
 
             // Koin
             implementation(libs.koin.core)
@@ -71,6 +96,9 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
+        }
+        webMain.dependencies {
+            implementation(npm("firebase", "10.12.0"))
         }
     }
 }

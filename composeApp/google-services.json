@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "870268550076",
+    "project_id": "genogramia",
+    "storage_bucket": "genogramia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870268550076:android:3dcace8376a905087549b9",
+        "android_client_info": {
+          "package_name": "dev.saragones3.genogramia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnjUr0K03E0uGBZUYU6a1W4j23hbCofMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870268550076:android:3ee72ba897fb2cd67549b9",
+        "android_client_info": {
+          "package_name": "dev.saragones3.genogramia.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnjUr0K03E0uGBZUYU6a1W4j23hbCofMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
