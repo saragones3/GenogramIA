@@ -92,6 +92,8 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(libs.kotlinx.coroutines.test)
+            implementation(libs.turbine)
         }
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -141,6 +143,7 @@ android {
 
 dependencies {
     debugImplementation(libs.compose.uiTooling)
+    detektPlugins(libs.detekt.compose.rules)
 }
 
 compose.desktop {

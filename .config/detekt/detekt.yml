@@ -44,3 +44,7 @@ style:
     active: true
     ignoreAnnotated:
       - 'Preview'
+
+Compose:
+  ViewModelForwarding:
+    active: true

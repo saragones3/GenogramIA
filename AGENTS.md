@@ -51,6 +51,11 @@ Este documento define el contexto, las reglas y las directrices arquitectónicas
 - **Detekt**: El código debe pasar el análisis estático sin errores. Ejecuta `./gradlew detekt` para verificar la calidad del código y detectar code smells.
 - Estos checks se ejecutan automáticamente en el pipeline de CI/CD para cada Pull Request a la rama `master`.
 
+### 7. Testing Automático
+- **Obligatoriedad**: Siempre que se cree o modifique un **ViewModel**, **UseCase** o **Repository**, es estrictamente obligatorio escribir o actualizar sus pruebas unitarias correspondientes en `commonTest` (o en su source set correspondiente si es código específico de plataforma).
+- **Fakes vs Mocks**: Fomenta el uso de implementaciones _Fake_ de las interfaces en lugar de librerías de _Mocking_ cuando sea posible, para mantener las pruebas robustas y fácilmente portables en KMP.
+- **Corrutinas**: Usa `kotlinx-coroutines-test` (`runTest`, `UnconfinedTestDispatcher`) y `Turbine` para probar `Flow` y `StateFlow`.
+
 ## 🎭 Roles de Agentes
 
 Cuando se te asigne una tarea en este proyecto, adopta uno de los siguientes enfoques según el contexto:

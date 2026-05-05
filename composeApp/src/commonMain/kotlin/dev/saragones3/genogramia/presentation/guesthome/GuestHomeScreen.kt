@@ -155,7 +155,16 @@ private fun GuestHomeSearchBar() {
     TextField(
         value = searchQuery,
         onValueChange = { searchQuery = it },
-        modifier = Modifier.fillMaxWidth(),
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(16.dp))
+                .drawBehind {
+                    drawRect(
+                        color = Color.LightGray.copy(alpha = 0.3f),
+                        style = Stroke(width = 1.dp.toPx()),
+                    )
+                },
         placeholder = {
             Text(
                 text = stringResource(Res.string.search_records),
@@ -171,12 +180,12 @@ private fun GuestHomeSearchBar() {
                 modifier = Modifier.size(24.dp),
             )
         },
-        shape = CircleShape,
+        shape = RoundedCornerShape(16.dp),
         singleLine = true,
         colors =
             TextFieldDefaults.colors(
-                focusedContainerColor = MaterialTheme.colorScheme.background,
-                unfocusedContainerColor = MaterialTheme.colorScheme.background,
+                focusedContainerColor = Color(0xFFF2F2F2),
+                unfocusedContainerColor = Color(0xFFF2F2F2),
                 focusedIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent,
                 disabledIndicatorColor = Color.Transparent,
@@ -355,7 +364,7 @@ private fun GuestHomeStartTreeCard(onCreateTree: () -> Unit) {
     }
 }
 
-fun Modifier.dashedBorder(
+private fun Modifier.dashedBorder(
     width: Dp,
     color: Color,
     shape: Shape,
@@ -386,7 +395,7 @@ fun Modifier.dashedBorder(
 
 @Preview
 @Composable
-fun GuestHomeScreenPreview() {
+private fun GuestHomeScreenPreview() {
     GenogramiaTheme {
         GuestHomeScreen(
             onLoginClick = {},

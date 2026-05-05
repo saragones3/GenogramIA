@@ -14,6 +14,6 @@ fun App() {
 
 @Composable
 @Preview
-fun AppPreview() {
+private fun AppPreview() {
     App()
 }
