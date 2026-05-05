@@ -1,6 +1,7 @@
 ---
 name: issue-start-automation
 description: Procedimiento automatizado para iniciar un nuevo issue creando una rama siguiendo la nomenclatura GitFlow.
+user-invocable: true
 ---
 
 # Workflow al Iniciar un Issue
@@ -18,9 +19,9 @@ Antes de realizar cualquier cambio en el código para un nuevo issue, se deben r
 
 ### 2. Creación de la Rama de Trabajo
 - Crear una nueva rama siguiendo la nomenclatura de GitFlow.
-- El nombre de la rama debe tener el formato: `<tipo>/<número-issue>-<resumen-del-título-en-minúsculas-y-con-guiones>`.
+- El nombre de la rama debe tener el formato: `<tipo>/issue-<número-issue>-<resumen-del-título-en-minúsculas-y-con-guiones>`.
 - El tipo puede ser: `feature`, `task`, `bugfix`, `hotfix`, `release`.
-- Ejemplo: Para el issue #12 "Implementar login con Firebase", la rama sería `feature/12-implementar-login-firebase`.
+- Ejemplo: Para el issue #12 "Implementar login con Firebase", la rama sería `feature/issue-12-implementar-login-firebase`.
 - Ejecutar `git checkout -b <nombre-rama>`.
 
 ### 3. Revisión Visual
