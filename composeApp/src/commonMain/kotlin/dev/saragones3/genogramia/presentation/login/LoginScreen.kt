@@ -26,14 +26,12 @@ import genogramia.composeapp.generated.resources.login_button
 import genogramia.composeapp.generated.resources.login_screen_placeholder
 import genogramia.composeapp.generated.resources.login_title
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
     onBackClick: () -> Unit,
     onLoginSuccess: () -> Unit,
-    viewModel: LoginViewModel = koinViewModel(),
 ) {
     Scaffold(
         topBar = {

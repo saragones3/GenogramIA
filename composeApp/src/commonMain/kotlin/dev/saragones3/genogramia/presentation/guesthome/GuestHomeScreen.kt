@@ -70,7 +70,6 @@ import genogramia.composeapp.generated.resources.start_first_tree
 import genogramia.composeapp.generated.resources.start_first_tree_desc
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -78,7 +77,6 @@ fun GuestHomeScreen(
     onLoginClick: () -> Unit,
     onGoToTree: () -> Unit,
     onCreateTree: () -> Unit,
-    viewModel: GuestHomeViewModel = koinViewModel(),
 ) {
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,

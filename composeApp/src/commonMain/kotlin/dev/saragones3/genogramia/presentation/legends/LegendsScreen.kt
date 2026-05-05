@@ -18,11 +18,10 @@ import genogramia.composeapp.generated.resources.legends_description
 import genogramia.composeapp.generated.resources.legends_screen_placeholder
 import genogramia.composeapp.generated.resources.legends_title
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LegendsScreen(viewModel: LegendsViewModel = koinViewModel()) {
+fun LegendsScreen() {
     Scaffold(
         topBar = {
             TopAppBar(

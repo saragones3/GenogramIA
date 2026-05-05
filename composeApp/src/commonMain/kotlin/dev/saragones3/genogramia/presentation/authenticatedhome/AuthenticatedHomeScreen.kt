@@ -22,11 +22,10 @@ import genogramia.composeapp.generated.resources.auth_home_start_tree
 import genogramia.composeapp.generated.resources.auth_home_title
 import genogramia.composeapp.generated.resources.auth_home_welcome
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AuthenticatedHomeScreen(viewModel: AuthenticatedHomeViewModel = koinViewModel()) {
+fun AuthenticatedHomeScreen() {
     Scaffold(
         topBar = {
             TopAppBar(

@@ -26,14 +26,12 @@ import genogramia.composeapp.generated.resources.registration_button
 import genogramia.composeapp.generated.resources.registration_screen_placeholder
 import genogramia.composeapp.generated.resources.registration_title
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RegistrationScreen(
     onBackClick: () -> Unit,
     onRegistrationSuccess: () -> Unit,
-    viewModel: RegistrationViewModel = koinViewModel(),
 ) {
     Scaffold(
         topBar = {
