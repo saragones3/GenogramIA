@@ -22,6 +22,7 @@ spotless = "7.0.2"
 detekt = "1.23.8"
 compose-rules = "0.4.22"
 koin = "4.1.1"
+turbine = "1.1.0"
 firebase = "33.14.0"
 google-services = "4.4.2"
 
@@ -55,6 +56,8 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
 firebase-auth-android = { module = "com.google.firebase:firebase-auth" }
 kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 detekt-compose-rules = { module = "io.nlopez.compose.rules:detekt", version.ref = "compose-rules" }
 
 [plugins]
