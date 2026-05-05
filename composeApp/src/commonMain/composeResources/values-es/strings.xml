@@ -1,0 +1,48 @@
+<resources>
+    <!-- App General -->
+    <string name="app_name">GenogramIA</string>
+    
+    <!-- Navigation -->
+    <string name="nav_trees">ÁRBOLES</string>
+    <string name="nav_legends">LEYENDAS</string>
+    <string name="nav_settings">AJUSTES</string>
+    
+    <!-- Guest Home -->
+    <string name="login">Iniciar Sesión</string>
+    <string name="guest_home_welcome">Bienvenido a GenogramIA</string>
+    <string name="search_records">Buscar registros históricos...</string>
+    <string name="preserve_heritage">Preserva tu Herencia</string>
+    <string name="discover_stories">Descubre las historias que te formaron. Empieza a construir tu árbol genealógico y explora siglos de historia.</string>
+    <string name="guest_preview">VISTA PREVIA INVITADO</string>
+    <string name="sample_tree">Árbol Genealógico de Muestra</string>
+    <string name="sample_tree_desc">Mira cómo GenogramIA te ayuda a visualizar tus raíces con diseños de árboles impresionantes.</string>
+    <string name="explore_example">Explorar Ejemplo</string>
+    <string name="start_first_tree">Comienza tu Primer Árbol</string>
+    <string name="start_first_tree_desc">Empieza un nuevo viaje hoy. Solo toma unos minutos añadir a tus primeros ancestros.</string>
+    <string name="trees">Árboles</string>
+    
+    <!-- Authenticated Home -->
+    <string name="auth_home_title">Mis árboles</string>
+    <string name="auth_home_welcome">Bienvenido de nuevo, %s</string>
+    <string name="auth_home_start_tree">Iniciar Nuevo Árbol</string>
+    
+    <!-- Login -->
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="login_screen_placeholder">Pantalla de inicio de sesión</string>
+    <string name="login_button">Iniciar Sesión</string>
+    
+    <!-- Registration -->
+    <string name="registration_title">Registro</string>
+    <string name="registration_screen_placeholder">Pantalla de registro</string>
+    <string name="registration_button">Registrarse</string>
+    
+    <!-- Legends -->
+    <string name="legends_title">Leyendas</string>
+    <string name="legends_screen_placeholder">Pantalla de leyendas</string>
+    <string name="legends_description">Aquí verás el vocabulario visual del genograma.</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_screen_placeholder">Pantalla de ajustes</string>
+    <string name="settings_description">Ajustes de perfil, tema y sincronización.</string>
+</resources>
