@@ -20,6 +20,7 @@ material3 = "1.9.0"
 navigation3 = "1.1.0"
 spotless = "7.0.2"
 detekt = "1.23.8"
+compose-rules = "0.4.22"
 koin = "4.1.1"
 firebase = "33.14.0"
 google-services = "4.4.2"
@@ -54,6 +55,7 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
 firebase-auth-android = { module = "com.google.firebase:firebase-auth" }
 kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
+detekt-compose-rules = { module = "io.nlopez.compose.rules:detekt", version.ref = "compose-rules" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

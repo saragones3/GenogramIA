@@ -49,7 +49,7 @@ fun AuthenticatedHomeScreen() {
 
 @Composable
 @Preview
-fun AuthenticatedHomeScreenPreview() {
+private fun AuthenticatedHomeScreenPreview() {
     MaterialTheme {
         AuthenticatedHomeScreen()
     }

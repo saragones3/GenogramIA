@@ -355,7 +355,7 @@ private fun GuestHomeStartTreeCard(onCreateTree: () -> Unit) {
     }
 }
 
-fun Modifier.dashedBorder(
+private fun Modifier.dashedBorder(
     width: Dp,
     color: Color,
     shape: Shape,
@@ -386,7 +386,7 @@ fun Modifier.dashedBorder(
 
 @Preview
 @Composable
-fun GuestHomeScreenPreview() {
+private fun GuestHomeScreenPreview() {
     GenogramiaTheme {
         GuestHomeScreen(
             onLoginClick = {},

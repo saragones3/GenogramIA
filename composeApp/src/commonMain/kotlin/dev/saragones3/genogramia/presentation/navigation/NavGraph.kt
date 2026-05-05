@@ -17,6 +17,8 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
@@ -32,19 +34,22 @@ import dev.saragones3.genogramia.presentation.legends.LegendsScreen
 import dev.saragones3.genogramia.presentation.login.LoginScreen
 import dev.saragones3.genogramia.presentation.registration.RegistrationScreen
 import dev.saragones3.genogramia.presentation.settings.SettingsScreen
+import dev.saragones3.genogramia.presentation.splash.SplashScreen
+import dev.saragones3.genogramia.presentation.splash.SplashViewModel
 import dev.saragones3.genogramia.ui.theme.NavigationBarIndicator
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.nav_legends
 import genogramia.composeapp.generated.resources.nav_settings
 import genogramia.composeapp.generated.resources.nav_trees
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun AppNavGraph() {
-    val backStack = rememberNavBackStack(initialKey = NavRoute.GuestHome)
+    val backStack = rememberNavBackStack(initialKey = NavRoute.Splash)
 
     val currentRoute = backStack.lastOrNull()
-    val isGuestMode = backStack.firstOrNull() is NavRoute.GuestHome
+    val isGuestMode = backStack.firstOrNull { it !is NavRoute.Splash } is NavRoute.GuestHome
 
     val showBottomBar =
         currentRoute is NavRoute.GuestHome ||
@@ -155,6 +160,22 @@ fun AppNavGraph() {
             modifier = Modifier.fillMaxSize().padding(padding),
         ) { key ->
             when (key) {
+                is NavRoute.Splash -> {
+                    val viewModel: SplashViewModel = koinViewModel()
+                    val uiState by viewModel.uiState.collectAsState()
+
+                    SplashScreen(
+                        uiState = uiState,
+                        onNavigateToGuestHome = {
+                            backStack.clear()
+                            backStack.add(NavRoute.GuestHome)
+                        },
+                        onNavigateToAuthenticatedHome = {
+                            backStack.clear()
+                            backStack.add(NavRoute.AuthenticatedHome)
+                        },
+                    )
+                }
                 is NavRoute.GuestHome -> {
                     GuestHomeScreen(
                         onLoginClick = { backStack.push(NavRoute.Login) },
