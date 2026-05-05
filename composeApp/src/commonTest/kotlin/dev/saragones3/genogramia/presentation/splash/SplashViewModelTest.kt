@@ -2,7 +2,6 @@ package dev.saragones3.genogramia.presentation.splash
 
 import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.User
-import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import kotlinx.coroutines.Dispatchers
@@ -18,7 +17,6 @@ import kotlin.test.assertEquals
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class SplashViewModelTest {
-
     private val testDispatcher = UnconfinedTestDispatcher()
 
     @BeforeTest
@@ -32,24 +30,26 @@ class SplashViewModelTest {
     }
 
     @Test
-    fun `when user is logged in, navigates to AuthenticatedHome`() = runTest {
-        val fakeRepo = FakeAuthRepository(User("uid", "email", "name"))
-        val useCase = CheckSessionUseCase(fakeRepo)
-        val viewModel = SplashViewModel(useCase)
+    fun `when user is logged in, navigates to AuthenticatedHome`() =
+        runTest {
+            val fakeRepo = FakeAuthRepository(User("uid", "email", "name"))
+            val useCase = CheckSessionUseCase(fakeRepo)
+            val viewModel = SplashViewModel(useCase)
 
-        viewModel.uiState.test {
-            assertEquals(SplashUiState.NavigateToAuthenticatedHome, awaitItem())
+            viewModel.uiState.test {
+                assertEquals(SplashUiState.NavigateToAuthenticatedHome, awaitItem())
+            }
         }
-    }
 
     @Test
-    fun `when user is not logged in, navigates to GuestHome`() = runTest {
-        val fakeRepo = FakeAuthRepository(null)
-        val useCase = CheckSessionUseCase(fakeRepo)
-        val viewModel = SplashViewModel(useCase)
+    fun `when user is not logged in, navigates to GuestHome`() =
+        runTest {
+            val fakeRepo = FakeAuthRepository(null)
+            val useCase = CheckSessionUseCase(fakeRepo)
+            val viewModel = SplashViewModel(useCase)
 
-        viewModel.uiState.test {
-            assertEquals(SplashUiState.NavigateToGuestHome, awaitItem())
+            viewModel.uiState.test {
+                assertEquals(SplashUiState.NavigateToGuestHome, awaitItem())
+            }
         }
-    }
 }

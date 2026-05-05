@@ -1,14 +1,12 @@
 package dev.saragones3.genogramia.data.repository
 
 import dev.saragones3.genogramia.data.firebase.AuthUser
-import dev.saragones3.genogramia.data.firebase.FirebaseProvider
 import dev.saragones3.genogramia.fakes.FakeFirebaseProvider
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
 class AuthRepositoryImplTest {
-
     @Test
     fun `getCurrentUser returns mapped User when FirebaseProvider has user`() {
         val authUser = AuthUser("uid456", "test@test.com", "John Doe")

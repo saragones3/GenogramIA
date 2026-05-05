@@ -1,7 +1,6 @@
 package dev.saragones3.genogramia.domain.usecase
 
 import dev.saragones3.genogramia.domain.model.User
-import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import kotlin.test.Test
 import kotlin.test.assertEquals
