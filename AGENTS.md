@@ -24,10 +24,11 @@ Este documento define el contexto, las reglas y las directrices arquitectónicas
 
 ### 2. UI y Compose
 - Utiliza **Material Design 3** para los componentes estándar. Revisa la skill `material-3` (`.agents/skills/material-3`) para más detalles.
-- **Lienzo Infinito**: Para el árbol genealógico, utiliza **Canvas API** nativo de Compose. Debe soportar gestos de arrastre (pan) y zoom (pinch-to-zoom).
-- Los estados de UI deben ser inmutables. 
 - Revisa la skill `design` (`.agents/skills/design`) para el sistema de diseño propio del proyecto.
-- **Previews**: Toda pantalla o componente de UI en Compose debe incluir obligatoriamente una función de `@Preview` para facilitar la visualización y el desarrollo rápido.
+- **Lienzo Infinito**: Para el árbol genealógico, utiliza **Canvas API** nativo de Compose. Debe soportar gestos de arrastre (pan) y zoom (pinch-to-zoom).
+- Los estados de UI deben ser inmutables.
+- **Previews**: Toda pantalla o componente de UI en Compose debe incluir obligatoriamente una función de `@Preview` para facilitar la visualización y el desarrollo rápido. En la preview debe usar el tema de la app, `GenogramiaTheme`.
+- Los composables principales de cada pantalla, los finalizados en "Screen", deben recibir el estado de UI y nunca el ViewModel directamente, para que las previews funcionen.
 
 ### 3. Buenas Prácticas en Kotlin
 - Prefiere la inmutabilidad (`val` sobre `var`, colecciones inmutables como `List` en lugar de `MutableList` para exponer datos).

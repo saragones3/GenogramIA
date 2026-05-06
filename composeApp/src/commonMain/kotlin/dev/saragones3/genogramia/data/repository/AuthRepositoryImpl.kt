@@ -9,4 +9,12 @@ internal class AuthRepositoryImpl(
 ) : AuthRepository {
     override fun getCurrentUser(): User? =
         firebaseProvider.getCurrentUser()?.let { User(it.uid, it.email, it.displayName) }
+
+    override suspend fun signInWithEmailAndPassword(
+        email: String,
+        password: String,
+    ): User {
+        val authUser = firebaseProvider.signInWithEmailAndPassword(email, password)
+        return User(authUser.uid, authUser.email, authUser.displayName)
+    }
 }

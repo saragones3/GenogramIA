@@ -27,9 +27,21 @@
     <string name="auth_home_start_tree">Start New Tree</string>
     
     <!-- Login -->
-    <string name="login_title">Log In</string>
-    <string name="login_screen_placeholder">Login screen</string>
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Access your genealogical archive</string>
+    <string name="login_email_label">EMAIL</string>
+    <string name="login_email_hint">you@email.com</string>
+    <string name="login_password_label">PASSWORD</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_forgot_password">Forgot your password?</string>
+    <string name="login_no_account">Don't have an account?</string>
+    <string name="login_register_link">Register</string>
     <string name="login_button">Log In</string>
+    <string name="login_or_continue">Or continue with</string>
+    <string name="login_guest_label">Guest access</string>
+    <string name="login_create_account_label">Create account</string>
+    <string name="error_invalid_credentials">Invalid credentials</string>
+    <string name="error_generic">An error occurred</string>
     
     <!-- Registration -->
     <string name="registration_title">Registration</string>
