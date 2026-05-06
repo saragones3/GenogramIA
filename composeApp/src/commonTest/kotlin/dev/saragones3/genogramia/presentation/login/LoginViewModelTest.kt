@@ -67,7 +67,7 @@ class LoginViewModelTest {
 
                 viewModel.login()
                 val errorState = awaitItem()
-                assertEquals("error_invalid_credentials", errorState.error)
+                assertEquals(LoginError.EmptyValues, errorState.error)
             }
         }
 
@@ -111,7 +111,7 @@ class LoginViewModelTest {
                 val errorState = awaitItem()
                 assertFalse(errorState.isLoading)
                 assertFalse(errorState.isSuccess)
-                assertEquals("Fake login error", errorState.error)
+                assertEquals(LoginError.WrongCredentials, errorState.error)
             }
         }
 }

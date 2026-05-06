@@ -67,7 +67,7 @@ import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.ShapeFull
 import dev.saragones3.genogramia.ui.theme.SurfaceContainerHighest
 import genogramia.composeapp.generated.resources.Res
-import genogramia.composeapp.generated.resources.error_generic
+import genogramia.composeapp.generated.resources.error_empty_credentials
 import genogramia.composeapp.generated.resources.error_invalid_credentials
 import genogramia.composeapp.generated.resources.login_button
 import genogramia.composeapp.generated.resources.login_create_account_label
@@ -98,7 +98,7 @@ fun LoginScreen(
     val snackbarHostState = remember { SnackbarHostState() }
 
     val invalidCredentialsStr = stringResource(Res.string.error_invalid_credentials)
-    val genericErrorStr = stringResource(Res.string.error_generic)
+    val emptyCredentialsStr = stringResource(Res.string.error_empty_credentials)
 
     LaunchedEffect(uiState.isSuccess) {
         if (uiState.isSuccess) {
@@ -107,11 +107,11 @@ fun LoginScreen(
     }
 
     LaunchedEffect(uiState.error) {
-        uiState.error?.let { errorKey ->
+        uiState.error?.let { error ->
             val message =
-                when (errorKey) {
-                    "error_invalid_credentials" -> invalidCredentialsStr
-                    else -> genericErrorStr
+                when (error) {
+                    LoginError.EmptyValues -> emptyCredentialsStr
+                    LoginError.WrongCredentials -> invalidCredentialsStr
                 }
             snackbarHostState.showSnackbar(message)
             onErrorShown()
