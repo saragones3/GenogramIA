@@ -32,6 +32,7 @@ import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHom
 import dev.saragones3.genogramia.presentation.guesthome.GuestHomeScreen
 import dev.saragones3.genogramia.presentation.legends.LegendsScreen
 import dev.saragones3.genogramia.presentation.login.LoginScreen
+import dev.saragones3.genogramia.presentation.login.LoginViewModel
 import dev.saragones3.genogramia.presentation.registration.RegistrationScreen
 import dev.saragones3.genogramia.presentation.settings.SettingsScreen
 import dev.saragones3.genogramia.presentation.splash.SplashScreen
@@ -184,12 +185,23 @@ fun AppNavGraph() {
                     )
                 }
                 is NavRoute.Login -> {
+                    val viewModel: LoginViewModel = koinViewModel()
+                    val uiState by viewModel.uiState.collectAsState()
+
                     LoginScreen(
+                        uiState = uiState,
+                        onDataChange = viewModel::onDataChange,
+                        onLoginClick = viewModel::login,
+                        onErrorShown = viewModel::errorShown,
                         onBackClick = { backStack.pop() },
                         onLoginSuccess = {
                             backStack.clear()
                             backStack.add(NavRoute.AuthenticatedHome)
                         },
+                        onRegisterClick = {
+                            backStack.push(NavRoute.Registration)
+                        },
+                        onGuestClick = {},
                     )
                 }
                 is NavRoute.AuthenticatedHome -> {
