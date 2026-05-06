@@ -27,7 +27,7 @@ class LoginViewModel(
         val password = _uiState.value.password
 
         if (email.isBlank() || password.isBlank()) {
-            _uiState.update { it.copy(error = "error_invalid_credentials") }
+            _uiState.update { it.copy(error = LoginError.EmptyValues) }
             return
         }
 
@@ -36,10 +36,8 @@ class LoginViewModel(
             try {
                 authRepository.signInWithEmailAndPassword(email, password)
                 _uiState.update { it.copy(isLoading = false, isSuccess = true) }
-            } catch (e: Exception) {
-                // In a real app we might map specific Firebase exceptions here.
-                val message = e.message ?: "error_generic"
-                _uiState.update { it.copy(isLoading = false, error = message) }
+            } catch (_: Exception) {
+                _uiState.update { it.copy(isLoading = false, error = LoginError.WrongCredentials) }
             }
         }
     }
