@@ -3,6 +3,7 @@ package dev.saragones3.genogramia.di
 import dev.saragones3.genogramia.data.repository.AuthRepositoryImpl
 import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
+import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeViewModel
 import dev.saragones3.genogramia.presentation.guesthome.GuestHomeViewModel
 import dev.saragones3.genogramia.presentation.legends.LegendsViewModel
@@ -23,6 +24,7 @@ private val dataModule =
 private val domainModule =
     module {
         factoryOf(::CheckSessionUseCase)
+        factoryOf(::SignUpUseCase)
     }
 
 private val appModule =

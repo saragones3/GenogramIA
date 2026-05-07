@@ -24,4 +24,17 @@ class FakeAuthRepository(
         currentUser = user
         return user
     }
+
+    override suspend fun signUpWithEmailAndPassword(
+        name: String,
+        email: String,
+        password: String,
+    ): User {
+        if (shouldReturnError) {
+            throw Exception("Fake signup error")
+        }
+        val user = User("fake-id", email, name)
+        currentUser = user
+        return user
+    }
 }

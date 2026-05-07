@@ -43,6 +43,11 @@ internal class FirebaseProviderImpl : FirebaseProvider {
         updatePasswordJs(user, newPassword).await()
     }
 
+    override suspend fun updateProfile(displayName: String?) {
+        val user = getCurrentUserJs() ?: throw Exception("No authenticated user")
+        updateProfileJs(user, displayName).await()
+    }
+
     override suspend fun signOut() {
         signOutJs(getAuthJs()).await()
     }
@@ -94,6 +99,12 @@ external fun sendPasswordResetJs(
 external fun updatePasswordJs(
     user: JsAuthUser,
     newPass: String,
+): Promise<JsAny?>
+
+@JsFun("(user, displayName) => window.firebaseAuthModule.updateProfile(user, { displayName: displayName })")
+external fun updateProfileJs(
+    user: JsAuthUser,
+    displayName: String?,
 ): Promise<JsAny?>
 
 @JsFun("(auth) => window.firebaseAuthModule.signOut(auth)")

@@ -44,10 +44,26 @@
     <string name="error_empty_credentials">You must enter an email and password</string>
     
     <!-- Registration -->
-    <string name="registration_title">Registration</string>
-    <string name="registration_screen_placeholder">Registration screen</string>
+    <string name="registration_title">Create your account</string>
+    <string name="registration_subtitle">Start building your family legacy</string>
+    <string name="registration_name_label">Full Name</string>
+    <string name="registration_name_hint">Ex. Carlos Mendoza</string>
+    <string name="registration_email_label">Email Address</string>
+    <string name="registration_email_hint">you@email.com</string>
+    <string name="registration_password_label">Password</string>
+    <string name="registration_password_hint">........</string>
     <string name="registration_button">Register</string>
-    
+    <string name="registration_google">Continue with Google</string>
+    <string name="registration_apple">Continue with Apple</string>
+    <string name="registration_already_have_account">Already have an account?</string>
+    <string name="registration_login_link">Log In</string>
+    <string name="registration_success_welcome">Welcome to GenogramIA!</string>
+    <string name="error_invalid_email">Invalid email format</string>
+    <string name="error_invalid_password">Password must be at least 8 characters</string>
+    <string name="error_empty_fields">All fields are required</string>
+    <string name="error_email_already_in_use">Email is already in use</string>
+    <string name="error_unknown">An unexpected error occurred</string>
+
     <!-- Legends -->
     <string name="legends_title">Legends</string>
     <string name="legends_screen_placeholder">Legends screen</string>
