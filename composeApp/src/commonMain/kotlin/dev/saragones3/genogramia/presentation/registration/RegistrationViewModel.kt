@@ -59,33 +59,39 @@ class RegistrationViewModel(
     }
 
     private fun validateFields(): Boolean {
-        var isValid = true
         val name = _state.value.name
         val email = _state.value.email
         val password = _state.value.password
 
+        var nameError: RegistrationState.ValidationError? = null
+        var emailError: RegistrationState.ValidationError? = null
+        var passwordError: RegistrationState.ValidationError? = null
+
         if (name.isBlank()) {
-            _state.update { it.copy(nameError = RegistrationState.ValidationError.EMPTY) }
-            isValid = false
+            nameError = RegistrationState.ValidationError.EMPTY
         }
 
         if (email.isBlank()) {
-            _state.update { it.copy(emailError = RegistrationState.ValidationError.EMPTY) }
-            isValid = false
+            emailError = RegistrationState.ValidationError.EMPTY
         } else if (!isValidEmail(email)) {
-            _state.update { it.copy(emailError = RegistrationState.ValidationError.INVALID) }
-            isValid = false
+            emailError = RegistrationState.ValidationError.INVALID
         }
 
         if (password.isEmpty()) {
-            _state.update { it.copy(passwordError = RegistrationState.ValidationError.EMPTY) }
-            isValid = false
+            passwordError = RegistrationState.ValidationError.EMPTY
         } else if (password.length < 8) {
-            _state.update { it.copy(passwordError = RegistrationState.ValidationError.INVALID) }
-            isValid = false
+            passwordError = RegistrationState.ValidationError.INVALID
         }
 
-        return isValid
+        _state.update {
+            it.copy(
+                nameError = nameError,
+                emailError = emailError,
+                passwordError = passwordError,
+            )
+        }
+
+        return nameError == null && emailError == null && passwordError == null
     }
 
     private fun isValidEmail(email: String): Boolean {
