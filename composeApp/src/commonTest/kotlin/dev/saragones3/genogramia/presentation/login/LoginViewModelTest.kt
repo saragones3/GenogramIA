@@ -13,6 +13,7 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
+import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -41,7 +42,9 @@ class LoginViewModelTest {
                 assertEquals("", state.email)
                 assertEquals("", state.password)
                 assertFalse(state.isLoading)
-                assertEquals(null, state.error)
+                assertNull(state.emailError)
+                assertNull(state.passwordError)
+                assertNull(state.generalError)
                 assertFalse(state.isSuccess)
             }
         }
@@ -60,14 +63,45 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun login_with_empty_credentials_sets_error() =
+    fun login_with_empty_credentials_sets_errors() =
         runTest(testDispatcher) {
             viewModel.uiState.test {
                 awaitItem() // initial
 
                 viewModel.login()
                 val errorState = awaitItem()
-                assertEquals(LoginError.EmptyValues, errorState.error)
+                assertEquals(LoginUiState.ValidationError.EMPTY, errorState.emailError)
+                assertEquals(LoginUiState.ValidationError.EMPTY, errorState.passwordError)
+            }
+        }
+
+    @Test
+    fun login_with_invalid_email_sets_error() =
+        runTest(testDispatcher) {
+            viewModel.uiState.test {
+                awaitItem() // initial
+
+                viewModel.onDataChange("invalid-email", "password123")
+                awaitItem()
+
+                viewModel.login()
+                val errorState = awaitItem()
+                assertEquals(LoginUiState.ValidationError.INVALID, errorState.emailError)
+            }
+        }
+
+    @Test
+    fun login_with_short_password_sets_error() =
+        runTest(testDispatcher) {
+            viewModel.uiState.test {
+                awaitItem() // initial
+
+                viewModel.onDataChange("test@test.com", "short")
+                awaitItem()
+
+                viewModel.login()
+                val errorState = awaitItem()
+                assertEquals(LoginUiState.ValidationError.INVALID, errorState.passwordError)
             }
         }
 
@@ -77,7 +111,7 @@ class LoginViewModelTest {
             viewModel.uiState.test {
                 awaitItem() // initial
 
-                viewModel.onDataChange("test@test.com", "password")
+                viewModel.onDataChange("test@test.com", "password123")
                 awaitItem()
 
                 viewModel.login()
@@ -88,7 +122,7 @@ class LoginViewModelTest {
                 val successState = awaitItem()
                 assertFalse(successState.isLoading)
                 assertTrue(successState.isSuccess)
-                assertEquals(null, successState.error)
+                assertNull(successState.generalError)
             }
         }
 
@@ -100,7 +134,7 @@ class LoginViewModelTest {
             viewModel.uiState.test {
                 awaitItem() // initial
 
-                viewModel.onDataChange("test@test.com", "wrong")
+                viewModel.onDataChange("test@test.com", "password123")
                 awaitItem()
 
                 viewModel.login()
@@ -111,7 +145,7 @@ class LoginViewModelTest {
                 val errorState = awaitItem()
                 assertFalse(errorState.isLoading)
                 assertFalse(errorState.isSuccess)
-                assertEquals(LoginError.WrongCredentials, errorState.error)
+                assertEquals(LoginError.WrongCredentials, errorState.generalError)
             }
         }
 }

@@ -4,11 +4,17 @@ data class LoginUiState(
     val email: String = "",
     val password: String = "",
     val isLoading: Boolean = false,
-    val error: LoginError? = null,
+    val emailError: ValidationError? = null,
+    val passwordError: ValidationError? = null,
+    val generalError: LoginError? = null,
     val isSuccess: Boolean = false,
-)
+) {
+    enum class ValidationError {
+        EMPTY,
+        INVALID,
+    }
+}
 
 enum class LoginError {
-    EmptyValues,
     WrongCredentials,
 }

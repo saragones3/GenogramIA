@@ -19,30 +19,69 @@ class LoginViewModel(
         email: String,
         password: String,
     ) {
-        _uiState.update { it.copy(email = email, password = password, error = null) }
+        _uiState.update {
+            it.copy(
+                email = email,
+                password = password,
+                emailError = if (it.email != email) null else it.emailError,
+                passwordError = if (it.password != password) null else it.passwordError,
+                generalError = null,
+            )
+        }
     }
 
     fun login() {
         val email = _uiState.value.email.trim()
         val password = _uiState.value.password
 
-        if (email.isBlank() || password.isBlank()) {
-            _uiState.update { it.copy(error = LoginError.EmptyValues) }
-            return
-        }
+        if (!validateFields(email, password)) return
 
         viewModelScope.launch {
-            _uiState.update { it.copy(isLoading = true, error = null) }
+            _uiState.update { it.copy(isLoading = true, generalError = null) }
             try {
                 authRepository.signInWithEmailAndPassword(email, password)
                 _uiState.update { it.copy(isLoading = false, isSuccess = true) }
             } catch (_: Exception) {
-                _uiState.update { it.copy(isLoading = false, error = LoginError.WrongCredentials) }
+                _uiState.update { it.copy(isLoading = false, generalError = LoginError.WrongCredentials) }
             }
         }
     }
 
+    private fun validateFields(
+        email: String,
+        password: String,
+    ): Boolean {
+        var emailError: LoginUiState.ValidationError? = null
+        var passwordError: LoginUiState.ValidationError? = null
+
+        if (email.isBlank()) {
+            emailError = LoginUiState.ValidationError.EMPTY
+        } else if (!isValidEmail(email)) {
+            emailError = LoginUiState.ValidationError.INVALID
+        }
+
+        if (password.isEmpty()) {
+            passwordError = LoginUiState.ValidationError.EMPTY
+        } else if (password.length < 8) {
+            passwordError = LoginUiState.ValidationError.INVALID
+        }
+
+        _uiState.update {
+            it.copy(
+                emailError = emailError,
+                passwordError = passwordError,
+            )
+        }
+
+        return emailError == null && passwordError == null
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[a-z]+$".toRegex()
+        return emailRegex.matches(email)
+    }
+
     fun errorShown() {
-        _uiState.update { it.copy(error = null) }
+        _uiState.update { it.copy(generalError = null) }
     }
 }

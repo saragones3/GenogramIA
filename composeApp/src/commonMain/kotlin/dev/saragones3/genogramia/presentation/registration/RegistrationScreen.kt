@@ -1,6 +1,7 @@
 package dev.saragones3.genogramia.presentation.registration
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -49,6 +50,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
@@ -407,6 +409,9 @@ private fun RegistrationField(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     trailingIcon: @Composable (() -> Unit)? = null,
 ) {
+    var isFocused by remember { mutableStateOf(false) }
+    val isError = error != null
+
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
             text = label,
@@ -420,7 +425,13 @@ private fun RegistrationField(
             value = value,
             onValueChange = onValueChange,
             placeholder = { Text(placeholder, color = Color.Gray) },
-            leadingIcon = { Icon(leadingIcon, contentDescription = null, tint = Color.Gray) },
+            leadingIcon = {
+                Icon(
+                    leadingIcon,
+                    contentDescription = null,
+                    tint = if (isError) MaterialTheme.colorScheme.error else Color.Gray,
+                )
+            },
             trailingIcon = trailingIcon,
             visualTransformation = visualTransformation,
             keyboardOptions = keyboardOptions,
@@ -428,28 +439,48 @@ private fun RegistrationField(
             modifier =
                 Modifier
                     .fillMaxWidth()
-                    .height(56.dp)
-                    .clip(RoundedCornerShape(12.dp)),
+                    .clip(RoundedCornerShape(12.dp))
+                    .onFocusChanged { isFocused = it.isFocused }
+                    .then(
+                        if (isFocused) {
+                            Modifier.border(
+                                width = 1.dp,
+                                color =
+                                    if (isError) {
+                                        MaterialTheme.colorScheme.error
+                                    } else {
+                                        MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)
+                                    },
+                                shape = RoundedCornerShape(12.dp),
+                            )
+                        } else {
+                            Modifier
+                        },
+                    ),
             colors =
                 TextFieldDefaults.colors(
                     focusedContainerColor = SurfaceContainerHighest,
                     unfocusedContainerColor = SurfaceContainerHighest,
+                    errorContainerColor = SurfaceContainerHighest,
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
                     disabledIndicatorColor = Color.Transparent,
                     errorIndicatorColor = Color.Transparent,
                 ),
-            isError = error != null,
+            isError = isError,
+            supportingText =
+                if (isError) {
+                    {
+                        Text(
+                            text = error,
+                            color = MaterialTheme.colorScheme.error,
+                            style = MaterialTheme.typography.labelSmall,
+                        )
+                    }
+                } else {
+                    null
+                },
         )
-
-        if (error != null) {
-            Text(
-                text = error,
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.padding(top = 4.dp, start = 4.dp),
-            )
-        }
     }
 }
 

@@ -58,14 +58,56 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when email is invalid validation fails`() =
+    fun `when email format is invalid validation fails`() =
         runTest {
+            val invalidEmails =
+                listOf(
+                    "invalid-email",
+                    "user@",
+                    "@domain.com",
+                    "user@domain",
+                    "user name@domain.com",
+                )
+
+            invalidEmails.forEach { email ->
+                viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", email, "password123"))
+                viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
+
+                val state = viewModel.state.value
+                assertEquals(
+                    RegistrationState.ValidationError.INVALID,
+                    state.emailError,
+                    "Email '$email' should be considered invalid",
+                )
+            }
+        }
+
+    @Test
+    fun `when email is corrected after invalid format, email error is cleared`() =
+        runTest {
+            // Given an invalid email state
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "invalid-email", "password123"))
+            viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
+            assertEquals(RegistrationState.ValidationError.INVALID, viewModel.state.value.emailError)
+
+            // When the email is corrected
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "valid@email.com", "password123"))
+
+            // Then the error is cleared
+            assertNull(viewModel.state.value.emailError)
+        }
+
+    @Test
+    fun `when email is invalid, name and password errors are not affected`() =
+        runTest {
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Valid Name", "invalid-email", "validPassword123"))
 
             viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
 
             val state = viewModel.state.value
             assertEquals(RegistrationState.ValidationError.INVALID, state.emailError)
+            assertNull(state.nameError)
+            assertNull(state.passwordError)
         }
 
     @Test

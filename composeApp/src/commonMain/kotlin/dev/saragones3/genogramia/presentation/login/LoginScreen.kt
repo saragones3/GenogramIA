@@ -67,8 +67,10 @@ import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.ShapeFull
 import dev.saragones3.genogramia.ui.theme.SurfaceContainerHighest
 import genogramia.composeapp.generated.resources.Res
-import genogramia.composeapp.generated.resources.error_empty_credentials
+import genogramia.composeapp.generated.resources.error_empty_fields
 import genogramia.composeapp.generated.resources.error_invalid_credentials
+import genogramia.composeapp.generated.resources.error_invalid_email
+import genogramia.composeapp.generated.resources.error_invalid_password
 import genogramia.composeapp.generated.resources.login_button
 import genogramia.composeapp.generated.resources.login_create_account_label
 import genogramia.composeapp.generated.resources.login_email_hint
@@ -98,7 +100,6 @@ fun LoginScreen(
     val snackbarHostState = remember { SnackbarHostState() }
 
     val invalidCredentialsStr = stringResource(Res.string.error_invalid_credentials)
-    val emptyCredentialsStr = stringResource(Res.string.error_empty_credentials)
 
     LaunchedEffect(uiState.isSuccess) {
         if (uiState.isSuccess) {
@@ -106,11 +107,10 @@ fun LoginScreen(
         }
     }
 
-    LaunchedEffect(uiState.error) {
-        uiState.error?.let { error ->
+    LaunchedEffect(uiState.generalError) {
+        uiState.generalError?.let { error ->
             val message =
                 when (error) {
-                    LoginError.EmptyValues -> emptyCredentialsStr
                     LoginError.WrongCredentials -> invalidCredentialsStr
                 }
             snackbarHostState.showSnackbar(message)
@@ -300,6 +300,24 @@ private fun LoginForm(
     onDataChange: (String, String) -> Unit,
     onForgotPasswordClick: () -> Unit,
 ) {
+    val emptyFieldStr = stringResource(Res.string.error_empty_fields)
+    val invalidEmailStr = stringResource(Res.string.error_invalid_email)
+    val invalidPasswordStr = stringResource(Res.string.error_invalid_password)
+
+    val emailErrorText =
+        when (uiState.emailError) {
+            LoginUiState.ValidationError.EMPTY -> emptyFieldStr
+            LoginUiState.ValidationError.INVALID -> invalidEmailStr
+            null -> null
+        }
+
+    val passwordErrorText =
+        when (uiState.passwordError) {
+            LoginUiState.ValidationError.EMPTY -> emptyFieldStr
+            LoginUiState.ValidationError.INVALID -> invalidPasswordStr
+            null -> null
+        }
+
     Text(
         text = stringResource(Res.string.login_email_label),
         style = MaterialTheme.typography.labelMedium,
@@ -314,6 +332,7 @@ private fun LoginForm(
         placeholder = stringResource(Res.string.login_email_hint),
         leadingIcon = Icons.Default.Email,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+        errorText = emailErrorText,
     )
 
     Spacer(modifier = Modifier.height(20.dp))
@@ -340,6 +359,7 @@ private fun LoginForm(
                 Icon(imageVector = image, contentDescription = null, tint = Color.Gray)
             }
         },
+        errorText = passwordErrorText,
     )
 
     Row(
@@ -463,13 +483,16 @@ private fun SoftTextField(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     trailingIcon: @Composable (() -> Unit)? = null,
+    errorText: String? = null,
 ) {
     var isFocused by remember { mutableStateOf(false) }
+    val isError = errorText != null
 
     TextField(
         value = value,
         onValueChange = onValueChange,
         placeholder = { Text(placeholder, color = Color.Gray) },
+        isError = isError,
         modifier =
             modifier
                 .fillMaxWidth()
@@ -479,7 +502,12 @@ private fun SoftTextField(
                     if (isFocused) {
                         Modifier.border(
                             width = 1.dp,
-                            color = MaterialTheme.colorScheme.primary.copy(alpha = 0.2f),
+                            color =
+                                if (isError) {
+                                    MaterialTheme.colorScheme.error
+                                } else {
+                                    MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)
+                                },
                             shape = RoundedCornerShape(16.dp),
                         )
                     } else {
@@ -490,9 +518,11 @@ private fun SoftTextField(
             TextFieldDefaults.colors(
                 focusedContainerColor = SurfaceContainerHighest,
                 unfocusedContainerColor = SurfaceContainerHighest,
+                errorContainerColor = SurfaceContainerHighest,
                 focusedIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent,
                 disabledIndicatorColor = Color.Transparent,
+                errorIndicatorColor = Color.Transparent,
             ),
         leadingIcon =
             leadingIcon?.let {
@@ -500,9 +530,21 @@ private fun SoftTextField(
                     Icon(
                         imageVector = it,
                         contentDescription = null,
-                        tint = Color.Gray,
+                        tint = if (isError) MaterialTheme.colorScheme.error else Color.Gray,
                     )
                 }
+            },
+        supportingText =
+            if (isError) {
+                {
+                    Text(
+                        text = errorText!!,
+                        color = MaterialTheme.colorScheme.error,
+                        style = MaterialTheme.typography.labelSmall,
+                    )
+                }
+            } else {
+                null
             },
         keyboardOptions = keyboardOptions,
         visualTransformation = visualTransformation,
