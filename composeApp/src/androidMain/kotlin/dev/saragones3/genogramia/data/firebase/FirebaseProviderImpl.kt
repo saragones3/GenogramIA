@@ -2,6 +2,7 @@ package dev.saragones3.genogramia.data.firebase
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.userProfileChangeRequest
 import kotlinx.coroutines.tasks.await
 
 internal class FirebaseProviderImpl : FirebaseProvider {
@@ -31,6 +32,14 @@ internal class FirebaseProviderImpl : FirebaseProvider {
 
     override suspend fun updatePassword(newPassword: String) {
         auth.currentUser!!.updatePassword(newPassword).await()
+    }
+
+    override suspend fun updateProfile(displayName: String?) {
+        val request =
+            userProfileChangeRequest {
+                this.displayName = displayName
+            }
+        auth.currentUser!!.updateProfile(request).await()
     }
 
     override suspend fun signOut() {

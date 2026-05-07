@@ -34,6 +34,7 @@ import dev.saragones3.genogramia.presentation.legends.LegendsScreen
 import dev.saragones3.genogramia.presentation.login.LoginScreen
 import dev.saragones3.genogramia.presentation.login.LoginViewModel
 import dev.saragones3.genogramia.presentation.registration.RegistrationScreen
+import dev.saragones3.genogramia.presentation.registration.RegistrationViewModel
 import dev.saragones3.genogramia.presentation.settings.SettingsScreen
 import dev.saragones3.genogramia.presentation.splash.SplashScreen
 import dev.saragones3.genogramia.presentation.splash.SplashViewModel
@@ -214,7 +215,12 @@ fun AppNavGraph() {
                     SettingsScreen()
                 }
                 is NavRoute.Registration -> {
+                    val viewModel: RegistrationViewModel = koinViewModel()
+                    val state by viewModel.state.collectAsState()
+
                     RegistrationScreen(
+                        state = state,
+                        onEvent = viewModel::onEvent,
                         onBackClick = { backStack.pop() },
                         onRegistrationSuccess = {
                             backStack.clear()

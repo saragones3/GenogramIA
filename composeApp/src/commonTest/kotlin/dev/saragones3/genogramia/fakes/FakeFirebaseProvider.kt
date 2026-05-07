@@ -22,6 +22,10 @@ class FakeFirebaseProvider(
 
     override suspend fun updatePassword(newPassword: String): Unit = throw NotImplementedError()
 
+    override suspend fun updateProfile(displayName: String?) {
+        currentUser = currentUser?.copy(displayName = displayName)
+    }
+
     override suspend fun signOut() {
         currentUser = null
     }

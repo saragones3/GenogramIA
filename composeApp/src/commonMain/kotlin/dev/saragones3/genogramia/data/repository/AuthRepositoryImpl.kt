@@ -17,4 +17,14 @@ internal class AuthRepositoryImpl(
         val authUser = firebaseProvider.signInWithEmailAndPassword(email, password)
         return User(authUser.uid, authUser.email, authUser.displayName)
     }
+
+    override suspend fun signUpWithEmailAndPassword(
+        name: String,
+        email: String,
+        password: String,
+    ): User {
+        val authUser = firebaseProvider.createUserWithEmailAndPassword(email, password)
+        firebaseProvider.updateProfile(name)
+        return User(authUser.uid, authUser.email, name)
+    }
 }

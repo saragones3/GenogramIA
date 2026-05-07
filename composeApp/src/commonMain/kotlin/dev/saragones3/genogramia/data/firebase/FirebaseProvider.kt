@@ -20,6 +20,8 @@ interface FirebaseProvider {
 
     suspend fun updatePassword(newPassword: String)
 
+    suspend fun updateProfile(displayName: String?)
+
     suspend fun signOut()
 
     suspend fun deleteCurrentUser()

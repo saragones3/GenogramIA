@@ -28,7 +28,7 @@ Este documento define el contexto, las reglas y las directrices arquitectónicas
 - **Lienzo Infinito**: Para el árbol genealógico, utiliza **Canvas API** nativo de Compose. Debe soportar gestos de arrastre (pan) y zoom (pinch-to-zoom).
 - Los estados de UI deben ser inmutables.
 - **Previews**: Toda pantalla o componente de UI en Compose debe incluir obligatoriamente una función de `@Preview` para facilitar la visualización y el desarrollo rápido. En la preview debe usar el tema de la app, `GenogramiaTheme`.
-- Los composables principales de cada pantalla, los finalizados en "Screen", deben recibir el estado de UI y nunca el ViewModel directamente, para que las previews funcionen.
+- **Patrón de Pantallas (Screen Pattern)**: Los composables principales de cada pantalla (terminados en `Screen`) deben actuar como "State Holders". Deben recibir el ViewModel, extraer el estado (`StateFlow.collectAsState()`) y pasarlo junto con las lambdas de eventos a un sub-composable privado (ej. `RegistrationContent`). **Está terminantemente prohibido pasar el ViewModel a los sub-composables de contenido o componentes pequeños**, para garantizar que las Previews funcionen sin dependencias complejas y para facilitar el testing de UI.
 
 ### 3. Buenas Prácticas en Kotlin
 - Prefiere la inmutabilidad (`val` sobre `var`, colecciones inmutables como `List` en lugar de `MutableList` para exponer datos).
