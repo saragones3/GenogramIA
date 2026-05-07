@@ -52,6 +52,11 @@ internal class FirebaseProviderImpl : FirebaseProvider {
         delay(500)
     }
 
+    override suspend fun updateProfile(displayName: String?) {
+        delay(500)
+        currentUser = currentUser?.copy(displayName = displayName)
+    }
+
     override suspend fun signOut() {
         delay(100)
         currentUser = null

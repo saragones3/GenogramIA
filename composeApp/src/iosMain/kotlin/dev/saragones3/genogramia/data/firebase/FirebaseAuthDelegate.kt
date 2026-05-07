@@ -41,6 +41,12 @@ interface FirebaseAuthDelegate {
         onError: (message: String) -> Unit,
     )
 
+    fun updateProfile(
+        displayName: String?,
+        onSuccess: () -> Unit,
+        onError: (message: String) -> Unit,
+    )
+
     fun signOut(
         onSuccess: () -> Unit,
         onError: (message: String) -> Unit,

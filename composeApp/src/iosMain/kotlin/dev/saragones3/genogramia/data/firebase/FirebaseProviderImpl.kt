@@ -59,6 +59,15 @@ internal class FirebaseProviderImpl(
             )
         }
 
+    override suspend fun updateProfile(displayName: String?): Unit =
+        suspendCancellableCoroutine { cont ->
+            delegate.updateProfile(
+                displayName = displayName,
+                onSuccess = { cont.resumeWith(Result.success(Unit)) },
+                onError = { msg -> cont.resumeWithException(Exception(msg)) },
+            )
+        }
+
     override suspend fun signOut(): Unit =
         suspendCancellableCoroutine { cont ->
             delegate.signOut(

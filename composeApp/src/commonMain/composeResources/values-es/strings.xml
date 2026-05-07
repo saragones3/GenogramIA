@@ -44,10 +44,26 @@
     <string name="error_empty_credentials">Debes introducir correo y contraseña</string>
     
     <!-- Registration -->
-    <string name="registration_title">Registro</string>
-    <string name="registration_screen_placeholder">Pantalla de registro</string>
+    <string name="registration_title">Crea tu cuenta</string>
+    <string name="registration_subtitle">Comienza a construir tu legado familiar</string>
+    <string name="registration_name_label">Nombre Completo</string>
+    <string name="registration_name_hint">Ej. Carlos Mendoza</string>
+    <string name="registration_email_label">Correo Electrónico</string>
+    <string name="registration_email_hint">tu@correo.com</string>
+    <string name="registration_password_label">Contraseña</string>
+    <string name="registration_password_hint">........</string>
     <string name="registration_button">Registrarse</string>
-    
+    <string name="registration_google">Continuar con Google</string>
+    <string name="registration_apple">Continuar con Apple</string>
+    <string name="registration_already_have_account">¿Ya tienes cuenta?</string>
+    <string name="registration_login_link">Inicia Sesión</string>
+    <string name="registration_success_welcome">¡Bienvenido a GenogramIA!</string>
+    <string name="error_invalid_email">Formato de correo inválido</string>
+    <string name="error_invalid_password">La contraseña debe tener al menos 8 caracteres</string>
+    <string name="error_empty_fields">Todos los campos son obligatorios</string>
+    <string name="error_email_already_in_use">El correo ya está registrado</string>
+    <string name="error_unknown">Ha ocurrido un error inesperado</string>
+
     <!-- Legends -->
     <string name="legends_title">Leyendas</string>
     <string name="legends_screen_placeholder">Pantalla de leyendas</string>
