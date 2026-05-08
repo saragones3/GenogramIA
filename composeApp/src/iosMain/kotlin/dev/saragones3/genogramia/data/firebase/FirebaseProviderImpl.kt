@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.data.firebase
 
+import dev.saragones3.genogramia.data.error.toAuthError
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resumeWithException
 
@@ -24,7 +25,7 @@ internal class FirebaseProviderImpl(
                 email = email,
                 password = password,
                 onSuccess = { uid, mail, name -> cont.resumeWith(Result.success(AuthUser(uid, mail, name))) },
-                onError = { msg -> cont.resumeWithException(Exception(msg)) },
+                onError = { msg -> cont.resumeWithException(Exception(msg).toAuthError()) },
             )
         }
 
@@ -37,7 +38,7 @@ internal class FirebaseProviderImpl(
                 email = email,
                 password = password,
                 onSuccess = { uid, mail, name -> cont.resumeWith(Result.success(AuthUser(uid, mail, name))) },
-                onError = { msg -> cont.resumeWithException(Exception(msg)) },
+                onError = { msg -> cont.resumeWithException(Exception(msg).toAuthError()) },
             )
         }
 
@@ -46,7 +47,7 @@ internal class FirebaseProviderImpl(
             delegate.sendPasswordResetEmail(
                 email = email,
                 onSuccess = { cont.resumeWith(Result.success(Unit)) },
-                onError = { msg -> cont.resumeWithException(Exception(msg)) },
+                onError = { msg -> cont.resumeWithException(Exception(msg).toAuthError()) },
             )
         }
 
@@ -55,7 +56,7 @@ internal class FirebaseProviderImpl(
             delegate.updatePassword(
                 newPassword = newPassword,
                 onSuccess = { cont.resumeWith(Result.success(Unit)) },
-                onError = { msg -> cont.resumeWithException(Exception(msg)) },
+                onError = { msg -> cont.resumeWithException(Exception(msg).toAuthError()) },
             )
         }
 
@@ -64,7 +65,7 @@ internal class FirebaseProviderImpl(
             delegate.updateProfile(
                 displayName = displayName,
                 onSuccess = { cont.resumeWith(Result.success(Unit)) },
-                onError = { msg -> cont.resumeWithException(Exception(msg)) },
+                onError = { msg -> cont.resumeWithException(Exception(msg).toAuthError()) },
             )
         }
 
@@ -72,7 +73,7 @@ internal class FirebaseProviderImpl(
         suspendCancellableCoroutine { cont ->
             delegate.signOut(
                 onSuccess = { cont.resumeWith(Result.success(Unit)) },
-                onError = { msg -> cont.resumeWithException(Exception(msg)) },
+                onError = { msg -> cont.resumeWithException(Exception(msg).toAuthError()) },
             )
         }
 
@@ -80,7 +81,7 @@ internal class FirebaseProviderImpl(
         suspendCancellableCoroutine { cont ->
             delegate.deleteCurrentUser(
                 onSuccess = { cont.resumeWith(Result.success(Unit)) },
-                onError = { msg -> cont.resumeWithException(Exception(msg)) },
+                onError = { msg -> cont.resumeWithException(Exception(msg).toAuthError()) },
             )
         }
 }

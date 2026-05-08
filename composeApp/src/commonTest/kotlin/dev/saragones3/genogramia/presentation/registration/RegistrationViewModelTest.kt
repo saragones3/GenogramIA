@@ -1,8 +1,11 @@
 package dev.saragones3.genogramia.presentation.registration
 
 import app.cash.turbine.test
+import dev.saragones3.genogramia.domain.model.AuthError
 import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
+import genogramia.composeapp.generated.resources.Res
+import genogramia.composeapp.generated.resources.error_email_already_in_use
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
@@ -135,5 +138,20 @@ class RegistrationViewModelTest {
                 assertEquals(false, finalState.isLoading)
                 assertTrue(finalState.isRegistrationSuccess)
             }
+        }
+
+    @Test
+    fun `when email is already in use, general error is updated`() =
+        runTest {
+            repository.shouldReturnError = true
+            repository.errorToReturn = AuthError.EmailAlreadyInUse
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Test User", "test@example.com", "password123"))
+
+            viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val state = viewModel.state.value
+            assertEquals(Res.string.error_email_already_in_use, state.generalError)
+            assertEquals(false, state.isLoading)
         }
 }

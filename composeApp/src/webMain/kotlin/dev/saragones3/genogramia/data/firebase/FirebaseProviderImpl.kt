@@ -2,6 +2,7 @@
 
 package dev.saragones3.genogramia.data.firebase
 
+import dev.saragones3.genogramia.data.error.toAuthError
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
@@ -21,31 +22,49 @@ internal class FirebaseProviderImpl : FirebaseProvider {
     override suspend fun createUserWithEmailAndPassword(
         email: String,
         password: String,
-    ): AuthUser {
-        val result = createUserJs(getAuthJs(), email, password).await()
-        return AuthUser(uid = result.user.uid, email = result.user.email, displayName = null)
-    }
+    ): AuthUser =
+        try {
+            val result = createUserJs(getAuthJs(), email, password).await()
+            AuthUser(uid = result.user.uid, email = result.user.email, displayName = null)
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
 
     override suspend fun signInWithEmailAndPassword(
         email: String,
         password: String,
-    ): AuthUser {
-        val result = signInEmailJs(getAuthJs(), email, password).await()
-        return AuthUser(uid = result.user.uid, email = result.user.email, displayName = null)
-    }
+    ): AuthUser =
+        try {
+            val result = signInEmailJs(getAuthJs(), email, password).await()
+            AuthUser(uid = result.user.uid, email = result.user.email, displayName = null)
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
 
     override suspend fun sendPasswordResetEmail(email: String) {
-        sendPasswordResetJs(getAuthJs(), email).await()
+        try {
+            sendPasswordResetJs(getAuthJs(), email).await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
     }
 
     override suspend fun updatePassword(newPassword: String) {
-        val user = getCurrentUserJs() ?: throw Exception("No authenticated user")
-        updatePasswordJs(user, newPassword).await()
+        try {
+            val user = getCurrentUserJs() ?: throw Exception("No authenticated user")
+            updatePasswordJs(user, newPassword).await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
     }
 
     override suspend fun updateProfile(displayName: String?) {
-        val user = getCurrentUserJs() ?: throw Exception("No authenticated user")
-        updateProfileJs(user, displayName).await()
+        try {
+            val user = getCurrentUserJs() ?: throw Exception("No authenticated user")
+            updateProfileJs(user, displayName).await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
     }
 
     override suspend fun signOut() {
@@ -53,8 +72,12 @@ internal class FirebaseProviderImpl : FirebaseProvider {
     }
 
     override suspend fun deleteCurrentUser() {
-        val user = getCurrentUserJs() ?: throw Exception("No authenticated user")
-        deleteUserJs(user).await()
+        try {
+            val user = getCurrentUserJs() ?: throw Exception("No authenticated user")
+            deleteUserJs(user).await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
     }
 }
 
