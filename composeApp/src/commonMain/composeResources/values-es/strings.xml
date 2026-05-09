@@ -71,6 +71,24 @@
     
     <!-- Settings -->
     <string name="settings_title">Ajustes</string>
-    <string name="settings_screen_placeholder">Pantalla de ajustes</string>
-    <string name="settings_description">Ajustes de perfil, tema y sincronización.</string>
+    <string name="settings_profile_section">Perfil</string>
+    <string name="settings_security_section">Seguridad</string>
+    <string name="settings_change_password">Cambiar Contraseña</string>
+    <string name="settings_change_password_desc">Actualiza tus credenciales de seguridad</string>
+    <string name="settings_log_out">Cerrar Sesión</string>
+    <string name="settings_delete_account">Eliminar Cuenta</string>
+    <string name="settings_logout_confirmation_title">Cerrar Sesión</string>
+    <string name="settings_logout_confirmation_message">¿Estás seguro de que quieres cerrar sesión?</string>
+    <string name="settings_delete_confirmation_title">Eliminar Cuenta</string>
+    <string name="settings_delete_confirmation_message">Esta acción es irreversible. Todos tus datos serán eliminados permanentemente. ¿Estás seguro?</string>
+    <string name="settings_cancel">Cancelar</string>
+    <string name="settings_confirm">Confirmar</string>
+
+    <!-- Change Password -->
+    <string name="change_password_title">Cambiar Contraseña</string>
+    <string name="change_password_new_label">NUEVA CONTRASEÑA</string>
+    <string name="change_password_confirm_label">CONFIRMAR NUEVA CONTRASEÑA</string>
+    <string name="change_password_save">Guardar Contraseña</string>
+    <string name="change_password_success">Contraseña actualizada con éxito</string>
+    <string name="error_passwords_do_not_match">Las contraseñas no coinciden</string>
 </resources>

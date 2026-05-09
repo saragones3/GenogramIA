@@ -27,4 +27,16 @@ internal class AuthRepositoryImpl(
         firebaseProvider.updateProfile(name)
         return User(authUser.uid, authUser.email, name)
     }
+
+    override suspend fun signOut() {
+        firebaseProvider.signOut()
+    }
+
+    override suspend fun deleteAccount() {
+        firebaseProvider.deleteCurrentUser()
+    }
+
+    override suspend fun updatePassword(newPassword: String) {
+        firebaseProvider.updatePassword(newPassword)
+    }
 }

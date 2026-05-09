@@ -15,4 +15,10 @@ interface AuthRepository {
         email: String,
         password: String,
     ): User
+
+    suspend fun signOut()
+
+    suspend fun deleteAccount()
+
+    suspend fun updatePassword(newPassword: String)
 }
