@@ -67,12 +67,14 @@ import org.jetbrains.compose.resources.stringResource
 fun SettingsScreen(
     state: SettingsState,
     onEvent: (SettingsEvent) -> Unit,
+    onLogoutConsumed: () -> Unit,
     onChangePasswordClick: () -> Unit,
     onLoggedOut: () -> Unit,
 ) {
     LaunchedEffect(state.isLoggedOut) {
         if (state.isLoggedOut) {
             onLoggedOut()
+            onLogoutConsumed()
         }
     }
 

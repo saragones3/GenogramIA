@@ -91,6 +91,7 @@ fun LoginScreen(
     onDataChange: (String, String) -> Unit,
     onLoginClick: () -> Unit,
     onErrorShown: () -> Unit,
+    onLoginSuccessConsumed: () -> Unit,
     onBackClick: () -> Unit,
     onLoginSuccess: () -> Unit,
     onRegisterClick: () -> Unit,
@@ -103,6 +104,7 @@ fun LoginScreen(
     LaunchedEffect(uiState.isSuccess) {
         if (uiState.isSuccess) {
             onLoginSuccess()
+            onLoginSuccessConsumed()
         }
     }
 

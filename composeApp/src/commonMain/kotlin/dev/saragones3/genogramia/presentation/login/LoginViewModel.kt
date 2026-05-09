@@ -81,6 +81,10 @@ class LoginViewModel(
         return emailRegex.matches(email)
     }
 
+    fun loginSuccessConsumed() {
+        _uiState.value = LoginUiState()
+    }
+
     fun errorShown() {
         _uiState.update { it.copy(generalError = null) }
     }
