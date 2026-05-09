@@ -70,6 +70,7 @@ import genogramia.composeapp.generated.resources.error_empty_fields
 import genogramia.composeapp.generated.resources.error_invalid_credentials
 import genogramia.composeapp.generated.resources.error_invalid_email
 import genogramia.composeapp.generated.resources.error_invalid_password
+import genogramia.composeapp.generated.resources.error_user_not_found
 import genogramia.composeapp.generated.resources.login_button
 import genogramia.composeapp.generated.resources.login_create_account_label
 import genogramia.composeapp.generated.resources.login_email_hint
@@ -100,6 +101,7 @@ fun LoginScreen(
     val snackbarHostState = remember { SnackbarHostState() }
 
     val invalidCredentialsStr = stringResource(Res.string.error_invalid_credentials)
+    val userNotFoundStr = stringResource(Res.string.error_user_not_found)
 
     LaunchedEffect(uiState.isSuccess) {
         if (uiState.isSuccess) {
@@ -113,6 +115,7 @@ fun LoginScreen(
             val message =
                 when (error) {
                     LoginError.WrongCredentials -> invalidCredentialsStr
+                    LoginError.UserNotFound -> userNotFoundStr
                 }
             snackbarHostState.showSnackbar(message)
             onErrorShown()

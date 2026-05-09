@@ -2,7 +2,8 @@ package dev.saragones3.genogramia.presentation.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.saragones3.genogramia.domain.repository.AuthRepository
+import dev.saragones3.genogramia.domain.model.AuthError
+import dev.saragones3.genogramia.domain.usecase.SignInUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -10,7 +11,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
-    private val authRepository: AuthRepository,
+    private val signInUseCase: SignInUseCase,
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(LoginUiState())
     val uiState: StateFlow<LoginUiState> = _uiState.asStateFlow()
@@ -38,12 +39,19 @@ class LoginViewModel(
 
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, generalError = null) }
-            try {
-                authRepository.signInWithEmailAndPassword(email, password)
-                _uiState.update { it.copy(isLoading = false, isSuccess = true) }
-            } catch (_: Exception) {
-                _uiState.update { it.copy(isLoading = false, generalError = LoginError.WrongCredentials) }
-            }
+            val result = signInUseCase(email, password)
+
+            result
+                .onSuccess {
+                    _uiState.update { it.copy(isLoading = false, isSuccess = true) }
+                }.onFailure { error ->
+                    val loginError =
+                        when (error) {
+                            is AuthError.UserNotFound -> LoginError.UserNotFound
+                            else -> LoginError.WrongCredentials
+                        }
+                    _uiState.update { it.copy(isLoading = false, generalError = loginError) }
+                }
         }
     }
 

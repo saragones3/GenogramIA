@@ -1,6 +1,6 @@
 package dev.saragones3.genogramia.domain.model
 
-sealed class AuthError : Throwable() {
+sealed class AuthError : Exception() {
     data object EmailAlreadyInUse : AuthError()
 
     data object InvalidEmail : AuthError()

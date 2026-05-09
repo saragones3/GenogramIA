@@ -4,6 +4,7 @@ import dev.saragones3.genogramia.data.repository.AuthRepositoryImpl
 import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteAccountUseCase
+import dev.saragones3.genogramia.domain.usecase.SignInUseCase
 import dev.saragones3.genogramia.domain.usecase.SignOutUseCase
 import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
@@ -28,6 +29,7 @@ private val domainModule =
     module {
         factoryOf(::CheckSessionUseCase)
         factoryOf(::SignUpUseCase)
+        factoryOf(::SignInUseCase)
         factoryOf(::SignOutUseCase)
         factoryOf(::DeleteAccountUseCase)
         factoryOf(::UpdatePasswordUseCase)

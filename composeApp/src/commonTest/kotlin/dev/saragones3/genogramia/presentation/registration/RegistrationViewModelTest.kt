@@ -16,6 +16,7 @@ import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
@@ -153,5 +154,18 @@ class RegistrationViewModelTest {
             val state = viewModel.state.value
             assertEquals(Res.string.error_email_already_in_use, state.generalError)
             assertEquals(false, state.isLoading)
+        }
+
+    @Test
+    fun `registrationSuccessConsumed resets state`() =
+        runTest {
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Test User", "test@example.com", "password123"))
+
+            viewModel.registrationSuccessConsumed()
+
+            val state = viewModel.state.value
+            assertEquals("", state.name)
+            assertEquals("", state.email)
+            assertFalse(state.isRegistrationSuccess)
         }
 }

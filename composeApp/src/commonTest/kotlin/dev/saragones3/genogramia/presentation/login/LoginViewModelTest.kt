@@ -1,6 +1,7 @@
 package dev.saragones3.genogramia.presentation.login
 
 import app.cash.turbine.test
+import dev.saragones3.genogramia.domain.model.AuthError
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -146,6 +147,61 @@ class LoginViewModelTest {
                 assertFalse(errorState.isLoading)
                 assertFalse(errorState.isSuccess)
                 assertEquals(LoginError.WrongCredentials, errorState.generalError)
+            }
+        }
+
+    @Test
+    fun login_with_non_existent_user_sets_user_not_found_error() =
+        runTest(testDispatcher) {
+            fakeAuthRepository.shouldReturnError = true
+            fakeAuthRepository.errorToReturn = AuthError.UserNotFound
+
+            viewModel.uiState.test {
+                awaitItem() // initial
+
+                viewModel.onDataChange("non-existent@test.com", "password123")
+                awaitItem()
+
+                viewModel.login()
+
+                val loadingState = awaitItem()
+                assertTrue(loadingState.isLoading)
+
+                val errorState = awaitItem()
+                assertFalse(errorState.isLoading)
+                assertEquals(LoginError.UserNotFound, errorState.generalError)
+            }
+        }
+
+    @Test
+    fun errorShown_clears_general_error() =
+        runTest(testDispatcher) {
+            fakeAuthRepository.shouldReturnError = true
+            viewModel.onDataChange("test@test.com", "password123")
+            viewModel.login()
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.errorShown()
+
+            viewModel.uiState.test {
+                val state = awaitItem()
+                assertNull(state.generalError)
+            }
+        }
+
+    @Test
+    fun loginSuccessConsumed_resets_state() =
+        runTest(testDispatcher) {
+            viewModel.onDataChange("test@test.com", "password123")
+            viewModel.login()
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.loginSuccessConsumed()
+
+            viewModel.uiState.test {
+                val state = awaitItem()
+                assertEquals("", state.email)
+                assertFalse(state.isSuccess)
             }
         }
 }
