@@ -38,4 +38,16 @@ class FakeAuthRepository(
         currentUser = user
         return user
     }
+
+    override suspend fun signOut() {
+        currentUser = null
+    }
+
+    override suspend fun deleteAccount() {
+        currentUser = null
+    }
+
+    override suspend fun updatePassword(newPassword: String) {
+        // No-op for fake
+    }
 }

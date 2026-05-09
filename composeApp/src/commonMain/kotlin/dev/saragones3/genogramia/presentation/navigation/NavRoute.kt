@@ -23,5 +23,8 @@ sealed interface NavRoute {
     data object Settings : NavRoute
 
     @Serializable
+    data object ChangePassword : NavRoute
+
+    @Serializable
     data object Registration : NavRoute
 }

@@ -71,6 +71,24 @@
     
     <!-- Settings -->
     <string name="settings_title">Settings</string>
-    <string name="settings_screen_placeholder">Settings screen</string>
-    <string name="settings_description">Profile settings, theme and synchronization.</string>
+    <string name="settings_profile_section">Profile</string>
+    <string name="settings_security_section">Security</string>
+    <string name="settings_change_password">Change Password</string>
+    <string name="settings_change_password_desc">Update your security credentials</string>
+    <string name="settings_log_out">Log Out</string>
+    <string name="settings_delete_account">Delete Account</string>
+    <string name="settings_logout_confirmation_title">Log Out</string>
+    <string name="settings_logout_confirmation_message">Are you sure you want to log out?</string>
+    <string name="settings_delete_confirmation_title">Delete Account</string>
+    <string name="settings_delete_confirmation_message">This action is irreversible. All your data will be permanently deleted. Are you sure?</string>
+    <string name="settings_cancel">Cancel</string>
+    <string name="settings_confirm">Confirm</string>
+
+    <!-- Change Password -->
+    <string name="change_password_title">Change Password</string>
+    <string name="change_password_new_label">NEW PASSWORD</string>
+    <string name="change_password_confirm_label">CONFIRM NEW PASSWORD</string>
+    <string name="change_password_save">Save Password</string>
+    <string name="change_password_success">Password updated successfully</string>
+    <string name="error_passwords_do_not_match">Passwords do not match</string>
 </resources>

@@ -35,7 +35,9 @@ import dev.saragones3.genogramia.presentation.login.LoginScreen
 import dev.saragones3.genogramia.presentation.login.LoginViewModel
 import dev.saragones3.genogramia.presentation.registration.RegistrationScreen
 import dev.saragones3.genogramia.presentation.registration.RegistrationViewModel
+import dev.saragones3.genogramia.presentation.settings.ChangePasswordScreen
 import dev.saragones3.genogramia.presentation.settings.SettingsScreen
+import dev.saragones3.genogramia.presentation.settings.SettingsViewModel
 import dev.saragones3.genogramia.presentation.splash.SplashScreen
 import dev.saragones3.genogramia.presentation.splash.SplashViewModel
 import dev.saragones3.genogramia.ui.theme.NavigationBarIndicator
@@ -217,7 +219,26 @@ fun AppNavGraph() {
                 }
 
                 is NavRoute.Settings -> {
-                    SettingsScreen()
+                    val viewModel: SettingsViewModel = koinViewModel()
+                    val state by viewModel.state.collectAsState()
+
+                    SettingsScreen(
+                        state = state,
+                        onEvent = viewModel::onEvent,
+                        onChangePasswordClick = {
+                            backStack.push(NavRoute.ChangePassword)
+                        },
+                        onLoggedOut = {
+                            backStack.clear()
+                            backStack.add(NavRoute.GuestHome)
+                        },
+                    )
+                }
+
+                is NavRoute.ChangePassword -> {
+                    ChangePasswordScreen(
+                        onBackClick = { backStack.pop() },
+                    )
                 }
 
                 is NavRoute.Registration -> {
