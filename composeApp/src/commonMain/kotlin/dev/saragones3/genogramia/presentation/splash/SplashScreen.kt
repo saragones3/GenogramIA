@@ -20,8 +20,14 @@ fun SplashScreen(
     LaunchedEffect(uiState) {
         when (uiState) {
             SplashUiState.Loading -> { /* Keep showing splash */ }
-            SplashUiState.NavigateToGuestHome -> onNavigateToGuestHome()
-            SplashUiState.NavigateToAuthenticatedHome -> onNavigateToAuthenticatedHome()
+
+            SplashUiState.NavigateToGuestHome -> {
+                onNavigateToGuestHome()
+            }
+
+            SplashUiState.NavigateToAuthenticatedHome -> {
+                onNavigateToAuthenticatedHome()
+            }
         }
     }
 

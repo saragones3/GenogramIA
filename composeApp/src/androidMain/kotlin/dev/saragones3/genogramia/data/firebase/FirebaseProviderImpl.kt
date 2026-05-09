@@ -3,6 +3,7 @@ package dev.saragones3.genogramia.data.firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.userProfileChangeRequest
+import dev.saragones3.genogramia.data.error.toAuthError
 import kotlinx.coroutines.tasks.await
 
 internal class FirebaseProviderImpl : FirebaseProvider {
@@ -13,33 +14,51 @@ internal class FirebaseProviderImpl : FirebaseProvider {
     override suspend fun createUserWithEmailAndPassword(
         email: String,
         password: String,
-    ): AuthUser {
-        val result = auth.createUserWithEmailAndPassword(email, password).await()
-        return result.user!!.toAuthUser()
-    }
+    ): AuthUser =
+        try {
+            val result = auth.createUserWithEmailAndPassword(email, password).await()
+            result.user!!.toAuthUser()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
 
     override suspend fun signInWithEmailAndPassword(
         email: String,
         password: String,
-    ): AuthUser {
-        val result = auth.signInWithEmailAndPassword(email, password).await()
-        return result.user!!.toAuthUser()
-    }
+    ): AuthUser =
+        try {
+            val result = auth.signInWithEmailAndPassword(email, password).await()
+            result.user!!.toAuthUser()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
 
     override suspend fun sendPasswordResetEmail(email: String) {
-        auth.sendPasswordResetEmail(email).await()
+        try {
+            auth.sendPasswordResetEmail(email).await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
     }
 
     override suspend fun updatePassword(newPassword: String) {
-        auth.currentUser!!.updatePassword(newPassword).await()
+        try {
+            auth.currentUser!!.updatePassword(newPassword).await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
     }
 
     override suspend fun updateProfile(displayName: String?) {
-        val request =
-            userProfileChangeRequest {
-                this.displayName = displayName
-            }
-        auth.currentUser!!.updateProfile(request).await()
+        try {
+            val request =
+                userProfileChangeRequest {
+                    this.displayName = displayName
+                }
+            auth.currentUser!!.updateProfile(request).await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
     }
 
     override suspend fun signOut() {
@@ -47,7 +66,11 @@ internal class FirebaseProviderImpl : FirebaseProvider {
     }
 
     override suspend fun deleteCurrentUser() {
-        auth.currentUser!!.delete().await()
+        try {
+            auth.currentUser!!.delete().await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
     }
 }
 

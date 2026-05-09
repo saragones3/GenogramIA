@@ -6,6 +6,7 @@ import dev.saragones3.genogramia.domain.repository.AuthRepository
 class FakeAuthRepository(
     private var currentUser: User? = null,
     var shouldReturnError: Boolean = false,
+    var errorToReturn: Throwable = Exception("Fake error"),
 ) : AuthRepository {
     override fun getCurrentUser(): User? = currentUser
 
@@ -18,7 +19,7 @@ class FakeAuthRepository(
         password: String,
     ): User {
         if (shouldReturnError) {
-            throw Exception("Fake login error")
+            throw errorToReturn
         }
         val user = User("fake-id", email, "Fake Name")
         currentUser = user
@@ -31,7 +32,7 @@ class FakeAuthRepository(
         password: String,
     ): User {
         if (shouldReturnError) {
-            throw Exception("Fake signup error")
+            throw errorToReturn
         }
         val user = User("fake-id", email, name)
         currentUser = user

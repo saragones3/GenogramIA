@@ -66,11 +66,9 @@ import dev.saragones3.genogramia.ui.theme.Primary
 import dev.saragones3.genogramia.ui.theme.SurfaceContainerHighest
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.app_name
-import genogramia.composeapp.generated.resources.error_email_already_in_use
 import genogramia.composeapp.generated.resources.error_empty_fields
 import genogramia.composeapp.generated.resources.error_invalid_email
 import genogramia.composeapp.generated.resources.error_invalid_password
-import genogramia.composeapp.generated.resources.error_unknown
 import genogramia.composeapp.generated.resources.login_or_continue
 import genogramia.composeapp.generated.resources.registration_already_have_account
 import genogramia.composeapp.generated.resources.registration_apple
@@ -297,18 +295,8 @@ private fun RegistrationForm(
         Spacer(modifier = Modifier.height(32.dp))
 
         if (state.generalError != null) {
-            val isAlreadyInUse =
-                state.generalError.contains(
-                    "ALREADY_IN_USE",
-                    ignoreCase = true,
-                )
             Text(
-                text =
-                    if (isAlreadyInUse) {
-                        stringResource(Res.string.error_email_already_in_use)
-                    } else {
-                        stringResource(Res.string.error_unknown)
-                    },
+                text = stringResource(state.generalError),
                 color = MaterialTheme.colorScheme.error,
                 style = MaterialTheme.typography.bodySmall,
             )
