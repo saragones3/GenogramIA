@@ -120,4 +120,8 @@ class RegistrationViewModel(
         val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[a-z]+$".toRegex()
         return emailRegex.matches(email)
     }
+
+    fun registrationSuccessConsumed() {
+        _state.value = RegistrationState()
+    }
 }

@@ -17,4 +17,5 @@ data class LoginUiState(
 
 enum class LoginError {
     WrongCredentials,
+    UserNotFound,
 }

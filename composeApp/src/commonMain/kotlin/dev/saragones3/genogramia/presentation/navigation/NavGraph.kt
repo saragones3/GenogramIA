@@ -198,6 +198,7 @@ fun AppNavGraph() {
                         onDataChange = viewModel::onDataChange,
                         onLoginClick = viewModel::login,
                         onErrorShown = viewModel::errorShown,
+                        onLoginSuccessConsumed = viewModel::loginSuccessConsumed,
                         onBackClick = { backStack.pop() },
                         onLoginSuccess = {
                             backStack.clear()
@@ -225,6 +226,7 @@ fun AppNavGraph() {
                     SettingsScreen(
                         state = state,
                         onEvent = viewModel::onEvent,
+                        onLogoutConsumed = viewModel::logoutConsumed,
                         onChangePasswordClick = {
                             backStack.push(NavRoute.ChangePassword)
                         },
@@ -248,6 +250,7 @@ fun AppNavGraph() {
                     RegistrationScreen(
                         state = state,
                         onEvent = viewModel::onEvent,
+                        onRegistrationSuccessConsumed = viewModel::registrationSuccessConsumed,
                         onBackClick = { backStack.pop() },
                         onRegistrationSuccess = {
                             backStack.clear()

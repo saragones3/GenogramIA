@@ -41,6 +41,7 @@
     <string name="login_guest_label">Guest access</string>
     <string name="login_create_account_label">Create account</string>
     <string name="error_invalid_credentials">Invalid credentials</string>
+    <string name="error_user_not_found">Account does not exist</string>
     <string name="error_empty_credentials">You must enter an email and password</string>
     
     <!-- Registration -->

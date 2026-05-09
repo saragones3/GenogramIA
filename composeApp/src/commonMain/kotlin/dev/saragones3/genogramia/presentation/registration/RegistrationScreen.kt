@@ -89,12 +89,14 @@ import org.jetbrains.compose.resources.stringResource
 fun RegistrationScreen(
     state: RegistrationState,
     onEvent: (RegistrationEvent) -> Unit,
+    onRegistrationSuccessConsumed: () -> Unit,
     onBackClick: () -> Unit,
     onRegistrationSuccess: () -> Unit,
 ) {
     LaunchedEffect(state.isRegistrationSuccess) {
         if (state.isRegistrationSuccess) {
             onRegistrationSuccess()
+            onRegistrationSuccessConsumed()
         }
     }
 

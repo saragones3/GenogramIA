@@ -41,6 +41,7 @@
     <string name="login_guest_label">Acceso como invitado</string>
     <string name="login_create_account_label">Crear cuenta</string>
     <string name="error_invalid_credentials">Credenciales inválidas</string>
+    <string name="error_user_not_found">La cuenta no existe</string>
     <string name="error_empty_credentials">Debes introducir correo y contraseña</string>
     
     <!-- Registration -->

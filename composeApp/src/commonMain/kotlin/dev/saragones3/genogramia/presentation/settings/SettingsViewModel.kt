@@ -59,4 +59,8 @@ class SettingsViewModel(
             }
         }
     }
+
+    fun logoutConsumed() {
+        _state.update { it.copy(isLoggedOut = false) }
+    }
 }
