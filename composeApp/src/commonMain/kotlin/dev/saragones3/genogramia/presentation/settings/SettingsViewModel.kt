@@ -2,7 +2,6 @@ package dev.saragones3.genogramia.presentation.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.saragones3.genogramia.domain.model.User
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteAccountUseCase
 import dev.saragones3.genogramia.domain.usecase.SignOutUseCase
@@ -60,24 +59,4 @@ class SettingsViewModel(
             }
         }
     }
-}
-
-data class SettingsState(
-    val user: User? = null,
-    val isLoading: Boolean = false,
-    val isLoggedOut: Boolean = false,
-    val showLogoutConfirmation: Boolean = false,
-    val showDeleteConfirmation: Boolean = false,
-)
-
-sealed interface SettingsEvent {
-    data object OnLogOutClicked : SettingsEvent
-
-    data object OnDeleteAccountClicked : SettingsEvent
-
-    data object OnLogoutConfirmed : SettingsEvent
-
-    data object OnDeleteConfirmed : SettingsEvent
-
-    data object OnDismissDialogs : SettingsEvent
 }
