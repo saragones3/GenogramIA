@@ -178,6 +178,7 @@ fun AppNavGraph() {
                         },
                     )
                 }
+
                 is NavRoute.GuestHome -> {
                     GuestHomeScreen(
                         onLoginClick = { backStack.push(NavRoute.Login) },
@@ -185,6 +186,7 @@ fun AppNavGraph() {
                         onCreateTree = {},
                     )
                 }
+
                 is NavRoute.Login -> {
                     val viewModel: LoginViewModel = koinViewModel()
                     val uiState by viewModel.uiState.collectAsState()
@@ -205,15 +207,19 @@ fun AppNavGraph() {
                         onGuestClick = {},
                     )
                 }
+
                 is NavRoute.AuthenticatedHome -> {
                     AuthenticatedHomeScreen()
                 }
+
                 is NavRoute.Legends -> {
                     LegendsScreen()
                 }
+
                 is NavRoute.Settings -> {
                     SettingsScreen()
                 }
+
                 is NavRoute.Registration -> {
                     val viewModel: RegistrationViewModel = koinViewModel()
                     val state by viewModel.state.collectAsState()

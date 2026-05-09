@@ -29,6 +29,7 @@ class SignUpUseCaseTest {
     fun `when signup fails returns failure`() =
         runTest {
             repository.shouldReturnError = true
+            repository.errorToReturn = Exception("Fake signup error")
             val name = "Test User"
             val email = "test@example.com"
             val password = "password123"
