@@ -3,6 +3,7 @@ package dev.saragones3.genogramia.presentation.settings
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.saragones3.genogramia.domain.model.AuthError
+import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.error_invalid_credentials
@@ -15,9 +16,14 @@ import kotlinx.coroutines.launch
 
 class ChangePasswordViewModel(
     private val updatePasswordUseCase: UpdatePasswordUseCase,
+    private val checkSessionUseCase: CheckSessionUseCase,
 ) : ViewModel() {
     private val _state = MutableStateFlow(ChangePasswordState())
     val state: StateFlow<ChangePasswordState> = _state.asStateFlow()
+
+    init {
+        _state.update { it.copy(userEmail = checkSessionUseCase()?.email) }
+    }
 
     fun onDataChange(
         currentPassword: String,

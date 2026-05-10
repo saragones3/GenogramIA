@@ -28,7 +28,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeScreen
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordScreen
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
@@ -50,7 +49,6 @@ import genogramia.composeapp.generated.resources.nav_legends
 import genogramia.composeapp.generated.resources.nav_settings
 import genogramia.composeapp.generated.resources.nav_trees
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -181,7 +179,6 @@ fun AppNavGraph() {
                 is NavRoute.ChangePassword -> {
                     val viewModel: ChangePasswordViewModel = koinViewModel()
                     val state by viewModel.state.collectAsState()
-                    val authRepository: AuthRepository = koinInject()
 
                     ChangePasswordScreen(
                         state = state,
@@ -191,8 +188,7 @@ fun AppNavGraph() {
                         onDispose = viewModel::clearData,
                         onBackClick = { backStack.pop() },
                         onForgotPasswordClick = {
-                            val email = authRepository.getCurrentUser()?.email
-                            backStack.push(NavRoute.ForgotPassword(email))
+                            backStack.push(NavRoute.ForgotPassword(state.userEmail))
                         },
                     )
                 }
