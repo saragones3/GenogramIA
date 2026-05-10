@@ -22,6 +22,12 @@ interface FirebaseAuthDelegate {
         onError: (message: String) -> Unit,
     )
 
+    fun reauthenticate(
+        password: String,
+        onSuccess: () -> Unit,
+        onError: (message: String) -> Unit,
+    )
+
     fun createUserWithEmail(
         email: String,
         password: String,

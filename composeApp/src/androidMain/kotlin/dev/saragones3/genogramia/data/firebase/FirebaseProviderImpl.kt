@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.data.firebase
 
+import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.userProfileChangeRequest
@@ -32,6 +33,17 @@ internal class FirebaseProviderImpl : FirebaseProvider {
         } catch (e: Exception) {
             throw e.toAuthError()
         }
+
+    override suspend fun reauthenticate(password: String) {
+        try {
+            val user = auth.currentUser ?: return
+            val email = user.email ?: return
+            val credential = EmailAuthProvider.getCredential(email, password)
+            user.reauthenticate(credential).await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
+    }
 
     override suspend fun sendPasswordResetEmail(email: String) {
         try {

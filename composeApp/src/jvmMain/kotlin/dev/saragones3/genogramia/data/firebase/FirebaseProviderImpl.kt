@@ -44,6 +44,10 @@ internal class FirebaseProviderImpl : FirebaseProvider {
         return user
     }
 
+    override suspend fun reauthenticate(password: String) {
+        delay(300)
+    }
+
     override suspend fun sendPasswordResetEmail(email: String) {
         delay(500)
     }

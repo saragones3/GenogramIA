@@ -13,6 +13,7 @@ import dev.saragones3.genogramia.presentation.guesthome.GuestHomeViewModel
 import dev.saragones3.genogramia.presentation.legends.LegendsViewModel
 import dev.saragones3.genogramia.presentation.login.LoginViewModel
 import dev.saragones3.genogramia.presentation.registration.RegistrationViewModel
+import dev.saragones3.genogramia.presentation.settings.ChangePasswordViewModel
 import dev.saragones3.genogramia.presentation.settings.SettingsViewModel
 import dev.saragones3.genogramia.presentation.splash.SplashViewModel
 import org.koin.core.module.Module
@@ -44,6 +45,7 @@ private val appModule =
         viewModelOf(::LoginViewModel)
         viewModelOf(::RegistrationViewModel)
         viewModelOf(::SettingsViewModel)
+        viewModelOf(::ChangePasswordViewModel)
     }
 
 fun getSharedModules(): List<Module> =

@@ -16,6 +16,8 @@ interface FirebaseProvider {
         password: String,
     ): AuthUser
 
+    suspend fun reauthenticate(password: String)
+
     suspend fun sendPasswordResetEmail(email: String)
 
     suspend fun updatePassword(newPassword: String)

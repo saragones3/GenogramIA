@@ -2,6 +2,7 @@ package dev.saragones3.genogramia.presentation.login
 
 import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.AuthError
+import dev.saragones3.genogramia.domain.usecase.SignInUseCase
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -21,13 +22,15 @@ import kotlin.test.assertTrue
 class LoginViewModelTest {
     private lateinit var viewModel: LoginViewModel
     private lateinit var fakeAuthRepository: FakeAuthRepository
+    private lateinit var signInUseCase: SignInUseCase
     private val testDispatcher = StandardTestDispatcher()
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
         fakeAuthRepository = FakeAuthRepository()
-        viewModel = LoginViewModel(fakeAuthRepository)
+        signInUseCase = SignInUseCase(fakeAuthRepository)
+        viewModel = LoginViewModel(signInUseCase)
     }
 
     @AfterTest

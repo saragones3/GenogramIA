@@ -43,11 +43,19 @@ class FakeAuthRepository(
         currentUser = null
     }
 
+    override suspend fun reauthenticate(password: String) {
+        if (shouldReturnError) {
+            throw errorToReturn
+        }
+    }
+
     override suspend fun deleteAccount() {
         currentUser = null
     }
 
     override suspend fun updatePassword(newPassword: String) {
-        // No-op for fake
+        if (shouldReturnError) {
+            throw errorToReturn
+        }
     }
 }

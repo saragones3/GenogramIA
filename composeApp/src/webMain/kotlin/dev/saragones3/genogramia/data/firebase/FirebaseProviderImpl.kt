@@ -41,6 +41,16 @@ internal class FirebaseProviderImpl : FirebaseProvider {
             throw e.toAuthError()
         }
 
+    override suspend fun reauthenticate(password: String) {
+        try {
+            val user = getCurrentUserJs() ?: throw Exception("No authenticated user")
+            val email = user.email ?: throw Exception("User has no email")
+            reauthenticateJs(user, email, password).await()
+        } catch (e: Exception) {
+            throw e.toAuthError()
+        }
+    }
+
     override suspend fun sendPasswordResetEmail(email: String) {
         try {
             sendPasswordResetJs(getAuthJs(), email).await()
@@ -111,6 +121,15 @@ external fun signInEmailJs(
     email: String,
     pass: String,
 ): Promise<JsAuthResult>
+
+@JsFun(
+    "(user, email, pass) => { const cred = window.firebaseAuthModule.EmailAuthProvider.credential(email, pass); return window.firebaseAuthModule.reauthenticateWithCredential(user, cred); }",
+)
+external fun reauthenticateJs(
+    user: JsAuthUser,
+    email: String,
+    pass: String,
+): Promise<JsAny?>
 
 @JsFun("(auth, email) => window.firebaseAuthModule.sendPasswordResetEmail(auth, email)")
 external fun sendPasswordResetJs(
