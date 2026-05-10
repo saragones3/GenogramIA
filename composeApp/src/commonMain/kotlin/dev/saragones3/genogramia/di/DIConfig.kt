@@ -4,11 +4,13 @@ import dev.saragones3.genogramia.data.repository.AuthRepositoryImpl
 import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteAccountUseCase
+import dev.saragones3.genogramia.domain.usecase.SendPasswordResetEmailUseCase
 import dev.saragones3.genogramia.domain.usecase.SignInUseCase
 import dev.saragones3.genogramia.domain.usecase.SignOutUseCase
 import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeViewModel
+import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
 import dev.saragones3.genogramia.presentation.guesthome.GuestHomeViewModel
 import dev.saragones3.genogramia.presentation.legends.LegendsViewModel
 import dev.saragones3.genogramia.presentation.login.LoginViewModel
@@ -34,6 +36,7 @@ private val domainModule =
         factoryOf(::SignOutUseCase)
         factoryOf(::DeleteAccountUseCase)
         factoryOf(::UpdatePasswordUseCase)
+        factoryOf(::SendPasswordResetEmailUseCase)
     }
 
 private val appModule =
@@ -46,6 +49,7 @@ private val appModule =
         viewModelOf(::RegistrationViewModel)
         viewModelOf(::SettingsViewModel)
         viewModelOf(::ChangePasswordViewModel)
+        viewModelOf(::ForgotPasswordViewModel)
     }
 
 fun getSharedModules(): List<Module> =

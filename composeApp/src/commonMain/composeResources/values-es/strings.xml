@@ -92,9 +92,19 @@
     <string name="change_password_data_protection_title">Protección de Datos</string>
     <string name="change_password_data_protection_desc">Usa al menos 8 caracteres para una mayor seguridad.</string>
     <string name="change_password_new_label">NUEVA CONTRASEÑA</string>
+    <string name="change_password_current_label">CONTRASEÑA ACTUAL</string>
     <string name="change_password_confirm_label">CONFIRMAR NUEVA CONTRASEÑA</string>
     <string name="change_password_forgot">¿HAS OLVIDADO TU CONTRASEÑA?</string>
     <string name="change_password_save">Guardar Contraseña</string>
     <string name="change_password_success">Contraseña actualizada con éxito</string>
     <string name="error_passwords_do_not_match">Las contraseñas no coinciden</string>
+
+    <!-- Forgot Password -->
+    <string name="forgot_password_title">Restablecer Contraseña</string>
+    <string name="forgot_password_subtitle">Introduce tu correo y te enviaremos las instrucciones para restablecer tu contraseña.</string>
+    <string name="forgot_password_email_label">CORREO ELECTRÓNICO</string>
+    <string name="forgot_password_email_hint">tu@correo.com</string>
+    <string name="forgot_password_button">Enviar Enlace</string>
+    <string name="forgot_password_success_message">Se ha enviado un enlace a tu correo.</string>
+    <string name="forgot_password_back_to_login">Volver al Inicio de Sesión</string>
 </resources>

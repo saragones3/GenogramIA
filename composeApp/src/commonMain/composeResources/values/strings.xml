@@ -98,4 +98,13 @@
     <string name="change_password_save">Save Password</string>
     <string name="change_password_success">Password updated successfully</string>
     <string name="error_passwords_do_not_match">Passwords do not match</string>
+
+    <!-- Forgot Password -->
+    <string name="forgot_password_title">Reset Password</string>
+    <string name="forgot_password_subtitle">Enter your email and we\'ll send you instructions to reset your password.</string>
+    <string name="forgot_password_email_label">EMAIL ADDRESS</string>
+    <string name="forgot_password_email_hint">you@email.com</string>
+    <string name="forgot_password_button">Send Reset Link</string>
+    <string name="forgot_password_success_message">A reset link has been sent to your email.</string>
+    <string name="forgot_password_back_to_login">Back to Login</string>
 </resources>

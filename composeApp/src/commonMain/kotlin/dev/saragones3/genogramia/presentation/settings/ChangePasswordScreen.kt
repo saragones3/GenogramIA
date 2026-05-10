@@ -87,6 +87,7 @@ fun ChangePasswordScreen(
     onSuccessConsumed: () -> Unit,
     onDispose: () -> Unit,
     onBackClick: () -> Unit,
+    onForgotPasswordClick: () -> Unit,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
     val successMessage = stringResource(Res.string.change_password_success)
@@ -110,6 +111,7 @@ fun ChangePasswordScreen(
         onDataChange = onDataChange,
         onSaveClick = onSaveClick,
         onBackClick = onBackClick,
+        onForgotPasswordClick = onForgotPasswordClick,
     )
 }
 
@@ -121,6 +123,7 @@ private fun ChangePasswordContent(
     onDataChange: (String, String, String) -> Unit,
     onSaveClick: () -> Unit,
     onBackClick: () -> Unit,
+    onForgotPasswordClick: () -> Unit,
 ) {
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,
@@ -235,7 +238,7 @@ private fun ChangePasswordContent(
                 Spacer(modifier = Modifier.height(16.dp))
 
                 TextButton(
-                    onClick = { /* TODO: US-005 */ },
+                    onClick = onForgotPasswordClick,
                     modifier = Modifier.align(Alignment.End),
                 ) {
                     Text(
@@ -422,6 +425,7 @@ private fun ChangePasswordScreenPreview() {
             onDataChange = { _, _, _ -> },
             onSaveClick = {},
             onBackClick = {},
+            onForgotPasswordClick = {},
         )
     }
 }

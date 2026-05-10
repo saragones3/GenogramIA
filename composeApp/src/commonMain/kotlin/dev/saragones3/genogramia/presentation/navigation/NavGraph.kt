@@ -28,7 +28,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeScreen
+import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordScreen
+import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
 import dev.saragones3.genogramia.presentation.guesthome.GuestHomeScreen
 import dev.saragones3.genogramia.presentation.legends.LegendsScreen
 import dev.saragones3.genogramia.presentation.login.LoginScreen
@@ -47,6 +50,7 @@ import genogramia.composeapp.generated.resources.nav_legends
 import genogramia.composeapp.generated.resources.nav_settings
 import genogramia.composeapp.generated.resources.nav_trees
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -130,7 +134,25 @@ fun AppNavGraph() {
                         onRegisterClick = {
                             backStack.push(NavRoute.Registration)
                         },
+                        onForgotPasswordClick = {
+                            backStack.push(NavRoute.ForgotPassword())
+                        },
                         onGuestClick = {},
+                    )
+                }
+
+                is NavRoute.ForgotPassword -> {
+                    val viewModel: ForgotPasswordViewModel = koinViewModel()
+                    val state by viewModel.state.collectAsState()
+
+                    ForgotPasswordScreen(
+                        state = state,
+                        initialEmail = key.email,
+                        onEmailChange = viewModel::onEmailChange,
+                        onSendClick = viewModel::sendResetEmail,
+                        onSuccessConsumed = viewModel::successConsumed,
+                        onErrorShown = viewModel::errorShown,
+                        onBackClick = { backStack.pop() },
                     )
                 }
 
@@ -163,6 +185,7 @@ fun AppNavGraph() {
                 is NavRoute.ChangePassword -> {
                     val viewModel: ChangePasswordViewModel = koinViewModel()
                     val state by viewModel.state.collectAsState()
+                    val authRepository: AuthRepository = koinInject()
 
                     ChangePasswordScreen(
                         state = state,
@@ -171,6 +194,10 @@ fun AppNavGraph() {
                         onSuccessConsumed = viewModel::successConsumed,
                         onDispose = viewModel::clearData,
                         onBackClick = { backStack.pop() },
+                        onForgotPasswordClick = {
+                            val email = authRepository.getCurrentUser()?.email
+                            backStack.push(NavRoute.ForgotPassword(email))
+                        },
                     )
                 }
 
