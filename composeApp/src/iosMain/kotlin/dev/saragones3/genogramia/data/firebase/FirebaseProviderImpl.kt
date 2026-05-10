@@ -42,6 +42,15 @@ internal class FirebaseProviderImpl(
             )
         }
 
+    override suspend fun reauthenticate(password: String): Unit =
+        suspendCancellableCoroutine { cont ->
+            delegate.reauthenticate(
+                password = password,
+                onSuccess = { cont.resumeWith(Result.success(Unit)) },
+                onError = { msg -> cont.resumeWithException(Exception(msg).toAuthError()) },
+            )
+        }
+
     override suspend fun sendPasswordResetEmail(email: String): Unit =
         suspendCancellableCoroutine { cont ->
             delegate.sendPasswordResetEmail(

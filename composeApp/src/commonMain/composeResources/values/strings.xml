@@ -92,6 +92,7 @@
     <string name="change_password_data_protection_title">Data Protection</string>
     <string name="change_password_data_protection_desc">Use at least 8 characters for enhanced security.</string>
     <string name="change_password_new_label">NEW PASSWORD</string>
+    <string name="change_password_current_label">CURRENT PASSWORD</string>
     <string name="change_password_confirm_label">CONFIRM NEW PASSWORD</string>
     <string name="change_password_forgot">FORGOT YOUR PASSWORD?</string>
     <string name="change_password_save">Save Password</string>

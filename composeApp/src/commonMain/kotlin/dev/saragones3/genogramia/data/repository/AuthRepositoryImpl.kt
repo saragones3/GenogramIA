@@ -32,6 +32,10 @@ internal class AuthRepositoryImpl(
         firebaseProvider.signOut()
     }
 
+    override suspend fun reauthenticate(password: String) {
+        firebaseProvider.reauthenticate(password)
+    }
+
     override suspend fun deleteAccount() {
         firebaseProvider.deleteCurrentUser()
     }

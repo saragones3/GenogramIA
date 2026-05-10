@@ -66,6 +66,7 @@ import dev.saragones3.genogramia.ui.theme.SurfaceContainerHighest
 import dev.saragones3.genogramia.ui.theme.SurfaceContainerLow
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.change_password_confirm_label
+import genogramia.composeapp.generated.resources.change_password_current_label
 import genogramia.composeapp.generated.resources.change_password_data_protection_desc
 import genogramia.composeapp.generated.resources.change_password_data_protection_title
 import genogramia.composeapp.generated.resources.change_password_forgot
@@ -80,7 +81,7 @@ import org.jetbrains.compose.resources.stringResource
 @Composable
 fun ChangePasswordScreen(
     state: ChangePasswordState,
-    onDataChange: (String, String) -> Unit,
+    onDataChange: (String, String, String) -> Unit,
     onSaveClick: () -> Unit,
     onSuccessConsumed: () -> Unit,
     onBackClick: () -> Unit,
@@ -109,7 +110,7 @@ fun ChangePasswordScreen(
 private fun ChangePasswordContent(
     state: ChangePasswordState,
     snackbarHostState: SnackbarHostState,
-    onDataChange: (String, String) -> Unit,
+    onDataChange: (String, String, String) -> Unit,
     onSaveClick: () -> Unit,
     onBackClick: () -> Unit,
 ) {
@@ -183,11 +184,25 @@ private fun ChangePasswordContent(
             Column(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp),
             ) {
+                var currentPasswordVisible by remember { mutableStateOf(false) }
+                PasswordField(
+                    label = stringResource(Res.string.change_password_current_label),
+                    value = state.currentPassword,
+                    onValueChange = { onDataChange(it, state.newPassword, state.confirmPassword) },
+                    isVisible = currentPasswordVisible,
+                    onToggleVisibility = { currentPasswordVisible = !currentPasswordVisible },
+                    trailingIcon = Icons.Default.Lock,
+                    error = state.currentPasswordError?.message?.let { stringResource(it) },
+                    imeAction = ImeAction.Next,
+                )
+
+                Spacer(modifier = Modifier.height(32.dp))
+
                 var newPasswordVisible by remember { mutableStateOf(false) }
                 PasswordField(
                     label = stringResource(Res.string.change_password_new_label),
                     value = state.newPassword,
-                    onValueChange = { onDataChange(it, state.confirmPassword) },
+                    onValueChange = { onDataChange(state.currentPassword, it, state.confirmPassword) },
                     isVisible = newPasswordVisible,
                     onToggleVisibility = { newPasswordVisible = !newPasswordVisible },
                     trailingIcon = Icons.Default.Lock,
@@ -201,7 +216,7 @@ private fun ChangePasswordContent(
                 PasswordField(
                     label = stringResource(Res.string.change_password_confirm_label),
                     value = state.confirmPassword,
-                    onValueChange = { onDataChange(state.newPassword, it) },
+                    onValueChange = { onDataChange(state.currentPassword, state.newPassword, it) },
                     isVisible = confirmPasswordVisible,
                     onToggleVisibility = { confirmPasswordVisible = !confirmPasswordVisible },
                     trailingIcon = Icons.Default.CheckCircle,
@@ -396,7 +411,7 @@ private fun ChangePasswordScreenPreview() {
         ChangePasswordContent(
             state = ChangePasswordState(),
             snackbarHostState = remember { SnackbarHostState() },
-            onDataChange = { _, _ -> },
+            onDataChange = { _, _, _ -> },
             onSaveClick = {},
             onBackClick = {},
         )

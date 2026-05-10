@@ -40,8 +40,10 @@ class ChangePasswordViewModelTest {
     fun `initial state is empty`() =
         runTest {
             val state = viewModel.state.value
+            assertEquals("", state.currentPassword)
             assertEquals("", state.newPassword)
             assertEquals("", state.confirmPassword)
+            assertNull(state.currentPasswordError)
             assertNull(state.passwordError)
             assertNull(state.confirmError)
         }
@@ -52,6 +54,7 @@ class ChangePasswordViewModelTest {
             viewModel.savePassword()
 
             val state = viewModel.state.value
+            assertEquals(ChangePasswordState.ValidationError.EMPTY, state.currentPasswordError)
             assertEquals(ChangePasswordState.ValidationError.EMPTY, state.passwordError)
             assertEquals(ChangePasswordState.ValidationError.EMPTY, state.confirmError)
         }
@@ -59,7 +62,7 @@ class ChangePasswordViewModelTest {
     @Test
     fun `when passwords do not match validation fails`() =
         runTest {
-            viewModel.onDataChange("password123", "password321")
+            viewModel.onDataChange("oldPass", "password123", "password321")
             viewModel.savePassword()
 
             val state = viewModel.state.value
@@ -70,7 +73,7 @@ class ChangePasswordViewModelTest {
     @Test
     fun `when password is too short validation fails`() =
         runTest {
-            viewModel.onDataChange("short", "short")
+            viewModel.onDataChange("oldPass", "short", "short")
             viewModel.savePassword()
 
             val state = viewModel.state.value
@@ -81,7 +84,7 @@ class ChangePasswordViewModelTest {
     @Test
     fun `when update is successful success state is true`() =
         runTest {
-            viewModel.onDataChange("newPassword123", "newPassword123")
+            viewModel.onDataChange("oldPass", "newPassword123", "newPassword123")
 
             viewModel.state.test {
                 viewModel.savePassword()
@@ -106,7 +109,7 @@ class ChangePasswordViewModelTest {
     fun `when update fails general error is updated`() =
         runTest {
             repository.shouldReturnError = true
-            viewModel.onDataChange("newPassword123", "newPassword123")
+            viewModel.onDataChange("oldPass", "newPassword123", "newPassword123")
 
             viewModel.savePassword()
             testDispatcher.scheduler.advanceUntilIdle()
@@ -119,7 +122,7 @@ class ChangePasswordViewModelTest {
     @Test
     fun `successConsumed resets success state`() =
         runTest {
-            viewModel.onDataChange("newPassword123", "newPassword123")
+            viewModel.onDataChange("oldPass", "newPassword123", "newPassword123")
             viewModel.savePassword()
             testDispatcher.scheduler.advanceUntilIdle()
 

@@ -7,10 +7,12 @@ import genogramia.composeapp.generated.resources.error_passwords_do_not_match
 import org.jetbrains.compose.resources.StringResource
 
 data class ChangePasswordState(
+    val currentPassword: String = "",
     val newPassword: String = "",
     val confirmPassword: String = "",
     val isLoading: Boolean = false,
     val isSuccess: Boolean = false,
+    val currentPasswordError: ValidationError? = null,
     val passwordError: ValidationError? = null,
     val confirmError: ValidationError? = null,
     val generalError: StringResource? = null,

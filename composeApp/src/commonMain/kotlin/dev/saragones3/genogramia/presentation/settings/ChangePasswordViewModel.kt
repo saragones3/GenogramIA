@@ -2,8 +2,10 @@ package dev.saragones3.genogramia.presentation.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dev.saragones3.genogramia.domain.model.AuthError
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
 import genogramia.composeapp.generated.resources.Res
+import genogramia.composeapp.generated.resources.error_invalid_credentials
 import genogramia.composeapp.generated.resources.error_unknown
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -18,13 +20,16 @@ class ChangePasswordViewModel(
     val state: StateFlow<ChangePasswordState> = _state.asStateFlow()
 
     fun onDataChange(
+        currentPassword: String,
         newPassword: String,
         confirmPassword: String,
     ) {
         _state.update {
             it.copy(
+                currentPassword = currentPassword,
                 newPassword = newPassword,
                 confirmPassword = confirmPassword,
+                currentPasswordError = null,
                 passwordError = null,
                 confirmError = null,
                 generalError = null,
@@ -34,6 +39,13 @@ class ChangePasswordViewModel(
 
     fun savePassword() {
         val current = _state.value
+
+        val currentPasswordError =
+            when {
+                current.currentPassword.isBlank() -> ChangePasswordState.ValidationError.EMPTY
+                else -> null
+            }
+
         val passwordError =
             when {
                 current.newPassword.isBlank() -> ChangePasswordState.ValidationError.EMPTY
@@ -48,18 +60,29 @@ class ChangePasswordViewModel(
                 else -> null
             }
 
-        if (passwordError != null || confirmError != null) {
-            _state.update { it.copy(passwordError = passwordError, confirmError = confirmError) }
+        if (currentPasswordError != null || passwordError != null || confirmError != null) {
+            _state.update {
+                it.copy(
+                    currentPasswordError = currentPasswordError,
+                    passwordError = passwordError,
+                    confirmError = confirmError,
+                )
+            }
             return
         }
 
         _state.update { it.copy(isLoading = true) }
         viewModelScope.launch {
             try {
-                updatePasswordUseCase(current.newPassword)
+                updatePasswordUseCase(current.currentPassword, current.newPassword)
                 _state.update { it.copy(isLoading = false, isSuccess = true) }
             } catch (e: Exception) {
-                _state.update { it.copy(isLoading = false, generalError = Res.string.error_unknown) }
+                val errorRes =
+                    when (e) {
+                        is AuthError.WrongPassword -> Res.string.error_invalid_credentials
+                        else -> Res.string.error_unknown
+                    }
+                _state.update { it.copy(isLoading = false, generalError = errorRes) }
             }
         }
     }

@@ -11,5 +11,7 @@ sealed class AuthError : Exception() {
 
     data object WrongPassword : AuthError()
 
+    data object RequiresRecentLogin : AuthError()
+
     data object Unknown : AuthError()
 }
