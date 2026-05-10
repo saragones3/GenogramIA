@@ -122,7 +122,9 @@ external fun signInEmailJs(
     pass: String,
 ): Promise<JsAuthResult>
 
-@JsFun("(user, email, pass) => { const cred = window.firebaseAuthModule.EmailAuthProvider.credential(email, pass); return window.firebaseAuthModule.reauthenticateWithCredential(user, cred); }")
+@JsFun(
+    "(user, email, pass) => { const cred = window.firebaseAuthModule.EmailAuthProvider.credential(email, pass); return window.firebaseAuthModule.reauthenticateWithCredential(user, cred); }",
+)
 external fun reauthenticateJs(
     user: JsAuthUser,
     email: String,
