@@ -87,8 +87,13 @@
 
     <!-- Change Password -->
     <string name="change_password_title">Change Password</string>
+    <string name="change_password_settings">Settings</string>
+    <string name="change_password_subtitle">Update your credentials to keep your family archive safe and protected.</string>
+    <string name="change_password_data_protection_title">Data Protection</string>
+    <string name="change_password_data_protection_desc">Use at least 8 characters for enhanced security.</string>
     <string name="change_password_new_label">NEW PASSWORD</string>
     <string name="change_password_confirm_label">CONFIRM NEW PASSWORD</string>
+    <string name="change_password_forgot">FORGOT YOUR PASSWORD?</string>
     <string name="change_password_save">Save Password</string>
     <string name="change_password_success">Password updated successfully</string>
     <string name="error_passwords_do_not_match">Passwords do not match</string>

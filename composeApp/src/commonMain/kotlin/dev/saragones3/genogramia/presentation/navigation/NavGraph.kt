@@ -36,6 +36,7 @@ import dev.saragones3.genogramia.presentation.login.LoginViewModel
 import dev.saragones3.genogramia.presentation.registration.RegistrationScreen
 import dev.saragones3.genogramia.presentation.registration.RegistrationViewModel
 import dev.saragones3.genogramia.presentation.settings.ChangePasswordScreen
+import dev.saragones3.genogramia.presentation.settings.ChangePasswordViewModel
 import dev.saragones3.genogramia.presentation.settings.SettingsScreen
 import dev.saragones3.genogramia.presentation.settings.SettingsViewModel
 import dev.saragones3.genogramia.presentation.splash.SplashScreen
@@ -64,98 +65,20 @@ fun AppNavGraph() {
     Scaffold(
         bottomBar = {
             if (showBottomBar) {
-                NavigationBar(
-                    modifier = Modifier.clip(RoundedCornerShape(topStart = 28.dp, topEnd = 28.dp)),
-                    containerColor = Color.White,
-                    tonalElevation = 0.dp,
-                ) {
-                    val rootRoute = if (isGuestMode) NavRoute.GuestHome else NavRoute.AuthenticatedHome
-
-                    val itemColors =
-                        NavigationBarItemDefaults.colors(
-                            selectedIconColor = MaterialTheme.colorScheme.primary,
-                            selectedTextColor = MaterialTheme.colorScheme.primary,
-                            indicatorColor = NavigationBarIndicator,
-                            unselectedIconColor = Color.Gray,
-                            unselectedTextColor = Color.Gray,
-                        )
-
-                    NavigationBarItem(
-                        selected = currentRoute is NavRoute.GuestHome || currentRoute is NavRoute.AuthenticatedHome,
-                        onClick = {
-                            if (currentRoute != rootRoute) {
-                                backStack.clear()
-                                backStack.add(rootRoute)
+                AppBottomBar(
+                    currentRoute = currentRoute,
+                    isGuestMode = isGuestMode,
+                    onNavigate = { route ->
+                        if (currentRoute != route) {
+                            backStack.clear()
+                            if (route is NavRoute.Legends || route is NavRoute.Settings) {
+                                val root = if (isGuestMode) NavRoute.GuestHome else NavRoute.AuthenticatedHome
+                                backStack.add(root)
                             }
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Default.AccountTree,
-                                contentDescription = null,
-                            )
-                        },
-                        label = {
-                            Text(
-                                text = stringResource(Res.string.nav_trees),
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Bold,
-                            )
-                        },
-                        colors = itemColors,
-                    )
-
-                    NavigationBarItem(
-                        selected = currentRoute is NavRoute.Legends,
-                        onClick = {
-                            if (currentRoute !is NavRoute.Legends) {
-                                backStack.clear()
-                                backStack.add(rootRoute)
-                                backStack.add(NavRoute.Legends)
-                            }
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Default.AutoStories,
-                                contentDescription = null,
-                            )
-                        },
-                        label = {
-                            Text(
-                                text = stringResource(Res.string.nav_legends),
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Bold,
-                            )
-                        },
-                        colors = itemColors,
-                    )
-
-                    if (!isGuestMode) {
-                        NavigationBarItem(
-                            selected = currentRoute is NavRoute.Settings,
-                            onClick = {
-                                if (currentRoute !is NavRoute.Settings) {
-                                    backStack.clear()
-                                    backStack.add(rootRoute)
-                                    backStack.add(NavRoute.Settings)
-                                }
-                            },
-                            icon = {
-                                Icon(
-                                    imageVector = Icons.Default.Settings,
-                                    contentDescription = null,
-                                )
-                            },
-                            label = {
-                                Text(
-                                    text = stringResource(Res.string.nav_settings),
-                                    fontSize = 10.sp,
-                                    fontWeight = FontWeight.Bold,
-                                )
-                            },
-                            colors = itemColors,
-                        )
-                    }
-                }
+                            backStack.add(route)
+                        }
+                    },
+                )
             }
         },
     ) { padding ->
@@ -238,7 +161,14 @@ fun AppNavGraph() {
                 }
 
                 is NavRoute.ChangePassword -> {
+                    val viewModel: ChangePasswordViewModel = koinViewModel()
+                    val state by viewModel.state.collectAsState()
+
                     ChangePasswordScreen(
+                        state = state,
+                        onDataChange = viewModel::onDataChange,
+                        onSaveClick = viewModel::savePassword,
+                        onSuccessConsumed = viewModel::successConsumed,
                         onBackClick = { backStack.pop() },
                     )
                 }
@@ -259,6 +189,89 @@ fun AppNavGraph() {
                     )
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun AppBottomBar(
+    currentRoute: NavRoute,
+    isGuestMode: Boolean,
+    onNavigate: (NavRoute) -> Unit,
+) {
+    NavigationBar(
+        modifier = Modifier.clip(RoundedCornerShape(topStart = 28.dp, topEnd = 28.dp)),
+        containerColor = Color.White,
+        tonalElevation = 0.dp,
+    ) {
+        val rootRoute = if (isGuestMode) NavRoute.GuestHome else NavRoute.AuthenticatedHome
+
+        val itemColors =
+            NavigationBarItemDefaults.colors(
+                selectedIconColor = MaterialTheme.colorScheme.primary,
+                selectedTextColor = MaterialTheme.colorScheme.primary,
+                indicatorColor = NavigationBarIndicator,
+                unselectedIconColor = Color.Gray,
+                unselectedTextColor = Color.Gray,
+            )
+
+        NavigationBarItem(
+            selected = currentRoute is NavRoute.GuestHome || currentRoute is NavRoute.AuthenticatedHome,
+            onClick = { onNavigate(rootRoute) },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.AccountTree,
+                    contentDescription = null,
+                )
+            },
+            label = {
+                Text(
+                    text = stringResource(Res.string.nav_trees),
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Bold,
+                )
+            },
+            colors = itemColors,
+        )
+
+        NavigationBarItem(
+            selected = currentRoute is NavRoute.Legends,
+            onClick = { onNavigate(NavRoute.Legends) },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.AutoStories,
+                    contentDescription = null,
+                )
+            },
+            label = {
+                Text(
+                    text = stringResource(Res.string.nav_legends),
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Bold,
+                )
+            },
+            colors = itemColors,
+        )
+
+        if (!isGuestMode) {
+            NavigationBarItem(
+                selected = currentRoute is NavRoute.Settings || currentRoute is NavRoute.ChangePassword,
+                onClick = { onNavigate(NavRoute.Settings) },
+                icon = {
+                    Icon(
+                        imageVector = Icons.Default.Settings,
+                        contentDescription = null,
+                    )
+                },
+                label = {
+                    Text(
+                        text = stringResource(Res.string.nav_settings),
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+                },
+                colors = itemColors,
+            )
         }
     }
 }

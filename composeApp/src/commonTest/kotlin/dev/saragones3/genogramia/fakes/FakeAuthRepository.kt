@@ -48,6 +48,8 @@ class FakeAuthRepository(
     }
 
     override suspend fun updatePassword(newPassword: String) {
-        // No-op for fake
+        if (shouldReturnError) {
+            throw errorToReturn
+        }
     }
 }

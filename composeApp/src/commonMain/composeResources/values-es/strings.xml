@@ -87,8 +87,13 @@
 
     <!-- Change Password -->
     <string name="change_password_title">Cambiar Contraseña</string>
+    <string name="change_password_settings">Ajustes</string>
+    <string name="change_password_subtitle">Actualiza tus credenciales para mantener tu archivo familiar seguro y protegido.</string>
+    <string name="change_password_data_protection_title">Protección de Datos</string>
+    <string name="change_password_data_protection_desc">Usa al menos 8 caracteres para una mayor seguridad.</string>
     <string name="change_password_new_label">NUEVA CONTRASEÑA</string>
     <string name="change_password_confirm_label">CONFIRMAR NUEVA CONTRASEÑA</string>
+    <string name="change_password_forgot">¿HAS OLVIDADO TU CONTRASEÑA?</string>
     <string name="change_password_save">Guardar Contraseña</string>
     <string name="change_password_success">Contraseña actualizada con éxito</string>
     <string name="error_passwords_do_not_match">Las contraseñas no coinciden</string>
