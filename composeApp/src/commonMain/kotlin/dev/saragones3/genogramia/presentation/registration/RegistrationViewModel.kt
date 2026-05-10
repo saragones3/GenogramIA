@@ -41,6 +41,18 @@ class RegistrationViewModel(
             is RegistrationEvent.OnSignUpClicked -> {
                 signUp()
             }
+
+            RegistrationEvent.OnGoogleSignUpClicked -> {
+                // TODO: Implement Google Sign Up
+            }
+
+            RegistrationEvent.OnAppleSignUpClicked -> {
+                // TODO: Implement Apple Sign Up
+            }
+
+            RegistrationEvent.OnRegistrationSuccessConsumed -> {
+                _state.value = RegistrationState()
+            }
         }
     }
 
@@ -119,9 +131,5 @@ class RegistrationViewModel(
     private fun isValidEmail(email: String): Boolean {
         val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[a-z]+$".toRegex()
         return emailRegex.matches(email)
-    }
-
-    fun registrationSuccessConsumed() {
-        _state.value = RegistrationState()
     }
 }

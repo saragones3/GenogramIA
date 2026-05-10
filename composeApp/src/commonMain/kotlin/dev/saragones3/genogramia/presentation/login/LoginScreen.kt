@@ -535,7 +535,7 @@ private fun SoftTextField(
             if (isError) {
                 {
                     Text(
-                        text = errorText!!,
+                        text = errorText,
                         color = MaterialTheme.colorScheme.error,
                         style = MaterialTheme.typography.labelSmall,
                     )
@@ -552,7 +552,7 @@ private fun SoftTextField(
 
 @Composable
 @Preview
-fun LoginScreenPreview() {
+private fun LoginScreenPreview() {
     GenogramiaTheme {
         LoginContent(
             uiState = LoginUiState(),

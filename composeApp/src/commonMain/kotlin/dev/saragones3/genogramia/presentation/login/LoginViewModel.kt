@@ -44,22 +44,7 @@ class LoginViewModel(
         }
     }
 
-    private fun onDataChange(
-        email: String,
-        password: String,
-    ) {
-        _uiState.update {
-            it.copy(
-                email = email,
-                password = password,
-                emailError = if (it.email != email) null else it.emailError,
-                passwordError = if (it.password != password) null else it.passwordError,
-                generalError = null,
-            )
-        }
-    }
-
-    fun login() {
+    private fun login() {
         val email = _uiState.value.email.trim()
         val password = _uiState.value.password
 
@@ -81,6 +66,29 @@ class LoginViewModel(
                     _uiState.update { it.copy(isLoading = false, generalError = loginError) }
                 }
         }
+    }
+
+    private fun onDataChange(
+        email: String,
+        password: String,
+    ) {
+        _uiState.update {
+            it.copy(
+                email = email,
+                password = password,
+                emailError = if (it.email != email) null else it.emailError,
+                passwordError = if (it.password != password) null else it.passwordError,
+                generalError = null,
+            )
+        }
+    }
+
+    private fun loginSuccessConsumed() {
+        _uiState.value = LoginUiState()
+    }
+
+    private fun errorShown() {
+        _uiState.update { it.copy(generalError = null) }
     }
 
     private fun validateFields(
@@ -115,13 +123,5 @@ class LoginViewModel(
     private fun isValidEmail(email: String): Boolean {
         val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[a-z]+$".toRegex()
         return emailRegex.matches(email)
-    }
-
-    fun loginSuccessConsumed() {
-        _uiState.value = LoginUiState()
-    }
-
-    fun errorShown() {
-        _uiState.update { it.copy(generalError = null) }
     }
 }

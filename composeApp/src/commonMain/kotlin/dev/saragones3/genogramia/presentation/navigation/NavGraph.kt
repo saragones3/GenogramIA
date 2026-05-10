@@ -204,7 +204,6 @@ fun AppNavGraph() {
                     RegistrationScreen(
                         state = state,
                         onEvent = viewModel::onEvent,
-                        onRegistrationSuccessConsumed = viewModel::registrationSuccessConsumed,
                         onBackClick = { backStack.pop() },
                         onRegistrationSuccess = {
                             backStack.clear()

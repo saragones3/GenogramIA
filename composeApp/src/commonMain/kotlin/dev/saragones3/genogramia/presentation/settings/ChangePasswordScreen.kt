@@ -406,7 +406,7 @@ private fun PasswordField(
         )
         if (isError) {
             Text(
-                text = error!!,
+                text = error,
                 color = MaterialTheme.colorScheme.error,
                 style = MaterialTheme.typography.labelSmall,
                 modifier = Modifier.padding(top = 4.dp, start = 4.dp),
