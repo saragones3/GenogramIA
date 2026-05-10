@@ -10,6 +10,7 @@ data class ChangePasswordState(
     val currentPassword: String = "",
     val newPassword: String = "",
     val confirmPassword: String = "",
+    val userEmail: String? = null,
     val isLoading: Boolean = false,
     val isSuccess: Boolean = false,
     val currentPasswordError: ValidationError? = null,

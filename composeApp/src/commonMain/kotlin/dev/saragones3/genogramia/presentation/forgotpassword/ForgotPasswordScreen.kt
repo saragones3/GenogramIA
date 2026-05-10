@@ -1,4 +1,4 @@
-package dev.saragones3.genogramia.presentation.login
+package dev.saragones3.genogramia.presentation.forgotpassword
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,17 +19,11 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.Login
-import androidx.compose.material.icons.filled.AccountTree
 import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.PersonAdd
-import androidx.compose.material.icons.filled.Visibility
-import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material.icons.filled.VpnKey
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -38,7 +32,6 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
@@ -57,8 +50,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -67,76 +58,74 @@ import dev.saragones3.genogramia.ui.theme.ShapeFull
 import dev.saragones3.genogramia.ui.theme.SurfaceContainerHighest
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.error_empty_fields
-import genogramia.composeapp.generated.resources.error_invalid_credentials
 import genogramia.composeapp.generated.resources.error_invalid_email
-import genogramia.composeapp.generated.resources.error_invalid_password
+import genogramia.composeapp.generated.resources.error_unknown
 import genogramia.composeapp.generated.resources.error_user_not_found
-import genogramia.composeapp.generated.resources.login_button
-import genogramia.composeapp.generated.resources.login_create_account_label
-import genogramia.composeapp.generated.resources.login_email_hint
-import genogramia.composeapp.generated.resources.login_email_label
-import genogramia.composeapp.generated.resources.login_forgot_password
-import genogramia.composeapp.generated.resources.login_guest_label
-import genogramia.composeapp.generated.resources.login_no_account
-import genogramia.composeapp.generated.resources.login_or_continue
-import genogramia.composeapp.generated.resources.login_password_hint
-import genogramia.composeapp.generated.resources.login_password_label
-import genogramia.composeapp.generated.resources.login_register_link
-import genogramia.composeapp.generated.resources.login_subtitle
-import genogramia.composeapp.generated.resources.login_title
+import genogramia.composeapp.generated.resources.forgot_password_button
+import genogramia.composeapp.generated.resources.forgot_password_email_hint
+import genogramia.composeapp.generated.resources.forgot_password_email_label
+import genogramia.composeapp.generated.resources.forgot_password_subtitle
+import genogramia.composeapp.generated.resources.forgot_password_success_message
+import genogramia.composeapp.generated.resources.forgot_password_title
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun LoginScreen(
-    uiState: LoginUiState,
-    onEvent: (LoginEvent) -> Unit,
-    onLoginSuccess: () -> Unit,
-    onRegisterClick: () -> Unit,
-    onForgotPasswordClick: () -> Unit,
+fun ForgotPasswordScreen(
+    state: ForgotPasswordState,
+    initialEmail: String? = null,
+    onEmailChange: (String) -> Unit,
+    onSendClick: () -> Unit,
+    onSuccessConsumed: () -> Unit,
+    onErrorShown: () -> Unit,
     onBackClick: () -> Unit,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
 
-    val invalidCredentialsStr = stringResource(Res.string.error_invalid_credentials)
-    val userNotFoundStr = stringResource(Res.string.error_user_not_found)
+    LaunchedEffect(initialEmail) {
+        initialEmail?.let { onEmailChange(it) }
+    }
 
-    LaunchedEffect(uiState.isSuccess) {
-        if (uiState.isSuccess) {
-            onLoginSuccess()
-            onEvent(LoginEvent.OnLoginSuccessConsumed)
+    val successMessage = stringResource(Res.string.forgot_password_success_message)
+    val userNotFoundStr = stringResource(Res.string.error_user_not_found)
+    val unknownErrorStr = stringResource(Res.string.error_unknown)
+
+    LaunchedEffect(state.isSuccess) {
+        if (state.isSuccess) {
+            snackbarHostState.showSnackbar(successMessage)
+            onSuccessConsumed()
         }
     }
 
-    LaunchedEffect(uiState.generalError) {
-        uiState.generalError?.let { error ->
+    LaunchedEffect(state.error) {
+        state.error?.let { error ->
             val message =
                 when (error) {
-                    LoginError.WrongCredentials -> invalidCredentialsStr
-                    LoginError.UserNotFound -> userNotFoundStr
+                    ForgotPasswordState.ForgotPasswordError.UserNotFound -> userNotFoundStr
+                    ForgotPasswordState.ForgotPasswordError.Generic -> unknownErrorStr
                 }
             snackbarHostState.showSnackbar(message)
-            onEvent(LoginEvent.OnErrorShown)
+            onErrorShown()
         }
     }
 
-    LoginContent(
-        uiState = uiState,
-        onEvent = onEvent,
+    ForgotPasswordContent(
+        state = state,
+        isEmailFixed = initialEmail != null,
+        onEmailChange = onEmailChange,
+        onSendClick = onSendClick,
         onBackClick = onBackClick,
-        onRegisterClick = onRegisterClick,
-        onForgotPasswordClick = onForgotPasswordClick,
         snackbarHostState = snackbarHostState,
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun LoginContent(
-    uiState: LoginUiState,
-    onEvent: (LoginEvent) -> Unit,
+private fun ForgotPasswordContent(
+    state: ForgotPasswordState,
+    isEmailFixed: Boolean,
+    onEmailChange: (String) -> Unit,
+    onSendClick: () -> Unit,
     onBackClick: () -> Unit,
-    onRegisterClick: () -> Unit,
-    onForgotPasswordClick: () -> Unit,
     snackbarHostState: SnackbarHostState,
 ) {
     Scaffold(
@@ -191,64 +180,42 @@ private fun LoginContent(
                                 .padding(horizontal = 24.dp)
                                 .padding(top = 32.dp, bottom = 24.dp),
                     ) {
-                        LoginHeader()
+                        ForgotPasswordHeader()
 
                         Spacer(modifier = Modifier.height(32.dp))
 
-                        LoginForm(
-                            uiState = uiState,
-                            onEvent = onEvent,
-                            onForgotPasswordClick = onForgotPasswordClick,
-                        )
-
-                        Spacer(modifier = Modifier.height(24.dp))
-
-                        LoginButton(
-                            isLoading = uiState.isLoading,
-                            onClick = { onEvent(LoginEvent.OnLoginClicked) },
-                        )
+                        if (isEmailFixed) {
+                            Text(
+                                text = state.email,
+                                style = MaterialTheme.typography.titleLarge,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.primary,
+                                modifier = Modifier.fillMaxWidth(),
+                                textAlign = TextAlign.Center,
+                            )
+                        } else {
+                            ForgotPasswordForm(
+                                state = state,
+                                onEmailChange = onEmailChange,
+                            )
+                        }
 
                         Spacer(modifier = Modifier.height(32.dp))
 
-                        OrContinueWithDivider()
-
-                        Spacer(modifier = Modifier.height(24.dp))
-
-                        SocialLoginButtons(
-                            onEvent = onEvent,
-                            onRegisterClick = onRegisterClick,
+                        SendButton(
+                            isLoading = state.isLoading,
+                            onClick = onSendClick,
                         )
-
-                        Spacer(modifier = Modifier.height(16.dp))
                     }
                 }
             }
-
-            Row(
-                modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center,
-            ) {
-                Text(
-                    text = stringResource(Res.string.login_no_account),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
-                )
-                TextButton(onClick = onRegisterClick) {
-                    Text(
-                        text = stringResource(Res.string.login_register_link),
-                        style = MaterialTheme.typography.titleMedium,
-                        color = MaterialTheme.colorScheme.primary,
-                        fontWeight = FontWeight.Bold,
-                    )
-                }
-            }
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
 }
 
 @Composable
-private fun LoginHeader() {
+private fun ForgotPasswordHeader() {
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.Center,
@@ -260,7 +227,7 @@ private fun LoginHeader() {
         ) {
             Box(contentAlignment = Alignment.Center) {
                 Icon(
-                    imageVector = Icons.Default.AccountTree,
+                    imageVector = Icons.Default.VpnKey,
                     contentDescription = null,
                     modifier = Modifier.size(36.dp),
                     tint = MaterialTheme.colorScheme.primary,
@@ -272,7 +239,7 @@ private fun LoginHeader() {
     Spacer(modifier = Modifier.height(20.dp))
 
     Text(
-        text = stringResource(Res.string.login_title),
+        text = stringResource(Res.string.forgot_password_title),
         modifier = Modifier.fillMaxWidth(),
         style = MaterialTheme.typography.headlineLarge,
         fontWeight = FontWeight.Bold,
@@ -283,7 +250,7 @@ private fun LoginHeader() {
     Spacer(modifier = Modifier.height(6.dp))
 
     Text(
-        text = stringResource(Res.string.login_subtitle),
+        text = stringResource(Res.string.forgot_password_subtitle),
         modifier = Modifier.fillMaxWidth(),
         style = MaterialTheme.typography.bodyMedium,
         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
@@ -292,31 +259,22 @@ private fun LoginHeader() {
 }
 
 @Composable
-private fun LoginForm(
-    uiState: LoginUiState,
-    onEvent: (LoginEvent) -> Unit,
-    onForgotPasswordClick: () -> Unit,
+private fun ForgotPasswordForm(
+    state: ForgotPasswordState,
+    onEmailChange: (String) -> Unit,
 ) {
     val emptyFieldStr = stringResource(Res.string.error_empty_fields)
     val invalidEmailStr = stringResource(Res.string.error_invalid_email)
-    val invalidPasswordStr = stringResource(Res.string.error_invalid_password)
 
     val emailErrorText =
-        when (uiState.emailError) {
-            LoginUiState.ValidationError.EMPTY -> emptyFieldStr
-            LoginUiState.ValidationError.INVALID -> invalidEmailStr
-            null -> null
-        }
-
-    val passwordErrorText =
-        when (uiState.passwordError) {
-            LoginUiState.ValidationError.EMPTY -> emptyFieldStr
-            LoginUiState.ValidationError.INVALID -> invalidPasswordStr
+        when (state.emailError) {
+            ForgotPasswordState.ValidationError.EMPTY -> emptyFieldStr
+            ForgotPasswordState.ValidationError.INVALID -> invalidEmailStr
             null -> null
         }
 
     Text(
-        text = stringResource(Res.string.login_email_label),
+        text = stringResource(Res.string.forgot_password_email_label),
         style = MaterialTheme.typography.labelMedium,
         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
         fontWeight = FontWeight.Bold,
@@ -324,57 +282,17 @@ private fun LoginForm(
     )
 
     SoftTextField(
-        value = uiState.email,
-        onValueChange = { onEvent(LoginEvent.OnDataChanged(it, uiState.password)) },
-        placeholder = stringResource(Res.string.login_email_hint),
+        value = state.email,
+        onValueChange = onEmailChange,
+        placeholder = stringResource(Res.string.forgot_password_email_hint),
         leadingIcon = Icons.Default.Email,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
         errorText = emailErrorText,
     )
-
-    Spacer(modifier = Modifier.height(20.dp))
-
-    Text(
-        text = stringResource(Res.string.login_password_label),
-        style = MaterialTheme.typography.labelMedium,
-        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
-        fontWeight = FontWeight.Bold,
-        modifier = Modifier.padding(bottom = 8.dp),
-    )
-
-    var passwordVisible by remember { mutableStateOf(false) }
-    SoftTextField(
-        value = uiState.password,
-        onValueChange = { onEvent(LoginEvent.OnDataChanged(uiState.email, it)) },
-        placeholder = stringResource(Res.string.login_password_hint),
-        leadingIcon = Icons.Default.Lock,
-        visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-        trailingIcon = {
-            val image = if (passwordVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff
-            IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                Icon(imageVector = image, contentDescription = null, tint = Color.Gray)
-            }
-        },
-        errorText = passwordErrorText,
-    )
-
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.End,
-    ) {
-        TextButton(onClick = onForgotPasswordClick) {
-            Text(
-                text = stringResource(Res.string.login_forgot_password),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.primary,
-            )
-        }
-    }
 }
 
 @Composable
-private fun LoginButton(
+private fun SendButton(
     isLoading: Boolean,
     onClick: () -> Unit,
 ) {
@@ -392,81 +310,10 @@ private fun LoginButton(
             )
         }
         Text(
-            text = stringResource(Res.string.login_button),
+            text = stringResource(Res.string.forgot_password_button),
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.titleMedium,
         )
-    }
-}
-
-@Composable
-private fun OrContinueWithDivider() {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        HorizontalDivider(
-            modifier = Modifier.weight(1f),
-            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f),
-        )
-        Text(
-            text = stringResource(Res.string.login_or_continue),
-            modifier = Modifier.padding(horizontal = 16.dp),
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
-        )
-        HorizontalDivider(
-            modifier = Modifier.weight(1f),
-            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f),
-        )
-    }
-}
-
-@Composable
-private fun SocialLoginButtons(
-    onEvent: (LoginEvent) -> Unit,
-    onRegisterClick: () -> Unit,
-) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.Center,
-    ) {
-        CircularIconButton(
-            icon = Icons.AutoMirrored.Filled.Login,
-            contentDescription = stringResource(Res.string.login_guest_label),
-            onClick = { onEvent(LoginEvent.OnGuestClicked) },
-        )
-
-        Spacer(modifier = Modifier.size(16.dp))
-
-        CircularIconButton(
-            icon = Icons.Default.PersonAdd,
-            contentDescription = stringResource(Res.string.login_create_account_label),
-            onClick = onRegisterClick,
-        )
-    }
-}
-
-@Composable
-private fun CircularIconButton(
-    icon: ImageVector,
-    contentDescription: String,
-    onClick: () -> Unit,
-) {
-    Surface(
-        onClick = onClick,
-        modifier = Modifier.size(60.dp),
-        shape = CircleShape,
-        color = SurfaceContainerHighest,
-    ) {
-        Box(contentAlignment = Alignment.Center) {
-            Icon(
-                imageVector = icon,
-                contentDescription = contentDescription,
-                modifier = Modifier.size(24.dp),
-                tint = MaterialTheme.colorScheme.onSurface,
-            )
-        }
     }
 }
 
@@ -478,8 +325,6 @@ private fun SoftTextField(
     modifier: Modifier = Modifier,
     leadingIcon: ImageVector? = null,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
-    visualTransformation: VisualTransformation = VisualTransformation.None,
-    trailingIcon: @Composable (() -> Unit)? = null,
     errorText: String? = null,
 ) {
     var isFocused by remember { mutableStateOf(false) }
@@ -544,22 +389,20 @@ private fun SoftTextField(
                 null
             },
         keyboardOptions = keyboardOptions,
-        visualTransformation = visualTransformation,
         singleLine = true,
-        trailingIcon = trailingIcon,
     )
 }
 
 @Composable
 @Preview
-private fun LoginScreenPreview() {
+private fun ForgotPasswordScreenPreview() {
     GenogramiaTheme {
-        LoginContent(
-            uiState = LoginUiState(),
-            onEvent = {},
+        ForgotPasswordContent(
+            state = ForgotPasswordState(email = "test@example.com"),
+            isEmailFixed = false,
+            onEmailChange = {},
+            onSendClick = {},
             onBackClick = {},
-            onRegisterClick = {},
-            onForgotPasswordClick = {},
             snackbarHostState = SnackbarHostState(),
         )
     }

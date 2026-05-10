@@ -1,6 +1,7 @@
 package dev.saragones3.genogramia.presentation.settings
 
 import app.cash.turbine.test
+import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import genogramia.composeapp.generated.resources.Res
@@ -23,12 +24,13 @@ class ChangePasswordViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val repository = FakeAuthRepository()
     private val updatePasswordUseCase = UpdatePasswordUseCase(repository)
+    private val checkSessionUseCase = CheckSessionUseCase(repository)
     private lateinit var viewModel: ChangePasswordViewModel
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = ChangePasswordViewModel(updatePasswordUseCase)
+        viewModel = ChangePasswordViewModel(updatePasswordUseCase, checkSessionUseCase)
     }
 
     @AfterTest
@@ -37,12 +39,19 @@ class ChangePasswordViewModelTest {
     }
 
     @Test
-    fun `initial state is empty`() =
+    fun `initial state is empty and loads user email`() =
         runTest {
-            val state = viewModel.state.value
+            val user =
+                dev.saragones3.genogramia.domain.model
+                    .User("id", "test@test.com", "Name")
+            repository.setCurrentUser(user)
+            val newViewModel = ChangePasswordViewModel(updatePasswordUseCase, checkSessionUseCase)
+
+            val state = newViewModel.state.value
             assertEquals("", state.currentPassword)
             assertEquals("", state.newPassword)
             assertEquals("", state.confirmPassword)
+            assertEquals("test@test.com", state.userEmail)
             assertNull(state.currentPasswordError)
             assertNull(state.passwordError)
             assertNull(state.confirmError)

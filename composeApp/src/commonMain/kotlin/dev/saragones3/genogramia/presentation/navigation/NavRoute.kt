@@ -27,4 +27,9 @@ sealed interface NavRoute {
 
     @Serializable
     data object Registration : NavRoute
+
+    @Serializable
+    data class ForgotPassword(
+        val email: String? = null,
+    ) : NavRoute
 }

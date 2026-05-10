@@ -58,4 +58,10 @@ class FakeAuthRepository(
             throw errorToReturn
         }
     }
+
+    override suspend fun sendPasswordResetEmail(email: String) {
+        if (shouldReturnError) {
+            throw errorToReturn
+        }
+    }
 }

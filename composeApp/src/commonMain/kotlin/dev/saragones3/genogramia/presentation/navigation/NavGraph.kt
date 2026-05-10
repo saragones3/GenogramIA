@@ -29,6 +29,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeScreen
+import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordScreen
+import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
 import dev.saragones3.genogramia.presentation.guesthome.GuestHomeScreen
 import dev.saragones3.genogramia.presentation.legends.LegendsScreen
 import dev.saragones3.genogramia.presentation.login.LoginScreen
@@ -118,11 +120,7 @@ fun AppNavGraph() {
 
                     LoginScreen(
                         uiState = uiState,
-                        onDataChange = viewModel::onDataChange,
-                        onLoginClick = viewModel::login,
-                        onErrorShown = viewModel::errorShown,
-                        onLoginSuccessConsumed = viewModel::loginSuccessConsumed,
-                        onBackClick = { backStack.pop() },
+                        onEvent = viewModel::onEvent,
                         onLoginSuccess = {
                             backStack.clear()
                             backStack.add(NavRoute.AuthenticatedHome)
@@ -130,7 +128,25 @@ fun AppNavGraph() {
                         onRegisterClick = {
                             backStack.push(NavRoute.Registration)
                         },
-                        onGuestClick = {},
+                        onForgotPasswordClick = {
+                            backStack.push(NavRoute.ForgotPassword())
+                        },
+                        onBackClick = { backStack.pop() },
+                    )
+                }
+
+                is NavRoute.ForgotPassword -> {
+                    val viewModel: ForgotPasswordViewModel = koinViewModel()
+                    val state by viewModel.state.collectAsState()
+
+                    ForgotPasswordScreen(
+                        state = state,
+                        initialEmail = key.email,
+                        onEmailChange = viewModel::onEmailChange,
+                        onSendClick = viewModel::sendResetEmail,
+                        onSuccessConsumed = viewModel::successConsumed,
+                        onErrorShown = viewModel::errorShown,
+                        onBackClick = { backStack.pop() },
                     )
                 }
 
@@ -171,6 +187,9 @@ fun AppNavGraph() {
                         onSuccessConsumed = viewModel::successConsumed,
                         onDispose = viewModel::clearData,
                         onBackClick = { backStack.pop() },
+                        onForgotPasswordClick = {
+                            backStack.push(NavRoute.ForgotPassword(state.userEmail))
+                        },
                     )
                 }
 
@@ -181,7 +200,6 @@ fun AppNavGraph() {
                     RegistrationScreen(
                         state = state,
                         onEvent = viewModel::onEvent,
-                        onRegistrationSuccessConsumed = viewModel::registrationSuccessConsumed,
                         onBackClick = { backStack.pop() },
                         onRegistrationSuccess = {
                             backStack.clear()

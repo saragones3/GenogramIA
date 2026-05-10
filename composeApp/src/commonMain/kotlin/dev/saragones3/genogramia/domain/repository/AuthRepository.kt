@@ -23,4 +23,6 @@ interface AuthRepository {
     suspend fun deleteAccount()
 
     suspend fun updatePassword(newPassword: String)
+
+    suspend fun sendPasswordResetEmail(email: String)
 }

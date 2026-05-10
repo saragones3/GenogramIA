@@ -43,4 +43,8 @@ internal class AuthRepositoryImpl(
     override suspend fun updatePassword(newPassword: String) {
         firebaseProvider.updatePassword(newPassword)
     }
+
+    override suspend fun sendPasswordResetEmail(email: String) {
+        firebaseProvider.sendPasswordResetEmail(email)
+    }
 }

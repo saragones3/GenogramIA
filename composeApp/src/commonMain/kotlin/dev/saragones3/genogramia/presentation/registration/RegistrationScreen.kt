@@ -89,14 +89,13 @@ import org.jetbrains.compose.resources.stringResource
 fun RegistrationScreen(
     state: RegistrationState,
     onEvent: (RegistrationEvent) -> Unit,
-    onRegistrationSuccessConsumed: () -> Unit,
     onBackClick: () -> Unit,
     onRegistrationSuccess: () -> Unit,
 ) {
     LaunchedEffect(state.isRegistrationSuccess) {
         if (state.isRegistrationSuccess) {
             onRegistrationSuccess()
-            onRegistrationSuccessConsumed()
+            onEvent(RegistrationEvent.OnRegistrationSuccessConsumed)
         }
     }
 
@@ -155,7 +154,7 @@ private fun RegistrationContent(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            RegistrationSocialSection()
+            RegistrationSocialSection(onEvent = onEvent)
 
             Spacer(modifier = Modifier.height(32.dp))
 
@@ -331,12 +330,12 @@ private fun RegistrationForm(
 }
 
 @Composable
-private fun RegistrationSocialSection() {
+private fun RegistrationSocialSection(onEvent: (RegistrationEvent) -> Unit) {
     Column {
         // Social Login Buttons
         SocialButton(
             text = stringResource(Res.string.registration_google),
-            onClick = { /* TODO */ },
+            onClick = { onEvent(RegistrationEvent.OnGoogleSignUpClicked) },
             icon = {
                 // Google logo placeholder
                 Text(
@@ -352,7 +351,7 @@ private fun RegistrationSocialSection() {
 
         SocialButton(
             text = stringResource(Res.string.registration_apple),
-            onClick = { /* TODO */ },
+            onClick = { onEvent(RegistrationEvent.OnAppleSignUpClicked) },
             icon = {
                 // Apple logo placeholder
                 Icon(
@@ -527,7 +526,7 @@ private fun OrContinueWithDivider() {
 
 @Composable
 @Preview
-fun RegistrationScreenPreview() {
+private fun RegistrationScreenPreview() {
     GenogramiaTheme {
         RegistrationContent(
             state = RegistrationState(),

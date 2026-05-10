@@ -8,4 +8,10 @@ sealed interface RegistrationEvent {
     ) : RegistrationEvent
 
     data object OnSignUpClicked : RegistrationEvent
+
+    data object OnGoogleSignUpClicked : RegistrationEvent
+
+    data object OnAppleSignUpClicked : RegistrationEvent
+
+    data object OnRegistrationSuccessConsumed : RegistrationEvent
 }
