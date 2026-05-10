@@ -169,6 +169,7 @@ fun AppNavGraph() {
                         onDataChange = viewModel::onDataChange,
                         onSaveClick = viewModel::savePassword,
                         onSuccessConsumed = viewModel::successConsumed,
+                        onDispose = viewModel::clearData,
                         onBackClick = { backStack.pop() },
                     )
                 }

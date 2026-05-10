@@ -102,6 +102,9 @@ class ChangePasswordViewModelTest {
                 val finalState = awaitItem()
                 assertEquals(false, finalState.isLoading)
                 assertTrue(finalState.isSuccess)
+                assertEquals("", finalState.currentPassword)
+                assertEquals("", finalState.newPassword)
+                assertEquals("", finalState.confirmPassword)
             }
         }
 
@@ -131,5 +134,20 @@ class ChangePasswordViewModelTest {
             viewModel.successConsumed()
 
             assertEquals(false, viewModel.state.value.isSuccess)
+        }
+
+    @Test
+    fun `clearData resets all fields`() =
+        runTest {
+            viewModel.onDataChange("old", "new", "new")
+            viewModel.clearData()
+
+            val state = viewModel.state.value
+            assertEquals("", state.currentPassword)
+            assertEquals("", state.newPassword)
+            assertEquals("", state.confirmPassword)
+            assertNull(state.currentPasswordError)
+            assertNull(state.passwordError)
+            assertNull(state.confirmError)
         }
 }

@@ -75,7 +75,15 @@ class ChangePasswordViewModel(
         viewModelScope.launch {
             try {
                 updatePasswordUseCase(current.currentPassword, current.newPassword)
-                _state.update { it.copy(isLoading = false, isSuccess = true) }
+                _state.update {
+                    it.copy(
+                        isLoading = false,
+                        isSuccess = true,
+                        currentPassword = "",
+                        newPassword = "",
+                        confirmPassword = "",
+                    )
+                }
             } catch (e: Exception) {
                 val errorRes =
                     when (e) {
@@ -89,5 +97,11 @@ class ChangePasswordViewModel(
 
     fun successConsumed() {
         _state.update { it.copy(isSuccess = false) }
+    }
+
+    fun clearData() {
+        _state.update {
+            ChangePasswordState()
+        }
     }
 }
