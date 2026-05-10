@@ -89,15 +89,11 @@ import org.jetbrains.compose.resources.stringResource
 @Composable
 fun LoginScreen(
     uiState: LoginUiState,
-    onDataChange: (String, String) -> Unit,
-    onLoginClick: () -> Unit,
-    onErrorShown: () -> Unit,
-    onLoginSuccessConsumed: () -> Unit,
-    onBackClick: () -> Unit,
+    onEvent: (LoginEvent) -> Unit,
     onLoginSuccess: () -> Unit,
     onRegisterClick: () -> Unit,
     onForgotPasswordClick: () -> Unit,
-    onGuestClick: () -> Unit,
+    onBackClick: () -> Unit,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -107,7 +103,7 @@ fun LoginScreen(
     LaunchedEffect(uiState.isSuccess) {
         if (uiState.isSuccess) {
             onLoginSuccess()
-            onLoginSuccessConsumed()
+            onEvent(LoginEvent.OnLoginSuccessConsumed)
         }
     }
 
@@ -119,18 +115,16 @@ fun LoginScreen(
                     LoginError.UserNotFound -> userNotFoundStr
                 }
             snackbarHostState.showSnackbar(message)
-            onErrorShown()
+            onEvent(LoginEvent.OnErrorShown)
         }
     }
 
     LoginContent(
         uiState = uiState,
-        onDataChange = onDataChange,
-        onLoginClick = onLoginClick,
+        onEvent = onEvent,
         onBackClick = onBackClick,
         onRegisterClick = onRegisterClick,
         onForgotPasswordClick = onForgotPasswordClick,
-        onGuestClick = onGuestClick,
         snackbarHostState = snackbarHostState,
     )
 }
@@ -139,12 +133,10 @@ fun LoginScreen(
 @Composable
 private fun LoginContent(
     uiState: LoginUiState,
-    onDataChange: (String, String) -> Unit,
-    onLoginClick: () -> Unit,
+    onEvent: (LoginEvent) -> Unit,
     onBackClick: () -> Unit,
     onRegisterClick: () -> Unit,
     onForgotPasswordClick: () -> Unit,
-    onGuestClick: () -> Unit,
     snackbarHostState: SnackbarHostState,
 ) {
     Scaffold(
@@ -205,7 +197,7 @@ private fun LoginContent(
 
                         LoginForm(
                             uiState = uiState,
-                            onDataChange = onDataChange,
+                            onEvent = onEvent,
                             onForgotPasswordClick = onForgotPasswordClick,
                         )
 
@@ -213,7 +205,7 @@ private fun LoginContent(
 
                         LoginButton(
                             isLoading = uiState.isLoading,
-                            onClick = onLoginClick,
+                            onClick = { onEvent(LoginEvent.OnLoginClicked) },
                         )
 
                         Spacer(modifier = Modifier.height(32.dp))
@@ -223,7 +215,7 @@ private fun LoginContent(
                         Spacer(modifier = Modifier.height(24.dp))
 
                         SocialLoginButtons(
-                            onGuestClick = onGuestClick,
+                            onEvent = onEvent,
                             onRegisterClick = onRegisterClick,
                         )
 
@@ -302,7 +294,7 @@ private fun LoginHeader() {
 @Composable
 private fun LoginForm(
     uiState: LoginUiState,
-    onDataChange: (String, String) -> Unit,
+    onEvent: (LoginEvent) -> Unit,
     onForgotPasswordClick: () -> Unit,
 ) {
     val emptyFieldStr = stringResource(Res.string.error_empty_fields)
@@ -333,7 +325,7 @@ private fun LoginForm(
 
     SoftTextField(
         value = uiState.email,
-        onValueChange = { onDataChange(it, uiState.password) },
+        onValueChange = { onEvent(LoginEvent.OnDataChanged(it, uiState.password)) },
         placeholder = stringResource(Res.string.login_email_hint),
         leadingIcon = Icons.Default.Email,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
@@ -353,7 +345,7 @@ private fun LoginForm(
     var passwordVisible by remember { mutableStateOf(false) }
     SoftTextField(
         value = uiState.password,
-        onValueChange = { onDataChange(uiState.email, it) },
+        onValueChange = { onEvent(LoginEvent.OnDataChanged(uiState.email, it)) },
         placeholder = stringResource(Res.string.login_password_hint),
         leadingIcon = Icons.Default.Lock,
         visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
@@ -432,7 +424,7 @@ private fun OrContinueWithDivider() {
 
 @Composable
 private fun SocialLoginButtons(
-    onGuestClick: () -> Unit,
+    onEvent: (LoginEvent) -> Unit,
     onRegisterClick: () -> Unit,
 ) {
     Row(
@@ -442,7 +434,7 @@ private fun SocialLoginButtons(
         CircularIconButton(
             icon = Icons.AutoMirrored.Filled.Login,
             contentDescription = stringResource(Res.string.login_guest_label),
-            onClick = onGuestClick,
+            onClick = { onEvent(LoginEvent.OnGuestClicked) },
         )
 
         Spacer(modifier = Modifier.size(16.dp))
@@ -564,12 +556,10 @@ fun LoginScreenPreview() {
     GenogramiaTheme {
         LoginContent(
             uiState = LoginUiState(),
-            onDataChange = { _, _ -> },
-            onLoginClick = {},
+            onEvent = {},
             onBackClick = {},
             onRegisterClick = {},
             onForgotPasswordClick = {},
-            onGuestClick = {},
             snackbarHostState = SnackbarHostState(),
         )
     }

@@ -122,11 +122,7 @@ fun AppNavGraph() {
 
                     LoginScreen(
                         uiState = uiState,
-                        onDataChange = viewModel::onDataChange,
-                        onLoginClick = viewModel::login,
-                        onErrorShown = viewModel::errorShown,
-                        onLoginSuccessConsumed = viewModel::loginSuccessConsumed,
-                        onBackClick = { backStack.pop() },
+                        onEvent = viewModel::onEvent,
                         onLoginSuccess = {
                             backStack.clear()
                             backStack.add(NavRoute.AuthenticatedHome)
@@ -137,7 +133,7 @@ fun AppNavGraph() {
                         onForgotPasswordClick = {
                             backStack.push(NavRoute.ForgotPassword())
                         },
-                        onGuestClick = {},
+                        onBackClick = { backStack.pop() },
                     )
                 }
 

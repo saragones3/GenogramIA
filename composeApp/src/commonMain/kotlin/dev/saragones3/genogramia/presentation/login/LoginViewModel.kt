@@ -16,7 +16,35 @@ class LoginViewModel(
     private val _uiState = MutableStateFlow(LoginUiState())
     val uiState: StateFlow<LoginUiState> = _uiState.asStateFlow()
 
-    fun onDataChange(
+    fun onEvent(event: LoginEvent) {
+        when (event) {
+            is LoginEvent.OnDataChanged -> {
+                onDataChange(event.email, event.password)
+            }
+
+            LoginEvent.OnLoginClicked -> {
+                login()
+            }
+
+            LoginEvent.OnErrorShown -> {
+                errorShown()
+            }
+
+            LoginEvent.OnLoginSuccessConsumed -> {
+                loginSuccessConsumed()
+            }
+
+            LoginEvent.OnBackClicked -> { /* Handled in Screen */ }
+
+            LoginEvent.OnRegisterClicked -> { /* Handled in Screen */ }
+
+            LoginEvent.OnForgotPasswordClicked -> { /* Handled in Screen */ }
+
+            LoginEvent.OnGuestClicked -> { /* Handled in Screen */ }
+        }
+    }
+
+    private fun onDataChange(
         email: String,
         password: String,
     ) {
