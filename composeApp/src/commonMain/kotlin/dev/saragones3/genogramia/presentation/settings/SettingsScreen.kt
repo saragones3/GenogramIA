@@ -35,6 +35,8 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -62,25 +64,26 @@ import genogramia.composeapp.generated.resources.settings_logout_confirmation_ti
 import genogramia.composeapp.generated.resources.settings_security_section
 import genogramia.composeapp.generated.resources.settings_title
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun SettingsScreen(
-    state: SettingsState,
-    onEvent: (SettingsEvent) -> Unit,
-    onLogoutConsumed: () -> Unit,
     onChangePasswordClick: () -> Unit,
     onLoggedOut: () -> Unit,
 ) {
+    val viewModel: SettingsViewModel = koinViewModel()
+    val state by viewModel.state.collectAsState()
+
     LaunchedEffect(state.isLoggedOut) {
         if (state.isLoggedOut) {
             onLoggedOut()
-            onLogoutConsumed()
+            viewModel.logoutConsumed()
         }
     }
 
     SettingsContent(
         state = state,
-        onEvent = onEvent,
+        onEvent = viewModel::onEvent,
         onChangePasswordClick = onChangePasswordClick,
     )
 
@@ -88,8 +91,8 @@ fun SettingsScreen(
         SettingsConfirmationDialog(
             title = stringResource(Res.string.settings_logout_confirmation_title),
             message = stringResource(Res.string.settings_logout_confirmation_message),
-            onConfirm = { onEvent(SettingsEvent.OnLogoutConfirmed) },
-            onDismiss = { onEvent(SettingsEvent.OnDismissDialogs) },
+            onConfirm = { viewModel.onEvent(SettingsEvent.OnLogoutConfirmed) },
+            onDismiss = { viewModel.onEvent(SettingsEvent.OnDismissDialogs) },
         )
     }
 
@@ -97,8 +100,8 @@ fun SettingsScreen(
         SettingsConfirmationDialog(
             title = stringResource(Res.string.settings_delete_confirmation_title),
             message = stringResource(Res.string.settings_delete_confirmation_message),
-            onConfirm = { onEvent(SettingsEvent.OnDeleteConfirmed) },
-            onDismiss = { onEvent(SettingsEvent.OnDismissDialogs) },
+            onConfirm = { viewModel.onEvent(SettingsEvent.OnDeleteConfirmed) },
+            onDismiss = { viewModel.onEvent(SettingsEvent.OnDismissDialogs) },
         )
     }
 }

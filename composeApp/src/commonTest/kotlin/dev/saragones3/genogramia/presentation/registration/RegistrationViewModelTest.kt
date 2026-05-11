@@ -87,7 +87,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when email is corrected after invalid format, email error is cleared`() =
+    fun `when email is corrected after invalid format email error is cleared`() =
         runTest {
             // Given an invalid email state
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "invalid-email", "password123"))
@@ -102,7 +102,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when email is invalid, name and password errors are not affected`() =
+    fun `when email is invalid name and password errors are not affected`() =
         runTest {
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Valid Name", "invalid-email", "validPassword123"))
 
@@ -142,7 +142,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when email is already in use, general error is updated`() =
+    fun `when email is already in use general error is updated`() =
         runTest {
             repository.shouldReturnError = true
             repository.errorToReturn = AuthError.EmailAlreadyInUse
@@ -161,7 +161,7 @@ class RegistrationViewModelTest {
         runTest {
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Test User", "test@example.com", "password123"))
 
-            viewModel.registrationSuccessConsumed()
+            viewModel.onEvent(RegistrationEvent.OnRegistrationSuccessConsumed)
 
             val state = viewModel.state.value
             assertEquals("", state.name)

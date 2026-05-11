@@ -5,18 +5,22 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun SplashScreen(
-    uiState: SplashUiState,
     onNavigateToGuestHome: () -> Unit,
     onNavigateToAuthenticatedHome: () -> Unit,
 ) {
+    val viewModel: SplashViewModel = koinViewModel()
+    val uiState by viewModel.uiState.collectAsState()
+
     LaunchedEffect(uiState) {
         when (uiState) {
             SplashUiState.Loading -> { /* Keep showing splash */ }
@@ -30,7 +34,11 @@ fun SplashScreen(
             }
         }
     }
+    SplashContent()
+}
 
+@Composable
+private fun SplashContent() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
@@ -43,10 +51,6 @@ fun SplashScreen(
 @Preview
 private fun SplashScreenPreview() {
     GenogramiaTheme {
-        SplashScreen(
-            uiState = SplashUiState.Loading,
-            onNavigateToGuestHome = {},
-            onNavigateToAuthenticatedHome = {},
-        )
+        SplashContent()
     }
 }

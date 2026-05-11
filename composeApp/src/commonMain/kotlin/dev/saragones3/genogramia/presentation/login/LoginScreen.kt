@@ -45,6 +45,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -85,16 +86,17 @@ import genogramia.composeapp.generated.resources.login_register_link
 import genogramia.composeapp.generated.resources.login_subtitle
 import genogramia.composeapp.generated.resources.login_title
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun LoginScreen(
-    uiState: LoginUiState,
-    onEvent: (LoginEvent) -> Unit,
     onLoginSuccess: () -> Unit,
     onRegisterClick: () -> Unit,
     onForgotPasswordClick: () -> Unit,
     onBackClick: () -> Unit,
 ) {
+    val viewModel: LoginViewModel = koinViewModel()
+    val uiState by viewModel.uiState.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
 
     val invalidCredentialsStr = stringResource(Res.string.error_invalid_credentials)
@@ -103,7 +105,7 @@ fun LoginScreen(
     LaunchedEffect(uiState.isSuccess) {
         if (uiState.isSuccess) {
             onLoginSuccess()
-            onEvent(LoginEvent.OnLoginSuccessConsumed)
+            viewModel.onEvent(LoginEvent.OnLoginSuccessConsumed)
         }
     }
 
@@ -115,13 +117,13 @@ fun LoginScreen(
                     LoginError.UserNotFound -> userNotFoundStr
                 }
             snackbarHostState.showSnackbar(message)
-            onEvent(LoginEvent.OnErrorShown)
+            viewModel.onEvent(LoginEvent.OnErrorShown)
         }
     }
 
     LoginContent(
         uiState = uiState,
-        onEvent = onEvent,
+        onEvent = viewModel::onEvent,
         onBackClick = onBackClick,
         onRegisterClick = onRegisterClick,
         onForgotPasswordClick = onForgotPasswordClick,
@@ -488,7 +490,12 @@ private fun SoftTextField(
     TextField(
         value = value,
         onValueChange = onValueChange,
-        placeholder = { Text(placeholder, color = Color.Gray) },
+        placeholder = {
+            Text(
+                text = placeholder,
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+            )
+        },
         isError = isError,
         modifier =
             modifier
@@ -527,7 +534,12 @@ private fun SoftTextField(
                     Icon(
                         imageVector = it,
                         contentDescription = null,
-                        tint = if (isError) MaterialTheme.colorScheme.error else Color.Gray,
+                        tint =
+                            if (isError) {
+                                MaterialTheme.colorScheme.error
+                            } else {
+                                MaterialTheme.colorScheme.onSurfaceVariant
+                            },
                     )
                 }
             },

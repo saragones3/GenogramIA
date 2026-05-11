@@ -38,6 +38,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -68,21 +69,19 @@ import genogramia.composeapp.generated.resources.forgot_password_subtitle
 import genogramia.composeapp.generated.resources.forgot_password_success_message
 import genogramia.composeapp.generated.resources.forgot_password_title
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun ForgotPasswordScreen(
-    state: ForgotPasswordState,
     initialEmail: String? = null,
-    onEmailChange: (String) -> Unit,
-    onSendClick: () -> Unit,
-    onSuccessConsumed: () -> Unit,
-    onErrorShown: () -> Unit,
     onBackClick: () -> Unit,
 ) {
+    val viewModel: ForgotPasswordViewModel = koinViewModel()
+    val state by viewModel.state.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
 
     LaunchedEffect(initialEmail) {
-        initialEmail?.let { onEmailChange(it) }
+        initialEmail?.let { viewModel.onEmailChange(it) }
     }
 
     val successMessage = stringResource(Res.string.forgot_password_success_message)
@@ -92,7 +91,7 @@ fun ForgotPasswordScreen(
     LaunchedEffect(state.isSuccess) {
         if (state.isSuccess) {
             snackbarHostState.showSnackbar(successMessage)
-            onSuccessConsumed()
+            viewModel.successConsumed()
         }
     }
 
@@ -104,15 +103,15 @@ fun ForgotPasswordScreen(
                     ForgotPasswordState.ForgotPasswordError.Generic -> unknownErrorStr
                 }
             snackbarHostState.showSnackbar(message)
-            onErrorShown()
+            viewModel.errorShown()
         }
     }
 
     ForgotPasswordContent(
         state = state,
         isEmailFixed = initialEmail != null,
-        onEmailChange = onEmailChange,
-        onSendClick = onSendClick,
+        onEmailChange = viewModel::onEmailChange,
+        onSendClick = viewModel::sendResetEmail,
         onBackClick = onBackClick,
         snackbarHostState = snackbarHostState,
     )
