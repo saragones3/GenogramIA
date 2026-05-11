@@ -23,9 +23,15 @@
     
     <!-- Authenticated Home -->
     <string name="auth_home_title">My trees</string>
-    <string name="auth_home_welcome">Welcome back, %s</string>
+    <string name="auth_home_welcome">Welcome back, %1$s</string>
+    <string name="auth_home_subtitle">Your family story is a living archive. Continue exploring the threads of your history.</string>
+    <string name="auth_home_search_hint">Search tree...</string>
+    <string name="auth_home_primary_lineage">PRIMARY LINEAGE</string>
+    <string name="auth_home_ancestors">%1$d Ancestors • Last updated %2$s</string>
+    <string name="auth_home_open_archive">Open Archive</string>
     <string name="auth_home_start_tree">Start New Tree</string>
-    
+    <string name="auth_home_start_tree_subtitle">Begin a new journey into a different branch of your heritage.</string>
+
     <!-- Login -->
     <string name="login_title">Welcome back</string>
     <string name="login_subtitle">Access your genealogical archive</string>

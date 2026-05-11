@@ -29,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeScreen
+import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeViewModel
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordScreen
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
 import dev.saragones3.genogramia.presentation.guesthome.GuestHomeScreen
@@ -151,7 +152,19 @@ fun AppNavGraph() {
                 }
 
                 is NavRoute.AuthenticatedHome -> {
-                    AuthenticatedHomeScreen()
+                    val viewModel: AuthenticatedHomeViewModel = koinViewModel()
+                    val userName by viewModel.userName.collectAsState()
+                    val searchQuery by viewModel.searchQuery.collectAsState()
+                    val trees by viewModel.trees.collectAsState()
+
+                    AuthenticatedHomeScreen(
+                        userName = userName ?: "",
+                        searchQuery = searchQuery,
+                        onSearchQueryChange = viewModel::onSearchQueryChange,
+                        trees = trees,
+                        onCreateTreeClick = { /* US-011 */ },
+                        onOpenTreeClick = { /* US-012 */ },
+                    )
                 }
 
                 is NavRoute.Legends -> {
