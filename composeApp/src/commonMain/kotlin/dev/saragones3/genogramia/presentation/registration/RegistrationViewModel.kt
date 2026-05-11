@@ -51,9 +51,13 @@ class RegistrationViewModel(
             }
 
             RegistrationEvent.OnRegistrationSuccessConsumed -> {
-                _state.value = RegistrationState()
+                registrationSuccessConsumed()
             }
         }
+    }
+
+    private fun registrationSuccessConsumed() {
+        _state.value = RegistrationState()
     }
 
     private fun signUp() {

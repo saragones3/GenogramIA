@@ -85,7 +85,6 @@ class ForgotPasswordViewModelTest {
             viewModel.onEmailChange("test@example.com")
 
             viewModel.state.test {
-                assertEquals("", awaitItem().email)
                 assertEquals("test@example.com", awaitItem().email)
 
                 viewModel.sendResetEmail()

@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -13,15 +12,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.legends_description
 import genogramia.composeapp.generated.resources.legends_screen_placeholder
 import genogramia.composeapp.generated.resources.legends_title
 import org.jetbrains.compose.resources.stringResource
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LegendsScreen() {
+    LegendsContent()
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun LegendsContent() {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -43,7 +48,7 @@ fun LegendsScreen() {
 @Composable
 @Preview
 fun LegendsScreenPreview() {
-    MaterialTheme {
-        LegendsScreen()
+    GenogramiaTheme {
+        LegendsContent()
     }
 }

@@ -7,7 +7,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountTree
 import androidx.compose.material.icons.filled.AutoStories
-import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -17,8 +16,6 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
@@ -29,28 +26,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeScreen
-import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeViewModel
+import dev.saragones3.genogramia.presentation.changepassword.ChangePasswordScreen
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordScreen
-import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
 import dev.saragones3.genogramia.presentation.guesthome.GuestHomeScreen
 import dev.saragones3.genogramia.presentation.legends.LegendsScreen
 import dev.saragones3.genogramia.presentation.login.LoginScreen
-import dev.saragones3.genogramia.presentation.login.LoginViewModel
 import dev.saragones3.genogramia.presentation.registration.RegistrationScreen
-import dev.saragones3.genogramia.presentation.registration.RegistrationViewModel
-import dev.saragones3.genogramia.presentation.settings.ChangePasswordScreen
-import dev.saragones3.genogramia.presentation.settings.ChangePasswordViewModel
 import dev.saragones3.genogramia.presentation.settings.SettingsScreen
-import dev.saragones3.genogramia.presentation.settings.SettingsViewModel
 import dev.saragones3.genogramia.presentation.splash.SplashScreen
-import dev.saragones3.genogramia.presentation.splash.SplashViewModel
 import dev.saragones3.genogramia.ui.theme.NavigationBarIndicator
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.nav_legends
 import genogramia.composeapp.generated.resources.nav_settings
 import genogramia.composeapp.generated.resources.nav_trees
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun AppNavGraph() {
@@ -91,11 +80,7 @@ fun AppNavGraph() {
         ) { key ->
             when (key) {
                 is NavRoute.Splash -> {
-                    val viewModel: SplashViewModel = koinViewModel()
-                    val uiState by viewModel.uiState.collectAsState()
-
                     SplashScreen(
-                        uiState = uiState,
                         onNavigateToGuestHome = {
                             backStack.clear()
                             backStack.add(NavRoute.GuestHome)
@@ -116,12 +101,7 @@ fun AppNavGraph() {
                 }
 
                 is NavRoute.Login -> {
-                    val viewModel: LoginViewModel = koinViewModel()
-                    val uiState by viewModel.uiState.collectAsState()
-
                     LoginScreen(
-                        uiState = uiState,
-                        onEvent = viewModel::onEvent,
                         onLoginSuccess = {
                             backStack.clear()
                             backStack.add(NavRoute.AuthenticatedHome)
@@ -137,31 +117,14 @@ fun AppNavGraph() {
                 }
 
                 is NavRoute.ForgotPassword -> {
-                    val viewModel: ForgotPasswordViewModel = koinViewModel()
-                    val state by viewModel.state.collectAsState()
-
                     ForgotPasswordScreen(
-                        state = state,
                         initialEmail = key.email,
-                        onEmailChange = viewModel::onEmailChange,
-                        onSendClick = viewModel::sendResetEmail,
-                        onSuccessConsumed = viewModel::successConsumed,
-                        onErrorShown = viewModel::errorShown,
                         onBackClick = { backStack.pop() },
                     )
                 }
 
                 is NavRoute.AuthenticatedHome -> {
-                    val viewModel: AuthenticatedHomeViewModel = koinViewModel()
-                    val userName by viewModel.userName.collectAsState()
-                    val searchQuery by viewModel.searchQuery.collectAsState()
-                    val trees by viewModel.trees.collectAsState()
-
                     AuthenticatedHomeScreen(
-                        userName = userName ?: "",
-                        searchQuery = searchQuery,
-                        onSearchQueryChange = viewModel::onSearchQueryChange,
-                        trees = trees,
                         onCreateTreeClick = { /* US-011 */ },
                         onOpenTreeClick = { /* US-012 */ },
                     )
@@ -172,13 +135,7 @@ fun AppNavGraph() {
                 }
 
                 is NavRoute.Settings -> {
-                    val viewModel: SettingsViewModel = koinViewModel()
-                    val state by viewModel.state.collectAsState()
-
                     SettingsScreen(
-                        state = state,
-                        onEvent = viewModel::onEvent,
-                        onLogoutConsumed = viewModel::logoutConsumed,
                         onChangePasswordClick = {
                             backStack.push(NavRoute.ChangePassword)
                         },
@@ -190,29 +147,16 @@ fun AppNavGraph() {
                 }
 
                 is NavRoute.ChangePassword -> {
-                    val viewModel: ChangePasswordViewModel = koinViewModel()
-                    val state by viewModel.state.collectAsState()
-
                     ChangePasswordScreen(
-                        state = state,
-                        onDataChange = viewModel::onDataChange,
-                        onSaveClick = viewModel::savePassword,
-                        onSuccessConsumed = viewModel::successConsumed,
-                        onDispose = viewModel::clearData,
                         onBackClick = { backStack.pop() },
                         onForgotPasswordClick = {
-                            backStack.push(NavRoute.ForgotPassword(state.userEmail))
+                            backStack.push(NavRoute.ForgotPassword(it))
                         },
                     )
                 }
 
                 is NavRoute.Registration -> {
-                    val viewModel: RegistrationViewModel = koinViewModel()
-                    val state by viewModel.state.collectAsState()
-
                     RegistrationScreen(
-                        state = state,
-                        onEvent = viewModel::onEvent,
                         onBackClick = { backStack.pop() },
                         onRegistrationSuccess = {
                             backStack.clear()

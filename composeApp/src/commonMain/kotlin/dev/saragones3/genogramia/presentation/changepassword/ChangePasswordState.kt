@@ -1,4 +1,4 @@
-package dev.saragones3.genogramia.presentation.settings
+package dev.saragones3.genogramia.presentation.changepassword
 
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.error_empty_fields

@@ -43,6 +43,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -84,24 +85,26 @@ import genogramia.composeapp.generated.resources.registration_password_label
 import genogramia.composeapp.generated.resources.registration_subtitle
 import genogramia.composeapp.generated.resources.registration_title
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun RegistrationScreen(
-    state: RegistrationState,
-    onEvent: (RegistrationEvent) -> Unit,
     onBackClick: () -> Unit,
     onRegistrationSuccess: () -> Unit,
 ) {
+    val viewModel: RegistrationViewModel = koinViewModel()
+    val state by viewModel.state.collectAsState()
+
     LaunchedEffect(state.isRegistrationSuccess) {
         if (state.isRegistrationSuccess) {
             onRegistrationSuccess()
-            onEvent(RegistrationEvent.OnRegistrationSuccessConsumed)
+            viewModel.onEvent(RegistrationEvent.OnRegistrationSuccessConsumed)
         }
     }
 
     RegistrationContent(
-        state = state,
-        onEvent = onEvent,
+        state = RegistrationState(),
+        onEvent = viewModel::onEvent,
         onBackClick = onBackClick,
     )
 }
@@ -271,7 +274,11 @@ private fun RegistrationForm(
             trailingIcon = {
                 val image = if (passwordVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff
                 IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                    Icon(imageVector = image, contentDescription = null, tint = Color.Gray)
+                    Icon(
+                        imageVector = image,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
                 }
             },
             visualTransformation =
@@ -413,12 +420,22 @@ private fun RegistrationField(
         TextField(
             value = value,
             onValueChange = onValueChange,
-            placeholder = { Text(placeholder, color = Color.Gray) },
+            placeholder = {
+                Text(
+                    text = placeholder,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                )
+            },
             leadingIcon = {
                 Icon(
-                    leadingIcon,
+                    imageVector = leadingIcon,
                     contentDescription = null,
-                    tint = if (isError) MaterialTheme.colorScheme.error else Color.Gray,
+                    tint =
+                        if (isError) {
+                            MaterialTheme.colorScheme.error
+                        } else {
+                            MaterialTheme.colorScheme.onSurfaceVariant
+                        },
                 )
             },
             trailingIcon = trailingIcon,

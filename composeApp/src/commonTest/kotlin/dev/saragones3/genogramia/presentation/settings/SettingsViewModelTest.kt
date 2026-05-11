@@ -39,7 +39,7 @@ class SettingsViewModelTest {
     }
 
     @Test
-    fun `when user is logged in, state is updated with user info`() =
+    fun `when user is logged in state is updated with user info`() =
         runTest {
             val user = User("1", "test@example.com", "Test User")
             repository.setCurrentUser(user)
@@ -50,7 +50,7 @@ class SettingsViewModelTest {
         }
 
     @Test
-    fun `when user is not logged in, user state is null`() =
+    fun `when user is not logged in user state is null`() =
         runTest {
             repository.setCurrentUser(null)
 
@@ -60,7 +60,7 @@ class SettingsViewModelTest {
         }
 
     @Test
-    fun `when logout is clicked, logout confirmation is shown`() =
+    fun `when logout is clicked logout confirmation is shown`() =
         runTest {
             viewModel = SettingsViewModel(checkSessionUseCase, signOutUseCase, deleteAccountUseCase)
 
@@ -70,7 +70,7 @@ class SettingsViewModelTest {
         }
 
     @Test
-    fun `when delete account is clicked, delete confirmation is shown`() =
+    fun `when delete account is clicked delete confirmation is shown`() =
         runTest {
             viewModel = SettingsViewModel(checkSessionUseCase, signOutUseCase, deleteAccountUseCase)
 
@@ -80,7 +80,7 @@ class SettingsViewModelTest {
         }
 
     @Test
-    fun `when logout is confirmed, repository is updated and logout state is true`() =
+    fun `when logout is confirmed repository is updated and logout state is true`() =
         runTest {
             val user = User("1", "test@example.com", "Test User")
             repository.setCurrentUser(user)
@@ -95,7 +95,7 @@ class SettingsViewModelTest {
         }
 
     @Test
-    fun `when delete is confirmed, repository is updated and logout state is true`() =
+    fun `when delete is confirmed repository is updated and logout state is true`() =
         runTest {
             val user = User("1", "test@example.com", "Test User")
             repository.setCurrentUser(user)
@@ -110,7 +110,7 @@ class SettingsViewModelTest {
         }
 
     @Test
-    fun `when dialogs are dismissed, confirmation states are false`() =
+    fun `when dialogs are dismissed confirmation states are false`() =
         runTest {
             viewModel = SettingsViewModel(checkSessionUseCase, signOutUseCase, deleteAccountUseCase)
 

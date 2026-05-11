@@ -59,7 +59,7 @@ class LoginViewModelTest {
             viewModel.uiState.test {
                 awaitItem() // initial
 
-                viewModel.onDataChange("test@test.com", "password123")
+                viewModel.onEvent(LoginEvent.OnDataChanged("test@test.com", "password123"))
                 val updatedState = awaitItem()
                 assertEquals("test@test.com", updatedState.email)
                 assertEquals("password123", updatedState.password)
@@ -72,7 +72,7 @@ class LoginViewModelTest {
             viewModel.uiState.test {
                 awaitItem() // initial
 
-                viewModel.login()
+                viewModel.onEvent(LoginEvent.OnLoginClicked)
                 val errorState = awaitItem()
                 assertEquals(LoginUiState.ValidationError.EMPTY, errorState.emailError)
                 assertEquals(LoginUiState.ValidationError.EMPTY, errorState.passwordError)
@@ -85,10 +85,10 @@ class LoginViewModelTest {
             viewModel.uiState.test {
                 awaitItem() // initial
 
-                viewModel.onDataChange("invalid-email", "password123")
+                viewModel.onEvent(LoginEvent.OnDataChanged("invalid-email", "password123"))
                 awaitItem()
 
-                viewModel.login()
+                viewModel.onEvent(LoginEvent.OnLoginClicked)
                 val errorState = awaitItem()
                 assertEquals(LoginUiState.ValidationError.INVALID, errorState.emailError)
             }
@@ -100,10 +100,10 @@ class LoginViewModelTest {
             viewModel.uiState.test {
                 awaitItem() // initial
 
-                viewModel.onDataChange("test@test.com", "short")
+                viewModel.onEvent(LoginEvent.OnDataChanged("test@test.com", "short"))
                 awaitItem()
 
-                viewModel.login()
+                viewModel.onEvent(LoginEvent.OnLoginClicked)
                 val errorState = awaitItem()
                 assertEquals(LoginUiState.ValidationError.INVALID, errorState.passwordError)
             }
@@ -115,10 +115,10 @@ class LoginViewModelTest {
             viewModel.uiState.test {
                 awaitItem() // initial
 
-                viewModel.onDataChange("test@test.com", "password123")
+                viewModel.onEvent(LoginEvent.OnDataChanged("test@test.com", "password123"))
                 awaitItem()
 
-                viewModel.login()
+                viewModel.onEvent(LoginEvent.OnLoginClicked)
 
                 val loadingState = awaitItem()
                 assertTrue(loadingState.isLoading)
@@ -138,10 +138,10 @@ class LoginViewModelTest {
             viewModel.uiState.test {
                 awaitItem() // initial
 
-                viewModel.onDataChange("test@test.com", "password123")
+                viewModel.onEvent(LoginEvent.OnDataChanged("test@test.com", "password123"))
                 awaitItem()
 
-                viewModel.login()
+                viewModel.onEvent(LoginEvent.OnLoginClicked)
 
                 val loadingState = awaitItem()
                 assertTrue(loadingState.isLoading)
@@ -162,10 +162,10 @@ class LoginViewModelTest {
             viewModel.uiState.test {
                 awaitItem() // initial
 
-                viewModel.onDataChange("non-existent@test.com", "password123")
+                viewModel.onEvent(LoginEvent.OnDataChanged("non-existent@test.com", "password123"))
                 awaitItem()
 
-                viewModel.login()
+                viewModel.onEvent(LoginEvent.OnLoginClicked)
 
                 val loadingState = awaitItem()
                 assertTrue(loadingState.isLoading)
@@ -180,11 +180,11 @@ class LoginViewModelTest {
     fun errorShown_clears_general_error() =
         runTest(testDispatcher) {
             fakeAuthRepository.shouldReturnError = true
-            viewModel.onDataChange("test@test.com", "password123")
-            viewModel.login()
+            viewModel.onEvent(LoginEvent.OnDataChanged("test@test.com", "password123"))
+            viewModel.onEvent(LoginEvent.OnLoginClicked)
             testDispatcher.scheduler.advanceUntilIdle()
 
-            viewModel.errorShown()
+            viewModel.onEvent(LoginEvent.OnErrorShown)
 
             viewModel.uiState.test {
                 val state = awaitItem()
@@ -195,11 +195,11 @@ class LoginViewModelTest {
     @Test
     fun loginSuccessConsumed_resets_state() =
         runTest(testDispatcher) {
-            viewModel.onDataChange("test@test.com", "password123")
-            viewModel.login()
+            viewModel.onEvent(LoginEvent.OnDataChanged("test@test.com", "password123"))
+            viewModel.onEvent(LoginEvent.OnLoginClicked)
             testDispatcher.scheduler.advanceUntilIdle()
 
-            viewModel.loginSuccessConsumed()
+            viewModel.onEvent(LoginEvent.OnLoginSuccessConsumed)
 
             viewModel.uiState.test {
                 val state = awaitItem()

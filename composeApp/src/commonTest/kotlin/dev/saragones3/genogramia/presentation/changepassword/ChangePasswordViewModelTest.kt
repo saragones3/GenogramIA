@@ -1,6 +1,7 @@
-package dev.saragones3.genogramia.presentation.settings
+package dev.saragones3.genogramia.presentation.changepassword
 
 import app.cash.turbine.test
+import dev.saragones3.genogramia.domain.model.User
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
@@ -42,8 +43,7 @@ class ChangePasswordViewModelTest {
     fun `initial state is empty and loads user email`() =
         runTest {
             val user =
-                dev.saragones3.genogramia.domain.model
-                    .User("id", "test@test.com", "Name")
+                User("id", "test@test.com", "Name")
             repository.setCurrentUser(user)
             val newViewModel = ChangePasswordViewModel(updatePasswordUseCase, checkSessionUseCase)
 

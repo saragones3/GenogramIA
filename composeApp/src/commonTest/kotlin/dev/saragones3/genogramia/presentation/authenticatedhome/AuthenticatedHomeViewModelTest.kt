@@ -20,7 +20,7 @@ class AuthenticatedHomeViewModelTest {
     }
 
     @Test
-    fun `when user is logged in, userName state should have displayName`() =
+    fun `when user is logged in userName state should have displayName`() =
         runTest {
             val user = User("123", "test@test.com", "John Doe")
             authRepository.setCurrentUser(user)
@@ -31,7 +31,7 @@ class AuthenticatedHomeViewModelTest {
         }
 
     @Test
-    fun `when view model is initialized, trees should be loaded with mock data`() =
+    fun `when view model is initialized trees should be loaded with mock data`() =
         runTest {
             val user = User("123", "test@test.com", "John Doe")
             authRepository.setCurrentUser(user)
@@ -43,7 +43,7 @@ class AuthenticatedHomeViewModelTest {
         }
 
     @Test
-    fun `when search query changes, trees should be filtered`() =
+    fun `when search query changes trees should be filtered`() =
         runTest {
             val user = User("123", "test@test.com", "John Doe")
             authRepository.setCurrentUser(user)
@@ -59,7 +59,7 @@ class AuthenticatedHomeViewModelTest {
         }
 
     @Test
-    fun `when user is logged in without displayName, userName state should be User`() =
+    fun `when user is logged in without displayName userName state should be User`() =
         runTest {
             val user = User("123", "test@test.com", null)
             authRepository.setCurrentUser(user)

@@ -1,4 +1,4 @@
-package dev.saragones3.genogramia.presentation.settings
+package dev.saragones3.genogramia.presentation.changepassword
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

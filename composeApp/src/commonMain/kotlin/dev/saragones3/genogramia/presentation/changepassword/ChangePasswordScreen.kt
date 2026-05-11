@@ -1,4 +1,4 @@
-package dev.saragones3.genogramia.presentation.settings
+package dev.saragones3.genogramia.presentation.changepassword
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,6 +44,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -78,38 +79,36 @@ import genogramia.composeapp.generated.resources.change_password_subtitle
 import genogramia.composeapp.generated.resources.change_password_success
 import genogramia.composeapp.generated.resources.change_password_title
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun ChangePasswordScreen(
-    state: ChangePasswordState,
-    onDataChange: (String, String, String) -> Unit,
-    onSaveClick: () -> Unit,
-    onSuccessConsumed: () -> Unit,
-    onDispose: () -> Unit,
     onBackClick: () -> Unit,
-    onForgotPasswordClick: () -> Unit,
+    onForgotPasswordClick: (String?) -> Unit,
 ) {
+    val viewModel: ChangePasswordViewModel = koinViewModel()
+    val state by viewModel.state.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
     val successMessage = stringResource(Res.string.change_password_success)
 
     DisposableEffect(Unit) {
         onDispose {
-            onDispose()
+            viewModel.clearData()
         }
     }
 
     LaunchedEffect(state.isSuccess) {
         if (state.isSuccess) {
             snackbarHostState.showSnackbar(successMessage)
-            onSuccessConsumed()
+            viewModel.successConsumed()
         }
     }
 
     ChangePasswordContent(
         state = state,
         snackbarHostState = snackbarHostState,
-        onDataChange = onDataChange,
-        onSaveClick = onSaveClick,
+        onDataChange = viewModel::onDataChange,
+        onSaveClick = viewModel::savePassword,
         onBackClick = onBackClick,
         onForgotPasswordClick = onForgotPasswordClick,
     )
@@ -123,7 +122,7 @@ private fun ChangePasswordContent(
     onDataChange: (String, String, String) -> Unit,
     onSaveClick: () -> Unit,
     onBackClick: () -> Unit,
-    onForgotPasswordClick: () -> Unit,
+    onForgotPasswordClick: (String?) -> Unit,
 ) {
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,
@@ -238,7 +237,7 @@ private fun ChangePasswordContent(
                 Spacer(modifier = Modifier.height(16.dp))
 
                 TextButton(
-                    onClick = onForgotPasswordClick,
+                    onClick = { onForgotPasswordClick(state.userEmail) },
                     modifier = Modifier.align(Alignment.End),
                 ) {
                     Text(

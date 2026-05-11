@@ -46,9 +46,22 @@ import genogramia.composeapp.generated.resources.start_first_tree
 import genogramia.composeapp.generated.resources.start_first_tree_desc
 import org.jetbrains.compose.resources.stringResource
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GuestHomeScreen(
+    onLoginClick: () -> Unit,
+    onGoToTree: () -> Unit,
+    onCreateTree: () -> Unit,
+) {
+    GuestHomeContent(
+        onLoginClick = onLoginClick,
+        onGoToTree = onGoToTree,
+        onCreateTree = onCreateTree,
+    )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun GuestHomeContent(
     onLoginClick: () -> Unit,
     onGoToTree: () -> Unit,
     onCreateTree: () -> Unit,
@@ -162,7 +175,7 @@ private fun GuestHomeTitleSection() {
 @Composable
 private fun GuestHomeScreenPreview() {
     GenogramiaTheme {
-        GuestHomeScreen(
+        GuestHomeContent(
             onLoginClick = {},
             onGoToTree = {},
             onCreateTree = {},

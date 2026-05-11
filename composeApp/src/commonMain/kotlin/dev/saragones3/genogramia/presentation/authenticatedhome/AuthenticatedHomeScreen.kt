@@ -18,6 +18,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -43,9 +45,30 @@ import genogramia.composeapp.generated.resources.auth_home_start_tree_subtitle
 import genogramia.composeapp.generated.resources.auth_home_subtitle
 import genogramia.composeapp.generated.resources.auth_home_welcome
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun AuthenticatedHomeScreen(
+    onCreateTreeClick: () -> Unit,
+    onOpenTreeClick: (String) -> Unit,
+) {
+    val viewModel: AuthenticatedHomeViewModel = koinViewModel()
+    val userName by viewModel.userName.collectAsState()
+    val searchQuery by viewModel.searchQuery.collectAsState()
+    val trees by viewModel.trees.collectAsState()
+
+    AuthenticatedHomeContent(
+        userName = userName ?: "",
+        searchQuery = searchQuery,
+        onSearchQueryChange = viewModel::onSearchQueryChange,
+        trees = trees,
+        onCreateTreeClick = onCreateTreeClick,
+        onOpenTreeClick = onOpenTreeClick,
+    )
+}
+
+@Composable
+private fun AuthenticatedHomeContent(
     userName: String,
     searchQuery: String,
     trees: List<GenogramTree>,
@@ -136,7 +159,7 @@ fun AuthenticatedHomeScreen(
 @Preview
 private fun AuthenticatedHomeScreenPreview() {
     GenogramiaTheme {
-        AuthenticatedHomeScreen(
+        AuthenticatedHomeContent(
             userName = "Sergio",
             searchQuery = "",
             onSearchQueryChange = {},

@@ -34,6 +34,10 @@ class FakeFirebaseProvider(
         currentUser = null
     }
 
+    override suspend fun reauthenticate(password: String) {
+        // Fake implementation
+    }
+
     fun setCurrentUser(user: AuthUser?) {
         currentUser = user
     }

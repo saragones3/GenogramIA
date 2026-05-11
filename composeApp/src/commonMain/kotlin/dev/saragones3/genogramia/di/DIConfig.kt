@@ -10,12 +10,12 @@ import dev.saragones3.genogramia.domain.usecase.SignOutUseCase
 import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeViewModel
+import dev.saragones3.genogramia.presentation.changepassword.ChangePasswordViewModel
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
 import dev.saragones3.genogramia.presentation.guesthome.GuestHomeViewModel
 import dev.saragones3.genogramia.presentation.legends.LegendsViewModel
 import dev.saragones3.genogramia.presentation.login.LoginViewModel
 import dev.saragones3.genogramia.presentation.registration.RegistrationViewModel
-import dev.saragones3.genogramia.presentation.settings.ChangePasswordViewModel
 import dev.saragones3.genogramia.presentation.settings.SettingsViewModel
 import dev.saragones3.genogramia.presentation.splash.SplashViewModel
 import org.koin.core.module.Module
