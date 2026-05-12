@@ -12,6 +12,10 @@ Este documento define los pasos obligatorios que deben seguirse al completar cad
 
 Al terminar el desarrollo de una tarea o la resolución de un error (issue), se deben realizar las siguientes acciones en orden:
 
+### 0. Verificar el Issue con `gh` (Obligatorio)
+- Ejecuta el skill `github-issue-fetch` (`.agents/skills/github-issue-fetch/SKILL.md`) para confirmar el número, título y estado del issue antes de crear la PR.
+- Asegúrate de que el issue sigue en estado `OPEN`; si ya está `CLOSED`, notifica al usuario.
+
 ### 1. Sincronización (Sync)
 - Asegurarse de que la rama local esté actualizada con la rama base (normalmente `master` o `develop`).
 - Resolver cualquier conflicto de fusión si es necesario.

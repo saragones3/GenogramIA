@@ -12,6 +12,10 @@ Este documento define los pasos obligatorios que deben seguirse al comenzar a tr
 
 Antes de realizar cualquier cambio en el código para un nuevo issue, se deben realizar las siguientes acciones en orden:
 
+### 0. Obtener los Detalles del Issue (Obligatorio)
+- **Antes de cualquier otra acción**, ejecuta el skill `github-issue-fetch` (`.agents/skills/github-issue-fetch/SKILL.md`) para obtener el título, cuerpo, etiquetas y estado del issue con `gh`.
+- El tipo de rama (`feature`, `bugfix`, `task`, etc.) se determina a partir de la etiqueta del issue devuelta por `gh`.
+
 ### 1. Preparación de la Rama Base
 - Asegurarse de estar en la rama `master`.
 - Ejecutar `git checkout master`.
