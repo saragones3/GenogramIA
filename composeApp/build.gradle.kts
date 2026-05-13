@@ -84,6 +84,7 @@ kotlin {
             implementation(libs.androidx.navigation3.runtime)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.datetime)
 
             // Koin
             implementation(libs.koin.core)

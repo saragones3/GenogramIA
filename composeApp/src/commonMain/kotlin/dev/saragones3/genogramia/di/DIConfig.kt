@@ -2,6 +2,7 @@ package dev.saragones3.genogramia.di
 
 import dev.saragones3.genogramia.data.repository.AuthRepositoryImpl
 import dev.saragones3.genogramia.data.repository.InMemoryTreeRepository
+import dev.saragones3.genogramia.data.util.RealDateProvider
 import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.domain.repository.TreeRepository
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
@@ -12,6 +13,7 @@ import dev.saragones3.genogramia.domain.usecase.SignInUseCase
 import dev.saragones3.genogramia.domain.usecase.SignOutUseCase
 import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
+import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeViewModel
 import dev.saragones3.genogramia.presentation.changepassword.ChangePasswordViewModel
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
@@ -31,6 +33,7 @@ private val dataModule =
     module {
         single<AuthRepository> { AuthRepositoryImpl(get()) }
         single<TreeRepository> { InMemoryTreeRepository() }
+        single<DateProvider> { RealDateProvider() }
     }
 
 private val domainModule =

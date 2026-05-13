@@ -3,6 +3,7 @@ package dev.saragones3.genogramia.presentation.newtree
 import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.NewTreeUseCase
+import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -20,7 +21,15 @@ import kotlin.test.assertNull
 class NewTreeViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val repository = FakeTreeRepository()
-    private val createTreeUseCase = NewTreeUseCase(repository)
+
+    private val fakeDateProvider =
+        object : DateProvider {
+            override fun nowFormatted(): String = "1970-01-02T10:17:36:Z"
+
+            override fun nowEpochMilliseconds(): Long = 123456789L
+        }
+
+    private val createTreeUseCase = NewTreeUseCase(repository, fakeDateProvider)
     private lateinit var viewModel: NewTreeViewModel
 
     @BeforeTest

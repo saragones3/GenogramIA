@@ -1,6 +1,7 @@
 package dev.saragones3.genogramia.domain.usecase
 
 import dev.saragones3.genogramia.domain.model.Person
+import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
@@ -12,10 +13,17 @@ class NewTreeUseCaseTest {
     private lateinit var repository: FakeTreeRepository
     private lateinit var useCase: NewTreeUseCase
 
+    private val fakeDateProvider =
+        object : DateProvider {
+            override fun nowFormatted(): String = "1970-01-02T10:17:36:Z"
+
+            override fun nowEpochMilliseconds(): Long = 123456789L
+        }
+
     @BeforeTest
     fun setup() {
         repository = FakeTreeRepository()
-        useCase = NewTreeUseCase(repository)
+        useCase = NewTreeUseCase(repository, fakeDateProvider)
     }
 
     @Test
@@ -76,5 +84,7 @@ class NewTreeUseCaseTest {
             assertEquals("John", tree?.centralPerson?.firstName)
             assertEquals(Person.BiologicalSex.MALE, tree?.centralPerson?.biologicalSex)
             assertEquals(Person.SexualOrientation.HETEROSEXUAL, tree?.centralPerson?.sexualOrientation)
+            assertEquals("tree-123456789", tree?.id)
+            assertEquals("1970-01-02T10:17:36:Z", tree?.lastUpdated)
         }
 }
