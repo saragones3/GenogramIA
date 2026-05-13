@@ -113,4 +113,36 @@
     <string name="forgot_password_button">Send Reset Link</string>
     <string name="forgot_password_success_message">A reset link has been sent to your email.</string>
     <string name="forgot_password_back_to_login">Back to Login</string>
+
+    <!-- Create Tree -->
+    <string name="new_tree_title">Create Tree</string>
+    <string name="new_tree_header_title">Start Your Tree: Introduce the central person</string>
+    <string name="new_tree_header_subtitle">This will be the starting point of your family archive. You can start with yourself or a relative.</string>
+    <string name="new_tree_section_basic">Basic Information</string>
+    <string name="new_tree_first_name_label">First Name(s) *</string>
+    <string name="new_tree_first_name_hint">e.g. Maria Elena</string>
+    <string name="new_tree_last_name_label">Last Names *</string>
+    <string name="new_tree_last_name_hint">e.g. Garcia Lopez</string>
+    <string name="new_tree_birth_date_label">Birth Date</string>
+    <string name="new_tree_birth_date_hint">mm/dd/yyyy</string>
+    <string name="new_tree_death_date_label">Death Date</string>
+    <string name="new_tree_death_date_optional">(Optional)</string>
+    <string name="new_tree_death_date_hint">mm/dd/yyyy</string>
+    <string name="new_tree_section_identity">Identity</string>
+    <string name="new_tree_sex_label">Biological Sex</string>
+    <string name="new_tree_sex_male">Male</string>
+    <string name="new_tree_sex_female">Female</string>
+    <string name="new_tree_orientation_label">Orientation</string>
+    <string name="new_tree_orientation_hetero">Heterosexual</string>
+    <string name="new_tree_orientation_other">Other</string>
+    <string name="new_tree_section_medical">Medical History</string>
+    <string name="new_tree_medical_add">Add</string>
+    <string name="new_tree_medical_desc">Recording health conditions helps identify genetic patterns in the family tree.</string>
+    <string name="new_tree_medical_empty">No medical records yet. Click 'Add' to register relevant conditions.</string>
+    <string name="new_tree_button">Continue and Create Tree</string>
+    <string name="new_tree_footer">You can edit this information later in the person\'s profile.</string>
+    <string name="new_tree_guest_notice">Your data is temporary and will be lost when the app closes.</string>
+
+    <!-- Canvas -->
+    <string name="canvas_title">Genogram Canvas</string>
 </resources>

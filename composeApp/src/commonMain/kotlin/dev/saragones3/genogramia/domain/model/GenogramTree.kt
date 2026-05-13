@@ -5,4 +5,5 @@ data class GenogramTree(
     val name: String,
     val ancestorCount: Int,
     val lastUpdated: String,
+    val centralPerson: Person,
 )
