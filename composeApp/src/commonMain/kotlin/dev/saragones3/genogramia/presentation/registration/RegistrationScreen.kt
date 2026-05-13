@@ -103,7 +103,7 @@ fun RegistrationScreen(
     }
 
     RegistrationContent(
-        state = RegistrationState(),
+        state = state,
         onEvent = viewModel::onEvent,
         onBackClick = onBackClick,
     )
