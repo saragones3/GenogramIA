@@ -49,7 +49,7 @@ import org.jetbrains.compose.resources.stringResource
 @Composable
 fun GuestHomeScreen(
     onLoginClick: () -> Unit,
-    onGoToTree: () -> Unit,
+    onGoToTree: (String) -> Unit,
     onCreateTree: () -> Unit,
 ) {
     GuestHomeContent(
@@ -63,7 +63,7 @@ fun GuestHomeScreen(
 @Composable
 private fun GuestHomeContent(
     onLoginClick: () -> Unit,
-    onGoToTree: () -> Unit,
+    onGoToTree: (String) -> Unit,
     onCreateTree: () -> Unit,
 ) {
     Scaffold(
@@ -99,7 +99,7 @@ private fun GuestHomeContent(
                 title = stringResource(Res.string.sample_tree),
                 description = stringResource(Res.string.sample_tree_desc),
                 buttonText = stringResource(Res.string.explore_example),
-                onButtonClick = onGoToTree,
+                onButtonClick = { onGoToTree("") },
                 badgeText = stringResource(Res.string.guest_preview),
             )
 

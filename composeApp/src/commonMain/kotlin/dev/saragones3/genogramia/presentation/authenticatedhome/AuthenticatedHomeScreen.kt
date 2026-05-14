@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.domain.model.GenogramTree
+import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.presentation.components.AddTreeCard
 import dev.saragones3.genogramia.presentation.components.GenogramTreeCard
 import dev.saragones3.genogramia.presentation.components.SearchBar
@@ -165,7 +166,7 @@ private fun AuthenticatedHomeScreenPreview() {
             onSearchQueryChange = {},
             trees =
                 listOf(
-                    GenogramTree("1", "Aragones Family", 1240, "2 days ago"),
+                    GenogramTree("1", "Aragones Family", 1240, "2 days ago", Person()),
                 ),
             onCreateTreeClick = {},
             onOpenTreeClick = {},

@@ -113,4 +113,37 @@
     <string name="forgot_password_button">Enviar Enlace</string>
     <string name="forgot_password_success_message">Se ha enviado un enlace a tu correo.</string>
     <string name="forgot_password_back_to_login">Volver al Inicio de Sesión</string>
+
+    <!-- Create Tree -->
+    <string name="new_tree_title">Crear Árbol</string>
+    <string name="new_tree_header_title">Comienza tu Árbol: Introduce a la persona central</string>
+    <string name="new_tree_header_subtitle">Este será el punto de partida de tu archivo familiar. Puedes empezar contigo mismo o con un familiar.</string>
+    <string name="new_tree_section_basic">Información Básica</string>
+    <string name="new_tree_first_name_label">Nombre(s) *</string>
+    <string name="new_tree_first_name_hint">Ej: María Elena</string>
+    <string name="new_tree_last_name_label">Apellidos *</string>
+    <string name="new_tree_last_name_hint">Ej: García López</string>
+    <string name="new_tree_birth_date_label">Fecha de Nacimiento</string>
+    <string name="new_tree_birth_date_hint">dd/mm/yyyy</string>
+    <string name="new_tree_death_date_label">Fecha de Defunción</string>
+    <string name="new_tree_death_date_optional">(Opcional)</string>
+    <string name="new_tree_death_date_hint">dd/mm/yyyy</string>
+    <string name="date_format">dd/MM/yyyy</string>
+    <string name="new_tree_section_identity">Identidad</string>
+    <string name="new_tree_sex_label">Sexo Biológico</string>
+    <string name="new_tree_sex_male">Hombre</string>
+    <string name="new_tree_sex_female">Mujer</string>
+    <string name="new_tree_orientation_label">Orientación</string>
+    <string name="new_tree_orientation_hetero">Heterosexual</string>
+    <string name="new_tree_orientation_other">Otro</string>
+    <string name="new_tree_section_medical">Historial Médico</string>
+    <string name="new_tree_medical_add">Añadir</string>
+    <string name="new_tree_medical_desc">Registrar condiciones de salud ayuda a identificar patrones genéticos en el árbol familiar.</string>
+    <string name="new_tree_medical_empty">Aún no hay registros médicos. Haz clic en 'Añadir' para registrar condiciones relevantes.</string>
+    <string name="new_tree_button">Continuar y Crear Árbol</string>
+    <string name="new_tree_footer">Podrás editar esta información más adelante en el perfil de la persona.</string>
+    <string name="new_tree_guest_notice">Tus datos son temporales y se perderán al cerrar la aplicación.</string>
+
+    <!-- Canvas -->
+    <string name="canvas_title">Lienzo del Genograma</string>
 </resources>

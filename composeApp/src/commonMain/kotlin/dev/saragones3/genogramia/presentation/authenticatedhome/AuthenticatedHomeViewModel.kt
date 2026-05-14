@@ -2,6 +2,7 @@ package dev.saragones3.genogramia.presentation.authenticatedhome
 
 import androidx.lifecycle.ViewModel
 import dev.saragones3.genogramia.domain.model.GenogramTree
+import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -34,9 +35,9 @@ class AuthenticatedHomeViewModel(
         // Mock data as requested
         allTrees =
             listOf(
-                GenogramTree("1", "Smith Family", 1240, "2 days ago"),
-                GenogramTree("2", "Maternal Lineage", 8, "1 week ago"),
-                GenogramTree("3", "Paternal Lineage", 12, "2 weeks ago"),
+                GenogramTree("1", "Smith Family", 1240, "2 days ago", Person()),
+                GenogramTree("2", "Maternal Lineage", 8, "1 week ago", Person()),
+                GenogramTree("3", "Paternal Lineage", 12, "2 weeks ago", Person()),
             )
         updateFilteredTrees()
     }

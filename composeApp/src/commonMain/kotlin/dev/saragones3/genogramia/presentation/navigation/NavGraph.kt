@@ -31,9 +31,11 @@ import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordScree
 import dev.saragones3.genogramia.presentation.guesthome.GuestHomeScreen
 import dev.saragones3.genogramia.presentation.legends.LegendsScreen
 import dev.saragones3.genogramia.presentation.login.LoginScreen
+import dev.saragones3.genogramia.presentation.newtree.NewTreeScreen
 import dev.saragones3.genogramia.presentation.registration.RegistrationScreen
 import dev.saragones3.genogramia.presentation.settings.SettingsScreen
 import dev.saragones3.genogramia.presentation.splash.SplashScreen
+import dev.saragones3.genogramia.presentation.tree.TreeScreen
 import dev.saragones3.genogramia.ui.theme.NavigationBarIndicator
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.nav_legends
@@ -44,31 +46,17 @@ import org.jetbrains.compose.resources.stringResource
 @Composable
 fun AppNavGraph() {
     val backStack = rememberNavBackStack(initialKey = NavRoute.Splash)
-
     val currentRoute = backStack.lastOrNull()
     val isGuestMode = backStack.firstOrNull { it !is NavRoute.Splash } is NavRoute.GuestHome
 
-    val showBottomBar =
-        currentRoute is NavRoute.GuestHome ||
-            currentRoute is NavRoute.AuthenticatedHome ||
-            currentRoute is NavRoute.Legends ||
-            currentRoute is NavRoute.Settings
-
     Scaffold(
         bottomBar = {
-            if (showBottomBar) {
+            if (shouldShowBottomBar(currentRoute)) {
                 AppBottomBar(
-                    currentRoute = currentRoute,
+                    currentRoute = currentRoute!!,
                     isGuestMode = isGuestMode,
                     onNavigate = { route ->
-                        if (currentRoute != route) {
-                            backStack.clear()
-                            if (route is NavRoute.Legends || route is NavRoute.Settings) {
-                                val root = if (isGuestMode) NavRoute.GuestHome else NavRoute.AuthenticatedHome
-                                backStack.add(root)
-                            }
-                            backStack.add(route)
-                        }
+                        handleBottomBarNavigation(backStack, currentRoute, route, isGuestMode)
                     },
                 )
             }
@@ -78,95 +66,141 @@ fun AppNavGraph() {
             backStack = backStack,
             modifier = Modifier.fillMaxSize().padding(padding),
         ) { key ->
-            when (key) {
-                is NavRoute.Splash -> {
-                    SplashScreen(
-                        onNavigateToGuestHome = {
-                            backStack.clear()
-                            backStack.add(NavRoute.GuestHome)
-                        },
-                        onNavigateToAuthenticatedHome = {
-                            backStack.clear()
-                            backStack.add(NavRoute.AuthenticatedHome)
-                        },
-                    )
-                }
-
-                is NavRoute.GuestHome -> {
-                    GuestHomeScreen(
-                        onLoginClick = { backStack.push(NavRoute.Login) },
-                        onGoToTree = {},
-                        onCreateTree = {},
-                    )
-                }
-
-                is NavRoute.Login -> {
-                    LoginScreen(
-                        onLoginSuccess = {
-                            backStack.clear()
-                            backStack.add(NavRoute.AuthenticatedHome)
-                        },
-                        onRegisterClick = {
-                            backStack.push(NavRoute.Registration)
-                        },
-                        onForgotPasswordClick = {
-                            backStack.push(NavRoute.ForgotPassword())
-                        },
-                        onBackClick = { backStack.pop() },
-                    )
-                }
-
-                is NavRoute.ForgotPassword -> {
-                    ForgotPasswordScreen(
-                        initialEmail = key.email,
-                        onBackClick = { backStack.pop() },
-                    )
-                }
-
-                is NavRoute.AuthenticatedHome -> {
-                    AuthenticatedHomeScreen(
-                        onCreateTreeClick = { /* US-011 */ },
-                        onOpenTreeClick = { /* US-012 */ },
-                    )
-                }
-
-                is NavRoute.Legends -> {
-                    LegendsScreen()
-                }
-
-                is NavRoute.Settings -> {
-                    SettingsScreen(
-                        onChangePasswordClick = {
-                            backStack.push(NavRoute.ChangePassword)
-                        },
-                        onLoggedOut = {
-                            backStack.clear()
-                            backStack.add(NavRoute.GuestHome)
-                        },
-                    )
-                }
-
-                is NavRoute.ChangePassword -> {
-                    ChangePasswordScreen(
-                        onBackClick = { backStack.pop() },
-                        onForgotPasswordClick = {
-                            backStack.push(NavRoute.ForgotPassword(it))
-                        },
-                    )
-                }
-
-                is NavRoute.Registration -> {
-                    RegistrationScreen(
-                        onBackClick = { backStack.pop() },
-                        onRegistrationSuccess = {
-                            backStack.clear()
-                            backStack.add(NavRoute.AuthenticatedHome)
-                        },
-                    )
-                }
-            }
+            NavGraphContent(key, backStack)
         }
     }
+}
+
+private fun shouldShowBottomBar(route: NavRoute?): Boolean =
+    route is NavRoute.GuestHome ||
+        route is NavRoute.AuthenticatedHome ||
+        route is NavRoute.Legends ||
+        route is NavRoute.Settings
+
+private fun handleBottomBarNavigation(
+    backStack: SnapshotStateList<NavRoute>,
+    currentRoute: NavRoute,
+    route: NavRoute,
+    isGuestMode: Boolean,
+) {
+    if (currentRoute != route) {
+        backStack.clear()
+        if (route is NavRoute.Legends || route is NavRoute.Settings) {
+            val root = if (isGuestMode) NavRoute.GuestHome else NavRoute.AuthenticatedHome
+            backStack.add(root)
+        }
+        backStack.add(route)
+    }
+}
+
+@Composable
+private fun NavGraphContent(
+    key: NavRoute,
+    backStack: SnapshotStateList<NavRoute>,
+) {
+    when (key) {
+        is NavRoute.Splash -> {
+            SplashScreen(
+                onNavigateToGuestHome = {
+                    backStack.clear()
+                    backStack.add(NavRoute.GuestHome)
+                },
+                onNavigateToAuthenticatedHome = {
+                    backStack.clear()
+                    backStack.add(NavRoute.AuthenticatedHome)
+                },
+            )
+        }
+
+        is NavRoute.GuestHome -> {
+            GuestHomeScreen(
+                onLoginClick = { backStack.push(NavRoute.Login) },
+                onGoToTree = { treeId -> backStack.push(NavRoute.Tree(treeId)) },
+                onCreateTree = { backStack.push(NavRoute.NewTree) },
+            )
+        }
+
+        is NavRoute.Login -> {
+            LoginDestination(backStack)
+        }
+
+        is NavRoute.ForgotPassword -> {
+            ForgotPasswordScreen(
+                initialEmail = key.email,
+                onBackClick = { backStack.pop() },
+            )
+        }
+
+        is NavRoute.AuthenticatedHome -> {
+            AuthenticatedHomeScreen(
+                onCreateTreeClick = { backStack.push(NavRoute.NewTree) },
+                onOpenTreeClick = { treeId ->
+                    backStack.push(NavRoute.Tree(treeId))
+                },
+            )
+        }
+
+        is NavRoute.Legends -> {
+            LegendsScreen()
+        }
+
+        is NavRoute.Settings -> {
+            SettingsScreen(
+                onChangePasswordClick = { backStack.push(NavRoute.ChangePassword) },
+                onLoggedOut = {
+                    backStack.clear()
+                    backStack.add(NavRoute.GuestHome)
+                },
+            )
+        }
+
+        is NavRoute.ChangePassword -> {
+            ChangePasswordScreen(
+                onBackClick = { backStack.pop() },
+                onForgotPasswordClick = { backStack.push(NavRoute.ForgotPassword(it)) },
+            )
+        }
+
+        is NavRoute.Registration -> {
+            RegistrationScreen(
+                onBackClick = { backStack.pop() },
+                onRegistrationSuccess = {
+                    backStack.clear()
+                    backStack.add(NavRoute.AuthenticatedHome)
+                },
+            )
+        }
+
+        is NavRoute.NewTree -> {
+            NewTreeScreen(
+                onBackClick = { backStack.pop() },
+                onTreeCreated = { treeId ->
+                    backStack.pop()
+                    backStack.push(NavRoute.Tree(treeId))
+                },
+            )
+        }
+
+        is NavRoute.Tree -> {
+            TreeScreen(
+                treeId = key.treeId,
+                onBackClick = { backStack.pop() },
+            )
+        }
+    }
+}
+
+@Composable
+private fun LoginDestination(backStack: SnapshotStateList<NavRoute>) {
+    LoginScreen(
+        onLoginSuccess = {
+            backStack.clear()
+            backStack.add(NavRoute.AuthenticatedHome)
+        },
+        onRegisterClick = { backStack.push(NavRoute.Registration) },
+        onForgotPasswordClick = { backStack.push(NavRoute.ForgotPassword()) },
+        onBackClick = { backStack.pop() },
+    )
 }
 
 @Composable

@@ -38,6 +38,25 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
             }
         }
     }
+    
+    func reauthenticate(
+        password: String,
+        onSuccess: @escaping () -> Void,
+        onError: @escaping (String) -> Void
+    ) {
+        guard let user = Auth.auth().currentUser, let email = user.email else {
+            onError("Error desconocido")
+            return
+        }
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        user.reauthenticate(with: credential) { result, error in
+            if let user = result?.user {
+                onSuccess()
+            } else {
+                onError(error?.localizedDescription ?? "Error desconocido")
+            }
+        }
+    }
 
     func createUserWithEmail(
         email: String,
@@ -74,6 +93,25 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
         onError: @escaping (String) -> Void
     ) {
         Auth.auth().currentUser?.updatePassword(to: newPassword) { error in
+            if let error {
+                onError(error.localizedDescription)
+            } else {
+                onSuccess()
+            }
+        }
+    }
+    
+    func updateProfile(
+        displayName: String?,
+        onSuccess: @escaping () -> Void,
+        onError: @escaping (String) -> Void
+    ) {
+        guard let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() else {
+            onError("Error desconocido")
+            return
+        }
+        changeRequest.displayName = displayName
+        changeRequest.commitChanges { error in
             if let error {
                 onError(error.localizedDescription)
             } else {

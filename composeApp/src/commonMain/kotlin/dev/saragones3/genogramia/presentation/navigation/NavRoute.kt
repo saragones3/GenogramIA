@@ -32,4 +32,12 @@ sealed interface NavRoute {
     data class ForgotPassword(
         val email: String? = null,
     ) : NavRoute
+
+    @Serializable
+    data object NewTree : NavRoute
+
+    @Serializable
+    data class Tree(
+        val treeId: String,
+    ) : NavRoute
 }
