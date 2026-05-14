@@ -2,9 +2,12 @@ package dev.saragones3.genogramia.presentation.newtree
 
 import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.Person
+import dev.saragones3.genogramia.domain.model.User
+import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.NewTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.domain.util.DateProvider
+import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -21,7 +24,8 @@ import kotlin.test.assertNull
 @OptIn(ExperimentalCoroutinesApi::class)
 class NewTreeViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
-    private val repository = FakeTreeRepository()
+    private val treeRepository = FakeTreeRepository()
+    private val authRepository = FakeAuthRepository()
 
     private val fakeDateProvider =
         object : DateProvider {
@@ -29,13 +33,15 @@ class NewTreeViewModelTest {
         }
 
     private val dateFormatter = DateFormatter()
-    private val createTreeUseCase = NewTreeUseCase(repository, fakeDateProvider, dateFormatter)
+    private val createTreeUseCase = NewTreeUseCase(treeRepository, fakeDateProvider, dateFormatter)
+    private val checkSessionUseCase = CheckSessionUseCase(authRepository)
     private lateinit var viewModel: NewTreeViewModel
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = NewTreeViewModel(createTreeUseCase, dateFormatter)
+        authRepository.setCurrentUser(null)
+        viewModel = NewTreeViewModel(createTreeUseCase, checkSessionUseCase, dateFormatter)
     }
 
     @AfterTest
@@ -57,6 +63,16 @@ class NewTreeViewModelTest {
             assertNull(state.lastNameError)
             assertEquals(false, state.showBirthDatePicker)
             assertEquals(false, state.showDeathDatePicker)
+            assertEquals(true, state.isGuest)
+        }
+
+    @Test
+    fun `when user is logged in isGuest is false`() =
+        runTest {
+            authRepository.setCurrentUser(User("uid", "email@test.com", "User"))
+            val viewModel = NewTreeViewModel(createTreeUseCase, checkSessionUseCase, dateFormatter)
+
+            assertEquals(false, viewModel.state.value.isGuest)
         }
 
     @Test
@@ -149,6 +165,7 @@ class NewTreeViewModelTest {
             viewModel.onEvent(NewTreeEvent.OnShowBirthDatePicker(true))
             assertEquals("John", viewModel.state.value.person.firstName)
             assertEquals(true, viewModel.state.value.showBirthDatePicker)
+            assertEquals(true, viewModel.state.value.isGuest)
 
             viewModel.onEvent(NewTreeEvent.OnResetState)
 
@@ -156,5 +173,6 @@ class NewTreeViewModelTest {
             assertEquals("", state.person.firstName)
             assertEquals(false, state.showBirthDatePicker)
             assertNull(state.firstNameError)
+            assertEquals(true, state.isGuest)
         }
 }
