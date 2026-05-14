@@ -35,6 +35,8 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.DatePicker
+import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -42,10 +44,12 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -66,6 +70,7 @@ import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.Primary
 import dev.saragones3.genogramia.ui.theme.SurfaceContainerHighest
 import genogramia.composeapp.generated.resources.Res
+import genogramia.composeapp.generated.resources.date_format
 import genogramia.composeapp.generated.resources.error_empty_fields
 import genogramia.composeapp.generated.resources.new_tree_birth_date_hint
 import genogramia.composeapp.generated.resources.new_tree_birth_date_label
@@ -93,6 +98,8 @@ import genogramia.composeapp.generated.resources.new_tree_sex_female
 import genogramia.composeapp.generated.resources.new_tree_sex_label
 import genogramia.composeapp.generated.resources.new_tree_sex_male
 import genogramia.composeapp.generated.resources.new_tree_title
+import genogramia.composeapp.generated.resources.settings_cancel
+import genogramia.composeapp.generated.resources.settings_confirm
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -130,6 +137,8 @@ private fun NewTreeContent(
     onEvent: (NewTreeEvent) -> Unit,
     onBackClick: () -> Unit,
 ) {
+    val dateFormat = stringResource(Res.string.date_format)
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,
         topBar = { NewTreeTopBar(onBackClick) },
@@ -165,6 +174,22 @@ private fun NewTreeContent(
             NewTreeFooter()
 
             Spacer(modifier = Modifier.height(32.dp))
+        }
+
+        if (state.showBirthDatePicker) {
+            BirthDatePicker(
+                initialSelectedDateMillis = state.birthDateMillis,
+                onDateSelected = { onEvent(NewTreeEvent.OnBirthDateSelected(it, dateFormat)) },
+                onDismiss = { onEvent(NewTreeEvent.OnShowBirthDatePicker(false)) },
+            )
+        }
+
+        if (state.showDeathDatePicker) {
+            DeathDatePicker(
+                initialSelectedDateMillis = state.deathDateMillis,
+                onDateSelected = { onEvent(NewTreeEvent.OnDeathDateSelected(it, dateFormat)) },
+                onDismiss = { onEvent(NewTreeEvent.OnShowDeathDatePicker(false)) },
+            )
         }
     }
 }
@@ -278,7 +303,7 @@ private fun BasicInfoSection(
         NewTreeField(
             label = stringResource(Res.string.new_tree_birth_date_label),
             value = state.person.birthDate.orEmpty(),
-            onValueChange = { onEvent(NewTreeEvent.OnBirthDateChanged(it)) },
+            onValueChange = { },
             placeholder = stringResource(Res.string.new_tree_birth_date_hint),
             trailingIcon = Icons.Default.CalendarToday,
             error =
@@ -287,15 +312,17 @@ private fun BasicInfoSection(
                 } else {
                     null
                 },
+            onClick = { onEvent(NewTreeEvent.OnShowBirthDatePicker(true)) },
         )
         Spacer(modifier = Modifier.height(16.dp))
         NewTreeField(
             label = stringResource(Res.string.new_tree_death_date_label),
             value = state.person.deathDate.orEmpty(),
-            onValueChange = { onEvent(NewTreeEvent.OnDeathDateChanged(it)) },
+            onValueChange = { },
             placeholder = stringResource(Res.string.new_tree_death_date_hint),
             trailingIcon = Icons.Default.CalendarToday,
             optionalLabel = stringResource(Res.string.new_tree_death_date_optional),
+            onClick = { onEvent(NewTreeEvent.OnShowDeathDatePicker(true)) },
         )
     }
 }
@@ -540,6 +567,7 @@ private fun NewTreeField(
     error: String? = null,
     trailingIcon: ImageVector? = null,
     optionalLabel: String? = null,
+    onClick: (() -> Unit)? = null,
 ) {
     val isError = error != null
 
@@ -565,72 +593,84 @@ private fun NewTreeField(
             }
         }
 
-        TextField(
-            value = value,
-            onValueChange = onValueChange,
-            placeholder = {
-                Text(
-                    text = placeholder,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
-                    style = MaterialTheme.typography.bodyMedium,
+        Box(modifier = Modifier.fillMaxWidth()) {
+            TextField(
+                value = value,
+                onValueChange = onValueChange,
+                placeholder = {
+                    Text(
+                        text = placeholder,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                },
+                leadingIcon =
+                    if (trailingIcon != null) {
+                        {
+                            Icon(
+                                imageVector = trailingIcon,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
+                                modifier = Modifier.size(20.dp),
+                            )
+                        }
+                    } else {
+                        null
+                    },
+                trailingIcon =
+                    if (trailingIcon != null) {
+                        {
+                            // This is just for visual, ideally it would open a picker
+                            Icon(
+                                imageVector = trailingIcon,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                                modifier = Modifier.size(18.dp),
+                            )
+                        }
+                    } else {
+                        null
+                    },
+                singleLine = true,
+                readOnly = onClick != null,
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(8.dp)),
+                colors =
+                    TextFieldDefaults.colors(
+                        focusedContainerColor = SurfaceContainerHighest,
+                        unfocusedContainerColor = SurfaceContainerHighest,
+                        errorContainerColor = SurfaceContainerHighest,
+                        focusedIndicatorColor = Color.Transparent,
+                        unfocusedIndicatorColor = Color.Transparent,
+                        disabledIndicatorColor = Color.Transparent,
+                        errorIndicatorColor = Color.Transparent,
+                    ),
+                isError = isError,
+                supportingText =
+                    if (isError) {
+                        {
+                            Text(
+                                text = error,
+                                color = MaterialTheme.colorScheme.error,
+                                style = MaterialTheme.typography.labelSmall,
+                            )
+                        }
+                    } else {
+                        null
+                    },
+            )
+
+            if (onClick != null) {
+                Box(
+                    modifier =
+                        Modifier
+                            .matchParentSize()
+                            .clickable(onClick = onClick),
                 )
-            },
-            leadingIcon =
-                if (trailingIcon != null) {
-                    {
-                        Icon(
-                            imageVector = trailingIcon,
-                            contentDescription = null,
-                            tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
-                            modifier = Modifier.size(20.dp),
-                        )
-                    }
-                } else {
-                    null
-                },
-            trailingIcon =
-                if (trailingIcon != null) {
-                    {
-                        // This is just for visual, ideally it would open a picker
-                        Icon(
-                            imageVector = trailingIcon,
-                            contentDescription = null,
-                            tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
-                            modifier = Modifier.size(18.dp),
-                        )
-                    }
-                } else {
-                    null
-                },
-            singleLine = true,
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .clip(RoundedCornerShape(8.dp)),
-            colors =
-                TextFieldDefaults.colors(
-                    focusedContainerColor = SurfaceContainerHighest,
-                    unfocusedContainerColor = SurfaceContainerHighest,
-                    errorContainerColor = SurfaceContainerHighest,
-                    focusedIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent,
-                    disabledIndicatorColor = Color.Transparent,
-                    errorIndicatorColor = Color.Transparent,
-                ),
-            isError = isError,
-            supportingText =
-                if (isError) {
-                    {
-                        Text(
-                            text = error,
-                            color = MaterialTheme.colorScheme.error,
-                            style = MaterialTheme.typography.labelSmall,
-                        )
-                    }
-                } else {
-                    null
-                },
-        )
+            }
+        }
     }
 }
 
@@ -732,6 +772,80 @@ private fun OptionSelector(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun BirthDatePicker(
+    initialSelectedDateMillis: Long?,
+    onDateSelected: (Long) -> Unit,
+    onDismiss: () -> Unit,
+) {
+    val datePickerState =
+        rememberDatePickerState(
+            initialSelectedDateMillis = initialSelectedDateMillis,
+            yearRange = 1800..2100,
+        )
+
+    DatePickerDialog(
+        onDismissRequest = onDismiss,
+        confirmButton = {
+            TextButton(
+                onClick = {
+                    datePickerState.selectedDateMillis?.let {
+                        onDateSelected(it)
+                    }
+                    onDismiss()
+                },
+            ) {
+                Text(text = stringResource(Res.string.settings_confirm))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(text = stringResource(Res.string.settings_cancel))
+            }
+        },
+    ) {
+        DatePicker(state = datePickerState)
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun DeathDatePicker(
+    initialSelectedDateMillis: Long?,
+    onDateSelected: (Long) -> Unit,
+    onDismiss: () -> Unit,
+) {
+    val datePickerState =
+        rememberDatePickerState(
+            initialSelectedDateMillis = initialSelectedDateMillis,
+            yearRange = 1800..2100,
+        )
+
+    DatePickerDialog(
+        onDismissRequest = onDismiss,
+        confirmButton = {
+            TextButton(
+                onClick = {
+                    datePickerState.selectedDateMillis?.let {
+                        onDateSelected(it)
+                    }
+                    onDismiss()
+                },
+            ) {
+                Text(text = stringResource(Res.string.settings_confirm))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(text = stringResource(Res.string.settings_cancel))
+            }
+        },
+    ) {
+        DatePicker(state = datePickerState)
+    }
+}
+
 private class NewTreeStateProvider : PreviewParameterProvider<NewTreeState> {
     override val values =
         sequenceOf(
@@ -762,7 +876,7 @@ private class NewTreeStateProvider : PreviewParameterProvider<NewTreeState> {
         )
 }
 
-@Preview(heightDp = 1500)
+@Preview
 @Composable
 private fun NewTreeScreenPreview(
     @PreviewParameter(NewTreeStateProvider::class) state: NewTreeState,

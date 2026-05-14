@@ -11,6 +11,10 @@ data class NewTreeState(
     val sexualOrientationError: ValidationError? = null,
     val isLoading: Boolean = false,
     val navigationEvent: String? = null,
+    val showBirthDatePicker: Boolean = false,
+    val showDeathDatePicker: Boolean = false,
+    val birthDateMillis: Long? = null,
+    val deathDateMillis: Long? = null,
 ) {
     enum class ValidationError {
         EMPTY,

@@ -1,6 +1,7 @@
 package dev.saragones3.genogramia.domain.usecase
 
 import dev.saragones3.genogramia.domain.model.Person
+import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.test.runTest
@@ -11,19 +12,17 @@ import kotlin.test.assertTrue
 
 class NewTreeUseCaseTest {
     private lateinit var repository: FakeTreeRepository
-    private lateinit var useCase: NewTreeUseCase
-
+    private val dateFormatter = DateFormatter()
     private val fakeDateProvider =
         object : DateProvider {
-            override fun nowFormatted(): String = "1970-01-02T10:17:36:Z"
-
-            override fun nowEpochMilliseconds(): Long = 123456789L
+            override fun nowEpochMilliseconds(): Long = 1778716800000L // 14-may-2026
         }
+    private lateinit var useCase: NewTreeUseCase
 
     @BeforeTest
     fun setup() {
         repository = FakeTreeRepository()
-        useCase = NewTreeUseCase(repository, fakeDateProvider)
+        useCase = NewTreeUseCase(repository, fakeDateProvider, dateFormatter)
     }
 
     @Test
@@ -79,12 +78,13 @@ class NewTreeUseCaseTest {
 
             assertTrue(result.isSuccess)
             val tree = result.getOrNull()
+            assertEquals("tree-1778716800000", tree?.id)
             assertEquals("John Doe Lineage", tree?.name)
             assertEquals(1, tree?.ancestorCount)
+            assertEquals("1778716800000", tree?.centralPerson?.id)
             assertEquals("John", tree?.centralPerson?.firstName)
             assertEquals(Person.BiologicalSex.MALE, tree?.centralPerson?.biologicalSex)
             assertEquals(Person.SexualOrientation.HETEROSEXUAL, tree?.centralPerson?.sexualOrientation)
-            assertEquals("tree-123456789", tree?.id)
-            assertEquals("1970-01-02T10:17:36:Z", tree?.lastUpdated)
+            assertEquals("2026-05-14T00:00:00", tree?.lastUpdated)
         }
 }

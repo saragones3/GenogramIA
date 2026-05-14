@@ -3,6 +3,7 @@ package dev.saragones3.genogramia.presentation.newtree
 import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.NewTreeUseCase
+import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
@@ -24,18 +25,17 @@ class NewTreeViewModelTest {
 
     private val fakeDateProvider =
         object : DateProvider {
-            override fun nowFormatted(): String = "1970-01-02T10:17:36:Z"
-
-            override fun nowEpochMilliseconds(): Long = 123456789L
+            override fun nowEpochMilliseconds(): Long = 1778716800000L // 14-may-2026
         }
 
-    private val createTreeUseCase = NewTreeUseCase(repository, fakeDateProvider)
+    private val dateFormatter = DateFormatter()
+    private val createTreeUseCase = NewTreeUseCase(repository, fakeDateProvider, dateFormatter)
     private lateinit var viewModel: NewTreeViewModel
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = NewTreeViewModel(createTreeUseCase)
+        viewModel = NewTreeViewModel(createTreeUseCase, dateFormatter)
     }
 
     @AfterTest
@@ -55,6 +55,51 @@ class NewTreeViewModelTest {
             assertNull(state.person.deathDate)
             assertNull(state.firstNameError)
             assertNull(state.lastNameError)
+            assertEquals(false, state.showBirthDatePicker)
+            assertEquals(false, state.showDeathDatePicker)
+        }
+
+    @Test
+    fun `when show birth date picker event is received visibility is updated`() =
+        runTest {
+            viewModel.onEvent(NewTreeEvent.OnShowBirthDatePicker(true))
+            assertEquals(true, viewModel.state.value.showBirthDatePicker)
+
+            viewModel.onEvent(NewTreeEvent.OnShowBirthDatePicker(false))
+            assertEquals(false, viewModel.state.value.showBirthDatePicker)
+        }
+
+    @Test
+    fun `when show death date picker event is received visibility is updated`() =
+        runTest {
+            viewModel.onEvent(NewTreeEvent.OnShowDeathDatePicker(true))
+            assertEquals(true, viewModel.state.value.showDeathDatePicker)
+
+            viewModel.onEvent(NewTreeEvent.OnShowDeathDatePicker(false))
+            assertEquals(false, viewModel.state.value.showDeathDatePicker)
+        }
+
+    @Test
+    fun `when birth date is selected state is updated with formatted date`() =
+        runTest {
+            val millis = 1778716800000L // 14-may-2026
+            viewModel.onEvent(NewTreeEvent.OnBirthDateSelected(millis, "dd/MM/yyyy"))
+
+            val state = viewModel.state.value
+            assertEquals("14/05/2026", state.person.birthDate)
+            assertEquals(millis, state.birthDateMillis)
+            assertNull(state.birthDateError)
+        }
+
+    @Test
+    fun `when death date is selected state is updated with formatted date`() =
+        runTest {
+            val millis = 1778716800000L // 14-may-2026
+            viewModel.onEvent(NewTreeEvent.OnDeathDateSelected(millis, "dd/MM/yyyy"))
+
+            val state = viewModel.state.value
+            assertEquals("14/05/2026", state.person.deathDate)
+            assertEquals(millis, state.deathDateMillis)
         }
 
     @Test
@@ -75,7 +120,7 @@ class NewTreeViewModelTest {
         runTest {
             viewModel.onEvent(NewTreeEvent.OnFirstNameChanged("John"))
             viewModel.onEvent(NewTreeEvent.OnLastNameChanged("Doe"))
-            viewModel.onEvent(NewTreeEvent.OnBirthDateChanged("01/01/1990"))
+            viewModel.onEvent(NewTreeEvent.OnBirthDateSelected(1778716800000L, "dd/MM/yyyy")) // 14-may-2026
             viewModel.onEvent(NewTreeEvent.OnBiologicalSexChanged(Person.BiologicalSex.MALE))
             viewModel.onEvent(NewTreeEvent.OnSexualOrientationChanged(Person.SexualOrientation.HETEROSEXUAL))
 
@@ -93,7 +138,7 @@ class NewTreeViewModelTest {
                 // Final state: success with navigation event
                 val successState = awaitItem()
                 assertEquals(false, successState.isLoading)
-                assertEquals("tree-123456789", successState.navigationEvent)
+                assertEquals("tree-1778716800000", successState.navigationEvent)
             }
         }
 
@@ -101,12 +146,15 @@ class NewTreeViewModelTest {
     fun `when reset event is received state is restored to initial`() =
         runTest {
             viewModel.onEvent(NewTreeEvent.OnFirstNameChanged("John"))
+            viewModel.onEvent(NewTreeEvent.OnShowBirthDatePicker(true))
             assertEquals("John", viewModel.state.value.person.firstName)
+            assertEquals(true, viewModel.state.value.showBirthDatePicker)
 
             viewModel.onEvent(NewTreeEvent.OnResetState)
 
             val state = viewModel.state.value
             assertEquals("", state.person.firstName)
+            assertEquals(false, state.showBirthDatePicker)
             assertNull(state.firstNameError)
         }
 }

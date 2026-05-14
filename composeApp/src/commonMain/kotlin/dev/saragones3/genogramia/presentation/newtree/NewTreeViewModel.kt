@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.NewTreeUseCase
+import dev.saragones3.genogramia.domain.util.DateFormatter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -12,6 +13,7 @@ import kotlinx.coroutines.launch
 
 class NewTreeViewModel(
     private val newTreeUseCase: NewTreeUseCase,
+    private val dateFormatter: DateFormatter,
 ) : ViewModel() {
     private val _state = MutableStateFlow(NewTreeState())
     val state: StateFlow<NewTreeState> = _state.asStateFlow()
@@ -39,12 +41,33 @@ class NewTreeViewModel(
                 }
             }
 
-            is NewTreeEvent.OnBirthDateChanged -> {
-                _state.update { it.copy(person = it.person.copy(birthDate = event.date), birthDateError = null) }
+            is NewTreeEvent.OnBirthDateSelected -> {
+                val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
+                _state.update {
+                    it.copy(
+                        person = it.person.copy(birthDate = formattedDate),
+                        birthDateMillis = event.millis,
+                        birthDateError = null,
+                    )
+                }
             }
 
-            is NewTreeEvent.OnDeathDateChanged -> {
-                _state.update { it.copy(person = it.person.copy(deathDate = event.date)) }
+            is NewTreeEvent.OnDeathDateSelected -> {
+                val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
+                _state.update {
+                    it.copy(
+                        person = it.person.copy(deathDate = formattedDate),
+                        deathDateMillis = event.millis,
+                    )
+                }
+            }
+
+            is NewTreeEvent.OnShowBirthDatePicker -> {
+                _state.update { it.copy(showBirthDatePicker = event.show) }
+            }
+
+            is NewTreeEvent.OnShowDeathDatePicker -> {
+                _state.update { it.copy(showDeathDatePicker = event.show) }
             }
 
             NewTreeEvent.OnCreateTreeClicked -> {

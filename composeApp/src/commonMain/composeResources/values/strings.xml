@@ -128,6 +128,7 @@
     <string name="new_tree_death_date_label">Death Date</string>
     <string name="new_tree_death_date_optional">(Optional)</string>
     <string name="new_tree_death_date_hint">mm/dd/yyyy</string>
+    <string name="date_format">MM/dd/yyyy</string>
     <string name="new_tree_section_identity">Identity</string>
     <string name="new_tree_sex_label">Biological Sex</string>
     <string name="new_tree_sex_male">Male</string>

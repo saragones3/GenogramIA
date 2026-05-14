@@ -19,12 +19,22 @@ sealed interface NewTreeEvent {
         val orientation: Person.SexualOrientation,
     ) : NewTreeEvent
 
-    data class OnBirthDateChanged(
-        val date: String,
+    data class OnBirthDateSelected(
+        val millis: Long,
+        val pattern: String,
     ) : NewTreeEvent
 
-    data class OnDeathDateChanged(
-        val date: String,
+    data class OnDeathDateSelected(
+        val millis: Long,
+        val pattern: String,
+    ) : NewTreeEvent
+
+    data class OnShowBirthDatePicker(
+        val show: Boolean,
+    ) : NewTreeEvent
+
+    data class OnShowDeathDatePicker(
+        val show: Boolean,
     ) : NewTreeEvent
 
     data object OnCreateTreeClicked : NewTreeEvent

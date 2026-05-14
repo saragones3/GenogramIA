@@ -14,15 +14,6 @@ class RealDateProviderTest {
     private val dateProvider = RealDateProvider(fakeClock)
 
     @Test
-    fun `nowFormatted returns correct UTC format`() {
-        // When
-        val result = dateProvider.nowFormatted()
-
-        // Then
-        assertEquals("2021-07-01T00:00:00", result)
-    }
-
-    @Test
     fun `nowEpochMilliseconds returns correct timestamp`() {
         // When
         val result = dateProvider.nowEpochMilliseconds()

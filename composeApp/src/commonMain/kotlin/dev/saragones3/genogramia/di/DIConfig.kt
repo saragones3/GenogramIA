@@ -13,6 +13,7 @@ import dev.saragones3.genogramia.domain.usecase.SignInUseCase
 import dev.saragones3.genogramia.domain.usecase.SignOutUseCase
 import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
+import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeViewModel
 import dev.saragones3.genogramia.presentation.changepassword.ChangePasswordViewModel
@@ -46,6 +47,7 @@ private val domainModule =
         factoryOf(::UpdatePasswordUseCase)
         factoryOf(::SendPasswordResetEmailUseCase)
         factoryOf(::NewTreeUseCase)
+        factoryOf(::DateFormatter)
     }
 
 private val appModule =

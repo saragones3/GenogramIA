@@ -124,10 +124,11 @@
     <string name="new_tree_last_name_label">Apellidos *</string>
     <string name="new_tree_last_name_hint">Ej: García López</string>
     <string name="new_tree_birth_date_label">Fecha de Nacimiento</string>
-    <string name="new_tree_birth_date_hint">mm/dd/yyyy</string>
+    <string name="new_tree_birth_date_hint">dd/mm/yyyy</string>
     <string name="new_tree_death_date_label">Fecha de Defunción</string>
     <string name="new_tree_death_date_optional">(Opcional)</string>
-    <string name="new_tree_death_date_hint">mm/dd/yyyy</string>
+    <string name="new_tree_death_date_hint">dd/mm/yyyy</string>
+    <string name="date_format">dd/MM/yyyy</string>
     <string name="new_tree_section_identity">Identidad</string>
     <string name="new_tree_sex_label">Sexo Biológico</string>
     <string name="new_tree_sex_male">Hombre</string>
