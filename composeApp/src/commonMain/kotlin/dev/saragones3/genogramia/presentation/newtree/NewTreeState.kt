@@ -10,6 +10,7 @@ data class NewTreeState(
     val biologicalSexError: ValidationError? = null,
     val sexualOrientationError: ValidationError? = null,
     val isLoading: Boolean = false,
+    val isGuest: Boolean = false,
     val navigationEvent: String? = null,
     val showBirthDatePicker: Boolean = false,
     val showDeathDatePicker: Boolean = false,

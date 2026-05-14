@@ -81,6 +81,7 @@ import genogramia.composeapp.generated.resources.new_tree_death_date_optional
 import genogramia.composeapp.generated.resources.new_tree_first_name_hint
 import genogramia.composeapp.generated.resources.new_tree_first_name_label
 import genogramia.composeapp.generated.resources.new_tree_footer
+import genogramia.composeapp.generated.resources.new_tree_guest_notice
 import genogramia.composeapp.generated.resources.new_tree_header_subtitle
 import genogramia.composeapp.generated.resources.new_tree_header_title
 import genogramia.composeapp.generated.resources.new_tree_last_name_hint
@@ -171,7 +172,7 @@ private fun NewTreeContent(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            NewTreeFooter()
+            NewTreeFooter(state.isGuest)
 
             Spacer(modifier = Modifier.height(32.dp))
         }
@@ -497,11 +498,22 @@ private fun NewTreeButton(
 }
 
 @Composable
-private fun NewTreeFooter() {
+private fun NewTreeFooter(isGuest: Boolean) {
     Text(
-        text = stringResource(Res.string.new_tree_footer),
+        text =
+            if (isGuest) {
+                stringResource(Res.string.new_tree_guest_notice)
+            } else {
+                stringResource(Res.string.new_tree_footer)
+            },
         style = MaterialTheme.typography.labelSmall,
-        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f),
+        color =
+            if (isGuest) {
+                MaterialTheme.colorScheme.error.copy(alpha = 0.8f)
+            } else {
+                MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f)
+            },
+        fontWeight = if (isGuest) FontWeight.Bold else FontWeight.Normal,
         textAlign = TextAlign.Center,
         modifier = Modifier.padding(horizontal = 48.dp),
     )
@@ -873,6 +885,7 @@ private class NewTreeStateProvider : PreviewParameterProvider<NewTreeState> {
                 sexualOrientationError = NewTreeState.ValidationError.EMPTY,
             ),
             NewTreeState(isLoading = true),
+            NewTreeState(isGuest = true),
         )
 }
 

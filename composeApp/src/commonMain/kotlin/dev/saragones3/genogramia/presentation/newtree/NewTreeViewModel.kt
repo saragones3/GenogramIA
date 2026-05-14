@@ -3,6 +3,7 @@ package dev.saragones3.genogramia.presentation.newtree
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.saragones3.genogramia.domain.model.Person
+import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.NewTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,10 +14,20 @@ import kotlinx.coroutines.launch
 
 class NewTreeViewModel(
     private val newTreeUseCase: NewTreeUseCase,
+    private val checkSessionUseCase: CheckSessionUseCase,
     private val dateFormatter: DateFormatter,
 ) : ViewModel() {
     private val _state = MutableStateFlow(NewTreeState())
     val state: StateFlow<NewTreeState> = _state.asStateFlow()
+
+    init {
+        checkUserStatus()
+    }
+
+    private fun checkUserStatus() {
+        val user = checkSessionUseCase()
+        _state.update { it.copy(isGuest = user == null) }
+    }
 
     fun onEvent(event: NewTreeEvent) {
         when (event) {
@@ -79,7 +90,9 @@ class NewTreeViewModel(
             }
 
             NewTreeEvent.OnResetState -> {
-                _state.value = NewTreeState()
+                _state.update { currentState ->
+                    NewTreeState(isGuest = currentState.isGuest)
+                }
             }
         }
     }
