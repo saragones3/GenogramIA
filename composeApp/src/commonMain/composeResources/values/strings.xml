@@ -70,6 +70,7 @@
     <string name="error_empty_fields">All fields are required</string>
     <string name="error_email_already_in_use">Email is already in use</string>
     <string name="error_unknown">An unexpected error occurred</string>
+    <string name="error_tree_not_found">Tree not found or access denied</string>
 
     <!-- Legends -->
     <string name="legends_title">Legends</string>
