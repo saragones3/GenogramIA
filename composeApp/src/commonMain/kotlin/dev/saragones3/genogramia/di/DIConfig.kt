@@ -1,8 +1,10 @@
 package dev.saragones3.genogramia.di
 
 import dev.saragones3.genogramia.data.repository.AuthRepositoryImpl
+import dev.saragones3.genogramia.data.repository.FirestoreTreeRepository
 import dev.saragones3.genogramia.data.repository.InMemoryTreeRepository
 import dev.saragones3.genogramia.data.util.RealDateProvider
+import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.domain.repository.TreeRepository
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
@@ -33,7 +35,31 @@ import org.koin.dsl.module
 private val dataModule =
     module {
         single<AuthRepository> { AuthRepositoryImpl(get()) }
-        single<TreeRepository> { InMemoryTreeRepository() }
+
+        // Concrete implementations as singletons to preserve state
+        single { InMemoryTreeRepository() }
+        single { FirestoreTreeRepository() }
+
+        // Dynamic repository that delegates based on current session state
+        // This ensures that even if a ViewModel is reused, it always uses the correct repo
+        single<TreeRepository> {
+            val scope = this
+            object : TreeRepository {
+                private val authRepository: AuthRepository = scope.get()
+                private val guestRepo: InMemoryTreeRepository = scope.get()
+                private val authRepo: FirestoreTreeRepository = scope.get()
+
+                private val activeRepo: TreeRepository
+                    get() = if (authRepository.getCurrentUser() != null) authRepo else guestRepo
+
+                override suspend fun createTree(tree: GenogramTree): GenogramTree = activeRepo.createTree(tree)
+
+                override suspend fun getTree(id: String): GenogramTree? = activeRepo.getTree(id)
+
+                override suspend fun getTrees(): List<GenogramTree> = activeRepo.getTrees()
+            }
+        }
+
         single<DateProvider> { RealDateProvider() }
     }
 

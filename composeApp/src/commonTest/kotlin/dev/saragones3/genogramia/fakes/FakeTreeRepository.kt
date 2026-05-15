@@ -15,4 +15,18 @@ class FakeTreeRepository : TreeRepository {
         trees.add(tree)
         return tree
     }
+
+    override suspend fun getTree(id: String): GenogramTree? {
+        if (shouldReturnError) {
+            throw errorToReturn
+        }
+        return trees.find { it.id == id }
+    }
+
+    override suspend fun getTrees(): List<GenogramTree> {
+        if (shouldReturnError) {
+            throw errorToReturn
+        }
+        return trees.toList()
+    }
 }
