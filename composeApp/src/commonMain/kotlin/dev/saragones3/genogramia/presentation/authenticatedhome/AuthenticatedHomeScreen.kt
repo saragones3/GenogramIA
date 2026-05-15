@@ -18,6 +18,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -57,6 +58,10 @@ fun AuthenticatedHomeScreen(
     val userName by viewModel.userName.collectAsState()
     val searchQuery by viewModel.searchQuery.collectAsState()
     val trees by viewModel.trees.collectAsState()
+
+    LaunchedEffect(Unit) {
+        viewModel.onResume()
+    }
 
     AuthenticatedHomeContent(
         userName = userName ?: "",

@@ -18,16 +18,16 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.presentation.components.AddTreeCard
 import dev.saragones3.genogramia.presentation.components.GenogramTreeCard
 import dev.saragones3.genogramia.presentation.components.SearchBar
@@ -45,14 +45,26 @@ import genogramia.composeapp.generated.resources.search_records
 import genogramia.composeapp.generated.resources.start_first_tree
 import genogramia.composeapp.generated.resources.start_first_tree_desc
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun GuestHomeScreen(
+    viewModel: GuestHomeViewModel = koinViewModel(),
     onLoginClick: () -> Unit,
     onGoToTree: (String) -> Unit,
     onCreateTree: () -> Unit,
 ) {
+    val searchQuery by viewModel.searchQuery.collectAsState()
+    val trees by viewModel.trees.collectAsState()
+
+    LaunchedEffect(Unit) {
+        viewModel.onResume()
+    }
+
     GuestHomeContent(
+        searchQuery = searchQuery,
+        trees = trees,
+        onSearchQueryChange = viewModel::onSearchQueryChange,
         onLoginClick = onLoginClick,
         onGoToTree = onGoToTree,
         onCreateTree = onCreateTree,
@@ -62,6 +74,9 @@ fun GuestHomeScreen(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun GuestHomeContent(
+    searchQuery: String,
+    trees: List<GenogramTree>,
+    onSearchQueryChange: (String) -> Unit,
     onLoginClick: () -> Unit,
     onGoToTree: (String) -> Unit,
     onCreateTree: () -> Unit,
@@ -82,10 +97,9 @@ private fun GuestHomeContent(
         ) {
             Spacer(modifier = Modifier.height(16.dp))
 
-            var searchQuery by remember { mutableStateOf("") }
             SearchBar(
                 query = searchQuery,
-                onQueryChange = { searchQuery = it },
+                onQueryChange = onSearchQueryChange,
                 placeholder = stringResource(Res.string.search_records),
             )
 
@@ -95,15 +109,16 @@ private fun GuestHomeContent(
 
             Spacer(modifier = Modifier.height(40.dp))
 
-            GenogramTreeCard(
-                title = stringResource(Res.string.sample_tree),
-                description = stringResource(Res.string.sample_tree_desc),
-                buttonText = stringResource(Res.string.explore_example),
-                onButtonClick = { onGoToTree("") },
-                badgeText = stringResource(Res.string.guest_preview),
-            )
-
-            Spacer(modifier = Modifier.height(20.dp))
+            trees.forEach { tree ->
+                GenogramTreeCard(
+                    title = tree.name,
+                    description = stringResource(Res.string.sample_tree_desc),
+                    buttonText = stringResource(Res.string.explore_example),
+                    onButtonClick = { onGoToTree(tree.id) },
+                    badgeText = stringResource(Res.string.guest_preview),
+                )
+                Spacer(modifier = Modifier.height(20.dp))
+            }
 
             AddTreeCard(
                 title = stringResource(Res.string.start_first_tree),
@@ -176,6 +191,9 @@ private fun GuestHomeTitleSection() {
 private fun GuestHomeScreenPreview() {
     GenogramiaTheme {
         GuestHomeContent(
+            searchQuery = "",
+            trees = emptyList(),
+            onSearchQueryChange = {},
             onLoginClick = {},
             onGoToTree = {},
             onCreateTree = {},
