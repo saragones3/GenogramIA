@@ -10,4 +10,8 @@ class InMemoryTreeRepository : TreeRepository {
         trees.add(tree)
         return tree
     }
+
+    override suspend fun getTree(id: String): GenogramTree? = trees.find { it.id == id }
+
+    override suspend fun getTrees(): List<GenogramTree> = trees
 }
