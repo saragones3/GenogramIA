@@ -92,12 +92,21 @@ class TreeViewModel(
         }
     }
 
-    private fun GenogramTree.toUi(): TreeUi =
-        TreeUi(
+    private fun GenogramTree.toUi(): TreeUi {
+        val centralPersonUi = centralPerson.toUi().copy(position = Offset.Zero)
+        val mappedPersons =
+            persons.mapIndexed { index, person ->
+                val row = (index / 3) + 1
+                val col = (index % 3) - 1
+                person.toUi().copy(position = Offset(col * 250f, row * 250f))
+            }
+        return TreeUi(
             id = id,
             name = name,
-            centralPerson = centralPerson.toUi(),
+            centralPerson = centralPersonUi,
+            persons = mappedPersons,
         )
+    }
 
     private fun Person.toUi(): PersonUi {
         val birthYear = birthDate?.let { extractYear(it) }

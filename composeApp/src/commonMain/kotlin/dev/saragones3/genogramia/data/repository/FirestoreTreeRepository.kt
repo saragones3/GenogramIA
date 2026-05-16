@@ -23,4 +23,14 @@ class FirestoreTreeRepository : TreeRepository {
     }
 
     override suspend fun getTrees(): List<GenogramTree> = firestoreSimulation
+
+    override suspend fun updateTree(tree: GenogramTree): GenogramTree {
+        val index = firestoreSimulation.indexOfFirst { it.id == tree.id }
+        if (index != -1) {
+            firestoreSimulation[index] = tree
+        } else {
+            firestoreSimulation.add(tree)
+        }
+        return tree
+    }
 }

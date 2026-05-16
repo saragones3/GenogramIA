@@ -141,4 +141,24 @@ class TreeViewModelTest {
             assertEquals(20f, state.offset.y)
             assertEquals(1.1f, state.scale)
         }
+
+    @Test
+    fun `when LoadTree has multiple persons they are mapped to UI`() =
+        runTest {
+            val central = Person("p1", "John", "Doe")
+            val p2 = Person("p2", "Jane", "Doe")
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertEquals(1, viewModel.state.value.tree.persons.size)
+            assertEquals(
+                "Jane",
+                viewModel.state.value.tree.persons[0]
+                    .firstName,
+            )
+        }
 }

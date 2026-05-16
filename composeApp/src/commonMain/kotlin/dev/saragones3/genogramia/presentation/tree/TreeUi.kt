@@ -1,11 +1,13 @@
 package dev.saragones3.genogramia.presentation.tree
 
+import androidx.compose.ui.geometry.Offset
 import dev.saragones3.genogramia.domain.model.Person
 
 data class TreeUi(
     val id: String = "",
     val name: String = "",
     val centralPerson: PersonUi = PersonUi(),
+    val persons: List<PersonUi> = emptyList(),
 )
 
 data class PersonUi(
@@ -14,4 +16,5 @@ data class PersonUi(
     val lastName: String = "",
     val biologicalSex: Person.BiologicalSex = Person.BiologicalSex.UNKNOWN,
     val dateText: String = "",
+    val position: Offset = Offset.Zero,
 )

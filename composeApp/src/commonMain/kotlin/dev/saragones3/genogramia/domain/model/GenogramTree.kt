@@ -6,4 +6,5 @@ data class GenogramTree(
     val ancestorCount: Int,
     val lastUpdated: String,
     val centralPerson: Person,
+    val persons: List<Person> = emptyList(),
 )

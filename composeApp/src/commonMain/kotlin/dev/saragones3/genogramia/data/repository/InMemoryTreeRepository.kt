@@ -14,4 +14,14 @@ class InMemoryTreeRepository : TreeRepository {
     override suspend fun getTree(id: String): GenogramTree? = trees.find { it.id == id }
 
     override suspend fun getTrees(): List<GenogramTree> = trees
+
+    override suspend fun updateTree(tree: GenogramTree): GenogramTree {
+        val index = trees.indexOfFirst { it.id == tree.id }
+        if (index != -1) {
+            trees[index] = tree
+        } else {
+            trees.add(tree)
+        }
+        return tree
+    }
 }
