@@ -70,6 +70,7 @@
     <string name="error_empty_fields">Todos los campos son obligatorios</string>
     <string name="error_email_already_in_use">El correo ya está registrado</string>
     <string name="error_unknown">Ha ocurrido un error inesperado</string>
+    <string name="error_tree_not_found">Árbol no encontrado o acceso denegado</string>
 
     <!-- Legends -->
     <string name="legends_title">Leyendas</string>

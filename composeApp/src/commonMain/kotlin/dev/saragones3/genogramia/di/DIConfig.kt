@@ -9,6 +9,7 @@ import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.domain.repository.TreeRepository
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteAccountUseCase
+import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreesUseCase
 import dev.saragones3.genogramia.domain.usecase.NewTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.SendPasswordResetEmailUseCase
@@ -28,6 +29,7 @@ import dev.saragones3.genogramia.presentation.newtree.NewTreeViewModel
 import dev.saragones3.genogramia.presentation.registration.RegistrationViewModel
 import dev.saragones3.genogramia.presentation.settings.SettingsViewModel
 import dev.saragones3.genogramia.presentation.splash.SplashViewModel
+import dev.saragones3.genogramia.presentation.tree.TreeViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.module.dsl.viewModelOf
@@ -75,6 +77,7 @@ private val domainModule =
         factoryOf(::SendPasswordResetEmailUseCase)
         factoryOf(::NewTreeUseCase)
         factoryOf(::GetTreesUseCase)
+        factoryOf(::GetTreeUseCase)
         factoryOf(::DateFormatter)
     }
 
@@ -90,6 +93,7 @@ private val appModule =
         viewModelOf(::SettingsViewModel)
         viewModelOf(::ChangePasswordViewModel)
         viewModelOf(::ForgotPasswordViewModel)
+        viewModelOf(::TreeViewModel)
     }
 
 fun getSharedModules(): List<Module> =

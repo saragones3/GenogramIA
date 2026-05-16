@@ -1,0 +1,17 @@
+package dev.saragones3.genogramia.presentation.tree
+
+import androidx.compose.ui.geometry.Offset
+
+data class TreeState(
+    val tree: TreeUi = TreeUi(),
+    val offset: Offset = Offset.Zero,
+    val scale: Float = 1f,
+    val isLoading: Boolean = false,
+    val error: TreeError? = null,
+    val shouldNavigateBack: Boolean = false,
+)
+
+enum class TreeError {
+    NOT_FOUND,
+    UNKNOWN,
+}
