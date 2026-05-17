@@ -154,6 +154,4 @@
     <!-- Add Person -->
     <string name="add_person_title">Añadir Familiar</string>
     <string name="add_person_save">Guardar Registro de Miembro</string>
-    <string name="add_person_vital_dates">FECHAS VITALES</string>
-    <string name="add_person_identity_header">IDENTIDAD Y SEXO BIOLÓGICO</string>
 </resources>

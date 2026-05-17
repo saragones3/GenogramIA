@@ -154,6 +154,4 @@
     <!-- Add Person -->
     <string name="add_person_title">Add Family Member</string>
     <string name="add_person_save">Save Member Record</string>
-    <string name="add_person_vital_dates">VITAL DATES</string>
-    <string name="add_person_identity_header">IDENTITY &amp; BIOLOGICAL SEX</string>
 </resources>
