@@ -45,8 +45,11 @@ class AddPersonViewModel(
                 val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
                 _state.update {
                     it.copy(
-                        person = it.person.copy(birthDate = formattedDate),
-                        birthDateMillis = event.millis,
+                        person =
+                            it.person.copy(
+                                birthDateMillis = event.millis,
+                                birthDateText = formattedDate,
+                            ),
                         birthDateError = null,
                     )
                 }
@@ -56,8 +59,11 @@ class AddPersonViewModel(
                 val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
                 _state.update {
                     it.copy(
-                        person = it.person.copy(deathDate = formattedDate),
-                        deathDateMillis = event.millis,
+                        person =
+                            it.person.copy(
+                                deathDateMillis = event.millis,
+                                deathDateText = formattedDate,
+                            ),
                     )
                 }
             }
@@ -81,7 +87,7 @@ class AddPersonViewModel(
     }
 
     private fun savePerson(treeId: String) {
-        val person = _state.value.person
+        val personUi = _state.value.person
 
         var firstNameError: AddPersonState.ValidationError? = null
         var lastNameError: AddPersonState.ValidationError? = null
@@ -91,23 +97,23 @@ class AddPersonViewModel(
 
         var isValid = true
 
-        if (person.firstName.isBlank()) {
+        if (personUi.firstName.isBlank()) {
             firstNameError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
-        if (person.lastName.isBlank()) {
+        if (personUi.lastName.isBlank()) {
             lastNameError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
-        if (person.birthDate.isNullOrBlank()) {
+        if (personUi.birthDateMillis == 0L) {
             birthDateError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
-        if (person.biologicalSex == Person.BiologicalSex.UNKNOWN) {
+        if (personUi.biologicalSex == Person.BiologicalSex.UNKNOWN) {
             biologicalSexError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
-        if (person.sexualOrientation == Person.SexualOrientation.UNKNOWN) {
+        if (personUi.sexualOrientation == Person.SexualOrientation.UNKNOWN) {
             sexualOrientationError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
@@ -126,6 +132,17 @@ class AddPersonViewModel(
         }
 
         _state.update { it.copy(isLoading = true) }
+
+        val person =
+            Person(
+                id = "",
+                firstName = personUi.firstName,
+                lastName = personUi.lastName,
+                birthDate = personUi.birthDateMillis,
+                biologicalSex = personUi.biologicalSex,
+                sexualOrientation = personUi.sexualOrientation,
+                deathDate = personUi.deathDateMillis,
+            )
 
         viewModelScope.launch {
             addPersonUseCase(treeId, person)

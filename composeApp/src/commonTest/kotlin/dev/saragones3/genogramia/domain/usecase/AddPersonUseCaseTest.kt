@@ -18,7 +18,7 @@ class AddPersonUseCaseTest {
         }
     private lateinit var useCase: AddPersonUseCase
 
-    private val centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe")
+    private val centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
     private val tree =
         GenogramTree(
             id = "tree-1",
@@ -43,6 +43,7 @@ class AddPersonUseCaseTest {
                     id = "",
                     firstName = "Jane",
                     lastName = "Doe",
+                    birthDate = 0L,
                 )
 
             val result = useCase("tree-1", newPerson)
@@ -57,7 +58,7 @@ class AddPersonUseCaseTest {
     @Test
     fun `when tree does not exist fails`() =
         runTest {
-            val newPerson = Person(id = "", firstName = "Jane", lastName = "Doe")
+            val newPerson = Person(id = "", firstName = "Jane", lastName = "Doe", birthDate = 0L)
 
             val result = useCase("invalid-tree", newPerson)
 
@@ -69,7 +70,7 @@ class AddPersonUseCaseTest {
     fun `when repository fails fails`() =
         runTest {
             repository.shouldReturnError = true
-            val newPerson = Person(id = "", firstName = "Jane", lastName = "Doe")
+            val newPerson = Person(id = "", firstName = "Jane", lastName = "Doe", birthDate = 0L)
 
             val result = useCase("tree-1", newPerson)
 

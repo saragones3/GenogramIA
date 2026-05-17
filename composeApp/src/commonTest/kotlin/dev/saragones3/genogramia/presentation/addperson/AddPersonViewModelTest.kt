@@ -39,7 +39,7 @@ class AddPersonViewModelTest {
             name = "Test Tree",
             ancestorCount = 1,
             lastUpdated = "2024-05-15",
-            centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe"),
+            centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L),
         )
 
     @BeforeTest
@@ -90,7 +90,10 @@ class AddPersonViewModelTest {
             viewModel.onEvent(AddPersonEvent.OnSexualOrientationChanged(Person.SexualOrientation.HETEROSEXUAL))
 
             viewModel.state.test {
-                assertEquals("Jane", awaitItem().person.firstName)
+                val initialState = awaitItem()
+                assertEquals("Jane", initialState.person.firstName)
+                assertEquals(1778716800000L, initialState.person.birthDateMillis)
+                assertEquals("14/05/2026", initialState.person.birthDateText)
 
                 viewModel.onEvent(AddPersonEvent.OnSaveClicked("tree-1"))
 

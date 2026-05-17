@@ -57,8 +57,8 @@ class NewTreeViewModelTest {
             assertEquals("", state.person.lastName)
             assertEquals(Person.BiologicalSex.UNKNOWN, state.person.biologicalSex)
             assertEquals(Person.SexualOrientation.UNKNOWN, state.person.sexualOrientation)
-            assertNull(state.person.birthDate)
-            assertNull(state.person.deathDate)
+            assertEquals("", state.person.birthDateText)
+            assertEquals("", state.person.deathDateText)
             assertNull(state.firstNameError)
             assertNull(state.lastNameError)
             assertEquals(false, state.showBirthDatePicker)
@@ -102,8 +102,8 @@ class NewTreeViewModelTest {
             viewModel.onEvent(NewTreeEvent.OnBirthDateSelected(millis, "dd/MM/yyyy"))
 
             val state = viewModel.state.value
-            assertEquals("14/05/2026", state.person.birthDate)
-            assertEquals(millis, state.birthDateMillis)
+            assertEquals("14/05/2026", state.person.birthDateText)
+            assertEquals(millis, state.person.birthDateMillis)
             assertNull(state.birthDateError)
         }
 
@@ -114,8 +114,8 @@ class NewTreeViewModelTest {
             viewModel.onEvent(NewTreeEvent.OnDeathDateSelected(millis, "dd/MM/yyyy"))
 
             val state = viewModel.state.value
-            assertEquals("14/05/2026", state.person.deathDate)
-            assertEquals(millis, state.deathDateMillis)
+            assertEquals("14/05/2026", state.person.deathDateText)
+            assertEquals(millis, state.person.deathDateMillis)
         }
 
     @Test

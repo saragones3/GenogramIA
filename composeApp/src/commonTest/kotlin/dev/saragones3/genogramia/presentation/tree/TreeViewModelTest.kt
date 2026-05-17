@@ -4,6 +4,7 @@ import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
+import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -22,12 +23,13 @@ class TreeViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val treeRepository = FakeTreeRepository()
     private val getTreeUseCase = GetTreeUseCase(treeRepository)
+    private val dateFormatter = DateFormatter()
     private lateinit var viewModel: TreeViewModel
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = TreeViewModel(getTreeUseCase)
+        viewModel = TreeViewModel(getTreeUseCase, dateFormatter)
     }
 
     @AfterTest
@@ -49,7 +51,14 @@ class TreeViewModelTest {
     @Test
     fun `when LoadTree event is received state is updated with tree data`() =
         runTest {
-            val person = Person("p1", "John", "Doe", Person.BiologicalSex.MALE, birthDate = "01/01/1980")
+            val person =
+                Person(
+                    id = "p1",
+                    firstName = "John",
+                    lastName = "Doe",
+                    birthDate = 315532800000L,
+                    biologicalSex = Person.BiologicalSex.MALE,
+                )
             val tree = GenogramTree("t1", "Family", 1, "now", person)
             treeRepository.createTree(tree)
 
@@ -67,7 +76,7 @@ class TreeViewModelTest {
                     "John Doe",
                     "${successState.tree.centralPerson.firstName} ${successState.tree.centralPerson.lastName}",
                 )
-                assertEquals("B. 1980", successState.tree.centralPerson.dateText)
+                assertEquals("1980", successState.tree.centralPerson.birthDateText)
             }
         }
 
@@ -89,9 +98,10 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree event is received with birth and death dates dateText is formatted correctly`() =
+    fun `when LoadTree event is received with birth and death dates UI model is populated correctly`() =
         runTest {
-            val person = Person("p1", "John", "Doe", birthDate = "01/01/1915", deathDate = "31/12/1989")
+            // 1915-01-01 and 1989-12-31 approx
+            val person = Person("p1", "John", "Doe", birthDate = -1735689600000L, deathDate = 631065600000L)
             val tree = GenogramTree("t1", "Family", 1, "now", person)
             treeRepository.createTree(tree)
 
@@ -99,7 +109,11 @@ class TreeViewModelTest {
 
             testDispatcher.scheduler.advanceUntilIdle()
 
-            assertEquals("1915 - 1989", viewModel.state.value.tree.centralPerson.dateText)
+            val centralPerson = viewModel.state.value.tree.centralPerson
+            assertEquals("1915", centralPerson.birthDateText)
+            assertEquals("1989", centralPerson.deathDateText)
+            assertEquals("74", centralPerson.age)
+            assertEquals(true, centralPerson.isDeceased)
         }
 
     @Test
@@ -145,8 +159,8 @@ class TreeViewModelTest {
     @Test
     fun `when LoadTree has multiple persons they are mapped to UI`() =
         runTest {
-            val central = Person("p1", "John", "Doe")
-            val p2 = Person("p2", "Jane", "Doe")
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
             val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
             treeRepository.createTree(tree)
 

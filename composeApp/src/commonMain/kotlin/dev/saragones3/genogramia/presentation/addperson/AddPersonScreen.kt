@@ -13,10 +13,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.CalendarToday
-import androidx.compose.material.icons.filled.Female
-import androidx.compose.material.icons.filled.Male
-import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -39,34 +35,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.presentation.components.BasicInfoErrors
 import dev.saragones3.genogramia.presentation.components.BasicInfoSection
 import dev.saragones3.genogramia.presentation.components.DatePickerModal
-import dev.saragones3.genogramia.presentation.components.FormField
+import dev.saragones3.genogramia.presentation.components.IdentitySection
 import dev.saragones3.genogramia.presentation.components.MedicalHistorySection
-import dev.saragones3.genogramia.presentation.components.OptionSelector
-import dev.saragones3.genogramia.presentation.components.SectionCard
-import dev.saragones3.genogramia.presentation.components.SelectorOption
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.Primary
 import genogramia.composeapp.generated.resources.Res
-import genogramia.composeapp.generated.resources.add_person_identity_header
 import genogramia.composeapp.generated.resources.add_person_save
 import genogramia.composeapp.generated.resources.add_person_title
-import genogramia.composeapp.generated.resources.add_person_vital_dates
 import genogramia.composeapp.generated.resources.date_format
-import genogramia.composeapp.generated.resources.new_tree_birth_date_hint
-import genogramia.composeapp.generated.resources.new_tree_birth_date_label
-import genogramia.composeapp.generated.resources.new_tree_death_date_hint
-import genogramia.composeapp.generated.resources.new_tree_death_date_label
-import genogramia.composeapp.generated.resources.new_tree_death_date_optional
-import genogramia.composeapp.generated.resources.new_tree_orientation_hetero
-import genogramia.composeapp.generated.resources.new_tree_orientation_label
-import genogramia.composeapp.generated.resources.new_tree_orientation_other
-import genogramia.composeapp.generated.resources.new_tree_sex_female
-import genogramia.composeapp.generated.resources.new_tree_sex_label
-import genogramia.composeapp.generated.resources.new_tree_sex_male
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -191,9 +170,9 @@ private fun AddPersonForm(
             onFirstNameChange = { onEvent(AddPersonEvent.OnFirstNameChanged(it)) },
             lastName = state.person.lastName,
             onLastNameChange = { onEvent(AddPersonEvent.OnLastNameChanged(it)) },
-            birthDate = state.person.birthDate.orEmpty(),
+            birthDate = state.person.birthDateText,
             onBirthDateClick = { onEvent(AddPersonEvent.OnShowBirthDatePicker(true)) },
-            deathDate = state.person.deathDate.orEmpty(),
+            deathDate = state.person.deathDateText,
             onDeathDateClick = { onEvent(AddPersonEvent.OnShowDeathDatePicker(true)) },
             errors =
                 BasicInfoErrors(
@@ -205,83 +184,14 @@ private fun AddPersonForm(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        SectionCard(
-            icon = Icons.Default.CalendarToday,
-            title = stringResource(Res.string.add_person_vital_dates),
-        ) {
-            FormField(
-                label = stringResource(Res.string.new_tree_birth_date_label).uppercase(),
-                value = state.person.birthDate.orEmpty(),
-                onValueChange = {},
-                placeholder = stringResource(Res.string.new_tree_birth_date_hint),
-                trailingIcon = Icons.Default.CalendarToday,
-                onClick = { onEvent(AddPersonEvent.OnShowBirthDatePicker(true)) },
-                isError = state.birthDateError != null,
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            FormField(
-                label = stringResource(Res.string.new_tree_death_date_label).uppercase(),
-                value = state.person.deathDate.orEmpty(),
-                onValueChange = {},
-                placeholder = stringResource(Res.string.new_tree_death_date_hint),
-                trailingIcon = Icons.Default.CalendarToday,
-                optionalLabel = stringResource(Res.string.new_tree_death_date_optional),
-                onClick = { onEvent(AddPersonEvent.OnShowDeathDatePicker(true)) },
-            )
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        SectionCard(
-            icon = Icons.Default.Psychology,
-            title = stringResource(Res.string.add_person_identity_header),
-        ) {
-            OptionSelector(
-                label = stringResource(Res.string.new_tree_sex_label).uppercase(),
-                options =
-                    listOf(
-                        SelectorOption(
-                            text = stringResource(Res.string.new_tree_sex_male),
-                            icon = Icons.Default.Male,
-                            isSelected = state.person.biologicalSex == Person.BiologicalSex.MALE,
-                            onClick = { onEvent(AddPersonEvent.OnBiologicalSexChanged(Person.BiologicalSex.MALE)) },
-                        ),
-                        SelectorOption(
-                            text = stringResource(Res.string.new_tree_sex_female),
-                            icon = Icons.Default.Female,
-                            isSelected = state.person.biologicalSex == Person.BiologicalSex.FEMALE,
-                            onClick = { onEvent(AddPersonEvent.OnBiologicalSexChanged(Person.BiologicalSex.FEMALE)) },
-                        ),
-                    ),
-                isError = state.biologicalSexError != null,
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            OptionSelector(
-                label = stringResource(Res.string.new_tree_orientation_label).uppercase(),
-                options =
-                    listOf(
-                        SelectorOption(
-                            text = stringResource(Res.string.new_tree_orientation_hetero),
-                            isSelected = state.person.sexualOrientation == Person.SexualOrientation.HETEROSEXUAL,
-                            onClick = {
-                                onEvent(
-                                    AddPersonEvent.OnSexualOrientationChanged(Person.SexualOrientation.HETEROSEXUAL),
-                                )
-                            },
-                        ),
-                        SelectorOption(
-                            text = stringResource(Res.string.new_tree_orientation_other),
-                            isSelected = state.person.sexualOrientation == Person.SexualOrientation.OTHER,
-                            onClick = {
-                                onEvent(
-                                    AddPersonEvent.OnSexualOrientationChanged(Person.SexualOrientation.OTHER),
-                                )
-                            },
-                        ),
-                    ),
-                isError = state.sexualOrientationError != null,
-            )
-        }
+        IdentitySection(
+            biologicalSex = state.person.biologicalSex,
+            onBiologicalSexChange = { onEvent(AddPersonEvent.OnBiologicalSexChanged(it)) },
+            biologicalSexError = state.biologicalSexError != null,
+            sexualOrientation = state.person.sexualOrientation,
+            onSexualOrientationChange = { onEvent(AddPersonEvent.OnSexualOrientationChanged(it)) },
+            sexualOrientationError = state.sexualOrientationError != null,
+        )
 
         Spacer(modifier = Modifier.height(16.dp))
 

@@ -10,7 +10,7 @@ import kotlin.test.assertTrue
 class InMemoryTreeRepositoryTest {
     private val repository = InMemoryTreeRepository()
 
-    private val centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe")
+    private val centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
 
     @Test
     fun `createTree should add tree to the list`() =
