@@ -46,17 +46,23 @@ import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.add_person_save
 import genogramia.composeapp.generated.resources.add_person_title
 import genogramia.composeapp.generated.resources.date_format
+import genogramia.composeapp.generated.resources.edit_person_title
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun AddPersonScreen(
     treeId: String,
+    personId: String? = null,
     onBackClick: () -> Unit,
     onPersonAdded: () -> Unit,
 ) {
     val viewModel: AddPersonViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
+
+    LaunchedEffect(treeId, personId) {
+        viewModel.onEvent(AddPersonEvent.Initialize(treeId, personId))
+    }
 
     LaunchedEffect(state.isSuccess) {
         if (state.isSuccess) {
@@ -81,13 +87,22 @@ private fun AddPersonContent(
     onBackClick: () -> Unit,
     onEvent: (AddPersonEvent) -> Unit,
 ) {
+    val isEditMode = state.personId != null
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,
         topBar = {
             TopAppBar(
                 title = {
                     Text(
-                        text = stringResource(Res.string.add_person_title),
+                        text =
+                            if (isEditMode) {
+                                stringResource(
+                                    Res.string.edit_person_title,
+                                )
+                            } else {
+                                stringResource(Res.string.add_person_title)
+                            },
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                     )

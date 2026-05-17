@@ -4,6 +4,8 @@ import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
+import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
+import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
@@ -31,6 +33,8 @@ class AddPersonViewModelTest {
 
     private val dateFormatter = DateFormatter()
     private val addPersonUseCase = AddPersonUseCase(treeRepository, fakeDateProvider)
+    private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
+    private val getPersonUseCase = GetPersonUseCase(treeRepository)
     private lateinit var viewModel: AddPersonViewModel
 
     private val tree =
@@ -39,13 +43,21 @@ class AddPersonViewModelTest {
             name = "Test Tree",
             ancestorCount = 1,
             lastUpdated = "2024-05-15",
-            centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L),
+            centralPerson =
+                Person(
+                    id = "p1",
+                    firstName = "John",
+                    lastName = "Doe",
+                    birthDate = 1778716800000L,
+                    biologicalSex = Person.BiologicalSex.MALE,
+                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                ),
         )
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = AddPersonViewModel(addPersonUseCase, dateFormatter)
+        viewModel = AddPersonViewModel(addPersonUseCase, updatePersonUseCase, getPersonUseCase, dateFormatter)
     }
 
     @AfterTest
@@ -127,5 +139,63 @@ class AddPersonViewModelTest {
                 assertEquals(false, errorState.isLoading)
                 assertEquals(false, errorState.isSuccess)
             }
+        }
+
+    @Test
+    fun `when initialize event is received with personId data is loaded`() =
+        runTest {
+            treeRepository.createTree(tree)
+
+            viewModel.state.test {
+                awaitItem() // Initial
+
+                viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1"))
+
+                assertEquals(true, awaitItem().isLoading)
+
+                val loadedState = awaitItem()
+                assertEquals(false, loadedState.isLoading)
+                assertEquals("p1", loadedState.personId)
+                assertEquals("John", loadedState.person.firstName)
+            }
+        }
+
+    @Test
+    fun `when saving in edit mode UpdatePersonUseCase is used`() =
+        runTest {
+            treeRepository.createTree(tree)
+
+            // Initialize to enter edit mode
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(AddPersonEvent.OnFirstNameChanged("John Updated"))
+
+            viewModel.onEvent(AddPersonEvent.OnSaveClicked("tree-1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val updatedTree = treeRepository.getTree("tree-1")
+            assertEquals("John Updated", updatedTree?.centralPerson?.firstName)
+            assertEquals(true, viewModel.state.value.isSuccess)
+        }
+
+    @Test
+    fun `when initializing with null after an edit state is reset`() =
+        runTest {
+            treeRepository.createTree(tree)
+
+            // 1. Edit
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+            assertEquals("John", viewModel.state.value.person.firstName)
+
+            // 2. New (null)
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null))
+
+            // 3. Assert reset
+            val state = viewModel.state.value
+            assertEquals("", state.person.firstName)
+            assertNull(state.personId)
+            assertEquals(false, state.isSuccess)
         }
 }
