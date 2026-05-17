@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
+import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
+import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -13,6 +15,8 @@ import kotlinx.coroutines.launch
 
 class AddPersonViewModel(
     private val addPersonUseCase: AddPersonUseCase,
+    private val updatePersonUseCase: UpdatePersonUseCase,
+    private val getPersonUseCase: GetPersonUseCase,
     private val dateFormatter: DateFormatter,
 ) : ViewModel() {
     private val _state = MutableStateFlow(AddPersonState())
@@ -80,8 +84,53 @@ class AddPersonViewModel(
                 savePerson(event.treeId)
             }
 
+            is AddPersonEvent.Initialize -> {
+                initialize(event.treeId, event.personId)
+            }
+
             AddPersonEvent.OnResetState -> {
                 _state.update { AddPersonState() }
+            }
+        }
+    }
+
+    private fun initialize(
+        treeId: String,
+        personId: String?,
+    ) {
+        if (personId == null) {
+            _state.update { AddPersonState() }
+            return
+        }
+
+        _state.update { it.copy(isLoading = true, personId = personId) }
+        viewModelScope.launch {
+            val person = getPersonUseCase(treeId, personId)
+            if (person != null) {
+                _state.update {
+                    it.copy(
+                        isLoading = false,
+                        person =
+                            it.person.copy(
+                                firstName = person.firstName,
+                                lastName = person.lastName,
+                                biologicalSex = person.biologicalSex,
+                                sexualOrientation = person.sexualOrientation,
+                                birthDateMillis = person.birthDate,
+                                birthDateText =
+                                    person.birthDate.let { date ->
+                                        dateFormatter.formatDate(date, "dd/MM/yyyy")
+                                    },
+                                deathDateMillis = person.deathDate ?: 0L,
+                                deathDateText =
+                                    person.deathDate?.let { date ->
+                                        dateFormatter.formatDate(date, "dd/MM/yyyy")
+                                    } ?: "",
+                            ),
+                    )
+                }
+            } else {
+                _state.update { it.copy(isLoading = false) }
             }
         }
     }
@@ -135,17 +184,24 @@ class AddPersonViewModel(
 
         val person =
             Person(
-                id = "",
+                id = _state.value.personId ?: "",
                 firstName = personUi.firstName,
                 lastName = personUi.lastName,
                 birthDate = personUi.birthDateMillis,
                 biologicalSex = personUi.biologicalSex,
                 sexualOrientation = personUi.sexualOrientation,
-                deathDate = personUi.deathDateMillis,
+                deathDate = if (personUi.deathDateMillis != 0L) personUi.deathDateMillis else null,
             )
 
         viewModelScope.launch {
-            addPersonUseCase(treeId, person)
+            val result =
+                if (_state.value.personId != null) {
+                    updatePersonUseCase(treeId, person)
+                } else {
+                    addPersonUseCase(treeId, person)
+                }
+
+            result
                 .onSuccess {
                     _state.update { it.copy(isLoading = false, isSuccess = true) }
                 }.onFailure {

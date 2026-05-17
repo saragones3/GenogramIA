@@ -175,4 +175,19 @@ class TreeViewModelTest {
                     .firstName,
             )
         }
+
+    @Test
+    fun `when OnPersonSelected event is received selectedPersonId is updated`() =
+        runTest {
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
+            assertEquals("p1", viewModel.state.value.selectedPersonId)
+        }
+
+    @Test
+    fun `when OnDismissSelection event is received selectedPersonId is cleared`() =
+        runTest {
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
+            viewModel.onEvent(TreeEvent.OnDismissSelection)
+            assertNull(viewModel.state.value.selectedPersonId)
+        }
 }

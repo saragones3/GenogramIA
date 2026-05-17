@@ -33,4 +33,10 @@ sealed interface TreeEvent {
     data object OnNavigationConsumed : TreeEvent
 
     data object OnErrorConsumed : TreeEvent
+
+    data class OnPersonSelected(
+        val personId: String,
+    ) : TreeEvent
+
+    data object OnDismissSelection : TreeEvent
 }

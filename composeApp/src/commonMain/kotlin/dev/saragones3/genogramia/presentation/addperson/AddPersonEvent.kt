@@ -41,5 +41,10 @@ sealed interface AddPersonEvent {
         val treeId: String,
     ) : AddPersonEvent
 
+    data class Initialize(
+        val treeId: String,
+        val personId: String?,
+    ) : AddPersonEvent
+
     data object OnResetState : AddPersonEvent
 }

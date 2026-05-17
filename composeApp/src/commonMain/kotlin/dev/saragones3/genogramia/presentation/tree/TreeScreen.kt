@@ -1,16 +1,15 @@
 package dev.saragones3.genogramia.presentation.tree
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.detectTransformGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -19,6 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.FilterCenterFocus
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.CircularProgressIndicator
@@ -51,11 +51,11 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
@@ -65,7 +65,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.Constraints
-import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.domain.model.Person
@@ -83,7 +82,7 @@ import org.koin.compose.viewmodel.koinViewModel
 fun TreeScreen(
     treeId: String,
     onBackClick: () -> Unit,
-    onAddPersonClick: (String) -> Unit,
+    onAddPersonClick: (String, String?) -> Unit,
 ) {
     val viewModel: TreeViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
@@ -119,7 +118,8 @@ fun TreeScreen(
         state = state,
         onEvent = viewModel::onEvent,
         onBackClick = onBackClick,
-        onAddPersonClick = { onAddPersonClick(treeId) },
+        onAddPersonClick = { onAddPersonClick(treeId, null) },
+        onEditPersonClick = { personId -> onAddPersonClick(treeId, personId) },
         snackbarHostState = snackbarHostState,
     )
 }
@@ -131,8 +131,11 @@ private fun TreeContent(
     onEvent: (TreeEvent) -> Unit,
     onBackClick: () -> Unit,
     onAddPersonClick: () -> Unit,
+    onEditPersonClick: (String) -> Unit,
     snackbarHostState: SnackbarHostState,
 ) {
+    val isPersonSelected = state.selectedPersonId != null
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,
         topBar = {
@@ -163,14 +166,20 @@ private fun TreeContent(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = onAddPersonClick,
+                onClick = {
+                    if (isPersonSelected) {
+                        onEditPersonClick(state.selectedPersonId)
+                    } else {
+                        onAddPersonClick()
+                    }
+                },
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = Color.White,
                 shape = CircleShape,
                 modifier = Modifier.size(56.dp),
             ) {
                 Icon(
-                    imageVector = Icons.Default.Add,
+                    imageVector = if (isPersonSelected) Icons.Default.Edit else Icons.Default.Add,
                     contentDescription = null,
                 )
             }
@@ -203,9 +212,12 @@ private fun TreeContent(
                 tree = state.tree,
                 offset = state.offset,
                 scale = state.scale,
+                selectedPersonId = state.selectedPersonId,
                 onTransform = { pan, zoom ->
                     onEvent(TreeEvent.OnTransform(pan, zoom))
                 },
+                onPersonSelected = { onEvent(TreeEvent.OnPersonSelected(it)) },
+                onDismissSelection = { onEvent(TreeEvent.OnDismissSelection) },
             )
 
             CanvasControls(
@@ -226,12 +238,16 @@ private fun GenogramCanvas(
     tree: TreeUi,
     offset: Offset,
     scale: Float,
+    selectedPersonId: String?,
     onTransform: (Offset, Float) -> Unit,
+    onPersonSelected: (String) -> Unit,
+    onDismissSelection: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val textMeasurer = rememberTextMeasurer()
     val theme = MaterialTheme.colorScheme
     val typography = MaterialTheme.typography
+    val nodeSize = with(LocalDensity.current) { 64.dp.toPx() }
 
     Box(
         modifier =
@@ -239,6 +255,24 @@ private fun GenogramCanvas(
                 .fillMaxSize()
                 .clipToBounds()
                 .pointerInput(Unit) {
+                    detectTapGestures { tapOffset ->
+                        val tappedPerson =
+                            (listOf(tree.centralPerson) + tree.persons).find {
+                                val personTopLeft =
+                                    Offset(it.position.x - nodeSize / 2, it.position.y - nodeSize / 2)
+                                tapOffset.x >= (personTopLeft.x * scale + offset.x) &&
+                                    tapOffset.x <= ((personTopLeft.x + nodeSize) * scale + offset.x) &&
+                                    tapOffset.y >= (personTopLeft.y * scale + offset.y) &&
+                                    tapOffset.y <= ((personTopLeft.y + nodeSize) * scale + offset.y)
+                            }
+
+                        if (tappedPerson != null) {
+                            onPersonSelected(tappedPerson.id)
+                        } else {
+                            onDismissSelection()
+                        }
+                    }
+                }.pointerInput(Unit) {
                     detectTransformGestures { _, pan, zoom, _ ->
                         onTransform(pan, zoom)
                     }
@@ -289,9 +323,21 @@ private fun GenogramCanvas(
                 }
 
                 // Draw persons
-                drawPerson(tree.centralPerson, textMeasurer, theme, typography)
+                drawPerson(
+                    person = tree.centralPerson,
+                    textMeasurer = textMeasurer,
+                    theme = theme,
+                    typography = typography,
+                    isSelected = tree.centralPerson.id == selectedPersonId,
+                )
                 tree.persons.forEach { person ->
-                    drawPerson(person, textMeasurer, theme, typography)
+                    drawPerson(
+                        person = person,
+                        textMeasurer = textMeasurer,
+                        theme = theme,
+                        typography = typography,
+                        isSelected = person.id == selectedPersonId,
+                    )
                 }
             }
         }
@@ -303,10 +349,15 @@ private fun DrawScope.drawPerson(
     textMeasurer: TextMeasurer,
     theme: ColorScheme,
     typography: Typography,
+    isSelected: Boolean,
 ) {
     val nodeSize = 64.dp.toPx()
     val center = person.position
     val topLeft = Offset(center.x - nodeSize / 2, center.y - nodeSize / 2)
+
+    if (isSelected) {
+        drawPersonSelection(person, nodeSize, center, topLeft, theme.primary)
+    }
 
     val color =
         when (person.biologicalSex) {
@@ -315,7 +366,59 @@ private fun DrawScope.drawPerson(
             else -> theme.secondary
         }
 
-    // Draw Shape
+    drawPersonShape(person, color, nodeSize, center, topLeft)
+    drawPersonIdentityMarkers(person, nodeSize, center, topLeft)
+    drawPersonTextInfo(person, textMeasurer, typography, nodeSize, center, topLeft)
+}
+
+private fun DrawScope.drawPersonSelection(
+    person: PersonNodeUi,
+    nodeSize: Float,
+    center: Offset,
+    topLeft: Offset,
+    color: Color,
+) {
+    val selectionPadding = 4.dp.toPx()
+    val selectionSize = nodeSize + selectionPadding * 2
+    val selectionTopLeft = Offset(topLeft.x - selectionPadding, topLeft.y - selectionPadding)
+
+    when (person.biologicalSex) {
+        Person.BiologicalSex.MALE -> {
+            drawRect(
+                color = color,
+                topLeft = selectionTopLeft,
+                size = Size(selectionSize, selectionSize),
+                style = Stroke(width = 3.dp.toPx()),
+            )
+        }
+
+        Person.BiologicalSex.FEMALE -> {
+            drawCircle(
+                color = color,
+                center = center,
+                radius = selectionSize / 2,
+                style = Stroke(width = 3.dp.toPx()),
+            )
+        }
+
+        else -> {
+            drawRect(
+                color = color,
+                topLeft = selectionTopLeft,
+                size = Size(selectionSize, selectionSize),
+                style = Stroke(width = 3.dp.toPx()),
+            )
+        }
+    }
+}
+
+private fun DrawScope.drawPersonShape(
+    person: PersonNodeUi,
+    color: Color,
+    nodeSize: Float,
+    center: Offset,
+    topLeft: Offset,
+) {
     when (person.biologicalSex) {
         Person.BiologicalSex.MALE -> {
             drawRect(color = color, topLeft = topLeft, size = Size(nodeSize, nodeSize))
@@ -365,8 +468,14 @@ private fun DrawScope.drawPerson(
             )
         }
     }
+}
 
-    // LGBT Triangle
+private fun DrawScope.drawPersonIdentityMarkers(
+    person: PersonNodeUi,
+    nodeSize: Float,
+    center: Offset,
+    topLeft: Offset,
+) {
     if (person.sexualOrientation != Person.SexualOrientation.HETEROSEXUAL &&
         person.sexualOrientation != Person.SexualOrientation.UNKNOWN
     ) {
@@ -381,7 +490,6 @@ private fun DrawScope.drawPerson(
         drawPath(path = trianglePath, color = Color.Black, style = Stroke(width = 2f))
     }
 
-    // Death X
     if (person.isDeceased) {
         drawLine(
             color = Color.Black,
@@ -396,7 +504,16 @@ private fun DrawScope.drawPerson(
             strokeWidth = 2f,
         )
     }
+}
 
+private fun DrawScope.drawPersonTextInfo(
+    person: PersonNodeUi,
+    textMeasurer: TextMeasurer,
+    typography: Typography,
+    nodeSize: Float,
+    center: Offset,
+    topLeft: Offset,
+) {
     // Text: Name (below)
     val nameResult =
         textMeasurer.measure(
@@ -606,6 +723,7 @@ private fun TreeScreenPreview(
             onEvent = {},
             onBackClick = {},
             onAddPersonClick = {},
+            onEditPersonClick = {},
             snackbarHostState = remember { SnackbarHostState() },
         )
     }

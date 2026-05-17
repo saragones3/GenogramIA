@@ -13,6 +13,7 @@ data class AddPersonState(
     val sexualOrientationError: ValidationError? = null,
     val showBirthDatePicker: Boolean = false,
     val showDeathDatePicker: Boolean = false,
+    val personId: String? = null,
 ) {
     enum class ValidationError {
         EMPTY,

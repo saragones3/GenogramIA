@@ -63,6 +63,14 @@ class TreeViewModel(
             TreeEvent.OnErrorConsumed -> {
                 _state.update { it.copy(error = null) }
             }
+
+            is TreeEvent.OnPersonSelected -> {
+                _state.update { it.copy(selectedPersonId = event.personId) }
+            }
+
+            TreeEvent.OnDismissSelection -> {
+                _state.update { it.copy(selectedPersonId = null) }
+            }
         }
     }
 
@@ -115,7 +123,7 @@ class TreeViewModel(
     }
 
     private fun Person.toNodeUi(): PersonNodeUi {
-        val birthYear = birthDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: ""
+        val birthYear = birthDate.let { dateFormatter.formatDate(it, "yyyy") }
         val deathYear = deathDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: ""
 
         val age =

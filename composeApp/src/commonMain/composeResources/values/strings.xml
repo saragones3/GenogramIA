@@ -153,5 +153,6 @@
 
     <!-- Add Person -->
     <string name="add_person_title">Add Family Member</string>
+    <string name="edit_person_title">Edit Family Member</string>
     <string name="add_person_save">Save Member Record</string>
 </resources>
