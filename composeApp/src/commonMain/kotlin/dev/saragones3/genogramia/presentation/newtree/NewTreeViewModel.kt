@@ -56,10 +56,11 @@ class NewTreeViewModel(
                 val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
                 _state.update {
                     it.copy(
-                        person = it.person.copy(
-                            birthDateMillis = event.millis,
-                            birthDateText = formattedDate
-                        ),
+                        person =
+                            it.person.copy(
+                                birthDateMillis = event.millis,
+                                birthDateText = formattedDate,
+                            ),
                         birthDateError = null,
                     )
                 }
@@ -69,10 +70,11 @@ class NewTreeViewModel(
                 val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
                 _state.update {
                     it.copy(
-                        person = it.person.copy(
-                            deathDateMillis = event.millis,
-                            deathDateText = formattedDate
-                        ),
+                        person =
+                            it.person.copy(
+                                deathDateMillis = event.millis,
+                                deathDateText = formattedDate,
+                            ),
                     )
                 }
             }
@@ -119,7 +121,7 @@ class NewTreeViewModel(
             lastNameError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
-        if (personUi.birthDateMillis == null) {
+        if (personUi.birthDateMillis == 0L) {
             birthDateError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
@@ -153,9 +155,9 @@ class NewTreeViewModel(
                     id = "",
                     firstName = personUi.firstName,
                     lastName = personUi.lastName,
+                    birthDate = personUi.birthDateMillis,
                     biologicalSex = personUi.biologicalSex,
                     sexualOrientation = personUi.sexualOrientation,
-                    birthDate = personUi.birthDateMillis,
                     deathDate = personUi.deathDateMillis,
                 )
             val result = newTreeUseCase(person = person)

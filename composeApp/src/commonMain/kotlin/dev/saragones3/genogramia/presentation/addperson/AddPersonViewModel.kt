@@ -45,10 +45,11 @@ class AddPersonViewModel(
                 val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
                 _state.update {
                     it.copy(
-                        person = it.person.copy(
-                            birthDateMillis = event.millis,
-                            birthDateText = formattedDate
-                        ),
+                        person =
+                            it.person.copy(
+                                birthDateMillis = event.millis,
+                                birthDateText = formattedDate,
+                            ),
                         birthDateError = null,
                     )
                 }
@@ -58,10 +59,11 @@ class AddPersonViewModel(
                 val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
                 _state.update {
                     it.copy(
-                        person = it.person.copy(
-                            deathDateMillis = event.millis,
-                            deathDateText = formattedDate
-                        ),
+                        person =
+                            it.person.copy(
+                                deathDateMillis = event.millis,
+                                deathDateText = formattedDate,
+                            ),
                     )
                 }
             }
@@ -103,7 +105,7 @@ class AddPersonViewModel(
             lastNameError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
-        if (personUi.birthDateMillis == null) {
+        if (personUi.birthDateMillis == 0L) {
             birthDateError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
@@ -136,9 +138,9 @@ class AddPersonViewModel(
                 id = "",
                 firstName = personUi.firstName,
                 lastName = personUi.lastName,
+                birthDate = personUi.birthDateMillis,
                 biologicalSex = personUi.biologicalSex,
                 sexualOrientation = personUi.sexualOrientation,
-                birthDate = personUi.birthDateMillis,
                 deathDate = personUi.deathDateMillis,
             )
 

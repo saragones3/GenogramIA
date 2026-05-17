@@ -34,6 +34,7 @@ class NewTreeUseCaseTest {
                         id = "",
                         firstName = "",
                         lastName = "Doe",
+                        birthDate = 0L,
                         biologicalSex = Person.BiologicalSex.MALE,
                         sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
                     ),
@@ -52,6 +53,7 @@ class NewTreeUseCaseTest {
                         id = "",
                         firstName = "John",
                         lastName = " ",
+                        birthDate = 0L,
                         biologicalSex = Person.BiologicalSex.MALE,
                         sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
                     ),
@@ -70,9 +72,9 @@ class NewTreeUseCaseTest {
                         id = "",
                         firstName = "John",
                         lastName = "Doe",
+                        birthDate = 631152000000L,
                         biologicalSex = Person.BiologicalSex.MALE,
                         sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
-                        birthDate = "1990-01-01",
                     ),
                 )
 

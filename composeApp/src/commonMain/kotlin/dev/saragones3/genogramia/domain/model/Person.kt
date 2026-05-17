@@ -4,15 +4,16 @@ data class Person(
     val id: String,
     val firstName: String,
     val lastName: String,
+    val birthDate: Long,
     val biologicalSex: BiologicalSex = BiologicalSex.UNKNOWN,
     val sexualOrientation: SexualOrientation = SexualOrientation.UNKNOWN,
-    val birthDate: Long? = null,
     val deathDate: Long? = null,
 ) {
     constructor() : this(
         id = "",
         firstName = "",
         lastName = "",
+        birthDate = 0L,
     )
 
     enum class BiologicalSex {

@@ -51,7 +51,14 @@ class TreeViewModelTest {
     @Test
     fun `when LoadTree event is received state is updated with tree data`() =
         runTest {
-            val person = Person("p1", "John", "Doe", Person.BiologicalSex.MALE, birthDate = 315532800000L)
+            val person =
+                Person(
+                    id = "p1",
+                    firstName = "John",
+                    lastName = "Doe",
+                    birthDate = 315532800000L,
+                    biologicalSex = Person.BiologicalSex.MALE,
+                )
             val tree = GenogramTree("t1", "Family", 1, "now", person)
             treeRepository.createTree(tree)
 
@@ -152,8 +159,8 @@ class TreeViewModelTest {
     @Test
     fun `when LoadTree has multiple persons they are mapped to UI`() =
         runTest {
-            val central = Person("p1", "John", "Doe")
-            val p2 = Person("p2", "Jane", "Doe")
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
             val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
             treeRepository.createTree(tree)
 
