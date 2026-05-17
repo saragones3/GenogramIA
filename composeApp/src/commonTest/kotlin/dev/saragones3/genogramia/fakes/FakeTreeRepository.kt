@@ -29,4 +29,17 @@ class FakeTreeRepository : TreeRepository {
         }
         return trees.toList()
     }
+
+    override suspend fun updateTree(tree: GenogramTree): GenogramTree {
+        if (shouldReturnError) {
+            throw errorToReturn
+        }
+        val index = trees.indexOfFirst { it.id == tree.id }
+        if (index != -1) {
+            trees[index] = tree
+        } else {
+            trees.add(tree)
+        }
+        return tree
+    }
 }

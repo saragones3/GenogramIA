@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import dev.saragones3.genogramia.presentation.addperson.AddPersonScreen
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeScreen
 import dev.saragones3.genogramia.presentation.changepassword.ChangePasswordScreen
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordScreen
@@ -185,6 +186,17 @@ private fun NavGraphContent(
             TreeScreen(
                 treeId = key.treeId,
                 onBackClick = { backStack.pop() },
+                onAddPersonClick = { treeId ->
+                    backStack.push(NavRoute.AddPerson(treeId))
+                },
+            )
+        }
+
+        is NavRoute.AddPerson -> {
+            AddPersonScreen(
+                treeId = key.treeId,
+                onBackClick = { backStack.pop() },
+                onPersonAdded = { backStack.pop() },
             )
         }
     }

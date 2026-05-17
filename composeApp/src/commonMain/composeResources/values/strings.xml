@@ -147,4 +147,13 @@
 
     <!-- Canvas -->
     <string name="canvas_title">Genogram Canvas</string>
+    <string name="canvas_zoom_in">Zoom In</string>
+    <string name="canvas_zoom_out">Zoom Out</string>
+    <string name="canvas_reset">Reset Viewport</string>
+
+    <!-- Add Person -->
+    <string name="add_person_title">Add Family Member</string>
+    <string name="add_person_save">Save Member Record</string>
+    <string name="add_person_vital_dates">VITAL DATES</string>
+    <string name="add_person_identity_header">IDENTITY &amp; BIOLOGICAL SEX</string>
 </resources>

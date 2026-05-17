@@ -7,6 +7,7 @@ import dev.saragones3.genogramia.data.util.RealDateProvider
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.domain.repository.TreeRepository
+import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteAccountUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
@@ -19,6 +20,7 @@ import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.domain.util.DateProvider
+import dev.saragones3.genogramia.presentation.addperson.AddPersonViewModel
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeViewModel
 import dev.saragones3.genogramia.presentation.changepassword.ChangePasswordViewModel
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
@@ -60,6 +62,8 @@ private val dataModule =
                 override suspend fun getTree(id: String): GenogramTree? = activeRepo.getTree(id)
 
                 override suspend fun getTrees(): List<GenogramTree> = activeRepo.getTrees()
+
+                override suspend fun updateTree(tree: GenogramTree): GenogramTree = activeRepo.updateTree(tree)
             }
         }
 
@@ -76,6 +80,7 @@ private val domainModule =
         factoryOf(::UpdatePasswordUseCase)
         factoryOf(::SendPasswordResetEmailUseCase)
         factoryOf(::NewTreeUseCase)
+        factoryOf(::AddPersonUseCase)
         factoryOf(::GetTreesUseCase)
         factoryOf(::GetTreeUseCase)
         factoryOf(::DateFormatter)
@@ -94,6 +99,7 @@ private val appModule =
         viewModelOf(::ChangePasswordViewModel)
         viewModelOf(::ForgotPasswordViewModel)
         viewModelOf(::TreeViewModel)
+        viewModelOf(::AddPersonViewModel)
     }
 
 fun getSharedModules(): List<Module> =

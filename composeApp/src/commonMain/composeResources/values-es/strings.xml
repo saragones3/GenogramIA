@@ -147,4 +147,13 @@
 
     <!-- Canvas -->
     <string name="canvas_title">Lienzo del Genograma</string>
+    <string name="canvas_zoom_in">Aumentar Zoom</string>
+    <string name="canvas_zoom_out">Alejar Zoom</string>
+    <string name="canvas_reset">Restablecer Vista</string>
+
+    <!-- Add Person -->
+    <string name="add_person_title">Añadir Familiar</string>
+    <string name="add_person_save">Guardar Registro de Miembro</string>
+    <string name="add_person_vital_dates">FECHAS VITALES</string>
+    <string name="add_person_identity_header">IDENTIDAD Y SEXO BIOLÓGICO</string>
 </resources>

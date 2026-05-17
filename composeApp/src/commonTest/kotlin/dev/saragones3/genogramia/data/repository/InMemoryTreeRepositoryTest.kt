@@ -83,4 +83,41 @@ class InMemoryTreeRepositoryTest {
             assertTrue(all.contains(tree1))
             assertTrue(all.contains(tree2))
         }
+
+    @Test
+    fun `updateTree should update existing tree`() =
+        runTest {
+            val tree =
+                GenogramTree(
+                    id = "1",
+                    name = "Old Name",
+                    ancestorCount = 1,
+                    lastUpdated = "2024-05-15",
+                    centralPerson = centralPerson,
+                )
+            repository.createTree(tree)
+
+            val updatedTree = tree.copy(name = "New Name")
+            repository.updateTree(updatedTree)
+
+            val found = repository.getTree("1")
+            assertEquals("New Name", found?.name)
+        }
+
+    @Test
+    fun `updateTree should add tree if it does not exist`() =
+        runTest {
+            val tree =
+                GenogramTree(
+                    id = "1",
+                    name = "New Tree",
+                    ancestorCount = 1,
+                    lastUpdated = "2024-05-15",
+                    centralPerson = centralPerson,
+                )
+            repository.updateTree(tree)
+
+            val found = repository.getTree("1")
+            assertEquals(tree, found)
+        }
 }

@@ -61,6 +61,9 @@ import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
+import genogramia.composeapp.generated.resources.canvas_reset
+import genogramia.composeapp.generated.resources.canvas_zoom_in
+import genogramia.composeapp.generated.resources.canvas_zoom_out
 import genogramia.composeapp.generated.resources.error_tree_not_found
 import genogramia.composeapp.generated.resources.error_unknown
 import org.jetbrains.compose.resources.stringResource
@@ -70,6 +73,7 @@ import org.koin.compose.viewmodel.koinViewModel
 fun TreeScreen(
     treeId: String,
     onBackClick: () -> Unit,
+    onAddPersonClick: (String) -> Unit,
 ) {
     val viewModel: TreeViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
@@ -105,6 +109,7 @@ fun TreeScreen(
         state = state,
         onEvent = viewModel::onEvent,
         onBackClick = onBackClick,
+        onAddPersonClick = { onAddPersonClick(treeId) },
         snackbarHostState = snackbarHostState,
     )
 }
@@ -115,6 +120,7 @@ private fun TreeContent(
     state: TreeState,
     onEvent: (TreeEvent) -> Unit,
     onBackClick: () -> Unit,
+    onAddPersonClick: () -> Unit,
     snackbarHostState: SnackbarHostState,
 ) {
     Scaffold(
@@ -147,7 +153,7 @@ private fun TreeContent(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* TODO: Add person */ },
+                onClick = onAddPersonClick,
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = Color.White,
                 shape = CircleShape,
@@ -277,17 +283,33 @@ private fun GenogramCanvas(
                     .fillMaxSize()
                     .clipToBounds(),
         ) {
+            // Render Central Person
             PersonNode(
                 person = tree.centralPerson,
                 modifier =
                     Modifier.offset {
                         IntOffset(
-                            (offset.x - (32 * scale).dp.toPx()).toInt(),
-                            (offset.y - (32 * scale).dp.toPx()).toInt(),
+                            (offset.x + (tree.centralPerson.position.x * scale) - (60 * scale).dp.toPx()).toInt(),
+                            (offset.y + (tree.centralPerson.position.y * scale) - (32 * scale).dp.toPx()).toInt(),
                         )
                     },
                 scale = scale,
             )
+
+            // Render other persons
+            tree.persons.forEach { person ->
+                PersonNode(
+                    person = person,
+                    modifier =
+                        Modifier.offset {
+                            IntOffset(
+                                (offset.x + (person.position.x * scale) - (60 * scale).dp.toPx()).toInt(),
+                                (offset.y + (person.position.y * scale) - (32 * scale).dp.toPx()).toInt(),
+                            )
+                        },
+                    scale = scale,
+                )
+            }
         }
     }
 }
@@ -358,7 +380,7 @@ private fun CanvasControls(
             IconButton(onClick = onZoomOut) {
                 Icon(
                     imageVector = Icons.Default.Remove,
-                    contentDescription = "Zoom Out",
+                    contentDescription = stringResource(Res.string.canvas_zoom_out),
                     tint = MaterialTheme.colorScheme.onSurface,
                 )
             }
@@ -371,7 +393,7 @@ private fun CanvasControls(
             IconButton(onClick = onReset) {
                 Icon(
                     imageVector = Icons.Default.FilterCenterFocus,
-                    contentDescription = "Reset Viewport",
+                    contentDescription = stringResource(Res.string.canvas_reset),
                     tint = MaterialTheme.colorScheme.onSurface,
                 )
             }
@@ -384,7 +406,7 @@ private fun CanvasControls(
             IconButton(onClick = onZoomIn) {
                 Icon(
                     imageVector = Icons.Default.Add,
-                    contentDescription = "Zoom In",
+                    contentDescription = stringResource(Res.string.canvas_zoom_in),
                     tint = MaterialTheme.colorScheme.onSurface,
                 )
             }
@@ -445,6 +467,7 @@ private fun TreeScreenPreview(
             state = state,
             onEvent = {},
             onBackClick = {},
+            onAddPersonClick = {},
             snackbarHostState = remember { SnackbarHostState() },
         )
     }
