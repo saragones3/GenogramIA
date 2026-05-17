@@ -299,7 +299,7 @@ private fun GenogramCanvas(
 }
 
 private fun DrawScope.drawPerson(
-    person: PersonUi,
+    person: PersonNodeUi,
     textMeasurer: TextMeasurer,
     theme: ColorScheme,
     typography: Typography,
@@ -535,7 +535,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
             id = "tree-123",
             name = "Ancestral record",
             centralPerson =
-                PersonUi(
+                PersonNodeUi(
                     id = "1",
                     firstName = "María Elena",
                     lastName = "García López",
@@ -548,7 +548,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                 ),
             persons =
                 listOf(
-                    PersonUi(
+                    PersonNodeUi(
                         id = "2",
                         firstName = "Ángel",
                         lastName = "González Martínez",
@@ -559,7 +559,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                         isDeceased = true,
                         position = Offset(500f, 400f),
                     ),
-                    PersonUi(
+                    PersonNodeUi(
                         id = "3",
                         firstName = "Juan",
                         lastName = "García Pérez",
@@ -569,7 +569,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                         age = "25",
                         position = Offset(500f, 1100f),
                     ),
-                    PersonUi(
+                    PersonNodeUi(
                         id = "4",
                         firstName = "Sara",
                         lastName = "Salas De Mena",

@@ -56,8 +56,10 @@ class NewTreeViewModel(
                 val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
                 _state.update {
                     it.copy(
-                        person = it.person.copy(birthDate = formattedDate),
-                        birthDateMillis = event.millis,
+                        person = it.person.copy(
+                            birthDateMillis = event.millis,
+                            birthDateText = formattedDate
+                        ),
                         birthDateError = null,
                     )
                 }
@@ -67,8 +69,10 @@ class NewTreeViewModel(
                 val formattedDate = dateFormatter.formatDate(event.millis, event.pattern)
                 _state.update {
                     it.copy(
-                        person = it.person.copy(deathDate = formattedDate),
-                        deathDateMillis = event.millis,
+                        person = it.person.copy(
+                            deathDateMillis = event.millis,
+                            deathDateText = formattedDate
+                        ),
                     )
                 }
             }
@@ -98,11 +102,7 @@ class NewTreeViewModel(
     }
 
     private fun createTree() {
-        val firstName = _state.value.person.firstName
-        val lastName = _state.value.person.lastName
-        val birthDate = _state.value.person.birthDate
-        val biologicalSex = _state.value.person.biologicalSex
-        val sexualOrientation = _state.value.person.sexualOrientation
+        val personUi = _state.value.person
 
         var firstNameError: NewTreeState.ValidationError? = null
         var lastNameError: NewTreeState.ValidationError? = null
@@ -111,23 +111,23 @@ class NewTreeViewModel(
         var sexualOrientationError: NewTreeState.ValidationError? = null
 
         var isValid = true
-        if (firstName.isBlank()) {
+        if (personUi.firstName.isBlank()) {
             firstNameError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
-        if (lastName.isBlank()) {
+        if (personUi.lastName.isBlank()) {
             lastNameError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
-        if (birthDate.isNullOrBlank()) {
+        if (personUi.birthDateMillis == null) {
             birthDateError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
-        if (biologicalSex == Person.BiologicalSex.UNKNOWN) {
+        if (personUi.biologicalSex == Person.BiologicalSex.UNKNOWN) {
             biologicalSexError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
-        if (sexualOrientation == Person.SexualOrientation.UNKNOWN) {
+        if (personUi.sexualOrientation == Person.SexualOrientation.UNKNOWN) {
             sexualOrientationError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
@@ -148,18 +148,17 @@ class NewTreeViewModel(
         _state.update { it.copy(isLoading = true) }
 
         viewModelScope.launch {
-            val result =
-                newTreeUseCase(
-                    person =
-                        _state.value.person.copy(
-                            birthDate =
-                                _state.value.person.birthDate
-                                    ?.ifBlank { null },
-                            deathDate =
-                                _state.value.person.deathDate
-                                    ?.ifBlank { null },
-                        ),
+            val person =
+                Person(
+                    id = "",
+                    firstName = personUi.firstName,
+                    lastName = personUi.lastName,
+                    biologicalSex = personUi.biologicalSex,
+                    sexualOrientation = personUi.sexualOrientation,
+                    birthDate = personUi.birthDateMillis,
+                    deathDate = personUi.deathDateMillis,
                 )
+            val result = newTreeUseCase(person = person)
 
             result
                 .onSuccess { tree ->

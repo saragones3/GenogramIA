@@ -170,9 +170,9 @@ private fun AddPersonForm(
             onFirstNameChange = { onEvent(AddPersonEvent.OnFirstNameChanged(it)) },
             lastName = state.person.lastName,
             onLastNameChange = { onEvent(AddPersonEvent.OnLastNameChanged(it)) },
-            birthDate = state.person.birthDate.orEmpty(),
+            birthDate = state.person.birthDateText,
             onBirthDateClick = { onEvent(AddPersonEvent.OnShowBirthDatePicker(true)) },
-            deathDate = state.person.deathDate.orEmpty(),
+            deathDate = state.person.deathDateText,
             onDeathDateClick = { onEvent(AddPersonEvent.OnShowDeathDatePicker(true)) },
             errors =
                 BasicInfoErrors(

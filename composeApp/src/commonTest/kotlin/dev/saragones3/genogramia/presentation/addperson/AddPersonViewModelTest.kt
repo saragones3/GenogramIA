@@ -90,7 +90,10 @@ class AddPersonViewModelTest {
             viewModel.onEvent(AddPersonEvent.OnSexualOrientationChanged(Person.SexualOrientation.HETEROSEXUAL))
 
             viewModel.state.test {
-                assertEquals("Jane", awaitItem().person.firstName)
+                val initialState = awaitItem()
+                assertEquals("Jane", initialState.person.firstName)
+                assertEquals(1778716800000L, initialState.person.birthDateMillis)
+                assertEquals("25/08/2026", initialState.person.birthDateText)
 
                 viewModel.onEvent(AddPersonEvent.OnSaveClicked("tree-1"))
 

@@ -121,9 +121,9 @@ private fun NewTreeContent(
                 onFirstNameChange = { onEvent(NewTreeEvent.OnFirstNameChanged(it)) },
                 lastName = state.person.lastName,
                 onLastNameChange = { onEvent(NewTreeEvent.OnLastNameChanged(it)) },
-                birthDate = state.person.birthDate.orEmpty(),
+                birthDate = state.person.birthDateText,
                 onBirthDateClick = { onEvent(NewTreeEvent.OnShowBirthDatePicker(true)) },
-                deathDate = state.person.deathDate.orEmpty(),
+                deathDate = state.person.deathDateText,
                 onDeathDateClick = { onEvent(NewTreeEvent.OnShowDeathDatePicker(true)) },
                 errors =
                     BasicInfoErrors(
@@ -316,17 +316,17 @@ private class NewTreeStateProvider : PreviewParameterProvider<NewTreeState> {
             NewTreeState(),
             NewTreeState(
                 person =
-                    Person().copy(
+                    NewTreeUi(
                         firstName = "María Elena",
                         lastName = "García López",
                         biologicalSex = Person.BiologicalSex.FEMALE,
                         sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
-                        birthDate = "15/05/1980",
+                        birthDateText = "15/05/1980",
                     ),
             ),
             NewTreeState(
                 person =
-                    Person().copy(
+                    NewTreeUi(
                         firstName = "",
                         lastName = "",
                     ),

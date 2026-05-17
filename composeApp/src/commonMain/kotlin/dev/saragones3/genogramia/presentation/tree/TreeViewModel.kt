@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
+import dev.saragones3.genogramia.domain.util.DateFormatter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,6 +15,7 @@ import kotlinx.coroutines.launch
 
 class TreeViewModel(
     private val getTreeUseCase: GetTreeUseCase,
+    private val dateFormatter: DateFormatter,
 ) : ViewModel() {
     private val _state = MutableStateFlow(TreeState())
     val state: StateFlow<TreeState> = _state.asStateFlow()
@@ -94,7 +96,7 @@ class TreeViewModel(
 
     private fun GenogramTree.toUi(): TreeUi {
         val centralPersonUi =
-            centralPerson.toUi().copy(
+            centralPerson.toNodeUi().copy(
                 position = Offset.Zero,
                 isIndexPerson = true,
             )
@@ -102,7 +104,7 @@ class TreeViewModel(
             persons.mapIndexed { index, person ->
                 val row = (index / 3) + 1
                 val col = (index % 3) - 1
-                person.toUi().copy(position = Offset(col * 250f, row * 250f))
+                person.toNodeUi().copy(position = Offset(col * 250f, row * 250f))
             }
         return TreeUi(
             id = id,
@@ -112,9 +114,9 @@ class TreeViewModel(
         )
     }
 
-    private fun Person.toUi(): PersonUi {
-        val birthYear = birthDate?.let { extractYear(it) } ?: ""
-        val deathYear = deathDate?.let { extractYear(it) } ?: ""
+    private fun Person.toNodeUi(): PersonNodeUi {
+        val birthYear = birthDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: ""
+        val deathYear = deathDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: ""
 
         val age =
             if (birthYear.isNotEmpty()) {
@@ -125,7 +127,7 @@ class TreeViewModel(
                 ""
             }
 
-        return PersonUi(
+        return PersonNodeUi(
             id = id,
             firstName = firstName,
             lastName = lastName,
@@ -137,6 +139,4 @@ class TreeViewModel(
             isDeceased = deathDate != null,
         )
     }
-
-    private fun extractYear(date: String): String = date.split("/").lastOrNull() ?: date
 }
