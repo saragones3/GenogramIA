@@ -67,7 +67,7 @@ class TreeViewModelTest {
                     "John Doe",
                     "${successState.tree.centralPerson.firstName} ${successState.tree.centralPerson.lastName}",
                 )
-                assertEquals("B. 1980", successState.tree.centralPerson.dateText)
+                assertEquals("1980", successState.tree.centralPerson.birthDateText)
             }
         }
 
@@ -89,7 +89,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree event is received with birth and death dates dateText is formatted correctly`() =
+    fun `when LoadTree event is received with birth and death dates UI model is populated correctly`() =
         runTest {
             val person = Person("p1", "John", "Doe", birthDate = "01/01/1915", deathDate = "31/12/1989")
             val tree = GenogramTree("t1", "Family", 1, "now", person)
@@ -99,7 +99,11 @@ class TreeViewModelTest {
 
             testDispatcher.scheduler.advanceUntilIdle()
 
-            assertEquals("1915 - 1989", viewModel.state.value.tree.centralPerson.dateText)
+            val centralPerson = viewModel.state.value.tree.centralPerson
+            assertEquals("1915", centralPerson.birthDateText)
+            assertEquals("1989", centralPerson.deathDateText)
+            assertEquals("74", centralPerson.age)
+            assertEquals(true, centralPerson.isDeceased)
         }
 
     @Test

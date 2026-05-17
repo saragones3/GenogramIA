@@ -22,6 +22,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.FilterCenterFocus
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -34,6 +35,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.Typography
 import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -46,15 +48,23 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.drawscope.DrawScope
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.text.TextMeasurer
+import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -219,6 +229,10 @@ private fun GenogramCanvas(
     onTransform: (Offset, Float) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val textMeasurer = rememberTextMeasurer()
+    val theme = MaterialTheme.colorScheme
+    val typography = MaterialTheme.typography
+
     Box(
         modifier =
             modifier
@@ -273,89 +287,190 @@ private fun GenogramCanvas(
                     )
                     y += gridStep
                 }
-            }
-        }
 
-        // Draw Nodes as Composables on top of Canvas
-        Box(
-            modifier =
-                Modifier
-                    .fillMaxSize()
-                    .clipToBounds(),
-        ) {
-            // Render Central Person
-            PersonNode(
-                person = tree.centralPerson,
-                modifier =
-                    Modifier.offset {
-                        IntOffset(
-                            (offset.x + (tree.centralPerson.position.x * scale) - (60 * scale).dp.toPx()).toInt(),
-                            (offset.y + (tree.centralPerson.position.y * scale) - (32 * scale).dp.toPx()).toInt(),
-                        )
-                    },
-                scale = scale,
-            )
-
-            // Render other persons
-            tree.persons.forEach { person ->
-                PersonNode(
-                    person = person,
-                    modifier =
-                        Modifier.offset {
-                            IntOffset(
-                                (offset.x + (person.position.x * scale) - (60 * scale).dp.toPx()).toInt(),
-                                (offset.y + (person.position.y * scale) - (32 * scale).dp.toPx()).toInt(),
-                            )
-                        },
-                    scale = scale,
-                )
+                // Draw persons
+                drawPerson(tree.centralPerson, textMeasurer, theme, typography)
+                tree.persons.forEach { person ->
+                    drawPerson(person, textMeasurer, theme, typography)
+                }
             }
         }
     }
 }
 
-@Composable
-private fun PersonNode(
+private fun DrawScope.drawPerson(
     person: PersonUi,
-    scale: Float,
-    modifier: Modifier = Modifier,
+    textMeasurer: TextMeasurer,
+    theme: ColorScheme,
+    typography: Typography,
 ) {
-    val (color, shape) =
+    val nodeSize = 64.dp.toPx()
+    val center = person.position
+    val topLeft = Offset(center.x - nodeSize / 2, center.y - nodeSize / 2)
+
+    val color =
         when (person.biologicalSex) {
-            Person.BiologicalSex.MALE -> Color(0xFFD1E4FF) to RoundedCornerShape((4 * scale).dp)
-            Person.BiologicalSex.FEMALE -> Color(0xFFFFD1DC) to CircleShape
-            Person.BiologicalSex.UNKNOWN -> MaterialTheme.colorScheme.secondary to RectangleShape
+            Person.BiologicalSex.MALE -> Color(0xFFD1E4FF)
+            Person.BiologicalSex.FEMALE -> Color(0xFFFFD1DC)
+            else -> theme.secondary
         }
 
-    Column(
-        modifier = modifier.width((120 * scale).dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Surface(
-            modifier = Modifier.size((64 * scale).dp),
-            shape = shape,
-            color = color,
-        ) {}
+    // Draw Shape
+    when (person.biologicalSex) {
+        Person.BiologicalSex.MALE -> {
+            drawRect(color = color, topLeft = topLeft, size = Size(nodeSize, nodeSize))
+            drawRect(
+                color = Color.Black,
+                topLeft = topLeft,
+                size = Size(nodeSize, nodeSize),
+                style = Stroke(width = 2f),
+            )
+            if (person.isIndexPerson) {
+                val padding = 4.dp.toPx()
+                drawRect(
+                    color = Color.Black,
+                    topLeft = topLeft + Offset(padding, padding),
+                    size = Size(nodeSize - 2 * padding, nodeSize - 2 * padding),
+                    style = Stroke(width = 2f),
+                )
+            }
+        }
 
-        Text(
-            text = "${person.firstName} ${person.lastName}",
-            style =
-                MaterialTheme.typography.bodyMedium.copy(
-                    fontSize = (14 * scale).sp,
-                    fontWeight = FontWeight.SemiBold,
-                ),
-            textAlign = TextAlign.Center,
-            modifier = Modifier.padding(top = (8 * scale).dp),
-        )
+        Person.BiologicalSex.FEMALE -> {
+            drawCircle(color = color, center = center, radius = nodeSize / 2)
+            drawCircle(
+                color = Color.Black,
+                center = center,
+                radius = nodeSize / 2,
+                style = Stroke(width = 2f),
+            )
+            if (person.isIndexPerson) {
+                val padding = 4.dp.toPx()
+                drawCircle(
+                    color = Color.Black,
+                    center = center,
+                    radius = nodeSize / 2 - padding,
+                    style = Stroke(width = 2f),
+                )
+            }
+        }
 
-        if (person.dateText.isNotEmpty()) {
-            Text(
-                text = person.dateText,
-                style = MaterialTheme.typography.bodySmall.copy(fontSize = (10 * scale).sp),
-                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
-                textAlign = TextAlign.Center,
+        else -> {
+            drawRect(color = color, topLeft = topLeft, size = Size(nodeSize, nodeSize))
+            drawRect(
+                color = Color.Black,
+                topLeft = topLeft,
+                size = Size(nodeSize, nodeSize),
+                style = Stroke(width = 2f),
             )
         }
+    }
+
+    // LGBT Triangle
+    if (person.sexualOrientation != Person.SexualOrientation.HETEROSEXUAL &&
+        person.sexualOrientation != Person.SexualOrientation.UNKNOWN
+    ) {
+        val trianglePath =
+            Path().apply {
+                val triangleSize = nodeSize * 0.7f
+                moveTo(center.x - triangleSize / 2, center.y - triangleSize / 3)
+                lineTo(center.x + triangleSize / 2, center.y - triangleSize / 3)
+                lineTo(center.x, center.y + triangleSize * 2 / 3)
+                close()
+            }
+        drawPath(path = trianglePath, color = Color.Black, style = Stroke(width = 2f))
+    }
+
+    // Death X
+    if (person.isDeceased) {
+        drawLine(
+            color = Color.Black,
+            start = topLeft,
+            end = topLeft + Offset(nodeSize, nodeSize),
+            strokeWidth = 2f,
+        )
+        drawLine(
+            color = Color.Black,
+            start = topLeft + Offset(nodeSize, 0f),
+            end = topLeft + Offset(0f, nodeSize),
+            strokeWidth = 2f,
+        )
+    }
+
+    // Text: Name (below)
+    val nameResult =
+        textMeasurer.measure(
+            text = "${person.firstName} ${person.lastName}",
+            style =
+                typography.bodyMedium.copy(
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.Center,
+                ),
+            constraints = Constraints(maxWidth = (nodeSize * 3).toInt()),
+        )
+    drawText(
+        textLayoutResult = nameResult,
+        topLeft =
+            Offset(
+                center.x - nameResult.size.width / 2,
+                center.y + nodeSize / 2 + 8.dp.toPx(),
+            ),
+    )
+
+    // Text: Birth date (top left)
+    if (person.birthDateText.isNotEmpty()) {
+        val birthResult =
+            textMeasurer.measure(
+                text = person.birthDateText,
+                style = typography.bodySmall.copy(fontSize = 10.sp),
+            )
+        drawText(
+            textLayoutResult = birthResult,
+            topLeft =
+                Offset(
+                    topLeft.x - birthResult.size.width - 4.dp.toPx(),
+                    topLeft.y - birthResult.size.height,
+                ),
+        )
+    }
+
+    // Text: Death date (top right)
+    if (person.deathDateText.isNotEmpty()) {
+        val deathResult =
+            textMeasurer.measure(
+                text = person.deathDateText,
+                style = typography.bodySmall.copy(fontSize = 10.sp),
+            )
+        drawText(
+            textLayoutResult = deathResult,
+            topLeft =
+                Offset(
+                    topLeft.x + nodeSize + 4.dp.toPx(),
+                    topLeft.y - deathResult.size.height,
+                ),
+        )
+    }
+
+    // Text: Age (inside)
+    if (person.age.isNotEmpty()) {
+        val ageResult =
+            textMeasurer.measure(
+                text = person.age,
+                style =
+                    typography.bodySmall.copy(
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                    ),
+            )
+        drawText(
+            textLayoutResult = ageResult,
+            topLeft =
+                Offset(
+                    center.x - ageResult.size.width / 2,
+                    center.y - ageResult.size.height / 2,
+                ),
+        )
     }
 }
 
@@ -421,36 +536,59 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
             name = "Ancestral record",
             centralPerson =
                 PersonUi(
-                    id = "123",
+                    id = "1",
                     firstName = "María Elena",
                     lastName = "García López",
                     biologicalSex = Person.BiologicalSex.FEMALE,
-                    dateText = "1980",
+                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                    birthDateText = "1980",
+                    age = "44",
+                    isIndexPerson = true,
+                    position = Offset(500f, 750f),
+                ),
+            persons =
+                listOf(
+                    PersonUi(
+                        id = "2",
+                        firstName = "Ángel",
+                        lastName = "González Martínez",
+                        biologicalSex = Person.BiologicalSex.MALE,
+                        birthDateText = "1915",
+                        deathDateText = "1989",
+                        age = "74",
+                        isDeceased = true,
+                        position = Offset(500f, 400f),
+                    ),
+                    PersonUi(
+                        id = "3",
+                        firstName = "Juan",
+                        lastName = "García Pérez",
+                        biologicalSex = Person.BiologicalSex.MALE,
+                        sexualOrientation = Person.SexualOrientation.OTHER,
+                        birthDateText = "2001",
+                        age = "25",
+                        position = Offset(500f, 1100f),
+                    ),
+                    PersonUi(
+                        id = "4",
+                        firstName = "Sara",
+                        lastName = "Salas De Mena",
+                        biologicalSex = Person.BiologicalSex.FEMALE,
+                        sexualOrientation = Person.SexualOrientation.OTHER,
+                        birthDateText = "1990",
+                        deathDateText = "2021",
+                        age = "31",
+                        isDeceased = true,
+                        position = Offset(500f, 1500f),
+                    ),
                 ),
         )
 
     override val values =
         sequenceOf(
+            TreeState(tree = seed),
             TreeState(
                 tree = seed,
-                offset = Offset(500f, 750f),
-            ),
-            TreeState(
-                tree =
-                    seed.copy(
-                        centralPerson =
-                            seed.centralPerson.copy(
-                                firstName = "William",
-                                lastName = "Hayes",
-                                biologicalSex = Person.BiologicalSex.MALE,
-                                dateText = "1915 - 1989",
-                            ),
-                    ),
-                offset = Offset(500f, 750f),
-            ),
-            TreeState(
-                tree = seed,
-                offset = Offset(500f, 750f),
                 scale = 3f,
             ),
             TreeState(isLoading = true),

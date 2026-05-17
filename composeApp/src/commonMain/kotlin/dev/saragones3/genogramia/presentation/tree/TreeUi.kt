@@ -15,6 +15,11 @@ data class PersonUi(
     val firstName: String = "",
     val lastName: String = "",
     val biologicalSex: Person.BiologicalSex = Person.BiologicalSex.UNKNOWN,
-    val dateText: String = "",
+    val sexualOrientation: Person.SexualOrientation = Person.SexualOrientation.UNKNOWN,
+    val birthDateText: String = "",
+    val deathDateText: String = "",
+    val age: String = "",
+    val isDeceased: Boolean = false,
+    val isIndexPerson: Boolean = false,
     val position: Offset = Offset.Zero,
 )

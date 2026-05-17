@@ -80,7 +80,7 @@ class TreeViewModel(
                         )
                     }
                 }
-            } catch (e: Exception) {
+            } catch (_: Exception) {
                 _state.update {
                     it.copy(
                         isLoading = false,
@@ -93,7 +93,11 @@ class TreeViewModel(
     }
 
     private fun GenogramTree.toUi(): TreeUi {
-        val centralPersonUi = centralPerson.toUi().copy(position = Offset.Zero)
+        val centralPersonUi =
+            centralPerson.toUi().copy(
+                position = Offset.Zero,
+                isIndexPerson = true,
+            )
         val mappedPersons =
             persons.mapIndexed { index, person ->
                 val row = (index / 3) + 1
@@ -109,14 +113,16 @@ class TreeViewModel(
     }
 
     private fun Person.toUi(): PersonUi {
-        val birthYear = birthDate?.let { extractYear(it) }
-        val deathYear = deathDate?.let { extractYear(it) }
+        val birthYear = birthDate?.let { extractYear(it) } ?: ""
+        val deathYear = deathDate?.let { extractYear(it) } ?: ""
 
-        val dateText =
-            when {
-                (birthYear != null && deathYear != null) -> "$birthYear - $deathYear"
-                birthYear != null -> "B. $birthYear"
-                else -> ""
+        val age =
+            if (birthYear.isNotEmpty()) {
+                val start = birthYear.toIntOrNull()
+                val end = deathYear.toIntOrNull() ?: 2024 // For simplicity, using 2024 as current year
+                if (start != null) (end - start).toString() else ""
+            } else {
+                ""
             }
 
         return PersonUi(
@@ -124,7 +130,11 @@ class TreeViewModel(
             firstName = firstName,
             lastName = lastName,
             biologicalSex = biologicalSex,
-            dateText = dateText,
+            sexualOrientation = sexualOrientation,
+            birthDateText = birthYear,
+            deathDateText = deathYear,
+            age = age,
+            isDeceased = deathDate != null,
         )
     }
 
