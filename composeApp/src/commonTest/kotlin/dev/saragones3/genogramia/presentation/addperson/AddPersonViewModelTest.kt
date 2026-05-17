@@ -43,14 +43,15 @@ class AddPersonViewModelTest {
             name = "Test Tree",
             ancestorCount = 1,
             lastUpdated = "2024-05-15",
-            centralPerson = Person(
-                id = "p1",
-                firstName = "John",
-                lastName = "Doe",
-                birthDate = 1778716800000L,
-                biologicalSex = Person.BiologicalSex.MALE,
-                sexualOrientation = Person.SexualOrientation.HETEROSEXUAL
-            ),
+            centralPerson =
+                Person(
+                    id = "p1",
+                    firstName = "John",
+                    lastName = "Doe",
+                    birthDate = 1778716800000L,
+                    biologicalSex = Person.BiologicalSex.MALE,
+                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                ),
         )
 
     @BeforeTest
@@ -190,7 +191,7 @@ class AddPersonViewModelTest {
 
             // 2. New (null)
             viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null))
-            
+
             // 3. Assert reset
             val state = viewModel.state.value
             assertEquals("", state.person.firstName)
