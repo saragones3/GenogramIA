@@ -145,10 +145,11 @@ class TreeViewModelTest {
     @Test
     fun `when OnTransform event is received scale and offset are updated`() =
         runTest {
+            val centroid = androidx.compose.ui.geometry.Offset.Zero
             val pan =
                 androidx.compose.ui.geometry
                     .Offset(10f, 20f)
-            viewModel.onEvent(TreeEvent.OnTransform(pan, 1.1f))
+            viewModel.onEvent(TreeEvent.OnTransform(centroid, pan, 1.1f))
 
             val state = viewModel.state.value
             assertEquals(10f, state.offset.x)
@@ -215,5 +216,24 @@ class TreeViewModelTest {
             viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
             viewModel.onEvent(TreeEvent.OnDismissSelection)
             assertEquals(emptyList<String>(), viewModel.state.value.selectedPersonIds)
+        }
+
+    @Test
+    fun `when OnPersonMove event is received person position is updated`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val tree = GenogramTree("t1", "Family", 1, "now", central)
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val initialPos = viewModel.state.value.tree.centralPerson.position
+            val delta =
+                androidx.compose.ui.geometry
+                    .Offset(10f, 20f)
+            viewModel.onEvent(TreeEvent.OnPersonMove("p1", delta))
+
+            assertEquals(initialPos + delta, viewModel.state.value.tree.centralPerson.position)
         }
 }

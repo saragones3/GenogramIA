@@ -26,6 +26,7 @@ sealed interface TreeEvent {
     ) : TreeEvent
 
     data class OnTransform(
+        val centroid: Offset,
         val pan: Offset,
         val zoom: Float,
     ) : TreeEvent
@@ -41,4 +42,9 @@ sealed interface TreeEvent {
     data object OnDismissSelection : TreeEvent
 
     data object OnAddRelationship : TreeEvent
+
+    data class OnPersonMove(
+        val personId: String,
+        val delta: Offset,
+    ) : TreeEvent
 }
