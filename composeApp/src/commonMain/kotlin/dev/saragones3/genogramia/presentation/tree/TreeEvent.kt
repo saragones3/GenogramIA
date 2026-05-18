@@ -39,4 +39,6 @@ sealed interface TreeEvent {
     ) : TreeEvent
 
     data object OnDismissSelection : TreeEvent
+
+    data object OnAddRelationship : TreeEvent
 }

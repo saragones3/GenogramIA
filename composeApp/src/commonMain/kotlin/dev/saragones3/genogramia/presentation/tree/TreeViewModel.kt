@@ -65,11 +65,26 @@ class TreeViewModel(
             }
 
             is TreeEvent.OnPersonSelected -> {
-                _state.update { it.copy(selectedPersonId = event.personId) }
+                _state.update {
+                    val currentSelected = it.selectedPersonIds
+                    val newSelected =
+                        if (currentSelected.contains(event.personId)) {
+                            currentSelected - event.personId
+                        } else if (currentSelected.size < 2) {
+                            currentSelected + event.personId
+                        } else {
+                            listOf(event.personId)
+                        }
+                    it.copy(selectedPersonIds = newSelected)
+                }
             }
 
             TreeEvent.OnDismissSelection -> {
-                _state.update { it.copy(selectedPersonId = null) }
+                _state.update { it.copy(selectedPersonIds = emptyList()) }
+            }
+
+            TreeEvent.OnAddRelationship -> {
+                // To be implemented in US-020
             }
         }
     }

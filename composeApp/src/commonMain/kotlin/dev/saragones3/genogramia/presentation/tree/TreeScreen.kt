@@ -54,6 +54,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.withTransform
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextMeasurer
@@ -70,6 +71,7 @@ import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
+import genogramia.composeapp.generated.resources.add_relationship
 import genogramia.composeapp.generated.resources.canvas_reset
 import genogramia.composeapp.generated.resources.canvas_zoom_in
 import genogramia.composeapp.generated.resources.canvas_zoom_out
@@ -134,8 +136,6 @@ private fun TreeContent(
     onEditPersonClick: (String) -> Unit,
     snackbarHostState: SnackbarHostState,
 ) {
-    val isPersonSelected = state.selectedPersonId != null
-
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,
         topBar = {
@@ -165,23 +165,25 @@ private fun TreeContent(
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
         floatingActionButton = {
-            FloatingActionButton(
-                onClick = {
-                    if (isPersonSelected) {
-                        onEditPersonClick(state.selectedPersonId)
-                    } else {
-                        onAddPersonClick()
-                    }
-                },
-                containerColor = MaterialTheme.colorScheme.primary,
-                contentColor = Color.White,
-                shape = CircleShape,
-                modifier = Modifier.size(56.dp),
-            ) {
-                Icon(
-                    imageVector = if (isPersonSelected) Icons.Default.Edit else Icons.Default.Add,
-                    contentDescription = null,
-                )
+            if (state.selectedPersonIds.size < 2) {
+                FloatingActionButton(
+                    onClick = {
+                        if (state.selectedPersonIds.size == 1) {
+                            onEditPersonClick(state.selectedPersonIds.first())
+                        } else {
+                            onAddPersonClick()
+                        }
+                    },
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = Color.White,
+                    shape = CircleShape,
+                    modifier = Modifier.size(56.dp),
+                ) {
+                    Icon(
+                        imageVector = if (state.selectedPersonIds.size == 1) Icons.Default.Edit else Icons.Default.Add,
+                        contentDescription = null,
+                    )
+                }
             }
         },
     ) { padding ->
@@ -212,12 +214,15 @@ private fun TreeContent(
                 tree = state.tree,
                 offset = state.offset,
                 scale = state.scale,
-                selectedPersonId = state.selectedPersonId,
+                selectedPersonIds = state.selectedPersonIds,
                 onTransform = { pan, zoom ->
                     onEvent(TreeEvent.OnTransform(pan, zoom))
                 },
                 onPersonSelected = { onEvent(TreeEvent.OnPersonSelected(it)) },
                 onDismissSelection = { onEvent(TreeEvent.OnDismissSelection) },
+                onAddRelationshipClick = {
+                    onEvent(TreeEvent.OnAddRelationship)
+                },
             )
 
             CanvasControls(
@@ -238,10 +243,11 @@ private fun GenogramCanvas(
     tree: TreeUi,
     offset: Offset,
     scale: Float,
-    selectedPersonId: String?,
+    selectedPersonIds: List<String>,
     onTransform: (Offset, Float) -> Unit,
     onPersonSelected: (String) -> Unit,
     onDismissSelection: () -> Unit,
+    onAddRelationshipClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val textMeasurer = rememberTextMeasurer()
@@ -328,7 +334,7 @@ private fun GenogramCanvas(
                     textMeasurer = textMeasurer,
                     theme = theme,
                     typography = typography,
-                    isSelected = tree.centralPerson.id == selectedPersonId,
+                    isSelected = selectedPersonIds.contains(tree.centralPerson.id),
                 )
                 tree.persons.forEach { person ->
                     drawPerson(
@@ -336,9 +342,56 @@ private fun GenogramCanvas(
                         textMeasurer = textMeasurer,
                         theme = theme,
                         typography = typography,
-                        isSelected = person.id == selectedPersonId,
+                        isSelected = selectedPersonIds.contains(person.id),
                     )
                 }
+
+                // Draw dashed line between selected persons
+                if (selectedPersonIds.size == 2) {
+                    val p1 = (listOf(tree.centralPerson) + tree.persons).find { it.id == selectedPersonIds.first() }
+                    val p2 = (listOf(tree.centralPerson) + tree.persons).find { it.id == selectedPersonIds.last() }
+                    if (p1 != null && p2 != null) {
+                        drawLine(
+                            color = Color(0xFF008080),
+                            start = p1.position,
+                            end = p2.position,
+                            strokeWidth = 2.dp.toPx(),
+                            pathEffect =
+                                androidx.compose.ui.graphics.PathEffect.dashPathEffect(
+                                    floatArrayOf(10f, 10f),
+                                    0f,
+                                ),
+                        )
+                    }
+                }
+            }
+        }
+
+        // Tooltip between nodes if 2 are selected
+        if (selectedPersonIds.size == 2) {
+            val p1 =
+                (listOf(tree.centralPerson) + tree.persons).find { it.id == selectedPersonIds.first() }
+            val p2 =
+                (listOf(tree.centralPerson) + tree.persons).find { it.id == selectedPersonIds.last() }
+
+            if (p1 != null && p2 != null) {
+                val center1 = p1.position * scale + offset
+                val center2 = p2.position * scale + offset
+                val tooltipCenter = (center1 + center2) / 2f
+
+                RelationshipTooltip(
+                    modifier =
+                        Modifier
+                            .align(Alignment.TopStart)
+                            .graphicsLayer {
+                                translationX = tooltipCenter.x
+                                translationY = tooltipCenter.y
+                            }.pointerInput(Unit) {
+                                // Prevent taps on tooltip from being handled by the canvas
+                                detectTapGestures { }
+                            },
+                    onClick = onAddRelationshipClick,
+                )
             }
         }
     }
@@ -588,6 +641,41 @@ private fun DrawScope.drawPersonTextInfo(
                     center.y - ageResult.size.height / 2,
                 ),
         )
+    }
+}
+
+@Composable
+private fun RelationshipTooltip(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val density = LocalDensity.current
+    val halfWidthPx = with(density) { 60.dp.toPx() }
+    val halfHeightPx = with(density) { 16.dp.toPx() }
+
+    Surface(
+        onClick = onClick,
+        modifier =
+            modifier
+                .height(32.dp)
+                .graphicsLayer {
+                    translationX -= halfWidthPx
+                    translationY -= halfHeightPx
+                },
+        shape = RoundedCornerShape(16.dp),
+        color = Color.White,
+        shadowElevation = 4.dp,
+    ) {
+        Box(
+            modifier = Modifier.padding(horizontal = 12.dp),
+            contentAlignment = Alignment.Center,
+        ) {
+            Text(
+                text = stringResource(Res.string.add_relationship),
+                style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold),
+                color = Color.Black,
+            )
+        }
     }
 }
 
