@@ -6,6 +6,8 @@ import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.error_email_already_in_use
+import genogramia.composeapp.generated.resources.error_invalid_email
+import genogramia.composeapp.generated.resources.error_invalid_password
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
@@ -157,6 +159,34 @@ class RegistrationViewModelTest {
         }
 
     @Test
+    fun `when email is invalid general error is updated`() =
+        runTest {
+            repository.shouldReturnError = true
+            repository.errorToReturn = AuthError.InvalidEmail
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Test User", "test@example.com", "password123"))
+
+            viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val state = viewModel.state.value
+            assertEquals(Res.string.error_invalid_email, state.generalError)
+        }
+
+    @Test
+    fun `when password is weak general error is updated`() =
+        runTest {
+            repository.shouldReturnError = true
+            repository.errorToReturn = AuthError.WeakPassword
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Test User", "test@example.com", "password123"))
+
+            viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val state = viewModel.state.value
+            assertEquals(Res.string.error_invalid_password, state.generalError)
+        }
+
+    @Test
     fun `registrationSuccessConsumed resets state`() =
         runTest {
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Test User", "test@example.com", "password123"))
@@ -167,5 +197,55 @@ class RegistrationViewModelTest {
             assertEquals("", state.name)
             assertEquals("", state.email)
             assertFalse(state.isRegistrationSuccess)
+        }
+
+    @Test
+    fun `when password is too short validation fails`() =
+        runTest {
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "test@example.com", "short"))
+            viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
+
+            val state = viewModel.state.value
+            assertEquals(RegistrationState.ValidationError.INVALID, state.passwordError)
+        }
+
+    @Test
+    fun `when password is corrected after invalid length error is cleared`() =
+        runTest {
+            // Given an invalid password state
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "test@example.com", "short"))
+            viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
+            assertEquals(RegistrationState.ValidationError.INVALID, viewModel.state.value.passwordError)
+
+            // When the password is corrected
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "test@example.com", "password123"))
+
+            // Then the error is cleared
+            assertNull(viewModel.state.value.passwordError)
+        }
+
+    @Test
+    fun `when name is empty validation fails`() =
+        runTest {
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("", "test@example.com", "password123"))
+            viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
+
+            val state = viewModel.state.value
+            assertEquals(RegistrationState.ValidationError.EMPTY, state.nameError)
+        }
+
+    @Test
+    fun `when name is corrected after empty error is cleared`() =
+        runTest {
+            // Given an empty name state
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("", "test@example.com", "password123"))
+            viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
+            assertEquals(RegistrationState.ValidationError.EMPTY, viewModel.state.value.nameError)
+
+            // When the name is corrected
+            viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "test@example.com", "password123"))
+
+            // Then the error is cleared
+            assertNull(viewModel.state.value.nameError)
         }
 }
