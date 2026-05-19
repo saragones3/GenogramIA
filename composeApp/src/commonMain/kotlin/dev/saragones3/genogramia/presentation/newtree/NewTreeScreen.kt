@@ -161,6 +161,7 @@ private fun NewTreeContent(
 
         if (state.showBirthDatePicker) {
             DatePickerModal(
+                initialDate = state.person.birthDateMillis,
                 onDateSelected = { onEvent(NewTreeEvent.OnBirthDateSelected(it, dateFormat)) },
                 onDismiss = { onEvent(NewTreeEvent.OnShowBirthDatePicker(false)) },
             )
@@ -168,6 +169,7 @@ private fun NewTreeContent(
 
         if (state.showDeathDatePicker) {
             DatePickerModal(
+                initialDate = state.person.deathDateMillis,
                 onDateSelected = { onEvent(NewTreeEvent.OnDeathDateSelected(it, dateFormat)) },
                 onDismiss = { onEvent(NewTreeEvent.OnShowDeathDatePicker(false)) },
             )

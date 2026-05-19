@@ -155,4 +155,5 @@
     <string name="add_person_title">Añadir Familiar</string>
     <string name="edit_person_title">Editar Familiar</string>
     <string name="add_person_save">Guardar Registro de Miembro</string>
+    <string name="add_relationship">Añadir relación</string>
 </resources>

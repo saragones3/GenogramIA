@@ -48,10 +48,13 @@ class TreeViewModel(
 
             is TreeEvent.OnTransform -> {
                 _state.update {
-                    val newScale = (it.scale * event.zoom).coerceIn(0.1f, 3f)
+                    val oldScale = it.scale
+                    val newScale = (oldScale * event.zoom).coerceIn(0.1f, 3f)
+                    val actualZoom = newScale / oldScale
+                    val newOffset = event.centroid + (it.offset - event.centroid) * actualZoom + event.pan
                     it.copy(
                         scale = newScale,
-                        offset = it.offset + event.pan,
+                        offset = newOffset,
                     )
                 }
             }
@@ -65,11 +68,52 @@ class TreeViewModel(
             }
 
             is TreeEvent.OnPersonSelected -> {
-                _state.update { it.copy(selectedPersonId = event.personId) }
+                _state.update {
+                    val currentSelected = it.selectedPersonIds
+                    val newSelected =
+                        if (currentSelected.contains(event.personId)) {
+                            currentSelected - event.personId
+                        } else if (currentSelected.size < 2) {
+                            currentSelected + event.personId
+                        } else {
+                            listOf(event.personId)
+                        }
+                    it.copy(selectedPersonIds = newSelected)
+                }
             }
 
             TreeEvent.OnDismissSelection -> {
-                _state.update { it.copy(selectedPersonId = null) }
+                _state.update { it.copy(selectedPersonIds = emptyList()) }
+            }
+
+            TreeEvent.OnAddRelationship -> {
+                // To be implemented in US-020
+            }
+
+            is TreeEvent.OnPersonMove -> {
+                _state.update { state ->
+                    val updatedCentralPerson =
+                        if (state.tree.centralPerson.id == event.personId) {
+                            state.tree.centralPerson.copy(position = state.tree.centralPerson.position + event.delta)
+                        } else {
+                            state.tree.centralPerson
+                        }
+                    val updatedPersons =
+                        state.tree.persons.map { person ->
+                            if (person.id == event.personId) {
+                                person.copy(position = person.position + event.delta)
+                            } else {
+                                person
+                            }
+                        }
+                    state.copy(
+                        tree =
+                            state.tree.copy(
+                                centralPerson = updatedCentralPerson,
+                                persons = updatedPersons,
+                            ),
+                    )
+                }
             }
         }
     }
