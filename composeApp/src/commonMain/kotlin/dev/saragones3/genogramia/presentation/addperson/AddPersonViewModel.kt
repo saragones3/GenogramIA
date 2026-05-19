@@ -118,10 +118,8 @@ class AddPersonViewModel(
                                 sexualOrientation = person.sexualOrientation,
                                 birthDateMillis = person.birthDate,
                                 birthDateText =
-                                    person.birthDate.let { date ->
-                                        dateFormatter.formatDate(date, "dd/MM/yyyy")
-                                    },
-                                deathDateMillis = person.deathDate ?: 0L,
+                                    dateFormatter.formatDate(person.birthDate, "dd/MM/yyyy"),
+                                deathDateMillis = person.deathDate,
                                 deathDateText =
                                     person.deathDate?.let { date ->
                                         dateFormatter.formatDate(date, "dd/MM/yyyy")
@@ -154,7 +152,7 @@ class AddPersonViewModel(
             lastNameError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
-        if (personUi.birthDateMillis == 0L) {
+        if (personUi.birthDateMillis == null) {
             birthDateError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
@@ -187,10 +185,10 @@ class AddPersonViewModel(
                 id = _state.value.personId ?: "",
                 firstName = personUi.firstName,
                 lastName = personUi.lastName,
-                birthDate = personUi.birthDateMillis,
+                birthDate = personUi.birthDateMillis ?: 0L,
                 biologicalSex = personUi.biologicalSex,
                 sexualOrientation = personUi.sexualOrientation,
-                deathDate = if (personUi.deathDateMillis != 0L) personUi.deathDateMillis else null,
+                deathDate = personUi.deathDateMillis,
             )
 
         viewModelScope.launch {

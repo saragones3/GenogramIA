@@ -152,6 +152,7 @@ private fun AddPersonContent(
             if (state.showBirthDatePicker) {
                 val dateFormat = stringResource(Res.string.date_format)
                 DatePickerModal(
+                    initialDate = state.person.birthDateMillis,
                     onDateSelected = { onEvent(AddPersonEvent.OnBirthDateSelected(it, dateFormat)) },
                     onDismiss = { onEvent(AddPersonEvent.OnShowBirthDatePicker(false)) },
                 )
@@ -160,6 +161,7 @@ private fun AddPersonContent(
             if (state.showDeathDatePicker) {
                 val dateFormat = stringResource(Res.string.date_format)
                 DatePickerModal(
+                    initialDate = state.person.deathDateMillis,
                     onDateSelected = { onEvent(AddPersonEvent.OnDeathDateSelected(it, dateFormat)) },
                     onDismiss = { onEvent(AddPersonEvent.OnShowDeathDatePicker(false)) },
                 )

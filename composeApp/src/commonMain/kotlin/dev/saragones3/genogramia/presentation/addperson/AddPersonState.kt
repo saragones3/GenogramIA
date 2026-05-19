@@ -23,7 +23,7 @@ data class AddPersonState(
 data class AddPersonUi(
     val firstName: String = "",
     val lastName: String = "",
-    val birthDateMillis: Long = 0L,
+    val birthDateMillis: Long? = null,
     val birthDateText: String = "",
     val biologicalSex: Person.BiologicalSex = Person.BiologicalSex.UNKNOWN,
     val sexualOrientation: Person.SexualOrientation = Person.SexualOrientation.UNKNOWN,
