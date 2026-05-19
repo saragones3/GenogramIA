@@ -121,7 +121,7 @@ class NewTreeViewModel(
             lastNameError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
-        if (personUi.birthDateMillis == 0L) {
+        if (personUi.birthDateMillis == null) {
             birthDateError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
@@ -155,7 +155,7 @@ class NewTreeViewModel(
                     id = "",
                     firstName = personUi.firstName,
                     lastName = personUi.lastName,
-                    birthDate = personUi.birthDateMillis,
+                    birthDate = personUi.birthDateMillis ?: 0L,
                     biologicalSex = personUi.biologicalSex,
                     sexualOrientation = personUi.sexualOrientation,
                     deathDate = personUi.deathDateMillis,

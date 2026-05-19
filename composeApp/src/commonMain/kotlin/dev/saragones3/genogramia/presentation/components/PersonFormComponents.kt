@@ -499,10 +499,11 @@ fun OptionSelector(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DatePickerModal(
+    initialDate: Long? = null,
     onDateSelected: (Long) -> Unit,
     onDismiss: () -> Unit,
 ) {
-    val datePickerState = rememberDatePickerState()
+    val datePickerState = rememberDatePickerState(initialSelectedDateMillis = initialDate)
 
     DatePickerDialog(
         onDismissRequest = onDismiss,
