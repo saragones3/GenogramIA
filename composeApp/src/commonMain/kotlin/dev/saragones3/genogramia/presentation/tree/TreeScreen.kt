@@ -393,28 +393,28 @@ private fun PersonNodeView(
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier
+        modifier =
+            modifier
                 .offset {
                     IntOffset(
                         (person.position.x.dp - 50.dp).roundToPx(),
                         (person.position.y.dp - 56.dp).roundToPx(),
                     )
-                }
-                .width(100.dp)
+                }.width(100.dp)
                 .combinedClickable(
                     onClick = onSelected,
                     indication = null,
-                    interactionSource = remember { MutableInteractionSource() }
-                )
-                .pointerInput(person.id) {
+                    interactionSource = remember { MutableInteractionSource() },
+                ).pointerInput(person.id) {
                     detectDragGestures { change, dragAmount ->
                         change.consume()
-                        val deltaDp = with(density) {
-                            Offset(
-                                x = dragAmount.x.toDp().value,
-                                y = dragAmount.y.toDp().value,
-                            )
-                        }
+                        val deltaDp =
+                            with(density) {
+                                Offset(
+                                    x = dragAmount.x.toDp().value,
+                                    y = dragAmount.y.toDp().value,
+                                )
+                            }
                         currentOnMove(deltaDp)
                     }
                 },
@@ -431,21 +431,23 @@ private fun PersonNodeView(
             shape = shape,
             backgroundColor = backgroundColor,
             size = with(density) { NODE_SIZE.toPx() },
-            modifier = Modifier
-                .nodeBorder(shape, isSelected, person.isIndexPerson)
-                .background(backgroundColor, shape)
-                .size(NODE_SIZE)
-                .padding(4.dp)
+            modifier =
+                Modifier
+                    .nodeBorder(shape, isSelected, person.isIndexPerson)
+                    .background(backgroundColor, shape)
+                    .size(NODE_SIZE)
+                    .padding(4.dp),
         )
 
         Spacer(modifier = Modifier.height(4.dp))
 
         Text(
             text = "${person.firstName} ${person.lastName}",
-            style = MaterialTheme.typography.bodyMedium.copy(
-                fontWeight = FontWeight.SemiBold,
-                textAlign = TextAlign.Center,
-            ),
+            style =
+                MaterialTheme.typography.bodyMedium.copy(
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.Center,
+                ),
             textAlign = TextAlign.Center,
             maxLines = 2,
         )
@@ -456,12 +458,12 @@ private fun PersonNodeView(
 private fun PersonDates(
     birthDate: String,
     deathDate: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Row(
         modifier = modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
+        horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         if (birthDate.isNotEmpty()) {
             Text(
@@ -495,18 +497,20 @@ private fun PersonShape(
     ) {
         if (person.isDeceased) {
             Canvas(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(if (shape == CircleShape) 6.dp else 0.dp)
+                modifier =
+                    Modifier
+                        .fillMaxSize()
+                        .padding(if (shape == CircleShape) 6.dp else 0.dp),
             ) {
                 drawDeathMark()
             }
         }
         if (person.sexualOrientation == Person.SexualOrientation.OTHER) {
             Canvas(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(if (shape == CircleShape) 6.dp else 0.dp)
+                modifier =
+                    Modifier
+                        .fillMaxSize()
+                        .padding(if (shape == CircleShape) 6.dp else 0.dp),
             ) {
                 drawSexualOrientationMark(nodeSize = size)
             }
@@ -515,13 +519,14 @@ private fun PersonShape(
         if (person.age.isNotEmpty()) {
             Text(
                 text = person.age,
-                style = MaterialTheme.typography.bodySmall.copy(
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                ),
+                style =
+                    MaterialTheme.typography.bodySmall.copy(
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                    ),
                 textAlign = TextAlign.Center,
-                modifier = Modifier.background(backgroundColor)
+                modifier = Modifier.background(backgroundColor),
             )
         }
     }
@@ -532,24 +537,25 @@ private fun DrawScope.drawDeathMark() {
         color = Color.Black,
         start = Offset.Zero,
         end = Offset(size.width, size.height),
-        strokeWidth = 4f
+        strokeWidth = 4f,
     )
     drawLine(
         color = Color.Black,
         start = Offset(size.width, 0f),
         end = Offset(0f, size.height),
-        strokeWidth = 4f
+        strokeWidth = 4f,
     )
 }
 
 private fun DrawScope.drawSexualOrientationMark(nodeSize: Float) {
-    val trianglePath = Path().apply {
-        val triangleSize = nodeSize * 0.7f
-        moveTo(center.x - triangleSize / 2, center.y - triangleSize / 3)
-        lineTo(center.x + triangleSize / 2, center.y - triangleSize / 3)
-        lineTo(center.x, center.y + triangleSize * 2 / 3)
-        close()
-    }
+    val trianglePath =
+        Path().apply {
+            val triangleSize = nodeSize * 0.7f
+            moveTo(center.x - triangleSize / 2, center.y - triangleSize / 3)
+            lineTo(center.x + triangleSize / 2, center.y - triangleSize / 3)
+            lineTo(center.x, center.y + triangleSize * 2 / 3)
+            close()
+        }
     drawPath(
         path = trianglePath,
         color = Color.Black,
@@ -577,12 +583,10 @@ private fun RelationshipTooltip(
                         layout(placeable.width, placeable.height) {
                             placeable.placeRelative(-placeable.width / 2, -placeable.height / 2)
                         }
-                    }
-                    .pointerInput(Unit) {
+                    }.pointerInput(Unit) {
                         // Prevent taps on tooltip from being handled by the canvas
                         detectTapGestures { }
-                    }
-                    .height(32.dp),
+                    }.height(32.dp),
             shape = RoundedCornerShape(16.dp),
             color = Color.White,
             shadowElevation = 4.dp,
@@ -670,22 +674,25 @@ private fun Modifier.nodeBorder(
                 color = MaterialTheme.colorScheme.primary,
                 shape = shape,
             )
-        } else Modifier
-    )
-    .padding(4.dp)
+        } else {
+            Modifier
+        },
+    ).padding(4.dp)
     .then(
         if (isIndex) {
             Modifier.border(shape).padding(4.dp)
-        } else Modifier
-    )
-    .border(shape)
+        } else {
+            Modifier
+        },
+    ).border(shape)
 
 @Composable
-private fun Modifier.border(shape: Shape) = border(
-    width = 1.dp,
-    color = Color.Black,
-    shape = shape,
-)
+private fun Modifier.border(shape: Shape) =
+    border(
+        width = 1.dp,
+        color = Color.Black,
+        shape = shape,
+    )
 
 private val NODE_SIZE = 64.dp
 
