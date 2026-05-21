@@ -8,6 +8,7 @@ import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.repository.AuthRepository
 import dev.saragones3.genogramia.domain.repository.TreeRepository
 import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
+import dev.saragones3.genogramia.domain.usecase.AddRelationshipUseCase
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteAccountUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
@@ -23,6 +24,7 @@ import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.presentation.addperson.AddPersonViewModel
+import dev.saragones3.genogramia.presentation.addrelationship.AddRelationshipViewModel
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeViewModel
 import dev.saragones3.genogramia.presentation.changepassword.ChangePasswordViewModel
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordViewModel
@@ -83,6 +85,7 @@ private val domainModule =
         factoryOf(::SendPasswordResetEmailUseCase)
         factoryOf(::NewTreeUseCase)
         factoryOf(::AddPersonUseCase)
+        factoryOf(::AddRelationshipUseCase)
         factoryOf(::UpdatePersonUseCase)
         factoryOf(::GetPersonUseCase)
         factoryOf(::GetTreesUseCase)
@@ -104,6 +107,7 @@ private val appModule =
         viewModelOf(::ForgotPasswordViewModel)
         viewModelOf(::TreeViewModel)
         viewModelOf(::AddPersonViewModel)
+        viewModelOf(::AddRelationshipViewModel)
     }
 
 fun getSharedModules(): List<Module> =

@@ -7,4 +7,5 @@ data class GenogramTree(
     val lastUpdated: String,
     val centralPerson: Person,
     val persons: List<Person> = emptyList(),
+    val relationships: List<Relationship> = emptyList(),
 )

@@ -671,44 +671,44 @@ Feature: Select nodes for relationship creation
 ```gherkin
 Feature: Define relationship type
 
-  Scenario: User opens the Define Connection screen
+  Scenario: User opens the Add Relationship screen
     Given two person nodes are selected on the canvas
     When the user taps "Añadir relación"
-    Then the "Define Connection" screen opens
+    Then the "Add Relationship" screen opens
     And both persons are shown in a relationship preview at the top
     And a list of bond types is displayed: Marriage, Separation, Biological Offspring, Adoption/Legal
 
   Scenario: User selects a bond type
-    Given the "Define Connection" screen is open
+    Given the "Add Relationship" screen is open
     When the user taps a bond type (e.g. "Marriage")
     Then that bond type is highlighted as selected
 
   Scenario: User sets an effective date for the relationship
-    Given the "Define Connection" screen is open
+    Given the "Add Relationship" screen is open
     When the user taps the date field under "EFFECTIVE DATE"
     Then a date picker opens
     When the user selects a date and confirms
     Then the date is displayed in the field
 
   Scenario: User sets the validation status
-    Given the "Define Connection" screen is open
+    Given the "Add Relationship" screen is open
     When the user selects "Clinical" or "Reported" under "VALIDATION STATUS"
     Then the chosen status is highlighted
 
   Scenario: System shows a medical conflict warning
     Given the relationship between the two selected persons would create a consanguinity risk
-    When the "Define Connection" screen opens
+    When the "Add Relationship" screen opens
     Then a "Consanguinity Risk" warning banner is displayed in red under "MEDICAL CONFLICT"
 
   Scenario: User confirms the connection
-    Given all required fields are filled on the "Define Connection" screen
+    Given all required fields are filled on the "Add Relationship" screen
     When the user taps "CONFIRM CONNECTION"
     Then the relationship is created and a connecting line is drawn between the two nodes on the canvas
     And the line style reflects the bond type (solid for marriage, dashed for separation, etc.)
     And the relationship is persisted to Firestore (authenticated) or in memory (guest)
 
   Scenario: User cancels defining a connection
-    Given the "Define Connection" screen is open
+    Given the "Add Relationship" screen is open
     When the user taps the back arrow
     Then no relationship is created and the canvas is unchanged
 ```
@@ -732,7 +732,7 @@ Feature: Edit and delete relationship
   Scenario: User edits a relationship
     Given a relationship line is selected
     When the user chooses to edit it
-    Then the "Define Connection" screen opens pre-filled with the existing relationship data
+    Then the "Add Relationship" screen opens pre-filled with the existing relationship data
     When the user modifies the data and taps "CONFIRM CONNECTION"
     Then the relationship is updated on the canvas and in the data store
 

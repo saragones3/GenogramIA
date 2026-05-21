@@ -156,4 +156,38 @@
     <string name="edit_person_title">Editar Familiar</string>
     <string name="add_person_save">Guardar Registro de Miembro</string>
     <string name="add_relationship">Añadir relación</string>
+
+    <!-- Add Relationship -->
+    <string name="add_relationship_title">Añadir Relación</string>
+    <string name="add_relationship_manager">GESTOR DE RELACIONES</string>
+    <string name="add_relationship_bond_type">TIPO DE VÍNCULO</string>
+    <string name="add_relationship_marriage">Matrimonio</string>
+    <string name="add_relationship_cohabitation">Convivencia</string>
+    <string name="add_relationship_separation">Separación</string>
+    <string name="add_relationship_divorce">Divorcio</string>
+    <string name="add_relationship_reconciliation">Reconciliación</string>
+    <string name="add_relationship_offspring">Hijo/a biológico/a</string>
+    <string name="add_relationship_adoption">Adopción / Legal</string>
+    <string name="add_relationship_emotional_bond">VÍNCULO EMOCIONAL</string>
+    <string name="add_relationship_positive">Positiva</string>
+    <string name="add_relationship_distant">Distante</string>
+    <string name="add_relationship_close">Íntima</string>
+    <string name="add_relationship_intimate_conflictual">Íntima Conflictiva</string>
+    <string name="add_relationship_focused">Focalizada</string>
+    <string name="add_relationship_fused">Fusionada</string>
+    <string name="add_relationship_conflictual">Conflictiva</string>
+    <string name="add_relationship_fused_conflictual">Fusionada Conflictiva</string>
+    <string name="add_relationship_direct_conflictual">Conflictiva Directa</string>
+    <string name="add_relationship_hostile">Hostil</string>
+    <string name="add_relationship_rupture">Ruptura</string>
+    <string name="add_relationship_abuse">Abuso</string>
+    <string name="add_relationship_effective_date">FECHA DE VIGENCIA</string>
+    <string name="add_relationship_medical_conflict">CONFLICTO MÉDICO</string>
+    <string name="add_relationship_consanguinity_risk">Riesgo de Consanguinidad</string>
+    <string name="add_relationship_confirm">CONFIRMAR CONEXIÓN</string>
+    <string name="add_relationship_parent">Padre/Madre</string>
+    <string name="add_relationship_child">Hijo/a</string>
+    <string name="add_relationship_person">Persona</string>
+    <string name="add_relationship_swap_roles">Intercambiar Roles</string>
+    <string name="add_relationship_select_date">Seleccionar fecha</string>
 </resources>

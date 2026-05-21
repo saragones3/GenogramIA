@@ -156,4 +156,38 @@
     <string name="edit_person_title">Edit Family Member</string>
     <string name="add_person_save">Save Member Record</string>
     <string name="add_relationship">Add relationship</string>
+
+    <!-- Add Relationship -->
+    <string name="add_relationship_title">Add Relationship</string>
+    <string name="add_relationship_manager">RELATIONSHIP MANAGER</string>
+    <string name="add_relationship_bond_type">BOND TYPE</string>
+    <string name="add_relationship_marriage">Marriage</string>
+    <string name="add_relationship_cohabitation">Cohabitation</string>
+    <string name="add_relationship_separation">Separation</string>
+    <string name="add_relationship_divorce">Divorce</string>
+    <string name="add_relationship_reconciliation">Reconciliation</string>
+    <string name="add_relationship_offspring">Biological Offspring</string>
+    <string name="add_relationship_adoption">Adoption/Legal</string>
+    <string name="add_relationship_emotional_bond">EMOTIONAL BOND</string>
+    <string name="add_relationship_positive">Positive</string>
+    <string name="add_relationship_distant">Distant</string>
+    <string name="add_relationship_close">Intimate</string>
+    <string name="add_relationship_intimate_conflictual">Intimate Conflictual</string>
+    <string name="add_relationship_focused">Focused</string>
+    <string name="add_relationship_fused">Fused</string>
+    <string name="add_relationship_conflictual">Conflictual</string>
+    <string name="add_relationship_fused_conflictual">Fused Conflictual</string>
+    <string name="add_relationship_direct_conflictual">Direct Conflictual</string>
+    <string name="add_relationship_hostile">Hostile</string>
+    <string name="add_relationship_rupture">Rupture</string>
+    <string name="add_relationship_abuse">Abuse</string>
+    <string name="add_relationship_effective_date">EFFECTIVE DATE</string>
+    <string name="add_relationship_medical_conflict">MEDICAL CONFLICT</string>
+    <string name="add_relationship_consanguinity_risk">Consanguinity Risk</string>
+    <string name="add_relationship_confirm">CONFIRM CONNECTION</string>
+    <string name="add_relationship_parent">Parent</string>
+    <string name="add_relationship_child">Child</string>
+    <string name="add_relationship_person">Person</string>
+    <string name="add_relationship_swap_roles">Swap Roles</string>
+    <string name="add_relationship_select_date">Select date</string>
 </resources>
