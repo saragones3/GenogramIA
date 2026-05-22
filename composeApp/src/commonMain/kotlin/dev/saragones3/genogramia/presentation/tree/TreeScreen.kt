@@ -94,6 +94,7 @@ fun TreeScreen(
     treeId: String,
     onBackClick: () -> Unit,
     onAddPersonClick: (String, String?) -> Unit,
+    onAddRelationshipClick: (String, String, String) -> Unit,
 ) {
     val viewModel: TreeViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
@@ -131,6 +132,7 @@ fun TreeScreen(
         onBackClick = onBackClick,
         onAddPersonClick = { onAddPersonClick(treeId, null) },
         onEditPersonClick = { personId -> onAddPersonClick(treeId, personId) },
+        onAddRelationshipClick = { p1, p2 -> onAddRelationshipClick(treeId, p1, p2) },
         snackbarHostState = snackbarHostState,
     )
 }
@@ -143,6 +145,7 @@ private fun TreeContent(
     onBackClick: () -> Unit,
     onAddPersonClick: () -> Unit,
     onEditPersonClick: (String) -> Unit,
+    onAddRelationshipClick: (String, String) -> Unit,
     snackbarHostState: SnackbarHostState,
 ) {
     Scaffold(
@@ -233,6 +236,7 @@ private fun TreeContent(
             GenogramCanvas(
                 state = state,
                 onEvent = onEvent,
+                onAddRelationshipClick = onAddRelationshipClick,
             )
 
             CanvasControls(
@@ -252,6 +256,7 @@ private fun TreeContent(
 private fun GenogramCanvas(
     state: TreeState,
     onEvent: (TreeEvent) -> Unit,
+    onAddRelationshipClick: (String, String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val persons = remember(state.tree) { listOf(state.tree.centralPerson) + state.tree.persons }
@@ -343,7 +348,11 @@ private fun GenogramCanvas(
                 RelationshipTooltip(
                     p1 = p1,
                     p2 = p2,
-                    onClick = { onEvent(TreeEvent.OnAddRelationship) },
+                    onClick = {
+                        if (p1 != null && p2 != null) {
+                            onAddRelationshipClick(p1.id, p2.id)
+                        }
+                    },
                 )
             }
         }
@@ -778,6 +787,7 @@ private fun TreeScreenPreview(
             onBackClick = {},
             onAddPersonClick = {},
             onEditPersonClick = {},
+            onAddRelationshipClick = { _, _ -> },
             snackbarHostState = remember { SnackbarHostState() },
         )
     }

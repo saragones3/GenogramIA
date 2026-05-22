@@ -26,6 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.presentation.addperson.AddPersonScreen
+import dev.saragones3.genogramia.presentation.addrelationship.AddRelationshipScreen
 import dev.saragones3.genogramia.presentation.authenticatedhome.AuthenticatedHomeScreen
 import dev.saragones3.genogramia.presentation.changepassword.ChangePasswordScreen
 import dev.saragones3.genogramia.presentation.forgotpassword.ForgotPasswordScreen
@@ -189,6 +190,9 @@ private fun NavGraphContent(
                 onAddPersonClick = { treeId, personId ->
                     backStack.push(NavRoute.AddPerson(treeId, personId))
                 },
+                onAddRelationshipClick = { treeId, p1, p2 ->
+                    backStack.push(NavRoute.AddRelationship(treeId, p1, p2))
+                },
             )
         }
 
@@ -198,6 +202,15 @@ private fun NavGraphContent(
                 personId = key.personId,
                 onBackClick = { backStack.pop() },
                 onPersonAdded = { backStack.pop() },
+            )
+        }
+
+        is NavRoute.AddRelationship -> {
+            AddRelationshipScreen(
+                treeId = key.treeId,
+                personId1 = key.personId1,
+                personId2 = key.personId2,
+                onBackClick = { backStack.pop() },
             )
         }
     }
