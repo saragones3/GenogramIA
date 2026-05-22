@@ -124,6 +124,8 @@ class AddPersonViewModel(
                                     person.deathDate?.let { date ->
                                         dateFormatter.formatDate(date, "dd/MM/yyyy")
                                     } ?: "",
+                                x = person.x,
+                                y = person.y,
                             ),
                     )
                 }
@@ -189,6 +191,8 @@ class AddPersonViewModel(
                 biologicalSex = personUi.biologicalSex,
                 sexualOrientation = personUi.sexualOrientation,
                 deathDate = personUi.deathDateMillis,
+                x = personUi.x,
+                y = personUi.y,
             )
 
         viewModelScope.launch {

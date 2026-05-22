@@ -19,6 +19,10 @@ data class Relationship(
         // Vertical / Legal
         BIOLOGICAL_OFFSPRING,
         ADOPTION_LEGAL,
+        ;
+
+        val isStructural: Boolean
+            get() = this in listOf(MARRIAGE, COHABITATION, SEPARATION, DIVORCE, RECONCILIATION)
     }
 
     enum class EmotionalBond {
