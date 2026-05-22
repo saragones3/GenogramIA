@@ -8,6 +8,8 @@ data class Person(
     val biologicalSex: BiologicalSex = BiologicalSex.UNKNOWN,
     val sexualOrientation: SexualOrientation = SexualOrientation.UNKNOWN,
     val deathDate: Long? = null,
+    val x: Float = 0f,
+    val y: Float = 0f,
 ) {
     constructor() : this(
         id = "",

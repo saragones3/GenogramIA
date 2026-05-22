@@ -29,4 +29,6 @@ data class AddPersonUi(
     val sexualOrientation: Person.SexualOrientation = Person.SexualOrientation.UNKNOWN,
     val deathDateMillis: Long? = null,
     val deathDateText: String = "",
+    val x: Float = 0f,
+    val y: Float = 0f,
 )

@@ -7,6 +7,7 @@ import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
+import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,6 +17,7 @@ import kotlinx.coroutines.launch
 
 class TreeViewModel(
     private val getTreeUseCase: GetTreeUseCase,
+    private val updatePersonUseCase: UpdatePersonUseCase,
     private val dateFormatter: DateFormatter,
 ) : ViewModel() {
     private val _state = MutableStateFlow(TreeState())
@@ -116,6 +118,45 @@ class TreeViewModel(
                     )
                 }
             }
+
+            is TreeEvent.OnPersonMoveFinished -> {
+                val personId = event.personId
+                val treeId = _state.value.tree.id
+                val personNode =
+                    if (_state.value.tree.centralPerson.id == personId) {
+                        _state.value.tree.centralPerson
+                    } else {
+                        _state.value.tree.persons
+                            .find { it.id == personId }
+                    }
+
+                personNode?.let { node ->
+                    viewModelScope.launch {
+                        try {
+                            val tree = getTreeUseCase(treeId)
+                            if (tree != null) {
+                                val domainPerson =
+                                    if (tree.centralPerson.id == personId) {
+                                        tree.centralPerson
+                                    } else {
+                                        tree.persons.find { it.id == personId }
+                                    }
+
+                                domainPerson?.let { person ->
+                                    val updatedPerson =
+                                        person.copy(
+                                            x = node.position.x,
+                                            y = node.position.y,
+                                        )
+                                    updatePersonUseCase(treeId, updatedPerson)
+                                }
+                            }
+                        } catch (_: Exception) {
+                            // Error handling could be added here
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -151,7 +192,6 @@ class TreeViewModel(
         val centralPersonId = centralPerson.id
         val centralPersonUi =
             centralPerson.toNodeUi().copy(
-                position = Offset.Zero,
                 isIndexPerson = true,
             )
 
@@ -171,24 +211,28 @@ class TreeViewModel(
 
         val mappedPersons =
             persons.mapIndexed { index, person ->
-                val position =
-                    when {
-                        parents.contains(person.id) -> {
-                            val isMale = person.biologicalSex == Person.BiologicalSex.MALE
-                            Offset(if (isMale) -150f else 150f, -250f)
-                        }
+                if (person.x != 0f || person.y != 0f) {
+                    person.toNodeUi()
+                } else {
+                    val position =
+                        when {
+                            parents.contains(person.id) -> {
+                                val isMale = person.biologicalSex == Person.BiologicalSex.MALE
+                                Offset(if (isMale) -150f else 150f, -250f)
+                            }
 
-                        partners.contains(person.id) -> {
-                            Offset(250f, 0f)
-                        }
+                            partners.contains(person.id) -> {
+                                Offset(250f, 0f)
+                            }
 
-                        else -> {
-                            val row = (index / 3) + 1
-                            val col = (index % 3) - 1
-                            Offset(col * 250f, row * 250f)
+                            else -> {
+                                val row = (index / 3) + 1
+                                val col = (index % 3) - 1
+                                Offset(col * 250f, row * 250f)
+                            }
                         }
-                    }
-                person.toNodeUi().copy(position = position)
+                    person.toNodeUi().copy(position = position)
+                }
             }
 
         return TreeUi(
@@ -232,6 +276,7 @@ class TreeViewModel(
             deathDateText = deathYear,
             age = age,
             isDeceased = deathDate != null,
+            position = Offset(x, y),
         )
     }
 }

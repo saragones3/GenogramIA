@@ -5,6 +5,7 @@ import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
+import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
@@ -17,20 +18,20 @@ import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertNull
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class TreeViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val treeRepository = FakeTreeRepository()
     private val getTreeUseCase = GetTreeUseCase(treeRepository)
+    private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
     private val dateFormatter = DateFormatter()
     private lateinit var viewModel: TreeViewModel
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = TreeViewModel(getTreeUseCase, dateFormatter)
+        viewModel = TreeViewModel(getTreeUseCase, updatePersonUseCase, dateFormatter)
     }
 
     @AfterTest
@@ -268,5 +269,28 @@ class TreeViewModelTest {
             viewModel.onEvent(TreeEvent.OnPersonMove("p1", delta))
 
             assertEquals(initialPos + delta, viewModel.state.value.tree.centralPerson.position)
+        }
+
+    @Test
+    fun `when OnPersonMoveFinished event is received person position is saved in repository`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val tree = GenogramTree("t1", "Family", 1, "now", central)
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val delta =
+                androidx.compose.ui.geometry
+                    .Offset(100f, 200f)
+            viewModel.onEvent(TreeEvent.OnPersonMove("p1", delta))
+            viewModel.onEvent(TreeEvent.OnPersonMoveFinished("p1"))
+
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val savedTree = treeRepository.getTree("t1")
+            assertEquals(100f, savedTree?.centralPerson?.x)
+            assertEquals(200f, savedTree?.centralPerson?.y)
         }
 }

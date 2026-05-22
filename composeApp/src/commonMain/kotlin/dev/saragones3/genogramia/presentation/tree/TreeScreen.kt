@@ -352,6 +352,7 @@ private fun GenogramCanvas(
                         isSelected = selectedPersonIds.contains(person.id),
                         onSelected = { onEvent(TreeEvent.OnPersonSelected(person.id)) },
                         onMove = { delta -> onEvent(TreeEvent.OnPersonMove(person.id, delta)) },
+                        onMoveFinished = { onEvent(TreeEvent.OnPersonMoveFinished(person.id)) },
                     )
                 }
             }
@@ -530,10 +531,12 @@ private fun PersonNodeView(
     isSelected: Boolean,
     onSelected: () -> Unit,
     onMove: (Offset) -> Unit,
+    onMoveFinished: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val density = LocalDensity.current
     val currentOnMove by rememberUpdatedState(onMove)
+    val currentOnMoveFinished by rememberUpdatedState(onMoveFinished)
     val shape =
         if (person.biologicalSex == Person.BiologicalSex.FEMALE) {
             CircleShape
@@ -563,7 +566,10 @@ private fun PersonNodeView(
                     indication = null,
                     interactionSource = remember { MutableInteractionSource() },
                 ).pointerInput(person.id) {
-                    detectDragGestures { change, dragAmount ->
+                    detectDragGestures(
+                        onDragEnd = { currentOnMoveFinished() },
+                        onDragCancel = { currentOnMoveFinished() },
+                    ) { change, dragAmount ->
                         change.consume()
                         val deltaDp =
                             with(density) {

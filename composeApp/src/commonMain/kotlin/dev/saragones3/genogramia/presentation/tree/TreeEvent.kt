@@ -47,4 +47,8 @@ sealed interface TreeEvent {
         val personId: String,
         val delta: Offset,
     ) : TreeEvent
+
+    data class OnPersonMoveFinished(
+        val personId: String,
+    ) : TreeEvent
 }
