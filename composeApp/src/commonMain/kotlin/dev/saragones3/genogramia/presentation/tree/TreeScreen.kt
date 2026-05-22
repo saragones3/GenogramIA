@@ -60,7 +60,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathEffect
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.drawscope.DrawScope
@@ -78,6 +77,7 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.domain.model.Person
+import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.add_relationship
@@ -137,7 +137,6 @@ fun TreeScreen(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TreeContent(
     state: TreeState,
@@ -151,28 +150,9 @@ private fun TreeContent(
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,
         topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        text = state.tree.name,
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold,
-                    )
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBackClick) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Default.ArrowBack,
-                            contentDescription = null,
-                            tint = MaterialTheme.colorScheme.primary,
-                        )
-                    }
-                },
-                colors =
-                    TopAppBarDefaults.topAppBarColors(
-                        containerColor = Color.Transparent,
-                        titleContentColor = MaterialTheme.colorScheme.primary,
-                    ),
+            TopBar(
+                treeName = state.tree.name,
+                onBackClick = onBackClick,
             )
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -252,6 +232,39 @@ private fun TreeContent(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun TopBar(
+    treeName: String,
+    onBackClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    ) {
+    TopAppBar(
+        title = {
+            Text(
+                text = treeName,
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
+            )
+        },
+        modifier = modifier,
+        navigationIcon = {
+            IconButton(onClick = onBackClick) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Default.ArrowBack,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary,
+                )
+            }
+        },
+        colors =
+            TopAppBarDefaults.topAppBarColors(
+                containerColor = Color.Transparent,
+                titleContentColor = MaterialTheme.colorScheme.primary,
+            ),
+    )
+}
+
 @Composable
 private fun GenogramCanvas(
     state: TreeState,
@@ -311,25 +324,18 @@ private fun GenogramCanvas(
         ) {
             GridBackground()
 
-            // Selection line
             Canvas(modifier = Modifier.fillMaxSize()) {
-                if (selectedPersonIds.size == 2) {
-                    val p1 = persons.find { it.id == selectedPersonIds.first() }
-                    val p2 = persons.find { it.id == selectedPersonIds.last() }
-                    if (p1 != null && p2 != null) {
-                        drawLine(
-                            color = Color(0xFF008080),
-                            start = p1.position * density.density,
-                            end = p2.position * density.density,
-                            strokeWidth = 2.dp.toPx(),
-                            pathEffect =
-                                PathEffect.dashPathEffect(
-                                    floatArrayOf(10f, 10f),
-                                    0f,
-                                ),
-                        )
-                    }
-                }
+                drawHorizontalRelationship(
+                    relationships = state.tree.relationships,
+                    persons = persons,
+                    density = density.density,
+                    nodeSize = nodeSize,
+                )
+                drawNewRelationshipLine(
+                    selectedPersonIds = selectedPersonIds,
+                    persons = persons,
+                    density = density.density,
+                )
             }
             persons.forEach { person ->
                 key(person.id) {
@@ -364,7 +370,7 @@ private fun GridBackground(modifier: Modifier = Modifier) {
     Canvas(modifier = modifier.fillMaxSize()) {
         val gridStep = 40.dp.toPx()
         val color = Color.LightGray.copy(alpha = 0.3f)
-        val gridCount = 200 // Increased for larger canvas
+        val gridCount = 200
         val size = gridStep * gridCount
         val start = -size / 2
 
@@ -372,6 +378,68 @@ private fun GridBackground(modifier: Modifier = Modifier) {
             val pos = start + i * gridStep
             drawLine(color, Offset(pos, start), Offset(pos, start + size), 1f)
             drawLine(color, Offset(start, pos), Offset(start + size, pos), 1f)
+        }
+    }
+}
+
+private fun DrawScope.drawNewRelationshipLine(
+    selectedPersonIds: List<String>,
+    persons: List<PersonNodeUi>,
+    density: Float,
+) {
+    if (selectedPersonIds.size == 2) {
+        val p1 = persons.find { it.id == selectedPersonIds.first() }
+        val p2 = persons.find { it.id == selectedPersonIds.last() }
+        if (p1 != null && p2 != null) {
+            drawLine(
+                color = Color(0xFF008080),
+                start = p1.position * density,
+                end = p2.position * density,
+                strokeWidth = 2.dp.toPx(),
+                pathEffect =
+                    PathEffect.dashPathEffect(
+                        floatArrayOf(10f, 10f),
+                        0f,
+                    ),
+            )
+        }
+    }
+}
+
+private fun DrawScope.drawHorizontalRelationship(
+    relationships: List<RelationshipUi>,
+    persons: List<PersonNodeUi>,
+    density: Float,
+    nodeSize: Float,
+) {
+    relationships.forEach { rel ->
+        if (rel.type.isStructural) {
+            val p1 = persons.find { it.id == rel.personId1 }
+            val p2 = persons.find { it.id == rel.personId2 }
+            if (p1 != null && p2 != null) {
+                val p1Center = p1.position * density
+                val p2Center = p2.position * density
+
+                val p1IsLeft = p1Center.x < p2Center.x
+                val start =
+                    Offset(
+                        if (p1IsLeft) p1Center.x + nodeSize / 2 else p1Center.x - nodeSize / 2,
+                        p1Center.y,
+                    )
+                val end =
+                    Offset(
+                        if (p1IsLeft) p2Center.x - nodeSize / 2 else p2Center.x + nodeSize / 2,
+                        p2Center.y,
+                    )
+
+                drawLine(
+                    color = Color.Black,
+                    start = start,
+                    end = end,
+                    strokeWidth = 2.dp.toPx(),
+                    pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f).takeIf { rel.type == Relationship.RelationshipType.COHABITATION },
+                )
+            }
         }
     }
 }
@@ -390,7 +458,7 @@ private fun PersonNodeView(
         if (person.biologicalSex == Person.BiologicalSex.FEMALE) {
             CircleShape
         } else {
-            RectangleShape
+            RoundedCornerShape(12.dp)
         }
 
     val backgroundColor =
@@ -737,6 +805,18 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                     ),
                     PersonNodeUi(
                         id = "3",
+                        firstName = "Sara",
+                        lastName = "García González",
+                        biologicalSex = Person.BiologicalSex.FEMALE,
+                        sexualOrientation = Person.SexualOrientation.OTHER,
+                        birthDateText = "1990",
+                        deathDateText = "2021",
+                        age = "31",
+                        isDeceased = true,
+                        position = Offset(125f, 300f),
+                    ),
+                    PersonNodeUi(
+                        id = "4",
                         firstName = "Juan",
                         lastName = "García Pérez",
                         biologicalSex = Person.BiologicalSex.MALE,
@@ -746,29 +826,101 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                         position = Offset(75f, 500f),
                     ),
                     PersonNodeUi(
-                        id = "4",
-                        firstName = "Sara",
-                        lastName = "Salas De Mena",
-                        biologicalSex = Person.BiologicalSex.FEMALE,
-                        sexualOrientation = Person.SexualOrientation.OTHER,
+                        id = "5",
+                        firstName = "Juan",
+                        lastName = "García González",
+                        biologicalSex = Person.BiologicalSex.MALE,
+                        sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
                         birthDateText = "1990",
-                        deathDateText = "2021",
-                        age = "31",
-                        isDeceased = true,
-                        position = Offset(225f, 300f),
+                        age = "36",
+                        position = Offset(275f, 300f),
                     ),
                 ),
         )
 
     override val values =
         sequenceOf(
-            TreeState(tree = seed),
             TreeState(
-                tree = seed,
+                tree =
+                    seed.copy(
+                        relationships =
+                            listOf(
+                                RelationshipUi(
+                                    id = "rel-1-2",
+                                    personId1 = "1",
+                                    personId2 = "2",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                ),
+                                RelationshipUi(
+                                    id = "rel-1-3",
+                                    personId1 = "1",
+                                    personId2 = "3",
+                                    type = Relationship.RelationshipType.BIOLOGICAL_OFFSPRING,
+                                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                ),
+                                RelationshipUi(
+                                    id = "rel-2-3",
+                                    personId1 = "2",
+                                    personId2 = "3",
+                                    type = Relationship.RelationshipType.BIOLOGICAL_OFFSPRING,
+                                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                ),
+                                RelationshipUi(
+                                    id = "rel-1-5",
+                                    personId1 = "1",
+                                    personId2 = "5",
+                                    type = Relationship.RelationshipType.BIOLOGICAL_OFFSPRING,
+                                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                ),
+                                RelationshipUi(
+                                    id = "rel-2-5",
+                                    personId1 = "2",
+                                    personId2 = "5",
+                                    type = Relationship.RelationshipType.BIOLOGICAL_OFFSPRING,
+                                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                ),
+                                RelationshipUi(
+                                    id = "rel-3-4",
+                                    personId1 = "3",
+                                    personId2 = "4",
+                                    type = Relationship.RelationshipType.COHABITATION,
+                                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                ),
+                            ),
+                    ),
+            ),
+            TreeState(
+                tree =
+                    seed.copy(
+                        relationships =
+                            listOf(
+                                RelationshipUi(
+                                    id = "rel-1-2",
+                                    personId1 = "1",
+                                    personId2 = "2",
+                                    type = Relationship.RelationshipType.COHABITATION,
+                                    emotionalBond = Relationship.EmotionalBond.CONFLICTUAL,
+                                ),
+                            ),
+                    ),
                 selectedPersonIds = listOf("3", "4"),
             ),
             TreeState(
-                tree = seed,
+                tree =
+                    seed.copy(
+                        relationships =
+                            listOf(
+                                RelationshipUi(
+                                    id = "rel-1-2",
+                                    personId1 = "1",
+                                    personId2 = "2",
+                                    type = Relationship.RelationshipType.COHABITATION,
+                                    emotionalBond = Relationship.EmotionalBond.CONFLICTUAL,
+                                ),
+                            ),
+                    ),
+                offset = Offset(-600f, -300f),
                 scale = 3f,
             ),
             TreeState(isLoading = true),

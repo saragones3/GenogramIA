@@ -3,6 +3,7 @@ package dev.saragones3.genogramia.presentation.tree
 import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
+import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
@@ -174,6 +175,38 @@ class TreeViewModelTest {
                 "Jane",
                 viewModel.state.value.tree.persons[0]
                     .firstName,
+            )
+        }
+
+    @Test
+    fun `when LoadTree has relationships they are mapped to UI`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
+            val rel =
+                Relationship(
+                    id = "r1",
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                )
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), listOf(rel))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertEquals(1, viewModel.state.value.tree.relationships.size)
+            assertEquals(
+                "r1",
+                viewModel.state.value.tree.relationships[0]
+                    .id,
+            )
+            assertEquals(
+                Relationship.RelationshipType.MARRIAGE,
+                viewModel.state.value.tree.relationships[0]
+                    .type,
             )
         }
 

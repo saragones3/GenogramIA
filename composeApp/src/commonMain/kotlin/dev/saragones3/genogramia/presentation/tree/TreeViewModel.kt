@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
+import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -147,24 +148,66 @@ class TreeViewModel(
     }
 
     private fun GenogramTree.toUi(): TreeUi {
+        val centralPersonId = centralPerson.id
         val centralPersonUi =
             centralPerson.toNodeUi().copy(
                 position = Offset.Zero,
                 isIndexPerson = true,
             )
+
+        val parents =
+            relationships
+                .filter {
+                    it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING &&
+                        it.personId2 == centralPersonId
+                }.map { it.personId1 }
+                .toSet()
+
+        val partners =
+            relationships
+                .filter { it.type.isStructural && (it.personId1 == centralPersonId || it.personId2 == centralPersonId) }
+                .map { if (it.personId1 == centralPersonId) it.personId2 else it.personId1 }
+                .toSet()
+
         val mappedPersons =
             persons.mapIndexed { index, person ->
-                val row = (index / 3) + 1
-                val col = (index % 3) - 1
-                person.toNodeUi().copy(position = Offset(col * 250f, row * 250f))
+                val position =
+                    when {
+                        parents.contains(person.id) -> {
+                            val isMale = person.biologicalSex == Person.BiologicalSex.MALE
+                            Offset(if (isMale) -150f else 150f, -250f)
+                        }
+
+                        partners.contains(person.id) -> {
+                            Offset(250f, 0f)
+                        }
+
+                        else -> {
+                            val row = (index / 3) + 1
+                            val col = (index % 3) - 1
+                            Offset(col * 250f, row * 250f)
+                        }
+                    }
+                person.toNodeUi().copy(position = position)
             }
+
         return TreeUi(
             id = id,
             name = name,
             centralPerson = centralPersonUi,
             persons = mappedPersons,
+            relationships = relationships.map { it.toUi() },
         )
     }
+
+    private fun Relationship.toUi(): RelationshipUi =
+        RelationshipUi(
+            id = id,
+            personId1 = personId1,
+            personId2 = personId2,
+            type = type,
+            emotionalBond = emotionalBond,
+        )
 
     private fun Person.toNodeUi(): PersonNodeUi {
         val birthYear = birthDate.let { dateFormatter.formatDate(it, "yyyy") }
