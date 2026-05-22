@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.presentation.tree
 
+import androidx.compose.ui.geometry.Offset
 import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
@@ -147,10 +148,8 @@ class TreeViewModelTest {
     @Test
     fun `when OnTransform event is received scale and offset are updated`() =
         runTest {
-            val centroid = androidx.compose.ui.geometry.Offset.Zero
-            val pan =
-                androidx.compose.ui.geometry
-                    .Offset(10f, 20f)
+            val centroid = Offset.Zero
+            val pan = Offset(10f, 20f)
             viewModel.onEvent(TreeEvent.OnTransform(centroid, pan, 1.1f))
 
             val state = viewModel.state.value
@@ -245,11 +244,44 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnDismissSelection event is received selectedPersonIds is cleared`() =
+    fun `when two persons with existing relationship are selected, relationshipId is set automatically`() =
         runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
+            val rel =
+                Relationship(
+                    id = "r1",
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                )
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), listOf(rel))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
             viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
-            viewModel.onEvent(TreeEvent.OnDismissSelection)
-            assertEquals(emptyList<String>(), viewModel.state.value.selectedPersonIds)
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
+
+            assertEquals("r1", viewModel.state.value.selectedRelationshipId)
+        }
+
+    @Test
+    fun `when two persons without relationship are selected, relationshipId is null`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
+
+            assertEquals(null, viewModel.state.value.selectedRelationshipId)
         }
 
     @Test
@@ -263,9 +295,7 @@ class TreeViewModelTest {
             testDispatcher.scheduler.advanceUntilIdle()
 
             val initialPos = viewModel.state.value.tree.centralPerson.position
-            val delta =
-                androidx.compose.ui.geometry
-                    .Offset(10f, 20f)
+            val delta = Offset(10f, 20f)
             viewModel.onEvent(TreeEvent.OnPersonMove("p1", delta))
 
             assertEquals(initialPos + delta, viewModel.state.value.tree.centralPerson.position)
@@ -281,9 +311,7 @@ class TreeViewModelTest {
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
             testDispatcher.scheduler.advanceUntilIdle()
 
-            val delta =
-                androidx.compose.ui.geometry
-                    .Offset(100f, 200f)
+            val delta = Offset(100f, 200f)
             viewModel.onEvent(TreeEvent.OnPersonMove("p1", delta))
             viewModel.onEvent(TreeEvent.OnPersonMoveFinished("p1"))
 

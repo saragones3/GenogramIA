@@ -238,4 +238,59 @@ class AddRelationshipViewModelTest {
             val savedRelationship = updatedTree?.relationships?.first()
             assertEquals(Relationship.EmotionalBond.ABUSE, savedRelationship?.emotionalBond)
         }
+
+    @Test
+    fun `when onResume is called with relationshipId data is prefilled`() =
+        runTest {
+            val relId = "rel-123"
+            val existingRel =
+                Relationship(
+                    id = relId,
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.COHABITATION,
+                    emotionalBond = Relationship.EmotionalBond.CONFLICTUAL,
+                    effectiveDate = 123456789L,
+                )
+            val treeWithRel = tree.copy(relationships = listOf(existingRel))
+            repository.createTree(treeWithRel)
+
+            viewModel.onResume("tree-1", null, null, relId)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val state = viewModel.state.value
+            assertEquals(relId, state.relationshipId)
+            assertEquals(Relationship.RelationshipType.COHABITATION, state.bondType)
+            assertEquals(Relationship.EmotionalBond.CONFLICTUAL, state.emotionalBond)
+            assertEquals(123456789L, state.effectiveDate)
+            assertEquals("p1", state.person1?.id)
+            assertEquals("p2", state.person2?.id)
+        }
+
+    @Test
+    fun `when saving an existing relationship it updates instead of adding new`() =
+        runTest {
+            val relId = "rel-123"
+            val existingRel =
+                Relationship(
+                    id = relId,
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                )
+            repository.createTree(tree.copy(relationships = listOf(existingRel)))
+
+            viewModel.onResume("tree-1", null, null, relId)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(AddRelationshipEvent.OnBondTypeSelected(Relationship.RelationshipType.DIVORCE))
+            viewModel.onEvent(AddRelationshipEvent.OnConfirmClick)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val updatedTree = repository.getTree("tree-1")
+            assertEquals(1, updatedTree?.relationships?.size)
+            assertEquals(Relationship.RelationshipType.DIVORCE, updatedTree?.relationships?.first()?.type)
+            assertEquals(relId, updatedTree?.relationships?.first()?.id)
+        }
 }

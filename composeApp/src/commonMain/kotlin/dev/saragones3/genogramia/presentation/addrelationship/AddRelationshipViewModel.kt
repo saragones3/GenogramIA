@@ -29,46 +29,93 @@ class AddRelationshipViewModel(
 
     fun onResume(
         treeId: String,
-        personId1: String,
-        personId2: String,
+        personId1: String?,
+        personId2: String?,
+        relationshipId: String? = null,
     ) {
+        // Prevent re-loading if already loaded data for this tree and mode (add/edit)
+        val currentState = _state.value
+        if (this.treeId == treeId &&
+            currentState.relationshipId == relationshipId &&
+            currentState.person1 != null &&
+            !currentState.isLoading
+        ) {
+            return
+        }
+
         this.treeId = treeId
-        _state.value = AddRelationshipState(isLoading = true)
+        // Preserve current state bondType if we are just recomposing,
+        // but since this is onResume (entry point), we typically want to load.
+        _state.update { it.copy(isLoading = true, relationshipId = relationshipId) }
+
         viewModelScope.launch {
-            val tree = getTreeUseCase(treeId)
-            val p1 = getPersonUseCase(treeId, personId1)
-            val p2 = getPersonUseCase(treeId, personId2)
+            try {
+                val tree = getTreeUseCase(treeId)
 
-            val hasConsanguinity =
-                if ((tree != null) && (p1 != null) && (p2 != null)) {
-                    val p1Parents =
-                        tree.relationships
-                            .asSequence()
-                            .filter {
-                                it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING && it.personId2 == p1.id
-                            }.map { it.personId1 }
-                            .toSet()
+                var finalP1Id = personId1
+                var finalP2Id = personId2
+                var bondType = Relationship.RelationshipType.MARRIAGE
+                var emotionalBond = Relationship.EmotionalBond.POSITIVE
+                var effectiveDate: Long? = null
 
-                    val p2Parents =
-                        tree.relationships
-                            .asSequence()
-                            .filter {
-                                it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING && it.personId2 == p2.id
-                            }.map { it.personId1 }
-                            .toSet()
-
-                    p1Parents.intersect(p2Parents).isNotEmpty()
-                } else {
-                    false
+                if (relationshipId != null && tree != null) {
+                    val rel = tree.relationships.find { it.id == relationshipId }
+                    if (rel != null) {
+                        finalP1Id = rel.personId1
+                        finalP2Id = rel.personId2
+                        bondType = rel.type
+                        emotionalBond = rel.emotionalBond
+                        effectiveDate = rel.effectiveDate
+                    }
                 }
 
-            _state.update {
-                it.copy(
-                    person1 = p1?.toUi(),
-                    person2 = p2?.toUi(),
-                    isLoading = false,
-                    hasConsanguinityRisk = hasConsanguinity,
-                )
+                // If we don't have IDs from relationship, use the ones passed from navigation
+                val p1 = finalP1Id?.let { getPersonUseCase(treeId, it) }
+                val p2 = finalP2Id?.let { getPersonUseCase(treeId, it) }
+
+                val hasConsanguinity =
+                    if ((tree != null) && (p1 != null) && (p2 != null)) {
+                        val p1Parents =
+                            tree.relationships
+                                .asSequence()
+                                .filter {
+                                    it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING &&
+                                        it.personId2 == p1.id
+                                }.map { it.personId1 }
+                                .toSet()
+
+                        val p2Parents =
+                            tree.relationships
+                                .asSequence()
+                                .filter {
+                                    it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING &&
+                                        it.personId2 == p2.id
+                                }.map { it.personId1 }
+                                .toSet()
+
+                        p1Parents.intersect(p2Parents).isNotEmpty()
+                    } else {
+                        false
+                    }
+
+                _state.update {
+                    it.copy(
+                        person1 = p1?.toUi(),
+                        person2 = p2?.toUi(),
+                        bondType = bondType,
+                        emotionalBond = emotionalBond,
+                        effectiveDate = effectiveDate,
+                        effectiveDateFormatted =
+                            effectiveDate?.let { date ->
+                                dateFormatter.formatDate(date, "MM/dd/yyyy").uppercase()
+                            },
+                        isLoading = false,
+                        hasConsanguinityRisk = hasConsanguinity,
+                        relationshipId = relationshipId,
+                    )
+                }
+            } catch (e: Exception) {
+                _state.update { it.copy(isLoading = false, error = e.message) }
             }
         }
     }
@@ -128,7 +175,7 @@ class AddRelationshipViewModel(
             try {
                 val relationship =
                     Relationship(
-                        id = "${p1.id}_${p2.id}_${dateProvider.nowEpochMilliseconds()}",
+                        id = currentState.relationshipId ?: "${p1.id}_${p2.id}_${dateProvider.nowEpochMilliseconds()}",
                         personId1 = p1.id,
                         personId2 = p2.id,
                         type = currentState.bondType,

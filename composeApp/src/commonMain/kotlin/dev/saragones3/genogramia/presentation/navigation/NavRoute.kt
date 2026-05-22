@@ -50,7 +50,8 @@ sealed interface NavRoute {
     @Serializable
     data class AddRelationship(
         val treeId: String,
-        val personId1: String,
-        val personId2: String,
+        val personId1: String? = null,
+        val personId2: String? = null,
+        val relationshipId: String? = null,
     ) : NavRoute
 }

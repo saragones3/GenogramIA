@@ -41,8 +41,6 @@ sealed interface TreeEvent {
 
     data object OnDismissSelection : TreeEvent
 
-    data object OnAddRelationship : TreeEvent
-
     data class OnPersonMove(
         val personId: String,
         val delta: Offset,
