@@ -238,7 +238,7 @@ private fun TopBar(
     treeName: String,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
-    ) {
+) {
     TopAppBar(
         title = {
             Text(
@@ -325,8 +325,16 @@ private fun GenogramCanvas(
             GridBackground()
 
             Canvas(modifier = Modifier.fillMaxSize()) {
+                val horizontalRelationships = state.tree.relationships.filter { it.type.isStructural }
                 drawHorizontalRelationship(
+                    relationships = horizontalRelationships,
+                    persons = persons,
+                    density = density.density,
+                    nodeSize = nodeSize,
+                )
+                drawVerticalRelationship(
                     relationships = state.tree.relationships,
+                    horizontalRelationships = horizontalRelationships,
                     persons = persons,
                     density = density.density,
                     nodeSize = nodeSize,
@@ -412,34 +420,106 @@ private fun DrawScope.drawHorizontalRelationship(
     density: Float,
     nodeSize: Float,
 ) {
-    relationships.forEach { rel ->
-        if (rel.type.isStructural) {
-            val p1 = persons.find { it.id == rel.personId1 }
-            val p2 = persons.find { it.id == rel.personId2 }
-            if (p1 != null && p2 != null) {
-                val p1Center = p1.position * density
-                val p2Center = p2.position * density
+    relationships.forEach { relationship ->
+        val p1 = persons.find { it.id == relationship.personId1 }
+        val p2 = persons.find { it.id == relationship.personId2 }
+        if (p1 != null && p2 != null) {
+            val p1Center = p1.position * density
+            val p2Center = p2.position * density
 
-                val p1IsLeft = p1Center.x < p2Center.x
-                val start =
-                    Offset(
-                        if (p1IsLeft) p1Center.x + nodeSize / 2 else p1Center.x - nodeSize / 2,
-                        p1Center.y,
-                    )
-                val end =
-                    Offset(
-                        if (p1IsLeft) p2Center.x - nodeSize / 2 else p2Center.x + nodeSize / 2,
-                        p2Center.y,
-                    )
+            val p1IsLeft = p1Center.x < p2Center.x
+            val start =
+                Offset(
+                    if (p1IsLeft) p1Center.x + nodeSize / 2 else p1Center.x - nodeSize / 2,
+                    p1Center.y,
+                )
+            val end =
+                Offset(
+                    if (p1IsLeft) p2Center.x - nodeSize / 2 else p2Center.x + nodeSize / 2,
+                    p2Center.y,
+                )
 
-                drawLine(
-                    color = Color.Black,
-                    start = start,
-                    end = end,
-                    strokeWidth = 2.dp.toPx(),
-                    pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f).takeIf { rel.type == Relationship.RelationshipType.COHABITATION },
+            drawLine(
+                color = LINE_COLOR,
+                start = start,
+                end = end,
+                strokeWidth = LINE_WIDTH.toPx(),
+                pathEffect =
+                    PathEffect
+                        .dashPathEffect(floatArrayOf(10f, 10f), 0f)
+                        .takeIf { relationship.type == Relationship.RelationshipType.COHABITATION },
+            )
+        }
+    }
+}
+
+private fun DrawScope.drawVerticalRelationship(
+    relationships: List<RelationshipUi>,
+    horizontalRelationships: List<RelationshipUi>,
+    persons: List<PersonNodeUi>,
+    density: Float,
+    nodeSize: Float,
+) {
+    val groupedByChild =
+        relationships
+            .filter { it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING }
+            .groupBy { it.personId2 }
+    groupedByChild.forEach { (childId, parents) ->
+        val child = persons.find { it.id == childId } ?: return@forEach
+        val childTop = child.position * density - Offset(0f, nodeSize / 2)
+
+        if (parents.size == 2) {
+            val p1Id = parents.first().personId1
+            val p2Id = parents.last().personId1
+            val marriage =
+                horizontalRelationships.find {
+                    (it.personId1 == p1Id && it.personId2 == p2Id) ||
+                        (it.personId1 == p2Id && it.personId2 == p1Id)
+                }
+
+            if (marriage != null) {
+                val parent1 = persons.find { it.id == p1Id }!!
+                val parent2 = persons.find { it.id == p2Id }!!
+
+                val p1Center = parent1.position * density
+                val p2Center = parent2.position * density
+
+                val midpointX = (p1Center.x + p2Center.x) / 2
+                val marriageY =
+                    if (p1Center.y != p2Center.y) {
+                        (p1Center.y + p2Center.y) / 2
+                    } else {
+                        p1Center.y
+                    }
+
+                val path =
+                    Path().apply {
+                        moveTo(midpointX, marriageY)
+                        val midY = childTop.y - 50f
+                        lineTo(midpointX, midY)
+                        lineTo(childTop.x, midY)
+                        lineTo(childTop.x, childTop.y)
+                    }
+                drawPath(
+                    path = path,
+                    color = LINE_COLOR,
+                    style = Stroke(width = LINE_WIDTH.toPx()),
                 )
             }
+        } else if (parents.size == 1) {
+            val parent = persons.find { it.id == parents.first().personId1 }!!
+            val pCenter = parent.position * density
+            val pBottomY = pCenter.y + nodeSize / 2
+            val path =
+                Path().apply {
+                    moveTo(pCenter.x, pBottomY)
+                    lineTo(childTop.x, childTop.y)
+                }
+            drawPath(
+                path = path,
+                color = LINE_COLOR,
+                style = Stroke(width = LINE_WIDTH.toPx()),
+            )
         }
     }
 }
@@ -772,6 +852,8 @@ private fun Modifier.border(shape: Shape) =
     )
 
 private val NODE_SIZE = 64.dp
+private val LINE_COLOR = Color(0xFFBDBDBD)
+private val LINE_WIDTH = 1.5.dp
 
 private class TreeStateProvider : PreviewParameterProvider<TreeState> {
     private val seed =
@@ -835,6 +917,16 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                         age = "36",
                         position = Offset(275f, 300f),
                     ),
+                    PersonNodeUi(
+                        id = "6",
+                        firstName = "Rodrigo",
+                        lastName = "García González",
+                        biologicalSex = Person.BiologicalSex.MALE,
+                        sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                        birthDateText = "2019",
+                        age = "7",
+                        position = Offset(275f, 500f),
+                    ),
                 ),
         )
 
@@ -885,6 +977,13 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                                     personId1 = "3",
                                     personId2 = "4",
                                     type = Relationship.RelationshipType.COHABITATION,
+                                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                ),
+                                RelationshipUi(
+                                    id = "rel-5-6",
+                                    personId1 = "5",
+                                    personId2 = "6",
+                                    type = Relationship.RelationshipType.BIOLOGICAL_OFFSPRING,
                                     emotionalBond = Relationship.EmotionalBond.POSITIVE,
                                 ),
                             ),
