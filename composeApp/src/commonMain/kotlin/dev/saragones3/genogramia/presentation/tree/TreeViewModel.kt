@@ -9,16 +9,22 @@ import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
+import dev.saragones3.genogramia.domain.util.DateProvider
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
+import kotlinx.datetime.yearsUntil
+import kotlin.time.Instant
 
 class TreeViewModel(
     private val getTreeUseCase: GetTreeUseCase,
     private val updatePersonUseCase: UpdatePersonUseCase,
     private val dateFormatter: DateFormatter,
+    private val dateProvider: DateProvider,
 ) : ViewModel() {
     private val _state = MutableStateFlow(TreeState())
     val state: StateFlow<TreeState> = _state.asStateFlow()
@@ -29,6 +35,38 @@ class TreeViewModel(
                 loadTree(event.id)
             }
 
+            is TreeEvent.OnZoomIn,
+            is TreeEvent.OnZoomOut,
+            TreeEvent.OnResetViewport,
+            is TreeEvent.OnResetToCenter,
+            is TreeEvent.OnPan,
+            is TreeEvent.OnTransform,
+            -> {
+                handleTransformation(event)
+            }
+
+            TreeEvent.OnNavigationConsumed,
+            TreeEvent.OnErrorConsumed,
+            -> {
+                handleSystemEvents(event)
+            }
+
+            is TreeEvent.OnPersonSelected,
+            TreeEvent.OnDismissSelection,
+            -> {
+                handleSelection(event)
+            }
+
+            is TreeEvent.OnPersonMove,
+            is TreeEvent.OnPersonMoveFinished,
+            -> {
+                handlePersonMovement(event)
+            }
+        }
+    }
+
+    private fun handleTransformation(event: TreeEvent) {
+        when (event) {
             is TreeEvent.OnZoomIn -> {
                 _state.update { it.copy(scale = (it.scale + event.delta).coerceAtMost(3f)) }
             }
@@ -55,13 +93,16 @@ class TreeViewModel(
                     val newScale = (oldScale * event.zoom).coerceIn(0.1f, 3f)
                     val actualZoom = newScale / oldScale
                     val newOffset = event.centroid + (it.offset - event.centroid) * actualZoom + event.pan
-                    it.copy(
-                        scale = newScale,
-                        offset = newOffset,
-                    )
+                    it.copy(scale = newScale, offset = newOffset)
                 }
             }
 
+            else -> {}
+        }
+    }
+
+    private fun handleSystemEvents(event: TreeEvent) {
+        when (event) {
             TreeEvent.OnNavigationConsumed -> {
                 _state.update { it.copy(shouldNavigateBack = false) }
             }
@@ -70,6 +111,12 @@ class TreeViewModel(
                 _state.update { it.copy(error = null) }
             }
 
+            else -> {}
+        }
+    }
+
+    private fun handleSelection(event: TreeEvent) {
+        when (event) {
             is TreeEvent.OnPersonSelected -> {
                 _state.update {
                     val currentSelected = it.selectedPersonIds
@@ -81,18 +128,39 @@ class TreeViewModel(
                         } else {
                             listOf(event.personId)
                         }
-                    it.copy(selectedPersonIds = newSelected)
+
+                    val relationshipId =
+                        if (newSelected.size == 2) {
+                            val id1 = newSelected.first()
+                            val id2 = newSelected.last()
+                            it.tree.relationships
+                                .find { rel ->
+                                    (rel.personId1 == id1 && rel.personId2 == id2) ||
+                                        (rel.personId1 == id2 && rel.personId2 == id1)
+                                }?.id
+                        } else {
+                            null
+                        }
+
+                    it.copy(
+                        selectedPersonIds = newSelected,
+                        selectedRelationshipId = relationshipId,
+                    )
                 }
             }
 
             TreeEvent.OnDismissSelection -> {
-                _state.update { it.copy(selectedPersonIds = emptyList()) }
+                _state.update {
+                    it.copy(selectedPersonIds = emptyList(), selectedRelationshipId = null)
+                }
             }
 
-            TreeEvent.OnAddRelationship -> {
-                // To be implemented in US-020
-            }
+            else -> {}
+        }
+    }
 
+    private fun handlePersonMovement(event: TreeEvent) {
+        when (event) {
             is TreeEvent.OnPersonMove -> {
                 _state.update { state ->
                     val updatedCentralPerson =
@@ -143,11 +211,7 @@ class TreeViewModel(
                                     }
 
                                 domainPerson?.let { person ->
-                                    val updatedPerson =
-                                        person.copy(
-                                            x = node.position.x,
-                                            y = node.position.y,
-                                        )
+                                    val updatedPerson = person.copy(x = node.position.x, y = node.position.y)
                                     updatePersonUseCase(treeId, updatedPerson)
                                 }
                             }
@@ -157,6 +221,8 @@ class TreeViewModel(
                     }
                 }
             }
+
+            else -> {}
         }
     }
 
@@ -198,8 +264,7 @@ class TreeViewModel(
         val parents =
             relationships
                 .filter {
-                    it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING &&
-                        it.personId2 == centralPersonId
+                    it.type.isDescendant && it.personId2 == centralPersonId
                 }.map { it.personId1 }
                 .toSet()
 
@@ -257,14 +322,18 @@ class TreeViewModel(
         val birthYear = birthDate.let { dateFormatter.formatDate(it, "yyyy") }
         val deathYear = deathDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: ""
 
-        val age =
-            if (birthYear.isNotEmpty()) {
-                val start = birthYear.toIntOrNull()
-                val end = deathYear.toIntOrNull() ?: 2024 // For simplicity, using 2024 as current year
-                if (start != null) (end - start).toString() else ""
-            } else {
-                ""
-            }
+        val birthLocalDate =
+            Instant
+                .fromEpochMilliseconds(birthDate)
+                .toLocalDateTime(TimeZone.UTC)
+                .date
+        val endLocalDate =
+            (deathDate ?: dateProvider.nowEpochMilliseconds())
+                .let { Instant.fromEpochMilliseconds(it) }
+                .toLocalDateTime(TimeZone.UTC)
+                .date
+
+        val age = birthLocalDate.yearsUntil(endLocalDate).toString()
 
         return PersonNodeUi(
             id = id,

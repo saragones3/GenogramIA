@@ -10,6 +10,7 @@ data class TreeState(
     val error: TreeError? = null,
     val shouldNavigateBack: Boolean = false,
     val selectedPersonIds: List<String> = emptyList(),
+    val selectedRelationshipId: String? = null,
 )
 
 enum class TreeError {

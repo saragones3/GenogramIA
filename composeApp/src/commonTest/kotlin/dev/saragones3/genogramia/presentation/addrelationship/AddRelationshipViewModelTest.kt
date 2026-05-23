@@ -8,7 +8,7 @@ import dev.saragones3.genogramia.domain.usecase.AddRelationshipUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
-import dev.saragones3.genogramia.domain.util.DateProvider
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -28,8 +28,8 @@ class AddRelationshipViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val repository = FakeTreeRepository()
     private val fakeDateProvider =
-        object : DateProvider {
-            override fun nowEpochMilliseconds(): Long = 1000L
+        FakeDateProvider().apply {
+            currentTimeMillis = 1000L
         }
     private val dateFormatter = DateFormatter()
     private val getPersonUseCase = GetPersonUseCase(repository)
@@ -164,6 +164,50 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
+    fun `when adoption relationship is detected hasConsanguinityRisk is false`() =
+        runTest {
+            val parent = Person(id = "p-parent", firstName = "Parent", lastName = "Root", birthDate = 0L)
+            val p1 = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
+            val p2 = Person(id = "p2", firstName = "Jane", lastName = "Smith", birthDate = 0L)
+
+            // One biological, one adoption -> No consanguinity risk between p1 and p2
+            val relationship1 =
+                Relationship(
+                    id = "rel-1",
+                    personId1 = "p-parent",
+                    personId2 = "p1",
+                    type = Relationship.RelationshipType.BIOLOGICAL_OFFSPRING,
+                )
+            val relationship2 =
+                Relationship(
+                    id = "rel-2",
+                    personId1 = "p-parent",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.ADOPTION_LEGAL,
+                )
+
+            val mixedTree =
+                GenogramTree(
+                    id = "tree-mixed",
+                    name = "Mixed Tree",
+                    ancestorCount = 3,
+                    lastUpdated = "2024-05-15",
+                    centralPerson = parent,
+                    persons = listOf(p1, p2),
+                    relationships = listOf(relationship1, relationship2),
+                )
+            repository.createTree(mixedTree)
+
+            viewModel.onResume("tree-mixed", "p1", "p2")
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertFalse(
+                viewModel.state.value.hasConsanguinityRisk,
+                "Should NOT have consanguinity risk when one sibling is adopted",
+            )
+        }
+
+    @Test
     fun `when bond type is selected state is updated`() =
         runTest {
             viewModel.onEvent(AddRelationshipEvent.OnBondTypeSelected(Relationship.RelationshipType.DIVORCE))
@@ -237,5 +281,110 @@ class AddRelationshipViewModelTest {
             val updatedTree = repository.getTree("tree-1")
             val savedRelationship = updatedTree?.relationships?.first()
             assertEquals(Relationship.EmotionalBond.ABUSE, savedRelationship?.emotionalBond)
+        }
+
+    @Test
+    fun `when onResume is called with relationshipId data is prefilled`() =
+        runTest {
+            val relId = "rel-123"
+            val existingRel =
+                Relationship(
+                    id = relId,
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.COHABITATION,
+                    emotionalBond = Relationship.EmotionalBond.CONFLICTUAL,
+                    effectiveDate = 123456789L,
+                )
+            val treeWithRel = tree.copy(relationships = listOf(existingRel))
+            repository.createTree(treeWithRel)
+
+            viewModel.onResume("tree-1", null, null, relId)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val state = viewModel.state.value
+            assertEquals(relId, state.relationshipId)
+            assertEquals(Relationship.RelationshipType.COHABITATION, state.bondType)
+            assertEquals(Relationship.EmotionalBond.CONFLICTUAL, state.emotionalBond)
+            assertEquals(123456789L, state.effectiveDate)
+            assertEquals("p1", state.person1?.id)
+            assertEquals("p2", state.person2?.id)
+        }
+
+    @Test
+    fun `when saving an existing relationship it updates instead of adding new`() =
+        runTest {
+            val relId = "rel-123"
+            val existingRel =
+                Relationship(
+                    id = relId,
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                )
+            repository.createTree(tree.copy(relationships = listOf(existingRel)))
+
+            viewModel.onResume("tree-1", null, null, relId)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(AddRelationshipEvent.OnBondTypeSelected(Relationship.RelationshipType.DIVORCE))
+            viewModel.onEvent(AddRelationshipEvent.OnConfirmClick)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val updatedTree = repository.getTree("tree-1")
+            assertEquals(1, updatedTree?.relationships?.size)
+            assertEquals(Relationship.RelationshipType.DIVORCE, updatedTree?.relationships?.first()?.type)
+            assertEquals(relId, updatedTree?.relationships?.first()?.id)
+        }
+
+    @Test
+    fun `when date is selected state is updated with formatted date`() =
+        runTest {
+            val date = 1715731200000L // May 15, 2024
+            val pattern = "MM/dd/yyyy"
+
+            viewModel.onEvent(AddRelationshipEvent.OnDateSelected(date, pattern))
+
+            val state = viewModel.state.value
+            assertEquals(date, state.effectiveDate)
+            assertEquals("05/15/2024", state.effectiveDateFormatted)
+        }
+
+    @Test
+    fun `when prefilling relationship effectiveDateFormatted is set`() =
+        runTest {
+            val date = 1715731200000L
+            val existingRel =
+                Relationship(
+                    id = "rel-1",
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                    effectiveDate = date,
+                )
+            repository.createTree(tree.copy(relationships = listOf(existingRel)))
+
+            viewModel.onResume("tree-1", null, null, "rel-1")
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertEquals("05/15/2024", viewModel.state.value.effectiveDateFormatted)
+        }
+
+    @Test
+    fun `when back click event is received shouldNavigateBack is true`() =
+        runTest {
+            viewModel.onEvent(AddRelationshipEvent.OnBackClick)
+            assertTrue(viewModel.state.value.shouldNavigateBack)
+        }
+
+    @Test
+    fun `when navigation handled event is received shouldNavigateBack is false`() =
+        runTest {
+            viewModel.onEvent(AddRelationshipEvent.OnBackClick)
+            assertTrue(viewModel.state.value.shouldNavigateBack)
+
+            viewModel.onEvent(AddRelationshipEvent.OnNavigationHandled)
+            assertFalse(viewModel.state.value.shouldNavigateBack)
         }
 }

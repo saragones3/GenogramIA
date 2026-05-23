@@ -2,7 +2,7 @@ package dev.saragones3.genogramia.domain.usecase
 
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
-import dev.saragones3.genogramia.domain.util.DateProvider
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
@@ -13,8 +13,8 @@ import kotlin.test.assertTrue
 class AddPersonUseCaseTest {
     private lateinit var repository: FakeTreeRepository
     private val fakeDateProvider =
-        object : DateProvider {
-            override fun nowEpochMilliseconds(): Long = 1778716800000L
+        FakeDateProvider().apply {
+            currentTimeMillis = 1778716800000L
         }
     private lateinit var useCase: AddPersonUseCase
 

@@ -113,21 +113,23 @@ import genogramia.composeapp.generated.resources.add_relationship_separation
 import genogramia.composeapp.generated.resources.add_relationship_swap_roles
 import genogramia.composeapp.generated.resources.add_relationship_title
 import genogramia.composeapp.generated.resources.date_format
+import genogramia.composeapp.generated.resources.edit_relationship
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun AddRelationshipScreen(
     treeId: String,
-    personId1: String,
-    personId2: String,
+    personId1: String? = null,
+    personId2: String? = null,
+    relationshipId: String? = null,
     onBackClick: () -> Unit,
 ) {
     val viewModel: AddRelationshipViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
 
-    LaunchedEffect(treeId, personId1, personId2) {
-        viewModel.onResume(treeId, personId1, personId2)
+    LaunchedEffect(treeId, personId1, personId2, relationshipId) {
+        viewModel.onResume(treeId, personId1, personId2, relationshipId)
     }
 
     LaunchedEffect(state.shouldNavigateBack) {
@@ -158,7 +160,14 @@ private fun AddRelationshipContent(
             CenterAlignedTopAppBar(
                 title = {
                     Text(
-                        text = stringResource(Res.string.add_relationship_title),
+                        text =
+                            stringResource(
+                                if (state.relationshipId != null) {
+                                    Res.string.edit_relationship
+                                } else {
+                                    Res.string.add_relationship_title
+                                },
+                            ),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                     )
@@ -304,14 +313,18 @@ private fun RelationshipManagerCard(
                             .height(72.dp), // Same as icon size
                 ) {
                     val iconCenterY = 36.dp.toPx()
-                    val iconCenterXOffset = 72.dp.toPx()
+                    val swapButtonSize = 32.dp.toPx()
+                    val nodeWidth = (size.width - swapButtonSize) / 2
+                    val startX = nodeWidth / 2
+                    val endX = size.width - (nodeWidth / 2)
+
                     val dashWidth = 6.dp.toPx()
                     val dashGap = 4.dp.toPx()
 
                     drawLine(
                         color = Color(0xFF008080),
-                        start = Offset(iconCenterXOffset, iconCenterY),
-                        end = Offset(size.width - iconCenterXOffset, iconCenterY),
+                        start = Offset(startX, iconCenterY),
+                        end = Offset(endX, iconCenterY),
                         strokeWidth = 2.dp.toPx(),
                         pathEffect = PathEffect.dashPathEffect(floatArrayOf(dashWidth, dashGap), 0f),
                     )

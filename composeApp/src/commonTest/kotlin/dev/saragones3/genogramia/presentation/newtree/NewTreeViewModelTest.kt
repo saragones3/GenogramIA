@@ -6,8 +6,8 @@ import dev.saragones3.genogramia.domain.model.User
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.NewTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
-import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -26,10 +26,9 @@ class NewTreeViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val treeRepository = FakeTreeRepository()
     private val authRepository = FakeAuthRepository()
-
     private val fakeDateProvider =
-        object : DateProvider {
-            override fun nowEpochMilliseconds(): Long = 1778716800000L // 14-may-2026
+        FakeDateProvider().apply {
+            currentTimeMillis = 1778716800000L // 14-may-2026
         }
 
     private val dateFormatter = DateFormatter()

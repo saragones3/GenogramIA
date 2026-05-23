@@ -65,4 +65,25 @@ class AddRelationshipUseCaseTest {
             val updatedTree = repository.getTree("invalid-tree")
             assertEquals(null, updatedTree)
         }
+
+    @Test
+    fun `when relationship with same id exists it is updated instead of added as duplicate`() =
+        runTest {
+            val existingRel =
+                Relationship(
+                    id = "rel-1",
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                )
+            repository.createTree(tree.copy(relationships = listOf(existingRel)))
+
+            val updatedRel = existingRel.copy(type = Relationship.RelationshipType.DIVORCE)
+
+            useCase("tree-1", updatedRel)
+
+            val updatedTree = repository.getTree("tree-1")
+            assertEquals(1, updatedTree?.relationships?.size)
+            assertEquals(Relationship.RelationshipType.DIVORCE, updatedTree?.relationships?.get(0)?.type)
+        }
 }

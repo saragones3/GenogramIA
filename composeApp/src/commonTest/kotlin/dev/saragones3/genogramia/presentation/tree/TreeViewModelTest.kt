@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.presentation.tree
 
+import androidx.compose.ui.geometry.Offset
 import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
@@ -7,6 +8,7 @@ import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -26,12 +28,13 @@ class TreeViewModelTest {
     private val getTreeUseCase = GetTreeUseCase(treeRepository)
     private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
     private val dateFormatter = DateFormatter()
+    private val dateProvider = FakeDateProvider()
     private lateinit var viewModel: TreeViewModel
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = TreeViewModel(getTreeUseCase, updatePersonUseCase, dateFormatter)
+        viewModel = TreeViewModel(getTreeUseCase, updatePersonUseCase, dateFormatter, dateProvider)
     }
 
     @AfterTest
@@ -119,6 +122,28 @@ class TreeViewModelTest {
         }
 
     @Test
+    fun `when person is alive age is calculated based on current date`() =
+        runTest {
+            // Set current date to 2024
+            dateProvider.currentTimeMillis = 1704067200000L // 2024-01-01
+
+            // 1980-01-01
+            val person = Person("p1", "John", "Doe", birthDate = 315532800000L)
+            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val centralPerson = viewModel.state.value.tree.centralPerson
+            assertEquals("1980", centralPerson.birthDateText)
+            assertEquals("", centralPerson.deathDateText)
+            assertEquals("44", centralPerson.age)
+            assertEquals(false, centralPerson.isDeceased)
+        }
+
+    @Test
     fun `when OnZoomIn event is received scale is increased`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnZoomIn(0.2f))
@@ -147,10 +172,8 @@ class TreeViewModelTest {
     @Test
     fun `when OnTransform event is received scale and offset are updated`() =
         runTest {
-            val centroid = androidx.compose.ui.geometry.Offset.Zero
-            val pan =
-                androidx.compose.ui.geometry
-                    .Offset(10f, 20f)
+            val centroid = Offset.Zero
+            val pan = Offset(10f, 20f)
             viewModel.onEvent(TreeEvent.OnTransform(centroid, pan, 1.1f))
 
             val state = viewModel.state.value
@@ -245,11 +268,44 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnDismissSelection event is received selectedPersonIds is cleared`() =
+    fun `when two persons with existing relationship are selected, relationshipId is set automatically`() =
         runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
+            val rel =
+                Relationship(
+                    id = "r1",
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                )
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), listOf(rel))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
             viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
-            viewModel.onEvent(TreeEvent.OnDismissSelection)
-            assertEquals(emptyList<String>(), viewModel.state.value.selectedPersonIds)
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
+
+            assertEquals("r1", viewModel.state.value.selectedRelationshipId)
+        }
+
+    @Test
+    fun `when two persons without relationship are selected, relationshipId is null`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
+
+            assertEquals(null, viewModel.state.value.selectedRelationshipId)
         }
 
     @Test
@@ -263,9 +319,7 @@ class TreeViewModelTest {
             testDispatcher.scheduler.advanceUntilIdle()
 
             val initialPos = viewModel.state.value.tree.centralPerson.position
-            val delta =
-                androidx.compose.ui.geometry
-                    .Offset(10f, 20f)
+            val delta = Offset(10f, 20f)
             viewModel.onEvent(TreeEvent.OnPersonMove("p1", delta))
 
             assertEquals(initialPos + delta, viewModel.state.value.tree.centralPerson.position)
@@ -281,9 +335,7 @@ class TreeViewModelTest {
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
             testDispatcher.scheduler.advanceUntilIdle()
 
-            val delta =
-                androidx.compose.ui.geometry
-                    .Offset(100f, 200f)
+            val delta = Offset(100f, 200f)
             viewModel.onEvent(TreeEvent.OnPersonMove("p1", delta))
             viewModel.onEvent(TreeEvent.OnPersonMoveFinished("p1"))
 
@@ -292,5 +344,74 @@ class TreeViewModelTest {
             val savedTree = treeRepository.getTree("t1")
             assertEquals(100f, savedTree?.centralPerson?.x)
             assertEquals(200f, savedTree?.centralPerson?.y)
+        }
+
+    @Test
+    fun `age calculation handles birthday not yet reached in current year`() =
+        runTest {
+            // Current date: 2024-05-01
+            dateProvider.currentTimeMillis = 1714521600000L
+
+            // Birth date: 1980-06-01 (Birthday hasn't happened yet in 2024)
+            val person = Person("p1", "John", "Doe", birthDate = 328665600000L)
+            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val centralPerson = viewModel.state.value.tree.centralPerson
+            // 2024 - 1980 = 44, but since it's May and birthday is June, should be 43
+            assertEquals("43", centralPerson.age)
+        }
+
+    @Test
+    fun `age calculation handles birthday already reached in current year`() =
+        runTest {
+            // Current date: 2024-07-01
+            dateProvider.currentTimeMillis = 1719792000000L
+
+            // Birth date: 1980-06-01 (Birthday already happened in 2024)
+            val person = Person("p1", "John", "Doe", birthDate = 328665600000L)
+            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val centralPerson = viewModel.state.value.tree.centralPerson
+            assertEquals("44", centralPerson.age)
+        }
+
+    @Test
+    fun `when LoadTree has adoption relationship adoptive parent is positioned as parent`() =
+        runTest {
+            val central = Person("child", "Child", "Doe", 0L)
+            val adoptiveParent =
+                Person(
+                    id = "parent",
+                    firstName = "Adoptive",
+                    lastName = "Parent",
+                    birthDate = 0L,
+                    biologicalSex = Person.BiologicalSex.MALE,
+                )
+            val rel =
+                Relationship(
+                    id = "r1",
+                    personId1 = "parent",
+                    personId2 = "child",
+                    type = Relationship.RelationshipType.ADOPTION_LEGAL,
+                )
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(adoptiveParent), listOf(rel))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val mappedParent =
+                viewModel.state.value.tree.persons
+                    .find { it.id == "parent" }
+            // Parents are positioned at y = -250f
+            assertEquals(-250f, mappedParent?.position?.y)
         }
 }

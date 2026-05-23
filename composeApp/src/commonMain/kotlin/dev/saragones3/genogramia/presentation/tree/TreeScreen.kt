@@ -84,6 +84,7 @@ import genogramia.composeapp.generated.resources.add_relationship
 import genogramia.composeapp.generated.resources.canvas_reset
 import genogramia.composeapp.generated.resources.canvas_zoom_in
 import genogramia.composeapp.generated.resources.canvas_zoom_out
+import genogramia.composeapp.generated.resources.edit_relationship
 import genogramia.composeapp.generated.resources.error_tree_not_found
 import genogramia.composeapp.generated.resources.error_unknown
 import org.jetbrains.compose.resources.stringResource
@@ -95,6 +96,7 @@ fun TreeScreen(
     onBackClick: () -> Unit,
     onAddPersonClick: (String, String?) -> Unit,
     onAddRelationshipClick: (String, String, String) -> Unit,
+    onEditRelationshipClick: (String, String, String, String) -> Unit,
 ) {
     val viewModel: TreeViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
@@ -133,6 +135,9 @@ fun TreeScreen(
         onAddPersonClick = { onAddPersonClick(treeId, null) },
         onEditPersonClick = { personId -> onAddPersonClick(treeId, personId) },
         onAddRelationshipClick = { p1, p2 -> onAddRelationshipClick(treeId, p1, p2) },
+        onEditRelationshipClick = { relId, p1Id, p2Id ->
+            onEditRelationshipClick(treeId, relId, p1Id, p2Id)
+        },
         snackbarHostState = snackbarHostState,
     )
 }
@@ -145,6 +150,7 @@ private fun TreeContent(
     onAddPersonClick: () -> Unit,
     onEditPersonClick: (String) -> Unit,
     onAddRelationshipClick: (String, String) -> Unit,
+    onEditRelationshipClick: (String, String, String) -> Unit,
     snackbarHostState: SnackbarHostState,
 ) {
     Scaffold(
@@ -217,6 +223,7 @@ private fun TreeContent(
                 state = state,
                 onEvent = onEvent,
                 onAddRelationshipClick = onAddRelationshipClick,
+                onEditRelationshipClick = onEditRelationshipClick,
             )
 
             CanvasControls(
@@ -270,6 +277,7 @@ private fun GenogramCanvas(
     state: TreeState,
     onEvent: (TreeEvent) -> Unit,
     onAddRelationshipClick: (String, String) -> Unit,
+    onEditRelationshipClick: (String, String, String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val persons = remember(state.tree) { listOf(state.tree.centralPerson) + state.tree.persons }
@@ -363,9 +371,14 @@ private fun GenogramCanvas(
                 RelationshipTooltip(
                     p1 = p1,
                     p2 = p2,
+                    isEdit = state.selectedRelationshipId != null,
                     onClick = {
                         if (p1 != null && p2 != null) {
-                            onAddRelationshipClick(p1.id, p2.id)
+                            if (state.selectedRelationshipId != null) {
+                                onEditRelationshipClick(state.selectedRelationshipId, p1.id, p2.id)
+                            } else {
+                                onAddRelationshipClick(p1.id, p2.id)
+                            }
                         }
                     },
                 )
@@ -463,7 +476,7 @@ private fun DrawScope.drawVerticalRelationship(
 ) {
     val groupedByChild =
         relationships
-            .filter { it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING }
+            .filter { it.type.isDescendant }
             .groupBy { it.personId2 }
     groupedByChild.forEach { (childId, parents) ->
         val child = persons.find { it.id == childId } ?: return@forEach
@@ -501,14 +514,30 @@ private fun DrawScope.drawVerticalRelationship(
                         lineTo(childTop.x, midY)
                         lineTo(childTop.x, childTop.y)
                     }
+
+                val isAdoption = parents.any { it.type == Relationship.RelationshipType.ADOPTION_LEGAL }
+
                 drawPath(
                     path = path,
                     color = LINE_COLOR,
-                    style = Stroke(width = LINE_WIDTH.toPx()),
+                    style =
+                        Stroke(
+                            width = LINE_WIDTH.toPx(),
+                            pathEffect =
+                                if (isAdoption) {
+                                    PathEffect.dashPathEffect(
+                                        floatArrayOf(10f, 10f),
+                                        0f,
+                                    )
+                                } else {
+                                    null
+                                },
+                        ),
                 )
             }
         } else if (parents.size == 1) {
-            val parent = persons.find { it.id == parents.first().personId1 }!!
+            val rel = parents.first()
+            val parent = persons.find { it.id == rel.personId1 }!!
             val pCenter = parent.position * density
             val pBottomY = pCenter.y + nodeSize / 2
             val path =
@@ -516,10 +545,17 @@ private fun DrawScope.drawVerticalRelationship(
                     moveTo(pCenter.x, pBottomY)
                     lineTo(childTop.x, childTop.y)
                 }
+
+            val isAdoption = rel.type == Relationship.RelationshipType.ADOPTION_LEGAL
+
             drawPath(
                 path = path,
                 color = LINE_COLOR,
-                style = Stroke(width = LINE_WIDTH.toPx()),
+                style =
+                    Stroke(
+                        width = LINE_WIDTH.toPx(),
+                        pathEffect = if (isAdoption) PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f) else null,
+                    ),
             )
         }
     }
@@ -730,6 +766,7 @@ private fun DrawScope.drawSexualOrientationMark(nodeSize: Float) {
 private fun RelationshipTooltip(
     p1: PersonNodeUi?,
     p2: PersonNodeUi?,
+    isEdit: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -759,7 +796,10 @@ private fun RelationshipTooltip(
                 contentAlignment = Alignment.Center,
             ) {
                 Text(
-                    text = stringResource(Res.string.add_relationship),
+                    text =
+                        stringResource(
+                            if (isEdit) Res.string.edit_relationship else Res.string.add_relationship,
+                        ),
                     style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold),
                     color = Color.Black,
                     softWrap = false,
@@ -1045,6 +1085,7 @@ private fun TreeScreenPreview(
             onAddPersonClick = {},
             onEditPersonClick = {},
             onAddRelationshipClick = { _, _ -> },
+            onEditRelationshipClick = { _, _, _ -> },
             snackbarHostState = remember { SnackbarHostState() },
         )
     }

@@ -2,7 +2,7 @@ package dev.saragones3.genogramia.domain.usecase
 
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.util.DateFormatter
-import dev.saragones3.genogramia.domain.util.DateProvider
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
@@ -14,8 +14,8 @@ class NewTreeUseCaseTest {
     private lateinit var repository: FakeTreeRepository
     private val dateFormatter = DateFormatter()
     private val fakeDateProvider =
-        object : DateProvider {
-            override fun nowEpochMilliseconds(): Long = 1778716800000L // 14-may-2026
+        FakeDateProvider().apply {
+            currentTimeMillis = 1778716800000L // 14-may-2026
         }
     private lateinit var useCase: NewTreeUseCase
 

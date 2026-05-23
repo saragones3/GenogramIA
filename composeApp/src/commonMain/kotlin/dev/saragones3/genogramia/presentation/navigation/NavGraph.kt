@@ -193,6 +193,9 @@ private fun NavGraphContent(
                 onAddRelationshipClick = { treeId, p1, p2 ->
                     backStack.push(NavRoute.AddRelationship(treeId, p1, p2))
                 },
+                onEditRelationshipClick = { treeId, relId, p1, p2 ->
+                    backStack.push(NavRoute.AddRelationship(treeId, p1, p2, relId))
+                },
             )
         }
 
@@ -210,6 +213,7 @@ private fun NavGraphContent(
                 treeId = key.treeId,
                 personId1 = key.personId1,
                 personId2 = key.personId2,
+                relationshipId = key.relationshipId,
                 onBackClick = { backStack.pop() },
             )
         }

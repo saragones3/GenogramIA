@@ -10,6 +10,7 @@ data class AddRelationshipState(
     val effectiveDate: Long? = null,
     val effectiveDateFormatted: String? = null,
     val hasConsanguinityRisk: Boolean = false,
+    val relationshipId: String? = null,
     val isLoading: Boolean = false,
     val isSaving: Boolean = false,
     val error: String? = null,
