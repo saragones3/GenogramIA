@@ -8,6 +8,7 @@ import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
+import dev.saragones3.genogramia.domain.usecase.UpdateTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.domain.util.DateProvider
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,6 +24,7 @@ import kotlin.time.Instant
 class TreeViewModel(
     private val getTreeUseCase: GetTreeUseCase,
     private val updatePersonUseCase: UpdatePersonUseCase,
+    private val updateTreeUseCase: UpdateTreeUseCase,
     private val dateFormatter: DateFormatter,
     private val dateProvider: DateProvider,
 ) : ViewModel() {
@@ -61,6 +63,10 @@ class TreeViewModel(
             is TreeEvent.OnPersonMoveFinished,
             -> {
                 handlePersonMovement(event)
+            }
+
+            is TreeEvent.OnViewportResetPerformed -> {
+                _state.update { it.copy(lastLoadedTreeId = event.treeId) }
             }
         }
     }
@@ -227,12 +233,27 @@ class TreeViewModel(
     }
 
     private fun loadTree(id: String) {
-        _state.update { it.copy(isLoading = true, error = null) }
+        val isSameTree = _state.value.tree.id == id
+        _state.update {
+            it.copy(
+                isLoading = !isSameTree,
+                error = null,
+                selectedPersonIds = emptyList(),
+                selectedRelationshipId = null,
+            )
+        }
         viewModelScope.launch {
             try {
                 val tree = getTreeUseCase(id)
                 if (tree != null) {
-                    _state.update { it.copy(tree = tree.toUi(), isLoading = false) }
+                    val uiTree = tree.toUi()
+                    _state.update {
+                        it.copy(
+                            tree = uiTree,
+                            isLoading = false,
+                        )
+                    }
+                    bakeDefaultPositions(tree, uiTree)
                 } else {
                     _state.update {
                         it.copy(
@@ -249,6 +270,47 @@ class TreeViewModel(
                         error = TreeError.UNKNOWN,
                         shouldNavigateBack = true,
                     )
+                }
+            }
+        }
+    }
+
+    private fun bakeDefaultPositions(
+        domainTree: GenogramTree,
+        uiTree: TreeUi,
+    ) {
+        var needsUpdate = false
+        var updatedCentralPerson = domainTree.centralPerson
+        val updatedPersons = domainTree.persons.toMutableList()
+
+        if (domainTree.centralPerson.x == 0f && domainTree.centralPerson.y == 0f) {
+            val uiPos = uiTree.centralPerson.position
+            if (uiPos.x != 0f || uiPos.y != 0f) {
+                updatedCentralPerson = domainTree.centralPerson.copy(x = uiPos.x, y = uiPos.y)
+                needsUpdate = true
+            }
+        }
+
+        domainTree.persons.forEachIndexed { index, domainPerson ->
+            if (domainPerson.x == 0f && domainPerson.y == 0f) {
+                val uiPerson = uiTree.persons.find { it.id == domainPerson.id }
+                if (uiPerson != null && (uiPerson.position.x != 0f || uiPerson.position.y != 0f)) {
+                    updatedPersons[index] = domainPerson.copy(x = uiPerson.position.x, y = uiPerson.position.y)
+                    needsUpdate = true
+                }
+            }
+        }
+
+        if (needsUpdate) {
+            viewModelScope.launch {
+                try {
+                    updateTreeUseCase(
+                        domainTree.copy(
+                            centralPerson = updatedCentralPerson,
+                            persons = updatedPersons,
+                        ),
+                    )
+                } catch (_: Exception) {
                 }
             }
         }

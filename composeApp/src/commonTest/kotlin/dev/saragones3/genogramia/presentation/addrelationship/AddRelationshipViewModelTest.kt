@@ -5,6 +5,7 @@ import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.AddRelationshipUseCase
+import dev.saragones3.genogramia.domain.usecase.DeleteRelationshipUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
@@ -35,6 +36,7 @@ class AddRelationshipViewModelTest {
     private val getPersonUseCase = GetPersonUseCase(repository)
     private val getTreeUseCase = GetTreeUseCase(repository)
     private val addRelationshipUseCase = AddRelationshipUseCase(repository)
+    private val deleteRelationshipUseCase = DeleteRelationshipUseCase(repository)
     private lateinit var viewModel: AddRelationshipViewModel
 
     private val person1 = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
@@ -57,6 +59,7 @@ class AddRelationshipViewModelTest {
                 getPersonUseCase,
                 getTreeUseCase,
                 addRelationshipUseCase,
+                deleteRelationshipUseCase,
                 fakeDateProvider,
                 dateFormatter,
             )
@@ -376,6 +379,51 @@ class AddRelationshipViewModelTest {
         runTest {
             viewModel.onEvent(AddRelationshipEvent.OnBackClick)
             assertTrue(viewModel.state.value.shouldNavigateBack)
+        }
+
+    @Test
+    fun `when delete click is triggered relationship is deleted`() =
+        runTest {
+            val relId = "rel-123"
+            val existingRel =
+                Relationship(
+                    id = relId,
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                )
+            repository.createTree(tree.copy(relationships = listOf(existingRel)))
+
+            viewModel.onResume("tree-1", null, null, relId)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(AddRelationshipEvent.OnDeleteClick)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val updatedTree = repository.getTree("tree-1")
+            assertTrue(updatedTree?.relationships?.isEmpty() ?: false)
+            assertTrue(viewModel.state.value.shouldNavigateBack)
+        }
+
+    @Test
+    fun `when delete fails state is updated with error`() =
+        runTest {
+            val relId = "rel-123"
+            repository.createTree(
+                tree.copy(
+                    relationships = listOf(Relationship(relId, "p1", "p2", Relationship.RelationshipType.MARRIAGE)),
+                ),
+            )
+            repository.shouldReturnError = true
+
+            viewModel.onResume("tree-1", null, null, relId)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(AddRelationshipEvent.OnDeleteClick)
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertFalse(viewModel.state.value.isSaving)
+            assertEquals("Fake tree repository error", viewModel.state.value.error)
         }
 
     @Test

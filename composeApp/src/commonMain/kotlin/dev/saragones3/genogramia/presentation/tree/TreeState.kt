@@ -11,6 +11,7 @@ data class TreeState(
     val shouldNavigateBack: Boolean = false,
     val selectedPersonIds: List<String> = emptyList(),
     val selectedRelationshipId: String? = null,
+    val lastLoadedTreeId: String = "",
 )
 
 enum class TreeError {

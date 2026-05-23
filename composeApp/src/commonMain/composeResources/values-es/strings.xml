@@ -191,4 +191,7 @@
     <string name="add_relationship_person">Persona</string>
     <string name="add_relationship_swap_roles">Intercambiar Roles</string>
     <string name="add_relationship_select_date">Seleccionar fecha</string>
+    <string name="delete_relationship">Eliminar relación</string>
+    <string name="delete_relationship_confirmation_title">Eliminar Relación</string>
+    <string name="delete_relationship_confirmation_message">¿Estás seguro de que quieres eliminar esta relación? Esta acción no se puede deshacer.</string>
 </resources>

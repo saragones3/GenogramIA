@@ -18,6 +18,8 @@ sealed interface AddRelationshipEvent {
 
     data object OnConfirmClick : AddRelationshipEvent
 
+    data object OnDeleteClick : AddRelationshipEvent
+
     data object OnSwapPersons : AddRelationshipEvent
 
     data object OnBackClick : AddRelationshipEvent

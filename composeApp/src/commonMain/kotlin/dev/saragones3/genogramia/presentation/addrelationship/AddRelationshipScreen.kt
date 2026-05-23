@@ -23,8 +23,10 @@ import androidx.compose.material.icons.filled.AutoGraph
 import androidx.compose.material.icons.filled.BrokenImage
 import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ConnectWithoutContact
 import androidx.compose.material.icons.filled.ContentCut
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.FamilyRestroom
@@ -41,6 +43,7 @@ import androidx.compose.material.icons.filled.SentimentSatisfied
 import androidx.compose.material.icons.filled.SwapHoriz
 import androidx.compose.material.icons.filled.VolunteerActivism
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -54,6 +57,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -113,7 +117,12 @@ import genogramia.composeapp.generated.resources.add_relationship_separation
 import genogramia.composeapp.generated.resources.add_relationship_swap_roles
 import genogramia.composeapp.generated.resources.add_relationship_title
 import genogramia.composeapp.generated.resources.date_format
+import genogramia.composeapp.generated.resources.delete_relationship
+import genogramia.composeapp.generated.resources.delete_relationship_confirmation_message
+import genogramia.composeapp.generated.resources.delete_relationship_confirmation_title
 import genogramia.composeapp.generated.resources.edit_relationship
+import genogramia.composeapp.generated.resources.settings_cancel
+import genogramia.composeapp.generated.resources.settings_confirm
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -154,6 +163,7 @@ private fun AddRelationshipContent(
     onBackClick: () -> Unit,
 ) {
     var showDatePicker by remember { mutableStateOf(false) }
+    var showDeleteConfirmation by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
@@ -262,6 +272,33 @@ private fun AddRelationshipContent(
                     Spacer(modifier = Modifier.height(24.dp))
                     MedicalConflictBanner()
                 }
+
+                if (state.relationshipId != null) {
+                    Spacer(modifier = Modifier.height(32.dp))
+                    Button(
+                        onClick = { showDeleteConfirmation = true },
+                        modifier =
+                            Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 24.dp)
+                                .height(56.dp),
+                        shape = RoundedCornerShape(28.dp),
+                        colors =
+                            ButtonDefaults.buttonColors(
+                                containerColor = Color(0xFFF1F3F4),
+                                contentColor = Color(0xFFB3261E),
+                            ),
+                        enabled = !state.isSaving,
+                    ) {
+                        Icon(imageVector = Icons.Default.Delete, contentDescription = null)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = stringResource(Res.string.delete_relationship).uppercase(),
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
+                }
                 Spacer(modifier = Modifier.height(24.dp))
             }
         }
@@ -275,6 +312,33 @@ private fun AddRelationshipContent(
                     showDatePicker = false
                 },
                 onDismiss = { showDatePicker = false },
+            )
+        }
+
+        if (showDeleteConfirmation) {
+            AlertDialog(
+                onDismissRequest = { showDeleteConfirmation = false },
+                title = { Text(stringResource(Res.string.delete_relationship_confirmation_title)) },
+                text = { Text(stringResource(Res.string.delete_relationship_confirmation_message)) },
+                confirmButton = {
+                    Button(
+                        onClick = {
+                            onEvent(AddRelationshipEvent.OnDeleteClick)
+                            showDeleteConfirmation = false
+                        },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFB3261E)),
+                    ) {
+                        Text(stringResource(Res.string.settings_confirm))
+                    }
+                },
+                dismissButton = {
+                    TextButton(onClick = { showDeleteConfirmation = false }) {
+                        Text(
+                            text = stringResource(Res.string.settings_cancel),
+                            color = Primary,
+                        )
+                    }
+                },
             )
         }
     }
