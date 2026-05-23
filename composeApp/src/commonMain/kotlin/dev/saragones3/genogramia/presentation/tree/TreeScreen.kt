@@ -27,6 +27,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.FilterCenterFocus
 import androidx.compose.material.icons.filled.Remove
@@ -37,6 +38,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SmallFloatingActionButton
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
@@ -49,10 +51,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
@@ -78,6 +78,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
+import dev.saragones3.genogramia.presentation.components.DeletePersonDialog
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.add_relationship
@@ -85,6 +86,8 @@ import genogramia.composeapp.generated.resources.canvas_reset
 import genogramia.composeapp.generated.resources.canvas_zoom_in
 import genogramia.composeapp.generated.resources.canvas_zoom_out
 import genogramia.composeapp.generated.resources.edit_relationship
+import genogramia.composeapp.generated.resources.error_delete_has_descendants
+import genogramia.composeapp.generated.resources.error_delete_has_formal_relationships
 import genogramia.composeapp.generated.resources.error_tree_not_found
 import genogramia.composeapp.generated.resources.error_unknown
 import org.jetbrains.compose.resources.stringResource
@@ -103,6 +106,8 @@ fun TreeScreen(
     val snackbarHostState = remember { SnackbarHostState() }
 
     val treeNotFoundErr = stringResource(Res.string.error_tree_not_found)
+    val deleteDescendantsErr = stringResource(Res.string.error_delete_has_descendants)
+    val deleteFormalErr = stringResource(Res.string.error_delete_has_formal_relationships)
     val unknownErr = stringResource(Res.string.error_unknown)
 
     LaunchedEffect(treeId) {
@@ -114,6 +119,8 @@ fun TreeScreen(
             val message =
                 when (error) {
                     TreeError.NOT_FOUND -> treeNotFoundErr
+                    TreeError.HAS_DESCENDANTS -> deleteDescendantsErr
+                    TreeError.HAS_FORMAL_RELATIONSHIPS -> deleteFormalErr
                     TreeError.UNKNOWN -> unknownErr
                 }
             snackbarHostState.showSnackbar(message)
@@ -164,23 +171,44 @@ private fun TreeContent(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         floatingActionButton = {
             if (state.selectedPersonIds.size < 2) {
-                FloatingActionButton(
-                    onClick = {
-                        if (state.selectedPersonIds.size == 1) {
-                            onEditPersonClick(state.selectedPersonIds.first())
-                        } else {
-                            onAddPersonClick()
+                Column(horizontalAlignment = Alignment.End) {
+                    if (state.selectedPersonIds.size == 1 &&
+                        state.selectedPersonIds.first() != state.tree.centralPerson.id
+                    ) {
+                        SmallFloatingActionButton(
+                            onClick = { onEvent(TreeEvent.OnDeleteSelectedPersonRequested) },
+                            containerColor = MaterialTheme.colorScheme.errorContainer,
+                            contentColor = MaterialTheme.colorScheme.onErrorContainer,
+                            shape = CircleShape,
+                            modifier = Modifier.padding(bottom = 8.dp),
+                        ) {
+                            Icon(imageVector = Icons.Default.Delete, contentDescription = null)
                         }
-                    },
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = Color.White,
-                    shape = CircleShape,
-                    modifier = Modifier.size(56.dp),
-                ) {
-                    Icon(
-                        imageVector = if (state.selectedPersonIds.size == 1) Icons.Default.Edit else Icons.Default.Add,
-                        contentDescription = null,
-                    )
+                    }
+
+                    FloatingActionButton(
+                        onClick = {
+                            if (state.selectedPersonIds.size == 1) {
+                                onEditPersonClick(state.selectedPersonIds.first())
+                            } else {
+                                onAddPersonClick()
+                            }
+                        },
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = Color.White,
+                        shape = CircleShape,
+                        modifier = Modifier.size(56.dp),
+                    ) {
+                        Icon(
+                            imageVector =
+                                if (state.selectedPersonIds.size == 1) {
+                                    Icons.Default.Edit
+                                } else {
+                                    Icons.Default.Add
+                                },
+                            contentDescription = null,
+                        )
+                    }
                 }
             }
         },
@@ -234,6 +262,14 @@ private fun TreeContent(
                 onZoomOut = { onEvent(TreeEvent.OnZoomOut()) },
                 onReset = resetViewport,
             )
+
+            if (state.showDeleteConfirmation && state.personToDeleteName != null) {
+                DeletePersonDialog(
+                    personName = state.personToDeleteName,
+                    onConfirm = { onEvent(TreeEvent.OnConfirmDeletePerson) },
+                    onDismiss = { onEvent(TreeEvent.OnDismissDeletePerson) },
+                )
+            }
         }
     }
 }

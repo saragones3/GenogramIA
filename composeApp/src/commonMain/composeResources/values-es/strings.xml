@@ -194,4 +194,14 @@
     <string name="delete_relationship">Eliminar relación</string>
     <string name="delete_relationship_confirmation_title">Eliminar Relación</string>
     <string name="delete_relationship_confirmation_message">¿Estás seguro de que quieres eliminar esta relación? Esta acción no se puede deshacer.</string>
+
+    <!-- Delete Person -->
+    <string name="delete_person_title">¿Eliminar Registro?</string>
+    <string name="delete_person_message">¿Estás seguro de que quieres eliminar a %1$s de este archivo? Esta acción no se puede deshacer y afectará a las conexiones de relaciones.</string>
+    <string name="delete_person_confirm">Eliminar Miembro</string>
+    <string name="delete_person_cancel">Mantener Registro</string>
+
+    <!-- Error Messages for Delete Person -->
+    <string name="error_delete_has_descendants">No se puede borrar una persona con descendientes</string>
+    <string name="error_delete_has_formal_relationships">No se puede borrar una persona con relaciones de matrimonio, divorcio o viudedad</string>
 </resources>

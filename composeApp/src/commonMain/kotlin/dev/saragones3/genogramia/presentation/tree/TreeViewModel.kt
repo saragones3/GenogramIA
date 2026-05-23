@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
+import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdateTreeUseCase
@@ -20,9 +21,11 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import kotlinx.datetime.yearsUntil
 import kotlin.time.Instant
+import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase.DeletePersonError as DPError
 
 class TreeViewModel(
     private val getTreeUseCase: GetTreeUseCase,
+    private val deletePersonUseCase: DeletePersonUseCase,
     private val updatePersonUseCase: UpdatePersonUseCase,
     private val updateTreeUseCase: UpdateTreeUseCase,
     private val dateFormatter: DateFormatter,
@@ -67,6 +70,13 @@ class TreeViewModel(
 
             is TreeEvent.OnViewportResetPerformed -> {
                 _state.update { it.copy(lastLoadedTreeId = event.treeId) }
+            }
+
+            TreeEvent.OnDeleteSelectedPersonRequested,
+            TreeEvent.OnConfirmDeletePerson,
+            TreeEvent.OnDismissDeletePerson,
+            -> {
+                handleDeletion(event)
             }
         }
     }
@@ -115,6 +125,56 @@ class TreeViewModel(
 
             TreeEvent.OnErrorConsumed -> {
                 _state.update { it.copy(error = null) }
+            }
+
+            else -> {}
+        }
+    }
+
+    private fun handleDeletion(event: TreeEvent) {
+        when (event) {
+            TreeEvent.OnDeleteSelectedPersonRequested -> {
+                val selectedId = _state.value.selectedPersonIds.firstOrNull() ?: return
+                val person =
+                    _state.value.tree.persons
+                        .find { it.id == selectedId } ?: return
+                _state.update {
+                    it.copy(
+                        showDeleteConfirmation = true,
+                        personToDeleteName = "${person.firstName} ${person.lastName}",
+                    )
+                }
+            }
+
+            TreeEvent.OnConfirmDeletePerson -> {
+                val personId = _state.value.selectedPersonIds.firstOrNull() ?: return
+                val treeId = _state.value.tree.id
+                _state.update { it.copy(showDeleteConfirmation = false, isLoading = true) }
+                viewModelScope.launch {
+                    when (val result = deletePersonUseCase(treeId, personId)) {
+                        is DeletePersonUseCase.Result.Error -> {
+                            _state.update {
+                                it.copy(
+                                    isLoading = false,
+                                    error =
+                                        when (result.type) {
+                                            DPError.HAS_DESCENDANTS -> TreeError.HAS_DESCENDANTS
+                                            DPError.HAS_FORMAL_RELATIONSHIPS -> TreeError.HAS_FORMAL_RELATIONSHIPS
+                                            DPError.TREE_NOT_FOUND -> TreeError.UNKNOWN
+                                        },
+                                )
+                            }
+                        }
+
+                        DeletePersonUseCase.Result.Success -> {
+                            loadTree(treeId)
+                        }
+                    }
+                }
+            }
+
+            TreeEvent.OnDismissDeletePerson -> {
+                _state.update { it.copy(showDeleteConfirmation = false, personToDeleteName = null) }
             }
 
             else -> {}

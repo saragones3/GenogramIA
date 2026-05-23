@@ -12,9 +12,13 @@ data class TreeState(
     val selectedPersonIds: List<String> = emptyList(),
     val selectedRelationshipId: String? = null,
     val lastLoadedTreeId: String = "",
+    val showDeleteConfirmation: Boolean = false,
+    val personToDeleteName: String? = null,
 )
 
 enum class TreeError {
     NOT_FOUND,
+    HAS_DESCENDANTS,
+    HAS_FORMAL_RELATIONSHIPS,
     UNKNOWN,
 }

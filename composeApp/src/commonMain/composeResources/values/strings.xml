@@ -194,4 +194,14 @@
     <string name="delete_relationship">Delete relationship</string>
     <string name="delete_relationship_confirmation_title">Delete Relationship</string>
     <string name="delete_relationship_confirmation_message">Are you sure you want to delete this relationship? This action cannot be undone.</string>
+
+    <!-- Delete Person -->
+    <string name="delete_person_title">Delete Record?</string>
+    <string name="delete_person_message">Are you sure you want to remove %1$s from this archive? This action cannot be undone and will affect relationship connections.</string>
+    <string name="delete_person_confirm">Delete Member</string>
+    <string name="delete_person_cancel">Keep Record</string>
+
+    <!-- Error Messages for Delete Person -->
+    <string name="error_delete_has_descendants">Cannot delete a person with descendants</string>
+    <string name="error_delete_has_formal_relationships">Cannot delete a person with marriage, divorce or widowhood relationships</string>
 </resources>
