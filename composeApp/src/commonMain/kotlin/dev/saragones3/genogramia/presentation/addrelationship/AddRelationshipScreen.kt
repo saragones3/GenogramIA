@@ -313,14 +313,18 @@ private fun RelationshipManagerCard(
                             .height(72.dp), // Same as icon size
                 ) {
                     val iconCenterY = 36.dp.toPx()
-                    val iconCenterXOffset = 72.dp.toPx()
+                    val swapButtonSize = 32.dp.toPx()
+                    val nodeWidth = (size.width - swapButtonSize) / 2
+                    val startX = nodeWidth / 2
+                    val endX = size.width - (nodeWidth / 2)
+
                     val dashWidth = 6.dp.toPx()
                     val dashGap = 4.dp.toPx()
 
                     drawLine(
                         color = Color(0xFF008080),
-                        start = Offset(iconCenterXOffset, iconCenterY),
-                        end = Offset(size.width - iconCenterXOffset, iconCenterY),
+                        start = Offset(startX, iconCenterY),
+                        end = Offset(endX, iconCenterY),
                         strokeWidth = 2.dp.toPx(),
                         pathEffect = PathEffect.dashPathEffect(floatArrayOf(dashWidth, dashGap), 0f),
                     )
