@@ -33,16 +33,6 @@ class AddRelationshipViewModel(
         personId2: String?,
         relationshipId: String? = null,
     ) {
-        // Prevent re-loading if already loaded data for this tree and mode (add/edit)
-        val currentState = _state.value
-        if (this.treeId == treeId &&
-            currentState.relationshipId == relationshipId &&
-            currentState.person1 != null &&
-            !currentState.isLoading
-        ) {
-            return
-        }
-
         this.treeId = treeId
         // Preserve current state bondType if we are just recomposing,
         // but since this is onResume (entry point), we typically want to load.
@@ -93,7 +83,7 @@ class AddRelationshipViewModel(
                                 }.map { it.personId1 }
                                 .toSet()
 
-                        p1Parents.intersect(p2Parents).isNotEmpty()
+                        p1Parents.intersect(p2Parents).isNotEmpty() || p2Parents.intersect(p1Parents).isNotEmpty()
                     } else {
                         false
                     }

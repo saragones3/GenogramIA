@@ -293,4 +293,54 @@ class AddRelationshipViewModelTest {
             assertEquals(Relationship.RelationshipType.DIVORCE, updatedTree?.relationships?.first()?.type)
             assertEquals(relId, updatedTree?.relationships?.first()?.id)
         }
+
+    @Test
+    fun `when date is selected state is updated with formatted date`() =
+        runTest {
+            val date = 1715731200000L // May 15, 2024
+            val pattern = "MM/dd/yyyy"
+
+            viewModel.onEvent(AddRelationshipEvent.OnDateSelected(date, pattern))
+
+            val state = viewModel.state.value
+            assertEquals(date, state.effectiveDate)
+            assertEquals("05/15/2024", state.effectiveDateFormatted)
+        }
+
+    @Test
+    fun `when prefilling relationship effectiveDateFormatted is set`() =
+        runTest {
+            val date = 1715731200000L
+            val existingRel =
+                Relationship(
+                    id = "rel-1",
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                    effectiveDate = date,
+                )
+            repository.createTree(tree.copy(relationships = listOf(existingRel)))
+
+            viewModel.onResume("tree-1", null, null, "rel-1")
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertEquals("05/15/2024", viewModel.state.value.effectiveDateFormatted)
+        }
+
+    @Test
+    fun `when back click event is received shouldNavigateBack is true`() =
+        runTest {
+            viewModel.onEvent(AddRelationshipEvent.OnBackClick)
+            assertTrue(viewModel.state.value.shouldNavigateBack)
+        }
+
+    @Test
+    fun `when navigation handled event is received shouldNavigateBack is false`() =
+        runTest {
+            viewModel.onEvent(AddRelationshipEvent.OnBackClick)
+            assertTrue(viewModel.state.value.shouldNavigateBack)
+
+            viewModel.onEvent(AddRelationshipEvent.OnNavigationHandled)
+            assertFalse(viewModel.state.value.shouldNavigateBack)
+        }
 }
