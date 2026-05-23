@@ -164,6 +164,50 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
+    fun `when adoption relationship is detected hasConsanguinityRisk is false`() =
+        runTest {
+            val parent = Person(id = "p-parent", firstName = "Parent", lastName = "Root", birthDate = 0L)
+            val p1 = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
+            val p2 = Person(id = "p2", firstName = "Jane", lastName = "Smith", birthDate = 0L)
+
+            // One biological, one adoption -> No consanguinity risk between p1 and p2
+            val relationship1 =
+                Relationship(
+                    id = "rel-1",
+                    personId1 = "p-parent",
+                    personId2 = "p1",
+                    type = Relationship.RelationshipType.BIOLOGICAL_OFFSPRING,
+                )
+            val relationship2 =
+                Relationship(
+                    id = "rel-2",
+                    personId1 = "p-parent",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.ADOPTION_LEGAL,
+                )
+
+            val mixedTree =
+                GenogramTree(
+                    id = "tree-mixed",
+                    name = "Mixed Tree",
+                    ancestorCount = 3,
+                    lastUpdated = "2024-05-15",
+                    centralPerson = parent,
+                    persons = listOf(p1, p2),
+                    relationships = listOf(relationship1, relationship2),
+                )
+            repository.createTree(mixedTree)
+
+            viewModel.onResume("tree-mixed", "p1", "p2")
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertFalse(
+                viewModel.state.value.hasConsanguinityRisk,
+                "Should NOT have consanguinity risk when one sibling is adopted",
+            )
+        }
+
+    @Test
     fun `when bond type is selected state is updated`() =
         runTest {
             viewModel.onEvent(AddRelationshipEvent.OnBondTypeSelected(Relationship.RelationshipType.DIVORCE))

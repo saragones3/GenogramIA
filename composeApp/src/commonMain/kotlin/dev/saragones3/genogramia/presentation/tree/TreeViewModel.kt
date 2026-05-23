@@ -264,8 +264,7 @@ class TreeViewModel(
         val parents =
             relationships
                 .filter {
-                    it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING &&
-                        it.personId2 == centralPersonId
+                    it.type.isDescendant && it.personId2 == centralPersonId
                 }.map { it.personId1 }
                 .toSet()
 

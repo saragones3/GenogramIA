@@ -476,7 +476,7 @@ private fun DrawScope.drawVerticalRelationship(
 ) {
     val groupedByChild =
         relationships
-            .filter { it.type == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING }
+            .filter { it.type.isDescendant }
             .groupBy { it.personId2 }
     groupedByChild.forEach { (childId, parents) ->
         val child = persons.find { it.id == childId } ?: return@forEach
@@ -514,14 +514,30 @@ private fun DrawScope.drawVerticalRelationship(
                         lineTo(childTop.x, midY)
                         lineTo(childTop.x, childTop.y)
                     }
+
+                val isAdoption = parents.any { it.type == Relationship.RelationshipType.ADOPTION_LEGAL }
+
                 drawPath(
                     path = path,
                     color = LINE_COLOR,
-                    style = Stroke(width = LINE_WIDTH.toPx()),
+                    style =
+                        Stroke(
+                            width = LINE_WIDTH.toPx(),
+                            pathEffect =
+                                if (isAdoption) {
+                                    PathEffect.dashPathEffect(
+                                        floatArrayOf(10f, 10f),
+                                        0f,
+                                    )
+                                } else {
+                                    null
+                                },
+                        ),
                 )
             }
         } else if (parents.size == 1) {
-            val parent = persons.find { it.id == parents.first().personId1 }!!
+            val rel = parents.first()
+            val parent = persons.find { it.id == rel.personId1 }!!
             val pCenter = parent.position * density
             val pBottomY = pCenter.y + nodeSize / 2
             val path =
@@ -529,10 +545,17 @@ private fun DrawScope.drawVerticalRelationship(
                     moveTo(pCenter.x, pBottomY)
                     lineTo(childTop.x, childTop.y)
                 }
+
+            val isAdoption = rel.type == Relationship.RelationshipType.ADOPTION_LEGAL
+
             drawPath(
                 path = path,
                 color = LINE_COLOR,
-                style = Stroke(width = LINE_WIDTH.toPx()),
+                style =
+                    Stroke(
+                        width = LINE_WIDTH.toPx(),
+                        pathEffect = if (isAdoption) PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f) else null,
+                    ),
             )
         }
     }

@@ -23,6 +23,9 @@ data class Relationship(
 
         val isStructural: Boolean
             get() = this in listOf(MARRIAGE, COHABITATION, SEPARATION, DIVORCE, RECONCILIATION)
+
+        val isDescendant: Boolean
+            get() = this in listOf(BIOLOGICAL_OFFSPRING, ADOPTION_LEGAL)
     }
 
     enum class EmotionalBond {

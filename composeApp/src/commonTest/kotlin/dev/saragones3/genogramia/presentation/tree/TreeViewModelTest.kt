@@ -382,4 +382,36 @@ class TreeViewModelTest {
             val centralPerson = viewModel.state.value.tree.centralPerson
             assertEquals("44", centralPerson.age)
         }
+
+    @Test
+    fun `when LoadTree has adoption relationship adoptive parent is positioned as parent`() =
+        runTest {
+            val central = Person("child", "Child", "Doe", 0L)
+            val adoptiveParent =
+                Person(
+                    id = "parent",
+                    firstName = "Adoptive",
+                    lastName = "Parent",
+                    birthDate = 0L,
+                    biologicalSex = Person.BiologicalSex.MALE,
+                )
+            val rel =
+                Relationship(
+                    id = "r1",
+                    personId1 = "parent",
+                    personId2 = "child",
+                    type = Relationship.RelationshipType.ADOPTION_LEGAL,
+                )
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(adoptiveParent), listOf(rel))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val mappedParent =
+                viewModel.state.value.tree.persons
+                    .find { it.id == "parent" }
+            // Parents are positioned at y = -250f
+            assertEquals(-250f, mappedParent?.position?.y)
+        }
 }
