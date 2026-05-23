@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.AddRelationshipUseCase
+import dev.saragones3.genogramia.domain.usecase.DeleteRelationshipUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
@@ -19,6 +20,7 @@ class AddRelationshipViewModel(
     private val getPersonUseCase: GetPersonUseCase,
     private val getTreeUseCase: GetTreeUseCase,
     private val addRelationshipUseCase: AddRelationshipUseCase,
+    private val deleteRelationshipUseCase: DeleteRelationshipUseCase,
     private val dateProvider: DateProvider,
     private val dateFormatter: DateFormatter,
 ) : ViewModel() {
@@ -136,6 +138,10 @@ class AddRelationshipViewModel(
                 saveRelationship()
             }
 
+            AddRelationshipEvent.OnDeleteClick -> {
+                deleteRelationship()
+            }
+
             AddRelationshipEvent.OnSwapPersons -> {
                 _state.update {
                     it.copy(
@@ -173,6 +179,21 @@ class AddRelationshipViewModel(
                         effectiveDate = currentState.effectiveDate,
                     )
                 addRelationshipUseCase(treeId, relationship)
+                _state.update { it.copy(isSaving = false, shouldNavigateBack = true) }
+            } catch (e: Exception) {
+                _state.update { it.copy(isSaving = false, error = e.message) }
+            }
+        }
+    }
+
+    private fun deleteRelationship() {
+        val currentState = _state.value
+        val relationshipId = currentState.relationshipId ?: return
+
+        _state.update { it.copy(isSaving = true) }
+        viewModelScope.launch {
+            try {
+                deleteRelationshipUseCase(treeId, relationshipId)
                 _state.update { it.copy(isSaving = false, shouldNavigateBack = true) }
             } catch (e: Exception) {
                 _state.update { it.copy(isSaving = false, error = e.message) }

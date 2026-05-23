@@ -205,11 +205,10 @@ private fun TreeContent(
             }
 
             // Initial centering when tree is loaded
-            var lastLoadedTreeId by remember { mutableStateOf("") }
             LaunchedEffect(state.tree.id) {
-                if (state.tree.id.isNotEmpty() && state.tree.id != lastLoadedTreeId) {
+                if (state.tree.id.isNotEmpty() && state.tree.id != state.lastLoadedTreeId) {
                     resetViewport()
-                    lastLoadedTreeId = state.tree.id
+                    onEvent(TreeEvent.OnViewportResetPerformed(state.tree.id))
                 }
             }
 

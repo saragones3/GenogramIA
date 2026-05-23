@@ -7,6 +7,7 @@ import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
+import dev.saragones3.genogramia.domain.usecase.UpdateTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
@@ -27,6 +28,7 @@ class TreeViewModelTest {
     private val treeRepository = FakeTreeRepository()
     private val getTreeUseCase = GetTreeUseCase(treeRepository)
     private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
+    private val updateTreeUseCase = UpdateTreeUseCase(treeRepository)
     private val dateFormatter = DateFormatter()
     private val dateProvider = FakeDateProvider()
     private lateinit var viewModel: TreeViewModel
@@ -34,7 +36,7 @@ class TreeViewModelTest {
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = TreeViewModel(getTreeUseCase, updatePersonUseCase, dateFormatter, dateProvider)
+        viewModel = TreeViewModel(getTreeUseCase, updatePersonUseCase, updateTreeUseCase, dateFormatter, dateProvider)
     }
 
     @AfterTest
@@ -413,5 +415,50 @@ class TreeViewModelTest {
                     .find { it.id == "parent" }
             // Parents are positioned at y = -250f
             assertEquals(-250f, mappedParent?.position?.y)
+        }
+
+    @Test
+    fun `when LoadTree has persons with 0,0 position, they are baked into repository`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Partner", "Doe", 0L, biologicalSex = Person.BiologicalSex.FEMALE)
+            val rel =
+                Relationship(
+                    id = "r1",
+                    personId1 = "p1",
+                    personId2 = "p2",
+                    type = Relationship.RelationshipType.MARRIAGE,
+                )
+            // Both persons have 0,0 coordinates
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), listOf(rel))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val savedTree = treeRepository.getTree("t1")
+            // Partner should have been baked at Offset(250f, 0f) according to toUi() logic
+            assertEquals(250f, savedTree?.persons?.find { it.id == "p2" }?.x)
+            assertEquals(0f, savedTree?.persons?.find { it.id == "p2" }?.y)
+        }
+
+    @Test
+    fun `when relationship is removed baked positions are preserved`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L, x = 100f, y = 100f)
+            val p2 = Person("p2", "Ex-Partner", "Doe", 0L, x = 350f, y = 100f)
+            // No relationships
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), emptyList())
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val uiP2 =
+                viewModel.state.value.tree.persons
+                    .find { it.id == "p2" }
+            // Should still be at 350, 100 even without the relationship that originally placed it there
+            assertEquals(350f, uiP2?.position?.x)
+            assertEquals(100f, uiP2?.position?.y)
         }
 }

@@ -49,4 +49,8 @@ sealed interface TreeEvent {
     data class OnPersonMoveFinished(
         val personId: String,
     ) : TreeEvent
+
+    data class OnViewportResetPerformed(
+        val treeId: String,
+    ) : TreeEvent
 }
