@@ -9,16 +9,22 @@ import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
+import dev.saragones3.genogramia.domain.util.DateProvider
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
+import kotlinx.datetime.yearsUntil
+import kotlin.time.Instant
 
 class TreeViewModel(
     private val getTreeUseCase: GetTreeUseCase,
     private val updatePersonUseCase: UpdatePersonUseCase,
     private val dateFormatter: DateFormatter,
+    private val dateProvider: DateProvider,
 ) : ViewModel() {
     private val _state = MutableStateFlow(TreeState())
     val state: StateFlow<TreeState> = _state.asStateFlow()
@@ -317,14 +323,18 @@ class TreeViewModel(
         val birthYear = birthDate.let { dateFormatter.formatDate(it, "yyyy") }
         val deathYear = deathDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: ""
 
-        val age =
-            if (birthYear.isNotEmpty()) {
-                val start = birthYear.toIntOrNull()
-                val end = deathYear.toIntOrNull() ?: 2024 // For simplicity, using 2024 as current year
-                if (start != null) (end - start).toString() else ""
-            } else {
-                ""
-            }
+        val birthLocalDate =
+            Instant
+                .fromEpochMilliseconds(birthDate)
+                .toLocalDateTime(TimeZone.UTC)
+                .date
+        val endLocalDate =
+            (deathDate ?: dateProvider.nowEpochMilliseconds())
+                .let { Instant.fromEpochMilliseconds(it) }
+                .toLocalDateTime(TimeZone.UTC)
+                .date
+
+        val age = birthLocalDate.yearsUntil(endLocalDate).toString()
 
         return PersonNodeUi(
             id = id,

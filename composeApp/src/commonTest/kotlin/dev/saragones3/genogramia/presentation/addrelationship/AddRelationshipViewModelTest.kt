@@ -8,7 +8,7 @@ import dev.saragones3.genogramia.domain.usecase.AddRelationshipUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
-import dev.saragones3.genogramia.domain.util.DateProvider
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -28,8 +28,8 @@ class AddRelationshipViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val repository = FakeTreeRepository()
     private val fakeDateProvider =
-        object : DateProvider {
-            override fun nowEpochMilliseconds(): Long = 1000L
+        FakeDateProvider().apply {
+            currentTimeMillis = 1000L
         }
     private val dateFormatter = DateFormatter()
     private val getPersonUseCase = GetPersonUseCase(repository)

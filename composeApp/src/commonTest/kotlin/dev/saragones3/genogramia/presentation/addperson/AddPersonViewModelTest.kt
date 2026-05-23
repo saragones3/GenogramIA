@@ -7,7 +7,7 @@ import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
-import dev.saragones3.genogramia.domain.util.DateProvider
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -27,8 +27,8 @@ class AddPersonViewModelTest {
     private val treeRepository = FakeTreeRepository()
 
     private val fakeDateProvider =
-        object : DateProvider {
-            override fun nowEpochMilliseconds(): Long = 1778716800000L
+        FakeDateProvider().apply {
+            currentTimeMillis = 1778716800000L
         }
 
     private val dateFormatter = DateFormatter()

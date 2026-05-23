@@ -8,6 +8,7 @@ import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -27,12 +28,13 @@ class TreeViewModelTest {
     private val getTreeUseCase = GetTreeUseCase(treeRepository)
     private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
     private val dateFormatter = DateFormatter()
+    private val dateProvider = FakeDateProvider()
     private lateinit var viewModel: TreeViewModel
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = TreeViewModel(getTreeUseCase, updatePersonUseCase, dateFormatter)
+        viewModel = TreeViewModel(getTreeUseCase, updatePersonUseCase, dateFormatter, dateProvider)
     }
 
     @AfterTest
@@ -117,6 +119,28 @@ class TreeViewModelTest {
             assertEquals("1989", centralPerson.deathDateText)
             assertEquals("74", centralPerson.age)
             assertEquals(true, centralPerson.isDeceased)
+        }
+
+    @Test
+    fun `when person is alive age is calculated based on current date`() =
+        runTest {
+            // Set current date to 2024
+            dateProvider.currentTimeMillis = 1704067200000L // 2024-01-01
+
+            // 1980-01-01
+            val person = Person("p1", "John", "Doe", birthDate = 315532800000L)
+            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val centralPerson = viewModel.state.value.tree.centralPerson
+            assertEquals("1980", centralPerson.birthDateText)
+            assertEquals("", centralPerson.deathDateText)
+            assertEquals("44", centralPerson.age)
+            assertEquals(false, centralPerson.isDeceased)
         }
 
     @Test
@@ -320,5 +344,42 @@ class TreeViewModelTest {
             val savedTree = treeRepository.getTree("t1")
             assertEquals(100f, savedTree?.centralPerson?.x)
             assertEquals(200f, savedTree?.centralPerson?.y)
+        }
+
+    @Test
+    fun `age calculation handles birthday not yet reached in current year`() =
+        runTest {
+            // Current date: 2024-05-01
+            dateProvider.currentTimeMillis = 1714521600000L
+
+            // Birth date: 1980-06-01 (Birthday hasn't happened yet in 2024)
+            val person = Person("p1", "John", "Doe", birthDate = 328665600000L)
+            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val centralPerson = viewModel.state.value.tree.centralPerson
+            // 2024 - 1980 = 44, but since it's May and birthday is June, should be 43
+            assertEquals("43", centralPerson.age)
+        }
+
+    @Test
+    fun `age calculation handles birthday already reached in current year`() =
+        runTest {
+            // Current date: 2024-07-01
+            dateProvider.currentTimeMillis = 1719792000000L
+
+            // Birth date: 1980-06-01 (Birthday already happened in 2024)
+            val person = Person("p1", "John", "Doe", birthDate = 328665600000L)
+            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val centralPerson = viewModel.state.value.tree.centralPerson
+            assertEquals("44", centralPerson.age)
         }
 }
