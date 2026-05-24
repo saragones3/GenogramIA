@@ -10,18 +10,20 @@ import FirebaseAuth
 // MARK: - Swift implementation of the Kotlin FirebaseAuthDelegate protocol
 // This class bridges the native Firebase iOS SDK to Kotlin/Native (iosMain).
 
-class SwiftFirebaseDelegate: FirebaseAuthDelegate {
+class SwiftAuthDelegate: FirebaseAuthDelegate {
+    
+    private let auth = Auth.auth()
 
     func getCurrentUserUid() -> String? {
-        Auth.auth().currentUser?.uid
+        auth.currentUser?.uid
     }
 
     func getCurrentUserEmail() -> String? {
-        Auth.auth().currentUser?.email
+        auth.currentUser?.email
     }
 
     func getCurrentUserDisplayName() -> String? {
-        Auth.auth().currentUser?.displayName
+        auth.currentUser?.displayName
     }
 
     func signInWithEmail(
@@ -30,7 +32,7 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
         onSuccess: @escaping (String, String?, String?) -> Void,
         onError: @escaping (String) -> Void
     ) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+        auth.signIn(withEmail: email, password: password) { result, error in
             if let user = result?.user {
                 onSuccess(user.uid, user.email, user.displayName)
             } else {
@@ -44,7 +46,7 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
         onSuccess: @escaping () -> Void,
         onError: @escaping (String) -> Void
     ) {
-        guard let user = Auth.auth().currentUser, let email = user.email else {
+        guard let user = auth.currentUser, let email = user.email else {
             onError("Error desconocido")
             return
         }
@@ -64,7 +66,7 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
         onSuccess: @escaping (String, String?, String?) -> Void,
         onError: @escaping (String) -> Void
     ) {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        auth.createUser(withEmail: email, password: password) { result, error in
             if let user = result?.user {
                 onSuccess(user.uid, user.email, user.displayName)
             } else {
@@ -78,7 +80,7 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
         onSuccess: @escaping () -> Void,
         onError: @escaping (String) -> Void
     ) {
-        Auth.auth().sendPasswordReset(withEmail: email) { error in
+        auth.sendPasswordReset(withEmail: email) { error in
             if let error {
                 onError(error.localizedDescription)
             } else {
@@ -92,7 +94,7 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
         onSuccess: @escaping () -> Void,
         onError: @escaping (String) -> Void
     ) {
-        Auth.auth().currentUser?.updatePassword(to: newPassword) { error in
+        auth.currentUser?.updatePassword(to: newPassword) { error in
             if let error {
                 onError(error.localizedDescription)
             } else {
@@ -106,7 +108,7 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
         onSuccess: @escaping () -> Void,
         onError: @escaping (String) -> Void
     ) {
-        guard let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() else {
+        guard let changeRequest = auth.currentUser?.createProfileChangeRequest() else {
             onError("Error desconocido")
             return
         }
@@ -125,7 +127,7 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
         onError: @escaping (String) -> Void
     ) {
         do {
-            try Auth.auth().signOut()
+            try auth.signOut()
             onSuccess()
         } catch {
             onError(error.localizedDescription)
@@ -136,7 +138,7 @@ class SwiftFirebaseDelegate: FirebaseAuthDelegate {
         onSuccess: @escaping () -> Void,
         onError: @escaping (String) -> Void
     ) {
-        Auth.auth().currentUser?.delete { error in
+        auth.currentUser?.delete { error in
             if let error {
                 onError(error.localizedDescription)
             } else {
