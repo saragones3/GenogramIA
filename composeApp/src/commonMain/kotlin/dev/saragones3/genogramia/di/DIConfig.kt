@@ -11,6 +11,7 @@ import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.AddRelationshipUseCase
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteAccountUseCase
+import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteRelationshipUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
@@ -89,6 +90,7 @@ private val domainModule =
         factoryOf(::AddPersonUseCase)
         factoryOf(::AddRelationshipUseCase)
         factoryOf(::DeleteRelationshipUseCase)
+        factoryOf(::DeletePersonUseCase)
         factoryOf(::UpdatePersonUseCase)
         factoryOf(::UpdateTreeUseCase)
         factoryOf(::GetPersonUseCase)

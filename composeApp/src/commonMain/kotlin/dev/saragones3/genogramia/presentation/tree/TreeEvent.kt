@@ -53,4 +53,10 @@ sealed interface TreeEvent {
     data class OnViewportResetPerformed(
         val treeId: String,
     ) : TreeEvent
+
+    data object OnDeleteSelectedPersonRequested : TreeEvent
+
+    data object OnConfirmDeletePerson : TreeEvent
+
+    data object OnDismissDeletePerson : TreeEvent
 }

@@ -5,6 +5,7 @@ import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
+import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdateTreeUseCase
@@ -27,6 +28,7 @@ class TreeViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val treeRepository = FakeTreeRepository()
     private val getTreeUseCase = GetTreeUseCase(treeRepository)
+    private val deletePersonUseCase = DeletePersonUseCase(treeRepository)
     private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
     private val updateTreeUseCase = UpdateTreeUseCase(treeRepository)
     private val dateFormatter = DateFormatter()
@@ -36,7 +38,15 @@ class TreeViewModelTest {
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = TreeViewModel(getTreeUseCase, updatePersonUseCase, updateTreeUseCase, dateFormatter, dateProvider)
+        viewModel =
+            TreeViewModel(
+                getTreeUseCase,
+                deletePersonUseCase,
+                updatePersonUseCase,
+                updateTreeUseCase,
+                dateFormatter,
+                dateProvider,
+            )
     }
 
     @AfterTest
@@ -270,7 +280,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when two persons with existing relationship are selected, relationshipId is set automatically`() =
+    fun `when two persons with existing relationship are selected relationshipId is set automatically`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
@@ -294,7 +304,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when two persons without relationship are selected, relationshipId is null`() =
+    fun `when two persons without relationship are selected relationshipId is null`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
@@ -418,7 +428,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree has persons with 0,0 position, they are baked into repository`() =
+    fun `when LoadTree has persons with 0 position they are baked into repository`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Partner", "Doe", 0L, biologicalSex = Person.BiologicalSex.FEMALE)
@@ -460,5 +470,82 @@ class TreeViewModelTest {
             // Should still be at 350, 100 even without the relationship that originally placed it there
             assertEquals(350f, uiP2?.position?.x)
             assertEquals(100f, uiP2?.position?.y)
+        }
+
+    @Test
+    fun `when OnDeleteSelectedPersonRequested event is received delete confirmation is shown`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
+            viewModel.onEvent(TreeEvent.OnDeleteSelectedPersonRequested)
+
+            val state = viewModel.state.value
+            assertEquals(true, state.showDeleteConfirmation)
+            assertEquals("Jane Doe", state.personToDeleteName)
+        }
+
+    @Test
+    fun `when OnDismissDeletePerson event is received delete confirmation is hidden`() =
+        runTest {
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
+            viewModel.onEvent(TreeEvent.OnDeleteSelectedPersonRequested)
+            viewModel.onEvent(TreeEvent.OnDismissDeletePerson)
+
+            val state = viewModel.state.value
+            assertEquals(false, state.showDeleteConfirmation)
+            assertEquals(null, state.personToDeleteName)
+        }
+
+    @Test
+    fun `when OnConfirmDeletePerson event is received person is deleted and tree is reloaded`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
+            viewModel.onEvent(TreeEvent.OnConfirmDeletePerson)
+
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            val savedTree = treeRepository.getTree("t1")
+            assertEquals(0, savedTree?.persons?.size)
+            assertEquals(false, viewModel.state.value.showDeleteConfirmation)
+        }
+
+    @Test
+    fun `when OnConfirmDeletePerson fails error is set`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val p2 = Person("p2", "Jane", "Doe", 0L)
+            // Create a marriage so it cannot be deleted
+            val rel = Relationship("r1", "p1", "p2", Relationship.RelationshipType.MARRIAGE)
+            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), listOf(rel))
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
+            viewModel.onEvent(TreeEvent.OnConfirmDeletePerson)
+
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertEquals(
+                TreeError.HAS_FORMAL_RELATIONSHIPS,
+                viewModel.state.value.error,
+            )
+            assertEquals(false, viewModel.state.value.isLoading)
         }
 }
