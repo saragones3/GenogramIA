@@ -4,9 +4,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import dev.saragones3.genogramia.data.firebase.dto.GenogramTreeDto
 import kotlinx.coroutines.tasks.await
 
-internal class FirestoreProviderImpl : FirestoreProvider {
-    private val db = FirebaseFirestore.getInstance()
-
+internal class FirestoreProviderImpl(
+    private val db: FirebaseFirestore,
+) : FirestoreProvider {
     override suspend fun saveTree(
         userId: String,
         tree: GenogramTreeDto,

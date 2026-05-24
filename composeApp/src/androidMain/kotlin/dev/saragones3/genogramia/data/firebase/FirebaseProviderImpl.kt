@@ -7,9 +7,9 @@ import com.google.firebase.auth.userProfileChangeRequest
 import dev.saragones3.genogramia.data.error.toAuthError
 import kotlinx.coroutines.tasks.await
 
-internal class FirebaseProviderImpl : FirebaseProvider {
-    private val auth = FirebaseAuth.getInstance()
-
+internal class FirebaseProviderImpl(
+    private val auth: FirebaseAuth,
+) : FirebaseProvider {
     override fun getCurrentUser(): AuthUser? = auth.currentUser?.toAuthUser()
 
     override suspend fun createUserWithEmailAndPassword(
