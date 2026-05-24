@@ -488,17 +488,261 @@ private fun DrawScope.drawHorizontalRelationship(
                     p2Center.y,
                 )
 
+            val pathEffect =
+                if (relationship.type == Relationship.RelationshipType.COHABITATION ||
+                    relationship.emotionalBond == Relationship.EmotionalBond.DISTANT
+                ) {
+                    PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f)
+                } else {
+                    null
+                }
+
+            val replacesBaseLine =
+                when (relationship.emotionalBond) {
+                    Relationship.EmotionalBond.CONFLICTUAL,
+                    Relationship.EmotionalBond.HOSTILE,
+                    Relationship.EmotionalBond.INTIMATE,
+                    Relationship.EmotionalBond.INTIMATE_CONFLICTUAL,
+                    Relationship.EmotionalBond.DIRECT_CONFLICTUAL,
+                    Relationship.EmotionalBond.ABUSE,
+                    Relationship.EmotionalBond.RUPTURE,
+                    -> true
+
+                    else -> false
+                }
+
+            if (!replacesBaseLine) {
+                drawLine(
+                    color = LINE_COLOR,
+                    start = start,
+                    end = end,
+                    strokeWidth = LINE_WIDTH.toPx(),
+                    pathEffect = pathEffect,
+                )
+            }
+
+            // Draw structural slashes
+            val direction = end - start
+            when (relationship.type) {
+                Relationship.RelationshipType.SEPARATION -> {
+                    drawSlashes((start + end) / 2f, 1, direction)
+                }
+
+                Relationship.RelationshipType.DIVORCE -> {
+                    drawSlashes((start + end) / 2f, 2, direction)
+                }
+
+                Relationship.RelationshipType.RECONCILIATION -> {
+                    drawSlashes(
+                        (start + end) / 2f,
+                        2,
+                        direction,
+                        isReconciliation = true,
+                    )
+                }
+
+                else -> {}
+            }
+
+            // Draw emotional bond styles
+            drawEmotionalBond(start, end, relationship.emotionalBond)
+        }
+    }
+}
+
+private fun DrawScope.drawSlashes(
+    center: Offset,
+    count: Int,
+    direction: Offset,
+    isReconciliation: Boolean = false,
+) {
+    val length = direction.getDistance()
+    if (length < 1f) return
+    val unit = direction / length
+    val normal = Offset(-unit.y, unit.x)
+    val slashLength = 12.dp.toPx()
+    val spacing = 6.dp.toPx()
+
+    // Slash direction: bottom-left to top-right (/) for a left-to-right line
+    val slashDir = (unit - normal)
+    val slashUnit = slashDir / slashDir.getDistance()
+
+    for (i in 0 until count) {
+        val offsetFactor = (i - (count - 1) / 2f)
+        val slashCenter = center + unit * (offsetFactor * spacing)
+        drawLine(
+            color = Color.Black,
+            start = slashCenter - slashUnit * (slashLength / 2),
+            end = slashCenter + slashUnit * (slashLength / 2),
+            strokeWidth = 2.dp.toPx(),
+        )
+    }
+
+    if (isReconciliation) {
+        // Draw an X (top-left to bottom-right slash \)
+        val crossSlashDir = (unit + normal)
+        val crossSlashUnit = crossSlashDir / crossSlashDir.getDistance()
+        drawLine(
+            color = Color.Black,
+            start = center - crossSlashUnit * (slashLength / 2),
+            end = center + crossSlashUnit * (slashLength / 2),
+            strokeWidth = 2.dp.toPx(),
+        )
+    }
+}
+
+private fun DrawScope.drawEmotionalBond(
+    start: Offset,
+    end: Offset,
+    bond: Relationship.EmotionalBond,
+) {
+    val direction = end - start
+    val length = direction.getDistance()
+    if (length < 1f) return
+    val unit = direction / length
+    val normal = Offset(-unit.y, unit.x)
+
+    when (bond) {
+        Relationship.EmotionalBond.DISTANT -> {
+            // Overdraw with white/background color to create dashes if needed,
+            // or we could have passed pathEffect to drawLine above.
+            // Since we already drew the line, let's just ignore POSITIVE (default)
+        }
+
+        Relationship.EmotionalBond.INTIMATE -> {
+            val offset = normal * 3.dp.toPx()
+            drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
+            drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
+        }
+
+        Relationship.EmotionalBond.FUSED -> {
+            val offset = normal * 5.dp.toPx()
+            drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
+            drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
+            // The main line is already drawn
+        }
+
+        Relationship.EmotionalBond.CONFLICTUAL,
+        Relationship.EmotionalBond.HOSTILE,
+        -> {
+            drawZigzag(start, end)
+        }
+
+        Relationship.EmotionalBond.INTIMATE_CONFLICTUAL -> {
+            val offset = normal * 4.dp.toPx()
+            drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
+            drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
+            drawZigzag(start, end)
+        }
+
+        Relationship.EmotionalBond.FUSED_CONFLICTUAL -> {
+            val offset = normal * 5.dp.toPx()
+            drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
+            drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
+            drawZigzag(start, end)
+        }
+
+        Relationship.EmotionalBond.FOCUSED -> {
+            drawArrowHead(end, direction)
+        }
+
+        Relationship.EmotionalBond.RUPTURE -> {
+            val mid = (start + end) / 2f
+            val gap = 15.dp.toPx()
+            // Draw the two segments of the line
+            drawLine(LINE_COLOR, start, mid - unit * (gap / 2), LINE_WIDTH.toPx())
+            drawLine(LINE_COLOR, mid + unit * (gap / 2), end, LINE_WIDTH.toPx())
+
+            // We draw two perpendicular bars to indicate the rupture
             drawLine(
-                color = LINE_COLOR,
-                start = start,
-                end = end,
-                strokeWidth = LINE_WIDTH.toPx(),
-                pathEffect =
-                    PathEffect
-                        .dashPathEffect(floatArrayOf(10f, 10f), 0f)
-                        .takeIf { relationship.type == Relationship.RelationshipType.COHABITATION },
+                color = Color.Black,
+                start = mid - unit * (gap / 2) + normal * 10f,
+                end = mid - unit * (gap / 2) - normal * 10f,
+                strokeWidth = 2.dp.toPx(),
+            )
+            drawLine(
+                color = Color.Black,
+                start = mid + unit * (gap / 2) + normal * 10f,
+                end = mid + unit * (gap / 2) - normal * 10f,
+                strokeWidth = 2.dp.toPx(),
             )
         }
+
+        Relationship.EmotionalBond.DIRECT_CONFLICTUAL -> {
+            drawZigzag(start, end)
+            val mid = (start + end) / 2f
+            val slashLength = 16.dp.toPx()
+            val slashDir = unit + normal
+            val slashUnit = slashDir / slashDir.getDistance()
+            drawLine(
+                color = Color.Black,
+                start = mid - slashUnit * (slashLength / 2),
+                end = mid + slashUnit * (slashLength / 2),
+                strokeWidth = 2.dp.toPx(),
+            )
+        }
+
+        Relationship.EmotionalBond.ABUSE -> {
+            drawZigzag(start, end)
+            drawArrowHead(end, direction, fill = true)
+        }
+
+        else -> {}
+    }
+}
+
+private fun DrawScope.drawZigzag(
+    start: Offset,
+    end: Offset,
+) {
+    val direction = end - start
+    val length = direction.getDistance()
+    val unit = direction / length
+    val normal = Offset(-unit.y, unit.x)
+    val wavelength = 10.dp.toPx()
+    val amplitude = 6.dp.toPx()
+    val steps = (length / wavelength).toInt()
+
+    val path = Path()
+    path.moveTo(start.x, start.y)
+    for (i in 0..steps) {
+        val fraction = i.toFloat() / steps
+        val p = start + direction * fraction
+        val nextP = if (i < steps) start + direction * ((i + 0.5f) / steps) else null
+
+        if (nextP != null) {
+            val side = if (i % 2 == 0) 1f else -1f
+            val anchor = nextP + normal * (amplitude * side)
+            path.lineTo(anchor.x, anchor.y)
+        } else {
+            path.lineTo(end.x, end.y)
+        }
+    }
+    drawPath(path, Color.Black, style = Stroke(width = LINE_WIDTH.toPx()))
+}
+
+private fun DrawScope.drawArrowHead(
+    point: Offset,
+    direction: Offset,
+    fill: Boolean = false,
+) {
+    val unit = direction / direction.getDistance()
+    val normal = Offset(-unit.y, unit.x)
+    val size = 12.dp.toPx()
+    val p1 = point - unit * size + normal * (size / 2)
+    val p2 = point - unit * size - normal * (size / 2)
+
+    val path =
+        Path().apply {
+            moveTo(point.x, point.y)
+            lineTo(p1.x, p1.y)
+            lineTo(p2.x, p2.y)
+            close()
+        }
+    if (fill) {
+        drawPath(path, Color.Black)
+    } else {
+        drawPath(path, Color.Black, style = Stroke(width = 2.dp.toPx()))
     }
 }
 
