@@ -34,6 +34,7 @@
 24. [US-024 — Legends / Visual Vocabulary Screen](#us-024)
 25. [US-025 — Search Trees](#us-025)
 26. [US-026 — Settings Screen](#us-026)
+27. [US-027 — Delete a Genogram Tree](#us-027)
 
 ---
 
@@ -889,6 +890,37 @@ Feature: Settings screen
     Given the user is on the Settings screen
     When the user taps "Delete Account"
     Then the Delete Account flow is initiated (US-008)
+```
+
+---
+
+## US-027 — Delete a Genogram Tree {#us-027}
+
+**As a** user,  
+**I want** to delete a genogram tree from the Home screen,  
+**So that** I can remove trees I no longer need.
+
+```gherkin
+Feature: Delete genogram tree
+
+  Scenario: Authenticated user deletes a tree
+    Given the user is on the authenticated Home screen
+    When the user performs a long press or taps a "Delete" action on a tree card
+    Then a confirmation dialog is shown warning that the action is permanent
+    When the user confirms deletion
+    Then the tree and all its nodes and relationships are removed from Cloud Firestore
+    And the tree card disappears from the Home screen
+
+  Scenario: Guest user deletes a temporary tree
+    Given the guest user is on the Guest Home screen
+    When the user chooses to delete a tree
+    Then the tree is removed from local memory
+    And the tree card disappears from the Home screen
+
+  Scenario: User cancels tree deletion
+    Given the confirmation dialog for tree deletion is shown
+    When the user taps "Cancel"
+    Then the tree is not deleted and remains on the Home screen
 ```
 
 ---
