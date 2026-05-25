@@ -22,6 +22,13 @@ class FakeFirestoreProvider : FirestoreProvider {
     override suspend fun getTrees(userId: String): List<GenogramTreeDto> =
         database[userId]?.values?.toList() ?: emptyList()
 
+    override suspend fun deleteTree(
+        userId: String,
+        treeId: String,
+    ) {
+        database[userId]?.remove(treeId)
+    }
+
     fun clear() {
         database.clear()
     }

@@ -47,4 +47,17 @@ internal class FirestoreProviderImpl(
 
         return snapshot.documents.mapNotNull { it.toObject(GenogramTreeDto::class.java) }
     }
+
+    override suspend fun deleteTree(
+        userId: String,
+        treeId: String,
+    ) {
+        db
+            .collection("users")
+            .document(userId)
+            .collection("trees")
+            .document(treeId)
+            .delete()
+            .await()
+    }
 }

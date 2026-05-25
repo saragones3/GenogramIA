@@ -51,4 +51,16 @@ internal class FirestoreProviderImpl(
                 onError = { continuation.resumeWithException(Exception(it)) },
             )
         }
+
+    override suspend fun deleteTree(
+        userId: String,
+        treeId: String,
+    ) = suspendCancellableCoroutine { continuation ->
+        delegate.deleteTree(
+            userId = userId,
+            treeId = treeId,
+            onSuccess = { continuation.resume(Unit) },
+            onError = { continuation.resumeWithException(Exception(it)) },
+        )
+    }
 }

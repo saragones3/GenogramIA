@@ -10,4 +10,6 @@ interface TreeRepository {
     suspend fun getTrees(): List<GenogramTree>
 
     suspend fun updateTree(tree: GenogramTree): GenogramTree
+
+    suspend fun deleteTree(id: String)
 }

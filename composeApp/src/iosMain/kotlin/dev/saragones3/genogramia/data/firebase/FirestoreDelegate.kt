@@ -20,4 +20,11 @@ interface FirestoreDelegate {
         onSuccess: (List<String>) -> Unit,
         onError: (String) -> Unit,
     )
+
+    fun deleteTree(
+        userId: String,
+        treeId: String,
+        onSuccess: () -> Unit,
+        onError: (String) -> Unit,
+    )
 }

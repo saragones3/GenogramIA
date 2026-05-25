@@ -7,6 +7,7 @@ import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase
+import dev.saragones3.genogramia.domain.usecase.DeleteTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdateTreeUseCase
@@ -26,6 +27,7 @@ import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase.DeletePerson
 class TreeViewModel(
     private val getTreeUseCase: GetTreeUseCase,
     private val deletePersonUseCase: DeletePersonUseCase,
+    private val deleteTreeUseCase: DeleteTreeUseCase,
     private val updatePersonUseCase: UpdatePersonUseCase,
     private val updateTreeUseCase: UpdateTreeUseCase,
     private val dateFormatter: DateFormatter,
@@ -75,6 +77,9 @@ class TreeViewModel(
             TreeEvent.OnDeleteSelectedPersonRequested,
             TreeEvent.OnConfirmDeletePerson,
             TreeEvent.OnDismissDeletePerson,
+            TreeEvent.OnDeleteTreeRequested,
+            TreeEvent.OnConfirmDeleteTree,
+            TreeEvent.OnDismissDeleteTree,
             -> {
                 handleDeletion(event)
             }
@@ -175,6 +180,27 @@ class TreeViewModel(
 
             TreeEvent.OnDismissDeletePerson -> {
                 _state.update { it.copy(showDeleteConfirmation = false, personToDeleteName = null) }
+            }
+
+            TreeEvent.OnDeleteTreeRequested -> {
+                _state.update { it.copy(showDeleteTreeConfirmation = true) }
+            }
+
+            TreeEvent.OnConfirmDeleteTree -> {
+                val treeId = _state.value.tree.id
+                _state.update { it.copy(showDeleteTreeConfirmation = false, isLoading = true) }
+                viewModelScope.launch {
+                    try {
+                        deleteTreeUseCase(treeId)
+                        _state.update { it.copy(isLoading = false, shouldNavigateBack = true) }
+                    } catch (_: Exception) {
+                        _state.update { it.copy(isLoading = false, error = TreeError.UNKNOWN) }
+                    }
+                }
+            }
+
+            TreeEvent.OnDismissDeleteTree -> {
+                _state.update { it.copy(showDeleteTreeConfirmation = false) }
             }
 
             else -> {}

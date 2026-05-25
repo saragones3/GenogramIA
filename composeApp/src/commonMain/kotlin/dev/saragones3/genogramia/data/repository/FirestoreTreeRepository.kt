@@ -32,4 +32,9 @@ class FirestoreTreeRepository(
         firestoreProvider.saveTree(uid, tree.toDto())
         return tree
     }
+
+    override suspend fun deleteTree(id: String) {
+        val uid = firebaseProvider.getCurrentUser()?.uid ?: return
+        firestoreProvider.deleteTree(uid, id)
+    }
 }

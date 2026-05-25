@@ -14,4 +14,9 @@ interface FirestoreProvider {
     ): GenogramTreeDto?
 
     suspend fun getTrees(userId: String): List<GenogramTreeDto>
+
+    suspend fun deleteTree(
+        userId: String,
+        treeId: String,
+    )
 }

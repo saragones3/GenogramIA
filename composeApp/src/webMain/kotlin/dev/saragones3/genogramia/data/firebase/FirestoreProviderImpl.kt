@@ -29,6 +29,13 @@ internal class FirestoreProviderImpl : FirestoreProvider {
         val jsonList = Json.decodeFromString<List<String>>(jsonArrayStr)
         return jsonList.map { Json.decodeFromString(GenogramTreeDto.serializer(), it) }
     }
+
+    override suspend fun deleteTree(
+        userId: String,
+        treeId: String,
+    ) {
+        deleteTreeJs(getFirestoreJs(), userId, treeId).await()
+    }
 }
 
 @JsFun("() => window.firebaseFirestore")
@@ -53,4 +60,11 @@ external fun getTreeJs(
 external fun getTreesJs(
     db: JsAny,
     userId: String,
+): Promise<JsAny?>
+
+@JsFun("(db, userId, treeId) => window.firebaseFirestoreModule.deleteTree(db, userId, treeId)")
+external fun deleteTreeJs(
+    db: JsAny,
+    userId: String,
+    treeId: String,
 ): Promise<JsAny?>
