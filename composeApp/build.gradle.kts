@@ -67,6 +67,7 @@ kotlin {
             implementation(libs.koin.android)
             implementation(project.dependencies.platform(libs.firebase.bom))
             implementation(libs.firebase.auth.android)
+            implementation(libs.firebase.firestore.android)
             implementation(libs.kotlinx.coroutines.play.services)
         }
         iosMain.dependencies {

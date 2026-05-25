@@ -50,7 +50,7 @@ private val dataModule =
 
         // Concrete implementations as singletons to preserve state
         single { InMemoryTreeRepository() }
-        single { FirestoreTreeRepository() }
+        single { FirestoreTreeRepository(get(), get()) }
 
         // Dynamic repository that delegates based on current session state
         // This ensures that even if a ViewModel is reused, it always uses the correct repo

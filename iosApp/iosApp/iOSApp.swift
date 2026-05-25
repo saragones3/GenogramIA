@@ -8,7 +8,7 @@ import FirebaseCore
 struct iOSApp: App {
     init() {
         FirebaseApp.configure()
-        KoinHelperKt.doInitKoin(firebaseDelegate: SwiftFirebaseDelegate())
+        KoinHelperKt.doInitKoin(authDelegate: SwiftAuthDelegate(), firestoreDelegate: SwiftFirestoreDelegate())
     }
 
     var body: some Scene {

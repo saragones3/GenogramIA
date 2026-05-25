@@ -13,7 +13,7 @@ internal class FirebaseProviderImpl : FirebaseProvider {
     override fun getCurrentUser(): AuthUser? {
         val jsUser = getCurrentUserJs()
         return if (jsUser != null) {
-            AuthUser(uid = jsUser.uid, email = jsUser.email, displayName = null)
+            AuthUser(uid = jsUser.uid, email = jsUser.email, displayName = jsUser.displayName)
         } else {
             null
         }
@@ -25,7 +25,7 @@ internal class FirebaseProviderImpl : FirebaseProvider {
     ): AuthUser =
         try {
             val result = createUserJs(getAuthJs(), email, password).await()
-            AuthUser(uid = result.user.uid, email = result.user.email, displayName = null)
+            AuthUser(uid = result.user.uid, email = result.user.email, displayName = result.user.displayName)
         } catch (e: Exception) {
             throw e.toAuthError()
         }
@@ -36,7 +36,7 @@ internal class FirebaseProviderImpl : FirebaseProvider {
     ): AuthUser =
         try {
             val result = signInEmailJs(getAuthJs(), email, password).await()
-            AuthUser(uid = result.user.uid, email = result.user.email, displayName = null)
+            AuthUser(uid = result.user.uid, email = result.user.email, displayName = result.user.displayName)
         } catch (e: Exception) {
             throw e.toAuthError()
         }
@@ -95,6 +95,7 @@ internal class FirebaseProviderImpl : FirebaseProvider {
 external interface JsAuthUser : JsAny {
     val uid: String
     val email: String?
+    val displayName: String?
 }
 
 external interface JsAuthResult : JsAny {
