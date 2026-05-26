@@ -29,12 +29,12 @@ class TreeViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val treeRepository = FakeTreeRepository()
     private val getTreeUseCase = GetTreeUseCase(treeRepository)
-    private val deletePersonUseCase = DeletePersonUseCase(treeRepository)
-    private val deleteTreeUseCase = DeleteTreeUseCase(treeRepository)
-    private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
-    private val updateTreeUseCase = UpdateTreeUseCase(treeRepository)
     private val dateFormatter = DateFormatter()
     private val dateProvider = FakeDateProvider()
+    private val deletePersonUseCase = DeletePersonUseCase(treeRepository, dateProvider, dateFormatter)
+    private val deleteTreeUseCase = DeleteTreeUseCase(treeRepository)
+    private val updatePersonUseCase = UpdatePersonUseCase(treeRepository, dateProvider, dateFormatter)
+    private val updateTreeUseCase = UpdateTreeUseCase(treeRepository, dateProvider, dateFormatter)
     private lateinit var viewModel: TreeViewModel
 
     @BeforeTest

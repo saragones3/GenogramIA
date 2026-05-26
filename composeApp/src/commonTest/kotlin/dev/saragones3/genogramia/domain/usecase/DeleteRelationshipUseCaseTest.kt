@@ -3,15 +3,18 @@ package dev.saragones3.genogramia.domain.usecase
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
+import dev.saragones3.genogramia.domain.util.DateFormatter
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 
 class DeleteRelationshipUseCaseTest {
     private val repository = FakeTreeRepository()
+    private val fakeDateProvider = FakeDateProvider().apply { currentTimeMillis = 1778716800000L } // 14-may-2026
+    private val dateFormatter = DateFormatter()
     private lateinit var useCase: DeleteRelationshipUseCase
 
     private val person1 = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
@@ -36,18 +39,19 @@ class DeleteRelationshipUseCaseTest {
 
     @BeforeTest
     fun setup() {
-        useCase = DeleteRelationshipUseCase(repository)
+        useCase = DeleteRelationshipUseCase(repository, fakeDateProvider, dateFormatter)
     }
 
     @Test
-    fun `invoke should remove the relationship from the tree`() =
+    fun `invoke should remove the relationship from the tree and set lastUpdated`() =
         runTest {
             repository.createTree(tree)
 
             useCase(treeId = "tree-1", relationshipId = "rel-1")
 
             val updatedTree = repository.getTree("tree-1")
-            assertTrue(updatedTree?.relationships?.isEmpty() ?: false)
+            assertEquals(true, updatedTree?.relationships?.isEmpty())
+            assertEquals("2026-05-14T00:00:00", updatedTree?.lastUpdated)
         }
 
     @Test

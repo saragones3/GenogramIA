@@ -28,4 +28,8 @@ data class GenogramTree(
         }
         return ancestors.size
     }
+
+    companion object {
+        const val DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss"
+    }
 }

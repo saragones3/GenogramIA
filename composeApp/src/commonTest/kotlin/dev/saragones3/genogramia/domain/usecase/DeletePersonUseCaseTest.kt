@@ -3,6 +3,8 @@ package dev.saragones3.genogramia.domain.usecase
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
+import dev.saragones3.genogramia.domain.util.DateFormatter
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
@@ -12,6 +14,8 @@ import kotlin.test.assertTrue
 
 class DeletePersonUseCaseTest {
     private lateinit var repository: FakeTreeRepository
+    private val fakeDateProvider = FakeDateProvider().apply { currentTimeMillis = 1778716800000L } // 14-may-2026
+    private val dateFormatter = DateFormatter()
     private lateinit var useCase: DeletePersonUseCase
 
     private val centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
@@ -31,11 +35,11 @@ class DeletePersonUseCaseTest {
     @BeforeTest
     fun setup() {
         repository = FakeTreeRepository()
-        useCase = DeletePersonUseCase(repository)
+        useCase = DeletePersonUseCase(repository, fakeDateProvider, dateFormatter)
     }
 
     @Test
-    fun `when person is deleted successfully`() =
+    fun `when person is deleted successfully and lastUpdated is updated`() =
         runTest {
             repository.createTree(tree)
 
@@ -44,7 +48,8 @@ class DeletePersonUseCaseTest {
             assertTrue(result is DeletePersonUseCase.Result.Success)
             val updatedTree = repository.getTree("tree-1")
             assertEquals(2, updatedTree?.persons?.size)
-            assertEquals(updatedTree?.persons?.none { it.id == "p2" }, true)
+            assertEquals(true, updatedTree?.persons?.none { it.id == "p2" })
+            assertEquals("2026-05-14T00:00:00", updatedTree?.lastUpdated)
         }
 
     @Test

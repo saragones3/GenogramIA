@@ -32,8 +32,8 @@ class AddPersonViewModelTest {
         }
 
     private val dateFormatter = DateFormatter()
-    private val addPersonUseCase = AddPersonUseCase(treeRepository, fakeDateProvider)
-    private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
+    private val addPersonUseCase = AddPersonUseCase(treeRepository, fakeDateProvider, dateFormatter)
+    private val updatePersonUseCase = UpdatePersonUseCase(treeRepository, fakeDateProvider, dateFormatter)
     private val getPersonUseCase = GetPersonUseCase(treeRepository)
     private lateinit var viewModel: AddPersonViewModel
 

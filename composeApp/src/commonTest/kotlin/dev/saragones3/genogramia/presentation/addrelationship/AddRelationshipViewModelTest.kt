@@ -35,8 +35,8 @@ class AddRelationshipViewModelTest {
     private val dateFormatter = DateFormatter()
     private val getPersonUseCase = GetPersonUseCase(repository)
     private val getTreeUseCase = GetTreeUseCase(repository)
-    private val addRelationshipUseCase = AddRelationshipUseCase(repository)
-    private val deleteRelationshipUseCase = DeleteRelationshipUseCase(repository)
+    private val addRelationshipUseCase = AddRelationshipUseCase(repository, fakeDateProvider, dateFormatter)
+    private val deleteRelationshipUseCase = DeleteRelationshipUseCase(repository, fakeDateProvider, dateFormatter)
     private lateinit var viewModel: AddRelationshipViewModel
 
     private val person1 = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)

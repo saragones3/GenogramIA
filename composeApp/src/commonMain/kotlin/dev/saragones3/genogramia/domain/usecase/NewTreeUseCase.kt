@@ -26,7 +26,7 @@ class NewTreeUseCase(
                 lastUpdated =
                     dateFormatter.formatDate(
                         millis = dateProvider.nowEpochMilliseconds(),
-                        pattern = "yyyy-MM-dd'T'HH:mm:ss",
+                        pattern = GenogramTree.DATE_FORMAT,
                     ),
                 centralPerson = centralPerson,
             )

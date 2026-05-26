@@ -2,6 +2,8 @@ package dev.saragones3.genogramia.domain.usecase
 
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
+import dev.saragones3.genogramia.domain.util.DateFormatter
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
@@ -10,6 +12,8 @@ import kotlin.test.assertEquals
 
 class UpdateTreeUseCaseTest {
     private val repository = FakeTreeRepository()
+    private val fakeDateProvider = FakeDateProvider().apply { currentTimeMillis = 1778716800000L } // 14-may-2026
+    private val dateFormatter = DateFormatter()
     private lateinit var useCase: UpdateTreeUseCase
 
     private val person1 = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
@@ -24,11 +28,11 @@ class UpdateTreeUseCaseTest {
 
     @BeforeTest
     fun setup() {
-        useCase = UpdateTreeUseCase(repository)
+        useCase = UpdateTreeUseCase(repository, fakeDateProvider, dateFormatter)
     }
 
     @Test
-    fun `invoke should update the tree in repository`() =
+    fun `invoke should update the tree in repository and set lastUpdated`() =
         runTest {
             repository.createTree(tree)
 
@@ -37,5 +41,6 @@ class UpdateTreeUseCaseTest {
 
             val savedTree = repository.getTree("tree-1")
             assertEquals("Updated Name", savedTree?.name)
+            assertEquals("2026-05-14T00:00:00", savedTree?.lastUpdated)
         }
 }
