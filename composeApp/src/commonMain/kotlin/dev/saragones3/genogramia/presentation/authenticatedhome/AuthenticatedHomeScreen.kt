@@ -38,7 +38,6 @@ import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.Primary
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.app_name
-import genogramia.composeapp.generated.resources.auth_home_ancestors
 import genogramia.composeapp.generated.resources.auth_home_open_archive
 import genogramia.composeapp.generated.resources.auth_home_primary_lineage
 import genogramia.composeapp.generated.resources.auth_home_search_hint
@@ -143,7 +142,8 @@ private fun AuthenticatedHomeContent(
             items(trees, key = { it.id }) { tree ->
                 GenogramTreeCard(
                     title = tree.name,
-                    description = stringResource(Res.string.auth_home_ancestors, tree.ancestorCount, tree.lastUpdated),
+                    ancestorCount = tree.ancestorCount,
+                    lastUpdated = tree.lastUpdated,
                     buttonText = stringResource(Res.string.auth_home_open_archive),
                     onButtonClick = { onOpenTreeClick(tree.id) },
                     badgeText = if (tree.id == "1") stringResource(Res.string.auth_home_primary_lineage) else null,

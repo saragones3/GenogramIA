@@ -39,8 +39,6 @@ import genogramia.composeapp.generated.resources.explore_example
 import genogramia.composeapp.generated.resources.guest_preview
 import genogramia.composeapp.generated.resources.login
 import genogramia.composeapp.generated.resources.preserve_heritage
-import genogramia.composeapp.generated.resources.sample_tree
-import genogramia.composeapp.generated.resources.sample_tree_desc
 import genogramia.composeapp.generated.resources.search_records
 import genogramia.composeapp.generated.resources.start_first_tree
 import genogramia.composeapp.generated.resources.start_first_tree_desc
@@ -112,7 +110,8 @@ private fun GuestHomeContent(
             trees.forEach { tree ->
                 GenogramTreeCard(
                     title = tree.name,
-                    description = stringResource(Res.string.sample_tree_desc),
+                    ancestorCount = tree.ancestorCount,
+                    lastUpdated = tree.lastUpdated,
                     buttonText = stringResource(Res.string.explore_example),
                     onButtonClick = { onGoToTree(tree.id) },
                     badgeText = stringResource(Res.string.guest_preview),
