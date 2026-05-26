@@ -42,4 +42,11 @@ class FakeTreeRepository : TreeRepository {
         }
         return tree
     }
+
+    override suspend fun deleteTree(id: String) {
+        if (shouldReturnError) {
+            throw errorToReturn
+        }
+        trees.removeAll { it.id == id }
+    }
 }

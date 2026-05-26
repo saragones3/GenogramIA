@@ -59,4 +59,10 @@ sealed interface TreeEvent {
     data object OnConfirmDeletePerson : TreeEvent
 
     data object OnDismissDeletePerson : TreeEvent
+
+    data object OnDeleteTreeRequested : TreeEvent
+
+    data object OnConfirmDeleteTree : TreeEvent
+
+    data object OnDismissDeleteTree : TreeEvent
 }

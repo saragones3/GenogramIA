@@ -91,4 +91,23 @@ class SwiftFirestoreDelegate: FirestoreDelegate {
                 }
             }
     }
+
+    func deleteTree(
+        userId: String,
+        treeId: String,
+        onSuccess: @escaping () -> Void,
+        onError: @escaping (String) -> Void
+    ) {
+        db.collection("users")
+            .document(userId)
+            .collection("trees")
+            .document(treeId)
+            .delete { error in
+                if let error = error {
+                    onError(error.localizedDescription)
+                } else {
+                    onSuccess()
+                }
+            }
+    }
 }

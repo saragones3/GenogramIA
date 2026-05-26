@@ -27,4 +27,12 @@ internal class FirestoreProviderImpl : FirestoreProvider {
         delay(200)
         return mockDb[userId]?.values?.toList() ?: emptyList()
     }
+
+    override suspend fun deleteTree(
+        userId: String,
+        treeId: String,
+    ) {
+        delay(200)
+        mockDb[userId]?.remove(treeId)
+    }
 }

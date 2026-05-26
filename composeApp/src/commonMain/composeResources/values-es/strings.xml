@@ -201,6 +201,13 @@
     <string name="delete_person_confirm">Eliminar Miembro</string>
     <string name="delete_person_cancel">Mantener Registro</string>
 
+    <!-- Delete Tree -->
+    <string name="delete_tree_title">¿Eliminar Árbol?</string>
+    <string name="delete_tree_message">¿Estás seguro de que quieres eliminar el árbol '%1$s'? Esta acción eliminará permanentemente a los %2$d miembros y su historial médico.</string>
+    <string name="delete_tree_undone">Esta acción no se puede deshacer.</string>
+    <string name="delete_tree_keep">Mantener Árbol</string>
+    <string name="delete_tree_confirm">Eliminar Archivo</string>
+
     <!-- Error Messages for Delete Person -->
     <string name="error_delete_has_descendants">No se puede borrar una persona con descendientes</string>
     <string name="error_delete_has_formal_relationships">No se puede borrar una persona con relaciones de matrimonio, divorcio o viudedad</string>

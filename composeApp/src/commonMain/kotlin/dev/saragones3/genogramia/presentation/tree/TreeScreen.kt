@@ -79,6 +79,7 @@ import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.presentation.components.DeletePersonDialog
+import dev.saragones3.genogramia.presentation.components.DeleteTreeDialog
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.add_relationship
@@ -166,6 +167,7 @@ private fun TreeContent(
             TopBar(
                 treeName = state.tree.name,
                 onBackClick = onBackClick,
+                onDeleteClick = { onEvent(TreeEvent.OnDeleteTreeRequested) },
             )
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -270,6 +272,15 @@ private fun TreeContent(
                     onDismiss = { onEvent(TreeEvent.OnDismissDeletePerson) },
                 )
             }
+
+            if (state.showDeleteTreeConfirmation) {
+                DeleteTreeDialog(
+                    treeName = state.tree.name,
+                    memberCount = state.tree.persons.size + 1, // +1 for central person
+                    onConfirm = { onEvent(TreeEvent.OnConfirmDeleteTree) },
+                    onDismiss = { onEvent(TreeEvent.OnDismissDeleteTree) },
+                )
+            }
         }
     }
 }
@@ -279,6 +290,7 @@ private fun TreeContent(
 private fun TopBar(
     treeName: String,
     onBackClick: () -> Unit,
+    onDeleteClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     TopAppBar(
@@ -296,6 +308,15 @@ private fun TopBar(
                     imageVector = Icons.AutoMirrored.Default.ArrowBack,
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.primary,
+                )
+            }
+        },
+        actions = {
+            IconButton(onClick = onDeleteClick) {
+                Icon(
+                    imageVector = Icons.Default.Delete,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.error,
                 )
             }
         },

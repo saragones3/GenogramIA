@@ -13,6 +13,7 @@ import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteAccountUseCase
 import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteRelationshipUseCase
+import dev.saragones3.genogramia.domain.usecase.DeleteTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreesUseCase
@@ -71,6 +72,8 @@ private val dataModule =
                 override suspend fun getTrees(): List<GenogramTree> = activeRepo.getTrees()
 
                 override suspend fun updateTree(tree: GenogramTree): GenogramTree = activeRepo.updateTree(tree)
+
+                override suspend fun deleteTree(id: String) = activeRepo.deleteTree(id)
             }
         }
 
@@ -91,6 +94,7 @@ private val domainModule =
         factoryOf(::AddRelationshipUseCase)
         factoryOf(::DeleteRelationshipUseCase)
         factoryOf(::DeletePersonUseCase)
+        factoryOf(::DeleteTreeUseCase)
         factoryOf(::UpdatePersonUseCase)
         factoryOf(::UpdateTreeUseCase)
         factoryOf(::GetPersonUseCase)

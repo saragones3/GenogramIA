@@ -6,6 +6,7 @@ import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase
+import dev.saragones3.genogramia.domain.usecase.DeleteTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdateTreeUseCase
@@ -29,6 +30,7 @@ class TreeViewModelTest {
     private val treeRepository = FakeTreeRepository()
     private val getTreeUseCase = GetTreeUseCase(treeRepository)
     private val deletePersonUseCase = DeletePersonUseCase(treeRepository)
+    private val deleteTreeUseCase = DeleteTreeUseCase(treeRepository)
     private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
     private val updateTreeUseCase = UpdateTreeUseCase(treeRepository)
     private val dateFormatter = DateFormatter()
@@ -42,6 +44,7 @@ class TreeViewModelTest {
             TreeViewModel(
                 getTreeUseCase,
                 deletePersonUseCase,
+                deleteTreeUseCase,
                 updatePersonUseCase,
                 updateTreeUseCase,
                 dateFormatter,
@@ -547,5 +550,40 @@ class TreeViewModelTest {
                 viewModel.state.value.error,
             )
             assertEquals(false, viewModel.state.value.isLoading)
+        }
+
+    @Test
+    fun `when OnDeleteTreeRequested event is received showDeleteTreeConfirmation is true`() =
+        runTest {
+            viewModel.onEvent(TreeEvent.OnDeleteTreeRequested)
+            assertEquals(true, viewModel.state.value.showDeleteTreeConfirmation)
+        }
+
+    @Test
+    fun `when OnDismissDeleteTree event is received showDeleteTreeConfirmation is false`() =
+        runTest {
+            viewModel.onEvent(TreeEvent.OnDeleteTreeRequested)
+            viewModel.onEvent(TreeEvent.OnDismissDeleteTree)
+            assertEquals(false, viewModel.state.value.showDeleteTreeConfirmation)
+        }
+
+    @Test
+    fun `when OnConfirmDeleteTree event is received tree is deleted and shouldNavigateBack is true`() =
+        runTest {
+            val central = Person("p1", "John", "Doe", 0L)
+            val tree = GenogramTree("t1", "Family", 1, "now", central)
+            treeRepository.createTree(tree)
+
+            viewModel.onEvent(TreeEvent.LoadTree("t1"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            viewModel.onEvent(TreeEvent.OnDeleteTreeRequested)
+            viewModel.onEvent(TreeEvent.OnConfirmDeleteTree)
+
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertEquals(null, treeRepository.getTree("t1"))
+            assertEquals(true, viewModel.state.value.shouldNavigateBack)
+            assertEquals(false, viewModel.state.value.showDeleteTreeConfirmation)
         }
 }

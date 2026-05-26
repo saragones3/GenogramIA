@@ -108,7 +108,7 @@
 
     <!-- Forgot Password -->
     <string name="forgot_password_title">Reset Password</string>
-    <string name="forgot_password_subtitle">Enter your email and we\'ll send you instructions to reset your password.</string>
+    <string name="forgot_password_subtitle">Enter your email and we'll send you instructions to reset your password.</string>
     <string name="forgot_password_email_label">EMAIL ADDRESS</string>
     <string name="forgot_password_email_hint">you@email.com</string>
     <string name="forgot_password_button">Send Reset Link</string>
@@ -142,7 +142,7 @@
     <string name="new_tree_medical_desc">Recording health conditions helps identify genetic patterns in the family tree.</string>
     <string name="new_tree_medical_empty">No medical records yet. Click 'Add' to register relevant conditions.</string>
     <string name="new_tree_button">Continue and Create Tree</string>
-    <string name="new_tree_footer">You can edit this information later in the person\'s profile.</string>
+    <string name="new_tree_footer">You can edit this information later in the person's profile.</string>
     <string name="new_tree_guest_notice">Your data is temporary and will be lost when the app closes.</string>
 
     <!-- Canvas -->
@@ -200,6 +200,13 @@
     <string name="delete_person_message">Are you sure you want to remove %1$s from this archive? This action cannot be undone and will affect relationship connections.</string>
     <string name="delete_person_confirm">Delete Member</string>
     <string name="delete_person_cancel">Keep Record</string>
+
+    <!-- Delete Tree -->
+    <string name="delete_tree_title">Delete Tree?</string>
+    <string name="delete_tree_message">Are you sure you want to delete the '%1$s' tree? This action will permanently remove all %2$d members and their medical history.</string>
+    <string name="delete_tree_undone">This cannot be undone.</string>
+    <string name="delete_tree_keep">Keep Tree</string>
+    <string name="delete_tree_confirm">Delete Archive</string>
 
     <!-- Error Messages for Delete Person -->
     <string name="error_delete_has_descendants">Cannot delete a person with descendants</string>

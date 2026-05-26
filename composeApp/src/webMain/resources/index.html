@@ -59,6 +59,10 @@
                 trees.push(JSON.stringify(doc.data()));
             });
             return JSON.stringify(trees);
+        },
+        deleteTree: async (db, userId, treeId) => {
+            const docRef = firestore.doc(db, "users", userId, "trees", treeId);
+            return await firestore.deleteDoc(docRef);
         }
     };
 </script>

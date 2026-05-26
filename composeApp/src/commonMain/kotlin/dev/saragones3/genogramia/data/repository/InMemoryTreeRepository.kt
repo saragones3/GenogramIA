@@ -24,4 +24,8 @@ class InMemoryTreeRepository : TreeRepository {
         }
         return tree
     }
+
+    override suspend fun deleteTree(id: String) {
+        trees.removeAll { it.id == id }
+    }
 }
