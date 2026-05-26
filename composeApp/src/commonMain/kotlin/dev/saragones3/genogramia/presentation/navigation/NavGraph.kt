@@ -51,6 +51,10 @@ fun AppNavGraph() {
     val currentRoute = backStack.lastOrNull()
     val isGuestMode = backStack.firstOrNull { it !is NavRoute.Splash } is NavRoute.GuestHome
 
+    BackHandler(enabled = backStack.size > 1) {
+        backStack.pop()
+    }
+
     Scaffold(
         bottomBar = {
             if (shouldShowBottomBar(currentRoute)) {
