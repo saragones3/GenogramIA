@@ -27,10 +27,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.presentation.components.AddTreeCard
 import dev.saragones3.genogramia.presentation.components.GenogramTreeCard
 import dev.saragones3.genogramia.presentation.components.SearchBar
+import dev.saragones3.genogramia.presentation.model.GenogramTreeUiModel
+import dev.saragones3.genogramia.presentation.util.UiText
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.app_name
@@ -73,7 +74,7 @@ fun GuestHomeScreen(
 @Composable
 private fun GuestHomeContent(
     searchQuery: String,
-    trees: List<GenogramTree>,
+    trees: List<GenogramTreeUiModel>,
     onSearchQueryChange: (String) -> Unit,
     onLoginClick: () -> Unit,
     onGoToTree: (String) -> Unit,
@@ -109,7 +110,7 @@ private fun GuestHomeContent(
 
             trees.forEach { tree ->
                 GenogramTreeCard(
-                    title = tree.name,
+                    title = tree.title,
                     ancestorCount = tree.ancestorCount,
                     lastUpdated = tree.lastUpdated,
                     buttonText = stringResource(Res.string.explore_example),
@@ -191,7 +192,15 @@ private fun GuestHomeScreenPreview() {
     GenogramiaTheme {
         GuestHomeContent(
             searchQuery = "",
-            trees = emptyList(),
+            trees =
+                listOf(
+                    GenogramTreeUiModel(
+                        id = "1",
+                        title = "Sample Tree",
+                        ancestorCount = 10,
+                        lastUpdated = UiText.DynamicString("today"),
+                    ),
+                ),
             onSearchQueryChange = {},
             onLoginClick = {},
             onGoToTree = {},

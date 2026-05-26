@@ -25,6 +25,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import dev.saragones3.genogramia.presentation.util.UiText
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.auth_home_description
@@ -36,7 +37,7 @@ import org.jetbrains.compose.resources.stringResource
 fun GenogramTreeCard(
     title: String,
     ancestorCount: Int,
-    lastUpdated: String,
+    lastUpdated: UiText,
     buttonText: String,
     onButtonClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -103,7 +104,7 @@ fun GenogramTreeCard(
                     Spacer(modifier = Modifier.height(8.dp))
 
                     Text(
-                        text = stringResource(Res.string.auth_home_description, ancestorCount, lastUpdated),
+                        text = stringResource(Res.string.auth_home_description, ancestorCount, lastUpdated.asString()),
                         style = MaterialTheme.typography.bodyMedium,
                         color = Color.White.copy(alpha = 0.8f),
                         maxLines = 2,
@@ -140,7 +141,7 @@ private fun GenogramTreeCardPreview() {
             GenogramTreeCard(
                 title = "Smith Family",
                 ancestorCount = 27,
-                lastUpdated = "2 days ago",
+                lastUpdated = UiText.DynamicString("2 days ago"),
                 buttonText = "Open Archive",
                 onButtonClick = {},
                 badgeText = "Primary Lineage",

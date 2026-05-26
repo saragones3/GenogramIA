@@ -32,6 +32,11 @@
     <string name="auth_home_start_tree">Iniciar Nuevo Árbol</string>
     <string name="auth_home_start_tree_subtitle">Comienza un nuevo viaje en una rama diferente de tu herencia.</string>
 
+    <!-- Relative Dates -->
+    <string name="date_today">hoy</string>
+    <string name="date_yesterday">ayer</string>
+    <string name="date_days_ago">hace %1$d días</string>
+
     <!-- Login -->
     <string name="login_title">Bienvenido de nuevo</string>
     <string name="login_subtitle">Ingresa a tu archivo genealógico</string>

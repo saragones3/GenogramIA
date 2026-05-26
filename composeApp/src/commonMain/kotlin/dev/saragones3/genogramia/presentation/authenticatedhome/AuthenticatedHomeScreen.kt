@@ -29,11 +29,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.saragones3.genogramia.domain.model.GenogramTree
-import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.presentation.components.AddTreeCard
 import dev.saragones3.genogramia.presentation.components.GenogramTreeCard
 import dev.saragones3.genogramia.presentation.components.SearchBar
+import dev.saragones3.genogramia.presentation.model.GenogramTreeUiModel
+import dev.saragones3.genogramia.presentation.util.UiText
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.Primary
 import genogramia.composeapp.generated.resources.Res
@@ -76,7 +76,7 @@ fun AuthenticatedHomeScreen(
 private fun AuthenticatedHomeContent(
     userName: String,
     searchQuery: String,
-    trees: List<GenogramTree>,
+    trees: List<GenogramTreeUiModel>,
     onSearchQueryChange: (String) -> Unit,
     onCreateTreeClick: () -> Unit,
     onOpenTreeClick: (String) -> Unit,
@@ -141,12 +141,12 @@ private fun AuthenticatedHomeContent(
 
             items(trees, key = { it.id }) { tree ->
                 GenogramTreeCard(
-                    title = tree.name,
+                    title = tree.title,
                     ancestorCount = tree.ancestorCount,
                     lastUpdated = tree.lastUpdated,
                     buttonText = stringResource(Res.string.auth_home_open_archive),
                     onButtonClick = { onOpenTreeClick(tree.id) },
-                    badgeText = if (tree.id == "1") stringResource(Res.string.auth_home_primary_lineage) else null,
+                    badgeText = if (tree.isPrimary) stringResource(Res.string.auth_home_primary_lineage) else null,
                 )
             }
 
@@ -171,7 +171,13 @@ private fun AuthenticatedHomeScreenPreview() {
             onSearchQueryChange = {},
             trees =
                 listOf(
-                    GenogramTree("1", "Aragones Family", 1240, "2 days ago", Person()),
+                    GenogramTreeUiModel(
+                        id = "1",
+                        title = "Aragones Family",
+                        ancestorCount = 1240,
+                        lastUpdated = UiText.DynamicString("2 days ago"),
+                        isPrimary = true,
+                    ),
                 ),
             onCreateTreeClick = {},
             onOpenTreeClick = {},

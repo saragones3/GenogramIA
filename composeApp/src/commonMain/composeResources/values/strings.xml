@@ -32,6 +32,11 @@
     <string name="auth_home_start_tree">Start New Tree</string>
     <string name="auth_home_start_tree_subtitle">Begin a new journey into a different branch of your heritage.</string>
 
+    <!-- Relative Dates -->
+    <string name="date_today">today</string>
+    <string name="date_yesterday">yesterday</string>
+    <string name="date_days_ago">%1$d days ago</string>
+
     <!-- Login -->
     <string name="login_title">Welcome back</string>
     <string name="login_subtitle">Access your genealogical archive</string>
