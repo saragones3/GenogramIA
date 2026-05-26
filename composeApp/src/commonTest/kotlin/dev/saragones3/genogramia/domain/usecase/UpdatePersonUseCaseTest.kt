@@ -19,7 +19,7 @@ class UpdatePersonUseCaseTest {
         GenogramTree(
             id = "tree-1",
             name = "John Doe Lineage",
-            ancestorCount = 2,
+            ancestorCount = 0,
             lastUpdated = "2024-05-15",
             centralPerson = centralPerson,
             persons = listOf(otherPerson),

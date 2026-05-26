@@ -11,6 +11,7 @@ class DeleteRelationshipUseCase(
     ) {
         val tree = repository.getTree(treeId) ?: return
         val updatedRelationships = tree.relationships.filter { it.id != relationshipId }
-        repository.updateTree(tree.copy(relationships = updatedRelationships))
+        val updatedTree = tree.copy(relationships = updatedRelationships)
+        repository.updateTree(updatedTree.copy(ancestorCount = updatedTree.calculateAncestorCount()))
     }
 }

@@ -70,4 +70,27 @@ class DeleteRelationshipUseCaseTest {
             assertEquals(1, updatedTree?.relationships?.size)
             assertEquals("rel-2", updatedTree?.relationships?.first()?.id)
         }
+
+    @Test
+    fun `invoke should update ancestorCount when a vertical relationship is removed`() =
+        runTest {
+            val father = Person(id = "f", firstName = "Father", lastName = "Doe", birthDate = 0L)
+            val rel = Relationship(
+                id = "rel-v",
+                personId1 = "f",
+                personId2 = "p1",
+                type = Relationship.RelationshipType.BIOLOGICAL_OFFSPRING
+            )
+            val treeWithAncestor = tree.copy(
+                persons = tree.persons + father,
+                relationships = listOf(rel),
+                ancestorCount = 1
+            )
+            repository.createTree(treeWithAncestor)
+
+            useCase(treeId = "tree-1", relationshipId = "rel-v")
+
+            val updatedTree = repository.getTree("tree-1")
+            assertEquals(0, updatedTree?.ancestorCount)
+        }
 }

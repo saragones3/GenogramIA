@@ -62,10 +62,15 @@ class DeletePersonUseCase(
                 it.personId1 != personId && it.personId2 != personId
             }
 
-        repository.updateTree(
+        val updatedTree =
             tree.copy(
                 persons = updatedPersons,
                 relationships = updatedRelationships,
+            )
+
+        repository.updateTree(
+            updatedTree.copy(
+                ancestorCount = updatedTree.calculateAncestorCount(),
             ),
         )
 

@@ -22,7 +22,7 @@ class DeletePersonUseCaseTest {
         GenogramTree(
             id = "tree-1",
             name = "Test Tree",
-            ancestorCount = 1,
+            ancestorCount = 0,
             lastUpdated = "2024-05-15",
             centralPerson = centralPerson,
             persons = listOf(centralPerson, otherPerson, childPerson),

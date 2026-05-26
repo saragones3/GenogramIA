@@ -86,4 +86,26 @@ class AddRelationshipUseCaseTest {
             assertEquals(1, updatedTree?.relationships?.size)
             assertEquals(Relationship.RelationshipType.DIVORCE, updatedTree?.relationships?.get(0)?.type)
         }
+
+    @Test
+    fun `when biological offspring relationship is added ancestorCount is updated`() =
+        runTest {
+            repository.createTree(tree)
+            val parent = Person(id = "p2", firstName = "Father", lastName = "Doe", birthDate = 0L)
+            val updatedTreeWithParent = tree.copy(persons = tree.persons + parent)
+            repository.updateTree(updatedTreeWithParent)
+
+            val relationship =
+                Relationship(
+                    id = "rel-1",
+                    personId1 = "p2",
+                    personId2 = "p1",
+                    type = Relationship.RelationshipType.BIOLOGICAL_OFFSPRING,
+                )
+
+            useCase("tree-1", relationship)
+
+            val finalTree = repository.getTree("tree-1")
+            assertEquals(1, finalTree?.ancestorCount)
+        }
 }

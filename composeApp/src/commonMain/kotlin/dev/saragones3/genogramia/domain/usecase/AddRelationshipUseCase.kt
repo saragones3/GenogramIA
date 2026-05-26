@@ -12,6 +12,7 @@ class AddRelationshipUseCase(
     ) {
         val tree = repository.getTree(treeId) ?: return
         val updatedRelationships = tree.relationships.filter { it.id != relationship.id } + relationship
-        repository.updateTree(tree.copy(relationships = updatedRelationships))
+        val updatedTree = tree.copy(relationships = updatedRelationships)
+        repository.updateTree(updatedTree.copy(ancestorCount = updatedTree.calculateAncestorCount()))
     }
 }
