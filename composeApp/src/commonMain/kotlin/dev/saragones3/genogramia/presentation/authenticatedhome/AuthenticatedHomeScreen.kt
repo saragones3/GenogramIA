@@ -60,21 +60,18 @@ fun AuthenticatedHomeScreen(
     onOpenTreeClick: (String) -> Unit,
 ) {
     val viewModel: AuthenticatedHomeViewModel = koinViewModel()
-    val userName by viewModel.userName.collectAsState()
-    val searchQuery by viewModel.searchQuery.collectAsState()
-    val isLoading by viewModel.isLoading.collectAsState()
-    val trees by viewModel.trees.collectAsState()
+    val uiState by viewModel.uiState.collectAsState()
 
     LaunchedEffect(Unit) {
         viewModel.onResume()
     }
 
     AuthenticatedHomeContent(
-        userName = userName ?: "",
-        searchQuery = searchQuery,
-        isLoading = isLoading,
+        userName = uiState.userName,
+        searchQuery = uiState.searchQuery,
+        isLoading = uiState.isLoading,
+        trees = uiState.trees,
         onSearchQueryChange = viewModel::onSearchQueryChange,
-        trees = trees,
         onCreateTreeClick = onCreateTreeClick,
         onOpenTreeClick = onOpenTreeClick,
     )
@@ -188,51 +185,51 @@ private fun AuthenticatedHomeContent(
     }
 }
 
-private class GenogramTreeUiModelProvider : PreviewParameterProvider<List<GenogramTreeUiModel>> {
+private class AuthenticatedHomeScreenPreviewProvider : PreviewParameterProvider<AuthenticatedHomeUiState> {
+
+    private val seed = GenogramTreeUiModel(
+        id = "1",
+        title = "Aragones Family",
+        ancestorCount = 1240,
+        lastUpdated = UiText.DynamicString("2 days ago"),
+        isPrimary = true,
+    )
 
     override val values =
         sequenceOf(
-            listOf(
-                GenogramTreeUiModel(
-                    id = "1",
-                    title = "Aragones Family",
-                    ancestorCount = 1240,
-                    lastUpdated = UiText.DynamicString("2 days ago"),
-                    isPrimary = true,
-                ),
+            AuthenticatedHomeUiState(
+                userName = "Sergio",
+                searchQuery = "",
+                isLoading = false,
+                trees = listOf(seed),
             ),
-            emptyList(),
+            AuthenticatedHomeUiState(
+                userName = "Sergio",
+                searchQuery = "tree",
+                isLoading = false,
+                trees = emptyList(),
+            ),
+            AuthenticatedHomeUiState(
+                userName = "Sergio",
+                searchQuery = "",
+                isLoading = true,
+                trees = emptyList(),
+            ),
         )
 }
 
 @Composable
 @Preview
 private fun AuthenticatedHomeScreenPreview(
-    @PreviewParameter(GenogramTreeUiModelProvider::class) trees: List<GenogramTreeUiModel>,
+    @PreviewParameter(AuthenticatedHomeScreenPreviewProvider::class) state: AuthenticatedHomeUiState,
 ) {
     GenogramiaTheme {
         AuthenticatedHomeContent(
-            userName = "Sergio",
-            searchQuery = "",
-            isLoading = false,
+            userName = state.userName,
+            searchQuery = state.searchQuery,
+            isLoading = state.isLoading,
+            trees = state.trees,
             onSearchQueryChange = {},
-            trees = trees,
-            onCreateTreeClick = {},
-            onOpenTreeClick = {},
-        )
-    }
-}
-
-@Composable
-@Preview
-private fun LoadingAuthenticatedHomeScreenPreview() {
-    GenogramiaTheme {
-        AuthenticatedHomeContent(
-            userName = "Sergio",
-            searchQuery = "",
-            isLoading = true,
-            onSearchQueryChange = {},
-            trees = emptyList(),
             onCreateTreeClick = {},
             onOpenTreeClick = {},
         )

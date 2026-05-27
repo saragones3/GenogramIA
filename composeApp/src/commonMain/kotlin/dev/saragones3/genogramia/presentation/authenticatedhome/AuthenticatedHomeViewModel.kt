@@ -12,6 +12,7 @@ import dev.saragones3.genogramia.presentation.util.formatLastUpdated
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class AuthenticatedHomeViewModel(
@@ -20,42 +21,35 @@ class AuthenticatedHomeViewModel(
     private val dateProvider: DateProvider,
     private val dateFormatter: DateFormatter,
 ) : ViewModel() {
-    private val _userName = MutableStateFlow<String?>(null)
-    val userName: StateFlow<String?> = _userName.asStateFlow()
-
-    private val _searchQuery = MutableStateFlow("")
-    val searchQuery: StateFlow<String> = _searchQuery.asStateFlow()
-
-    private val _isLoading = MutableStateFlow(true)
-    val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
 
     private var allTrees = listOf<GenogramTree>()
-    private val _trees = MutableStateFlow<List<GenogramTreeUiModel>>(emptyList())
-    val trees: StateFlow<List<GenogramTreeUiModel>> = _trees.asStateFlow()
+
+    private val _uiState = MutableStateFlow(AuthenticatedHomeUiState())
+    val uiState: StateFlow<AuthenticatedHomeUiState> = _uiState.asStateFlow()
 
     fun onResume() {
-        _userName.value = checkSession()?.displayName ?: "User"
+        _uiState.update { it.copy(userName = checkSession()?.displayName ?: "User") }
         loadTrees()
     }
 
     fun onSearchQueryChange(query: String) {
-        _searchQuery.value = query
+        _uiState.update { it.copy(searchQuery = query) }
         updateFilteredTrees()
     }
 
     private fun loadTrees() {
         viewModelScope.launch {
             if (allTrees.isEmpty()) {
-                _isLoading.value = true
+                _uiState.update { it.copy(isLoading = true) }
             }
             allTrees = getTrees()
             updateFilteredTrees()
-            _isLoading.value = false
+            _uiState.update { it.copy(isLoading = false) }
         }
     }
 
     private fun updateFilteredTrees() {
-        val query = _searchQuery.value
+        val query = _uiState.value.searchQuery
         val filtered =
             if (query.isBlank()) {
                 allTrees
@@ -63,8 +57,8 @@ class AuthenticatedHomeViewModel(
                 allTrees.filter { it.name.contains(query, ignoreCase = true) }
             }
 
-        _trees.value =
-            filtered.map { tree ->
+        _uiState.update { it.copy(
+            trees = filtered.map { tree ->
                 GenogramTreeUiModel(
                     id = tree.id,
                     title = tree.name,
@@ -78,5 +72,6 @@ class AuthenticatedHomeViewModel(
                     isPrimary = tree.id == "1",
                 )
             }
+        ) }
     }
 }

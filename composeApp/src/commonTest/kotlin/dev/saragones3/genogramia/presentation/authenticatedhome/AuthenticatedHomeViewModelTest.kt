@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.presentation.authenticatedhome
 
+import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.User
@@ -19,6 +20,8 @@ import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class AuthenticatedHomeViewModelTest {
@@ -53,9 +56,12 @@ class AuthenticatedHomeViewModelTest {
             authRepository.setCurrentUser(user)
 
             viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
+            
+            assertTrue(viewModel.uiState.value.isLoading) // Initial state
             viewModel.onResume()
 
-            assertEquals("John Doe", viewModel.userName.value)
+            assertEquals("John Doe", viewModel.uiState.value.userName)
+            assertFalse(viewModel.uiState.value.isLoading) // After loading
         }
 
     @Test
@@ -67,10 +73,17 @@ class AuthenticatedHomeViewModelTest {
             treeRepository.createTree(tree)
 
             viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
-            viewModel.onResume()
-
-            assertEquals(1, viewModel.trees.value.size)
-            assertEquals("Smith Family", viewModel.trees.value[0].title)
+            
+            viewModel.uiState.test {
+                assertTrue(awaitItem().isLoading) // Initial true
+                
+                viewModel.onResume()
+                
+                val state = expectMostRecentItem()
+                assertEquals(1, state.trees.size)
+                assertEquals("Smith Family", state.trees[0].title)
+                assertFalse(state.isLoading) // Finished loading
+            }
         }
 
     @Test
@@ -85,11 +98,11 @@ class AuthenticatedHomeViewModelTest {
             viewModel.onResume()
 
             viewModel.onSearchQueryChange("Smith")
-            assertEquals(1, viewModel.trees.value.size)
-            assertEquals("Smith Family", viewModel.trees.value[0].title)
+            assertEquals(1, viewModel.uiState.value.trees.size)
+            assertEquals("Smith Family", viewModel.uiState.value.trees[0].title)
 
             viewModel.onSearchQueryChange("NonExistent")
-            assertEquals(0, viewModel.trees.value.size)
+            assertEquals(0, viewModel.uiState.value.trees.size)
         }
 
     @Test
@@ -101,6 +114,6 @@ class AuthenticatedHomeViewModelTest {
             viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
             viewModel.onResume()
 
-            assertEquals("User", viewModel.userName.value)
+            assertEquals("User", viewModel.uiState.value.userName)
         }
 }
