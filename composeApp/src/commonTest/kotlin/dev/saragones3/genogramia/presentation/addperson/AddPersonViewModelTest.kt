@@ -157,7 +157,20 @@ class AddPersonViewModelTest {
                 assertEquals(false, loadedState.isLoading)
                 assertEquals("p1", loadedState.personId)
                 assertEquals("John", loadedState.person.firstName)
+                assertEquals(0f, loadedState.person.x)
+                assertEquals(0f, loadedState.person.y)
             }
+        }
+
+    @Test
+    fun `when initialize event is received with coordinates for new person then state is updated`() =
+        runTest {
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null, 150f, 250f))
+
+            val state = viewModel.state.value
+            assertNull(state.personId)
+            assertEquals(150f, state.person.x)
+            assertEquals(250f, state.person.y)
         }
 
     @Test

@@ -44,6 +44,8 @@ sealed interface AddPersonEvent {
     data class Initialize(
         val treeId: String,
         val personId: String?,
+        val x: Float? = null,
+        val y: Float? = null,
     ) : AddPersonEvent
 
     data object OnResetState : AddPersonEvent

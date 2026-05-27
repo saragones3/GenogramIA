@@ -54,6 +54,8 @@ import org.koin.compose.viewmodel.koinViewModel
 fun AddPersonScreen(
     treeId: String,
     personId: String? = null,
+    x: Float? = null,
+    y: Float? = null,
     onBackClick: () -> Unit,
     onPersonAdded: () -> Unit,
 ) {
@@ -61,7 +63,7 @@ fun AddPersonScreen(
     val state by viewModel.state.collectAsState()
 
     LaunchedEffect(treeId, personId) {
-        viewModel.onEvent(AddPersonEvent.Initialize(treeId, personId))
+        viewModel.onEvent(AddPersonEvent.Initialize(treeId, personId, x, y))
     }
 
     LaunchedEffect(state.isSuccess) {

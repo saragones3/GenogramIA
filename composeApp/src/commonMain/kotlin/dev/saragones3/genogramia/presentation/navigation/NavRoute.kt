@@ -45,6 +45,8 @@ sealed interface NavRoute {
     data class AddPerson(
         val treeId: String,
         val personId: String? = null,
+        val x: Float? = null,
+        val y: Float? = null,
     ) : NavRoute
 
     @Serializable

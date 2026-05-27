@@ -85,7 +85,7 @@ class AddPersonViewModel(
             }
 
             is AddPersonEvent.Initialize -> {
-                initialize(event.treeId, event.personId)
+                initialize(event.treeId, event.personId, event.x, event.y)
             }
 
             AddPersonEvent.OnResetState -> {
@@ -97,9 +97,19 @@ class AddPersonViewModel(
     private fun initialize(
         treeId: String,
         personId: String?,
+        x: Float? = null,
+        y: Float? = null,
     ) {
         if (personId == null) {
-            _state.update { AddPersonState() }
+            _state.update {
+                AddPersonState(
+                    person =
+                        AddPersonUi(
+                            x = x ?: 0f,
+                            y = y ?: 0f,
+                        ),
+                )
+            }
             return
         }
 

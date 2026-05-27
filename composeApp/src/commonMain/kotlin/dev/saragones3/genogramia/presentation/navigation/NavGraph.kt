@@ -191,8 +191,8 @@ private fun NavGraphContent(
             TreeScreen(
                 treeId = key.treeId,
                 onBackClick = { backStack.pop() },
-                onAddPersonClick = { treeId, personId ->
-                    backStack.push(NavRoute.AddPerson(treeId, personId))
+                onAddPersonClick = { treeId, personId, x, y ->
+                    backStack.push(NavRoute.AddPerson(treeId, personId, x, y))
                 },
                 onAddRelationshipClick = { treeId, p1, p2 ->
                     backStack.push(NavRoute.AddRelationship(treeId, p1, p2))
@@ -207,6 +207,8 @@ private fun NavGraphContent(
             AddPersonScreen(
                 treeId = key.treeId,
                 personId = key.personId,
+                x = key.x,
+                y = key.y,
                 onBackClick = { backStack.pop() },
                 onPersonAdded = { backStack.pop() },
             )

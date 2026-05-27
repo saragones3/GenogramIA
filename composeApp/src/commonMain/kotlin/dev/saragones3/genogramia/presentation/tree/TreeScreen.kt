@@ -51,6 +51,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
@@ -98,7 +99,7 @@ import org.koin.compose.viewmodel.koinViewModel
 fun TreeScreen(
     treeId: String,
     onBackClick: () -> Unit,
-    onAddPersonClick: (String, String?) -> Unit,
+    onAddPersonClick: (String, String?, Float?, Float?) -> Unit,
     onAddRelationshipClick: (String, String, String) -> Unit,
     onEditRelationshipClick: (String, String, String, String) -> Unit,
 ) {
@@ -140,8 +141,8 @@ fun TreeScreen(
         state = state,
         onEvent = viewModel::onEvent,
         onBackClick = onBackClick,
-        onAddPersonClick = { onAddPersonClick(treeId, null) },
-        onEditPersonClick = { personId -> onAddPersonClick(treeId, personId) },
+        onAddPersonClick = { x, y -> onAddPersonClick(treeId, null, x, y) },
+        onEditPersonClick = { personId -> onAddPersonClick(treeId, personId, null, null) },
         onAddRelationshipClick = { p1, p2 -> onAddRelationshipClick(treeId, p1, p2) },
         onEditRelationshipClick = { relId, p1Id, p2Id ->
             onEditRelationshipClick(treeId, relId, p1Id, p2Id)
@@ -155,12 +156,14 @@ private fun TreeContent(
     state: TreeState,
     onEvent: (TreeEvent) -> Unit,
     onBackClick: () -> Unit,
-    onAddPersonClick: () -> Unit,
+    onAddPersonClick: (Float?, Float?) -> Unit,
     onEditPersonClick: (String) -> Unit,
     onAddRelationshipClick: (String, String) -> Unit,
     onEditRelationshipClick: (String, String, String) -> Unit,
     snackbarHostState: SnackbarHostState,
 ) {
+    val canvasCenterDp = remember { mutableStateOf(Offset.Zero) }
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,
         topBar = {
@@ -193,7 +196,7 @@ private fun TreeContent(
                             if (state.selectedPersonIds.size == 1) {
                                 onEditPersonClick(state.selectedPersonIds.first())
                             } else {
-                                onAddPersonClick()
+                                onAddPersonClick(canvasCenterDp.value.x, canvasCenterDp.value.y)
                             }
                         },
                         containerColor = MaterialTheme.colorScheme.primary,
@@ -223,6 +226,15 @@ private fun TreeContent(
         ) {
             val center = Offset(constraints.maxWidth / 2f, constraints.maxHeight / 2f)
             val density = LocalDensity.current
+
+            LaunchedEffect(center, state.offset, state.scale) {
+                val canvasCenterPx = (center - state.offset) / state.scale
+                canvasCenterDp.value =
+                    Offset(
+                        canvasCenterPx.x / density.density,
+                        canvasCenterPx.y / density.density,
+                    )
+            }
 
             val resetViewport = {
                 val centralPerson = state.tree.centralPerson
@@ -1382,7 +1394,7 @@ private fun TreeScreenPreview(
             state = state,
             onEvent = {},
             onBackClick = {},
-            onAddPersonClick = {},
+            onAddPersonClick = { _, _ -> },
             onEditPersonClick = {},
             onAddRelationshipClick = { _, _ -> },
             onEditRelationshipClick = { _, _, _ -> },
