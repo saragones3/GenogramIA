@@ -7,9 +7,12 @@ import dev.saragones3.genogramia.domain.model.User
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreesUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
+import dev.saragones3.genogramia.presentation.util.UiText
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
+import genogramia.composeapp.generated.resources.Res
+import genogramia.composeapp.generated.resources.new_tree_name
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
@@ -69,7 +72,12 @@ class AuthenticatedHomeViewModelTest {
         runTest {
             val user = User("123", "test@test.com", "John Doe")
             authRepository.setCurrentUser(user)
-            val tree = GenogramTree("1", "Smith Family", 1, "2024-05-15T12:00:00", Person())
+            val tree = GenogramTree(
+                id = "1",
+                ancestorCount = 1,
+                lastUpdated = "2024-05-15T12:00:00",
+                centralPerson = Person(id = "p1", firstName = "John", lastName = "Smith Family", birthDate = 0L)
+            )
             treeRepository.createTree(tree)
 
             viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
@@ -81,7 +89,10 @@ class AuthenticatedHomeViewModelTest {
                 
                 val state = expectMostRecentItem()
                 assertEquals(1, state.trees.size)
-                assertEquals("Smith Family", state.trees[0].title)
+                assertEquals(
+                    UiText.Resource(Res.string.new_tree_name, arrayOf("Smith Family")),
+                    state.trees[0].title
+                )
                 assertFalse(state.isLoading) // Finished loading
             }
         }
@@ -91,15 +102,32 @@ class AuthenticatedHomeViewModelTest {
         runTest {
             val user = User("123", "test@test.com", "John Doe")
             authRepository.setCurrentUser(user)
-            treeRepository.createTree(GenogramTree("1", "Smith Family", 1, "2024-05-15T12:00:00", Person()))
-            treeRepository.createTree(GenogramTree("2", "Maternal Lineage", 1, "2024-05-15T12:00:00", Person()))
+            treeRepository.createTree(
+                GenogramTree(
+                    id = "1",
+                    ancestorCount = 1,
+                    lastUpdated = "2024-05-15T12:00:00",
+                    centralPerson = Person(id = "p1", firstName = "John", lastName = "Smith Family", birthDate = 0L)
+                )
+            )
+            treeRepository.createTree(
+                GenogramTree(
+                    id = "2",
+                    ancestorCount = 1,
+                    lastUpdated = "2024-05-15T12:00:00",
+                    centralPerson = Person(id = "p2", firstName = "Jane", lastName = "Maternal Lineage", birthDate = 0L)
+                )
+            )
 
             viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
             viewModel.onResume()
 
             viewModel.onSearchQueryChange("Smith")
             assertEquals(1, viewModel.uiState.value.trees.size)
-            assertEquals("Smith Family", viewModel.uiState.value.trees[0].title)
+            assertEquals(
+                UiText.Resource(Res.string.new_tree_name, arrayOf("Smith Family")),
+                viewModel.uiState.value.trees[0].title
+            )
 
             viewModel.onSearchQueryChange("NonExistent")
             assertEquals(0, viewModel.uiState.value.trees.size)

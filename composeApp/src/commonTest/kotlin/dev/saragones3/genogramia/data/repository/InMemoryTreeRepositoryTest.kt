@@ -18,7 +18,6 @@ class InMemoryTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "1",
-                    name = "Test Tree",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = centralPerson,
@@ -36,7 +35,6 @@ class InMemoryTreeRepositoryTest {
             val tree1 =
                 GenogramTree(
                     id = "1",
-                    name = "Tree 1",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = centralPerson,
@@ -44,7 +42,6 @@ class InMemoryTreeRepositoryTest {
             val tree2 =
                 GenogramTree(
                     id = "2",
-                    name = "Tree 2",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = centralPerson,
@@ -62,7 +59,6 @@ class InMemoryTreeRepositoryTest {
             val tree1 =
                 GenogramTree(
                     id = "1",
-                    name = "Tree 1",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = centralPerson,
@@ -70,7 +66,6 @@ class InMemoryTreeRepositoryTest {
             val tree2 =
                 GenogramTree(
                     id = "2",
-                    name = "Tree 2",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = centralPerson,
@@ -90,14 +85,13 @@ class InMemoryTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "1",
-                    name = "Old Name",
                     ancestorCount = 1,
                     lastUpdated = "2024-05-15",
                     centralPerson = centralPerson,
                 )
             repository.createTree(tree)
 
-            val updatedTree = tree.copy(name = "New Name")
+            val updatedTree = tree.copy(centralPerson = tree.centralPerson.copy(lastName = "New Name"))
             repository.updateTree(updatedTree)
 
             val found = repository.getTree("1")
@@ -110,7 +104,6 @@ class InMemoryTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "1",
-                    name = "New Tree",
                     ancestorCount = 1,
                     lastUpdated = "2024-05-15",
                     centralPerson = centralPerson,

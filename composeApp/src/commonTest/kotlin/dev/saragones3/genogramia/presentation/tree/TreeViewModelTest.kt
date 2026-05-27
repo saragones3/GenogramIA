@@ -79,7 +79,7 @@ class TreeViewModelTest {
                     birthDate = 315532800000L,
                     biologicalSex = Person.BiologicalSex.MALE,
                 )
-            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            val tree = GenogramTree("t1", 1, "now", person)
             treeRepository.createTree(tree)
 
             viewModel.state.test {
@@ -122,7 +122,7 @@ class TreeViewModelTest {
         runTest {
             // 1915-01-01 and 1989-12-31 approx
             val person = Person("p1", "John", "Doe", birthDate = -1735689600000L, deathDate = 631065600000L)
-            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            val tree = GenogramTree("t1", 1, "now", person)
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -144,7 +144,7 @@ class TreeViewModelTest {
 
             // 1980-01-01
             val person = Person("p1", "John", "Doe", birthDate = 315532800000L)
-            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            val tree = GenogramTree("t1", 1, "now", person)
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -202,7 +202,7 @@ class TreeViewModelTest {
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
+            val tree = GenogramTree("t1", 2, "now", central, listOf(p2))
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -229,7 +229,7 @@ class TreeViewModelTest {
                     personId2 = "p2",
                     type = Relationship.RelationshipType.MARRIAGE,
                 )
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), listOf(rel))
+            val tree = GenogramTree("t1", 2, "now", central, listOf(p2), listOf(rel))
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -294,7 +294,7 @@ class TreeViewModelTest {
                     personId2 = "p2",
                     type = Relationship.RelationshipType.MARRIAGE,
                 )
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), listOf(rel))
+            val tree = GenogramTree("t1", 2, "now", central, listOf(p2), listOf(rel))
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -311,7 +311,7 @@ class TreeViewModelTest {
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
+            val tree = GenogramTree("t1", 2, "now", central, listOf(p2))
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -327,7 +327,7 @@ class TreeViewModelTest {
     fun `when OnPersonMove event is received person position is updated`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
-            val tree = GenogramTree("t1", "Family", 1, "now", central)
+            val tree = GenogramTree("t1", 1, "now", central)
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -344,7 +344,7 @@ class TreeViewModelTest {
     fun `when OnPersonMoveFinished event is received person position is saved in repository`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
-            val tree = GenogramTree("t1", "Family", 1, "now", central)
+            val tree = GenogramTree("t1", 1, "now", central)
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -369,7 +369,7 @@ class TreeViewModelTest {
 
             // Birth date: 1980-06-01 (Birthday hasn't happened yet in 2024)
             val person = Person("p1", "John", "Doe", birthDate = 328665600000L)
-            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            val tree = GenogramTree("t1", 1, "now", person)
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -388,7 +388,7 @@ class TreeViewModelTest {
 
             // Birth date: 1980-06-01 (Birthday already happened in 2024)
             val person = Person("p1", "John", "Doe", birthDate = 328665600000L)
-            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            val tree = GenogramTree("t1", 1, "now", person)
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -417,7 +417,7 @@ class TreeViewModelTest {
                     personId2 = "child",
                     type = Relationship.RelationshipType.ADOPTION_LEGAL,
                 )
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(adoptiveParent), listOf(rel))
+            val tree = GenogramTree("t1", 2, "now", central, listOf(adoptiveParent), listOf(rel))
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -443,7 +443,7 @@ class TreeViewModelTest {
                     type = Relationship.RelationshipType.MARRIAGE,
                 )
             // Both persons have 0,0 coordinates
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), listOf(rel))
+            val tree = GenogramTree("t1", 2, "now", central, listOf(p2), listOf(rel))
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -461,7 +461,7 @@ class TreeViewModelTest {
             val central = Person("p1", "John", "Doe", 0L, x = 100f, y = 100f)
             val p2 = Person("p2", "Ex-Partner", "Doe", 0L, x = 350f, y = 100f)
             // No relationships
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), emptyList())
+            val tree = GenogramTree("t1", 2, "now", central, listOf(p2), emptyList())
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -480,7 +480,7 @@ class TreeViewModelTest {
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
+            val tree = GenogramTree("t1", 2, "now", central, listOf(p2))
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -511,7 +511,7 @@ class TreeViewModelTest {
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2))
+            val tree = GenogramTree("t1", 2, "now", central, listOf(p2))
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -534,7 +534,7 @@ class TreeViewModelTest {
             val p2 = Person("p2", "Jane", "Doe", 0L)
             // Create a marriage so it cannot be deleted
             val rel = Relationship("r1", "p1", "p2", Relationship.RelationshipType.MARRIAGE)
-            val tree = GenogramTree("t1", "Family", 2, "now", central, listOf(p2), listOf(rel))
+            val tree = GenogramTree("t1", 2, "now", central, listOf(p2), listOf(rel))
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -571,7 +571,7 @@ class TreeViewModelTest {
     fun `when OnConfirmDeleteTree event is received tree is deleted and shouldNavigateBack is true`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
-            val tree = GenogramTree("t1", "Family", 1, "now", central)
+            val tree = GenogramTree("t1", 1, "now", central)
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))

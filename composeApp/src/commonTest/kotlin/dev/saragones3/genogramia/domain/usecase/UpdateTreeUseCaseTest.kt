@@ -20,7 +20,6 @@ class UpdateTreeUseCaseTest {
     private val tree =
         GenogramTree(
             id = "tree-1",
-            name = "Test Tree",
             ancestorCount = 0,
             lastUpdated = "2024-05-15",
             centralPerson = person1,
@@ -36,7 +35,7 @@ class UpdateTreeUseCaseTest {
         runTest {
             repository.createTree(tree)
 
-            val updatedTree = tree.copy(name = "Updated Name")
+            val updatedTree = tree.copy(centralPerson = tree.centralPerson.copy(lastName = "Updated Name"))
             useCase(updatedTree)
 
             val savedTree = repository.getTree("tree-1")

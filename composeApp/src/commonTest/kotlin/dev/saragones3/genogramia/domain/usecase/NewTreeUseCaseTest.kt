@@ -81,7 +81,7 @@ class NewTreeUseCaseTest {
             assertTrue(result.isSuccess)
             val tree = result.getOrNull()
             assertEquals("tree-1778716800000", tree?.id)
-            assertEquals("John Doe Lineage", tree?.name)
+            assertEquals("Doe", tree?.name)
             assertEquals(0, tree?.ancestorCount)
             assertEquals("1778716800000", tree?.centralPerson?.id)
             assertEquals("John", tree?.centralPerson?.firstName)

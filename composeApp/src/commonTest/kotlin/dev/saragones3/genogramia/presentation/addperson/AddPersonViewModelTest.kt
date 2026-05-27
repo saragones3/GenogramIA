@@ -40,7 +40,6 @@ class AddPersonViewModelTest {
     private val tree =
         GenogramTree(
             id = "tree-1",
-            name = "Test Tree",
             ancestorCount = 1,
             lastUpdated = "2024-05-15",
             centralPerson =

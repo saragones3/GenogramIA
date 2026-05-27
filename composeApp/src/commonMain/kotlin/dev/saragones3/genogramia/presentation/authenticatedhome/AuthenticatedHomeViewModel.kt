@@ -8,7 +8,10 @@ import dev.saragones3.genogramia.domain.usecase.GetTreesUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.domain.util.DateProvider
 import dev.saragones3.genogramia.presentation.model.GenogramTreeUiModel
+import dev.saragones3.genogramia.presentation.util.UiText
 import dev.saragones3.genogramia.presentation.util.formatLastUpdated
+import genogramia.composeapp.generated.resources.Res
+import genogramia.composeapp.generated.resources.new_tree_name
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -61,7 +64,7 @@ class AuthenticatedHomeViewModel(
             trees = filtered.map { tree ->
                 GenogramTreeUiModel(
                     id = tree.id,
-                    title = tree.name,
+                    title = UiText.Resource(Res.string.new_tree_name, arrayOf(tree.name)),
                     ancestorCount = tree.ancestorCount,
                     lastUpdated = tree.formatLastUpdated(
                         now = dateProvider.now(),

@@ -8,10 +8,20 @@ class GenogramTreeTest {
     private val centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
 
     @Test
+    fun `name returns lastName of centralPerson`() {
+        val tree = GenogramTree(
+            id = "tree-1",
+            ancestorCount = 0,
+            lastUpdated = "",
+            centralPerson = centralPerson
+        )
+        assertEquals("Doe", tree.name)
+    }
+
+    @Test
     fun `calculateAncestorCount returns 0 for tree with only central person`() {
         val tree = GenogramTree(
             id = "tree-1",
-            name = "Test",
             ancestorCount = 0,
             lastUpdated = "",
             centralPerson = centralPerson
@@ -24,7 +34,6 @@ class GenogramTreeTest {
         val p2 = Person(id = "p2", firstName = "Father", lastName = "Doe", birthDate = 0L)
         val tree = GenogramTree(
             id = "tree-1",
-            name = "Test",
             ancestorCount = 0,
             lastUpdated = "",
             centralPerson = centralPerson,
@@ -49,7 +58,6 @@ class GenogramTreeTest {
         
         val tree = GenogramTree(
             id = "tree-1",
-            name = "Test",
             ancestorCount = 0,
             lastUpdated = "",
             centralPerson = centralPerson,
@@ -69,7 +77,6 @@ class GenogramTreeTest {
         val spouse = Person(id = "s", firstName = "Spouse", lastName = "Doe", birthDate = 0L)
         val tree = GenogramTree(
             id = "tree-1",
-            name = "Test",
             ancestorCount = 0,
             lastUpdated = "",
             centralPerson = centralPerson,

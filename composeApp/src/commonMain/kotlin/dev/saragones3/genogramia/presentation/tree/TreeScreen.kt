@@ -88,6 +88,7 @@ import genogramia.composeapp.generated.resources.canvas_reset
 import genogramia.composeapp.generated.resources.canvas_zoom_in
 import genogramia.composeapp.generated.resources.canvas_zoom_out
 import genogramia.composeapp.generated.resources.edit_relationship
+import genogramia.composeapp.generated.resources.new_tree_name
 import genogramia.composeapp.generated.resources.error_delete_has_descendants
 import genogramia.composeapp.generated.resources.error_delete_has_formal_relationships
 import genogramia.composeapp.generated.resources.error_tree_not_found
@@ -287,7 +288,7 @@ private fun TreeContent(
 
             if (state.showDeleteTreeConfirmation) {
                 DeleteTreeDialog(
-                    treeName = state.tree.name,
+                    treeName = stringResource(Res.string.new_tree_name, state.tree.name),
                     memberCount = state.tree.persons.size + 1, // +1 for central person
                     onConfirm = { onEvent(TreeEvent.OnConfirmDeleteTree) },
                     onDismiss = { onEvent(TreeEvent.OnDismissDeleteTree) },
@@ -308,7 +309,7 @@ private fun TopBar(
     TopAppBar(
         title = {
             Text(
-                text = treeName,
+                text = stringResource(Res.string.new_tree_name, treeName),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
             )

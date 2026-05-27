@@ -163,7 +163,7 @@ private fun AuthenticatedHomeContent(
                         Column(verticalArrangement = Arrangement.spacedBy(32.dp)) {
                             trees.forEach { tree ->
                                 GenogramTreeCard(
-                                    title = tree.title,
+                                    title = tree.title.asString(),
                                     ancestorCount = tree.ancestorCount,
                                     lastUpdated = tree.lastUpdated,
                                     buttonText = stringResource(Res.string.auth_home_open_archive),
@@ -189,7 +189,7 @@ private class AuthenticatedHomeScreenPreviewProvider : PreviewParameterProvider<
 
     private val seed = GenogramTreeUiModel(
         id = "1",
-        title = "Aragones Family",
+        title = UiText.DynamicString("Aragones Family"),
         ancestorCount = 1240,
         lastUpdated = UiText.DynamicString("2 days ago"),
         isPrimary = true,

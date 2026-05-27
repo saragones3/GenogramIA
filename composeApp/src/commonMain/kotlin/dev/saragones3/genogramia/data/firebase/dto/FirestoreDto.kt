@@ -30,7 +30,6 @@ data class RelationshipDto(
 @Serializable
 data class GenogramTreeDto(
     val id: String = "",
-    val name: String = "",
     val ancestorCount: Int = 0,
     val lastUpdated: String = "",
     val centralPerson: PersonDto = PersonDto(),

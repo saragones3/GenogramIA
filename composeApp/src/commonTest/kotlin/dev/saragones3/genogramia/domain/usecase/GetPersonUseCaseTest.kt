@@ -18,7 +18,6 @@ class GetPersonUseCaseTest {
     private val tree =
         GenogramTree(
             id = "tree-1",
-            name = "John Doe Lineage",
             ancestorCount = 2,
             lastUpdated = "2024-05-15",
             centralPerson = centralPerson,

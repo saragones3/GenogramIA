@@ -25,7 +25,6 @@ class DeletePersonUseCaseTest {
     private val tree =
         GenogramTree(
             id = "tree-1",
-            name = "Test Tree",
             ancestorCount = 0,
             lastUpdated = "2024-05-15",
             centralPerson = centralPerson,

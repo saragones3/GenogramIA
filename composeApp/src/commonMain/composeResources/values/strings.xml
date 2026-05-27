@@ -149,6 +149,7 @@
     <string name="new_tree_button">Continue and Create Tree</string>
     <string name="new_tree_footer">You can edit this information later in the person's profile.</string>
     <string name="new_tree_guest_notice">Your data is temporary and will be lost when the app closes.</string>
+    <string name="new_tree_name">%1$s lineage</string>
 
     <!-- Canvas -->
     <string name="canvas_title">Genogram Canvas</string>

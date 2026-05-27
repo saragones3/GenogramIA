@@ -12,8 +12,8 @@ class GetTreesUseCaseTest {
     fun `invoke returns list of trees from repository`() =
         runTest {
             val fakeRepository = FakeTreeRepository()
-            val tree1 = GenogramTree("1", "Tree 1", 1, "now", Person())
-            val tree2 = GenogramTree("2", "Tree 2", 2, "yesterday", Person())
+            val tree1 = GenogramTree("1", 1, "now", Person())
+            val tree2 = GenogramTree("2", 2, "yesterday", Person())
             fakeRepository.createTree(tree1)
             fakeRepository.createTree(tree2)
 

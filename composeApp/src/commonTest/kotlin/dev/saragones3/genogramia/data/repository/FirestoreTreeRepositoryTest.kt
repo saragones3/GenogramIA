@@ -34,7 +34,6 @@ class FirestoreTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "tree1",
-                    name = "My Tree",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "Central", lastName = "Person", birthDate = 0L),
@@ -44,7 +43,6 @@ class FirestoreTreeRepositoryTest {
 
             val savedTree = fakeFirestore.database["user123"]?.get("tree1")
             assertNotNull(savedTree)
-            assertEquals("My Tree", savedTree.name)
         }
 
     @Test
@@ -55,7 +53,6 @@ class FirestoreTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "tree1",
-                    name = "My Tree",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "Central", lastName = "Person", birthDate = 0L),
@@ -75,7 +72,6 @@ class FirestoreTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "tree1",
-                    name = "My Tree",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "Central", lastName = "Person", birthDate = 0L),
@@ -96,7 +92,6 @@ class FirestoreTreeRepositoryTest {
             repository.createTree(
                 GenogramTree(
                     id = "tree1",
-                    name = "Tree 1",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "P1", lastName = "L1", birthDate = 0L),
@@ -105,7 +100,6 @@ class FirestoreTreeRepositoryTest {
             repository.createTree(
                 GenogramTree(
                     id = "tree2",
-                    name = "Tree 2",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p2", firstName = "P2", lastName = "L2", birthDate = 0L),
@@ -127,17 +121,16 @@ class FirestoreTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "tree1",
-                    name = "My Tree",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "Central", lastName = "Person", birthDate = 0L),
                 )
             repository.createTree(tree)
 
-            val updatedTree = tree.copy(name = "Updated Tree")
+            val updatedTree = tree.copy(centralPerson = tree.centralPerson.copy(lastName = "Updated"))
             repository.updateTree(updatedTree)
 
             val fetchedTree = repository.getTree("tree1")
-            assertEquals("Updated Tree", fetchedTree?.name)
+            assertEquals("Updated", fetchedTree?.name)
         }
 }

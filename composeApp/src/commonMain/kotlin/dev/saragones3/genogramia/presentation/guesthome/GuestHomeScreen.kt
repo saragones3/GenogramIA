@@ -111,7 +111,7 @@ private fun GuestHomeContent(
 
             trees.forEach { tree ->
                 GenogramTreeCard(
-                    title = tree.title,
+                    title = tree.title.asString(),
                     ancestorCount = tree.ancestorCount,
                     lastUpdated = tree.lastUpdated,
                     buttonText = stringResource(Res.string.explore_example),
@@ -191,7 +191,7 @@ private class GuestHomeScreenPreviewProvider : PreviewParameterProvider<GuestHom
 
     private val seed = GenogramTreeUiModel(
         id = "1",
-        title = "Sample Tree",
+        title = UiText.DynamicString("Sample Tree"),
         ancestorCount = 10,
         lastUpdated = UiText.DynamicString("today"),
     )

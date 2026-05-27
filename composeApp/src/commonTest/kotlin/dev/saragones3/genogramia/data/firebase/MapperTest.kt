@@ -148,7 +148,6 @@ class MapperTest {
         val tree =
             GenogramTree(
                 id = "t1",
-                name = "Tree 1",
                 ancestorCount = 2,
                 lastUpdated = "2024-05-15",
                 centralPerson = centralPerson,
@@ -159,7 +158,6 @@ class MapperTest {
         val dto = tree.toDto()
 
         assertEquals(tree.id, dto.id)
-        assertEquals(tree.name, dto.name)
         assertEquals(tree.ancestorCount, dto.ancestorCount)
         assertEquals(tree.lastUpdated, dto.lastUpdated)
         assertEquals(tree.centralPerson.id, dto.centralPerson.id)
@@ -171,14 +169,13 @@ class MapperTest {
 
     @Test
     fun `GenogramTreeDto toDomain maps correctly`() {
-        val centralPersonDto = PersonDto(id = "cp", firstName = "Central")
+        val centralPersonDto = PersonDto(id = "cp", firstName = "Central", lastName = "P")
         val person1Dto = PersonDto(id = "p1", firstName = "P1")
         val relationship1Dto = RelationshipDto(id = "r1", personId1 = "cp", personId2 = "p1")
 
         val dto =
             GenogramTreeDto(
                 id = "t1",
-                name = "Tree 1",
                 ancestorCount = 2,
                 lastUpdated = "2024-05-15",
                 centralPerson = centralPersonDto,
@@ -189,7 +186,7 @@ class MapperTest {
         val tree = dto.toDomain()
 
         assertEquals(dto.id, tree.id)
-        assertEquals(dto.name, tree.name)
+        assertEquals("P", tree.name)
         assertEquals(dto.ancestorCount, tree.ancestorCount)
         assertEquals(dto.lastUpdated, tree.lastUpdated)
         assertEquals(dto.centralPerson.id, tree.centralPerson.id)

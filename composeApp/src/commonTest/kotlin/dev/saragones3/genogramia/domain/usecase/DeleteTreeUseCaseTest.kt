@@ -25,7 +25,6 @@ class DeleteTreeUseCaseTest {
             repository.createTree(
                 dev.saragones3.genogramia.domain.model.GenogramTree(
                     treeId,
-                    "Test Tree",
                     0,
                     "",
                     dev.saragones3.genogramia.domain.model

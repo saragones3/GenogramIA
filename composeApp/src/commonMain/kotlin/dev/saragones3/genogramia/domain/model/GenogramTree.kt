@@ -2,13 +2,15 @@ package dev.saragones3.genogramia.domain.model
 
 data class GenogramTree(
     val id: String,
-    val name: String,
     val ancestorCount: Int,
     val lastUpdated: String,
     val centralPerson: Person,
     val persons: List<Person> = emptyList(),
     val relationships: List<Relationship> = emptyList(),
 ) {
+    val name: String
+        get() = centralPerson.lastName
+
     fun calculateAncestorCount(): Int {
         val ancestors = mutableSetOf<String>()
         val queue = mutableListOf(centralPerson.id)

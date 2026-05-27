@@ -44,7 +44,6 @@ class AddRelationshipViewModelTest {
     private val tree =
         GenogramTree(
             id = "tree-1",
-            name = "Test Tree",
             ancestorCount = 2,
             lastUpdated = "2024-05-15",
             centralPerson = person1,
@@ -121,7 +120,6 @@ class AddRelationshipViewModelTest {
             val consanguineousTree =
                 GenogramTree(
                     id = "tree-consanguineous",
-                    name = "Consanguineous Tree",
                     ancestorCount = 3,
                     lastUpdated = "2024-05-15",
                     centralPerson = parent,
@@ -148,7 +146,6 @@ class AddRelationshipViewModelTest {
             val treeNoRisk =
                 GenogramTree(
                     id = "tree-no-risk",
-                    name = "No Risk Tree",
                     ancestorCount = 2,
                     lastUpdated = "2024-05-15",
                     centralPerson = p1,
@@ -192,7 +189,6 @@ class AddRelationshipViewModelTest {
             val mixedTree =
                 GenogramTree(
                     id = "tree-mixed",
-                    name = "Mixed Tree",
                     ancestorCount = 3,
                     lastUpdated = "2024-05-15",
                     centralPerson = parent,

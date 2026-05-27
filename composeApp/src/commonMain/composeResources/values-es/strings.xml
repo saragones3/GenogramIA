@@ -149,6 +149,7 @@
     <string name="new_tree_button">Continuar y Crear Árbol</string>
     <string name="new_tree_footer">Podrás editar esta información más adelante en el perfil de la persona.</string>
     <string name="new_tree_guest_notice">Tus datos son temporales y se perderán al cerrar la aplicación.</string>
+    <string name="new_tree_name">Linaje %1$s</string>
 
     <!-- Canvas -->
     <string name="canvas_title">Lienzo del Genograma</string>
