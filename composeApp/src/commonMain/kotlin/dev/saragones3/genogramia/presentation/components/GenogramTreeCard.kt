@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -19,6 +20,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -26,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.saragones3.genogramia.presentation.util.UiText
+import dev.saragones3.genogramia.presentation.util.shimmer
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.auth_home_description
@@ -133,19 +136,92 @@ fun GenogramTreeCard(
     }
 }
 
+@Composable
+fun GenogramTreeCardSkeleton(
+    modifier: Modifier = Modifier,
+) {
+    Surface(
+        modifier =
+            modifier
+                .fillMaxWidth()
+                .height(280.dp),
+        shape = RoundedCornerShape(32.dp),
+        color = Color.LightGray.copy(alpha = 0.3f),
+    ) {
+        Box(
+            modifier =
+                Modifier
+                    .fillMaxSize()
+                    .shimmer(),
+        ) {
+            Column(
+                modifier = Modifier.fillMaxSize().padding(24.dp),
+            ) {
+                // Badge skeleton
+                Box(
+                    modifier =
+                        Modifier
+                            .size(width = 120.dp, height = 24.dp)
+                            .clip(CircleShape)
+                            .background(Color.White.copy(alpha = 0.3f)),
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                // Title skeleton
+                Box(
+                    modifier =
+                        Modifier
+                            .size(width = 200.dp, height = 32.dp)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(Color.White.copy(alpha = 0.3f)),
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                // Description skeleton
+                Box(
+                    modifier =
+                        Modifier
+                            .size(width = 160.dp, height = 20.dp)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(Color.White.copy(alpha = 0.3f)),
+                )
+
+                Spacer(modifier = Modifier.weight(1f))
+
+                // Button skeleton
+                Box(
+                    modifier =
+                        Modifier
+                            .size(width = 140.dp, height = 44.dp)
+                            .clip(CircleShape)
+                            .background(Color.White),
+                )
+            }
+        }
+    }
+}
+
 @Preview
 @Composable
 private fun GenogramTreeCardPreview() {
     GenogramiaTheme {
-        Column(modifier = Modifier.padding(16.dp)) {
-            GenogramTreeCard(
-                title = "Smith Family",
-                ancestorCount = 27,
-                lastUpdated = UiText.DynamicString("2 days ago"),
-                buttonText = "Open Archive",
-                onButtonClick = {},
-                badgeText = "Primary Lineage",
-            )
-        }
+        GenogramTreeCard(
+            title = "Smith Family",
+            ancestorCount = 27,
+            lastUpdated = UiText.DynamicString("2 days ago"),
+            buttonText = "Open Archive",
+            onButtonClick = {},
+            badgeText = "Primary Lineage",
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun GenogramTreeCardSkeletonPreview() {
+    GenogramiaTheme {
+        GenogramTreeCardSkeleton()
     }
 }

@@ -26,6 +26,9 @@ class AuthenticatedHomeViewModel(
     private val _searchQuery = MutableStateFlow("")
     val searchQuery: StateFlow<String> = _searchQuery.asStateFlow()
 
+    private val _isLoading = MutableStateFlow(true)
+    val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
+
     private var allTrees = listOf<GenogramTree>()
     private val _trees = MutableStateFlow<List<GenogramTreeUiModel>>(emptyList())
     val trees: StateFlow<List<GenogramTreeUiModel>> = _trees.asStateFlow()
@@ -42,8 +45,12 @@ class AuthenticatedHomeViewModel(
 
     private fun loadTrees() {
         viewModelScope.launch {
+            if (allTrees.isEmpty()) {
+                _isLoading.value = true
+            }
             allTrees = getTrees()
             updateFilteredTrees()
+            _isLoading.value = false
         }
     }
 

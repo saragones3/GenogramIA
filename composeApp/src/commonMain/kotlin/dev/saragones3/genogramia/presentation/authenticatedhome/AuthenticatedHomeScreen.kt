@@ -1,5 +1,9 @@
 package dev.saragones3.genogramia.presentation.authenticatedhome
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,7 +16,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -27,10 +30,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.presentation.components.AddTreeCard
 import dev.saragones3.genogramia.presentation.components.GenogramTreeCard
+import dev.saragones3.genogramia.presentation.components.GenogramTreeCardSkeleton
 import dev.saragones3.genogramia.presentation.components.SearchBar
 import dev.saragones3.genogramia.presentation.model.GenogramTreeUiModel
 import dev.saragones3.genogramia.presentation.util.UiText
@@ -56,6 +62,7 @@ fun AuthenticatedHomeScreen(
     val viewModel: AuthenticatedHomeViewModel = koinViewModel()
     val userName by viewModel.userName.collectAsState()
     val searchQuery by viewModel.searchQuery.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
     val trees by viewModel.trees.collectAsState()
 
     LaunchedEffect(Unit) {
@@ -65,6 +72,7 @@ fun AuthenticatedHomeScreen(
     AuthenticatedHomeContent(
         userName = userName ?: "",
         searchQuery = searchQuery,
+        isLoading = isLoading,
         onSearchQueryChange = viewModel::onSearchQueryChange,
         trees = trees,
         onCreateTreeClick = onCreateTreeClick,
@@ -76,6 +84,7 @@ fun AuthenticatedHomeScreen(
 private fun AuthenticatedHomeContent(
     userName: String,
     searchQuery: String,
+    isLoading: Boolean,
     trees: List<GenogramTreeUiModel>,
     onSearchQueryChange: (String) -> Unit,
     onCreateTreeClick: () -> Unit,
@@ -139,46 +148,91 @@ private fun AuthenticatedHomeContent(
                 }
             }
 
-            items(trees, key = { it.id }) { tree ->
-                GenogramTreeCard(
-                    title = tree.title,
-                    ancestorCount = tree.ancestorCount,
-                    lastUpdated = tree.lastUpdated,
-                    buttonText = stringResource(Res.string.auth_home_open_archive),
-                    onButtonClick = { onOpenTreeClick(tree.id) },
-                    badgeText = if (tree.isPrimary) stringResource(Res.string.auth_home_primary_lineage) else null,
-                )
-            }
-
             item {
-                AddTreeCard(
-                    title = stringResource(Res.string.auth_home_start_tree),
-                    subtitle = stringResource(Res.string.auth_home_start_tree_subtitle),
-                    onClick = onCreateTreeClick,
-                )
+                AnimatedContent(
+                    targetState = isLoading,
+                    transitionSpec = {
+                        fadeIn().togetherWith(fadeOut())
+                    },
+                    label = "trees_loading_transition",
+                ) { loading ->
+                    if (loading) {
+                        Column(verticalArrangement = Arrangement.spacedBy(32.dp)) {
+                            repeat(2) {
+                                GenogramTreeCardSkeleton()
+                            }
+                        }
+                    } else {
+                        Column(verticalArrangement = Arrangement.spacedBy(32.dp)) {
+                            trees.forEach { tree ->
+                                GenogramTreeCard(
+                                    title = tree.title,
+                                    ancestorCount = tree.ancestorCount,
+                                    lastUpdated = tree.lastUpdated,
+                                    buttonText = stringResource(Res.string.auth_home_open_archive),
+                                    onButtonClick = { onOpenTreeClick(tree.id) },
+                                    badgeText = if (tree.isPrimary) stringResource(Res.string.auth_home_primary_lineage) else null,
+                                )
+                            }
+
+                            AddTreeCard(
+                                title = stringResource(Res.string.auth_home_start_tree),
+                                subtitle = stringResource(Res.string.auth_home_start_tree_subtitle),
+                                onClick = onCreateTreeClick,
+                            )
+                        }
+                    }
+                }
             }
         }
     }
 }
 
+private class GenogramTreeUiModelProvider : PreviewParameterProvider<List<GenogramTreeUiModel>> {
+
+    override val values =
+        sequenceOf(
+            listOf(
+                GenogramTreeUiModel(
+                    id = "1",
+                    title = "Aragones Family",
+                    ancestorCount = 1240,
+                    lastUpdated = UiText.DynamicString("2 days ago"),
+                    isPrimary = true,
+                ),
+            ),
+            emptyList(),
+        )
+}
+
 @Composable
 @Preview
-private fun AuthenticatedHomeScreenPreview() {
+private fun AuthenticatedHomeScreenPreview(
+    @PreviewParameter(GenogramTreeUiModelProvider::class) trees: List<GenogramTreeUiModel>,
+) {
     GenogramiaTheme {
         AuthenticatedHomeContent(
             userName = "Sergio",
             searchQuery = "",
+            isLoading = false,
             onSearchQueryChange = {},
-            trees =
-                listOf(
-                    GenogramTreeUiModel(
-                        id = "1",
-                        title = "Aragones Family",
-                        ancestorCount = 1240,
-                        lastUpdated = UiText.DynamicString("2 days ago"),
-                        isPrimary = true,
-                    ),
-                ),
+            trees = trees,
+            onCreateTreeClick = {},
+            onOpenTreeClick = {},
+        )
+    }
+}
+
+@Composable
+@Preview
+private fun LoadingAuthenticatedHomeScreenPreview() {
+    GenogramiaTheme {
+        AuthenticatedHomeContent(
+            userName = "Sergio",
+            searchQuery = "",
+            isLoading = true,
+            onSearchQueryChange = {},
+            trees = emptyList(),
             onCreateTreeClick = {},
             onOpenTreeClick = {},
         )
