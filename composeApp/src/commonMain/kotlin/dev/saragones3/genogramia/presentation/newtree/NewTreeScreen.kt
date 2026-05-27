@@ -129,7 +129,6 @@ private fun NewTreeContent(
                     BasicInfoErrors(
                         firstName = state.firstNameError == NewTreeState.ValidationError.EMPTY,
                         lastName = state.lastNameError == NewTreeState.ValidationError.EMPTY,
-                        birthDate = state.birthDateError == NewTreeState.ValidationError.EMPTY,
                     ),
             )
 
@@ -334,7 +333,6 @@ private class NewTreeStateProvider : PreviewParameterProvider<NewTreeState> {
                     ),
                 firstNameError = NewTreeState.ValidationError.EMPTY,
                 lastNameError = NewTreeState.ValidationError.EMPTY,
-                birthDateError = NewTreeState.ValidationError.EMPTY,
                 biologicalSexError = NewTreeState.ValidationError.EMPTY,
                 sexualOrientationError = NewTreeState.ValidationError.EMPTY,
             ),

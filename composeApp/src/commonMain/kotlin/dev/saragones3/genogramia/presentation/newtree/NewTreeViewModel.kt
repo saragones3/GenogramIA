@@ -61,7 +61,6 @@ class NewTreeViewModel(
                                 birthDateMillis = event.millis,
                                 birthDateText = formattedDate,
                             ),
-                        birthDateError = null,
                     )
                 }
             }
@@ -108,7 +107,6 @@ class NewTreeViewModel(
 
         var firstNameError: NewTreeState.ValidationError? = null
         var lastNameError: NewTreeState.ValidationError? = null
-        var birthDateError: NewTreeState.ValidationError? = null
         var biologicalSexError: NewTreeState.ValidationError? = null
         var sexualOrientationError: NewTreeState.ValidationError? = null
 
@@ -119,10 +117,6 @@ class NewTreeViewModel(
         }
         if (personUi.lastName.isBlank()) {
             lastNameError = NewTreeState.ValidationError.EMPTY
-            isValid = false
-        }
-        if (personUi.birthDateMillis == null) {
-            birthDateError = NewTreeState.ValidationError.EMPTY
             isValid = false
         }
         if (personUi.biologicalSex == Person.BiologicalSex.UNKNOWN) {
@@ -139,7 +133,6 @@ class NewTreeViewModel(
                 it.copy(
                     firstNameError = firstNameError,
                     lastNameError = lastNameError,
-                    birthDateError = birthDateError,
                     biologicalSexError = biologicalSexError,
                     sexualOrientationError = sexualOrientationError,
                 )
@@ -155,7 +148,7 @@ class NewTreeViewModel(
                     id = "",
                     firstName = personUi.firstName,
                     lastName = personUi.lastName,
-                    birthDate = personUi.birthDateMillis ?: 0L,
+                    birthDate = personUi.birthDateMillis,
                     biologicalSex = personUi.biologicalSex,
                     sexualOrientation = personUi.sexualOrientation,
                     deathDate = personUi.deathDateMillis,

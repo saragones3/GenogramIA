@@ -199,7 +199,6 @@ private fun AddPersonForm(
                 BasicInfoErrors(
                     firstName = state.firstNameError != null,
                     lastName = state.lastNameError != null,
-                    birthDate = state.birthDateError != null,
                 ),
         )
 

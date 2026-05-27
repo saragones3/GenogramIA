@@ -84,7 +84,6 @@ class AddPersonViewModelTest {
             val state = viewModel.state.value
             assertEquals(AddPersonState.ValidationError.EMPTY, state.firstNameError)
             assertEquals(AddPersonState.ValidationError.EMPTY, state.lastNameError)
-            assertEquals(AddPersonState.ValidationError.EMPTY, state.birthDateError)
             assertEquals(AddPersonState.ValidationError.EMPTY, state.biologicalSexError)
             assertEquals(AddPersonState.ValidationError.EMPTY, state.sexualOrientationError)
         }

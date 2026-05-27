@@ -81,7 +81,6 @@ import org.jetbrains.compose.resources.stringResource
 data class BasicInfoErrors(
     val firstName: Boolean = false,
     val lastName: Boolean = false,
-    val birthDate: Boolean = false,
 )
 
 @Composable
@@ -122,7 +121,7 @@ fun BasicInfoSection(
             onValueChange = { },
             placeholder = stringResource(Res.string.new_tree_birth_date_hint),
             trailingIcon = Icons.Default.CalendarToday,
-            isError = errors.birthDate,
+            optionalLabel = stringResource(Res.string.new_tree_death_date_optional),
             onClick = onBirthDateClick,
         )
         Spacer(modifier = Modifier.height(16.dp))

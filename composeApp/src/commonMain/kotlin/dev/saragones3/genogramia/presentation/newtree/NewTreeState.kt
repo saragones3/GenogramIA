@@ -6,7 +6,6 @@ data class NewTreeState(
     val person: NewTreeUi = NewTreeUi(),
     val firstNameError: ValidationError? = null,
     val lastNameError: ValidationError? = null,
-    val birthDateError: ValidationError? = null,
     val biologicalSexError: ValidationError? = null,
     val sexualOrientationError: ValidationError? = null,
     val isLoading: Boolean = false,

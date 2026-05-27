@@ -9,10 +9,10 @@ data class PersonDto(
     val id: String = "",
     val firstName: String = "",
     val lastName: String = "",
-    val birthDate: Long = 0L,
+    val birthDate: Long? = null,
+    val deathDate: Long? = null,
     val biologicalSex: String = Person.BiologicalSex.UNKNOWN.name,
     val sexualOrientation: String = Person.SexualOrientation.UNKNOWN.name,
-    val deathDate: Long? = null,
     val x: Float = 0f,
     val y: Float = 0f,
 )

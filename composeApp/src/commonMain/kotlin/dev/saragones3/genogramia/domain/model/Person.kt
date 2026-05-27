@@ -4,10 +4,10 @@ data class Person(
     val id: String,
     val firstName: String,
     val lastName: String,
-    val birthDate: Long,
+    val birthDate: Long? = null,
+    val deathDate: Long? = null,
     val biologicalSex: BiologicalSex = BiologicalSex.UNKNOWN,
     val sexualOrientation: SexualOrientation = SexualOrientation.UNKNOWN,
-    val deathDate: Long? = null,
     val x: Float = 0f,
     val y: Float = 0f,
 ) {
@@ -15,7 +15,6 @@ data class Person(
         id = "",
         firstName = "",
         lastName = "",
-        birthDate = 0L,
     )
 
     enum class BiologicalSex {

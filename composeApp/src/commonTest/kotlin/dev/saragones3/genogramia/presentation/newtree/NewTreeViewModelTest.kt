@@ -103,7 +103,6 @@ class NewTreeViewModelTest {
             val state = viewModel.state.value
             assertEquals("14/05/2026", state.person.birthDateText)
             assertEquals(millis, state.person.birthDateMillis)
-            assertNull(state.birthDateError)
         }
 
     @Test
@@ -125,7 +124,6 @@ class NewTreeViewModelTest {
             val state = viewModel.state.value
             assertEquals(NewTreeState.ValidationError.EMPTY, state.firstNameError)
             assertEquals(NewTreeState.ValidationError.EMPTY, state.lastNameError)
-            assertEquals(NewTreeState.ValidationError.EMPTY, state.birthDateError)
             assertEquals(NewTreeState.ValidationError.EMPTY, state.biologicalSexError)
             assertEquals(NewTreeState.ValidationError.EMPTY, state.sexualOrientationError)
         }

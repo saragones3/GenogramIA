@@ -8,7 +8,6 @@ data class AddPersonState(
     val isSuccess: Boolean = false,
     val firstNameError: ValidationError? = null,
     val lastNameError: ValidationError? = null,
-    val birthDateError: ValidationError? = null,
     val biologicalSexError: ValidationError? = null,
     val sexualOrientationError: ValidationError? = null,
     val showBirthDatePicker: Boolean = false,
