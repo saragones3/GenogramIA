@@ -228,6 +228,7 @@ class TreeViewModelTest {
                     personId1 = "p1",
                     personId2 = "p2",
                     type = Relationship.RelationshipType.MARRIAGE,
+                    effectiveDate = 1778716800000L, // 14-may-2026
                 )
             val tree = GenogramTree("t1", 2, "now", central, listOf(p2), listOf(rel))
             treeRepository.createTree(tree)
@@ -246,6 +247,11 @@ class TreeViewModelTest {
                 Relationship.RelationshipType.MARRIAGE,
                 viewModel.state.value.tree.relationships[0]
                     .type,
+            )
+            assertEquals(
+                "2026",
+                viewModel.state.value.tree.relationships[0]
+                    .dateText,
             )
         }
 

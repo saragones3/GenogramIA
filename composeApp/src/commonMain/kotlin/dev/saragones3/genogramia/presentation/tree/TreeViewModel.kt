@@ -464,6 +464,7 @@ class TreeViewModel(
             personId2 = personId2,
             type = type,
             emotionalBond = emotionalBond,
+            dateText = effectiveDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: "",
         )
 
     private fun Person.toNodeUi(): PersonNodeUi {

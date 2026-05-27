@@ -69,7 +69,11 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.TextMeasurer
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -88,11 +92,11 @@ import genogramia.composeapp.generated.resources.canvas_reset
 import genogramia.composeapp.generated.resources.canvas_zoom_in
 import genogramia.composeapp.generated.resources.canvas_zoom_out
 import genogramia.composeapp.generated.resources.edit_relationship
-import genogramia.composeapp.generated.resources.new_tree_name
 import genogramia.composeapp.generated.resources.error_delete_has_descendants
 import genogramia.composeapp.generated.resources.error_delete_has_formal_relationships
 import genogramia.composeapp.generated.resources.error_tree_not_found
 import genogramia.composeapp.generated.resources.error_unknown
+import genogramia.composeapp.generated.resources.new_tree_name
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -356,6 +360,13 @@ private fun GenogramCanvas(
 
     val density = LocalDensity.current
     val nodeSize = with(density) { NODE_SIZE.toPx() }
+    val textMeasurer = rememberTextMeasurer()
+    val labelStyle =
+        MaterialTheme.typography.labelSmall.copy(
+            color = Color.Black,
+            fontWeight = FontWeight.Bold,
+        )
+
     Box(
         modifier =
             modifier
@@ -408,6 +419,8 @@ private fun GenogramCanvas(
                     persons = persons,
                     density = density.density,
                     nodeSize = nodeSize,
+                    textMeasurer = textMeasurer,
+                    labelStyle = labelStyle,
                 )
                 drawVerticalRelationship(
                     relationships = state.tree.relationships,
@@ -502,6 +515,8 @@ private fun DrawScope.drawHorizontalRelationship(
     persons: List<PersonNodeUi>,
     density: Float,
     nodeSize: Float,
+    textMeasurer: TextMeasurer,
+    labelStyle: TextStyle,
 ) {
     relationships.forEach { relationship ->
         val p1 = persons.find { it.id == relationship.personId1 }
@@ -576,6 +591,32 @@ private fun DrawScope.drawHorizontalRelationship(
                 }
 
                 else -> {}
+            }
+
+            // Draw date text
+            if (relationship.dateText.isNotEmpty()) {
+                val textLayoutResult = textMeasurer.measure(relationship.dateText, labelStyle)
+                val textWidth = textLayoutResult.size.width
+                val textHeight = textLayoutResult.size.height
+                val midPoint = (start + end) / 2f
+
+                val hasSlashes =
+                    relationship.type in
+                        listOf(
+                            Relationship.RelationshipType.SEPARATION,
+                            Relationship.RelationshipType.DIVORCE,
+                            Relationship.RelationshipType.RECONCILIATION,
+                        )
+                val slashOffset = if (hasSlashes) 12.dp.toPx() / 2f else 0f
+
+                drawText(
+                    textLayoutResult,
+                    topLeft =
+                        Offset(
+                            midPoint.x - textWidth / 2f,
+                            midPoint.y - slashOffset - textHeight - 4f,
+                        ),
+                )
             }
 
             // Draw emotional bond styles
@@ -1302,6 +1343,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                                     personId2 = "2",
                                     type = Relationship.RelationshipType.MARRIAGE,
                                     emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                    dateText = "1990",
                                 ),
                                 RelationshipUi(
                                     id = "rel-1-3",
@@ -1337,6 +1379,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                                     personId2 = "4",
                                     type = Relationship.RelationshipType.COHABITATION,
                                     emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                    dateText = "2010",
                                 ),
                                 RelationshipUi(
                                     id = "rel-5-6",

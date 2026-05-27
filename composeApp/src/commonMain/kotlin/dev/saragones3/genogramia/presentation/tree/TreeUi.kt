@@ -32,4 +32,5 @@ data class RelationshipUi(
     val personId2: String,
     val type: Relationship.RelationshipType,
     val emotionalBond: Relationship.EmotionalBond,
+    val dateText: String = "",
 )
