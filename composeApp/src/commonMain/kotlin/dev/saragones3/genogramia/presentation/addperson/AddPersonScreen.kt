@@ -62,8 +62,10 @@ fun AddPersonScreen(
     val viewModel: AddPersonViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
 
+    val dateFormat = stringResource(Res.string.date_format)
+
     LaunchedEffect(treeId, personId) {
-        viewModel.onEvent(AddPersonEvent.Initialize(treeId, personId, x, y))
+        viewModel.onEvent(AddPersonEvent.Initialize(treeId, personId, dateFormat, x, y))
     }
 
     LaunchedEffect(state.isSuccess) {

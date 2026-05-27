@@ -148,7 +148,7 @@ class AddPersonViewModelTest {
             viewModel.state.test {
                 awaitItem() // Initial
 
-                viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1"))
+                viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1", "dd/MM/yyyy"))
 
                 assertEquals(true, awaitItem().isLoading)
 
@@ -164,7 +164,7 @@ class AddPersonViewModelTest {
     @Test
     fun `when initialize event is received with coordinates for new person then state is updated`() =
         runTest {
-            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null, 150f, 250f))
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null, "dd/MM/yyyy", 150f, 250f))
 
             val state = viewModel.state.value
             assertNull(state.personId)
@@ -178,7 +178,7 @@ class AddPersonViewModelTest {
             treeRepository.createTree(tree)
 
             // Initialize to enter edit mode
-            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1"))
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1", "dd/MM/yyyy"))
             testDispatcher.scheduler.advanceUntilIdle()
 
             viewModel.onEvent(AddPersonEvent.OnFirstNameChanged("John Updated"))
@@ -197,12 +197,12 @@ class AddPersonViewModelTest {
             treeRepository.createTree(tree)
 
             // 1. Edit
-            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1"))
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1", "dd/MM/yyyy"))
             testDispatcher.scheduler.advanceUntilIdle()
             assertEquals("John", viewModel.state.value.person.firstName)
 
             // 2. New (null)
-            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null))
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null, "dd/MM/yyyy"))
 
             // 3. Assert reset
             val state = viewModel.state.value

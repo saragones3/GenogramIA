@@ -85,7 +85,7 @@ class AddPersonViewModel(
             }
 
             is AddPersonEvent.Initialize -> {
-                initialize(event.treeId, event.personId, event.x, event.y)
+                initialize(event.treeId, event.personId, event.datePattern, event.x, event.y)
             }
 
             AddPersonEvent.OnResetState -> {
@@ -97,6 +97,7 @@ class AddPersonViewModel(
     private fun initialize(
         treeId: String,
         personId: String?,
+        datePattern: String,
         x: Float? = null,
         y: Float? = null,
     ) {
@@ -128,11 +129,11 @@ class AddPersonViewModel(
                                 sexualOrientation = person.sexualOrientation,
                                 birthDateMillis = person.birthDate,
                                 birthDateText =
-                                    dateFormatter.formatDate(person.birthDate, "dd/MM/yyyy"),
+                                    dateFormatter.formatDate(person.birthDate, datePattern),
                                 deathDateMillis = person.deathDate,
                                 deathDateText =
                                     person.deathDate?.let { date ->
-                                        dateFormatter.formatDate(date, "dd/MM/yyyy")
+                                        dateFormatter.formatDate(date, datePattern)
                                     } ?: "",
                                 x = person.x,
                                 y = person.y,

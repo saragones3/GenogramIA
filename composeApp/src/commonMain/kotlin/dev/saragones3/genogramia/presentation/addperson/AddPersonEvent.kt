@@ -44,6 +44,7 @@ sealed interface AddPersonEvent {
     data class Initialize(
         val treeId: String,
         val personId: String?,
+        val datePattern: String,
         val x: Float? = null,
         val y: Float? = null,
     ) : AddPersonEvent
