@@ -11,6 +11,7 @@ import dev.saragones3.genogramia.presentation.util.formatLastUpdated
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class GuestHomeViewModel(
@@ -18,19 +19,18 @@ class GuestHomeViewModel(
     private val dateProvider: DateProvider,
     private val dateFormatter: DateFormatter,
 ) : ViewModel() {
-    private val _searchQuery = MutableStateFlow("")
-    val searchQuery: StateFlow<String> = _searchQuery.asStateFlow()
 
     private var allTrees = listOf<GenogramTree>()
-    private val _trees = MutableStateFlow<List<GenogramTreeUiModel>>(emptyList())
-    val trees: StateFlow<List<GenogramTreeUiModel>> = _trees.asStateFlow()
+
+    private val _uiState = MutableStateFlow(GuestHomeUiState())
+    val uiState: StateFlow<GuestHomeUiState> = _uiState.asStateFlow()
 
     fun onResume() {
         loadTrees()
     }
 
     fun onSearchQueryChange(query: String) {
-        _searchQuery.value = query
+        _uiState.update { it.copy(searchQuery = query) }
         updateFilteredTrees()
     }
 
@@ -42,7 +42,7 @@ class GuestHomeViewModel(
     }
 
     private fun updateFilteredTrees() {
-        val query = _searchQuery.value
+        val query = _uiState.value.searchQuery
         val filtered =
             if (query.isBlank()) {
                 allTrees
@@ -50,8 +50,8 @@ class GuestHomeViewModel(
                 allTrees.filter { it.name.contains(query, ignoreCase = true) }
             }
 
-        _trees.value =
-            filtered.map { tree ->
+        _uiState.update { it.copy(
+            trees = filtered.map { tree ->
                 GenogramTreeUiModel(
                     id = tree.id,
                     title = tree.name,
@@ -65,5 +65,6 @@ class GuestHomeViewModel(
                     isPrimary = false,
                 )
             }
+        ) }
     }
 }

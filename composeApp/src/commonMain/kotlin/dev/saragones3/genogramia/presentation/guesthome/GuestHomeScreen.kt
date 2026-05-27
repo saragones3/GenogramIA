@@ -25,6 +25,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.saragones3.genogramia.presentation.components.AddTreeCard
@@ -48,21 +50,20 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun GuestHomeScreen(
-    viewModel: GuestHomeViewModel = koinViewModel(),
     onLoginClick: () -> Unit,
     onGoToTree: (String) -> Unit,
     onCreateTree: () -> Unit,
 ) {
-    val searchQuery by viewModel.searchQuery.collectAsState()
-    val trees by viewModel.trees.collectAsState()
+    val viewModel: GuestHomeViewModel = koinViewModel()
+    val uiState by viewModel.uiState.collectAsState()
 
     LaunchedEffect(Unit) {
         viewModel.onResume()
     }
 
     GuestHomeContent(
-        searchQuery = searchQuery,
-        trees = trees,
+        searchQuery = uiState.searchQuery,
+        trees = uiState.trees,
         onSearchQueryChange = viewModel::onSearchQueryChange,
         onLoginClick = onLoginClick,
         onGoToTree = onGoToTree,
@@ -186,21 +187,37 @@ private fun GuestHomeTitleSection() {
     }
 }
 
+private class GuestHomeScreenPreviewProvider : PreviewParameterProvider<GuestHomeUiState> {
+
+    private val seed = GenogramTreeUiModel(
+        id = "1",
+        title = "Sample Tree",
+        ancestorCount = 10,
+        lastUpdated = UiText.DynamicString("today"),
+    )
+
+    override val values =
+        sequenceOf(
+            GuestHomeUiState(
+                searchQuery = "",
+                trees = listOf(seed),
+            ),
+            GuestHomeUiState(
+                searchQuery = "tree",
+                trees = emptyList(),
+            ),
+        )
+}
+
 @Preview
 @Composable
-private fun GuestHomeScreenPreview() {
+private fun GuestHomeScreenPreview(
+    @PreviewParameter(GuestHomeScreenPreviewProvider::class) state: GuestHomeUiState,
+) {
     GenogramiaTheme {
         GuestHomeContent(
-            searchQuery = "",
-            trees =
-                listOf(
-                    GenogramTreeUiModel(
-                        id = "1",
-                        title = "Sample Tree",
-                        ancestorCount = 10,
-                        lastUpdated = UiText.DynamicString("today"),
-                    ),
-                ),
+            searchQuery = state.searchQuery,
+            trees = state.trees,
             onSearchQueryChange = {},
             onLoginClick = {},
             onGoToTree = {},

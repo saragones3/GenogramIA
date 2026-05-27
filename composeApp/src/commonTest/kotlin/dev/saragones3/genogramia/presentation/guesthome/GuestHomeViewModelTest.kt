@@ -48,8 +48,8 @@ class GuestHomeViewModelTest {
             viewModel = GuestHomeViewModel(getTreesUseCase, dateProvider, dateFormatter)
             viewModel.onResume()
 
-            assertEquals(1, viewModel.trees.value.size)
-            assertEquals("Sample Tree", viewModel.trees.value[0].title)
+            assertEquals(1, viewModel.uiState.value.trees.size)
+            assertEquals("Sample Tree", viewModel.uiState.value.trees[0].title)
         }
 
     @Test
@@ -62,10 +62,10 @@ class GuestHomeViewModelTest {
             viewModel.onResume()
 
             viewModel.onSearchQueryChange("Sample")
-            assertEquals(1, viewModel.trees.value.size)
-            assertEquals("Sample Tree", viewModel.trees.value[0].title)
+            assertEquals(1, viewModel.uiState.value.trees.size)
+            assertEquals("Sample Tree", viewModel.uiState.value.trees[0].title)
 
             viewModel.onSearchQueryChange("NonExistent")
-            assertEquals(0, viewModel.trees.value.size)
+            assertEquals(0, viewModel.uiState.value.trees.size)
         }
 }
