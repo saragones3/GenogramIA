@@ -78,6 +78,30 @@ class NewTreeViewModel(
                 }
             }
 
+            NewTreeEvent.OnClearBirthDate -> {
+                _state.update {
+                    it.copy(
+                        person =
+                            it.person.copy(
+                                birthDateMillis = null,
+                                birthDateText = "",
+                            ),
+                    )
+                }
+            }
+
+            NewTreeEvent.OnClearDeathDate -> {
+                _state.update {
+                    it.copy(
+                        person =
+                            it.person.copy(
+                                deathDateMillis = null,
+                                deathDateText = "",
+                            ),
+                    )
+                }
+            }
+
             is NewTreeEvent.OnShowBirthDatePicker -> {
                 _state.update { it.copy(showBirthDatePicker = event.show) }
             }

@@ -29,6 +29,10 @@ sealed interface NewTreeEvent {
         val pattern: String,
     ) : NewTreeEvent
 
+    data object OnClearBirthDate : NewTreeEvent
+
+    data object OnClearDeathDate : NewTreeEvent
+
     data class OnShowBirthDatePicker(
         val show: Boolean,
     ) : NewTreeEvent

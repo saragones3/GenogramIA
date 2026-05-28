@@ -2,6 +2,7 @@ package dev.saragones3.genogramia.presentation.addrelationship
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,6 +24,7 @@ import androidx.compose.material.icons.filled.AutoGraph
 import androidx.compose.material.icons.filled.BrokenImage
 import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ConnectWithoutContact
 import androidx.compose.material.icons.filled.ContentCut
 import androidx.compose.material.icons.filled.Delete
@@ -269,6 +271,9 @@ private fun AddRelationshipContent(
                 EffectiveDateSection(
                     dateFormatted = state.effectiveDateFormatted,
                     onClick = { showDatePicker = true },
+                    onClearClick = {
+                        onEvent(AddRelationshipEvent.OnDateSelected(null, ""))
+                    },
                 )
 
                 if (state.hasConsanguinityRisk) {
@@ -841,6 +846,7 @@ private fun BondTypeItem(
 private fun EffectiveDateSection(
     dateFormatted: String?,
     onClick: () -> Unit,
+    onClearClick: () -> Unit,
 ) {
     Column(modifier = Modifier.padding(horizontal = 16.dp)) {
         Text(
@@ -852,32 +858,58 @@ private fun EffectiveDateSection(
         Spacer(modifier = Modifier.height(8.dp))
 
         Surface(
-            onClick = onClick,
             shape = RoundedCornerShape(12.dp),
             color = Color(0xFFF1F3F4),
             modifier = Modifier.fillMaxWidth().height(56.dp),
         ) {
-            Row(
-                modifier = Modifier.padding(horizontal = 16.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween,
-            ) {
-                Text(
-                    text =
-                        if (dateFormatted.isNullOrBlank()) {
-                            stringResource(
-                                Res.string.add_relationship_select_date,
+            Box(modifier = Modifier.fillMaxSize()) {
+                Box(
+                    modifier =
+                        Modifier
+                            .fillMaxSize()
+                            .clickable { onClick() },
+                )
+                Row(
+                    modifier =
+                        Modifier
+                            .fillMaxSize()
+                            .padding(horizontal = 16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                ) {
+                    Text(
+                        text =
+                            if (dateFormatted.isNullOrBlank()) {
+                                stringResource(
+                                    Res.string.add_relationship_select_date,
+                                )
+                            } else {
+                                dateFormatted
+                            },
+                        color = if (!dateFormatted.isNullOrBlank()) Color.Black else Color.Gray,
+                        modifier = Modifier.weight(1f),
+                    )
+                    if (dateFormatted.isNullOrBlank()) {
+                        Icon(
+                            imageVector = Icons.Default.CalendarMonth,
+                            contentDescription = null,
+                            tint = Color.Gray,
+                            modifier = Modifier.size(20.dp),
+                        )
+                    } else {
+                        IconButton(
+                            onClick = onClearClick,
+                            modifier = Modifier.size(24.dp),
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Close,
+                                contentDescription = null,
+                                tint = Color.Gray,
+                                modifier = Modifier.size(20.dp),
                             )
-                        } else {
-                            dateFormatted
-                        },
-                    color = if (!dateFormatted.isNullOrBlank()) Color.Black else Color.Gray,
-                )
-                Icon(
-                    imageVector = Icons.Default.CalendarMonth,
-                    contentDescription = null,
-                    tint = Color.Gray,
-                )
+                        }
+                    }
+                }
             }
         }
     }

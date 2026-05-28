@@ -209,4 +209,28 @@ class AddPersonViewModelTest {
             assertNull(state.personId)
             assertEquals(false, state.isSuccess)
         }
+
+    @Test
+    fun `when OnClearBirthDate event is received birth date is cleared`() =
+        runTest {
+            viewModel.onEvent(AddPersonEvent.OnBirthDateSelected(1778716800000L, "dd/MM/yyyy"))
+            assertEquals("14/05/2026", viewModel.state.value.person.birthDateText)
+
+            viewModel.onEvent(AddPersonEvent.OnClearBirthDate)
+
+            assertEquals("", viewModel.state.value.person.birthDateText)
+            assertNull(viewModel.state.value.person.birthDateMillis)
+        }
+
+    @Test
+    fun `when OnClearDeathDate event is received death date is cleared`() =
+        runTest {
+            viewModel.onEvent(AddPersonEvent.OnDeathDateSelected(1778716800000L, "dd/MM/yyyy"))
+            assertEquals("14/05/2026", viewModel.state.value.person.deathDateText)
+
+            viewModel.onEvent(AddPersonEvent.OnClearDeathDate)
+
+            assertEquals("", viewModel.state.value.person.deathDateText)
+            assertNull(viewModel.state.value.person.deathDateMillis)
+        }
 }

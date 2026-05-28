@@ -71,6 +71,30 @@ class AddPersonViewModel(
                 }
             }
 
+            AddPersonEvent.OnClearBirthDate -> {
+                _state.update {
+                    it.copy(
+                        person =
+                            it.person.copy(
+                                birthDateMillis = null,
+                                birthDateText = "",
+                            ),
+                    )
+                }
+            }
+
+            AddPersonEvent.OnClearDeathDate -> {
+                _state.update {
+                    it.copy(
+                        person =
+                            it.person.copy(
+                                deathDateMillis = null,
+                                deathDateText = "",
+                            ),
+                    )
+                }
+            }
+
             is AddPersonEvent.OnShowBirthDatePicker -> {
                 _state.update { it.copy(showBirthDatePicker = event.show) }
             }

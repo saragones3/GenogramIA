@@ -29,6 +29,10 @@ sealed interface AddPersonEvent {
         val pattern: String,
     ) : AddPersonEvent
 
+    data object OnClearBirthDate : AddPersonEvent
+
+    data object OnClearDeathDate : AddPersonEvent
+
     data class OnShowBirthDatePicker(
         val show: Boolean,
     ) : AddPersonEvent
