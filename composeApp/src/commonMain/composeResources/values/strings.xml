@@ -175,6 +175,8 @@
     <string name="add_relationship_reconciliation">Reconciliation</string>
     <string name="add_relationship_offspring">Biological Offspring</string>
     <string name="add_relationship_adoption">Adoption/Legal</string>
+    <string name="add_relationship_fraternal_twin">Fraternal Twins</string>
+    <string name="add_relationship_identical_twin">Identical Twins</string>
     <string name="add_relationship_emotional_bond">EMOTIONAL BOND</string>
     <string name="add_relationship_positive">Positive</string>
     <string name="add_relationship_distant">Distant</string>

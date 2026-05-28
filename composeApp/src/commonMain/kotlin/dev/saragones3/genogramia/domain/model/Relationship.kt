@@ -19,13 +19,20 @@ data class Relationship(
         // Vertical / Legal
         BIOLOGICAL_OFFSPRING,
         ADOPTION_LEGAL,
+
+        // Siblings
+        FRATERNAL_TWIN,
+        IDENTICAL_TWIN,
         ;
 
         val isStructural: Boolean
-            get() = this in listOf(MARRIAGE, COHABITATION, SEPARATION, DIVORCE, RECONCILIATION)
+            get() = this in listOf(MARRIAGE, COHABITATION, SEPARATION, DIVORCE, RECONCILIATION, IDENTICAL_TWIN)
 
         val isDescendant: Boolean
             get() = this in listOf(BIOLOGICAL_OFFSPRING, ADOPTION_LEGAL)
+
+        val isTwin: Boolean
+            get() = this in listOf(FRATERNAL_TWIN, IDENTICAL_TWIN)
     }
 
     enum class EmotionalBond {

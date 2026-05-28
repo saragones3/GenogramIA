@@ -23,16 +23,17 @@ import androidx.compose.material.icons.filled.AutoGraph
 import androidx.compose.material.icons.filled.BrokenImage
 import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ConnectWithoutContact
 import androidx.compose.material.icons.filled.ContentCut
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.Diversity3
 import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.FamilyRestroom
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FlashOn
 import androidx.compose.material.icons.filled.Gavel
+import androidx.compose.material.icons.filled.Groups
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.JoinInner
 import androidx.compose.material.icons.filled.LinkOff
@@ -100,9 +101,11 @@ import genogramia.composeapp.generated.resources.add_relationship_divorce
 import genogramia.composeapp.generated.resources.add_relationship_effective_date
 import genogramia.composeapp.generated.resources.add_relationship_emotional_bond
 import genogramia.composeapp.generated.resources.add_relationship_focused
+import genogramia.composeapp.generated.resources.add_relationship_fraternal_twin
 import genogramia.composeapp.generated.resources.add_relationship_fused
 import genogramia.composeapp.generated.resources.add_relationship_fused_conflictual
 import genogramia.composeapp.generated.resources.add_relationship_hostile
+import genogramia.composeapp.generated.resources.add_relationship_identical_twin
 import genogramia.composeapp.generated.resources.add_relationship_intimate_conflictual
 import genogramia.composeapp.generated.resources.add_relationship_marriage
 import genogramia.composeapp.generated.resources.add_relationship_medical_conflict
@@ -476,6 +479,8 @@ private fun Relationship.RelationshipType.toText(): String =
         Relationship.RelationshipType.RECONCILIATION -> stringResource(Res.string.add_relationship_reconciliation)
         Relationship.RelationshipType.BIOLOGICAL_OFFSPRING -> stringResource(Res.string.add_relationship_offspring)
         Relationship.RelationshipType.ADOPTION_LEGAL -> stringResource(Res.string.add_relationship_adoption)
+        Relationship.RelationshipType.FRATERNAL_TWIN -> stringResource(Res.string.add_relationship_fraternal_twin)
+        Relationship.RelationshipType.IDENTICAL_TWIN -> stringResource(Res.string.add_relationship_identical_twin)
     }
 
 @Composable
@@ -671,6 +676,20 @@ private fun BondTypeSection(
             icon = Icons.Default.Description,
             isSelected = selectedType == Relationship.RelationshipType.ADOPTION_LEGAL,
             onClick = { onTypeSelected(Relationship.RelationshipType.ADOPTION_LEGAL) },
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        BondTypeItem(
+            label = stringResource(Res.string.add_relationship_fraternal_twin),
+            icon = Icons.Default.Groups,
+            isSelected = selectedType == Relationship.RelationshipType.FRATERNAL_TWIN,
+            onClick = { onTypeSelected(Relationship.RelationshipType.FRATERNAL_TWIN) },
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        BondTypeItem(
+            label = stringResource(Res.string.add_relationship_identical_twin),
+            icon = Icons.Default.Diversity3,
+            isSelected = selectedType == Relationship.RelationshipType.IDENTICAL_TWIN,
+            onClick = { onTypeSelected(Relationship.RelationshipType.IDENTICAL_TWIN) },
         )
     }
 }

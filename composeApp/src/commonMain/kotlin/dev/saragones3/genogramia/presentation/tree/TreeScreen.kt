@@ -828,88 +828,113 @@ private fun DrawScope.drawVerticalRelationship(
     density: Float,
     nodeSize: Float,
 ) {
-    val groupedByChild =
-        relationships
-            .filter { it.type.isDescendant }
+    val descendantRels = relationships.filter { it.type.isDescendant }
+    val parentsByChild =
+        descendantRels
             .groupBy { it.personId2 }
-    groupedByChild.forEach { (childId, parents) ->
-        val child = persons.find { it.id == childId } ?: return@forEach
-        val childTop = child.position * density - Offset(0f, nodeSize / 2)
+            .mapValues { it.value.map { r -> r.personId1 }.sorted() }
 
-        if (parents.size == 2) {
-            val p1Id = parents.first().personId1
-            val p2Id = parents.last().personId1
-            val marriage =
-                horizontalRelationships.find {
-                    (it.personId1 == p1Id && it.personId2 == p2Id) ||
-                        (it.personId1 == p2Id && it.personId2 == p1Id)
-                }
+    val childrenByParents =
+        parentsByChild.entries
+            .groupBy({ it.value }, { it.key })
 
-            if (marriage != null) {
-                val parent1 = persons.find { it.id == p1Id }!!
-                val parent2 = persons.find { it.id == p2Id }!!
+    childrenByParents.forEach { (parentIds, childIds) ->
+        if (childIds.isEmpty()) return@forEach
 
-                val p1Center = parent1.position * density
-                val p2Center = parent2.position * density
+        val parentNodes = parentIds.mapNotNull { pid -> persons.find { it.id == pid } }
+        if (parentNodes.isEmpty()) return@forEach
 
-                val midpointX = (p1Center.x + p2Center.x) / 2
-                val marriageY =
-                    if (p1Center.y != p2Center.y) {
-                        (p1Center.y + p2Center.y) / 2
-                    } else {
-                        p1Center.y
-                    }
-
-                val path =
-                    Path().apply {
-                        moveTo(midpointX, marriageY)
-                        val midY = childTop.y - 50f
-                        lineTo(midpointX, midY)
-                        lineTo(childTop.x, midY)
-                        lineTo(childTop.x, childTop.y)
-                    }
-
-                val isAdoption = parents.any { it.type == Relationship.RelationshipType.ADOPTION_LEGAL }
-
-                drawPath(
-                    path = path,
-                    color = LINE_COLOR,
-                    style =
-                        Stroke(
-                            width = LINE_WIDTH.toPx(),
-                            pathEffect =
-                                if (isAdoption) {
-                                    PathEffect.dashPathEffect(
-                                        floatArrayOf(10f, 10f),
-                                        0f,
-                                    )
-                                } else {
-                                    null
-                                },
-                        ),
-                )
+        val parentsMidpointPx =
+            if (parentNodes.size == 2) {
+                val p1 = parentNodes[0].position * density
+                val p2 = parentNodes[1].position * density
+                Offset((p1.x + p2.x) / 2, (p1.y + p2.y) / 2)
+            } else {
+                parentNodes[0].position * density
             }
-        } else if (parents.size == 1) {
-            val rel = parents.first()
-            val parent = persons.find { it.id == rel.personId1 }!!
-            val pCenter = parent.position * density
-            val pBottomY = pCenter.y + nodeSize / 2
-            val path =
-                Path().apply {
-                    moveTo(pCenter.x, pBottomY)
-                    lineTo(childTop.x, childTop.y)
+
+        // Determine lineage line Y level
+        val childrenNodes = childIds.mapNotNull { cid -> persons.find { it.id == cid } }
+        if (childrenNodes.isEmpty()) return@forEach
+
+        val minChildY = childrenNodes.minOf { it.position.y * density }
+        val lineageY = minChildY - nodeSize / 2 - 40.dp.toPx()
+
+        // 1. Draw parent stem
+        val stemStartY =
+            if (parentNodes.size == 2) {
+                val p1Id = parentIds[0]
+                val p2Id = parentIds[1]
+                val structuralRel =
+                    horizontalRelationships.find {
+                        (it.personId1 == p1Id && it.personId2 == p2Id) ||
+                            (it.personId1 == p2Id && it.personId2 == p1Id)
+                    }
+                if (structuralRel != null) parentsMidpointPx.y else parentsMidpointPx.y + nodeSize / 2
+            } else {
+                parentsMidpointPx.y + nodeSize / 2
+            }
+        drawLine(
+            LINE_COLOR,
+            Offset(parentsMidpointPx.x, stemStartY),
+            Offset(parentsMidpointPx.x, lineageY),
+            LINE_WIDTH.toPx(),
+        )
+
+        // 2. Track attachment points on the horizontal line
+        val attachmentX = mutableListOf<Float>()
+        attachmentX.add(parentsMidpointPx.x)
+
+        // 3. Draw connection for each child
+        childIds.forEach { childId ->
+            val child = persons.find { it.id == childId } ?: return@forEach
+            val childTopPx = child.position * density - Offset(0f, nodeSize / 2)
+
+            val isAdoption =
+                descendantRels.any {
+                    it.personId2 == childId && it.type == Relationship.RelationshipType.ADOPTION_LEGAL
                 }
+            val pathEffect =
+                if (isAdoption) PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f) else null
 
-            val isAdoption = rel.type == Relationship.RelationshipType.ADOPTION_LEGAL
+            val twinRel =
+                relationships.find {
+                    it.type.isTwin && (it.personId1 == childId || it.personId2 == childId)
+                }
+            val twinId = twinRel?.let { if (it.personId1 == childId) it.personId2 else it.personId1 }
+            val twin = twinId?.let { id -> persons.find { it.id == id } }
 
-            drawPath(
-                path = path,
-                color = LINE_COLOR,
-                style =
-                    Stroke(
-                        width = LINE_WIDTH.toPx(),
-                        pathEffect = if (isAdoption) PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f) else null,
-                    ),
+            if (twin != null && childIds.contains(twin.id)) {
+                val twinTopPx = twin.position * density - Offset(0f, nodeSize / 2)
+                val twinsMidpointX = (childTopPx.x + twinTopPx.x) / 2
+
+                drawLine(
+                    LINE_COLOR,
+                    Offset(twinsMidpointX, lineageY),
+                    childTopPx,
+                    LINE_WIDTH.toPx(),
+                    pathEffect = pathEffect,
+                )
+                attachmentX.add(twinsMidpointX)
+            } else {
+                drawLine(
+                    LINE_COLOR,
+                    Offset(childTopPx.x, lineageY),
+                    childTopPx,
+                    LINE_WIDTH.toPx(),
+                    pathEffect = pathEffect,
+                )
+                attachmentX.add(childTopPx.x)
+            }
+        }
+
+        // 4. Draw horizontal lineage line
+        if (attachmentX.size > 1) {
+            drawLine(
+                LINE_COLOR,
+                Offset(attachmentX.min(), lineageY),
+                Offset(attachmentX.max(), lineageY),
+                LINE_WIDTH.toPx(),
             )
         }
     }

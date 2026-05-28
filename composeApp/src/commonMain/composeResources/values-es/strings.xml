@@ -175,6 +175,8 @@
     <string name="add_relationship_reconciliation">Reconciliación</string>
     <string name="add_relationship_offspring">Hijo/a biológico/a</string>
     <string name="add_relationship_adoption">Adopción / Legal</string>
+    <string name="add_relationship_fraternal_twin">Mellizos</string>
+    <string name="add_relationship_identical_twin">Gemelos</string>
     <string name="add_relationship_emotional_bond">VÍNCULO EMOCIONAL</string>
     <string name="add_relationship_positive">Positiva</string>
     <string name="add_relationship_distant">Distante</string>
