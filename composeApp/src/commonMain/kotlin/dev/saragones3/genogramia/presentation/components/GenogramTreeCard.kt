@@ -137,9 +137,7 @@ fun GenogramTreeCard(
 }
 
 @Composable
-fun GenogramTreeCardSkeleton(
-    modifier: Modifier = Modifier,
-) {
+fun GenogramTreeCardSkeleton(modifier: Modifier = Modifier) {
     Surface(
         modifier =
             modifier

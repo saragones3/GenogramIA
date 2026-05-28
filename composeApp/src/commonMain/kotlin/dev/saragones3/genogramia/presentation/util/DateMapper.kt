@@ -13,8 +13,11 @@ import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
 import kotlin.time.Instant
 
-fun GenogramTree.formatLastUpdated(now: Instant, format: (Long, String) -> String): UiText {
-    return try {
+fun GenogramTree.formatLastUpdated(
+    now: Instant,
+    format: (Long, String) -> String,
+): UiText =
+    try {
         // Assume lastUpdated is in ISO format and UTC
         val lastUpdatedDateTime = LocalDateTime.parse(lastUpdated)
         val lastUpdatedInstant = lastUpdatedDateTime.toInstant(TimeZone.UTC)
@@ -25,9 +28,18 @@ fun GenogramTree.formatLastUpdated(now: Instant, format: (Long, String) -> Strin
         val lastUpdatedDate = lastUpdatedInstant.toLocalDateTime(userTimeZone).date
 
         when (val daysBetween = lastUpdatedDate.daysUntil(today)) {
-            0 -> UiText.Resource(Res.string.date_today)
-            1 -> UiText.Resource(Res.string.date_yesterday)
-            in 2..6 -> UiText.Resource(Res.string.date_days_ago, arrayOf(daysBetween))
+            0 -> {
+                UiText.Resource(Res.string.date_today)
+            }
+
+            1 -> {
+                UiText.Resource(Res.string.date_yesterday)
+            }
+
+            in 2..6 -> {
+                UiText.Resource(Res.string.date_days_ago, arrayOf(daysBetween))
+            }
+
             else -> {
                 UiText.DateFormat(
                     millis = lastUpdatedInstant.toEpochMilliseconds(),
@@ -39,4 +51,3 @@ fun GenogramTree.formatLastUpdated(now: Instant, format: (Long, String) -> Strin
     } catch (_: Exception) {
         UiText.DynamicString(lastUpdated)
     }
-}

@@ -22,7 +22,6 @@ class GuestHomeViewModel(
     private val dateProvider: DateProvider,
     private val dateFormatter: DateFormatter,
 ) : ViewModel() {
-
     private var allTrees = listOf<GenogramTree>()
 
     private val _uiState = MutableStateFlow(GuestHomeUiState())
@@ -53,21 +52,25 @@ class GuestHomeViewModel(
                 allTrees.filter { it.name.contains(query, ignoreCase = true) }
             }
 
-        _uiState.update { it.copy(
-            trees = filtered.map { tree ->
-                GenogramTreeUiModel(
-                    id = tree.id,
-                    title = UiText.Resource(Res.string.new_tree_name, arrayOf(tree.name)),
-                    ancestorCount = tree.ancestorCount,
-                    lastUpdated = tree.formatLastUpdated(
-                        now = dateProvider.now(),
-                        format = { millis, pattern ->
-                            dateFormatter.formatDate(millis, pattern)
-                        },
-                    ),
-                    isPrimary = false,
-                )
-            }
-        ) }
+        _uiState.update {
+            it.copy(
+                trees =
+                    filtered.map { tree ->
+                        GenogramTreeUiModel(
+                            id = tree.id,
+                            title = UiText.Resource(Res.string.new_tree_name, arrayOf(tree.name)),
+                            ancestorCount = tree.ancestorCount,
+                            lastUpdated =
+                                tree.formatLastUpdated(
+                                    now = dateProvider.now(),
+                                    format = { millis, pattern ->
+                                        dateFormatter.formatDate(millis, pattern)
+                                    },
+                                ),
+                            isPrimary = false,
+                        )
+                    },
+            )
+        }
     }
 }

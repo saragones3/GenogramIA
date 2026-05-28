@@ -7,10 +7,10 @@ import dev.saragones3.genogramia.domain.model.User
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreesUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
-import dev.saragones3.genogramia.presentation.util.UiText
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
+import dev.saragones3.genogramia.presentation.util.UiText
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.new_tree_name
 import kotlinx.coroutines.Dispatchers
@@ -59,7 +59,7 @@ class AuthenticatedHomeViewModelTest {
             authRepository.setCurrentUser(user)
 
             viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
-            
+
             assertTrue(viewModel.uiState.value.isLoading) // Initial state
             viewModel.onResume()
 
@@ -72,26 +72,27 @@ class AuthenticatedHomeViewModelTest {
         runTest {
             val user = User("123", "test@test.com", "John Doe")
             authRepository.setCurrentUser(user)
-            val tree = GenogramTree(
-                id = "1",
-                ancestorCount = 1,
-                lastUpdated = "2024-05-15T12:00:00",
-                centralPerson = Person(id = "p1", firstName = "John", lastName = "Smith Family", birthDate = 0L)
-            )
+            val tree =
+                GenogramTree(
+                    id = "1",
+                    ancestorCount = 1,
+                    lastUpdated = "2024-05-15T12:00:00",
+                    centralPerson = Person(id = "p1", firstName = "John", lastName = "Smith Family", birthDate = 0L),
+                )
             treeRepository.createTree(tree)
 
             viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
-            
+
             viewModel.uiState.test {
                 assertTrue(awaitItem().isLoading) // Initial true
-                
+
                 viewModel.onResume()
-                
+
                 val state = expectMostRecentItem()
                 assertEquals(1, state.trees.size)
                 assertEquals(
                     UiText.Resource(Res.string.new_tree_name, arrayOf("Smith Family")),
-                    state.trees[0].title
+                    state.trees[0].title,
                 )
                 assertFalse(state.isLoading) // Finished loading
             }
@@ -107,26 +108,39 @@ class AuthenticatedHomeViewModelTest {
                     id = "1",
                     ancestorCount = 1,
                     lastUpdated = "2024-05-15T12:00:00",
-                    centralPerson = Person(id = "p1", firstName = "John", lastName = "Smith Family", birthDate = 0L)
-                )
+                    centralPerson = Person(id = "p1", firstName = "John", lastName = "Smith Family", birthDate = 0L),
+                ),
             )
             treeRepository.createTree(
                 GenogramTree(
                     id = "2",
                     ancestorCount = 1,
                     lastUpdated = "2024-05-15T12:00:00",
-                    centralPerson = Person(id = "p2", firstName = "Jane", lastName = "Maternal Lineage", birthDate = 0L)
-                )
+                    centralPerson =
+                        Person(
+                            id = "p2",
+                            firstName = "Jane",
+                            lastName = "Maternal Lineage",
+                            birthDate = 0L,
+                        ),
+                ),
             )
 
-            viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
+            viewModel =
+                AuthenticatedHomeViewModel(
+                    checkSessionUseCase,
+                    getTreesUseCase,
+                    dateProvider,
+                    dateFormatter,
+                )
             viewModel.onResume()
 
             viewModel.onSearchQueryChange("Smith")
             assertEquals(1, viewModel.uiState.value.trees.size)
             assertEquals(
                 UiText.Resource(Res.string.new_tree_name, arrayOf("Smith Family")),
-                viewModel.uiState.value.trees[0].title
+                viewModel.uiState.value.trees[0]
+                    .title,
             )
 
             viewModel.onSearchQueryChange("NonExistent")

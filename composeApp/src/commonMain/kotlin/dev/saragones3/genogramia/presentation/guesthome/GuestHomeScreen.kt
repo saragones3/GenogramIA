@@ -188,13 +188,13 @@ private fun GuestHomeTitleSection() {
 }
 
 private class GuestHomeScreenPreviewProvider : PreviewParameterProvider<GuestHomeUiState> {
-
-    private val seed = GenogramTreeUiModel(
-        id = "1",
-        title = UiText.DynamicString("Sample Tree"),
-        ancestorCount = 10,
-        lastUpdated = UiText.DynamicString("today"),
-    )
+    private val seed =
+        GenogramTreeUiModel(
+            id = "1",
+            title = UiText.DynamicString("Sample Tree"),
+            ancestorCount = 10,
+            lastUpdated = UiText.DynamicString("today"),
+        )
 
     override val values =
         sequenceOf(

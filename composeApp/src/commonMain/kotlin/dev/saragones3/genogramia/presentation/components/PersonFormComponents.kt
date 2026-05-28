@@ -502,10 +502,11 @@ fun DatePickerModal(
     onDateSelected: (Long) -> Unit,
     onDismiss: () -> Unit,
 ) {
-    val datePickerState = rememberDatePickerState(
-        initialSelectedDateMillis = initialDate,
-        yearRange = IntRange(1500, 3000),
-    )
+    val datePickerState =
+        rememberDatePickerState(
+            initialSelectedDateMillis = initialDate,
+            yearRange = IntRange(1500, 3000),
+        )
 
     DatePickerDialog(
         onDismissRequest = onDismiss,

@@ -168,7 +168,14 @@ private fun AuthenticatedHomeContent(
                                     lastUpdated = tree.lastUpdated,
                                     buttonText = stringResource(Res.string.auth_home_open_archive),
                                     onButtonClick = { onOpenTreeClick(tree.id) },
-                                    badgeText = if (tree.isPrimary) stringResource(Res.string.auth_home_primary_lineage) else null,
+                                    badgeText =
+                                        if (tree.isPrimary) {
+                                            stringResource(
+                                                Res.string.auth_home_primary_lineage,
+                                            )
+                                        } else {
+                                            null
+                                        },
                                 )
                             }
 
@@ -186,14 +193,14 @@ private fun AuthenticatedHomeContent(
 }
 
 private class AuthenticatedHomeScreenPreviewProvider : PreviewParameterProvider<AuthenticatedHomeUiState> {
-
-    private val seed = GenogramTreeUiModel(
-        id = "1",
-        title = UiText.DynamicString("Aragones Family"),
-        ancestorCount = 1240,
-        lastUpdated = UiText.DynamicString("2 days ago"),
-        isPrimary = true,
-    )
+    private val seed =
+        GenogramTreeUiModel(
+            id = "1",
+            title = UiText.DynamicString("Aragones Family"),
+            ancestorCount = 1240,
+            lastUpdated = UiText.DynamicString("2 days ago"),
+            isPrimary = true,
+        )
 
     override val values =
         sequenceOf(

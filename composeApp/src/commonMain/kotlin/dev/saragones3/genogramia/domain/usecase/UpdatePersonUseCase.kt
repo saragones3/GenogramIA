@@ -35,7 +35,7 @@ class UpdatePersonUseCase(
                             millis = dateProvider.nowEpochMilliseconds(),
                             pattern = GenogramTree.DATE_FORMAT,
                         ),
-                )
+                ),
             )
             Result.success(Unit)
         } catch (e: Exception) {

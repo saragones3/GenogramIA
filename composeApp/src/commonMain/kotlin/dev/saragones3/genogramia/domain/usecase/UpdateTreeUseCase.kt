@@ -11,12 +11,14 @@ class UpdateTreeUseCase(
     private val dateFormatter: DateFormatter,
 ) {
     suspend operator fun invoke(tree: GenogramTree) {
-        repository.updateTree(tree.copy(
-            lastUpdated =
-                dateFormatter.formatDate(
-                    millis = dateProvider.nowEpochMilliseconds(),
-                    pattern = GenogramTree.DATE_FORMAT,
-                ),
-        ))
+        repository.updateTree(
+            tree.copy(
+                lastUpdated =
+                    dateFormatter.formatDate(
+                        millis = dateProvider.nowEpochMilliseconds(),
+                        pattern = GenogramTree.DATE_FORMAT,
+                    ),
+            ),
+        )
     }
 }
