@@ -58,7 +58,7 @@ class TreeViewModelTest {
     }
 
     @Test
-    fun `initial state is correct`() =
+    fun `GIVEN view model WHEN initialized THEN initial state is correct`() =
         runTest {
             val state = viewModel.state.value
             assertEquals("", state.tree.id)
@@ -69,7 +69,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree event is received state is updated with tree data`() =
+    fun `GIVEN existing tree WHEN LoadTree event received THEN state is updated with tree data`() =
         runTest {
             val person =
                 Person(
@@ -101,7 +101,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree fails state is updated with error and navigateBack`() =
+    fun `GIVEN non-existing tree WHEN LoadTree event received THEN state is updated with error`() =
         runTest {
             viewModel.state.test {
                 assertEquals(null, awaitItem().error)
@@ -118,7 +118,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree event is received with birth and death dates UI model is populated correctly`() =
+    fun `GIVEN tree with dates WHEN LoadTree event received THEN UI model is populated correctly`() =
         runTest {
             // 1915-01-01 and 1989-12-31 approx
             val person = Person("p1", "John", "Doe", birthDate = -1735689600000L, deathDate = 631065600000L)
@@ -137,7 +137,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when person is alive age is calculated based on current date`() =
+    fun `GIVEN alive person WHEN LoadTree event received THEN age is calculated correctly`() =
         runTest {
             // Set current date to 2024
             dateProvider.currentTimeMillis = 1704067200000L // 2024-01-01
@@ -159,21 +159,21 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnZoomIn event is received scale is increased`() =
+    fun `GIVEN view model WHEN OnZoomIn event received THEN scale is increased`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnZoomIn(0.2f))
             assertEquals(1.2f, viewModel.state.value.scale)
         }
 
     @Test
-    fun `when OnZoomOut event is received scale is decreased`() =
+    fun `GIVEN view model WHEN OnZoomOut event received THEN scale is decreased`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnZoomOut(0.2f))
             assertEquals(0.8f, viewModel.state.value.scale)
         }
 
     @Test
-    fun `when OnResetViewport event is received state is reset`() =
+    fun `GIVEN modified viewport WHEN OnResetViewport event received THEN state is reset`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnZoomIn(0.5f))
             viewModel.onEvent(TreeEvent.OnResetViewport)
@@ -185,7 +185,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnTransform event is received scale and offset are updated`() =
+    fun `GIVEN view model WHEN OnTransform event received THEN scale and offset are updated`() =
         runTest {
             val centroid = Offset.Zero
             val pan = Offset(10f, 20f)
@@ -198,7 +198,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree has multiple persons they are mapped to UI`() =
+    fun `GIVEN tree with multiple persons WHEN LoadTree event received THEN all persons are mapped to UI`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
@@ -218,7 +218,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree has relationships they are mapped to UI`() =
+    fun `GIVEN tree with relationships WHEN LoadTree event received THEN all relationships are mapped to UI`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
@@ -256,14 +256,14 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnPersonSelected event is received selectedPersonIds is updated`() =
+    fun `GIVEN view model WHEN OnPersonSelected event received THEN selection is updated`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
             assertEquals(listOf("p1"), viewModel.state.value.selectedPersonIds)
         }
 
     @Test
-    fun `when two OnPersonSelected events are received for different persons both are selected`() =
+    fun `GIVEN one person selected WHEN another person selected THEN both are selected`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
             viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
@@ -271,7 +271,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnPersonSelected is called on already selected person it is deselected`() =
+    fun `GIVEN person selected WHEN same person selected again THEN person is deselected`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
             viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
@@ -280,7 +280,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when third person is selected only the new one remains selected`() =
+    fun `GIVEN two persons selected WHEN third person selected THEN only third person remains selected`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
             viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
@@ -289,7 +289,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when two persons with existing relationship are selected relationshipId is set automatically`() =
+    fun `GIVEN two persons with relationship WHEN both selected THEN relationshipId is set`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
@@ -313,7 +313,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when two persons without relationship are selected relationshipId is null`() =
+    fun `GIVEN two persons without relationship WHEN both selected THEN relationshipId is null`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
@@ -330,7 +330,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnPersonMove event is received person position is updated`() =
+    fun `GIVEN view model WHEN OnPersonMove event received THEN person position is updated`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val tree = GenogramTree("t1", 1, "now", central)
@@ -347,7 +347,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnPersonMoveFinished event is received person position is saved in repository`() =
+    fun `GIVEN person moved WHEN OnPersonMoveFinished event received THEN position is saved in repository`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val tree = GenogramTree("t1", 1, "now", central)
@@ -368,7 +368,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `age calculation handles birthday not yet reached in current year`() =
+    fun `GIVEN birthday not reached WHEN LoadTree event received THEN age is calculated correctly`() =
         runTest {
             // Current date: 2024-05-01
             dateProvider.currentTimeMillis = 1714521600000L
@@ -387,7 +387,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `age calculation handles birthday already reached in current year`() =
+    fun `GIVEN birthday reached WHEN LoadTree event received THEN age is calculated correctly`() =
         runTest {
             // Current date: 2024-07-01
             dateProvider.currentTimeMillis = 1719792000000L
@@ -405,7 +405,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree has adoption relationship adoptive parent is positioned as parent`() =
+    fun `GIVEN adoption relationship WHEN LoadTree event received THEN adoptive parent is positioned as parent`() =
         runTest {
             val central = Person("child", "Child", "Doe", 0L)
             val adoptiveParent =
@@ -437,7 +437,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when LoadTree has persons with 0 position they are baked into repository`() =
+    fun `GIVEN persons with zero position WHEN LoadTree event received THEN positions are baked into repository`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Partner", "Doe", 0L, biologicalSex = Person.BiologicalSex.FEMALE)
@@ -462,7 +462,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when relationship is removed baked positions are preserved`() =
+    fun `GIVEN baked positions WHEN relationship removed THEN positions are preserved`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L, x = 100f, y = 100f)
             val p2 = Person("p2", "Ex-Partner", "Doe", 0L, x = 350f, y = 100f)
@@ -482,7 +482,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnDeleteSelectedPersonRequested event is received delete confirmation is shown`() =
+    fun `GIVEN person selected WHEN delete requested THEN confirmation is shown`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
@@ -501,7 +501,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnDismissDeletePerson event is received delete confirmation is hidden`() =
+    fun `GIVEN delete confirmation shown WHEN OnDismissDeletePerson event received THEN confirmation is hidden`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnPersonSelected("p2"))
             viewModel.onEvent(TreeEvent.OnDeleteSelectedPersonRequested)
@@ -513,7 +513,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnConfirmDeletePerson event is received person is deleted and tree is reloaded`() =
+    fun `GIVEN delete confirmation shown WHEN OnConfirmDeletePerson event received THEN person is deleted`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
@@ -534,7 +534,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnConfirmDeletePerson fails error is set`() =
+    fun `GIVEN repository error WHEN OnConfirmDeletePerson event received THEN error is set`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val p2 = Person("p2", "Jane", "Doe", 0L)
@@ -559,14 +559,14 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnDeleteTreeRequested event is received showDeleteTreeConfirmation is true`() =
+    fun `GIVEN view model WHEN OnDeleteTreeRequested event received THEN tree delete confirmation is shown`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnDeleteTreeRequested)
             assertEquals(true, viewModel.state.value.showDeleteTreeConfirmation)
         }
 
     @Test
-    fun `when OnDismissDeleteTree event is received showDeleteTreeConfirmation is false`() =
+    fun `GIVEN tree delete confirmation shown WHEN OnDismissDeleteTree event received THEN confirmation is hidden`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnDeleteTreeRequested)
             viewModel.onEvent(TreeEvent.OnDismissDeleteTree)
@@ -574,7 +574,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnConfirmDeleteTree event is received tree is deleted and shouldNavigateBack is true`() =
+    fun `GIVEN tree delete confirmation shown WHEN OnConfirmDeleteTree event received THEN tree is deleted`() =
         runTest {
             val central = Person("p1", "John", "Doe", 0L)
             val tree = GenogramTree("t1", 1, "now", central)
@@ -594,7 +594,7 @@ class TreeViewModelTest {
         }
 
     @Test
-    fun `when OnToggleEditMode event is received isEditMode is toggled and selection is cleared`() =
+    fun `GIVEN person selected WHEN OnToggleEditMode event received THEN edit mode toggled and selection cleared`() =
         runTest {
             viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
             assertEquals(false, viewModel.state.value.isEditMode)

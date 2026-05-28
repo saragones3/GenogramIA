@@ -38,7 +38,7 @@ class DeletePersonUseCaseTest {
     }
 
     @Test
-    fun `when person is deleted successfully and lastUpdated is updated`() =
+    fun `GIVEN existing person WHEN deleting person THEN person is removed and last updated is updated`() =
         runTest {
             repository.createTree(tree)
 
@@ -52,7 +52,7 @@ class DeletePersonUseCaseTest {
         }
 
     @Test
-    fun `when tree not found returns error`() =
+    fun `GIVEN non-existing tree WHEN deleting person THEN returns tree not found error`() =
         runTest {
             val result = useCase("invalid", "p1")
             assertTrue(result is DeletePersonUseCase.Result.Error)
@@ -60,7 +60,7 @@ class DeletePersonUseCaseTest {
         }
 
     @Test
-    fun `when person has descendants returns error`() =
+    fun `GIVEN person with descendants WHEN deleting person THEN returns has descendants error`() =
         runTest {
             val treeWithChild =
                 tree.copy(
@@ -83,7 +83,7 @@ class DeletePersonUseCaseTest {
         }
 
     @Test
-    fun `when person has marriage returns error`() =
+    fun `GIVEN person with marriage WHEN deleting person THEN returns has formal relationships error`() =
         runTest {
             val treeWithMarriage =
                 tree.copy(
@@ -106,7 +106,7 @@ class DeletePersonUseCaseTest {
         }
 
     @Test
-    fun `when person has cohabitation relationship it is removed during deletion`() =
+    fun `GIVEN person with cohabitation WHEN deleting person THEN relationship is removed and person is deleted`() =
         runTest {
             val treeWithCohabitation =
                 tree.copy(

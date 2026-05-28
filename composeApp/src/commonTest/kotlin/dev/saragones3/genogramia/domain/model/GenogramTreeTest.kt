@@ -7,7 +7,7 @@ class GenogramTreeTest {
     private val centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
 
     @Test
-    fun `name returns lastName of centralPerson`() {
+    fun `GIVEN tree with central person WHEN getting name THEN returns lastName of central person`() {
         val tree =
             GenogramTree(
                 id = "tree-1",
@@ -19,7 +19,7 @@ class GenogramTreeTest {
     }
 
     @Test
-    fun `calculateAncestorCount returns 0 for tree with only central person`() {
+    fun `GIVEN tree with only central person WHEN calculating ancestor count THEN returns 0`() {
         val tree =
             GenogramTree(
                 id = "tree-1",
@@ -31,7 +31,7 @@ class GenogramTreeTest {
     }
 
     @Test
-    fun `calculateAncestorCount returns 1 when central person has one parent`() {
+    fun `GIVEN central person with one parent WHEN calculating ancestor count THEN returns 1`() {
         val p2 = Person(id = "p2", firstName = "Father", lastName = "Doe", birthDate = 0L)
         val tree =
             GenogramTree(
@@ -54,7 +54,7 @@ class GenogramTreeTest {
     }
 
     @Test
-    fun `calculateAncestorCount returns correct count for multiple generations`() {
+    fun `GIVEN multiple generations WHEN calculating ancestor count THEN returns correct count`() {
         val father = Person(id = "f", firstName = "Father", lastName = "Doe", birthDate = 0L)
         val mother = Person(id = "m", firstName = "Mother", lastName = "Smith", birthDate = 0L)
         val gFather = Person(id = "gf", firstName = "Grandpa", lastName = "Doe", birthDate = 0L)
@@ -78,7 +78,7 @@ class GenogramTreeTest {
     }
 
     @Test
-    fun `calculateAncestorCount does not count non-descendant relationships`() {
+    fun `GIVEN tree with non descendant relationships WHEN calculating ancestor count THEN does not count them`() {
         val spouse = Person(id = "s", firstName = "Spouse", lastName = "Doe", birthDate = 0L)
         val tree =
             GenogramTree(

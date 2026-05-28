@@ -33,7 +33,7 @@ class AddRelationshipUseCaseTest {
     }
 
     @Test
-    fun `when tree exists relationship is added successfully and lastUpdated is updated`() =
+    fun `GIVEN existing tree WHEN adding relationship THEN relationship is added and last updated is updated`() =
         runTest {
             repository.createTree(tree)
             val relationship =
@@ -54,7 +54,7 @@ class AddRelationshipUseCaseTest {
         }
 
     @Test
-    fun `when tree does not exist nothing is added`() =
+    fun `GIVEN non-existing tree WHEN adding relationship THEN nothing is added`() =
         runTest {
             val relationship =
                 Relationship(
@@ -71,7 +71,7 @@ class AddRelationshipUseCaseTest {
         }
 
     @Test
-    fun `when relationship with same id exists it is updated instead of added as duplicate`() =
+    fun `GIVEN existing relationship ID WHEN adding relationship THEN relationship is updated`() =
         runTest {
             val existingRel =
                 Relationship(
@@ -92,7 +92,7 @@ class AddRelationshipUseCaseTest {
         }
 
     @Test
-    fun `when biological offspring relationship is added ancestorCount is updated`() =
+    fun `GIVEN biological offspring relationship WHEN adding relationship THEN ancestor count is updated`() =
         runTest {
             repository.createTree(tree)
             val parent = Person(id = "p2", firstName = "Father", lastName = "Doe", birthDate = 0L)

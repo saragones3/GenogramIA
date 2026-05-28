@@ -9,7 +9,7 @@ class UpdatePasswordUseCaseTest {
     private val updatePasswordUseCase = UpdatePasswordUseCase(repository)
 
     @Test
-    fun `when update password is called then repository reauthenticates and updates password`() =
+    fun `GIVEN user WHEN update password called THEN repository reauthenticates and updates password`() =
         runTest {
             // In FakeAuthRepository, updatePassword doesn't do much but we can verify it doesn't throw
             updatePasswordUseCase("oldPassword", "newPassword123")

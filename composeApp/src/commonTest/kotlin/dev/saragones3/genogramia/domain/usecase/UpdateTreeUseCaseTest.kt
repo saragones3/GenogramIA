@@ -31,7 +31,7 @@ class UpdateTreeUseCaseTest {
     }
 
     @Test
-    fun `invoke should update the tree in repository and set lastUpdated`() =
+    fun `GIVEN existing tree WHEN updating tree THEN tree is updated and last updated is set`() =
         runTest {
             repository.createTree(tree)
 

@@ -70,7 +70,7 @@ class AddRelationshipViewModelTest {
     }
 
     @Test
-    fun `initial state is correct`() =
+    fun `GIVEN view model WHEN initialized THEN state is correct`() =
         runTest {
             val state = viewModel.state.value
             assertEquals(Relationship.RelationshipType.MARRIAGE, state.bondType)
@@ -80,7 +80,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when init is called persons are loaded`() =
+    fun `GIVEN existing tree and persons WHEN onResume called THEN persons are loaded`() =
         runTest {
             repository.createTree(tree)
 
@@ -96,7 +96,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when consanguinity risk is detected hasConsanguinityRisk is true`() =
+    fun `GIVEN persons sharing parent WHEN onResume called THEN consanguinity risk is detected`() =
         runTest {
             val parent = Person(id = "p-parent", firstName = "Parent", lastName = "Root", birthDate = 0L)
             val p1 = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
@@ -138,7 +138,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when no consanguinity risk is detected hasConsanguinityRisk is false`() =
+    fun `GIVEN unrelated persons WHEN onResume called THEN no consanguinity risk is detected`() =
         runTest {
             val p1 = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
             val p2 = Person(id = "p2", firstName = "Jane", lastName = "Doe", birthDate = 0L)
@@ -164,7 +164,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when adoption relationship is detected hasConsanguinityRisk is false`() =
+    fun `GIVEN biological and adoptive siblings WHEN onResume called THEN no consanguinity risk is detected`() =
         runTest {
             val parent = Person(id = "p-parent", firstName = "Parent", lastName = "Root", birthDate = 0L)
             val p1 = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
@@ -207,14 +207,14 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when bond type is selected state is updated`() =
+    fun `GIVEN view model WHEN bond type selected THEN state is updated`() =
         runTest {
             viewModel.onEvent(AddRelationshipEvent.OnBondTypeSelected(Relationship.RelationshipType.DIVORCE))
             assertEquals(Relationship.RelationshipType.DIVORCE, viewModel.state.value.bondType)
         }
 
     @Test
-    fun `when emotional bond is selected state is updated`() =
+    fun `GIVEN view model WHEN emotional bond selected THEN state is updated`() =
         runTest {
             viewModel.onEvent(AddRelationshipEvent.OnEmotionalBondSelected(Relationship.EmotionalBond.CONFLICTUAL))
             assertEquals(Relationship.EmotionalBond.CONFLICTUAL, viewModel.state.value.emotionalBond)
@@ -224,7 +224,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when swap persons is triggered persons are exchanged in state`() =
+    fun `GIVEN loaded persons WHEN swap triggered THEN persons are exchanged in state`() =
         runTest {
             repository.createTree(tree)
             viewModel.onResume("tree-1", "p1", "p2")
@@ -242,7 +242,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when confirm click is triggered relationship is saved`() =
+    fun `GIVEN loaded persons WHEN confirm clicked THEN relationship is saved`() =
         runTest {
             repository.createTree(tree)
             viewModel.onResume("tree-1", "p1", "p2")
@@ -266,7 +266,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when confirm click with emotional bond is triggered relationship is saved with bond`() =
+    fun `GIVEN emotional bond WHEN confirm clicked THEN relationship is saved with bond`() =
         runTest {
             repository.createTree(tree)
             viewModel.onResume("tree-1", "p1", "p2")
@@ -283,7 +283,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when onResume is called with relationshipId data is prefilled`() =
+    fun `GIVEN existing relationship WHEN onResume called THEN data is prefilled`() =
         runTest {
             val relId = "rel-123"
             val existingRel =
@@ -311,7 +311,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when saving an existing relationship it updates instead of adding new`() =
+    fun `GIVEN existing relationship WHEN updated and confirmed THEN relationship is updated`() =
         runTest {
             val relId = "rel-123"
             val existingRel =
@@ -338,7 +338,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when date is selected state is updated with formatted date`() =
+    fun `GIVEN view model WHEN date selected THEN state is updated with formatted date`() =
         runTest {
             val date = 1715731200000L // May 15, 2024
             val pattern = "MM/dd/yyyy"
@@ -351,7 +351,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when prefilling relationship effectiveDateFormatted is set`() =
+    fun `GIVEN existing relationship with date WHEN prefilled THEN effectiveDateFormatted is set`() =
         runTest {
             val date = 1715731200000L
             val existingRel =
@@ -371,14 +371,14 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when back click event is received shouldNavigateBack is true`() =
+    fun `GIVEN view model WHEN back clicked THEN shouldNavigateBack is true`() =
         runTest {
             viewModel.onEvent(AddRelationshipEvent.OnBackClick)
             assertTrue(viewModel.state.value.shouldNavigateBack)
         }
 
     @Test
-    fun `when delete click is triggered relationship is deleted`() =
+    fun `GIVEN existing relationship WHEN delete clicked THEN relationship is deleted`() =
         runTest {
             val relId = "rel-123"
             val existingRel =
@@ -402,7 +402,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when delete fails state is updated with error`() =
+    fun `GIVEN repository error WHEN delete clicked THEN state is updated with error`() =
         runTest {
             val relId = "rel-123"
             repository.createTree(
@@ -423,7 +423,7 @@ class AddRelationshipViewModelTest {
         }
 
     @Test
-    fun `when navigation handled event is received shouldNavigateBack is false`() =
+    fun `GIVEN navigation pending WHEN handled event received THEN shouldNavigateBack is false`() =
         runTest {
             viewModel.onEvent(AddRelationshipEvent.OnBackClick)
             assertTrue(viewModel.state.value.shouldNavigateBack)

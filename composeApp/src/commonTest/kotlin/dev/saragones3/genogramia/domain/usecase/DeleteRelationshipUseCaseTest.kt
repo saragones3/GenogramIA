@@ -42,7 +42,7 @@ class DeleteRelationshipUseCaseTest {
     }
 
     @Test
-    fun `invoke should remove the relationship from the tree and set lastUpdated`() =
+    fun `GIVEN existing relationship WHEN delete relationship called THEN relationship is removed`() =
         runTest {
             repository.createTree(tree)
 
@@ -54,14 +54,14 @@ class DeleteRelationshipUseCaseTest {
         }
 
     @Test
-    fun `invoke should not fail if tree does not exist`() =
+    fun `GIVEN non-existing tree WHEN delete relationship called THEN nothing happens`() =
         runTest {
             useCase(treeId = "invalid", relationshipId = "rel-1")
             // Should not throw exception
         }
 
     @Test
-    fun `invoke should not change other relationships`() =
+    fun `GIVEN multiple relationships WHEN delete one THEN others remain`() =
         runTest {
             val rel2 = relationship.copy(id = "rel-2")
             val treeWithTwoRels = tree.copy(relationships = listOf(relationship, rel2))
@@ -75,7 +75,7 @@ class DeleteRelationshipUseCaseTest {
         }
 
     @Test
-    fun `invoke should update ancestorCount when a vertical relationship is removed`() =
+    fun `GIVEN vertical relationship WHEN deleted THEN ancestor count is updated`() =
         runTest {
             val father = Person(id = "f", firstName = "Father", lastName = "Doe", birthDate = 0L)
             val rel =

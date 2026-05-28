@@ -18,7 +18,7 @@ class DeleteTreeUseCaseTest {
     }
 
     @Test
-    fun `when invoking deleteTree then repository deleteTree is called`() =
+    fun `GIVEN existing tree WHEN delete tree called THEN tree is deleted from repository`() =
         runTest {
             // Given
             val treeId = "1"

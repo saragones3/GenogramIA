@@ -11,7 +11,7 @@ import kotlin.test.assertEquals
 
 class MapperTest {
     @Test
-    fun `Person toDto maps correctly`() {
+    fun `GIVEN person WHEN mapping to dto THEN fields are mapped correctly`() {
         val person =
             Person(
                 id = "p1",
@@ -39,7 +39,7 @@ class MapperTest {
     }
 
     @Test
-    fun `PersonDto toDomain maps correctly`() {
+    fun `GIVEN person dto WHEN mapping to domain THEN fields are mapped correctly`() {
         val dto =
             PersonDto(
                 id = "p1",
@@ -67,7 +67,7 @@ class MapperTest {
     }
 
     @Test
-    fun `PersonDto toDomain with invalid enums uses defaults`() {
+    fun `GIVEN person dto with invalid enums WHEN mapping to domain THEN defaults are used`() {
         val dto =
             PersonDto(
                 biologicalSex = "INVALID",
@@ -81,7 +81,7 @@ class MapperTest {
     }
 
     @Test
-    fun `Relationship toDto maps correctly`() {
+    fun `GIVEN relationship WHEN mapping to dto THEN fields are mapped correctly`() {
         val relationship =
             Relationship(
                 id = "r1",
@@ -103,7 +103,7 @@ class MapperTest {
     }
 
     @Test
-    fun `RelationshipDto toDomain maps correctly`() {
+    fun `GIVEN relationship dto WHEN mapping to domain THEN fields are mapped correctly`() {
         val dto =
             RelationshipDto(
                 id = "r1",
@@ -125,7 +125,7 @@ class MapperTest {
     }
 
     @Test
-    fun `RelationshipDto toDomain with invalid enums uses defaults`() {
+    fun `GIVEN relationship dto with invalid enums WHEN mapping to domain THEN defaults are used`() {
         val dto =
             RelationshipDto(
                 type = "INVALID",
@@ -139,7 +139,7 @@ class MapperTest {
     }
 
     @Test
-    fun `GenogramTree toDto maps correctly`() {
+    fun `GIVEN genogram tree WHEN mapping to dto THEN fields are mapped correctly`() {
         val centralPerson = Person(id = "cp", firstName = "Central", lastName = "P", birthDate = 0L)
         val person1 = Person(id = "p1", firstName = "P1", lastName = "L1", birthDate = 0L)
         val relationship1 =
@@ -168,7 +168,7 @@ class MapperTest {
     }
 
     @Test
-    fun `GenogramTreeDto toDomain maps correctly`() {
+    fun `GIVEN genogram tree dto WHEN mapping to domain THEN fields are mapped correctly`() {
         val centralPersonDto = PersonDto(id = "cp", firstName = "Central", lastName = "P")
         val person1Dto = PersonDto(id = "p1", firstName = "P1")
         val relationship1Dto = RelationshipDto(id = "r1", personId1 = "cp", personId2 = "p1")

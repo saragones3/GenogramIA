@@ -7,7 +7,7 @@ class DateFormatterTest {
     private val dateFormatter = DateFormatter()
 
     @Test
-    fun `formatDate returns correct string for different day and month`() {
+    fun `GIVEN millis WHEN formatting date THEN returns correct string`() {
         val millis = 1778716800000L // 14-may-2026
 
         assertEquals("14/05/2026", dateFormatter.formatDate(millis, "dd/MM/yyyy"))
@@ -15,7 +15,7 @@ class DateFormatterTest {
     }
 
     @Test
-    fun `formatDate handles edge case years correctly`() {
+    fun `GIVEN old date millis WHEN formatting date THEN returns correct string`() {
         val millis = -3144182400000 // 14-may-1870
 
         assertEquals("14/05/1870", dateFormatter.formatDate(millis, "dd/MM/yyyy"))

@@ -10,7 +10,7 @@ class DeleteAccountUseCaseTest {
     private val deleteAccountUseCase = DeleteAccountUseCase(repository)
 
     @Test
-    fun `when delete account is called then repository delete account is called`() =
+    fun `GIVEN authenticated user WHEN delete account called THEN user is deleted`() =
         runTest {
             // Set a user first
             repository.signInWithEmailAndPassword("test@test.com", "password")

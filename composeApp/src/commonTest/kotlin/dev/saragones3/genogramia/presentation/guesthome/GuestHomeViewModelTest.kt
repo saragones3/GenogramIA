@@ -43,7 +43,7 @@ class GuestHomeViewModelTest {
     }
 
     @Test
-    fun `when view model is initialized trees should be loaded from repository`() =
+    fun `GIVEN trees in repository WHEN view model is initialized THEN trees are loaded`() =
         runTest {
             val tree =
                 GenogramTree(
@@ -66,7 +66,7 @@ class GuestHomeViewModelTest {
         }
 
     @Test
-    fun `when search query changes trees should be filtered`() =
+    fun `GIVEN multiple trees WHEN search query changes THEN trees are filtered`() =
         runTest {
             treeRepository.createTree(
                 GenogramTree(

@@ -9,7 +9,7 @@ import kotlin.test.assertEquals
 
 class GetTreesUseCaseTest {
     @Test
-    fun `invoke returns list of trees from repository`() =
+    fun `GIVEN trees in repository WHEN getting trees THEN returns all trees`() =
         runTest {
             val fakeRepository = FakeTreeRepository()
             val tree1 = GenogramTree("1", 1, "now", Person())

@@ -13,7 +13,7 @@ class InMemoryTreeRepositoryTest {
     private val centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
 
     @Test
-    fun `createTree should add tree to the list`() =
+    fun `GIVEN empty repository WHEN creating tree THEN tree is added`() =
         runTest {
             val tree =
                 GenogramTree(
@@ -30,7 +30,7 @@ class InMemoryTreeRepositoryTest {
         }
 
     @Test
-    fun `getTree should return the correct tree`() =
+    fun `GIVEN multiple trees WHEN getting tree by id THEN returns correct tree`() =
         runTest {
             val tree1 =
                 GenogramTree(
@@ -54,7 +54,7 @@ class InMemoryTreeRepositoryTest {
         }
 
     @Test
-    fun `getTrees should return all trees`() =
+    fun `GIVEN multiple trees WHEN getting all trees THEN returns all trees`() =
         runTest {
             val tree1 =
                 GenogramTree(
@@ -80,7 +80,7 @@ class InMemoryTreeRepositoryTest {
         }
 
     @Test
-    fun `updateTree should update existing tree`() =
+    fun `GIVEN existing tree WHEN updating tree THEN tree is updated`() =
         runTest {
             val tree =
                 GenogramTree(
@@ -99,7 +99,7 @@ class InMemoryTreeRepositoryTest {
         }
 
     @Test
-    fun `updateTree should add tree if it does not exist`() =
+    fun `GIVEN non-existing tree WHEN updating tree THEN tree is added`() =
         runTest {
             val tree =
                 GenogramTree(

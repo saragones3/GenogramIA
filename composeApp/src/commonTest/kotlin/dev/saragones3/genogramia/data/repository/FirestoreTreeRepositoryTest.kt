@@ -26,7 +26,7 @@ class FirestoreTreeRepositoryTest {
     }
 
     @Test
-    fun testCreateTreeSavesToFirestore() =
+    fun `GIVEN authenticated user WHEN creating tree THEN saves to firestore`() =
         runTest {
             val user = AuthUser("user123", "test@test.com", "Test")
             fakeFirebase.setCurrentUser(user)
@@ -46,7 +46,7 @@ class FirestoreTreeRepositoryTest {
         }
 
     @Test
-    fun testCreateTreeUnauthenticatedDoesNotSave() =
+    fun `GIVEN unauthenticated user WHEN creating tree THEN does not save`() =
         runTest {
             fakeFirebase.setCurrentUser(null)
 
@@ -64,7 +64,7 @@ class FirestoreTreeRepositoryTest {
         }
 
     @Test
-    fun testGetTree() =
+    fun `GIVEN existing tree WHEN getting tree THEN returns tree`() =
         runTest {
             val user = AuthUser("user123", "test@test.com", "Test")
             fakeFirebase.setCurrentUser(user)
@@ -84,7 +84,7 @@ class FirestoreTreeRepositoryTest {
         }
 
     @Test
-    fun testGetTrees() =
+    fun `GIVEN multiple trees WHEN getting trees THEN returns all trees`() =
         runTest {
             val user = AuthUser("user123", "test@test.com", "Test")
             fakeFirebase.setCurrentUser(user)
@@ -113,7 +113,7 @@ class FirestoreTreeRepositoryTest {
         }
 
     @Test
-    fun testUpdateTree() =
+    fun `GIVEN existing tree WHEN updating tree THEN tree is updated in firestore`() =
         runTest {
             val user = AuthUser("user123", "test@test.com", "Test")
             fakeFirebase.setCurrentUser(user)

@@ -36,7 +36,7 @@ class AddPersonUseCaseTest {
     }
 
     @Test
-    fun `when tree exists person is added successfully and lastUpdated is updated`() =
+    fun `GIVEN existing tree WHEN adding person THEN person is added and last updated is updated`() =
         runTest {
             repository.createTree(tree)
             val newPerson =
@@ -59,7 +59,7 @@ class AddPersonUseCaseTest {
         }
 
     @Test
-    fun `when tree does not exist fails`() =
+    fun `GIVEN non-existing tree WHEN adding person THEN returns failure`() =
         runTest {
             val newPerson = Person(id = "", firstName = "Jane", lastName = "Doe", birthDate = 0L)
 
@@ -70,7 +70,7 @@ class AddPersonUseCaseTest {
         }
 
     @Test
-    fun `when repository fails fails`() =
+    fun `GIVEN repository error WHEN adding person THEN returns failure`() =
         runTest {
             repository.shouldReturnError = true
             val newPerson = Person(id = "", firstName = "Jane", lastName = "Doe", birthDate = 0L)

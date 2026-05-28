@@ -8,7 +8,7 @@ import kotlin.test.assertNull
 
 class CheckSessionUseCaseTest {
     @Test
-    fun `invoke returns User when repository has a current user`() {
+    fun `GIVEN current user WHEN checking session THEN returns user`() {
         val user = User("uid123", "test@test.com", "Test User")
         val fakeRepository = FakeAuthRepository(user)
         val useCase = CheckSessionUseCase(fakeRepository)
@@ -19,7 +19,7 @@ class CheckSessionUseCaseTest {
     }
 
     @Test
-    fun `invoke returns null when repository has no current user`() {
+    fun `GIVEN no current user WHEN checking session THEN returns null`() {
         val fakeRepository = FakeAuthRepository(null)
         val useCase = CheckSessionUseCase(fakeRepository)
 

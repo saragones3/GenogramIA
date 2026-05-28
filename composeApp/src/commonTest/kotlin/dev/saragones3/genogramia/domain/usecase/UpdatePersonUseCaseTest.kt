@@ -35,7 +35,7 @@ class UpdatePersonUseCaseTest {
     }
 
     @Test
-    fun `when person exists in persons list is updated successfully and lastUpdated is updated`() =
+    fun `GIVEN person in list WHEN updating person THEN person is updated and last updated is updated`() =
         runTest {
             repository.createTree(tree)
             val updatedPerson = otherPerson.copy(firstName = "Jane Updated")
@@ -49,7 +49,7 @@ class UpdatePersonUseCaseTest {
         }
 
     @Test
-    fun `when person is central person is updated successfully`() =
+    fun `GIVEN central person WHEN updating person THEN central person is updated`() =
         runTest {
             repository.createTree(tree)
             val updatedPerson = centralPerson.copy(firstName = "John Updated")
@@ -62,7 +62,7 @@ class UpdatePersonUseCaseTest {
         }
 
     @Test
-    fun `when tree does not exist fails`() =
+    fun `GIVEN non-existing tree WHEN updating person THEN returns failure`() =
         runTest {
             val result = useCase("invalid-tree", otherPerson)
 

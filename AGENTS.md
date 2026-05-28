@@ -54,7 +54,8 @@ Este documento define el contexto, las reglas y las directrices arquitectónicas
 
 ### 7. Testing Automático
 - **Obligatoriedad**: Siempre que se cree o modifique un **ViewModel**, **UseCase** o **Repository**, es estrictamente obligatorio escribir o actualizar sus pruebas unitarias correspondientes en `commonTest` (o en su source set correspondiente si es código específico de plataforma).
-- **Fakes vs Mocks**: Fomenta el uso de implementaciones _Fake_ de las interfaces en lugar de librerías de _Mocking_ cuando sea posible, para mantener las pruebas robustas y fácilmente portables en KMP.
+- **Formato de Tests**: Los nombres de las funciones de prueba deben seguir obligatoriamente el formato `GIVEN context WHEN action THEN result`. Ejemplo: `` `GIVEN empty tree WHEN adding person THEN tree has one person` ``.
+- **Fakes vs Mocks**: Fomenta el uso de implementaciones _Fake_ de las interfaces en lugar de librerías de _Mocking_ when sea posible, para mantener las pruebas robustas y fácilmente portables en KMP.
 - **Corrutinas**: Usa `kotlinx-coroutines-test` (`runTest`, `UnconfinedTestDispatcher`) y `Turbine` para probar `Flow` y `StateFlow`.
 
 ## 🎭 Roles de Agentes

@@ -40,7 +40,7 @@ class ChangePasswordViewModelTest {
     }
 
     @Test
-    fun `initial state is empty and loads user email`() =
+    fun `GIVEN logged in user WHEN view model initialized THEN initial state has user email`() =
         runTest {
             val user =
                 User("id", "test@test.com", "Name")
@@ -58,7 +58,7 @@ class ChangePasswordViewModelTest {
         }
 
     @Test
-    fun `when fields are empty validation fails`() =
+    fun `GIVEN empty fields WHEN save clicked THEN validation fails`() =
         runTest {
             viewModel.savePassword()
 
@@ -69,7 +69,7 @@ class ChangePasswordViewModelTest {
         }
 
     @Test
-    fun `when passwords do not match validation fails`() =
+    fun `GIVEN mismatched passwords WHEN save clicked THEN validation fails`() =
         runTest {
             viewModel.onDataChange("oldPass", "password123", "password321")
             viewModel.savePassword()
@@ -80,7 +80,7 @@ class ChangePasswordViewModelTest {
         }
 
     @Test
-    fun `when password is too short validation fails`() =
+    fun `GIVEN short password WHEN save clicked THEN validation fails`() =
         runTest {
             viewModel.onDataChange("oldPass", "short", "short")
             viewModel.savePassword()
@@ -91,7 +91,7 @@ class ChangePasswordViewModelTest {
         }
 
     @Test
-    fun `when update is successful success state is true`() =
+    fun `GIVEN valid data WHEN save clicked THEN update is successful`() =
         runTest {
             viewModel.onDataChange("oldPass", "newPassword123", "newPassword123")
 
@@ -118,7 +118,7 @@ class ChangePasswordViewModelTest {
         }
 
     @Test
-    fun `when update fails general error is updated`() =
+    fun `GIVEN repository error WHEN save clicked THEN general error is updated`() =
         runTest {
             repository.shouldReturnError = true
             viewModel.onDataChange("oldPass", "newPassword123", "newPassword123")
@@ -132,7 +132,7 @@ class ChangePasswordViewModelTest {
         }
 
     @Test
-    fun `successConsumed resets success state`() =
+    fun `GIVEN update success WHEN success consumed THEN state is reset`() =
         runTest {
             viewModel.onDataChange("oldPass", "newPassword123", "newPassword123")
             viewModel.savePassword()
@@ -146,7 +146,7 @@ class ChangePasswordViewModelTest {
         }
 
     @Test
-    fun `clearData resets all fields`() =
+    fun `GIVEN modified fields WHEN data cleared THEN all fields are reset`() =
         runTest {
             viewModel.onDataChange("old", "new", "new")
             viewModel.clearData()

@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 
 class NavGraphTest {
     @Test
-    fun `backStack pop should remove last element if size is greater than 1`() {
+    fun `GIVEN backstack with multiple routes WHEN popping THEN last element is removed`() {
         val backStack = mutableStateListOf(NavRoute.Splash, NavRoute.GuestHome)
 
         // Simulating the pop extension function behavior from NavGraph.kt
@@ -19,7 +19,7 @@ class NavGraphTest {
     }
 
     @Test
-    fun `backStack pop should NOT remove last element if size is 1`() {
+    fun `GIVEN backstack with one route WHEN popping THEN element is not removed`() {
         val backStack = mutableStateListOf<NavRoute>(NavRoute.Splash)
 
         // Simulating the pop extension function behavior from NavGraph.kt

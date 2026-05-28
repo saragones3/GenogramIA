@@ -41,7 +41,7 @@ class RegistrationViewModelTest {
     }
 
     @Test
-    fun `initial state is empty`() =
+    fun `GIVEN view model WHEN initialized THEN state is empty`() =
         runTest {
             val state = viewModel.state.value
             assertEquals("", state.name)
@@ -53,7 +53,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when fields are empty validation fails`() =
+    fun `GIVEN empty fields WHEN sign up clicked THEN validation fails`() =
         runTest {
             viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
 
@@ -64,7 +64,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when email format is invalid validation fails`() =
+    fun `GIVEN invalid email format WHEN sign up clicked THEN validation fails`() =
         runTest {
             val invalidEmails =
                 listOf(
@@ -89,7 +89,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when email is corrected after invalid format email error is cleared`() =
+    fun `GIVEN invalid email error WHEN email corrected THEN error is cleared`() =
         runTest {
             // Given an invalid email state
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "invalid-email", "password123"))
@@ -104,7 +104,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when email is invalid name and password errors are not affected`() =
+    fun `GIVEN invalid email WHEN sign up clicked THEN name and password errors are not set`() =
         runTest {
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Valid Name", "invalid-email", "validPassword123"))
 
@@ -117,7 +117,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when registration is successful success state is true`() =
+    fun `GIVEN valid data WHEN sign up clicked THEN registration is successful`() =
         runTest {
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Test User", "test@example.com", "password123"))
 
@@ -144,7 +144,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when email is already in use general error is updated`() =
+    fun `GIVEN email in use WHEN sign up clicked THEN email in use error is shown`() =
         runTest {
             repository.shouldReturnError = true
             repository.errorToReturn = AuthError.EmailAlreadyInUse
@@ -159,7 +159,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when email is invalid general error is updated`() =
+    fun `GIVEN invalid email response WHEN sign up clicked THEN invalid email error is shown`() =
         runTest {
             repository.shouldReturnError = true
             repository.errorToReturn = AuthError.InvalidEmail
@@ -173,7 +173,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when password is weak general error is updated`() =
+    fun `GIVEN weak password response WHEN sign up clicked THEN weak password error is shown`() =
         runTest {
             repository.shouldReturnError = true
             repository.errorToReturn = AuthError.WeakPassword
@@ -187,7 +187,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `registrationSuccessConsumed resets state`() =
+    fun `GIVEN registration success WHEN success consumed THEN state is reset`() =
         runTest {
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Test User", "test@example.com", "password123"))
 
@@ -200,7 +200,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when password is too short validation fails`() =
+    fun `GIVEN short password WHEN sign up clicked THEN validation fails`() =
         runTest {
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "test@example.com", "short"))
             viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
@@ -210,7 +210,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when password is corrected after invalid length error is cleared`() =
+    fun `GIVEN short password error WHEN password corrected THEN error is cleared`() =
         runTest {
             // Given an invalid password state
             viewModel.onEvent(RegistrationEvent.OnDataChanged("Test", "test@example.com", "short"))
@@ -225,7 +225,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when name is empty validation fails`() =
+    fun `GIVEN empty name WHEN sign up clicked THEN validation fails`() =
         runTest {
             viewModel.onEvent(RegistrationEvent.OnDataChanged("", "test@example.com", "password123"))
             viewModel.onEvent(RegistrationEvent.OnSignUpClicked)
@@ -235,7 +235,7 @@ class RegistrationViewModelTest {
         }
 
     @Test
-    fun `when name is corrected after empty error is cleared`() =
+    fun `GIVEN empty name error WHEN name corrected THEN error is cleared`() =
         runTest {
             // Given an empty name state
             viewModel.onEvent(RegistrationEvent.OnDataChanged("", "test@example.com", "password123"))
