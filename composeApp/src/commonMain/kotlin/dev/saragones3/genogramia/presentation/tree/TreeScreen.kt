@@ -52,9 +52,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
@@ -69,6 +71,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.layout
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.TextStyle
@@ -1040,14 +1043,18 @@ private fun PersonNodeView(
             else -> MaterialTheme.colorScheme.secondaryContainer
         }
 
+    var datesHeightPx by remember { mutableIntStateOf(0) }
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier =
             modifier
                 .offset {
+                    val spacerHeightPx = 4.dp.roundToPx()
+                    val halfNodeSizePx = (NODE_SIZE / 2).roundToPx()
                     IntOffset(
                         (person.position.x.dp - 50.dp).roundToPx(),
-                        (person.position.y.dp - 56.dp).roundToPx(),
+                        (person.position.y.dp).roundToPx() - datesHeightPx - spacerHeightPx - halfNodeSizePx,
                     )
                 }.width(100.dp)
                 .combinedClickable(
@@ -1077,6 +1084,7 @@ private fun PersonNodeView(
         PersonDates(
             birthDate = person.birthDateText,
             deathDate = person.deathDateText,
+            modifier = Modifier.onSizeChanged { datesHeightPx = it.height },
         )
 
         Spacer(modifier = Modifier.height(4.dp))
