@@ -201,7 +201,6 @@ private fun ChangePasswordContent(
                     onValueChange = { onDataChange(it, state.newPassword, state.confirmPassword) },
                     isVisible = currentPasswordVisible,
                     onToggleVisibility = { currentPasswordVisible = !currentPasswordVisible },
-                    trailingIcon = Icons.Default.Lock,
                     error = state.currentPasswordError?.message?.let { stringResource(it) },
                     imeAction = ImeAction.Next,
                 )
@@ -215,7 +214,6 @@ private fun ChangePasswordContent(
                     onValueChange = { onDataChange(state.currentPassword, it, state.confirmPassword) },
                     isVisible = newPasswordVisible,
                     onToggleVisibility = { newPasswordVisible = !newPasswordVisible },
-                    trailingIcon = Icons.Default.Lock,
                     error = state.passwordError?.message?.let { stringResource(it) },
                     imeAction = ImeAction.Next,
                 )
@@ -229,7 +227,6 @@ private fun ChangePasswordContent(
                     onValueChange = { onDataChange(state.currentPassword, state.newPassword, it) },
                     isVisible = confirmPasswordVisible,
                     onToggleVisibility = { confirmPasswordVisible = !confirmPasswordVisible },
-                    trailingIcon = Icons.Default.CheckCircle,
                     error = state.confirmError?.message?.let { stringResource(it) },
                     imeAction = ImeAction.Done,
                 )
@@ -350,7 +347,6 @@ private fun PasswordField(
     onValueChange: (String) -> Unit,
     isVisible: Boolean,
     onToggleVisibility: () -> Unit,
-    trailingIcon: ImageVector,
     error: String? = null,
     imeAction: ImeAction = ImeAction.Default,
 ) {
@@ -375,12 +371,6 @@ private fun PasswordField(
                         val visibilityIcon = if (isVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff
                         Icon(imageVector = visibilityIcon, contentDescription = null, tint = Color.Gray)
                     }
-                    Icon(
-                        imageVector = trailingIcon,
-                        contentDescription = null,
-                        tint = if (isError) MaterialTheme.colorScheme.error else Color.LightGray,
-                        modifier = Modifier.padding(end = 12.dp).size(20.dp),
-                    )
                 }
             },
             visualTransformation = if (isVisible) VisualTransformation.None else PasswordVisualTransformation(),
