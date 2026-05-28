@@ -97,26 +97,12 @@ private fun AuthenticatedHomeContent(
             verticalArrangement = Arrangement.spacedBy(32.dp),
         ) {
             item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Text(
-                        text = stringResource(Res.string.app_name),
-                        style = MaterialTheme.typography.titleLarge,
-                        color = Primary,
-                        fontWeight = FontWeight.Bold,
-                    )
-                    // Avatar placeholder
-                    Box(
-                        modifier =
-                            Modifier
-                                .size(44.dp)
-                                .clip(CircleShape)
-                                .background(Color(0xFFE0E0E0)),
-                    )
-                }
+                Text(
+                    text = stringResource(Res.string.app_name),
+                    style = MaterialTheme.typography.titleLarge,
+                    color = Primary,
+                    fontWeight = FontWeight.Bold,
+                )
             }
 
             item {
