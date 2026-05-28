@@ -9,10 +9,10 @@ data class PersonDto(
     val id: String = "",
     val firstName: String = "",
     val lastName: String = "",
-    val birthDate: Long = 0L,
+    val birthDate: Long? = null,
+    val deathDate: Long? = null,
     val biologicalSex: String = Person.BiologicalSex.UNKNOWN.name,
     val sexualOrientation: String = Person.SexualOrientation.UNKNOWN.name,
-    val deathDate: Long? = null,
     val x: Float = 0f,
     val y: Float = 0f,
 )
@@ -30,7 +30,6 @@ data class RelationshipDto(
 @Serializable
 data class GenogramTreeDto(
     val id: String = "",
-    val name: String = "",
     val ancestorCount: Int = 0,
     val lastUpdated: String = "",
     val centralPerson: PersonDto = PersonDto(),

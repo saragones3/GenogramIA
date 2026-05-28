@@ -14,7 +14,7 @@ class RealDateProviderTest {
     private val dateProvider = RealDateProvider(fakeClock)
 
     @Test
-    fun `nowEpochMilliseconds returns correct timestamp`() {
+    fun `GIVEN fixed clock WHEN getting now epoch milliseconds THEN returns correct timestamp`() {
         // When
         val result = dateProvider.nowEpochMilliseconds()
 

@@ -54,7 +54,6 @@ class AddPersonViewModel(
                                 birthDateMillis = event.millis,
                                 birthDateText = formattedDate,
                             ),
-                        birthDateError = null,
                     )
                 }
             }
@@ -67,6 +66,30 @@ class AddPersonViewModel(
                             it.person.copy(
                                 deathDateMillis = event.millis,
                                 deathDateText = formattedDate,
+                            ),
+                    )
+                }
+            }
+
+            AddPersonEvent.OnClearBirthDate -> {
+                _state.update {
+                    it.copy(
+                        person =
+                            it.person.copy(
+                                birthDateMillis = null,
+                                birthDateText = "",
+                            ),
+                    )
+                }
+            }
+
+            AddPersonEvent.OnClearDeathDate -> {
+                _state.update {
+                    it.copy(
+                        person =
+                            it.person.copy(
+                                deathDateMillis = null,
+                                deathDateText = "",
                             ),
                     )
                 }
@@ -85,7 +108,7 @@ class AddPersonViewModel(
             }
 
             is AddPersonEvent.Initialize -> {
-                initialize(event.treeId, event.personId)
+                initialize(event.treeId, event.personId, event.datePattern, event.x, event.y)
             }
 
             AddPersonEvent.OnResetState -> {
@@ -97,9 +120,20 @@ class AddPersonViewModel(
     private fun initialize(
         treeId: String,
         personId: String?,
+        datePattern: String,
+        x: Float? = null,
+        y: Float? = null,
     ) {
         if (personId == null) {
-            _state.update { AddPersonState() }
+            _state.update {
+                AddPersonState(
+                    person =
+                        AddPersonUi(
+                            x = x ?: 0f,
+                            y = y ?: 0f,
+                        ),
+                )
+            }
             return
         }
 
@@ -118,11 +152,13 @@ class AddPersonViewModel(
                                 sexualOrientation = person.sexualOrientation,
                                 birthDateMillis = person.birthDate,
                                 birthDateText =
-                                    dateFormatter.formatDate(person.birthDate, "dd/MM/yyyy"),
+                                    person.birthDate?.let { date ->
+                                        dateFormatter.formatDate(date, datePattern)
+                                    } ?: "",
                                 deathDateMillis = person.deathDate,
                                 deathDateText =
                                     person.deathDate?.let { date ->
-                                        dateFormatter.formatDate(date, "dd/MM/yyyy")
+                                        dateFormatter.formatDate(date, datePattern)
                                     } ?: "",
                                 x = person.x,
                                 y = person.y,
@@ -140,7 +176,6 @@ class AddPersonViewModel(
 
         var firstNameError: AddPersonState.ValidationError? = null
         var lastNameError: AddPersonState.ValidationError? = null
-        var birthDateError: AddPersonState.ValidationError? = null
         var biologicalSexError: AddPersonState.ValidationError? = null
         var sexualOrientationError: AddPersonState.ValidationError? = null
 
@@ -152,10 +187,6 @@ class AddPersonViewModel(
         }
         if (personUi.lastName.isBlank()) {
             lastNameError = AddPersonState.ValidationError.EMPTY
-            isValid = false
-        }
-        if (personUi.birthDateMillis == null) {
-            birthDateError = AddPersonState.ValidationError.EMPTY
             isValid = false
         }
         if (personUi.biologicalSex == Person.BiologicalSex.UNKNOWN) {
@@ -172,7 +203,6 @@ class AddPersonViewModel(
                 it.copy(
                     firstNameError = firstNameError,
                     lastNameError = lastNameError,
-                    birthDateError = birthDateError,
                     biologicalSexError = biologicalSexError,
                     sexualOrientationError = sexualOrientationError,
                 )
@@ -187,7 +217,7 @@ class AddPersonViewModel(
                 id = _state.value.personId ?: "",
                 firstName = personUi.firstName,
                 lastName = personUi.lastName,
-                birthDate = personUi.birthDateMillis ?: 0L,
+                birthDate = personUi.birthDateMillis,
                 biologicalSex = personUi.biologicalSex,
                 sexualOrientation = personUi.sexualOrientation,
                 deathDate = personUi.deathDateMillis,

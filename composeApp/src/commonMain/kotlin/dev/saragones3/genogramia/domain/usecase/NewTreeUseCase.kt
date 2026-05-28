@@ -21,12 +21,11 @@ class NewTreeUseCase(
         val newTree =
             GenogramTree(
                 id = "tree-${dateProvider.nowEpochMilliseconds()}",
-                name = "${centralPerson.firstName} ${centralPerson.lastName} Lineage",
-                ancestorCount = 1,
+                ancestorCount = 0,
                 lastUpdated =
                     dateFormatter.formatDate(
                         millis = dateProvider.nowEpochMilliseconds(),
-                        pattern = "yyyy-MM-dd'T'HH:mm:ss",
+                        pattern = GenogramTree.DATE_FORMAT,
                     ),
                 centralPerson = centralPerson,
             )

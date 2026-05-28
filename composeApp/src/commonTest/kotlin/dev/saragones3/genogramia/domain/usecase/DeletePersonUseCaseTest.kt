@@ -3,6 +3,8 @@ package dev.saragones3.genogramia.domain.usecase
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
+import dev.saragones3.genogramia.domain.util.DateFormatter
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
@@ -12,6 +14,8 @@ import kotlin.test.assertTrue
 
 class DeletePersonUseCaseTest {
     private lateinit var repository: FakeTreeRepository
+    private val fakeDateProvider = FakeDateProvider().apply { currentTimeMillis = 1778716800000L } // 14-may-2026
+    private val dateFormatter = DateFormatter()
     private lateinit var useCase: DeletePersonUseCase
 
     private val centralPerson = Person(id = "p1", firstName = "John", lastName = "Doe", birthDate = 0L)
@@ -21,8 +25,7 @@ class DeletePersonUseCaseTest {
     private val tree =
         GenogramTree(
             id = "tree-1",
-            name = "Test Tree",
-            ancestorCount = 1,
+            ancestorCount = 0,
             lastUpdated = "2024-05-15",
             centralPerson = centralPerson,
             persons = listOf(centralPerson, otherPerson, childPerson),
@@ -31,11 +34,11 @@ class DeletePersonUseCaseTest {
     @BeforeTest
     fun setup() {
         repository = FakeTreeRepository()
-        useCase = DeletePersonUseCase(repository)
+        useCase = DeletePersonUseCase(repository, fakeDateProvider, dateFormatter)
     }
 
     @Test
-    fun `when person is deleted successfully`() =
+    fun `GIVEN existing person WHEN deleting person THEN person is removed and last updated is updated`() =
         runTest {
             repository.createTree(tree)
 
@@ -44,11 +47,12 @@ class DeletePersonUseCaseTest {
             assertTrue(result is DeletePersonUseCase.Result.Success)
             val updatedTree = repository.getTree("tree-1")
             assertEquals(2, updatedTree?.persons?.size)
-            assertEquals(updatedTree?.persons?.none { it.id == "p2" }, true)
+            assertEquals(true, updatedTree?.persons?.none { it.id == "p2" })
+            assertEquals("2026-05-14T00:00:00", updatedTree?.lastUpdated)
         }
 
     @Test
-    fun `when tree not found returns error`() =
+    fun `GIVEN non-existing tree WHEN deleting person THEN returns tree not found error`() =
         runTest {
             val result = useCase("invalid", "p1")
             assertTrue(result is DeletePersonUseCase.Result.Error)
@@ -56,7 +60,7 @@ class DeletePersonUseCaseTest {
         }
 
     @Test
-    fun `when person has descendants returns error`() =
+    fun `GIVEN person with descendants WHEN deleting person THEN returns has descendants error`() =
         runTest {
             val treeWithChild =
                 tree.copy(
@@ -79,7 +83,7 @@ class DeletePersonUseCaseTest {
         }
 
     @Test
-    fun `when person has marriage returns error`() =
+    fun `GIVEN person with marriage WHEN deleting person THEN returns has formal relationships error`() =
         runTest {
             val treeWithMarriage =
                 tree.copy(
@@ -102,7 +106,7 @@ class DeletePersonUseCaseTest {
         }
 
     @Test
-    fun `when person has cohabitation relationship it is removed during deletion`() =
+    fun `GIVEN person with cohabitation WHEN deleting person THEN relationship is removed and person is deleted`() =
         runTest {
             val treeWithCohabitation =
                 tree.copy(

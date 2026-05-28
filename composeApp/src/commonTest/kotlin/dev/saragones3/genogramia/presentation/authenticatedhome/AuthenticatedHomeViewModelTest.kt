@@ -1,12 +1,18 @@
 package dev.saragones3.genogramia.presentation.authenticatedhome
 
+import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.User
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreesUseCase
+import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
+import dev.saragones3.genogramia.fakes.FakeDateProvider
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
+import dev.saragones3.genogramia.presentation.util.UiText
+import genogramia.composeapp.generated.resources.Res
+import genogramia.composeapp.generated.resources.new_tree_name
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
@@ -17,6 +23,8 @@ import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class AuthenticatedHomeViewModelTest {
@@ -25,6 +33,8 @@ class AuthenticatedHomeViewModelTest {
     private lateinit var checkSessionUseCase: CheckSessionUseCase
     private lateinit var getTreesUseCase: GetTreesUseCase
     private lateinit var viewModel: AuthenticatedHomeViewModel
+    private val dateProvider = FakeDateProvider()
+    private val dateFormatter = DateFormatter()
 
     private val testDispatcher = UnconfinedTestDispatcher()
 
@@ -43,60 +53,109 @@ class AuthenticatedHomeViewModelTest {
     }
 
     @Test
-    fun `when user is logged in userName state should have displayName`() =
+    fun `GIVEN logged in user WHEN view model initialized THEN userName state has displayName`() =
         runTest {
             val user = User("123", "test@test.com", "John Doe")
             authRepository.setCurrentUser(user)
 
-            viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase)
+            viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
+
+            assertTrue(viewModel.uiState.value.isLoading) // Initial state
             viewModel.onResume()
 
-            assertEquals("John Doe", viewModel.userName.value)
+            assertEquals("John Doe", viewModel.uiState.value.userName)
+            assertFalse(viewModel.uiState.value.isLoading) // After loading
         }
 
     @Test
-    fun `when view model is initialized trees should be loaded from repository`() =
+    fun `GIVEN trees in repository WHEN view model initialized THEN trees are loaded`() =
         runTest {
             val user = User("123", "test@test.com", "John Doe")
             authRepository.setCurrentUser(user)
-            val tree = GenogramTree("1", "Smith Family", 1, "now", Person())
+            val tree =
+                GenogramTree(
+                    id = "1",
+                    ancestorCount = 1,
+                    lastUpdated = "2024-05-15T12:00:00",
+                    centralPerson = Person(id = "p1", firstName = "John", lastName = "Smith Family", birthDate = 0L),
+                )
             treeRepository.createTree(tree)
 
-            viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase)
-            viewModel.onResume()
+            viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
 
-            assertEquals(1, viewModel.trees.value.size)
-            assertEquals("Smith Family", viewModel.trees.value[0].name)
+            viewModel.uiState.test {
+                assertTrue(awaitItem().isLoading) // Initial true
+
+                viewModel.onResume()
+
+                val state = expectMostRecentItem()
+                assertEquals(1, state.trees.size)
+                assertEquals(
+                    UiText.Resource(Res.string.new_tree_name, arrayOf("Smith Family")),
+                    state.trees[0].title,
+                )
+                assertFalse(state.isLoading) // Finished loading
+            }
         }
 
     @Test
-    fun `when search query changes trees should be filtered`() =
+    fun `GIVEN multiple trees WHEN search query changes THEN trees are filtered`() =
         runTest {
             val user = User("123", "test@test.com", "John Doe")
             authRepository.setCurrentUser(user)
-            treeRepository.createTree(GenogramTree("1", "Smith Family", 1, "now", Person()))
-            treeRepository.createTree(GenogramTree("2", "Maternal Lineage", 1, "now", Person()))
+            treeRepository.createTree(
+                GenogramTree(
+                    id = "1",
+                    ancestorCount = 1,
+                    lastUpdated = "2024-05-15T12:00:00",
+                    centralPerson = Person(id = "p1", firstName = "John", lastName = "Smith Family", birthDate = 0L),
+                ),
+            )
+            treeRepository.createTree(
+                GenogramTree(
+                    id = "2",
+                    ancestorCount = 1,
+                    lastUpdated = "2024-05-15T12:00:00",
+                    centralPerson =
+                        Person(
+                            id = "p2",
+                            firstName = "Jane",
+                            lastName = "Maternal Lineage",
+                            birthDate = 0L,
+                        ),
+                ),
+            )
 
-            viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase)
+            viewModel =
+                AuthenticatedHomeViewModel(
+                    checkSessionUseCase,
+                    getTreesUseCase,
+                    dateProvider,
+                    dateFormatter,
+                )
             viewModel.onResume()
 
             viewModel.onSearchQueryChange("Smith")
-            assertEquals(1, viewModel.trees.value.size)
-            assertEquals("Smith Family", viewModel.trees.value[0].name)
+            assertEquals(1, viewModel.uiState.value.trees.size)
+            assertEquals(
+                UiText.Resource(Res.string.new_tree_name, arrayOf("Smith Family")),
+                viewModel.uiState.value.trees[0]
+                    .title,
+            )
 
             viewModel.onSearchQueryChange("NonExistent")
-            assertEquals(0, viewModel.trees.value.size)
+            assertEquals(0, viewModel.uiState.value.trees.size)
         }
 
     @Test
-    fun `when user is logged in without displayName userName state should be User`() =
+    fun `GIVEN logged in user without displayName WHEN view model initialized THEN userName is User`() =
         runTest {
             val user = User("123", "test@test.com", null)
             authRepository.setCurrentUser(user)
 
-            viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase)
+            viewModel = AuthenticatedHomeViewModel(checkSessionUseCase, getTreesUseCase, dateProvider, dateFormatter)
             viewModel.onResume()
 
-            assertEquals("User", viewModel.userName.value)
+            assertEquals("User", viewModel.uiState.value.userName)
         }
 }

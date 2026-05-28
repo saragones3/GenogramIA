@@ -39,7 +39,7 @@ class LoginViewModelTest {
     }
 
     @Test
-    fun initial_state_is_empty() =
+    fun `GIVEN view model WHEN initialized THEN state is empty`() =
         runTest(testDispatcher) {
             viewModel.uiState.test {
                 val state = awaitItem()
@@ -54,7 +54,7 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun update_email_and_password_changes_state() =
+    fun `GIVEN view model WHEN email and password updated THEN state is updated`() =
         runTest(testDispatcher) {
             viewModel.uiState.test {
                 awaitItem() // initial
@@ -67,7 +67,7 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun login_with_empty_credentials_sets_errors() =
+    fun `GIVEN empty credentials WHEN login clicked THEN validation fails`() =
         runTest(testDispatcher) {
             viewModel.uiState.test {
                 awaitItem() // initial
@@ -80,7 +80,7 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun login_with_invalid_email_sets_error() =
+    fun `GIVEN invalid email WHEN login clicked THEN validation fails`() =
         runTest(testDispatcher) {
             viewModel.uiState.test {
                 awaitItem() // initial
@@ -95,7 +95,7 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun login_with_short_password_sets_error() =
+    fun `GIVEN short password WHEN login clicked THEN validation fails`() =
         runTest(testDispatcher) {
             viewModel.uiState.test {
                 awaitItem() // initial
@@ -110,7 +110,7 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun successful_login_updates_state() =
+    fun `GIVEN valid credentials WHEN login clicked THEN login is successful`() =
         runTest(testDispatcher) {
             viewModel.uiState.test {
                 awaitItem() // initial
@@ -131,7 +131,7 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun failed_login_sets_error() =
+    fun `GIVEN invalid credentials WHEN login clicked THEN login fails`() =
         runTest(testDispatcher) {
             fakeAuthRepository.shouldReturnError = true
 
@@ -154,7 +154,7 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun login_with_non_existent_user_sets_user_not_found_error() =
+    fun `GIVEN non-existent user WHEN login clicked THEN user not found error is set`() =
         runTest(testDispatcher) {
             fakeAuthRepository.shouldReturnError = true
             fakeAuthRepository.errorToReturn = AuthError.UserNotFound
@@ -177,7 +177,7 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun errorShown_clears_general_error() =
+    fun `GIVEN general error WHEN error shown THEN error is cleared`() =
         runTest(testDispatcher) {
             fakeAuthRepository.shouldReturnError = true
             viewModel.onEvent(LoginEvent.OnDataChanged("test@test.com", "password123"))
@@ -193,7 +193,7 @@ class LoginViewModelTest {
         }
 
     @Test
-    fun loginSuccessConsumed_resets_state() =
+    fun `GIVEN login success WHEN success consumed THEN state is reset`() =
         runTest(testDispatcher) {
             viewModel.onEvent(LoginEvent.OnDataChanged("test@test.com", "password123"))
             viewModel.onEvent(LoginEvent.OnLoginClicked)

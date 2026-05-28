@@ -27,10 +27,15 @@
     <string name="auth_home_subtitle">Tu historia familiar es un archivo vivo. Sigue explorando los hilos de tu historia.</string>
     <string name="auth_home_search_hint">Buscar árbol...</string>
     <string name="auth_home_primary_lineage">LINAJE PRINCIPAL</string>
-    <string name="auth_home_ancestors">%1$d Ancestros • Última actualización %2$s</string>
+    <string name="auth_home_description">%1$d Ancestros • Última actualización %2$s</string>
     <string name="auth_home_open_archive">Abrir Archivo</string>
     <string name="auth_home_start_tree">Iniciar Nuevo Árbol</string>
     <string name="auth_home_start_tree_subtitle">Comienza un nuevo viaje en una rama diferente de tu herencia.</string>
+
+    <!-- Relative Dates -->
+    <string name="date_today">hoy</string>
+    <string name="date_yesterday">ayer</string>
+    <string name="date_days_ago">hace %1$d días</string>
 
     <!-- Login -->
     <string name="login_title">Bienvenido de nuevo</string>
@@ -144,12 +149,15 @@
     <string name="new_tree_button">Continuar y Crear Árbol</string>
     <string name="new_tree_footer">Podrás editar esta información más adelante en el perfil de la persona.</string>
     <string name="new_tree_guest_notice">Tus datos son temporales y se perderán al cerrar la aplicación.</string>
+    <string name="new_tree_name">Linaje %1$s</string>
 
     <!-- Canvas -->
     <string name="canvas_title">Lienzo del Genograma</string>
     <string name="canvas_zoom_in">Aumentar Zoom</string>
     <string name="canvas_zoom_out">Alejar Zoom</string>
     <string name="canvas_reset">Restablecer Vista</string>
+    <string name="tree_edit">Editar</string>
+    <string name="tree_finish_edit">Finalizar</string>
 
     <!-- Add Person -->
     <string name="add_person_title">Añadir Familiar</string>
@@ -169,6 +177,8 @@
     <string name="add_relationship_reconciliation">Reconciliación</string>
     <string name="add_relationship_offspring">Hijo/a biológico/a</string>
     <string name="add_relationship_adoption">Adopción / Legal</string>
+    <string name="add_relationship_fraternal_twin">Mellizos</string>
+    <string name="add_relationship_identical_twin">Gemelos</string>
     <string name="add_relationship_emotional_bond">VÍNCULO EMOCIONAL</string>
     <string name="add_relationship_positive">Positiva</string>
     <string name="add_relationship_distant">Distante</string>

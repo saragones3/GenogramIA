@@ -27,6 +27,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.FilterCenterFocus
@@ -51,8 +52,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
@@ -67,8 +71,13 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.layout
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.TextMeasurer
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -91,6 +100,9 @@ import genogramia.composeapp.generated.resources.error_delete_has_descendants
 import genogramia.composeapp.generated.resources.error_delete_has_formal_relationships
 import genogramia.composeapp.generated.resources.error_tree_not_found
 import genogramia.composeapp.generated.resources.error_unknown
+import genogramia.composeapp.generated.resources.new_tree_name
+import genogramia.composeapp.generated.resources.tree_edit
+import genogramia.composeapp.generated.resources.tree_finish_edit
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -98,7 +110,7 @@ import org.koin.compose.viewmodel.koinViewModel
 fun TreeScreen(
     treeId: String,
     onBackClick: () -> Unit,
-    onAddPersonClick: (String, String?) -> Unit,
+    onAddPersonClick: (String, String?, Float?, Float?) -> Unit,
     onAddRelationshipClick: (String, String, String) -> Unit,
     onEditRelationshipClick: (String, String, String, String) -> Unit,
 ) {
@@ -140,8 +152,8 @@ fun TreeScreen(
         state = state,
         onEvent = viewModel::onEvent,
         onBackClick = onBackClick,
-        onAddPersonClick = { onAddPersonClick(treeId, null) },
-        onEditPersonClick = { personId -> onAddPersonClick(treeId, personId) },
+        onAddPersonClick = { x, y -> onAddPersonClick(treeId, null, x, y) },
+        onEditPersonClick = { personId -> onAddPersonClick(treeId, personId, null, null) },
         onAddRelationshipClick = { p1, p2 -> onAddRelationshipClick(treeId, p1, p2) },
         onEditRelationshipClick = { relId, p1Id, p2Id ->
             onEditRelationshipClick(treeId, relId, p1Id, p2Id)
@@ -155,24 +167,28 @@ private fun TreeContent(
     state: TreeState,
     onEvent: (TreeEvent) -> Unit,
     onBackClick: () -> Unit,
-    onAddPersonClick: () -> Unit,
+    onAddPersonClick: (Float?, Float?) -> Unit,
     onEditPersonClick: (String) -> Unit,
     onAddRelationshipClick: (String, String) -> Unit,
     onEditRelationshipClick: (String, String, String) -> Unit,
     snackbarHostState: SnackbarHostState,
 ) {
+    val canvasCenterDp = remember { mutableStateOf(Offset.Zero) }
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface,
         topBar = {
             TopBar(
                 treeName = state.tree.name,
+                isEditMode = state.isEditMode,
                 onBackClick = onBackClick,
+                onEditClick = { onEvent(TreeEvent.OnToggleEditMode) },
                 onDeleteClick = { onEvent(TreeEvent.OnDeleteTreeRequested) },
             )
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
         floatingActionButton = {
-            if (state.selectedPersonIds.size < 2) {
+            if (state.isEditMode && (state.selectedPersonIds.size < 2)) {
                 Column(horizontalAlignment = Alignment.End) {
                     if (state.selectedPersonIds.size == 1 &&
                         state.selectedPersonIds.first() != state.tree.centralPerson.id
@@ -193,7 +209,7 @@ private fun TreeContent(
                             if (state.selectedPersonIds.size == 1) {
                                 onEditPersonClick(state.selectedPersonIds.first())
                             } else {
-                                onAddPersonClick()
+                                onAddPersonClick(canvasCenterDp.value.x, canvasCenterDp.value.y)
                             }
                         },
                         containerColor = MaterialTheme.colorScheme.primary,
@@ -223,6 +239,15 @@ private fun TreeContent(
         ) {
             val center = Offset(constraints.maxWidth / 2f, constraints.maxHeight / 2f)
             val density = LocalDensity.current
+
+            LaunchedEffect(center, state.offset, state.scale) {
+                val canvasCenterPx = (center - state.offset) / state.scale
+                canvasCenterDp.value =
+                    Offset(
+                        canvasCenterPx.x / density.density,
+                        canvasCenterPx.y / density.density,
+                    )
+            }
 
             val resetViewport = {
                 val centralPerson = state.tree.centralPerson
@@ -275,7 +300,7 @@ private fun TreeContent(
 
             if (state.showDeleteTreeConfirmation) {
                 DeleteTreeDialog(
-                    treeName = state.tree.name,
+                    treeName = stringResource(Res.string.new_tree_name, state.tree.name),
                     memberCount = state.tree.persons.size + 1, // +1 for central person
                     onConfirm = { onEvent(TreeEvent.OnConfirmDeleteTree) },
                     onDismiss = { onEvent(TreeEvent.OnDismissDeleteTree) },
@@ -289,14 +314,16 @@ private fun TreeContent(
 @Composable
 private fun TopBar(
     treeName: String,
+    isEditMode: Boolean,
     onBackClick: () -> Unit,
+    onEditClick: () -> Unit,
     onDeleteClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     TopAppBar(
         title = {
             Text(
-                text = treeName,
+                text = stringResource(Res.string.new_tree_name, treeName),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
             )
@@ -312,12 +339,29 @@ private fun TopBar(
             }
         },
         actions = {
-            IconButton(onClick = onDeleteClick) {
-                Icon(
-                    imageVector = Icons.Default.Delete,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.error,
-                )
+            if (isEditMode) {
+                IconButton(onClick = onEditClick) {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = stringResource(Res.string.tree_finish_edit),
+                        tint = MaterialTheme.colorScheme.primary,
+                    )
+                }
+                IconButton(onClick = onDeleteClick) {
+                    Icon(
+                        imageVector = Icons.Default.Delete,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.error,
+                    )
+                }
+            } else {
+                IconButton(onClick = onEditClick) {
+                    Icon(
+                        imageVector = Icons.Default.Edit,
+                        contentDescription = stringResource(Res.string.tree_edit),
+                        tint = MaterialTheme.colorScheme.primary,
+                    )
+                }
             }
         },
         colors =
@@ -343,28 +387,41 @@ private fun GenogramCanvas(
 
     val density = LocalDensity.current
     val nodeSize = with(density) { NODE_SIZE.toPx() }
+    val textMeasurer = rememberTextMeasurer()
+    val labelStyle =
+        MaterialTheme.typography.labelSmall.copy(
+            color = Color.Black,
+            fontWeight = FontWeight.Bold,
+        )
+
     Box(
         modifier =
             modifier
                 .fillMaxSize()
                 .clipToBounds()
-                .pointerInput(Unit) {
-                    detectTapGestures { tapOffset ->
-                        val tappedPerson =
-                            persons.find {
-                                val centerX = it.position.x * density.density
-                                val centerY = it.position.y * density.density
-                                val personTopLeft =
-                                    Offset(centerX - nodeSize / 2, centerY - nodeSize / 2)
-                                tapOffset.x >= (personTopLeft.x * scale + offset.x) &&
-                                    tapOffset.x <= ((personTopLeft.x + nodeSize) * scale + offset.x) &&
-                                    tapOffset.y >= (personTopLeft.y * scale + offset.y) &&
-                                    tapOffset.y <= ((personTopLeft.y + nodeSize) * scale + offset.y)
-                            }
+                .pointerInput(state.isEditMode) {
+                    if (state.isEditMode) {
+                        detectTapGestures { tapOffset ->
+                            val tappedPerson =
+                                persons.find {
+                                    val centerX = it.position.x * density.density
+                                    val centerY = it.position.y * density.density
+                                    val personTopLeft =
+                                        Offset(centerX - nodeSize / 2, centerY - nodeSize / 2)
+                                    tapOffset.x >= (personTopLeft.x * scale + offset.x) &&
+                                        tapOffset.x <= ((personTopLeft.x + nodeSize) * scale + offset.x) &&
+                                        tapOffset.y >= (personTopLeft.y * scale + offset.y) &&
+                                        tapOffset.y <= ((personTopLeft.y + nodeSize) * scale + offset.y)
+                                }
 
-                        if (tappedPerson != null) {
-                            onEvent(TreeEvent.OnPersonSelected(tappedPerson.id))
-                        } else {
+                            if (tappedPerson != null) {
+                                onEvent(TreeEvent.OnPersonSelected(tappedPerson.id))
+                            } else {
+                                onEvent(TreeEvent.OnDismissSelection)
+                            }
+                        }
+                    } else {
+                        detectTapGestures {
                             onEvent(TreeEvent.OnDismissSelection)
                         }
                     }
@@ -395,6 +452,8 @@ private fun GenogramCanvas(
                     persons = persons,
                     density = density.density,
                     nodeSize = nodeSize,
+                    textMeasurer = textMeasurer,
+                    labelStyle = labelStyle,
                 )
                 drawVerticalRelationship(
                     relationships = state.tree.relationships,
@@ -414,6 +473,7 @@ private fun GenogramCanvas(
                     PersonNodeView(
                         person = person,
                         isSelected = selectedPersonIds.contains(person.id),
+                        isEditMode = state.isEditMode,
                         onSelected = { onEvent(TreeEvent.OnPersonSelected(person.id)) },
                         onMove = { delta -> onEvent(TreeEvent.OnPersonMove(person.id, delta)) },
                         onMoveFinished = { onEvent(TreeEvent.OnPersonMoveFinished(person.id)) },
@@ -421,7 +481,7 @@ private fun GenogramCanvas(
                 }
             }
 
-            if (selectedPersonIds.size == 2) {
+            if (state.isEditMode && selectedPersonIds.size == 2) {
                 val p1 = persons.find { it.id == selectedPersonIds.first() }
                 val p2 = persons.find { it.id == selectedPersonIds.last() }
                 RelationshipTooltip(
@@ -489,6 +549,8 @@ private fun DrawScope.drawHorizontalRelationship(
     persons: List<PersonNodeUi>,
     density: Float,
     nodeSize: Float,
+    textMeasurer: TextMeasurer,
+    labelStyle: TextStyle,
 ) {
     relationships.forEach { relationship ->
         val p1 = persons.find { it.id == relationship.personId1 }
@@ -563,6 +625,32 @@ private fun DrawScope.drawHorizontalRelationship(
                 }
 
                 else -> {}
+            }
+
+            // Draw date text
+            if (relationship.dateText.isNotEmpty()) {
+                val textLayoutResult = textMeasurer.measure(relationship.dateText, labelStyle)
+                val textWidth = textLayoutResult.size.width
+                val textHeight = textLayoutResult.size.height
+                val midPoint = (start + end) / 2f
+
+                val hasSlashes =
+                    relationship.type in
+                        listOf(
+                            Relationship.RelationshipType.SEPARATION,
+                            Relationship.RelationshipType.DIVORCE,
+                            Relationship.RelationshipType.RECONCILIATION,
+                        )
+                val slashOffset = if (hasSlashes) 12.dp.toPx() / 2f else 0f
+
+                drawText(
+                    textLayoutResult,
+                    topLeft =
+                        Offset(
+                            midPoint.x - textWidth / 2f,
+                            midPoint.y - slashOffset - textHeight - 4f,
+                        ),
+                )
             }
 
             // Draw emotional bond styles
@@ -727,8 +815,6 @@ private fun DrawScope.drawZigzag(
     val path = Path()
     path.moveTo(start.x, start.y)
     for (i in 0..steps) {
-        val fraction = i.toFloat() / steps
-        val p = start + direction * fraction
         val nextP = if (i < steps) start + direction * ((i + 0.5f) / steps) else null
 
         if (nextP != null) {
@@ -774,90 +860,159 @@ private fun DrawScope.drawVerticalRelationship(
     density: Float,
     nodeSize: Float,
 ) {
-    val groupedByChild =
-        relationships
-            .filter { it.type.isDescendant }
+    val descendantRels = relationships.filter { it.type.isDescendant }
+    val parentsByChild =
+        descendantRels
             .groupBy { it.personId2 }
-    groupedByChild.forEach { (childId, parents) ->
-        val child = persons.find { it.id == childId } ?: return@forEach
-        val childTop = child.position * density - Offset(0f, nodeSize / 2)
+            .mapValues { it.value.map { r -> r.personId1 }.sorted() }
 
-        if (parents.size == 2) {
-            val p1Id = parents.first().personId1
-            val p2Id = parents.last().personId1
-            val marriage =
+    val childrenByParents =
+        parentsByChild.entries
+            .groupBy({ it.value }, { it.key })
+
+    childrenByParents.forEach { (parentIds, childIds) ->
+        if (childIds.isEmpty()) return@forEach
+
+        val parentNodes = parentIds.mapNotNull { pid -> persons.find { it.id == pid } }
+        if (parentNodes.isEmpty()) return@forEach
+
+        // Determine lineage line Y level
+        val childrenNodes = childIds.mapNotNull { cid -> persons.find { it.id == cid } }
+        if (childrenNodes.isEmpty()) return@forEach
+
+        val minChildY = childrenNodes.minOf { it.position.y * density }
+        val lineageY = minChildY - nodeSize / 2 - 40.dp.toPx()
+
+        val attachmentX = mutableListOf<Float>()
+
+        // 1. Draw parent stem
+        drawParentStem(
+            parentNodes = parentNodes,
+            parentIds = parentIds,
+            lineageY = lineageY,
+            horizontalRelationships = horizontalRelationships,
+            density = density,
+            nodeSize = nodeSize,
+            onAttachmentPoint = { attachmentX.add(it) },
+        )
+
+        // 3. Draw connection for each child
+        childIds.forEach { childId ->
+            drawChildLine(
+                childId = childId,
+                childIds = childIds,
+                lineageY = lineageY,
+                descendantRels = descendantRels,
+                relationships = relationships,
+                persons = persons,
+                density = density,
+                nodeSize = nodeSize,
+                onAttachmentPoint = { attachmentX.add(it) },
+            )
+        }
+
+        // 4. Draw horizontal lineage line
+        if (attachmentX.size > 1) {
+            drawLine(
+                LINE_COLOR,
+                Offset(attachmentX.min(), lineageY),
+                Offset(attachmentX.max(), lineageY),
+                LINE_WIDTH.toPx(),
+            )
+        }
+    }
+}
+
+private fun DrawScope.drawParentStem(
+    parentNodes: List<PersonNodeUi>,
+    parentIds: List<String>,
+    lineageY: Float,
+    horizontalRelationships: List<RelationshipUi>,
+    density: Float,
+    nodeSize: Float,
+    onAttachmentPoint: (Float) -> Unit,
+) {
+    val parentsMidpointPx =
+        if (parentNodes.size == 2) {
+            val p1 = parentNodes[0].position * density
+            val p2 = parentNodes[1].position * density
+            Offset((p1.x + p2.x) / 2, (p1.y + p2.y) / 2)
+        } else {
+            parentNodes[0].position * density
+        }
+
+    val stemStartY =
+        if (parentNodes.size == 2) {
+            val p1Id = parentIds[0]
+            val p2Id = parentIds[1]
+            val structuralRel =
                 horizontalRelationships.find {
                     (it.personId1 == p1Id && it.personId2 == p2Id) ||
                         (it.personId1 == p2Id && it.personId2 == p1Id)
                 }
-
-            if (marriage != null) {
-                val parent1 = persons.find { it.id == p1Id }!!
-                val parent2 = persons.find { it.id == p2Id }!!
-
-                val p1Center = parent1.position * density
-                val p2Center = parent2.position * density
-
-                val midpointX = (p1Center.x + p2Center.x) / 2
-                val marriageY =
-                    if (p1Center.y != p2Center.y) {
-                        (p1Center.y + p2Center.y) / 2
-                    } else {
-                        p1Center.y
-                    }
-
-                val path =
-                    Path().apply {
-                        moveTo(midpointX, marriageY)
-                        val midY = childTop.y - 50f
-                        lineTo(midpointX, midY)
-                        lineTo(childTop.x, midY)
-                        lineTo(childTop.x, childTop.y)
-                    }
-
-                val isAdoption = parents.any { it.type == Relationship.RelationshipType.ADOPTION_LEGAL }
-
-                drawPath(
-                    path = path,
-                    color = LINE_COLOR,
-                    style =
-                        Stroke(
-                            width = LINE_WIDTH.toPx(),
-                            pathEffect =
-                                if (isAdoption) {
-                                    PathEffect.dashPathEffect(
-                                        floatArrayOf(10f, 10f),
-                                        0f,
-                                    )
-                                } else {
-                                    null
-                                },
-                        ),
-                )
-            }
-        } else if (parents.size == 1) {
-            val rel = parents.first()
-            val parent = persons.find { it.id == rel.personId1 }!!
-            val pCenter = parent.position * density
-            val pBottomY = pCenter.y + nodeSize / 2
-            val path =
-                Path().apply {
-                    moveTo(pCenter.x, pBottomY)
-                    lineTo(childTop.x, childTop.y)
-                }
-
-            val isAdoption = rel.type == Relationship.RelationshipType.ADOPTION_LEGAL
-
-            drawPath(
-                path = path,
-                color = LINE_COLOR,
-                style =
-                    Stroke(
-                        width = LINE_WIDTH.toPx(),
-                        pathEffect = if (isAdoption) PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f) else null,
-                    ),
-            )
+            if (structuralRel != null) parentsMidpointPx.y else parentsMidpointPx.y + nodeSize / 2
+        } else {
+            parentsMidpointPx.y + nodeSize / 2
         }
+
+    drawLine(
+        LINE_COLOR,
+        Offset(parentsMidpointPx.x, stemStartY),
+        Offset(parentsMidpointPx.x, lineageY),
+        LINE_WIDTH.toPx(),
+    )
+    onAttachmentPoint(parentsMidpointPx.x)
+}
+
+private fun DrawScope.drawChildLine(
+    childId: String,
+    childIds: List<String>,
+    lineageY: Float,
+    descendantRels: List<RelationshipUi>,
+    relationships: List<RelationshipUi>,
+    persons: List<PersonNodeUi>,
+    density: Float,
+    nodeSize: Float,
+    onAttachmentPoint: (Float) -> Unit,
+) {
+    val child = persons.find { it.id == childId } ?: return
+    val childTopPx = child.position * density - Offset(0f, nodeSize / 2)
+
+    val isAdoption =
+        descendantRels.any {
+            it.personId2 == childId && it.type == Relationship.RelationshipType.ADOPTION_LEGAL
+        }
+    val pathEffect =
+        if (isAdoption) PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f) else null
+
+    val twinRel =
+        relationships.find {
+            it.type.isTwin && (it.personId1 == childId || it.personId2 == childId)
+        }
+    val twinId = twinRel?.let { if (it.personId1 == childId) it.personId2 else it.personId1 }
+    val twin = twinId?.let { id -> persons.find { it.id == id } }
+
+    if (twin != null && childIds.contains(twin.id)) {
+        val twinTopPx = twin.position * density - Offset(0f, nodeSize / 2)
+        val twinsMidpointX = (childTopPx.x + twinTopPx.x) / 2
+
+        drawLine(
+            LINE_COLOR,
+            Offset(twinsMidpointX, lineageY),
+            childTopPx,
+            LINE_WIDTH.toPx(),
+            pathEffect = pathEffect,
+        )
+        onAttachmentPoint(twinsMidpointX)
+    } else {
+        drawLine(
+            LINE_COLOR,
+            Offset(childTopPx.x, lineageY),
+            childTopPx,
+            LINE_WIDTH.toPx(),
+            pathEffect = pathEffect,
+        )
+        onAttachmentPoint(childTopPx.x)
     }
 }
 
@@ -865,6 +1020,7 @@ private fun DrawScope.drawVerticalRelationship(
 private fun PersonNodeView(
     person: PersonNodeUi,
     isSelected: Boolean,
+    isEditMode: Boolean,
     onSelected: () -> Unit,
     onMove: (Offset) -> Unit,
     onMoveFinished: () -> Unit,
@@ -887,40 +1043,48 @@ private fun PersonNodeView(
             else -> MaterialTheme.colorScheme.secondaryContainer
         }
 
+    var datesHeightPx by remember { mutableIntStateOf(0) }
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier =
             modifier
                 .offset {
+                    val spacerHeightPx = 4.dp.roundToPx()
+                    val halfNodeSizePx = (NODE_SIZE / 2).roundToPx()
                     IntOffset(
                         (person.position.x.dp - 50.dp).roundToPx(),
-                        (person.position.y.dp - 56.dp).roundToPx(),
+                        (person.position.y.dp).roundToPx() - datesHeightPx - spacerHeightPx - halfNodeSizePx,
                     )
                 }.width(100.dp)
                 .combinedClickable(
                     onClick = onSelected,
                     indication = null,
                     interactionSource = remember { MutableInteractionSource() },
-                ).pointerInput(person.id) {
-                    detectDragGestures(
-                        onDragEnd = { currentOnMoveFinished() },
-                        onDragCancel = { currentOnMoveFinished() },
-                    ) { change, dragAmount ->
-                        change.consume()
-                        val deltaDp =
-                            with(density) {
-                                Offset(
-                                    x = dragAmount.x.toDp().value,
-                                    y = dragAmount.y.toDp().value,
-                                )
-                            }
-                        currentOnMove(deltaDp)
+                    enabled = isEditMode,
+                ).pointerInput(person.id, isEditMode) {
+                    if (isEditMode) {
+                        detectDragGestures(
+                            onDragEnd = { currentOnMoveFinished() },
+                            onDragCancel = { currentOnMoveFinished() },
+                        ) { change, dragAmount ->
+                            change.consume()
+                            val deltaDp =
+                                with(density) {
+                                    Offset(
+                                        x = dragAmount.x.toDp().value,
+                                        y = dragAmount.y.toDp().value,
+                                    )
+                                }
+                            currentOnMove(deltaDp)
+                        }
                     }
                 },
     ) {
         PersonDates(
             birthDate = person.birthDateText,
             deathDate = person.deathDateText,
+            modifier = Modifier.onSizeChanged { datesHeightPx = it.height },
         )
 
         Spacer(modifier = Modifier.height(4.dp))
@@ -1289,6 +1453,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                                     personId2 = "2",
                                     type = Relationship.RelationshipType.MARRIAGE,
                                     emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                    dateText = "1990",
                                 ),
                                 RelationshipUi(
                                     id = "rel-1-3",
@@ -1324,6 +1489,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                                     personId2 = "4",
                                     type = Relationship.RelationshipType.COHABITATION,
                                     emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                    dateText = "2010",
                                 ),
                                 RelationshipUi(
                                     id = "rel-5-6",
@@ -1336,6 +1502,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                     ),
             ),
             TreeState(
+                isEditMode = true,
                 tree =
                     seed.copy(
                         relationships =
@@ -1382,7 +1549,7 @@ private fun TreeScreenPreview(
             state = state,
             onEvent = {},
             onBackClick = {},
-            onAddPersonClick = {},
+            onAddPersonClick = { _, _ -> },
             onEditPersonClick = {},
             onAddRelationshipClick = { _, _ -> },
             onEditRelationshipClick = { _, _, _ -> },

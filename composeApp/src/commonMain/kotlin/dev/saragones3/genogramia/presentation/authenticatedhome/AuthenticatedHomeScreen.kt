@@ -1,5 +1,9 @@
 package dev.saragones3.genogramia.presentation.authenticatedhome
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,7 +16,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -27,18 +30,20 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.saragones3.genogramia.domain.model.GenogramTree
-import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.presentation.components.AddTreeCard
 import dev.saragones3.genogramia.presentation.components.GenogramTreeCard
+import dev.saragones3.genogramia.presentation.components.GenogramTreeCardSkeleton
 import dev.saragones3.genogramia.presentation.components.SearchBar
+import dev.saragones3.genogramia.presentation.model.GenogramTreeUiModel
+import dev.saragones3.genogramia.presentation.util.UiText
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.Primary
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.app_name
-import genogramia.composeapp.generated.resources.auth_home_ancestors
 import genogramia.composeapp.generated.resources.auth_home_open_archive
 import genogramia.composeapp.generated.resources.auth_home_primary_lineage
 import genogramia.composeapp.generated.resources.auth_home_search_hint
@@ -55,19 +60,18 @@ fun AuthenticatedHomeScreen(
     onOpenTreeClick: (String) -> Unit,
 ) {
     val viewModel: AuthenticatedHomeViewModel = koinViewModel()
-    val userName by viewModel.userName.collectAsState()
-    val searchQuery by viewModel.searchQuery.collectAsState()
-    val trees by viewModel.trees.collectAsState()
+    val uiState by viewModel.uiState.collectAsState()
 
     LaunchedEffect(Unit) {
         viewModel.onResume()
     }
 
     AuthenticatedHomeContent(
-        userName = userName ?: "",
-        searchQuery = searchQuery,
+        userName = uiState.userName,
+        searchQuery = uiState.searchQuery,
+        isLoading = uiState.isLoading,
+        trees = uiState.trees,
         onSearchQueryChange = viewModel::onSearchQueryChange,
-        trees = trees,
         onCreateTreeClick = onCreateTreeClick,
         onOpenTreeClick = onOpenTreeClick,
     )
@@ -77,7 +81,8 @@ fun AuthenticatedHomeScreen(
 private fun AuthenticatedHomeContent(
     userName: String,
     searchQuery: String,
-    trees: List<GenogramTree>,
+    isLoading: Boolean,
+    trees: List<GenogramTreeUiModel>,
     onSearchQueryChange: (String) -> Unit,
     onCreateTreeClick: () -> Unit,
     onOpenTreeClick: (String) -> Unit,
@@ -92,26 +97,12 @@ private fun AuthenticatedHomeContent(
             verticalArrangement = Arrangement.spacedBy(32.dp),
         ) {
             item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Text(
-                        text = stringResource(Res.string.app_name),
-                        style = MaterialTheme.typography.titleLarge,
-                        color = Primary,
-                        fontWeight = FontWeight.Bold,
-                    )
-                    // Avatar placeholder
-                    Box(
-                        modifier =
-                            Modifier
-                                .size(44.dp)
-                                .clip(CircleShape)
-                                .background(Color(0xFFE0E0E0)),
-                    )
-                }
+                Text(
+                    text = stringResource(Res.string.app_name),
+                    style = MaterialTheme.typography.titleLarge,
+                    color = Primary,
+                    fontWeight = FontWeight.Bold,
+                )
             }
 
             item {
@@ -140,39 +131,98 @@ private fun AuthenticatedHomeContent(
                 }
             }
 
-            items(trees, key = { it.id }) { tree ->
-                GenogramTreeCard(
-                    title = tree.name,
-                    description = stringResource(Res.string.auth_home_ancestors, tree.ancestorCount, tree.lastUpdated),
-                    buttonText = stringResource(Res.string.auth_home_open_archive),
-                    onButtonClick = { onOpenTreeClick(tree.id) },
-                    badgeText = if (tree.id == "1") stringResource(Res.string.auth_home_primary_lineage) else null,
-                )
-            }
-
             item {
-                AddTreeCard(
-                    title = stringResource(Res.string.auth_home_start_tree),
-                    subtitle = stringResource(Res.string.auth_home_start_tree_subtitle),
-                    onClick = onCreateTreeClick,
-                )
+                AnimatedContent(
+                    targetState = isLoading,
+                    transitionSpec = {
+                        fadeIn().togetherWith(fadeOut())
+                    },
+                    label = "trees_loading_transition",
+                ) { loading ->
+                    if (loading) {
+                        Column(verticalArrangement = Arrangement.spacedBy(32.dp)) {
+                            repeat(2) {
+                                GenogramTreeCardSkeleton()
+                            }
+                        }
+                    } else {
+                        Column(verticalArrangement = Arrangement.spacedBy(32.dp)) {
+                            trees.forEach { tree ->
+                                GenogramTreeCard(
+                                    title = tree.title.asString(),
+                                    ancestorCount = tree.ancestorCount,
+                                    lastUpdated = tree.lastUpdated,
+                                    buttonText = stringResource(Res.string.auth_home_open_archive),
+                                    onButtonClick = { onOpenTreeClick(tree.id) },
+                                    badgeText =
+                                        if (tree.isPrimary) {
+                                            stringResource(
+                                                Res.string.auth_home_primary_lineage,
+                                            )
+                                        } else {
+                                            null
+                                        },
+                                )
+                            }
+
+                            AddTreeCard(
+                                title = stringResource(Res.string.auth_home_start_tree),
+                                subtitle = stringResource(Res.string.auth_home_start_tree_subtitle),
+                                onClick = onCreateTreeClick,
+                            )
+                        }
+                    }
+                }
             }
         }
     }
 }
 
+private class AuthenticatedHomeScreenPreviewProvider : PreviewParameterProvider<AuthenticatedHomeUiState> {
+    private val seed =
+        GenogramTreeUiModel(
+            id = "1",
+            title = UiText.DynamicString("Aragones Family"),
+            ancestorCount = 1240,
+            lastUpdated = UiText.DynamicString("2 days ago"),
+            isPrimary = true,
+        )
+
+    override val values =
+        sequenceOf(
+            AuthenticatedHomeUiState(
+                userName = "Sergio",
+                searchQuery = "",
+                isLoading = false,
+                trees = listOf(seed),
+            ),
+            AuthenticatedHomeUiState(
+                userName = "Sergio",
+                searchQuery = "tree",
+                isLoading = false,
+                trees = emptyList(),
+            ),
+            AuthenticatedHomeUiState(
+                userName = "Sergio",
+                searchQuery = "",
+                isLoading = true,
+                trees = emptyList(),
+            ),
+        )
+}
+
 @Composable
 @Preview
-private fun AuthenticatedHomeScreenPreview() {
+private fun AuthenticatedHomeScreenPreview(
+    @PreviewParameter(AuthenticatedHomeScreenPreviewProvider::class) state: AuthenticatedHomeUiState,
+) {
     GenogramiaTheme {
         AuthenticatedHomeContent(
-            userName = "Sergio",
-            searchQuery = "",
+            userName = state.userName,
+            searchQuery = state.searchQuery,
+            isLoading = state.isLoading,
+            trees = state.trees,
             onSearchQueryChange = {},
-            trees =
-                listOf(
-                    GenogramTree("1", "Aragones Family", 1240, "2 days ago", Person()),
-                ),
             onCreateTreeClick = {},
             onOpenTreeClick = {},
         )

@@ -27,10 +27,15 @@
     <string name="auth_home_subtitle">Your family story is a living archive. Continue exploring the threads of your history.</string>
     <string name="auth_home_search_hint">Search tree...</string>
     <string name="auth_home_primary_lineage">PRIMARY LINEAGE</string>
-    <string name="auth_home_ancestors">%1$d Ancestors • Last updated %2$s</string>
+    <string name="auth_home_description">%1$d Ancestors • Last updated %2$s</string>
     <string name="auth_home_open_archive">Open Archive</string>
     <string name="auth_home_start_tree">Start New Tree</string>
     <string name="auth_home_start_tree_subtitle">Begin a new journey into a different branch of your heritage.</string>
+
+    <!-- Relative Dates -->
+    <string name="date_today">today</string>
+    <string name="date_yesterday">yesterday</string>
+    <string name="date_days_ago">%1$d days ago</string>
 
     <!-- Login -->
     <string name="login_title">Welcome back</string>
@@ -144,12 +149,15 @@
     <string name="new_tree_button">Continue and Create Tree</string>
     <string name="new_tree_footer">You can edit this information later in the person's profile.</string>
     <string name="new_tree_guest_notice">Your data is temporary and will be lost when the app closes.</string>
+    <string name="new_tree_name">%1$s lineage</string>
 
     <!-- Canvas -->
     <string name="canvas_title">Genogram Canvas</string>
     <string name="canvas_zoom_in">Zoom In</string>
     <string name="canvas_zoom_out">Zoom Out</string>
     <string name="canvas_reset">Reset Viewport</string>
+    <string name="tree_edit">Edit</string>
+    <string name="tree_finish_edit">Finish</string>
 
     <!-- Add Person -->
     <string name="add_person_title">Add Family Member</string>
@@ -169,6 +177,8 @@
     <string name="add_relationship_reconciliation">Reconciliation</string>
     <string name="add_relationship_offspring">Biological Offspring</string>
     <string name="add_relationship_adoption">Adoption/Legal</string>
+    <string name="add_relationship_fraternal_twin">Fraternal Twins</string>
+    <string name="add_relationship_identical_twin">Identical Twins</string>
     <string name="add_relationship_emotional_bond">EMOTIONAL BOND</string>
     <string name="add_relationship_positive">Positive</string>
     <string name="add_relationship_distant">Distant</string>

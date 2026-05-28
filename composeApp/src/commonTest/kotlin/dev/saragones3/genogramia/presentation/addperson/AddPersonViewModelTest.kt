@@ -32,15 +32,14 @@ class AddPersonViewModelTest {
         }
 
     private val dateFormatter = DateFormatter()
-    private val addPersonUseCase = AddPersonUseCase(treeRepository, fakeDateProvider)
-    private val updatePersonUseCase = UpdatePersonUseCase(treeRepository)
+    private val addPersonUseCase = AddPersonUseCase(treeRepository, fakeDateProvider, dateFormatter)
+    private val updatePersonUseCase = UpdatePersonUseCase(treeRepository, fakeDateProvider, dateFormatter)
     private val getPersonUseCase = GetPersonUseCase(treeRepository)
     private lateinit var viewModel: AddPersonViewModel
 
     private val tree =
         GenogramTree(
             id = "tree-1",
-            name = "Test Tree",
             ancestorCount = 1,
             lastUpdated = "2024-05-15",
             centralPerson =
@@ -66,7 +65,7 @@ class AddPersonViewModelTest {
     }
 
     @Test
-    fun `initial state is correct`() =
+    fun `GIVEN view model WHEN initialized THEN initial state is correct`() =
         runTest {
             val state = viewModel.state.value
             assertEquals("", state.person.firstName)
@@ -78,20 +77,19 @@ class AddPersonViewModelTest {
         }
 
     @Test
-    fun `when validation fails errors are updated`() =
+    fun `GIVEN empty mandatory fields WHEN save clicked THEN validation fails`() =
         runTest {
             viewModel.onEvent(AddPersonEvent.OnSaveClicked("tree-1"))
 
             val state = viewModel.state.value
             assertEquals(AddPersonState.ValidationError.EMPTY, state.firstNameError)
             assertEquals(AddPersonState.ValidationError.EMPTY, state.lastNameError)
-            assertEquals(AddPersonState.ValidationError.EMPTY, state.birthDateError)
             assertEquals(AddPersonState.ValidationError.EMPTY, state.biologicalSexError)
             assertEquals(AddPersonState.ValidationError.EMPTY, state.sexualOrientationError)
         }
 
     @Test
-    fun `when data is valid save succeeds`() =
+    fun `GIVEN valid data WHEN save clicked THEN save succeeds`() =
         runTest {
             treeRepository.createTree(tree)
 
@@ -118,7 +116,7 @@ class AddPersonViewModelTest {
         }
 
     @Test
-    fun `when save fails loading is hidden`() =
+    fun `GIVEN repository error WHEN save clicked THEN loading is hidden`() =
         runTest {
             treeRepository.shouldReturnError = true
 
@@ -142,14 +140,14 @@ class AddPersonViewModelTest {
         }
 
     @Test
-    fun `when initialize event is received with personId data is loaded`() =
+    fun `GIVEN person exists WHEN initialized with personId THEN data is loaded`() =
         runTest {
             treeRepository.createTree(tree)
 
             viewModel.state.test {
                 awaitItem() // Initial
 
-                viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1"))
+                viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1", "dd/MM/yyyy"))
 
                 assertEquals(true, awaitItem().isLoading)
 
@@ -157,16 +155,29 @@ class AddPersonViewModelTest {
                 assertEquals(false, loadedState.isLoading)
                 assertEquals("p1", loadedState.personId)
                 assertEquals("John", loadedState.person.firstName)
+                assertEquals(0f, loadedState.person.x)
+                assertEquals(0f, loadedState.person.y)
             }
         }
 
     @Test
-    fun `when saving in edit mode UpdatePersonUseCase is used`() =
+    fun `GIVEN new person WHEN initialized with coordinates THEN state is updated`() =
+        runTest {
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null, "dd/MM/yyyy", 150f, 250f))
+
+            val state = viewModel.state.value
+            assertNull(state.personId)
+            assertEquals(150f, state.person.x)
+            assertEquals(250f, state.person.y)
+        }
+
+    @Test
+    fun `GIVEN edit mode WHEN save clicked THEN person is updated`() =
         runTest {
             treeRepository.createTree(tree)
 
             // Initialize to enter edit mode
-            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1"))
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1", "dd/MM/yyyy"))
             testDispatcher.scheduler.advanceUntilIdle()
 
             viewModel.onEvent(AddPersonEvent.OnFirstNameChanged("John Updated"))
@@ -180,22 +191,46 @@ class AddPersonViewModelTest {
         }
 
     @Test
-    fun `when initializing with null after an edit state is reset`() =
+    fun `GIVEN previous edit WHEN initialized with null THEN state is reset`() =
         runTest {
             treeRepository.createTree(tree)
 
             // 1. Edit
-            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1"))
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", "p1", "dd/MM/yyyy"))
             testDispatcher.scheduler.advanceUntilIdle()
             assertEquals("John", viewModel.state.value.person.firstName)
 
             // 2. New (null)
-            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null))
+            viewModel.onEvent(AddPersonEvent.Initialize("tree-1", null, "dd/MM/yyyy"))
 
             // 3. Assert reset
             val state = viewModel.state.value
             assertEquals("", state.person.firstName)
             assertNull(state.personId)
             assertEquals(false, state.isSuccess)
+        }
+
+    @Test
+    fun `GIVEN birth date set WHEN clear birth date event received THEN birth date is cleared`() =
+        runTest {
+            viewModel.onEvent(AddPersonEvent.OnBirthDateSelected(1778716800000L, "dd/MM/yyyy"))
+            assertEquals("14/05/2026", viewModel.state.value.person.birthDateText)
+
+            viewModel.onEvent(AddPersonEvent.OnClearBirthDate)
+
+            assertEquals("", viewModel.state.value.person.birthDateText)
+            assertNull(viewModel.state.value.person.birthDateMillis)
+        }
+
+    @Test
+    fun `GIVEN death date set WHEN clear death date event received THEN death date is cleared`() =
+        runTest {
+            viewModel.onEvent(AddPersonEvent.OnDeathDateSelected(1778716800000L, "dd/MM/yyyy"))
+            assertEquals("14/05/2026", viewModel.state.value.person.deathDateText)
+
+            viewModel.onEvent(AddPersonEvent.OnClearDeathDate)
+
+            assertEquals("", viewModel.state.value.person.deathDateText)
+            assertNull(viewModel.state.value.person.deathDateMillis)
         }
 }

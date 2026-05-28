@@ -72,7 +72,6 @@ fun RelationshipDto.toDomain() =
 fun GenogramTree.toDto() =
     GenogramTreeDto(
         id = id,
-        name = name,
         ancestorCount = ancestorCount,
         lastUpdated = lastUpdated,
         centralPerson = centralPerson.toDto(),
@@ -83,7 +82,6 @@ fun GenogramTree.toDto() =
 fun GenogramTreeDto.toDomain() =
     GenogramTree(
         id = id,
-        name = name,
         ancestorCount = ancestorCount,
         lastUpdated = lastUpdated,
         centralPerson = centralPerson.toDomain(),

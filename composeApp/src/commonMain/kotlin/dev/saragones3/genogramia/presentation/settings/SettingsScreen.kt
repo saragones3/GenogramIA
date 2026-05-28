@@ -126,14 +126,6 @@ private fun SettingsContent(
                         )
                     }
                 },
-                navigationIcon = {
-                    Icon(
-                        imageVector = Icons.Default.AccountCircle,
-                        contentDescription = null,
-                        tint = Primary,
-                        modifier = Modifier.padding(16.dp),
-                    )
-                },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent),
             )
         },

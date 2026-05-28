@@ -10,7 +10,7 @@ class SignOutUseCaseTest {
     private val signOutUseCase = SignOutUseCase(repository)
 
     @Test
-    fun `when signout is called then repository signout is called`() =
+    fun `GIVEN signed in user WHEN sign out called THEN user is signed out`() =
         runTest {
             // Set a user first
             repository.signInWithEmailAndPassword("test@test.com", "password")

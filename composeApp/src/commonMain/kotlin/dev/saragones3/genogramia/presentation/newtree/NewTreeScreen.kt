@@ -48,6 +48,7 @@ import androidx.compose.ui.unit.dp
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.presentation.components.BasicInfoErrors
 import dev.saragones3.genogramia.presentation.components.BasicInfoSection
+import dev.saragones3.genogramia.presentation.components.DateFieldState
 import dev.saragones3.genogramia.presentation.components.DatePickerModal
 import dev.saragones3.genogramia.presentation.components.IdentitySection
 import dev.saragones3.genogramia.presentation.components.MedicalHistorySection
@@ -121,15 +122,22 @@ private fun NewTreeContent(
                 onFirstNameChange = { onEvent(NewTreeEvent.OnFirstNameChanged(it)) },
                 lastName = state.person.lastName,
                 onLastNameChange = { onEvent(NewTreeEvent.OnLastNameChanged(it)) },
-                birthDate = state.person.birthDateText,
-                onBirthDateClick = { onEvent(NewTreeEvent.OnShowBirthDatePicker(true)) },
-                deathDate = state.person.deathDateText,
-                onDeathDateClick = { onEvent(NewTreeEvent.OnShowDeathDatePicker(true)) },
+                birthDateState =
+                    DateFieldState(
+                        value = state.person.birthDateText,
+                        onClick = { onEvent(NewTreeEvent.OnShowBirthDatePicker(true)) },
+                        onClear = { onEvent(NewTreeEvent.OnClearBirthDate) },
+                    ),
+                deathDateState =
+                    DateFieldState(
+                        value = state.person.deathDateText,
+                        onClick = { onEvent(NewTreeEvent.OnShowDeathDatePicker(true)) },
+                        onClear = { onEvent(NewTreeEvent.OnClearDeathDate) },
+                    ),
                 errors =
                     BasicInfoErrors(
                         firstName = state.firstNameError == NewTreeState.ValidationError.EMPTY,
                         lastName = state.lastNameError == NewTreeState.ValidationError.EMPTY,
-                        birthDate = state.birthDateError == NewTreeState.ValidationError.EMPTY,
                     ),
             )
 
@@ -334,7 +342,6 @@ private class NewTreeStateProvider : PreviewParameterProvider<NewTreeState> {
                     ),
                 firstNameError = NewTreeState.ValidationError.EMPTY,
                 lastNameError = NewTreeState.ValidationError.EMPTY,
-                birthDateError = NewTreeState.ValidationError.EMPTY,
                 biologicalSexError = NewTreeState.ValidationError.EMPTY,
                 sexualOrientationError = NewTreeState.ValidationError.EMPTY,
             ),

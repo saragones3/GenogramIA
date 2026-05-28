@@ -26,7 +26,7 @@ class FirestoreTreeRepositoryTest {
     }
 
     @Test
-    fun testCreateTreeSavesToFirestore() =
+    fun `GIVEN authenticated user WHEN creating tree THEN saves to firestore`() =
         runTest {
             val user = AuthUser("user123", "test@test.com", "Test")
             fakeFirebase.setCurrentUser(user)
@@ -34,7 +34,6 @@ class FirestoreTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "tree1",
-                    name = "My Tree",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "Central", lastName = "Person", birthDate = 0L),
@@ -44,18 +43,16 @@ class FirestoreTreeRepositoryTest {
 
             val savedTree = fakeFirestore.database["user123"]?.get("tree1")
             assertNotNull(savedTree)
-            assertEquals("My Tree", savedTree.name)
         }
 
     @Test
-    fun testCreateTreeUnauthenticatedDoesNotSave() =
+    fun `GIVEN unauthenticated user WHEN creating tree THEN does not save`() =
         runTest {
             fakeFirebase.setCurrentUser(null)
 
             val tree =
                 GenogramTree(
                     id = "tree1",
-                    name = "My Tree",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "Central", lastName = "Person", birthDate = 0L),
@@ -67,7 +64,7 @@ class FirestoreTreeRepositoryTest {
         }
 
     @Test
-    fun testGetTree() =
+    fun `GIVEN existing tree WHEN getting tree THEN returns tree`() =
         runTest {
             val user = AuthUser("user123", "test@test.com", "Test")
             fakeFirebase.setCurrentUser(user)
@@ -75,7 +72,6 @@ class FirestoreTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "tree1",
-                    name = "My Tree",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "Central", lastName = "Person", birthDate = 0L),
@@ -88,7 +84,7 @@ class FirestoreTreeRepositoryTest {
         }
 
     @Test
-    fun testGetTrees() =
+    fun `GIVEN multiple trees WHEN getting trees THEN returns all trees`() =
         runTest {
             val user = AuthUser("user123", "test@test.com", "Test")
             fakeFirebase.setCurrentUser(user)
@@ -96,7 +92,6 @@ class FirestoreTreeRepositoryTest {
             repository.createTree(
                 GenogramTree(
                     id = "tree1",
-                    name = "Tree 1",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "P1", lastName = "L1", birthDate = 0L),
@@ -105,7 +100,6 @@ class FirestoreTreeRepositoryTest {
             repository.createTree(
                 GenogramTree(
                     id = "tree2",
-                    name = "Tree 2",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p2", firstName = "P2", lastName = "L2", birthDate = 0L),
@@ -119,7 +113,7 @@ class FirestoreTreeRepositoryTest {
         }
 
     @Test
-    fun testUpdateTree() =
+    fun `GIVEN existing tree WHEN updating tree THEN tree is updated in firestore`() =
         runTest {
             val user = AuthUser("user123", "test@test.com", "Test")
             fakeFirebase.setCurrentUser(user)
@@ -127,17 +121,16 @@ class FirestoreTreeRepositoryTest {
             val tree =
                 GenogramTree(
                     id = "tree1",
-                    name = "My Tree",
                     ancestorCount = 0,
                     lastUpdated = "2024-05-15",
                     centralPerson = Person(id = "p1", firstName = "Central", lastName = "Person", birthDate = 0L),
                 )
             repository.createTree(tree)
 
-            val updatedTree = tree.copy(name = "Updated Tree")
+            val updatedTree = tree.copy(centralPerson = tree.centralPerson.copy(lastName = "Updated"))
             repository.updateTree(updatedTree)
 
             val fetchedTree = repository.getTree("tree1")
-            assertEquals("Updated Tree", fetchedTree?.name)
+            assertEquals("Updated", fetchedTree?.name)
         }
 }

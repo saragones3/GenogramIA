@@ -83,6 +83,16 @@ class TreeViewModel(
             -> {
                 handleDeletion(event)
             }
+
+            TreeEvent.OnToggleEditMode -> {
+                _state.update {
+                    it.copy(
+                        isEditMode = !it.isEditMode,
+                        selectedPersonIds = emptyList(),
+                        selectedRelationshipId = null,
+                    )
+                }
+            }
         }
     }
 
@@ -464,24 +474,28 @@ class TreeViewModel(
             personId2 = personId2,
             type = type,
             emotionalBond = emotionalBond,
+            dateText = effectiveDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: "",
         )
 
     private fun Person.toNodeUi(): PersonNodeUi {
-        val birthYear = birthDate.let { dateFormatter.formatDate(it, "yyyy") }
+        val birthYear = birthDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: ""
         val deathYear = deathDate?.let { dateFormatter.formatDate(it, "yyyy") } ?: ""
 
-        val birthLocalDate =
-            Instant
-                .fromEpochMilliseconds(birthDate)
-                .toLocalDateTime(TimeZone.UTC)
-                .date
-        val endLocalDate =
-            (deathDate ?: dateProvider.nowEpochMilliseconds())
-                .let { Instant.fromEpochMilliseconds(it) }
-                .toLocalDateTime(TimeZone.UTC)
-                .date
+        val age =
+            birthDate?.let {
+                val birthLocalDate =
+                    Instant
+                        .fromEpochMilliseconds(it)
+                        .toLocalDateTime(TimeZone.UTC)
+                        .date
+                val endLocalDate =
+                    (deathDate ?: dateProvider.nowEpochMilliseconds())
+                        .let { end -> Instant.fromEpochMilliseconds(end) }
+                        .toLocalDateTime(TimeZone.UTC)
+                        .date
 
-        val age = birthLocalDate.yearsUntil(endLocalDate).toString()
+                birthLocalDate.yearsUntil(endLocalDate).toString()
+            } ?: ""
 
         return PersonNodeUi(
             id = id,

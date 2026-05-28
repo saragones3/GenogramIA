@@ -37,6 +37,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.saragones3.genogramia.presentation.components.BasicInfoErrors
 import dev.saragones3.genogramia.presentation.components.BasicInfoSection
+import dev.saragones3.genogramia.presentation.components.DateFieldState
 import dev.saragones3.genogramia.presentation.components.DatePickerModal
 import dev.saragones3.genogramia.presentation.components.IdentitySection
 import dev.saragones3.genogramia.presentation.components.MedicalHistorySection
@@ -54,14 +55,18 @@ import org.koin.compose.viewmodel.koinViewModel
 fun AddPersonScreen(
     treeId: String,
     personId: String? = null,
+    x: Float? = null,
+    y: Float? = null,
     onBackClick: () -> Unit,
     onPersonAdded: () -> Unit,
 ) {
     val viewModel: AddPersonViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
 
+    val dateFormat = stringResource(Res.string.date_format)
+
     LaunchedEffect(treeId, personId) {
-        viewModel.onEvent(AddPersonEvent.Initialize(treeId, personId))
+        viewModel.onEvent(AddPersonEvent.Initialize(treeId, personId, dateFormat, x, y))
     }
 
     LaunchedEffect(state.isSuccess) {
@@ -187,15 +192,22 @@ private fun AddPersonForm(
             onFirstNameChange = { onEvent(AddPersonEvent.OnFirstNameChanged(it)) },
             lastName = state.person.lastName,
             onLastNameChange = { onEvent(AddPersonEvent.OnLastNameChanged(it)) },
-            birthDate = state.person.birthDateText,
-            onBirthDateClick = { onEvent(AddPersonEvent.OnShowBirthDatePicker(true)) },
-            deathDate = state.person.deathDateText,
-            onDeathDateClick = { onEvent(AddPersonEvent.OnShowDeathDatePicker(true)) },
+            birthDateState =
+                DateFieldState(
+                    value = state.person.birthDateText,
+                    onClick = { onEvent(AddPersonEvent.OnShowBirthDatePicker(true)) },
+                    onClear = { onEvent(AddPersonEvent.OnClearBirthDate) },
+                ),
+            deathDateState =
+                DateFieldState(
+                    value = state.person.deathDateText,
+                    onClick = { onEvent(AddPersonEvent.OnShowDeathDatePicker(true)) },
+                    onClear = { onEvent(AddPersonEvent.OnClearDeathDate) },
+                ),
             errors =
                 BasicInfoErrors(
                     firstName = state.firstNameError != null,
                     lastName = state.lastNameError != null,
-                    birthDate = state.birthDateError != null,
                 ),
         )
 

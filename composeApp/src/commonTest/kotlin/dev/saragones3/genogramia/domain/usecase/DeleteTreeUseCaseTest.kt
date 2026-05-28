@@ -18,14 +18,13 @@ class DeleteTreeUseCaseTest {
     }
 
     @Test
-    fun `when invoking deleteTree then repository deleteTree is called`() =
+    fun `GIVEN existing tree WHEN delete tree called THEN tree is deleted from repository`() =
         runTest {
             // Given
             val treeId = "1"
             repository.createTree(
                 dev.saragones3.genogramia.domain.model.GenogramTree(
                     treeId,
-                    "Test Tree",
                     0,
                     "",
                     dev.saragones3.genogramia.domain.model

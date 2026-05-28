@@ -11,7 +11,7 @@ class SignUpUseCaseTest {
     private val signUpUseCase = SignUpUseCase(repository)
 
     @Test
-    fun `when signup is successful returns success with user`() =
+    fun `GIVEN valid data WHEN sign up called THEN returns success with user`() =
         runTest {
             val name = "Test User"
             val email = "test@example.com"
@@ -26,7 +26,7 @@ class SignUpUseCaseTest {
         }
 
     @Test
-    fun `when signup fails returns failure`() =
+    fun `GIVEN repository error WHEN sign up called THEN returns failure`() =
         runTest {
             repository.shouldReturnError = true
             repository.errorToReturn = Exception("Fake signup error")

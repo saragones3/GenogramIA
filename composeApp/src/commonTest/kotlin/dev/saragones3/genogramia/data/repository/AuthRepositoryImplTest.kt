@@ -8,7 +8,7 @@ import kotlin.test.assertNull
 
 class AuthRepositoryImplTest {
     @Test
-    fun `getCurrentUser returns mapped User when FirebaseProvider has user`() {
+    fun `GIVEN firebase user WHEN getting current user THEN returns mapped user`() {
         val authUser = AuthUser("uid456", "test@test.com", "John Doe")
         val fakeProvider = FakeFirebaseProvider(authUser)
         val repository = AuthRepositoryImpl(fakeProvider)
@@ -21,7 +21,7 @@ class AuthRepositoryImplTest {
     }
 
     @Test
-    fun `getCurrentUser returns null when FirebaseProvider has no user`() {
+    fun `GIVEN no firebase user WHEN getting current user THEN returns null`() {
         val fakeProvider = FakeFirebaseProvider(null)
         val repository = AuthRepositoryImpl(fakeProvider)
 

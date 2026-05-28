@@ -30,7 +30,7 @@ class SplashViewModelTest {
     }
 
     @Test
-    fun `when user is logged in then navigates to AuthenticatedHome`() =
+    fun `GIVEN logged in user WHEN view model initialized THEN navigates to authenticated home`() =
         runTest {
             val fakeRepo = FakeAuthRepository(User("uid", "email", "name"))
             val useCase = CheckSessionUseCase(fakeRepo)
@@ -42,7 +42,7 @@ class SplashViewModelTest {
         }
 
     @Test
-    fun `when user is not logged in then navigates to GuestHome`() =
+    fun `GIVEN no user WHEN view model initialized THEN navigates to guest home`() =
         runTest {
             val fakeRepo = FakeAuthRepository(null)
             val useCase = CheckSessionUseCase(fakeRepo)

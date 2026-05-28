@@ -17,14 +17,14 @@ class SendPasswordResetEmailUseCaseTest {
     }
 
     @Test
-    fun `when repository is successful returns success result`() =
+    fun `GIVEN valid email WHEN send password reset called THEN returns success`() =
         runTest {
             val result = useCase("test@example.com")
             assertTrue(result.isSuccess)
         }
 
     @Test
-    fun `when repository fails returns failure result`() =
+    fun `GIVEN repository error WHEN send password reset called THEN returns failure`() =
         runTest {
             repository.shouldReturnError = true
             val result = useCase("test@example.com")

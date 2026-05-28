@@ -26,7 +26,7 @@ class NewTreeUseCaseTest {
     }
 
     @Test
-    fun `when first name is blank validation fails`() =
+    fun `GIVEN blank first name WHEN creating tree THEN validation fails`() =
         runTest {
             val result =
                 useCase(
@@ -45,7 +45,7 @@ class NewTreeUseCaseTest {
         }
 
     @Test
-    fun `when last name is blank validation fails`() =
+    fun `GIVEN blank last name WHEN creating tree THEN validation fails`() =
         runTest {
             val result =
                 useCase(
@@ -64,7 +64,7 @@ class NewTreeUseCaseTest {
         }
 
     @Test
-    fun `when data is valid creation succeeds`() =
+    fun `GIVEN valid data WHEN creating tree THEN creation succeeds`() =
         runTest {
             val result =
                 useCase(
@@ -81,8 +81,8 @@ class NewTreeUseCaseTest {
             assertTrue(result.isSuccess)
             val tree = result.getOrNull()
             assertEquals("tree-1778716800000", tree?.id)
-            assertEquals("John Doe Lineage", tree?.name)
-            assertEquals(1, tree?.ancestorCount)
+            assertEquals("Doe", tree?.name)
+            assertEquals(0, tree?.ancestorCount)
             assertEquals("1778716800000", tree?.centralPerson?.id)
             assertEquals("John", tree?.centralPerson?.firstName)
             assertEquals(Person.BiologicalSex.MALE, tree?.centralPerson?.biologicalSex)

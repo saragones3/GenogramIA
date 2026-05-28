@@ -18,7 +18,6 @@ class GetPersonUseCaseTest {
     private val tree =
         GenogramTree(
             id = "tree-1",
-            name = "John Doe Lineage",
             ancestorCount = 2,
             lastUpdated = "2024-05-15",
             centralPerson = centralPerson,
@@ -32,7 +31,7 @@ class GetPersonUseCaseTest {
     }
 
     @Test
-    fun `when person exists in persons list is returned`() =
+    fun `GIVEN person in list WHEN getting person THEN person is returned`() =
         runTest {
             repository.createTree(tree)
             val result = useCase("tree-1", "p2")
@@ -40,7 +39,7 @@ class GetPersonUseCaseTest {
         }
 
     @Test
-    fun `when person is central person is returned`() =
+    fun `GIVEN central person WHEN getting person THEN central person is returned`() =
         runTest {
             repository.createTree(tree)
             val result = useCase("tree-1", "p1")
@@ -48,7 +47,7 @@ class GetPersonUseCaseTest {
         }
 
     @Test
-    fun `when person does not exist returns null`() =
+    fun `GIVEN non-existing person WHEN getting person THEN returns null`() =
         runTest {
             repository.createTree(tree)
             val result = useCase("tree-1", "invalid-p")
@@ -56,7 +55,7 @@ class GetPersonUseCaseTest {
         }
 
     @Test
-    fun `when tree does not exist returns null`() =
+    fun `GIVEN non-existing tree WHEN getting person THEN returns null`() =
         runTest {
             val result = useCase("invalid-tree", "p1")
             assertNull(result)

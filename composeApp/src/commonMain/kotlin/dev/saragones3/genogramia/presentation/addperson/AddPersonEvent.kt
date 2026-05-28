@@ -29,6 +29,10 @@ sealed interface AddPersonEvent {
         val pattern: String,
     ) : AddPersonEvent
 
+    data object OnClearBirthDate : AddPersonEvent
+
+    data object OnClearDeathDate : AddPersonEvent
+
     data class OnShowBirthDatePicker(
         val show: Boolean,
     ) : AddPersonEvent
@@ -44,6 +48,9 @@ sealed interface AddPersonEvent {
     data class Initialize(
         val treeId: String,
         val personId: String?,
+        val datePattern: String,
+        val x: Float? = null,
+        val y: Float? = null,
     ) : AddPersonEvent
 
     data object OnResetState : AddPersonEvent

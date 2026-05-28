@@ -36,7 +36,7 @@ class ForgotPasswordViewModelTest {
     }
 
     @Test
-    fun `initial state is default`() =
+    fun `GIVEN view model WHEN initialized THEN state is default`() =
         runTest {
             val state = viewModel.state.value
             assertEquals("", state.email)
@@ -47,7 +47,7 @@ class ForgotPasswordViewModelTest {
         }
 
     @Test
-    fun `setInitialEmail updates state only if email is empty`() =
+    fun `GIVEN empty email WHEN setInitialEmail called THEN state is updated`() =
         runTest {
             viewModel.setInitialEmail("initial@test.com")
             assertEquals("initial@test.com", viewModel.state.value.email)
@@ -57,14 +57,14 @@ class ForgotPasswordViewModelTest {
         }
 
     @Test
-    fun `when email changes state is updated`() =
+    fun `GIVEN view model WHEN email changes THEN state is updated`() =
         runTest {
             viewModel.onEmailChange("test@example.com")
             assertEquals("test@example.com", viewModel.state.value.email)
         }
 
     @Test
-    fun `when email is empty validation fails`() =
+    fun `GIVEN empty email WHEN send reset email called THEN validation fails`() =
         runTest {
             viewModel.onEmailChange("")
             viewModel.sendResetEmail()
@@ -72,7 +72,7 @@ class ForgotPasswordViewModelTest {
         }
 
     @Test
-    fun `when email is invalid validation fails`() =
+    fun `GIVEN invalid email WHEN send reset email called THEN validation fails`() =
         runTest {
             viewModel.onEmailChange("invalid-email")
             viewModel.sendResetEmail()
@@ -80,7 +80,7 @@ class ForgotPasswordViewModelTest {
         }
 
     @Test
-    fun `when send is successful success state is true`() =
+    fun `GIVEN valid email WHEN send reset email called THEN success state is true`() =
         runTest {
             viewModel.onEmailChange("test@example.com")
 
@@ -98,7 +98,7 @@ class ForgotPasswordViewModelTest {
         }
 
     @Test
-    fun `when user not found error is updated`() =
+    fun `GIVEN user not found response WHEN send reset email called THEN error is updated`() =
         runTest {
             repository.shouldReturnError = true
             repository.errorToReturn = AuthError.UserNotFound
@@ -113,7 +113,7 @@ class ForgotPasswordViewModelTest {
         }
 
     @Test
-    fun `when generic error occurs error is updated`() =
+    fun `GIVEN generic error response WHEN send reset email called THEN error is updated`() =
         runTest {
             repository.shouldReturnError = true
             repository.errorToReturn = Exception("Generic error")
@@ -127,7 +127,7 @@ class ForgotPasswordViewModelTest {
         }
 
     @Test
-    fun `successConsumed resets success state`() =
+    fun `GIVEN success state WHEN success consumed THEN state is reset`() =
         runTest {
             viewModel.onEmailChange("test@example.com")
             viewModel.sendResetEmail()
@@ -139,7 +139,7 @@ class ForgotPasswordViewModelTest {
         }
 
     @Test
-    fun `errorShown resets error state`() =
+    fun `GIVEN error state WHEN error shown THEN error state is reset`() =
         runTest {
             repository.shouldReturnError = true
             viewModel.onEmailChange("test@example.com")

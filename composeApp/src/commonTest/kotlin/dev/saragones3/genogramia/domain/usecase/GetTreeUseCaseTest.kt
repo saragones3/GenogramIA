@@ -20,10 +20,10 @@ class GetTreeUseCaseTest {
     }
 
     @Test
-    fun `when tree exists it is returned`() =
+    fun `GIVEN existing tree WHEN getting tree THEN tree is returned`() =
         runTest {
             val person = Person("p1", "John", "Doe", 0L)
-            val tree = GenogramTree("t1", "Family", 1, "now", person)
+            val tree = GenogramTree("t1", 1, "now", person)
             treeRepository.createTree(tree)
 
             val result = getTreeUseCase("t1")
@@ -32,7 +32,7 @@ class GetTreeUseCaseTest {
         }
 
     @Test
-    fun `when tree does not exist null is returned`() =
+    fun `GIVEN non-existing tree WHEN getting tree THEN returns null`() =
         runTest {
             val result = getTreeUseCase("non-existent")
 

@@ -19,6 +19,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material.icons.filled.Badge
 import androidx.compose.material.icons.filled.CalendarToday
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Female
 import androidx.compose.material.icons.filled.HealthAndSafety
 import androidx.compose.material.icons.filled.Male
@@ -31,6 +32,7 @@ import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -81,7 +83,12 @@ import org.jetbrains.compose.resources.stringResource
 data class BasicInfoErrors(
     val firstName: Boolean = false,
     val lastName: Boolean = false,
-    val birthDate: Boolean = false,
+)
+
+data class DateFieldState(
+    val value: String,
+    val onClick: () -> Unit,
+    val onClear: () -> Unit,
 )
 
 @Composable
@@ -90,10 +97,8 @@ fun BasicInfoSection(
     onFirstNameChange: (String) -> Unit,
     lastName: String,
     onLastNameChange: (String) -> Unit,
-    birthDate: String,
-    onBirthDateClick: () -> Unit,
-    deathDate: String,
-    onDeathDateClick: () -> Unit,
+    birthDateState: DateFieldState,
+    deathDateState: DateFieldState,
     errors: BasicInfoErrors = BasicInfoErrors(),
 ) {
     SectionCard(
@@ -118,22 +123,44 @@ fun BasicInfoSection(
         Spacer(modifier = Modifier.height(16.dp))
         FormField(
             label = stringResource(Res.string.new_tree_birth_date_label),
-            value = birthDate,
+            value = birthDateState.value,
             onValueChange = { },
             placeholder = stringResource(Res.string.new_tree_birth_date_hint),
-            trailingIcon = Icons.Default.CalendarToday,
-            isError = errors.birthDate,
-            onClick = onBirthDateClick,
+            trailingIcon =
+                if (birthDateState.value.isEmpty()) {
+                    Icons.Default.CalendarToday
+                } else {
+                    Icons.Default.Close
+                },
+            onTrailingIconClick =
+                if (birthDateState.value.isEmpty()) {
+                    birthDateState.onClick
+                } else {
+                    birthDateState.onClear
+                },
+            optionalLabel = stringResource(Res.string.new_tree_death_date_optional),
+            onClick = birthDateState.onClick,
         )
         Spacer(modifier = Modifier.height(16.dp))
         FormField(
             label = stringResource(Res.string.new_tree_death_date_label),
-            value = deathDate,
+            value = deathDateState.value,
             onValueChange = { },
             placeholder = stringResource(Res.string.new_tree_death_date_hint),
-            trailingIcon = Icons.Default.CalendarToday,
+            trailingIcon =
+                if (deathDateState.value.isEmpty()) {
+                    Icons.Default.CalendarToday
+                } else {
+                    Icons.Default.Close
+                },
+            onTrailingIconClick =
+                if (deathDateState.value.isEmpty()) {
+                    deathDateState.onClick
+                } else {
+                    deathDateState.onClear
+                },
             optionalLabel = stringResource(Res.string.new_tree_death_date_optional),
-            onClick = onDeathDateClick,
+            onClick = deathDateState.onClick,
         )
     }
 }
@@ -314,6 +341,7 @@ fun FormField(
     placeholder: String,
     isError: Boolean = false,
     trailingIcon: ImageVector? = null,
+    onTrailingIconClick: (() -> Unit)? = null,
     optionalLabel: String? = null,
     onClick: (() -> Unit)? = null,
 ) {
@@ -339,7 +367,7 @@ fun FormField(
             }
         }
 
-        Box(modifier = Modifier.fillMaxWidth()) {
+        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterEnd) {
             TextField(
                 value = value,
                 onValueChange = onValueChange,
@@ -353,12 +381,7 @@ fun FormField(
                 trailingIcon =
                     if (trailingIcon != null) {
                         {
-                            Icon(
-                                imageVector = trailingIcon,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
-                                modifier = Modifier.size(18.dp),
-                            )
+                            Spacer(modifier = Modifier.size(24.dp))
                         }
                     } else {
                         null
@@ -401,6 +424,29 @@ fun FormField(
                             .matchParentSize()
                             .clickable(onClick = onClick),
                 )
+            }
+
+            if (trailingIcon != null) {
+                if (trailingIcon == Icons.Default.Close) {
+                    IconButton(
+                        onClick = { onTrailingIconClick?.invoke() },
+                        modifier = Modifier.padding(end = 12.dp).size(24.dp),
+                    ) {
+                        Icon(
+                            imageVector = trailingIcon,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                            modifier = Modifier.size(18.dp),
+                        )
+                    }
+                } else {
+                    Icon(
+                        imageVector = trailingIcon,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                        modifier = Modifier.padding(end = 16.dp).size(18.dp),
+                    )
+                }
             }
         }
     }
@@ -503,7 +549,11 @@ fun DatePickerModal(
     onDateSelected: (Long) -> Unit,
     onDismiss: () -> Unit,
 ) {
-    val datePickerState = rememberDatePickerState(initialSelectedDateMillis = initialDate)
+    val datePickerState =
+        rememberDatePickerState(
+            initialSelectedDateMillis = initialDate,
+            yearRange = IntRange(1500, 3000),
+        )
 
     DatePickerDialog(
         onDismissRequest = onDismiss,
@@ -539,10 +589,18 @@ private fun BasicInfoSectionPreview() {
                 onFirstNameChange = {},
                 lastName = "Pérez",
                 onLastNameChange = {},
-                birthDate = "01/01/1990",
-                onBirthDateClick = {},
-                deathDate = "",
-                onDeathDateClick = {},
+                birthDateState =
+                    DateFieldState(
+                        value = "01/01/1990",
+                        onClick = {},
+                        onClear = {},
+                    ),
+                deathDateState =
+                    DateFieldState(
+                        value = "",
+                        onClick = {},
+                        onClear = {},
+                    ),
                 errors = BasicInfoErrors(),
             )
         }

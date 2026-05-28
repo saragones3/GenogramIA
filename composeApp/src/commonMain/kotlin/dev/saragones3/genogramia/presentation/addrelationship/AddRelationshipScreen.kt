@@ -2,6 +2,7 @@ package dev.saragones3.genogramia.presentation.addrelationship
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,11 +29,13 @@ import androidx.compose.material.icons.filled.ConnectWithoutContact
 import androidx.compose.material.icons.filled.ContentCut
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.Diversity3
 import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.FamilyRestroom
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FlashOn
 import androidx.compose.material.icons.filled.Gavel
+import androidx.compose.material.icons.filled.Groups
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.JoinInner
 import androidx.compose.material.icons.filled.LinkOff
@@ -100,9 +103,11 @@ import genogramia.composeapp.generated.resources.add_relationship_divorce
 import genogramia.composeapp.generated.resources.add_relationship_effective_date
 import genogramia.composeapp.generated.resources.add_relationship_emotional_bond
 import genogramia.composeapp.generated.resources.add_relationship_focused
+import genogramia.composeapp.generated.resources.add_relationship_fraternal_twin
 import genogramia.composeapp.generated.resources.add_relationship_fused
 import genogramia.composeapp.generated.resources.add_relationship_fused_conflictual
 import genogramia.composeapp.generated.resources.add_relationship_hostile
+import genogramia.composeapp.generated.resources.add_relationship_identical_twin
 import genogramia.composeapp.generated.resources.add_relationship_intimate_conflictual
 import genogramia.composeapp.generated.resources.add_relationship_marriage
 import genogramia.composeapp.generated.resources.add_relationship_medical_conflict
@@ -266,6 +271,9 @@ private fun AddRelationshipContent(
                 EffectiveDateSection(
                     dateFormatted = state.effectiveDateFormatted,
                     onClick = { showDatePicker = true },
+                    onClearClick = {
+                        onEvent(AddRelationshipEvent.OnDateSelected(null, ""))
+                    },
                 )
 
                 if (state.hasConsanguinityRisk) {
@@ -476,6 +484,8 @@ private fun Relationship.RelationshipType.toText(): String =
         Relationship.RelationshipType.RECONCILIATION -> stringResource(Res.string.add_relationship_reconciliation)
         Relationship.RelationshipType.BIOLOGICAL_OFFSPRING -> stringResource(Res.string.add_relationship_offspring)
         Relationship.RelationshipType.ADOPTION_LEGAL -> stringResource(Res.string.add_relationship_adoption)
+        Relationship.RelationshipType.FRATERNAL_TWIN -> stringResource(Res.string.add_relationship_fraternal_twin)
+        Relationship.RelationshipType.IDENTICAL_TWIN -> stringResource(Res.string.add_relationship_identical_twin)
     }
 
 @Composable
@@ -672,6 +682,20 @@ private fun BondTypeSection(
             isSelected = selectedType == Relationship.RelationshipType.ADOPTION_LEGAL,
             onClick = { onTypeSelected(Relationship.RelationshipType.ADOPTION_LEGAL) },
         )
+        Spacer(modifier = Modifier.height(8.dp))
+        BondTypeItem(
+            label = stringResource(Res.string.add_relationship_fraternal_twin),
+            icon = Icons.Default.Groups,
+            isSelected = selectedType == Relationship.RelationshipType.FRATERNAL_TWIN,
+            onClick = { onTypeSelected(Relationship.RelationshipType.FRATERNAL_TWIN) },
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        BondTypeItem(
+            label = stringResource(Res.string.add_relationship_identical_twin),
+            icon = Icons.Default.Diversity3,
+            isSelected = selectedType == Relationship.RelationshipType.IDENTICAL_TWIN,
+            onClick = { onTypeSelected(Relationship.RelationshipType.IDENTICAL_TWIN) },
+        )
     }
 }
 
@@ -822,6 +846,7 @@ private fun BondTypeItem(
 private fun EffectiveDateSection(
     dateFormatted: String?,
     onClick: () -> Unit,
+    onClearClick: () -> Unit,
 ) {
     Column(modifier = Modifier.padding(horizontal = 16.dp)) {
         Text(
@@ -833,32 +858,58 @@ private fun EffectiveDateSection(
         Spacer(modifier = Modifier.height(8.dp))
 
         Surface(
-            onClick = onClick,
             shape = RoundedCornerShape(12.dp),
             color = Color(0xFFF1F3F4),
             modifier = Modifier.fillMaxWidth().height(56.dp),
         ) {
-            Row(
-                modifier = Modifier.padding(horizontal = 16.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween,
-            ) {
-                Text(
-                    text =
-                        if (dateFormatted.isNullOrBlank()) {
-                            stringResource(
-                                Res.string.add_relationship_select_date,
+            Box(modifier = Modifier.fillMaxSize()) {
+                Box(
+                    modifier =
+                        Modifier
+                            .fillMaxSize()
+                            .clickable { onClick() },
+                )
+                Row(
+                    modifier =
+                        Modifier
+                            .fillMaxSize()
+                            .padding(horizontal = 16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                ) {
+                    Text(
+                        text =
+                            if (dateFormatted.isNullOrBlank()) {
+                                stringResource(
+                                    Res.string.add_relationship_select_date,
+                                )
+                            } else {
+                                dateFormatted
+                            },
+                        color = if (!dateFormatted.isNullOrBlank()) Color.Black else Color.Gray,
+                        modifier = Modifier.weight(1f),
+                    )
+                    if (dateFormatted.isNullOrBlank()) {
+                        Icon(
+                            imageVector = Icons.Default.CalendarMonth,
+                            contentDescription = null,
+                            tint = Color.Gray,
+                            modifier = Modifier.size(20.dp),
+                        )
+                    } else {
+                        IconButton(
+                            onClick = onClearClick,
+                            modifier = Modifier.size(24.dp),
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Close,
+                                contentDescription = null,
+                                tint = Color.Gray,
+                                modifier = Modifier.size(20.dp),
                             )
-                        } else {
-                            dateFormatted
-                        },
-                    color = if (!dateFormatted.isNullOrBlank()) Color.Black else Color.Gray,
-                )
-                Icon(
-                    imageVector = Icons.Default.CalendarMonth,
-                    contentDescription = null,
-                    tint = Color.Gray,
-                )
+                        }
+                    }
+                }
             }
         }
     }

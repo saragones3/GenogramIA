@@ -11,7 +11,7 @@ class SignInUseCaseTest {
     private val signInUseCase = SignInUseCase(repository)
 
     @Test
-    fun `when signin is successful returns success with user`() =
+    fun `GIVEN valid credentials WHEN sign in called THEN returns success with user`() =
         runTest {
             val email = "test@example.com"
             val password = "password123"
@@ -24,7 +24,7 @@ class SignInUseCaseTest {
         }
 
     @Test
-    fun `when signin fails returns failure`() =
+    fun `GIVEN invalid credentials WHEN sign in called THEN returns failure`() =
         runTest {
             repository.shouldReturnError = true
             repository.errorToReturn = Exception("Fake signin error")

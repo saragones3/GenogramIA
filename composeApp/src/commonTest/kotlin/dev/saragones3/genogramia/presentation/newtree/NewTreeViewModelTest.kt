@@ -49,7 +49,7 @@ class NewTreeViewModelTest {
     }
 
     @Test
-    fun `initial state is correct`() =
+    fun `GIVEN view model WHEN initialized THEN initial state is correct`() =
         runTest {
             val state = viewModel.state.value
             assertEquals("", state.person.firstName)
@@ -66,7 +66,7 @@ class NewTreeViewModelTest {
         }
 
     @Test
-    fun `when user is logged in isGuest is false`() =
+    fun `GIVEN logged in user WHEN view model initialized THEN isGuest is false`() =
         runTest {
             authRepository.setCurrentUser(User("uid", "email@test.com", "User"))
             val viewModel = NewTreeViewModel(createTreeUseCase, checkSessionUseCase, dateFormatter)
@@ -75,7 +75,7 @@ class NewTreeViewModelTest {
         }
 
     @Test
-    fun `when show birth date picker event is received visibility is updated`() =
+    fun `GIVEN view model WHEN show birth date picker event received THEN visibility is updated`() =
         runTest {
             viewModel.onEvent(NewTreeEvent.OnShowBirthDatePicker(true))
             assertEquals(true, viewModel.state.value.showBirthDatePicker)
@@ -85,7 +85,7 @@ class NewTreeViewModelTest {
         }
 
     @Test
-    fun `when show death date picker event is received visibility is updated`() =
+    fun `GIVEN view model WHEN show death date picker event received THEN visibility is updated`() =
         runTest {
             viewModel.onEvent(NewTreeEvent.OnShowDeathDatePicker(true))
             assertEquals(true, viewModel.state.value.showDeathDatePicker)
@@ -95,7 +95,7 @@ class NewTreeViewModelTest {
         }
 
     @Test
-    fun `when birth date is selected state is updated with formatted date`() =
+    fun `GIVEN view model WHEN birth date selected THEN state is updated with formatted date`() =
         runTest {
             val millis = 1778716800000L // 14-may-2026
             viewModel.onEvent(NewTreeEvent.OnBirthDateSelected(millis, "dd/MM/yyyy"))
@@ -103,11 +103,10 @@ class NewTreeViewModelTest {
             val state = viewModel.state.value
             assertEquals("14/05/2026", state.person.birthDateText)
             assertEquals(millis, state.person.birthDateMillis)
-            assertNull(state.birthDateError)
         }
 
     @Test
-    fun `when death date is selected state is updated with formatted date`() =
+    fun `GIVEN view model WHEN death date selected THEN state is updated with formatted date`() =
         runTest {
             val millis = 1778716800000L // 14-may-2026
             viewModel.onEvent(NewTreeEvent.OnDeathDateSelected(millis, "dd/MM/yyyy"))
@@ -118,20 +117,19 @@ class NewTreeViewModelTest {
         }
 
     @Test
-    fun `when mandatory fields are empty validation fails`() =
+    fun `GIVEN empty mandatory fields WHEN create tree clicked THEN validation fails`() =
         runTest {
             viewModel.onEvent(NewTreeEvent.OnCreateTreeClicked)
 
             val state = viewModel.state.value
             assertEquals(NewTreeState.ValidationError.EMPTY, state.firstNameError)
             assertEquals(NewTreeState.ValidationError.EMPTY, state.lastNameError)
-            assertEquals(NewTreeState.ValidationError.EMPTY, state.birthDateError)
             assertEquals(NewTreeState.ValidationError.EMPTY, state.biologicalSexError)
             assertEquals(NewTreeState.ValidationError.EMPTY, state.sexualOrientationError)
         }
 
     @Test
-    fun `when data is valid creation succeeds`() =
+    fun `GIVEN valid data WHEN create tree clicked THEN creation succeeds`() =
         runTest {
             viewModel.onEvent(NewTreeEvent.OnFirstNameChanged("John"))
             viewModel.onEvent(NewTreeEvent.OnLastNameChanged("Doe"))
@@ -158,7 +156,7 @@ class NewTreeViewModelTest {
         }
 
     @Test
-    fun `when reset event is received state is restored to initial`() =
+    fun `GIVEN modified state WHEN reset event received THEN state is restored to initial`() =
         runTest {
             viewModel.onEvent(NewTreeEvent.OnFirstNameChanged("John"))
             viewModel.onEvent(NewTreeEvent.OnShowBirthDatePicker(true))
@@ -173,5 +171,29 @@ class NewTreeViewModelTest {
             assertEquals(false, state.showBirthDatePicker)
             assertNull(state.firstNameError)
             assertEquals(true, state.isGuest)
+        }
+
+    @Test
+    fun `GIVEN birth date set WHEN clear birth date event received THEN birth date is cleared`() =
+        runTest {
+            viewModel.onEvent(NewTreeEvent.OnBirthDateSelected(1778716800000L, "dd/MM/yyyy"))
+            assertEquals("14/05/2026", viewModel.state.value.person.birthDateText)
+
+            viewModel.onEvent(NewTreeEvent.OnClearBirthDate)
+
+            assertEquals("", viewModel.state.value.person.birthDateText)
+            assertNull(viewModel.state.value.person.birthDateMillis)
+        }
+
+    @Test
+    fun `GIVEN death date set WHEN clear death date event received THEN death date is cleared`() =
+        runTest {
+            viewModel.onEvent(NewTreeEvent.OnDeathDateSelected(1778716800000L, "dd/MM/yyyy"))
+            assertEquals("14/05/2026", viewModel.state.value.person.deathDateText)
+
+            viewModel.onEvent(NewTreeEvent.OnClearDeathDate)
+
+            assertEquals("", viewModel.state.value.person.deathDateText)
+            assertNull(viewModel.state.value.person.deathDateMillis)
         }
 }
