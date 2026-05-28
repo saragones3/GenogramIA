@@ -83,6 +83,16 @@ class TreeViewModel(
             -> {
                 handleDeletion(event)
             }
+
+            TreeEvent.OnToggleEditMode -> {
+                _state.update {
+                    it.copy(
+                        isEditMode = !it.isEditMode,
+                        selectedPersonIds = emptyList(),
+                        selectedRelationshipId = null,
+                    )
+                }
+            }
         }
     }
 

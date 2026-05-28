@@ -156,6 +156,8 @@
     <string name="canvas_zoom_in">Zoom In</string>
     <string name="canvas_zoom_out">Zoom Out</string>
     <string name="canvas_reset">Reset Viewport</string>
+    <string name="tree_edit">Edit</string>
+    <string name="tree_finish_edit">Finish</string>
 
     <!-- Add Person -->
     <string name="add_person_title">Add Family Member</string>

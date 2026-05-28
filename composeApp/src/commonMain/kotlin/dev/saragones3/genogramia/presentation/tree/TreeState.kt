@@ -15,6 +15,7 @@ data class TreeState(
     val showDeleteConfirmation: Boolean = false,
     val personToDeleteName: String? = null,
     val showDeleteTreeConfirmation: Boolean = false,
+    val isEditMode: Boolean = false,
 )
 
 enum class TreeError {

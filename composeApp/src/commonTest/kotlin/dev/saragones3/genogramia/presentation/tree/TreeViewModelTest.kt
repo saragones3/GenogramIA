@@ -592,4 +592,20 @@ class TreeViewModelTest {
             assertEquals(true, viewModel.state.value.shouldNavigateBack)
             assertEquals(false, viewModel.state.value.showDeleteTreeConfirmation)
         }
+
+    @Test
+    fun `when OnToggleEditMode event is received isEditMode is toggled and selection is cleared`() =
+        runTest {
+            viewModel.onEvent(TreeEvent.OnPersonSelected("p1"))
+            assertEquals(false, viewModel.state.value.isEditMode)
+            assertEquals(listOf("p1"), viewModel.state.value.selectedPersonIds)
+
+            viewModel.onEvent(TreeEvent.OnToggleEditMode)
+
+            assertEquals(true, viewModel.state.value.isEditMode)
+            assertEquals(emptyList(), viewModel.state.value.selectedPersonIds)
+
+            viewModel.onEvent(TreeEvent.OnToggleEditMode)
+            assertEquals(false, viewModel.state.value.isEditMode)
+        }
 }

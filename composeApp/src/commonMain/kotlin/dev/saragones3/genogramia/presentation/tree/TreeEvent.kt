@@ -65,4 +65,6 @@ sealed interface TreeEvent {
     data object OnConfirmDeleteTree : TreeEvent
 
     data object OnDismissDeleteTree : TreeEvent
+
+    data object OnToggleEditMode : TreeEvent
 }

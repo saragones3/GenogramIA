@@ -27,6 +27,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.FilterCenterFocus
@@ -97,6 +98,8 @@ import genogramia.composeapp.generated.resources.error_delete_has_formal_relatio
 import genogramia.composeapp.generated.resources.error_tree_not_found
 import genogramia.composeapp.generated.resources.error_unknown
 import genogramia.composeapp.generated.resources.new_tree_name
+import genogramia.composeapp.generated.resources.tree_edit
+import genogramia.composeapp.generated.resources.tree_finish_edit
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -174,13 +177,15 @@ private fun TreeContent(
         topBar = {
             TopBar(
                 treeName = state.tree.name,
+                isEditMode = state.isEditMode,
                 onBackClick = onBackClick,
+                onEditClick = { onEvent(TreeEvent.OnToggleEditMode) },
                 onDeleteClick = { onEvent(TreeEvent.OnDeleteTreeRequested) },
             )
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
         floatingActionButton = {
-            if (state.selectedPersonIds.size < 2) {
+            if (state.isEditMode && (state.selectedPersonIds.size < 2)) {
                 Column(horizontalAlignment = Alignment.End) {
                     if (state.selectedPersonIds.size == 1 &&
                         state.selectedPersonIds.first() != state.tree.centralPerson.id
@@ -306,7 +311,9 @@ private fun TreeContent(
 @Composable
 private fun TopBar(
     treeName: String,
+    isEditMode: Boolean,
     onBackClick: () -> Unit,
+    onEditClick: () -> Unit,
     onDeleteClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -329,12 +336,29 @@ private fun TopBar(
             }
         },
         actions = {
-            IconButton(onClick = onDeleteClick) {
-                Icon(
-                    imageVector = Icons.Default.Delete,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.error,
-                )
+            if (isEditMode) {
+                IconButton(onClick = onEditClick) {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = stringResource(Res.string.tree_finish_edit),
+                        tint = MaterialTheme.colorScheme.primary,
+                    )
+                }
+                IconButton(onClick = onDeleteClick) {
+                    Icon(
+                        imageVector = Icons.Default.Delete,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.error,
+                    )
+                }
+            } else {
+                IconButton(onClick = onEditClick) {
+                    Icon(
+                        imageVector = Icons.Default.Edit,
+                        contentDescription = stringResource(Res.string.tree_edit),
+                        tint = MaterialTheme.colorScheme.primary,
+                    )
+                }
             }
         },
         colors =
@@ -372,23 +396,29 @@ private fun GenogramCanvas(
             modifier
                 .fillMaxSize()
                 .clipToBounds()
-                .pointerInput(Unit) {
-                    detectTapGestures { tapOffset ->
-                        val tappedPerson =
-                            persons.find {
-                                val centerX = it.position.x * density.density
-                                val centerY = it.position.y * density.density
-                                val personTopLeft =
-                                    Offset(centerX - nodeSize / 2, centerY - nodeSize / 2)
-                                tapOffset.x >= (personTopLeft.x * scale + offset.x) &&
-                                    tapOffset.x <= ((personTopLeft.x + nodeSize) * scale + offset.x) &&
-                                    tapOffset.y >= (personTopLeft.y * scale + offset.y) &&
-                                    tapOffset.y <= ((personTopLeft.y + nodeSize) * scale + offset.y)
-                            }
+                .pointerInput(state.isEditMode) {
+                    if (state.isEditMode) {
+                        detectTapGestures { tapOffset ->
+                            val tappedPerson =
+                                persons.find {
+                                    val centerX = it.position.x * density.density
+                                    val centerY = it.position.y * density.density
+                                    val personTopLeft =
+                                        Offset(centerX - nodeSize / 2, centerY - nodeSize / 2)
+                                    tapOffset.x >= (personTopLeft.x * scale + offset.x) &&
+                                        tapOffset.x <= ((personTopLeft.x + nodeSize) * scale + offset.x) &&
+                                        tapOffset.y >= (personTopLeft.y * scale + offset.y) &&
+                                        tapOffset.y <= ((personTopLeft.y + nodeSize) * scale + offset.y)
+                                }
 
-                        if (tappedPerson != null) {
-                            onEvent(TreeEvent.OnPersonSelected(tappedPerson.id))
-                        } else {
+                            if (tappedPerson != null) {
+                                onEvent(TreeEvent.OnPersonSelected(tappedPerson.id))
+                            } else {
+                                onEvent(TreeEvent.OnDismissSelection)
+                            }
+                        }
+                    } else {
+                        detectTapGestures {
                             onEvent(TreeEvent.OnDismissSelection)
                         }
                     }
@@ -440,6 +470,7 @@ private fun GenogramCanvas(
                     PersonNodeView(
                         person = person,
                         isSelected = selectedPersonIds.contains(person.id),
+                        isEditMode = state.isEditMode,
                         onSelected = { onEvent(TreeEvent.OnPersonSelected(person.id)) },
                         onMove = { delta -> onEvent(TreeEvent.OnPersonMove(person.id, delta)) },
                         onMoveFinished = { onEvent(TreeEvent.OnPersonMoveFinished(person.id)) },
@@ -447,7 +478,7 @@ private fun GenogramCanvas(
                 }
             }
 
-            if (selectedPersonIds.size == 2) {
+            if (state.isEditMode && selectedPersonIds.size == 2) {
                 val p1 = persons.find { it.id == selectedPersonIds.first() }
                 val p2 = persons.find { it.id == selectedPersonIds.last() }
                 RelationshipTooltip(
@@ -986,6 +1017,7 @@ private fun DrawScope.drawChildLine(
 private fun PersonNodeView(
     person: PersonNodeUi,
     isSelected: Boolean,
+    isEditMode: Boolean,
     onSelected: () -> Unit,
     onMove: (Offset) -> Unit,
     onMoveFinished: () -> Unit,
@@ -1022,20 +1054,23 @@ private fun PersonNodeView(
                     onClick = onSelected,
                     indication = null,
                     interactionSource = remember { MutableInteractionSource() },
-                ).pointerInput(person.id) {
-                    detectDragGestures(
-                        onDragEnd = { currentOnMoveFinished() },
-                        onDragCancel = { currentOnMoveFinished() },
-                    ) { change, dragAmount ->
-                        change.consume()
-                        val deltaDp =
-                            with(density) {
-                                Offset(
-                                    x = dragAmount.x.toDp().value,
-                                    y = dragAmount.y.toDp().value,
-                                )
-                            }
-                        currentOnMove(deltaDp)
+                    enabled = isEditMode,
+                ).pointerInput(person.id, isEditMode) {
+                    if (isEditMode) {
+                        detectDragGestures(
+                            onDragEnd = { currentOnMoveFinished() },
+                            onDragCancel = { currentOnMoveFinished() },
+                        ) { change, dragAmount ->
+                            change.consume()
+                            val deltaDp =
+                                with(density) {
+                                    Offset(
+                                        x = dragAmount.x.toDp().value,
+                                        y = dragAmount.y.toDp().value,
+                                    )
+                                }
+                            currentOnMove(deltaDp)
+                        }
                     }
                 },
     ) {
@@ -1459,6 +1494,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                     ),
             ),
             TreeState(
+                isEditMode = true,
                 tree =
                     seed.copy(
                         relationships =

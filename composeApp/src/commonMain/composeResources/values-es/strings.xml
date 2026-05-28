@@ -156,6 +156,8 @@
     <string name="canvas_zoom_in">Aumentar Zoom</string>
     <string name="canvas_zoom_out">Alejar Zoom</string>
     <string name="canvas_reset">Restablecer Vista</string>
+    <string name="tree_edit">Editar</string>
+    <string name="tree_finish_edit">Finalizar</string>
 
     <!-- Add Person -->
     <string name="add_person_title">Añadir Familiar</string>
