@@ -1,9 +1,9 @@
 package dev.saragones3.genogramia.data.repository
 
-import dev.saragones3.genogramia.data.firebase.FirebaseProvider
-import dev.saragones3.genogramia.data.firebase.FirestoreProvider
-import dev.saragones3.genogramia.data.firebase.toDomain
-import dev.saragones3.genogramia.data.firebase.toDto
+import dev.saragones3.genogramia.data.remote.FirebaseProvider
+import dev.saragones3.genogramia.data.remote.FirestoreProvider
+import dev.saragones3.genogramia.data.remote.toDomain
+import dev.saragones3.genogramia.data.remote.toDto
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.repository.TreeRepository
 

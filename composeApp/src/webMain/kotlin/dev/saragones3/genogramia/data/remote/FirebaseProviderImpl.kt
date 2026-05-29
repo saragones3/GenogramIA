@@ -1,8 +1,8 @@
 @file:OptIn(kotlin.js.ExperimentalWasmJsInterop::class)
 
-package dev.saragones3.genogramia.data.firebase
+package dev.saragones3.genogramia.data.remote
 
-import dev.saragones3.genogramia.data.error.toAuthError
+import dev.saragones3.genogramia.data.remote.model.AuthUser
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException

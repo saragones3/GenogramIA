@@ -1,4 +1,4 @@
-package dev.saragones3.genogramia.data.error
+package dev.saragones3.genogramia.data.remote
 
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException

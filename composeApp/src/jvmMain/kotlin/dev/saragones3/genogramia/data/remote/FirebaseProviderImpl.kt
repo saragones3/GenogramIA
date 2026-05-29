@@ -1,5 +1,6 @@
-package dev.saragones3.genogramia.data.firebase
+package dev.saragones3.genogramia.data.remote
 
+import dev.saragones3.genogramia.data.remote.model.AuthUser
 import kotlinx.coroutines.delay
 
 /**

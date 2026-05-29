@@ -1,4 +1,4 @@
-package dev.saragones3.genogramia.data.firebase
+package dev.saragones3.genogramia.data.remote
 
 interface FirestoreDelegate {
     fun saveTree(

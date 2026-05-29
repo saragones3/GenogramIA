@@ -1,10 +1,10 @@
-package dev.saragones3.genogramia.data.firebase
+package dev.saragones3.genogramia.data.remote
 
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.userProfileChangeRequest
-import dev.saragones3.genogramia.data.error.toAuthError
+import dev.saragones3.genogramia.data.remote.model.AuthUser
 import kotlinx.coroutines.tasks.await
 
 internal class FirebaseProviderImpl(

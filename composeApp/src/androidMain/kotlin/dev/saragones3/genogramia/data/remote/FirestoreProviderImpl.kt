@@ -1,7 +1,7 @@
-package dev.saragones3.genogramia.data.firebase
+package dev.saragones3.genogramia.data.remote
 
 import com.google.firebase.firestore.FirebaseFirestore
-import dev.saragones3.genogramia.data.firebase.dto.GenogramTreeDto
+import dev.saragones3.genogramia.data.remote.model.GenogramTreeDto
 import kotlinx.coroutines.tasks.await
 
 internal class FirestoreProviderImpl(

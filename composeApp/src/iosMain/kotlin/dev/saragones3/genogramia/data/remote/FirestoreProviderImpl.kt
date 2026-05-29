@@ -1,6 +1,6 @@
-package dev.saragones3.genogramia.data.firebase
+package dev.saragones3.genogramia.data.remote
 
-import dev.saragones3.genogramia.data.firebase.dto.GenogramTreeDto
+import dev.saragones3.genogramia.data.remote.model.GenogramTreeDto
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.serialization.json.Json
 import kotlin.coroutines.resume

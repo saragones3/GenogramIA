@@ -1,4 +1,4 @@
-package dev.saragones3.genogramia.data.error
+package dev.saragones3.genogramia.data.remote
 
 import dev.saragones3.genogramia.domain.model.AuthError
 

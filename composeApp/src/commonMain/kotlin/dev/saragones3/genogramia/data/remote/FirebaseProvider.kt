@@ -1,4 +1,6 @@
-package dev.saragones3.genogramia.data.firebase
+package dev.saragones3.genogramia.data.remote
+
+import dev.saragones3.genogramia.data.remote.model.AuthUser
 
 /**
  * Abstraction over Firebase Auth. Each platform provides its own implementation.

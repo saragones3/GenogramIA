@@ -1,4 +1,4 @@
-package dev.saragones3.genogramia.data.firebase.dto
+package dev.saragones3.genogramia.data.remote.model
 
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship

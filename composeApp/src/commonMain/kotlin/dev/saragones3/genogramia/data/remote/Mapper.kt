@@ -1,8 +1,8 @@
-package dev.saragones3.genogramia.data.firebase
+package dev.saragones3.genogramia.data.remote
 
-import dev.saragones3.genogramia.data.firebase.dto.GenogramTreeDto
-import dev.saragones3.genogramia.data.firebase.dto.PersonDto
-import dev.saragones3.genogramia.data.firebase.dto.RelationshipDto
+import dev.saragones3.genogramia.data.remote.model.GenogramTreeDto
+import dev.saragones3.genogramia.data.remote.model.PersonDto
+import dev.saragones3.genogramia.data.remote.model.RelationshipDto
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship

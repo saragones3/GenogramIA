@@ -1,7 +1,7 @@
 package dev.saragones3.genogramia.fakes
 
-import dev.saragones3.genogramia.data.firebase.FirestoreProvider
-import dev.saragones3.genogramia.data.firebase.dto.GenogramTreeDto
+import dev.saragones3.genogramia.data.remote.FirestoreProvider
+import dev.saragones3.genogramia.data.remote.model.GenogramTreeDto
 
 class FakeFirestoreProvider : FirestoreProvider {
     val database = mutableMapOf<String, MutableMap<String, GenogramTreeDto>>()

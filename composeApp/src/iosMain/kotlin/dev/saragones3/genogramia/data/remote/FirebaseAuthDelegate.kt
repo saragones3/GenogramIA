@@ -1,4 +1,4 @@
-package dev.saragones3.genogramia.data.firebase
+package dev.saragones3.genogramia.data.remote
 
 /**
  * ObjC-compatible delegate interface implemented in Swift.
