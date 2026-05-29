@@ -4,6 +4,8 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.konan.properties.Properties
+import java.io.FileInputStream
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -14,6 +16,19 @@ plugins {
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.googleServices)
 }
+
+val keystorePropertiesFile: File = rootProject.file("keystore.properties")
+val keystoreProperties = Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+}
+
+val appName = "dev.saragones3.genogramia"
+
+val versionMajor = 1
+val versionMinor = 0
+val versionPatch = 0
+val versionBuild = 0
 
 kotlin {
     applyHierarchyTemplate {
@@ -108,14 +123,14 @@ kotlin {
 }
 
 android {
-    namespace = "dev.saragones3.genogramia"
+    namespace = appName
     compileSdk =
         libs.versions.android.compileSdk
             .get()
             .toInt()
 
     defaultConfig {
-        applicationId = "dev.saragones3.genogramia"
+        applicationId = appName
         minSdk =
             libs.versions.android.minSdk
                 .get()
@@ -124,8 +139,16 @@ android {
             libs.versions.android.targetSdk
                 .get()
                 .toInt()
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = versionMajor * 100000 + versionMinor * 1000 + versionPatch * 10 + versionBuild
+        versionName = "$versionMajor.$versionMinor.$versionPatch"
+    }
+    signingConfigs {
+        create("release") {
+            storeFile = file("genogramia-keystore.jks")
+            storePassword = keystoreProperties.getProperty("keystore.storePassword")
+            keyAlias = keystoreProperties.getProperty("keystore.keyAlias")
+            keyPassword = keystoreProperties.getProperty("keystore.keyPassword")
+        }
     }
     packaging {
         resources {
@@ -133,8 +156,15 @@ android {
         }
     }
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
+            signingConfig = signingConfigs.getByName(name)
+            manifestPlaceholders["appName"] = "@string/app_name"
         }
     }
     compileOptions {

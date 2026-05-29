@@ -1,6 +1,6 @@
 package dev.saragones3.genogramia.data.repository
 
-import dev.saragones3.genogramia.data.firebase.AuthUser
+import dev.saragones3.genogramia.data.remote.model.AuthUser
 import dev.saragones3.genogramia.fakes.FakeFirebaseProvider
 import kotlin.test.Test
 import kotlin.test.assertEquals

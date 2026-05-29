@@ -1,6 +1,6 @@
 package dev.saragones3.genogramia.data.repository
 
-import dev.saragones3.genogramia.data.firebase.FirebaseProvider
+import dev.saragones3.genogramia.data.remote.FirebaseProvider
 import dev.saragones3.genogramia.domain.model.User
 import dev.saragones3.genogramia.domain.repository.AuthRepository
 

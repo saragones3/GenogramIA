@@ -1,7 +1,7 @@
 package dev.saragones3.genogramia.fakes
 
-import dev.saragones3.genogramia.data.firebase.AuthUser
-import dev.saragones3.genogramia.data.firebase.FirebaseProvider
+import dev.saragones3.genogramia.data.remote.FirebaseProvider
+import dev.saragones3.genogramia.data.remote.model.AuthUser
 
 class FakeFirebaseProvider(
     private var currentUser: AuthUser? = null,
