@@ -88,36 +88,16 @@ import dev.saragones3.genogramia.presentation.components.DatePickerModal
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.Primary
 import genogramia.composeapp.generated.resources.Res
-import genogramia.composeapp.generated.resources.add_relationship_abuse
-import genogramia.composeapp.generated.resources.add_relationship_adoption
 import genogramia.composeapp.generated.resources.add_relationship_bond_type
 import genogramia.composeapp.generated.resources.add_relationship_child
-import genogramia.composeapp.generated.resources.add_relationship_close
-import genogramia.composeapp.generated.resources.add_relationship_cohabitation
 import genogramia.composeapp.generated.resources.add_relationship_confirm
-import genogramia.composeapp.generated.resources.add_relationship_conflictual
 import genogramia.composeapp.generated.resources.add_relationship_consanguinity_risk
-import genogramia.composeapp.generated.resources.add_relationship_direct_conflictual
-import genogramia.composeapp.generated.resources.add_relationship_distant
-import genogramia.composeapp.generated.resources.add_relationship_divorce
 import genogramia.composeapp.generated.resources.add_relationship_effective_date
 import genogramia.composeapp.generated.resources.add_relationship_emotional_bond
-import genogramia.composeapp.generated.resources.add_relationship_focused
-import genogramia.composeapp.generated.resources.add_relationship_fraternal_twin
-import genogramia.composeapp.generated.resources.add_relationship_fused
-import genogramia.composeapp.generated.resources.add_relationship_fused_conflictual
-import genogramia.composeapp.generated.resources.add_relationship_identical_twin
-import genogramia.composeapp.generated.resources.add_relationship_intimate_conflictual
-import genogramia.composeapp.generated.resources.add_relationship_marriage
 import genogramia.composeapp.generated.resources.add_relationship_medical_conflict
-import genogramia.composeapp.generated.resources.add_relationship_offspring
 import genogramia.composeapp.generated.resources.add_relationship_parent
 import genogramia.composeapp.generated.resources.add_relationship_person
-import genogramia.composeapp.generated.resources.add_relationship_positive
-import genogramia.composeapp.generated.resources.add_relationship_reconciliation
-import genogramia.composeapp.generated.resources.add_relationship_rupture
 import genogramia.composeapp.generated.resources.add_relationship_select_date
-import genogramia.composeapp.generated.resources.add_relationship_separation
 import genogramia.composeapp.generated.resources.add_relationship_swap_roles
 import genogramia.composeapp.generated.resources.add_relationship_title
 import genogramia.composeapp.generated.resources.date_format
@@ -125,6 +105,26 @@ import genogramia.composeapp.generated.resources.delete_relationship
 import genogramia.composeapp.generated.resources.delete_relationship_confirmation_message
 import genogramia.composeapp.generated.resources.delete_relationship_confirmation_title
 import genogramia.composeapp.generated.resources.edit_relationship
+import genogramia.composeapp.generated.resources.emotional_bond_abuse
+import genogramia.composeapp.generated.resources.emotional_bond_conflictual
+import genogramia.composeapp.generated.resources.emotional_bond_direct_conflictual
+import genogramia.composeapp.generated.resources.emotional_bond_distant
+import genogramia.composeapp.generated.resources.emotional_bond_focused
+import genogramia.composeapp.generated.resources.emotional_bond_fused
+import genogramia.composeapp.generated.resources.emotional_bond_fused_conflictual
+import genogramia.composeapp.generated.resources.emotional_bond_intimate
+import genogramia.composeapp.generated.resources.emotional_bond_intimate_conflictual
+import genogramia.composeapp.generated.resources.emotional_bond_positive
+import genogramia.composeapp.generated.resources.emotional_bond_rupture
+import genogramia.composeapp.generated.resources.relationship_adoption
+import genogramia.composeapp.generated.resources.relationship_cohabitation
+import genogramia.composeapp.generated.resources.relationship_divorce
+import genogramia.composeapp.generated.resources.relationship_fraternal_twin
+import genogramia.composeapp.generated.resources.relationship_identical_twin
+import genogramia.composeapp.generated.resources.relationship_marriage
+import genogramia.composeapp.generated.resources.relationship_offspring
+import genogramia.composeapp.generated.resources.relationship_reconciliation
+import genogramia.composeapp.generated.resources.relationship_separation
 import genogramia.composeapp.generated.resources.settings_cancel
 import genogramia.composeapp.generated.resources.settings_confirm
 import org.jetbrains.compose.resources.stringResource
@@ -476,64 +476,64 @@ private fun RelationshipManagerCard(
 @Composable
 private fun Relationship.RelationshipType.toText(): String =
     when (this) {
-        Relationship.RelationshipType.MARRIAGE -> stringResource(Res.string.add_relationship_marriage)
-        Relationship.RelationshipType.COHABITATION -> stringResource(Res.string.add_relationship_cohabitation)
-        Relationship.RelationshipType.SEPARATION -> stringResource(Res.string.add_relationship_separation)
-        Relationship.RelationshipType.DIVORCE -> stringResource(Res.string.add_relationship_divorce)
-        Relationship.RelationshipType.RECONCILIATION -> stringResource(Res.string.add_relationship_reconciliation)
-        Relationship.RelationshipType.BIOLOGICAL_OFFSPRING -> stringResource(Res.string.add_relationship_offspring)
-        Relationship.RelationshipType.ADOPTION_LEGAL -> stringResource(Res.string.add_relationship_adoption)
-        Relationship.RelationshipType.FRATERNAL_TWIN -> stringResource(Res.string.add_relationship_fraternal_twin)
-        Relationship.RelationshipType.IDENTICAL_TWIN -> stringResource(Res.string.add_relationship_identical_twin)
+        Relationship.RelationshipType.MARRIAGE -> stringResource(Res.string.relationship_marriage)
+        Relationship.RelationshipType.COHABITATION -> stringResource(Res.string.relationship_cohabitation)
+        Relationship.RelationshipType.SEPARATION -> stringResource(Res.string.relationship_separation)
+        Relationship.RelationshipType.DIVORCE -> stringResource(Res.string.relationship_divorce)
+        Relationship.RelationshipType.RECONCILIATION -> stringResource(Res.string.relationship_reconciliation)
+        Relationship.RelationshipType.BIOLOGICAL_OFFSPRING -> stringResource(Res.string.relationship_offspring)
+        Relationship.RelationshipType.ADOPTION_LEGAL -> stringResource(Res.string.relationship_adoption)
+        Relationship.RelationshipType.FRATERNAL_TWIN -> stringResource(Res.string.relationship_fraternal_twin)
+        Relationship.RelationshipType.IDENTICAL_TWIN -> stringResource(Res.string.relationship_identical_twin)
     }
 
 @Composable
 private fun Relationship.EmotionalBond.toText(): String =
     when (this) {
         Relationship.EmotionalBond.POSITIVE -> {
-            stringResource(Res.string.add_relationship_positive)
+            stringResource(Res.string.emotional_bond_positive)
         }
 
         Relationship.EmotionalBond.DISTANT -> {
-            stringResource(Res.string.add_relationship_distant)
+            stringResource(Res.string.emotional_bond_distant)
         }
 
         Relationship.EmotionalBond.INTIMATE -> {
-            stringResource(Res.string.add_relationship_close)
+            stringResource(Res.string.emotional_bond_intimate)
         }
 
         Relationship.EmotionalBond.INTIMATE_CONFLICTUAL -> {
             stringResource(
-                Res.string.add_relationship_intimate_conflictual,
+                Res.string.emotional_bond_intimate_conflictual,
             )
         }
 
         Relationship.EmotionalBond.FOCUSED -> {
-            stringResource(Res.string.add_relationship_focused)
+            stringResource(Res.string.emotional_bond_focused)
         }
 
         Relationship.EmotionalBond.FUSED -> {
-            stringResource(Res.string.add_relationship_fused)
+            stringResource(Res.string.emotional_bond_fused)
         }
 
         Relationship.EmotionalBond.CONFLICTUAL -> {
-            stringResource(Res.string.add_relationship_conflictual)
+            stringResource(Res.string.emotional_bond_conflictual)
         }
 
         Relationship.EmotionalBond.FUSED_CONFLICTUAL -> {
-            stringResource(Res.string.add_relationship_fused_conflictual)
+            stringResource(Res.string.emotional_bond_fused_conflictual)
         }
 
         Relationship.EmotionalBond.DIRECT_CONFLICTUAL -> {
-            stringResource(Res.string.add_relationship_direct_conflictual)
+            stringResource(Res.string.emotional_bond_direct_conflictual)
         }
 
         Relationship.EmotionalBond.RUPTURE -> {
-            stringResource(Res.string.add_relationship_rupture)
+            stringResource(Res.string.emotional_bond_rupture)
         }
 
         Relationship.EmotionalBond.ABUSE -> {
-            stringResource(Res.string.add_relationship_abuse)
+            stringResource(Res.string.emotional_bond_abuse)
         }
     }
 
@@ -630,63 +630,63 @@ private fun BondTypeSection(
         Spacer(modifier = Modifier.height(12.dp))
 
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_marriage),
+            label = stringResource(Res.string.relationship_marriage),
             icon = Icons.Default.Favorite,
             isSelected = selectedType == Relationship.RelationshipType.MARRIAGE,
             onClick = { onTypeSelected(Relationship.RelationshipType.MARRIAGE) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_cohabitation),
+            label = stringResource(Res.string.relationship_cohabitation),
             icon = Icons.Default.Home,
             isSelected = selectedType == Relationship.RelationshipType.COHABITATION,
             onClick = { onTypeSelected(Relationship.RelationshipType.COHABITATION) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_separation),
+            label = stringResource(Res.string.relationship_separation),
             icon = Icons.Default.ContentCut,
             isSelected = selectedType == Relationship.RelationshipType.SEPARATION,
             onClick = { onTypeSelected(Relationship.RelationshipType.SEPARATION) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_divorce),
+            label = stringResource(Res.string.relationship_divorce),
             icon = Icons.Default.BrokenImage,
             isSelected = selectedType == Relationship.RelationshipType.DIVORCE,
             onClick = { onTypeSelected(Relationship.RelationshipType.DIVORCE) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_reconciliation),
+            label = stringResource(Res.string.relationship_reconciliation),
             icon = Icons.Default.ConnectWithoutContact,
             isSelected = selectedType == Relationship.RelationshipType.RECONCILIATION,
             onClick = { onTypeSelected(Relationship.RelationshipType.RECONCILIATION) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_offspring),
+            label = stringResource(Res.string.relationship_offspring),
             icon = Icons.Default.FamilyRestroom,
             isSelected = selectedType == Relationship.RelationshipType.BIOLOGICAL_OFFSPRING,
             onClick = { onTypeSelected(Relationship.RelationshipType.BIOLOGICAL_OFFSPRING) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_adoption),
+            label = stringResource(Res.string.relationship_adoption),
             icon = Icons.Default.Description,
             isSelected = selectedType == Relationship.RelationshipType.ADOPTION_LEGAL,
             onClick = { onTypeSelected(Relationship.RelationshipType.ADOPTION_LEGAL) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_fraternal_twin),
+            label = stringResource(Res.string.relationship_fraternal_twin),
             icon = Icons.Default.Groups,
             isSelected = selectedType == Relationship.RelationshipType.FRATERNAL_TWIN,
             onClick = { onTypeSelected(Relationship.RelationshipType.FRATERNAL_TWIN) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_identical_twin),
+            label = stringResource(Res.string.relationship_identical_twin),
             icon = Icons.Default.Diversity3,
             isSelected = selectedType == Relationship.RelationshipType.IDENTICAL_TWIN,
             onClick = { onTypeSelected(Relationship.RelationshipType.IDENTICAL_TWIN) },
@@ -709,77 +709,77 @@ private fun EmotionalBondSection(
         Spacer(modifier = Modifier.height(12.dp))
 
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_positive),
+            label = stringResource(Res.string.emotional_bond_positive),
             icon = Icons.Default.SentimentSatisfied,
             isSelected = selectedBond == Relationship.EmotionalBond.POSITIVE,
             onClick = { onBondSelected(Relationship.EmotionalBond.POSITIVE) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_distant),
+            label = stringResource(Res.string.emotional_bond_distant),
             icon = Icons.Default.MoreHoriz,
             isSelected = selectedBond == Relationship.EmotionalBond.DISTANT,
             onClick = { onBondSelected(Relationship.EmotionalBond.DISTANT) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_close),
+            label = stringResource(Res.string.emotional_bond_intimate),
             icon = Icons.Default.VolunteerActivism,
             isSelected = selectedBond == Relationship.EmotionalBond.INTIMATE,
             onClick = { onBondSelected(Relationship.EmotionalBond.INTIMATE) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_intimate_conflictual),
+            label = stringResource(Res.string.emotional_bond_intimate_conflictual),
             icon = Icons.Default.FlashOn,
             isSelected = selectedBond == Relationship.EmotionalBond.INTIMATE_CONFLICTUAL,
             onClick = { onBondSelected(Relationship.EmotionalBond.INTIMATE_CONFLICTUAL) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_focused),
+            label = stringResource(Res.string.emotional_bond_focused),
             icon = Icons.Default.AutoGraph,
             isSelected = selectedBond == Relationship.EmotionalBond.FOCUSED,
             onClick = { onBondSelected(Relationship.EmotionalBond.FOCUSED) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_fused),
+            label = stringResource(Res.string.emotional_bond_fused),
             icon = Icons.Default.JoinInner,
             isSelected = selectedBond == Relationship.EmotionalBond.FUSED,
             onClick = { onBondSelected(Relationship.EmotionalBond.FUSED) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_conflictual),
+            label = stringResource(Res.string.emotional_bond_conflictual),
             icon = Icons.Default.FlashOn,
             isSelected = selectedBond == Relationship.EmotionalBond.CONFLICTUAL,
             onClick = { onBondSelected(Relationship.EmotionalBond.CONFLICTUAL) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_fused_conflictual),
+            label = stringResource(Res.string.emotional_bond_fused_conflictual),
             icon = Icons.Default.FlashOn,
             isSelected = selectedBond == Relationship.EmotionalBond.FUSED_CONFLICTUAL,
             onClick = { onBondSelected(Relationship.EmotionalBond.FUSED_CONFLICTUAL) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_direct_conflictual),
+            label = stringResource(Res.string.emotional_bond_direct_conflictual),
             icon = Icons.Default.Gavel,
             isSelected = selectedBond == Relationship.EmotionalBond.DIRECT_CONFLICTUAL,
             onClick = { onBondSelected(Relationship.EmotionalBond.DIRECT_CONFLICTUAL) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_rupture),
+            label = stringResource(Res.string.emotional_bond_rupture),
             icon = Icons.Default.LinkOff,
             isSelected = selectedBond == Relationship.EmotionalBond.RUPTURE,
             onClick = { onBondSelected(Relationship.EmotionalBond.RUPTURE) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(
-            label = stringResource(Res.string.add_relationship_abuse),
+            label = stringResource(Res.string.emotional_bond_abuse),
             icon = Icons.Default.Warning,
             isSelected = selectedBond == Relationship.EmotionalBond.ABUSE,
             onClick = { onBondSelected(Relationship.EmotionalBond.ABUSE) },

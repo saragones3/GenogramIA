@@ -1,7 +1,31 @@
 <resources>
     <!-- App General -->
     <string name="app_name">GenogramIA</string>
-    
+
+    <!-- Relationships -->
+    <string name="relationship_marriage">Matrimonio</string>
+    <string name="relationship_cohabitation">Convivencia</string>
+    <string name="relationship_separation">Separación</string>
+    <string name="relationship_divorce">Divorcio</string>
+    <string name="relationship_reconciliation">Reconciliación</string>
+    <string name="relationship_offspring">Hijo/a biológico/a</string>
+    <string name="relationship_adoption">Adopción</string>
+    <string name="relationship_fraternal_twin">Mellizos</string>
+    <string name="relationship_identical_twin">Gemelos</string>
+
+    <!-- Emotional bonds -->
+    <string name="emotional_bond_positive">Positiva</string>
+    <string name="emotional_bond_distant">Distante</string>
+    <string name="emotional_bond_intimate">Íntima</string>
+    <string name="emotional_bond_intimate_conflictual">Íntima Conflictiva</string>
+    <string name="emotional_bond_focused">Focalizada</string>
+    <string name="emotional_bond_fused">Fusionada</string>
+    <string name="emotional_bond_conflictual">Conflictiva</string>
+    <string name="emotional_bond_fused_conflictual">Fusionada Conflictiva</string>
+    <string name="emotional_bond_direct_conflictual">Conflictiva Directa</string>
+    <string name="emotional_bond_rupture">Ruptura</string>
+    <string name="emotional_bond_abuse">Abuso</string>
+
     <!-- Navigation -->
     <string name="nav_trees">ÁRBOLES</string>
     <string name="nav_legends">LEYENDAS</string>
@@ -152,7 +176,6 @@
     <string name="new_tree_name">Linaje %1$s</string>
 
     <!-- Canvas -->
-    <string name="canvas_title">Lienzo del Genograma</string>
     <string name="canvas_zoom_in">Aumentar Zoom</string>
     <string name="canvas_zoom_out">Alejar Zoom</string>
     <string name="canvas_reset">Restablecer Vista</string>
@@ -170,27 +193,7 @@
     <string name="add_relationship_title">Añadir Relación</string>
     <string name="add_relationship_manager">GESTOR DE RELACIONES</string>
     <string name="add_relationship_bond_type">TIPO DE VÍNCULO</string>
-    <string name="add_relationship_marriage">Matrimonio</string>
-    <string name="add_relationship_cohabitation">Convivencia</string>
-    <string name="add_relationship_separation">Separación</string>
-    <string name="add_relationship_divorce">Divorcio</string>
-    <string name="add_relationship_reconciliation">Reconciliación</string>
-    <string name="add_relationship_offspring">Hijo/a biológico/a</string>
-    <string name="add_relationship_adoption">Adopción / Legal</string>
-    <string name="add_relationship_fraternal_twin">Mellizos</string>
-    <string name="add_relationship_identical_twin">Gemelos</string>
     <string name="add_relationship_emotional_bond">VÍNCULO EMOCIONAL</string>
-    <string name="add_relationship_positive">Positiva</string>
-    <string name="add_relationship_distant">Distante</string>
-    <string name="add_relationship_close">Íntima</string>
-    <string name="add_relationship_intimate_conflictual">Íntima Conflictiva</string>
-    <string name="add_relationship_focused">Focalizada</string>
-    <string name="add_relationship_fused">Fusionada</string>
-    <string name="add_relationship_conflictual">Conflictiva</string>
-    <string name="add_relationship_fused_conflictual">Fusionada Conflictiva</string>
-    <string name="add_relationship_direct_conflictual">Conflictiva Directa</string>
-    <string name="add_relationship_rupture">Ruptura</string>
-    <string name="add_relationship_abuse">Abuso</string>
     <string name="add_relationship_effective_date">FECHA DE VIGENCIA</string>
     <string name="add_relationship_medical_conflict">CONFLICTO MÉDICO</string>
     <string name="add_relationship_consanguinity_risk">Riesgo de Consanguinidad</string>

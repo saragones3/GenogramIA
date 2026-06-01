@@ -1,7 +1,31 @@
 <resources>
     <!-- App General -->
     <string name="app_name">GenogramIA</string>
-    
+
+    <!-- Relationships -->
+    <string name="relationship_marriage">Marriage</string>
+    <string name="relationship_cohabitation">Cohabitation</string>
+    <string name="relationship_separation">Separation</string>
+    <string name="relationship_divorce">Divorce</string>
+    <string name="relationship_reconciliation">Reconciliation</string>
+    <string name="relationship_offspring">Biological Offspring</string>
+    <string name="relationship_adoption">Adoption</string>
+    <string name="relationship_fraternal_twin">Fraternal Twins</string>
+    <string name="relationship_identical_twin">Identical Twins</string>
+
+    <!-- Emotional bonds -->
+    <string name="emotional_bond_positive">Positive</string>
+    <string name="emotional_bond_distant">Distant</string>
+    <string name="emotional_bond_intimate">Intimate</string>
+    <string name="emotional_bond_intimate_conflictual">Intimate Conflictual</string>
+    <string name="emotional_bond_focused">Focused</string>
+    <string name="emotional_bond_fused">Fused</string>
+    <string name="emotional_bond_conflictual">Conflictual</string>
+    <string name="emotional_bond_fused_conflictual">Fused Conflictual</string>
+    <string name="emotional_bond_direct_conflictual">Direct Conflictual</string>
+    <string name="emotional_bond_rupture">Rupture</string>
+    <string name="emotional_bond_abuse">Abuse</string>
+
     <!-- Navigation -->
     <string name="nav_trees">TREES</string>
     <string name="nav_legends">LEGENDS</string>
@@ -152,7 +176,6 @@
     <string name="new_tree_name">%1$s lineage</string>
 
     <!-- Canvas -->
-    <string name="canvas_title">Genogram Canvas</string>
     <string name="canvas_zoom_in">Zoom In</string>
     <string name="canvas_zoom_out">Zoom Out</string>
     <string name="canvas_reset">Reset Viewport</string>
@@ -170,27 +193,7 @@
     <string name="add_relationship_title">Add Relationship</string>
     <string name="add_relationship_manager">RELATIONSHIP MANAGER</string>
     <string name="add_relationship_bond_type">BOND TYPE</string>
-    <string name="add_relationship_marriage">Marriage</string>
-    <string name="add_relationship_cohabitation">Cohabitation</string>
-    <string name="add_relationship_separation">Separation</string>
-    <string name="add_relationship_divorce">Divorce</string>
-    <string name="add_relationship_reconciliation">Reconciliation</string>
-    <string name="add_relationship_offspring">Biological Offspring</string>
-    <string name="add_relationship_adoption">Adoption/Legal</string>
-    <string name="add_relationship_fraternal_twin">Fraternal Twins</string>
-    <string name="add_relationship_identical_twin">Identical Twins</string>
     <string name="add_relationship_emotional_bond">EMOTIONAL BOND</string>
-    <string name="add_relationship_positive">Positive</string>
-    <string name="add_relationship_distant">Distant</string>
-    <string name="add_relationship_close">Intimate</string>
-    <string name="add_relationship_intimate_conflictual">Intimate Conflictual</string>
-    <string name="add_relationship_focused">Focused</string>
-    <string name="add_relationship_fused">Fused</string>
-    <string name="add_relationship_conflictual">Conflictual</string>
-    <string name="add_relationship_fused_conflictual">Fused Conflictual</string>
-    <string name="add_relationship_direct_conflictual">Direct Conflictual</string>
-    <string name="add_relationship_rupture">Rupture</string>
-    <string name="add_relationship_abuse">Abuse</string>
     <string name="add_relationship_effective_date">EFFECTIVE DATE</string>
     <string name="add_relationship_medical_conflict">MEDICAL CONFLICT</string>
     <string name="add_relationship_consanguinity_risk">Consanguinity Risk</string>
