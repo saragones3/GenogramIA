@@ -102,10 +102,29 @@
     <string name="error_tree_not_found">Árbol no encontrado o acceso denegado</string>
 
     <!-- Legends -->
-    <string name="legends_title">Leyendas</string>
-    <string name="legends_screen_placeholder">Pantalla de leyendas</string>
-    <string name="legends_description">Aquí verás el vocabulario visual del genograma.</string>
-    
+    <string name="legends_vocabulary_title">El Vocabulario Visual</string>
+    <string name="legends_vocabulary_description">Los genogramas utilizan un conjunto estandarizado de formas geométricas y líneas de conexión para representar a las personas y sus relaciones biológicas o emocionales a través de las generaciones.</string>
+    <string name="legends_section_basic">SÍMBOLOS BÁSICOS</string>
+    <string name="legends_section_relationships">RELACIONES</string>
+    <string name="legends_section_emotional">VÍNCULOS EMOCIONALES</string>
+
+    <string name="legends_symbol_male">VARÓN</string>
+    <string name="legends_symbol_female">MUJER</string>
+    <string name="legends_symbol_patient">PACIENTE</string>
+    <string name="legends_symbol_alive">VIVO</string>
+    <string name="legends_symbol_deceased">FALLECIDO</string>
+    <string name="legends_symbol_orientation">LGBTIQ+</string>
+
+    <string name="legends_rel_marriage_desc">Unión formal</string>
+    <string name="legends_rel_separation_desc">Viviendo separados</string>
+    <string name="legends_rel_divorce_desc">Disolución legal</string>
+    <string name="legends_rel_cohabitation_desc">Unión informal</string>
+    <string name="legends_rel_reconciliation_desc">Vuelven juntos tras el divorcio</string>
+    <string name="legends_rel_offspring_desc">Descendiente genético</string>
+    <string name="legends_rel_adoption_desc">Descendiente legal no genético</string>
+    <string name="legends_rel_fraternal_twins_desc">Hermanos dizigóticos</string>
+    <string name="legends_rel_identical_twins_desc">Hermanos monozigóticos</string>
+
     <!-- Settings -->
     <string name="settings_title">Ajustes</string>
     <string name="settings_profile_section">Perfil</string>
