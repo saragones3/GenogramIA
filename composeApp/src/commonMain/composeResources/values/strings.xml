@@ -189,7 +189,6 @@
     <string name="add_relationship_conflictual">Conflictual</string>
     <string name="add_relationship_fused_conflictual">Fused Conflictual</string>
     <string name="add_relationship_direct_conflictual">Direct Conflictual</string>
-    <string name="add_relationship_hostile">Hostile</string>
     <string name="add_relationship_rupture">Rupture</string>
     <string name="add_relationship_abuse">Abuse</string>
     <string name="add_relationship_effective_date">EFFECTIVE DATE</string>

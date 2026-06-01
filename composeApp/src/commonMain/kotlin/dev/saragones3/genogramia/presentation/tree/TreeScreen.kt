@@ -587,7 +587,6 @@ private fun DrawScope.drawHorizontalRelationship(
             val replacesBaseLine =
                 when (relationship.emotionalBond) {
                     Relationship.EmotionalBond.CONFLICTUAL,
-                    Relationship.EmotionalBond.HOSTILE,
                     Relationship.EmotionalBond.INTIMATE,
                     Relationship.EmotionalBond.INTIMATE_CONFLICTUAL,
                     Relationship.EmotionalBond.DIRECT_CONFLICTUAL,
@@ -695,9 +694,7 @@ private fun DrawScope.drawEmotionalBond(
             // The main line is already drawn
         }
 
-        Relationship.EmotionalBond.CONFLICTUAL,
-        Relationship.EmotionalBond.HOSTILE,
-        -> {
+        Relationship.EmotionalBond.CONFLICTUAL -> {
             drawZigzag(start, end, LINE_WIDTH.toPx())
         }
 

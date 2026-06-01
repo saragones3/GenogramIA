@@ -106,7 +106,6 @@ import genogramia.composeapp.generated.resources.add_relationship_focused
 import genogramia.composeapp.generated.resources.add_relationship_fraternal_twin
 import genogramia.composeapp.generated.resources.add_relationship_fused
 import genogramia.composeapp.generated.resources.add_relationship_fused_conflictual
-import genogramia.composeapp.generated.resources.add_relationship_hostile
 import genogramia.composeapp.generated.resources.add_relationship_identical_twin
 import genogramia.composeapp.generated.resources.add_relationship_intimate_conflictual
 import genogramia.composeapp.generated.resources.add_relationship_marriage
@@ -529,10 +528,6 @@ private fun Relationship.EmotionalBond.toText(): String =
             stringResource(Res.string.add_relationship_direct_conflictual)
         }
 
-        Relationship.EmotionalBond.HOSTILE -> {
-            stringResource(Res.string.add_relationship_hostile)
-        }
-
         Relationship.EmotionalBond.RUPTURE -> {
             stringResource(Res.string.add_relationship_rupture)
         }
@@ -774,13 +769,6 @@ private fun EmotionalBondSection(
             icon = Icons.Default.Gavel,
             isSelected = selectedBond == Relationship.EmotionalBond.DIRECT_CONFLICTUAL,
             onClick = { onBondSelected(Relationship.EmotionalBond.DIRECT_CONFLICTUAL) },
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        BondTypeItem(
-            label = stringResource(Res.string.add_relationship_hostile),
-            icon = Icons.Default.Gavel,
-            isSelected = selectedBond == Relationship.EmotionalBond.HOSTILE,
-            onClick = { onBondSelected(Relationship.EmotionalBond.HOSTILE) },
         )
         Spacer(modifier = Modifier.height(8.dp))
         BondTypeItem(

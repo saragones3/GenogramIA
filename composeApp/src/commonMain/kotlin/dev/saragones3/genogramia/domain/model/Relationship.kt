@@ -45,7 +45,6 @@ data class Relationship(
         CONFLICTUAL,
         FUSED_CONFLICTUAL,
         DIRECT_CONFLICTUAL,
-        HOSTILE,
         RUPTURE,
         ABUSE,
     }
