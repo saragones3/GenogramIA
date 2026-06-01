@@ -2,7 +2,6 @@ package dev.saragones3.genogramia.presentation.tree
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -62,12 +61,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.drawscope.DrawScope
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.layout
@@ -89,6 +86,13 @@ import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.presentation.components.DeletePersonDialog
 import dev.saragones3.genogramia.presentation.components.DeleteTreeDialog
+import dev.saragones3.genogramia.presentation.util.drawArrowHead
+import dev.saragones3.genogramia.presentation.util.drawDeathMark
+import dev.saragones3.genogramia.presentation.util.drawSexualOrientationMark
+import dev.saragones3.genogramia.presentation.util.drawSlashes
+import dev.saragones3.genogramia.presentation.util.drawZigzag
+import dev.saragones3.genogramia.presentation.util.femaleNode
+import dev.saragones3.genogramia.presentation.util.maleNode
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.add_relationship
@@ -589,6 +593,7 @@ private fun DrawScope.drawHorizontalRelationship(
                     Relationship.EmotionalBond.DIRECT_CONFLICTUAL,
                     Relationship.EmotionalBond.ABUSE,
                     Relationship.EmotionalBond.RUPTURE,
+                    Relationship.EmotionalBond.FOCUSED,
                     -> true
 
                     else -> false
@@ -659,47 +664,6 @@ private fun DrawScope.drawHorizontalRelationship(
     }
 }
 
-private fun DrawScope.drawSlashes(
-    center: Offset,
-    count: Int,
-    direction: Offset,
-    isReconciliation: Boolean = false,
-) {
-    val length = direction.getDistance()
-    if (length < 1f) return
-    val unit = direction / length
-    val normal = Offset(-unit.y, unit.x)
-    val slashLength = 12.dp.toPx()
-    val spacing = 6.dp.toPx()
-
-    // Slash direction: bottom-left to top-right (/) for a left-to-right line
-    val slashDir = (unit - normal)
-    val slashUnit = slashDir / slashDir.getDistance()
-
-    for (i in 0 until count) {
-        val offsetFactor = (i - (count - 1) / 2f)
-        val slashCenter = center + unit * (offsetFactor * spacing)
-        drawLine(
-            color = Color.Black,
-            start = slashCenter - slashUnit * (slashLength / 2),
-            end = slashCenter + slashUnit * (slashLength / 2),
-            strokeWidth = 2.dp.toPx(),
-        )
-    }
-
-    if (isReconciliation) {
-        // Draw an X (top-left to bottom-right slash \)
-        val crossSlashDir = (unit + normal)
-        val crossSlashUnit = crossSlashDir / crossSlashDir.getDistance()
-        drawLine(
-            color = Color.Black,
-            start = center - crossSlashUnit * (slashLength / 2),
-            end = center + crossSlashUnit * (slashLength / 2),
-            strokeWidth = 2.dp.toPx(),
-        )
-    }
-}
-
 private fun DrawScope.drawEmotionalBond(
     start: Offset,
     end: Offset,
@@ -734,24 +698,27 @@ private fun DrawScope.drawEmotionalBond(
         Relationship.EmotionalBond.CONFLICTUAL,
         Relationship.EmotionalBond.HOSTILE,
         -> {
-            drawZigzag(start, end)
+            drawZigzag(start, end, LINE_WIDTH.toPx())
         }
 
         Relationship.EmotionalBond.INTIMATE_CONFLICTUAL -> {
             val offset = normal * 4.dp.toPx()
             drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
             drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
-            drawZigzag(start, end)
+            drawZigzag(start, end, LINE_WIDTH.toPx())
         }
 
         Relationship.EmotionalBond.FUSED_CONFLICTUAL -> {
             val offset = normal * 5.dp.toPx()
             drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
             drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
-            drawZigzag(start, end)
+            drawZigzag(start, end, LINE_WIDTH.toPx())
         }
 
         Relationship.EmotionalBond.FOCUSED -> {
+            val arrowSize = 12.dp.toPx()
+            val lineEnd = end - unit * arrowSize
+            drawLine(LINE_COLOR, start, lineEnd, LINE_WIDTH.toPx())
             drawArrowHead(end, direction)
         }
 
@@ -778,78 +745,20 @@ private fun DrawScope.drawEmotionalBond(
         }
 
         Relationship.EmotionalBond.DIRECT_CONFLICTUAL -> {
-            drawZigzag(start, end)
-            val mid = (start + end) / 2f
-            val slashLength = 16.dp.toPx()
-            val slashDir = unit + normal
-            val slashUnit = slashDir / slashDir.getDistance()
-            drawLine(
-                color = Color.Black,
-                start = mid - slashUnit * (slashLength / 2),
-                end = mid + slashUnit * (slashLength / 2),
-                strokeWidth = 2.dp.toPx(),
-            )
+            val arrowSize = 12.dp.toPx()
+            val baseEnd = end - unit * arrowSize
+            drawZigzag(start, baseEnd, LINE_WIDTH.toPx())
+            drawArrowHead(end, direction)
         }
 
         Relationship.EmotionalBond.ABUSE -> {
-            drawZigzag(start, end)
+            val arrowSize = 12.dp.toPx()
+            val baseEnd = end - unit * arrowSize
+            drawZigzag(start, baseEnd, LINE_WIDTH.toPx())
             drawArrowHead(end, direction, fill = true)
         }
 
         else -> {}
-    }
-}
-
-private fun DrawScope.drawZigzag(
-    start: Offset,
-    end: Offset,
-) {
-    val direction = end - start
-    val length = direction.getDistance()
-    val unit = direction / length
-    val normal = Offset(-unit.y, unit.x)
-    val wavelength = 10.dp.toPx()
-    val amplitude = 6.dp.toPx()
-    val steps = (length / wavelength).toInt()
-
-    val path = Path()
-    path.moveTo(start.x, start.y)
-    for (i in 0..steps) {
-        val nextP = if (i < steps) start + direction * ((i + 0.5f) / steps) else null
-
-        if (nextP != null) {
-            val side = if (i % 2 == 0) 1f else -1f
-            val anchor = nextP + normal * (amplitude * side)
-            path.lineTo(anchor.x, anchor.y)
-        } else {
-            path.lineTo(end.x, end.y)
-        }
-    }
-    drawPath(path, Color.Black, style = Stroke(width = LINE_WIDTH.toPx()))
-}
-
-private fun DrawScope.drawArrowHead(
-    point: Offset,
-    direction: Offset,
-    fill: Boolean = false,
-) {
-    val unit = direction / direction.getDistance()
-    val normal = Offset(-unit.y, unit.x)
-    val size = 12.dp.toPx()
-    val p1 = point - unit * size + normal * (size / 2)
-    val p2 = point - unit * size - normal * (size / 2)
-
-    val path =
-        Path().apply {
-            moveTo(point.x, point.y)
-            lineTo(p1.x, p1.y)
-            lineTo(p2.x, p2.y)
-            close()
-        }
-    if (fill) {
-        drawPath(path, Color.Black)
-    } else {
-        drawPath(path, Color.Black, style = Stroke(width = 2.dp.toPx()))
     }
 }
 
@@ -1043,6 +952,13 @@ private fun PersonNodeView(
             else -> MaterialTheme.colorScheme.secondaryContainer
         }
 
+    val nodeModifier =
+        when (person.biologicalSex) {
+            Person.BiologicalSex.MALE -> Modifier.maleNode(NODE_SIZE, isSelected, person.isIndexPerson)
+            Person.BiologicalSex.FEMALE -> Modifier.femaleNode(NODE_SIZE, isSelected, person.isIndexPerson)
+            else -> Modifier
+        }
+
     var datesHeightPx by remember { mutableIntStateOf(0) }
 
     Column(
@@ -1094,12 +1010,7 @@ private fun PersonNodeView(
             shape = shape,
             backgroundColor = backgroundColor,
             size = with(density) { NODE_SIZE.toPx() },
-            modifier =
-                Modifier
-                    .nodeBorder(shape, isSelected, person.isIndexPerson)
-                    .background(backgroundColor, shape)
-                    .size(NODE_SIZE)
-                    .padding(4.dp),
+            modifier = nodeModifier,
         )
 
         Spacer(modifier = Modifier.height(4.dp))
@@ -1193,37 +1104,6 @@ private fun PersonShape(
             )
         }
     }
-}
-
-private fun DrawScope.drawDeathMark() {
-    drawLine(
-        color = Color.Black,
-        start = Offset.Zero,
-        end = Offset(size.width, size.height),
-        strokeWidth = 4f,
-    )
-    drawLine(
-        color = Color.Black,
-        start = Offset(size.width, 0f),
-        end = Offset(0f, size.height),
-        strokeWidth = 4f,
-    )
-}
-
-private fun DrawScope.drawSexualOrientationMark(nodeSize: Float) {
-    val trianglePath =
-        Path().apply {
-            val triangleSize = nodeSize * 0.7f
-            moveTo(center.x - triangleSize / 2, center.y - triangleSize / 3)
-            lineTo(center.x + triangleSize / 2, center.y - triangleSize / 3)
-            lineTo(center.x, center.y + triangleSize * 2 / 3)
-            close()
-        }
-    drawPath(
-        path = trianglePath,
-        color = Color.Black,
-        style = Stroke(width = 2f),
-    )
 }
 
 @Composable
@@ -1327,39 +1207,6 @@ private fun CanvasControls(
         }
     }
 }
-
-@Composable
-private fun Modifier.nodeBorder(
-    shape: Shape,
-    isSelected: Boolean,
-    isIndex: Boolean,
-) = this
-    .then(
-        if (isSelected) {
-            Modifier.border(
-                width = 2.dp,
-                color = MaterialTheme.colorScheme.primary,
-                shape = shape,
-            )
-        } else {
-            Modifier
-        },
-    ).padding(4.dp)
-    .then(
-        if (isIndex) {
-            Modifier.border(shape).padding(4.dp)
-        } else {
-            Modifier
-        },
-    ).border(shape)
-
-@Composable
-private fun Modifier.border(shape: Shape) =
-    border(
-        width = 1.dp,
-        color = Color.Black,
-        shape = shape,
-    )
 
 private val NODE_SIZE = 64.dp
 private val LINE_COLOR = Color(0xFFBDBDBD)
@@ -1534,6 +1381,193 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                     ),
                 offset = Offset(-600f, -300f),
                 scale = 3f,
+            ),
+            TreeState(
+                tree =
+                    seed.copy(
+                        centralPerson =
+                            PersonNodeUi(
+                                id = "1780309007284",
+                                firstName = "Marriage",
+                                lastName = "Central",
+                                biologicalSex = Person.BiologicalSex.MALE,
+                                sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                position = Offset(-2.8f, -239.8f),
+                            ),
+                        persons =
+                            listOf(
+                                PersonNodeUi(
+                                    id = "1780309256722",
+                                    firstName = "Positive",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(129.7f, -623.3f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309283147",
+                                    firstName = "Distant",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(258.6f, -505.0f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309310807",
+                                    firstName = "Intimate",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(364.3f, -367.1f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309340326",
+                                    firstName = "Intimate Conflictual",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(370.6f, -186.2f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309355629",
+                                    firstName = "Focused",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(325.3f, 45.0f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309369898",
+                                    firstName = "Fused",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(154.9f, 176.0f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309386727",
+                                    firstName = "Conflictual",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(-255.5f, -637.9f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309435942",
+                                    firstName = "Fused Conflictual",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(-394.0f, -454.8f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309454202",
+                                    firstName = "Direct Conflictual",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(-417.8f, -231.1f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309480099",
+                                    firstName = "Rupture",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(-399.0f, -16.5f),
+                                ),
+                                PersonNodeUi(
+                                    id = "1780309509657",
+                                    firstName = "Abuse",
+                                    lastName = ".",
+                                    biologicalSex = Person.BiologicalSex.FEMALE,
+                                    sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
+                                    position = Offset(-271.6f, 185.4f),
+                                ),
+                            ),
+                        relationships =
+                            listOf(
+                                RelationshipUi(
+                                    id = "1780309007284_1780309256722_1780309289472",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309256722",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.POSITIVE,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309007284_1780309283147_1780309293098",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309283147",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.DISTANT,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309355629_1780309007284_1780309361663",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309355629",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.FOCUSED,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309007284_1780309369898_1780309377331",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309369898",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.FUSED,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309007284_1780309340326_1780309345034",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309340326",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.INTIMATE_CONFLICTUAL,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309007284_1780309310807_1780309317123",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309310807",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.INTIMATE,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309007284_1780309386727_1780309392800",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309386727",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.CONFLICTUAL,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309007284_1780309435942_1780309440029",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309435942",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.FUSED_CONFLICTUAL,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309007284_1780309454202_1780309458472",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309454202",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.DIRECT_CONFLICTUAL,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309007284_1780309480099_1780309485159",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309480099",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.RUPTURE,
+                                ),
+                                RelationshipUi(
+                                    id = "1780309007284_1780309509657_1780309513874",
+                                    personId1 = "1780309007284",
+                                    personId2 = "1780309509657",
+                                    type = Relationship.RelationshipType.MARRIAGE,
+                                    emotionalBond = Relationship.EmotionalBond.ABUSE,
+                                ),
+                            ),
+                    ),
+                offset = Offset(570f, 1000f),
+                scale = 0.45f,
             ),
             TreeState(isLoading = true),
         )
