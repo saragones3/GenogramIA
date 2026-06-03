@@ -69,7 +69,7 @@ fun DrawScope.drawStructuralRelationshipLine(
                 count = 1,
                 direction = direction,
                 color = color,
-                strokeWidth = strokeWidth
+                strokeWidth = strokeWidth,
             )
         }
 
@@ -79,7 +79,7 @@ fun DrawScope.drawStructuralRelationshipLine(
                 count = 2,
                 direction = direction,
                 color = color,
-                strokeWidth = strokeWidth
+                strokeWidth = strokeWidth,
             )
         }
 
