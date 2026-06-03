@@ -36,11 +36,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.saragones3.genogramia.presentation.util.drawArrowHead
+import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.presentation.util.drawDeathMark
+import dev.saragones3.genogramia.presentation.util.drawEmotionalBondLine
 import dev.saragones3.genogramia.presentation.util.drawSexualOrientationMark
-import dev.saragones3.genogramia.presentation.util.drawSlashes
-import dev.saragones3.genogramia.presentation.util.drawZigzag
+import dev.saragones3.genogramia.presentation.util.drawStructuralRelationshipLine
 import dev.saragones3.genogramia.presentation.util.femaleNode
 import dev.saragones3.genogramia.presentation.util.maleNode
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
@@ -364,8 +364,14 @@ private fun MarriageItem() {
     RelationshipItem(
         title = stringResource(Res.string.relationship_marriage),
         subtitle = stringResource(Res.string.legends_rel_marriage_desc),
-    ) { start, end ->
-        drawLineHelper(startX = start, endX = end)
+    ) { p1, p2, nodeSize ->
+        drawStructuralRelationshipLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            type = Relationship.RelationshipType.MARRIAGE,
+            color = Color.Gray,
+        )
     }
 }
 
@@ -374,11 +380,13 @@ private fun CohabitationItem() {
     RelationshipItem(
         title = stringResource(Res.string.relationship_cohabitation),
         subtitle = stringResource(Res.string.legends_rel_cohabitation_desc),
-    ) { start, end ->
-        drawLineHelper(
-            startX = start,
-            endX = end,
-            isDotted = true,
+    ) { p1, p2, nodeSize ->
+        drawStructuralRelationshipLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            type = Relationship.RelationshipType.COHABITATION,
+            color = Color.Gray,
         )
     }
 }
@@ -388,16 +396,13 @@ private fun SeparationItem() {
     RelationshipItem(
         title = stringResource(Res.string.relationship_separation),
         subtitle = stringResource(Res.string.legends_rel_separation_desc),
-    ) { start, end ->
-        drawLineHelper(
-            startX = start,
-            endX = end,
-            isDashed = true,
-        )
-        drawSlashes(
-            center = Offset(x = (start + end) / 2, y = size.height / 2),
-            count = 1,
-            direction = Offset(1f, 0f),
+    ) { p1, p2, nodeSize ->
+        drawStructuralRelationshipLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            type = Relationship.RelationshipType.SEPARATION,
+            color = Color.Gray,
         )
     }
 }
@@ -407,12 +412,13 @@ private fun DivorceItem() {
     RelationshipItem(
         title = stringResource(Res.string.relationship_divorce),
         subtitle = stringResource(Res.string.legends_rel_divorce_desc),
-    ) { start, end ->
-        drawLineHelper(startX = start, endX = end)
-        drawSlashes(
-            center = Offset(x = (start + end) / 2, y = size.height / 2),
-            count = 2,
-            direction = Offset(1f, 0f),
+    ) { p1, p2, nodeSize ->
+        drawStructuralRelationshipLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            type = Relationship.RelationshipType.DIVORCE,
+            color = Color.Gray,
         )
     }
 }
@@ -422,13 +428,13 @@ private fun ReconciliationItem() {
     RelationshipItem(
         title = stringResource(Res.string.relationship_reconciliation),
         subtitle = stringResource(Res.string.legends_rel_reconciliation_desc),
-    ) { start, end ->
-        drawLineHelper(startX = start, endX = end)
-        drawSlashes(
-            center = Offset((start + end) / 2, size.height / 2),
-            count = 2,
-            direction = Offset(1f, 0f),
-            isReconciliation = true,
+    ) { p1, p2, nodeSize ->
+        drawStructuralRelationshipLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            type = Relationship.RelationshipType.RECONCILIATION,
+            color = Color.Gray,
         )
     }
 }
@@ -530,7 +536,7 @@ private fun IdenticalTwinsItem() {
 private fun RelationshipItem(
     title: String,
     subtitle: String,
-    drawAction: DrawScope.(Float, Float) -> Unit,
+    drawAction: DrawScope.(Offset, Offset, Float) -> Unit,
 ) {
     Card(
         colors = CardDefaults.cardColors(containerColor = Color.White),
@@ -542,25 +548,27 @@ private fun RelationshipItem(
             modifier = Modifier.padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Canvas(modifier = Modifier.width(100.dp).height(24.dp)) {
+            Canvas(modifier = Modifier.width(100.dp).height(64.dp)) {
                 val nodeSize = 16.dp.toPx()
                 val strokeWidth = 1.5.dp.toPx()
-                val squareX = 0f
-                val circleX = size.width - nodeSize
+                // Shift everything up a bit to make room for the bracket
+                val centerY = size.height / 2 - 8.dp.toPx()
+                val squareCenter = Offset(nodeSize / 2, centerY)
+                val circleCenter = Offset(size.width - nodeSize / 2, centerY)
 
                 drawRect(
                     color = Color(0xFF136299),
-                    topLeft = Offset(squareX, (size.height - nodeSize) / 2),
+                    topLeft = Offset(squareCenter.x - nodeSize / 2, squareCenter.y - nodeSize / 2),
                     size = Size(nodeSize, nodeSize),
                     style = Stroke(width = strokeWidth),
                 )
                 drawCircle(
                     color = Color(0xFF884364),
-                    center = Offset(circleX + nodeSize / 2, size.height / 2),
+                    center = circleCenter,
                     radius = nodeSize / 2,
                     style = Stroke(width = strokeWidth),
                 )
-                drawAction(nodeSize, circleX)
+                drawAction(squareCenter, circleCenter, nodeSize)
             }
             Spacer(modifier = Modifier.width(16.dp))
             Column {
@@ -677,235 +685,142 @@ private fun EmotionalBondsSection() {
 
 @Composable
 private fun PositiveItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_positive)) {
-        drawLine(
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_positive)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.POSITIVE,
             color = Color.White,
-            start = Offset(0f, size.height / 2),
-            end = Offset(size.width, size.height / 2),
-            strokeWidth = 2.dp.toPx(),
         )
     }
 }
 
 @Composable
 private fun DistantItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_distant)) {
-        drawLine(
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_distant)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.DISTANT,
             color = Color.White,
-            start = Offset(0f, size.height / 2),
-            end = Offset(size.width, size.height / 2),
-            strokeWidth = 2.dp.toPx(),
-            pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f),
         )
     }
 }
 
 @Composable
 private fun IntimateItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_intimate)) {
-        val y = size.height / 2
-        drawLine(
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_intimate)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.INTIMATE,
             color = Color.White,
-            start = Offset(0f, y - 2.dp.toPx()),
-            end = Offset(size.width, y - 2.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawLine(
-            color = Color.White,
-            start = Offset(0f, y + 2.dp.toPx()),
-            end = Offset(size.width, y + 2.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
         )
     }
 }
 
 @Composable
 private fun IntimateConflictualItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_intimate_conflictual)) {
-        val y = size.height / 2
-        drawLine(
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_intimate_conflictual)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.INTIMATE_CONFLICTUAL,
             color = Color.White,
-            start = Offset(0f, y - 4.dp.toPx()),
-            end = Offset(size.width, y - 4.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawLine(
-            color = Color.White,
-            start = Offset(0f, y + 4.dp.toPx()),
-            end = Offset(size.width, y + 4.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawZigzag(
-            start = Offset(0f, y),
-            end = Offset(size.width, y),
-            color = Color.White,
-            lineWidth = 2.dp.toPx(),
         )
     }
 }
 
 @Composable
 private fun FocusedItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_focused)) {
-        val y = size.height / 2
-        val arrowSize = 12.dp.toPx()
-        val unit = Offset(1f, 0f)
-        drawLine(
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_focused)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.FOCUSED,
             color = Color.White,
-            start = Offset(0f, y),
-            end = Offset(size.width - arrowSize, y),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawArrowHead(
-            point = Offset(size.width, y),
-            direction = unit,
-            color = Color.White,
-            strokeWidth = 2.dp.toPx(),
         )
     }
 }
 
 @Composable
 private fun FusedItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_fused)) {
-        val y = size.height / 2
-        drawLine(
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_fused)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.FUSED,
             color = Color.White,
-            start = Offset(0f, y - 4.dp.toPx()),
-            end = Offset(size.width, y - 4.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawLine(
-            color = Color.White,
-            start = Offset(0f, y),
-            end = Offset(size.width, y),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawLine(
-            color = Color.White,
-            start = Offset(0f, y + 4.dp.toPx()),
-            end = Offset(size.width, y + 4.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
         )
     }
 }
 
 @Composable
 private fun ConflictualItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_conflictual)) {
-        drawZigzag(
-            start = Offset(0f, size.height / 2),
-            end = Offset(size.width, size.height / 2),
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_conflictual)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.CONFLICTUAL,
             color = Color.White,
-            lineWidth = 2.dp.toPx(),
         )
     }
 }
 
 @Composable
 private fun FusedConflictualItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_fused_conflictual)) {
-        val y = size.height / 2
-        drawLine(
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_fused_conflictual)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.FUSED_CONFLICTUAL,
             color = Color.White,
-            start = Offset(0f, y - 5.dp.toPx()),
-            end = Offset(size.width, y - 5.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawLine(
-            color = Color.White,
-            start = Offset(0f, y),
-            end = Offset(size.width, y),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawLine(
-            color = Color.White,
-            start = Offset(0f, y + 5.dp.toPx()),
-            end = Offset(size.width, y + 5.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawZigzag(
-            start = Offset(0f, y),
-            end = Offset(size.width, y),
-            color = Color.White,
-            lineWidth = 2.dp.toPx(),
         )
     }
 }
 
 @Composable
 private fun DirectConflictualItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_direct_conflictual)) {
-        val y = size.height / 2
-        val arrowSize = 12.dp.toPx()
-        val start = Offset(0f, y)
-        val end = Offset(size.width, y)
-        val unit = Offset(1f, 0f)
-        val arrowBase = end - unit * arrowSize
-        drawZigzag(
-            start = start,
-            end = arrowBase,
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_direct_conflictual)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.DIRECT_CONFLICTUAL,
             color = Color.White,
-            lineWidth = 2.dp.toPx(),
-        )
-        drawArrowHead(
-            point = end,
-            direction = unit,
-            color = Color.White,
-            strokeWidth = 2.dp.toPx(),
         )
     }
 }
 
 @Composable
 private fun RuptureItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_rupture)) {
-        val y = size.height / 2
-        val mid = size.width / 2
-        val gap = 12.dp.toPx()
-        drawLine(
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_rupture)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.RUPTURE,
             color = Color.White,
-            start = Offset(0f, y),
-            end = Offset(mid - gap / 2, y),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawLine(
-            color = Color.White,
-            start = Offset(mid + gap / 2, y),
-            end = Offset(size.width, y),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawLine(
-            color = Color.White,
-            start = Offset(mid - gap / 2, y - 8.dp.toPx()),
-            end = Offset(mid - gap / 2, y + 8.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
-        )
-        drawLine(
-            color = Color.White,
-            start = Offset(mid + gap / 2, y - 8.dp.toPx()),
-            end = Offset(mid + gap / 2, y + 8.dp.toPx()),
-            strokeWidth = 2.dp.toPx(),
         )
     }
 }
 
 @Composable
 private fun AbuseItem() {
-    EmotionalBondItem(stringResource(Res.string.emotional_bond_abuse)) {
-        val y = size.height / 2
-        val arrowSize = 12.dp.toPx()
-        val unit = Offset(1f, 0f)
-        drawZigzag(
-            start = Offset(0f, y),
-            end = Offset(size.width - arrowSize, y),
-            color = Color.White,
-            lineWidth = 2.dp.toPx(),
-        )
-        drawArrowHead(
-            point = Offset(size.width, y),
-            direction = unit,
-            fill = true,
+    EmotionalBondItem(stringResource(Res.string.emotional_bond_abuse)) { p1, p2, nodeSize ->
+        drawEmotionalBondLine(
+            p1Center = p1,
+            p2Center = p2,
+            nodeSize = nodeSize,
+            bond = Relationship.EmotionalBond.ABUSE,
             color = Color.White,
         )
     }
@@ -914,7 +829,7 @@ private fun AbuseItem() {
 @Composable
 private fun EmotionalBondItem(
     label: String,
-    drawAction: DrawScope.() -> Unit,
+    drawAction: DrawScope.(Offset, Offset, Float) -> Unit,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -929,34 +844,27 @@ private fun EmotionalBondItem(
             modifier = Modifier.weight(1f),
         )
         Spacer(Modifier.width(8.dp))
-        Canvas(modifier = Modifier.width(100.dp).height(24.dp)) {
-            drawAction()
+        Canvas(modifier = Modifier.width(100.dp).height(48.dp)) {
+            val nodeSize = 24.dp.toPx()
+            val strokeWidth = 1.5.dp.toPx()
+            val squareCenter = Offset(nodeSize / 2, size.height / 2)
+            val circleCenter = Offset(size.width - nodeSize / 2, size.height / 2)
+
+            drawRect(
+                color = Color.White,
+                topLeft = Offset(squareCenter.x - nodeSize / 2, squareCenter.y - nodeSize / 2),
+                size = Size(nodeSize, nodeSize),
+                style = Stroke(width = strokeWidth),
+            )
+            drawCircle(
+                color = Color.White,
+                center = circleCenter,
+                radius = nodeSize / 2,
+                style = Stroke(width = strokeWidth),
+            )
+            drawAction(squareCenter, circleCenter, nodeSize)
         }
     }
-}
-
-private fun DrawScope.drawLineHelper(
-    startX: Float,
-    endX: Float,
-    isDashed: Boolean = false,
-    isDotted: Boolean = false,
-) {
-    val y = size.height / 2
-    val strokeWidth = 1.5.dp.toPx()
-    val pathEffect =
-        when {
-            isDashed -> PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f)
-            isDotted -> PathEffect.dashPathEffect(floatArrayOf(3f, 6f), 0f)
-            else -> null
-        }
-
-    drawLine(
-        color = Color.Gray,
-        start = Offset(startX, y),
-        end = Offset(endX, y),
-        strokeWidth = strokeWidth,
-        pathEffect = pathEffect,
-    )
 }
 
 @Preview

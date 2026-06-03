@@ -12,16 +12,230 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.text.TextMeasurer
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.drawText
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import dev.saragones3.genogramia.domain.model.Relationship
+
+fun DrawScope.drawStructuralRelationshipLine(
+    p1Center: Offset,
+    p2Center: Offset,
+    nodeSize: Float,
+    type: Relationship.RelationshipType,
+    dateText: String = "",
+    textMeasurer: TextMeasurer? = null,
+    labelStyle: TextStyle? = null,
+    color: Color = Color(0xFFBDBDBD),
+    strokeWidth: Float = 1.5.dp.toPx(),
+) {
+    val verticalGap = 24.dp.toPx()
+    val p1Bottom = Offset(p1Center.x, p1Center.y + (nodeSize / 2))
+    val p2Bottom = Offset(p2Center.x, p2Center.y + (nodeSize / 2))
+
+    val start = Offset(p1Bottom.x, p1Bottom.y + verticalGap)
+    val end = Offset(p2Bottom.x, p2Bottom.y + verticalGap)
+
+    // Draw vertical stems from nodes
+    drawLine(color, p1Bottom, start, strokeWidth)
+    drawLine(color, p2Bottom, end, strokeWidth)
+
+    val pathEffect =
+        if (type == Relationship.RelationshipType.COHABITATION) {
+            PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f)
+        } else {
+            null
+        }
+
+    drawLine(
+        color = color,
+        start = start,
+        end = end,
+        strokeWidth = strokeWidth,
+        pathEffect = pathEffect,
+    )
+
+    // Draw structural slashes
+    val direction = end - start
+    when (type) {
+        Relationship.RelationshipType.SEPARATION -> {
+            drawSlashes(
+                center = (start + end) / 2f,
+                count = 1,
+                direction = direction,
+                color = color,
+                strokeWidth = strokeWidth
+            )
+        }
+
+        Relationship.RelationshipType.DIVORCE -> {
+            drawSlashes(
+                center = (start + end) / 2f,
+                count = 2,
+                direction = direction,
+                color = color,
+                strokeWidth = strokeWidth
+            )
+        }
+
+        Relationship.RelationshipType.RECONCILIATION -> {
+            drawSlashes(
+                center = (start + end) / 2f,
+                count = 2,
+                direction = direction,
+                isReconciliation = true,
+                color = color,
+                strokeWidth = strokeWidth,
+            )
+        }
+
+        else -> {}
+    }
+
+    // Draw date text
+    if (dateText.isNotEmpty() && textMeasurer != null && labelStyle != null) {
+        val textLayoutResult = textMeasurer.measure(dateText, labelStyle)
+        val textWidth = textLayoutResult.size.width
+        val midPoint = (start + end) / 2f
+
+        drawText(
+            textLayoutResult,
+            topLeft =
+                Offset(
+                    midPoint.x - textWidth / 2f,
+                    midPoint.y + 4.dp.toPx(), // Position text below the horizontal line
+                ),
+        )
+    }
+}
+
+fun DrawScope.drawEmotionalBondLine(
+    p1Center: Offset,
+    p2Center: Offset,
+    nodeSize: Float,
+    bond: Relationship.EmotionalBond,
+    color: Color = Color(0xFFBDBDBD),
+    strokeWidth: Float = 1.5.dp.toPx(),
+) {
+    val p1IsLeft = p1Center.x < p2Center.x
+    val start =
+        Offset(
+            if (p1IsLeft) p1Center.x + nodeSize / 2 else p1Center.x - nodeSize / 2,
+            p1Center.y,
+        )
+    val end =
+        Offset(
+            if (p1IsLeft) p2Center.x - nodeSize / 2 else p2Center.x + nodeSize / 2,
+            p2Center.y,
+        )
+
+    val direction = end - start
+    val length = direction.getDistance()
+    if (length < 1f) return
+    val unit = direction / length
+    val normal = Offset(-unit.y, unit.x)
+
+    when (bond) {
+        Relationship.EmotionalBond.POSITIVE -> {
+            drawLine(color, start, end, strokeWidth)
+        }
+
+        Relationship.EmotionalBond.DISTANT -> {
+            drawLine(
+                color = color,
+                start = start,
+                end = end,
+                strokeWidth = strokeWidth,
+                pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f),
+            )
+        }
+
+        Relationship.EmotionalBond.INTIMATE -> {
+            val offset = normal * 8.dp.toPx()
+            drawLine(color, start + offset, end + offset, strokeWidth)
+            drawLine(color, start - offset, end - offset, strokeWidth)
+        }
+
+        Relationship.EmotionalBond.FUSED -> {
+            val offset = normal * 8.dp.toPx()
+            drawLine(color, start + offset, end + offset, strokeWidth)
+            drawLine(color, start, end, strokeWidth)
+            drawLine(color, start - offset, end - offset, strokeWidth)
+        }
+
+        Relationship.EmotionalBond.CONFLICTUAL -> {
+            drawZigzag(start, end, strokeWidth, color)
+        }
+
+        Relationship.EmotionalBond.INTIMATE_CONFLICTUAL -> {
+            val offset = normal * 8.dp.toPx()
+            drawLine(color, start + offset, end + offset, strokeWidth)
+            drawLine(color, start - offset, end - offset, strokeWidth)
+            drawZigzag(start, end, strokeWidth, color)
+        }
+
+        Relationship.EmotionalBond.FUSED_CONFLICTUAL -> {
+            val offset = normal * 8.dp.toPx()
+            drawLine(color, start + offset, end + offset, strokeWidth)
+            drawLine(color, start, end, strokeWidth)
+            drawLine(color, start - offset, end - offset, strokeWidth)
+            drawZigzag(start, end, strokeWidth, color)
+        }
+
+        Relationship.EmotionalBond.FOCUSED -> {
+            val arrowSize = 12.dp.toPx()
+            val lineEnd = end - unit * arrowSize
+            drawLine(color, start, lineEnd, strokeWidth)
+            drawArrowHead(end, direction, color = color, strokeWidth = strokeWidth)
+        }
+
+        Relationship.EmotionalBond.RUPTURE -> {
+            val mid = (start + end) / 2f
+            val gap = 15.dp.toPx()
+            // Draw the two segments of the line
+            drawLine(color, start, mid - unit * (gap / 2), strokeWidth)
+            drawLine(color, mid + unit * (gap / 2), end, strokeWidth)
+
+            // We draw two perpendicular bars to indicate the rupture
+            drawLine(
+                color = color,
+                start = mid - unit * (gap / 2) + normal * 10.dp.toPx(),
+                end = mid - unit * (gap / 2) - normal * 10.dp.toPx(),
+                strokeWidth = 2.dp.toPx(),
+            )
+            drawLine(
+                color = color,
+                start = mid + unit * (gap / 2) + normal * 10.dp.toPx(),
+                end = mid + unit * (gap / 2) - normal * 10.dp.toPx(),
+                strokeWidth = 2.dp.toPx(),
+            )
+        }
+
+        Relationship.EmotionalBond.DIRECT_CONFLICTUAL -> {
+            val arrowSize = 12.dp.toPx()
+            val baseEnd = end - unit * arrowSize
+            drawZigzag(start, baseEnd, strokeWidth, color)
+            drawArrowHead(end, direction, color = color, strokeWidth = strokeWidth)
+        }
+
+        Relationship.EmotionalBond.ABUSE -> {
+            val arrowSize = 12.dp.toPx()
+            val baseEnd = end - unit * arrowSize
+            drawZigzag(start, baseEnd, strokeWidth, color)
+            drawArrowHead(end, direction, fill = true, color = color)
+        }
+    }
+}
 
 fun DrawScope.drawZigzag(
     start: Offset,
     end: Offset,
-    lineWidth: Float = 1.5f,
+    lineWidth: Float = 1.5.dp.toPx(),
     color: Color = Color.Black,
 ) {
     val direction = end - start
@@ -55,7 +269,7 @@ fun DrawScope.drawArrowHead(
     size: Float = 12.dp.toPx(),
     fill: Boolean = false,
     color: Color = Color.Black,
-    strokeWidth: Float = 2f,
+    strokeWidth: Float = 2.dp.toPx(),
 ) {
     val dist = direction.getDistance()
     if (dist < 1f) return
