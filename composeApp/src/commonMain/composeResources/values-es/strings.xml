@@ -1,7 +1,31 @@
 <resources>
     <!-- App General -->
     <string name="app_name">GenogramIA</string>
-    
+
+    <!-- Relationships -->
+    <string name="relationship_marriage">Matrimonio</string>
+    <string name="relationship_cohabitation">Convivencia</string>
+    <string name="relationship_separation">Separación</string>
+    <string name="relationship_divorce">Divorcio</string>
+    <string name="relationship_reconciliation">Reconciliación</string>
+    <string name="relationship_offspring">Hijo/a biológico/a</string>
+    <string name="relationship_adoption">Adopción</string>
+    <string name="relationship_fraternal_twin">Mellizos</string>
+    <string name="relationship_identical_twin">Gemelos</string>
+
+    <!-- Emotional bonds -->
+    <string name="emotional_bond_positive">Positiva</string>
+    <string name="emotional_bond_distant">Distante</string>
+    <string name="emotional_bond_intimate">Íntima</string>
+    <string name="emotional_bond_intimate_conflictual">Íntima Conflictiva</string>
+    <string name="emotional_bond_focused">Focalizada</string>
+    <string name="emotional_bond_fused">Fusionada</string>
+    <string name="emotional_bond_conflictual">Conflictiva</string>
+    <string name="emotional_bond_fused_conflictual">Fusionada Conflictiva</string>
+    <string name="emotional_bond_direct_conflictual">Conflictiva Directa</string>
+    <string name="emotional_bond_rupture">Ruptura</string>
+    <string name="emotional_bond_abuse">Abuso</string>
+
     <!-- Navigation -->
     <string name="nav_trees">ÁRBOLES</string>
     <string name="nav_legends">LEYENDAS</string>
@@ -78,10 +102,29 @@
     <string name="error_tree_not_found">Árbol no encontrado o acceso denegado</string>
 
     <!-- Legends -->
-    <string name="legends_title">Leyendas</string>
-    <string name="legends_screen_placeholder">Pantalla de leyendas</string>
-    <string name="legends_description">Aquí verás el vocabulario visual del genograma.</string>
-    
+    <string name="legends_vocabulary_title">El Vocabulario Visual</string>
+    <string name="legends_vocabulary_description">Los genogramas utilizan un conjunto estandarizado de formas geométricas y líneas de conexión para representar a las personas y sus relaciones biológicas o emocionales a través de las generaciones.</string>
+    <string name="legends_section_basic">SÍMBOLOS BÁSICOS</string>
+    <string name="legends_section_relationships">RELACIONES</string>
+    <string name="legends_section_emotional">VÍNCULOS EMOCIONALES</string>
+
+    <string name="legends_symbol_male">VARÓN</string>
+    <string name="legends_symbol_female">MUJER</string>
+    <string name="legends_symbol_patient">PACIENTE</string>
+    <string name="legends_symbol_alive">VIVO</string>
+    <string name="legends_symbol_deceased">FALLECIDO</string>
+    <string name="legends_symbol_orientation">LGBTIQ+</string>
+
+    <string name="legends_rel_marriage_desc">Unión formal</string>
+    <string name="legends_rel_separation_desc">Viviendo separados</string>
+    <string name="legends_rel_divorce_desc">Disolución legal</string>
+    <string name="legends_rel_cohabitation_desc">Unión informal</string>
+    <string name="legends_rel_reconciliation_desc">Vuelven juntos tras el divorcio</string>
+    <string name="legends_rel_offspring_desc">Descendiente genético</string>
+    <string name="legends_rel_adoption_desc">Descendiente legal no genético</string>
+    <string name="legends_rel_fraternal_twins_desc">Hermanos dizigóticos</string>
+    <string name="legends_rel_identical_twins_desc">Hermanos monozigóticos</string>
+
     <!-- Settings -->
     <string name="settings_title">Ajustes</string>
     <string name="settings_profile_section">Perfil</string>
@@ -152,7 +195,6 @@
     <string name="new_tree_name">Linaje %1$s</string>
 
     <!-- Canvas -->
-    <string name="canvas_title">Lienzo del Genograma</string>
     <string name="canvas_zoom_in">Aumentar Zoom</string>
     <string name="canvas_zoom_out">Alejar Zoom</string>
     <string name="canvas_reset">Restablecer Vista</string>
@@ -170,28 +212,7 @@
     <string name="add_relationship_title">Añadir Relación</string>
     <string name="add_relationship_manager">GESTOR DE RELACIONES</string>
     <string name="add_relationship_bond_type">TIPO DE VÍNCULO</string>
-    <string name="add_relationship_marriage">Matrimonio</string>
-    <string name="add_relationship_cohabitation">Convivencia</string>
-    <string name="add_relationship_separation">Separación</string>
-    <string name="add_relationship_divorce">Divorcio</string>
-    <string name="add_relationship_reconciliation">Reconciliación</string>
-    <string name="add_relationship_offspring">Hijo/a biológico/a</string>
-    <string name="add_relationship_adoption">Adopción / Legal</string>
-    <string name="add_relationship_fraternal_twin">Mellizos</string>
-    <string name="add_relationship_identical_twin">Gemelos</string>
     <string name="add_relationship_emotional_bond">VÍNCULO EMOCIONAL</string>
-    <string name="add_relationship_positive">Positiva</string>
-    <string name="add_relationship_distant">Distante</string>
-    <string name="add_relationship_close">Íntima</string>
-    <string name="add_relationship_intimate_conflictual">Íntima Conflictiva</string>
-    <string name="add_relationship_focused">Focalizada</string>
-    <string name="add_relationship_fused">Fusionada</string>
-    <string name="add_relationship_conflictual">Conflictiva</string>
-    <string name="add_relationship_fused_conflictual">Fusionada Conflictiva</string>
-    <string name="add_relationship_direct_conflictual">Conflictiva Directa</string>
-    <string name="add_relationship_hostile">Hostil</string>
-    <string name="add_relationship_rupture">Ruptura</string>
-    <string name="add_relationship_abuse">Abuso</string>
     <string name="add_relationship_effective_date">FECHA DE VIGENCIA</string>
     <string name="add_relationship_medical_conflict">CONFLICTO MÉDICO</string>
     <string name="add_relationship_consanguinity_risk">Riesgo de Consanguinidad</string>
