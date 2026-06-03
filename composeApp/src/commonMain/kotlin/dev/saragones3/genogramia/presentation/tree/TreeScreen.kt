@@ -72,7 +72,6 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
@@ -86,11 +85,10 @@ import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.presentation.components.DeletePersonDialog
 import dev.saragones3.genogramia.presentation.components.DeleteTreeDialog
-import dev.saragones3.genogramia.presentation.util.drawArrowHead
 import dev.saragones3.genogramia.presentation.util.drawDeathMark
+import dev.saragones3.genogramia.presentation.util.drawEmotionalBondLine
 import dev.saragones3.genogramia.presentation.util.drawSexualOrientationMark
-import dev.saragones3.genogramia.presentation.util.drawSlashes
-import dev.saragones3.genogramia.presentation.util.drawZigzag
+import dev.saragones3.genogramia.presentation.util.drawStructuralRelationshipLine
 import dev.saragones3.genogramia.presentation.util.femaleNode
 import dev.saragones3.genogramia.presentation.util.maleNode
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
@@ -411,7 +409,7 @@ private fun GenogramCanvas(
                                     val centerX = it.position.x * density.density
                                     val centerY = it.position.y * density.density
                                     val personTopLeft =
-                                        Offset(centerX - nodeSize / 2, centerY - nodeSize / 2)
+                                        Offset(centerX - (nodeSize / 2), centerY - (nodeSize / 2))
                                     tapOffset.x >= (personTopLeft.x * scale + offset.x) &&
                                         tapOffset.x <= ((personTopLeft.x + nodeSize) * scale + offset.x) &&
                                         tapOffset.y >= (personTopLeft.y * scale + offset.y) &&
@@ -517,7 +515,7 @@ private fun GridBackground(modifier: Modifier = Modifier) {
         val start = -size / 2
 
         for (i in 0..gridCount) {
-            val pos = start + i * gridStep
+            val pos = start + (i * gridStep)
             drawLine(color, Offset(pos, start), Offset(pos, start + size), 1f)
             drawLine(color, Offset(start, pos), Offset(start + size, pos), 1f)
         }
@@ -563,199 +561,27 @@ private fun DrawScope.drawHorizontalRelationship(
             val p1Center = p1.position * density
             val p2Center = p2.position * density
 
-            val p1IsLeft = p1Center.x < p2Center.x
-            val start =
-                Offset(
-                    if (p1IsLeft) p1Center.x + nodeSize / 2 else p1Center.x - nodeSize / 2,
-                    p1Center.y,
-                )
-            val end =
-                Offset(
-                    if (p1IsLeft) p2Center.x - nodeSize / 2 else p2Center.x + nodeSize / 2,
-                    p2Center.y,
-                )
-
-            val pathEffect =
-                if (relationship.type == Relationship.RelationshipType.COHABITATION ||
-                    relationship.emotionalBond == Relationship.EmotionalBond.DISTANT
-                ) {
-                    PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f)
-                } else {
-                    null
-                }
-
-            val replacesBaseLine =
-                when (relationship.emotionalBond) {
-                    Relationship.EmotionalBond.CONFLICTUAL,
-                    Relationship.EmotionalBond.INTIMATE,
-                    Relationship.EmotionalBond.INTIMATE_CONFLICTUAL,
-                    Relationship.EmotionalBond.DIRECT_CONFLICTUAL,
-                    Relationship.EmotionalBond.ABUSE,
-                    Relationship.EmotionalBond.RUPTURE,
-                    Relationship.EmotionalBond.FOCUSED,
-                    -> true
-
-                    else -> false
-                }
-
-            if (!replacesBaseLine) {
-                drawLine(
-                    color = LINE_COLOR,
-                    start = start,
-                    end = end,
-                    strokeWidth = LINE_WIDTH.toPx(),
-                    pathEffect = pathEffect,
-                )
-            }
-
-            // Draw structural slashes
-            val direction = end - start
-            when (relationship.type) {
-                Relationship.RelationshipType.SEPARATION -> {
-                    drawSlashes((start + end) / 2f, 1, direction)
-                }
-
-                Relationship.RelationshipType.DIVORCE -> {
-                    drawSlashes((start + end) / 2f, 2, direction)
-                }
-
-                Relationship.RelationshipType.RECONCILIATION -> {
-                    drawSlashes(
-                        (start + end) / 2f,
-                        2,
-                        direction,
-                        isReconciliation = true,
-                    )
-                }
-
-                else -> {}
-            }
-
-            // Draw date text
-            if (relationship.dateText.isNotEmpty()) {
-                val textLayoutResult = textMeasurer.measure(relationship.dateText, labelStyle)
-                val textWidth = textLayoutResult.size.width
-                val textHeight = textLayoutResult.size.height
-                val midPoint = (start + end) / 2f
-
-                val hasSlashes =
-                    relationship.type in
-                        listOf(
-                            Relationship.RelationshipType.SEPARATION,
-                            Relationship.RelationshipType.DIVORCE,
-                            Relationship.RelationshipType.RECONCILIATION,
-                        )
-                val slashOffset = if (hasSlashes) 12.dp.toPx() / 2f else 0f
-
-                drawText(
-                    textLayoutResult,
-                    topLeft =
-                        Offset(
-                            midPoint.x - textWidth / 2f,
-                            midPoint.y - slashOffset - textHeight - 4f,
-                        ),
-                )
-            }
-
-            // Draw emotional bond styles
-            drawEmotionalBond(start, end, relationship.emotionalBond)
-        }
-    }
-}
-
-private fun DrawScope.drawEmotionalBond(
-    start: Offset,
-    end: Offset,
-    bond: Relationship.EmotionalBond,
-) {
-    val direction = end - start
-    val length = direction.getDistance()
-    if (length < 1f) return
-    val unit = direction / length
-    val normal = Offset(-unit.y, unit.x)
-
-    when (bond) {
-        Relationship.EmotionalBond.DISTANT -> {
-            // Overdraw with white/background color to create dashes if needed,
-            // or we could have passed pathEffect to drawLine above.
-            // Since we already drew the line, let's just ignore POSITIVE (default)
-        }
-
-        Relationship.EmotionalBond.INTIMATE -> {
-            val offset = normal * 3.dp.toPx()
-            drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
-            drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
-        }
-
-        Relationship.EmotionalBond.FUSED -> {
-            val offset = normal * 5.dp.toPx()
-            drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
-            drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
-            // The main line is already drawn
-        }
-
-        Relationship.EmotionalBond.CONFLICTUAL -> {
-            drawZigzag(start, end, LINE_WIDTH.toPx())
-        }
-
-        Relationship.EmotionalBond.INTIMATE_CONFLICTUAL -> {
-            val offset = normal * 4.dp.toPx()
-            drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
-            drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
-            drawZigzag(start, end, LINE_WIDTH.toPx())
-        }
-
-        Relationship.EmotionalBond.FUSED_CONFLICTUAL -> {
-            val offset = normal * 5.dp.toPx()
-            drawLine(LINE_COLOR, start + offset, end + offset, LINE_WIDTH.toPx())
-            drawLine(LINE_COLOR, start - offset, end - offset, LINE_WIDTH.toPx())
-            drawZigzag(start, end, LINE_WIDTH.toPx())
-        }
-
-        Relationship.EmotionalBond.FOCUSED -> {
-            val arrowSize = 12.dp.toPx()
-            val lineEnd = end - unit * arrowSize
-            drawLine(LINE_COLOR, start, lineEnd, LINE_WIDTH.toPx())
-            drawArrowHead(end, direction)
-        }
-
-        Relationship.EmotionalBond.RUPTURE -> {
-            val mid = (start + end) / 2f
-            val gap = 15.dp.toPx()
-            // Draw the two segments of the line
-            drawLine(LINE_COLOR, start, mid - unit * (gap / 2), LINE_WIDTH.toPx())
-            drawLine(LINE_COLOR, mid + unit * (gap / 2), end, LINE_WIDTH.toPx())
-
-            // We draw two perpendicular bars to indicate the rupture
-            drawLine(
-                color = Color.Black,
-                start = mid - unit * (gap / 2) + normal * 10f,
-                end = mid - unit * (gap / 2) - normal * 10f,
-                strokeWidth = 2.dp.toPx(),
+            drawStructuralRelationshipLine(
+                p1Center = p1Center,
+                p2Center = p2Center,
+                nodeSize = nodeSize,
+                type = relationship.type,
+                dateText = relationship.dateText,
+                textMeasurer = textMeasurer,
+                labelStyle = labelStyle,
+                color = LINE_COLOR,
+                strokeWidth = LINE_WIDTH.toPx(),
             )
-            drawLine(
-                color = Color.Black,
-                start = mid + unit * (gap / 2) + normal * 10f,
-                end = mid + unit * (gap / 2) - normal * 10f,
-                strokeWidth = 2.dp.toPx(),
+
+            drawEmotionalBondLine(
+                p1Center = p1Center,
+                p2Center = p2Center,
+                nodeSize = nodeSize,
+                bond = relationship.emotionalBond,
+                color = LINE_COLOR,
+                strokeWidth = LINE_WIDTH.toPx(),
             )
         }
-
-        Relationship.EmotionalBond.DIRECT_CONFLICTUAL -> {
-            val arrowSize = 12.dp.toPx()
-            val baseEnd = end - unit * arrowSize
-            drawZigzag(start, baseEnd, LINE_WIDTH.toPx())
-            drawArrowHead(end, direction)
-        }
-
-        Relationship.EmotionalBond.ABUSE -> {
-            val arrowSize = 12.dp.toPx()
-            val baseEnd = end - unit * arrowSize
-            drawZigzag(start, baseEnd, LINE_WIDTH.toPx())
-            drawArrowHead(end, direction, fill = true)
-        }
-
-        else -> {}
     }
 }
 
@@ -847,6 +673,7 @@ private fun DrawScope.drawParentStem(
             parentNodes[0].position * density
         }
 
+    val verticalGap = 24.dp.toPx()
     val stemStartY =
         if (parentNodes.size == 2) {
             val p1Id = parentIds[0]
@@ -856,7 +683,11 @@ private fun DrawScope.drawParentStem(
                     (it.personId1 == p1Id && it.personId2 == p2Id) ||
                         (it.personId1 == p2Id && it.personId2 == p1Id)
                 }
-            if (structuralRel != null) parentsMidpointPx.y else parentsMidpointPx.y + nodeSize / 2
+            if (structuralRel != null) {
+                parentsMidpointPx.y + nodeSize / 2 + verticalGap
+            } else {
+                parentsMidpointPx.y + nodeSize / 2
+            }
         } else {
             parentsMidpointPx.y + nodeSize / 2
         }
@@ -1010,7 +841,7 @@ private fun PersonNodeView(
             modifier = nodeModifier,
         )
 
-        Spacer(modifier = Modifier.height(4.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         Text(
             text = "${person.firstName} ${person.lastName}",
