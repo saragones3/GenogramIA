@@ -12,11 +12,15 @@ Este documento define los pasos obligatorios que deben seguirse al cerrar una pu
 
 Para cerrar una pull request, se deben realizar las siguientes acciones en orden:
 
-### 1.Merge de la Pull Request y cierre de la rama
+### 1. Verificación de Versión
+- Comparar los valores de `versionMajor`, `versionMinor`, `versionPatch` y `versionBuild` en `composeApp/build.gradle.kts` con los valores actuales en la rama `master`.
+- **Regla**: Si todos los valores son iguales a los de `master`, lanza un aviso al usuario indicando que no se puede mergear la pull request hasta que se incremente la versión de la aplicación.
+
+### 2. Merge de la Pull Request y cierre de la rama
 - Mergear la pull request.
 - Eliminar la rama en local y remoto.
 
-### 2. Cerrar la Issue relacionada
+### 3. Cerrar la Issue relacionada
 # Reemplaza <ISSUE_NUMBER> con el identificador de la issue
 - Ejecutar `gh issue close <ISSUE_NUMBER> --reason "completed"`.
 
