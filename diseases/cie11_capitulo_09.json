@@ -1,0 +1,5482 @@
+{
+    "codigo": "09",
+    "titulo": {
+        "es": "Enfermedades del sistema visual",
+        "en": "Diseases of the visual system"
+    },
+    "subcategorias": [
+        {
+            "codigo": "9A00.0",
+            "titulo": {
+                "es": "Distopia cantal",
+                "en": "Dystopia canthorum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A00.1",
+            "titulo": {
+                "es": "Telecanto",
+                "en": "Telecanthus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A00.Y",
+            "titulo": {
+                "es": "Otra posición anómala congénita especificada de los párpados",
+                "en": "Other specified congenital malposition of eyelids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A00.Z",
+            "titulo": {
+                "es": "Posición anómala congénita de los párpados, sin especificación",
+                "en": "Congenital malposition of eyelids, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A01.0",
+            "titulo": {
+                "es": "Celulitis preseptal",
+                "en": "Preseptal cellulitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A01.1",
+            "titulo": {
+                "es": "Absceso del párpado",
+                "en": "Abscess of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A01.20",
+            "titulo": {
+                "es": "Orzuelo externo",
+                "en": "Hordeolum externum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A01.21",
+            "titulo": {
+                "es": "Orzuelo interno",
+                "en": "Hordeolum internum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A01.2Z",
+            "titulo": {
+                "es": "Orzuelo, sin especificación",
+                "en": "Hordeolum, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A01.3",
+            "titulo": {
+                "es": "Blefaritis infecciosa",
+                "en": "Infectious blepharitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A01.4",
+            "titulo": {
+                "es": "Infestación del párpado",
+                "en": "Infestation of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A01.Y",
+            "titulo": {
+                "es": "Otros trastornos infecciosos especificados del párpado",
+                "en": "Other specified infectious disorders of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A01.Z",
+            "titulo": {
+                "es": "Trastornos infecciosos del párpado, sin especificación",
+                "en": "Unspecified infectious disorders of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A02.00",
+            "titulo": {
+                "es": "Chalación externo",
+                "en": "Chalazion externum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A02.01",
+            "titulo": {
+                "es": "Chalación interno",
+                "en": "Chalazion internum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A02.0Z",
+            "titulo": {
+                "es": "Chalación, sin especificación",
+                "en": "Chalazion, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A02.1",
+            "titulo": {
+                "es": "Blefaritis posterior",
+                "en": "Posterior blepharitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A02.2",
+            "titulo": {
+                "es": "Conjuntivitis leñosa",
+                "en": "Ligneous conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A02.4",
+            "titulo": {
+                "es": "Disfunción de las glándulas de Meibomio",
+                "en": "Meibomian gland dysfunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A02.Y",
+            "titulo": {
+                "es": "Otros trastornos inflamatorios especificados del párpado",
+                "en": "Other specified inflammatory disorders of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A02.Z",
+            "titulo": {
+                "es": "Trastornos inflamatorios del párpado, sin especificación",
+                "en": "Inflammatory disorders of eyelid, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.00",
+            "titulo": {
+                "es": "Síndrome de Marcus-Gunn",
+                "en": "Marcus-Gunn syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.01",
+            "titulo": {
+                "es": "Blefaroptosis mecánica",
+                "en": "Mechanical ptosis of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.02",
+            "titulo": {
+                "es": "Blefaroptosis miógena",
+                "en": "Myogenic ptosis of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.03",
+            "titulo": {
+                "es": "Blefaroptosis paralítica",
+                "en": "Paralytic ptosis of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.0Y",
+            "titulo": {
+                "es": "Otra blefaroptosis especificada",
+                "en": "Other specified blepharoptosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.0Z",
+            "titulo": {
+                "es": "Blefaroptosis, sin especificación",
+                "en": "Blepharoptosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.10",
+            "titulo": {
+                "es": "Entropión cicatricial del párpado",
+                "en": "Cicatricial entropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.11",
+            "titulo": {
+                "es": "Entropión mecánico del párpado",
+                "en": "Mechanical entropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.12",
+            "titulo": {
+                "es": "Entropión senil del párpado",
+                "en": "Senile entropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.13",
+            "titulo": {
+                "es": "Entropión espástico del párpado",
+                "en": "Spastic entropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.1Y",
+            "titulo": {
+                "es": "Otro entropión especificado del párpado",
+                "en": "Other specified entropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.1Z",
+            "titulo": {
+                "es": "Entropión del párpado, sin especificación",
+                "en": "Entropion of eyelid, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.20",
+            "titulo": {
+                "es": "Ectropión cicatricial del párpado",
+                "en": "Cicatricial ectropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.21",
+            "titulo": {
+                "es": "Ectropión mecánico del párpado",
+                "en": "Mechanical ectropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.22",
+            "titulo": {
+                "es": "Ectropión senil del párpado",
+                "en": "Senile ectropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.23",
+            "titulo": {
+                "es": "Ectropión espástico del párpado",
+                "en": "Spastic ectropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.24",
+            "titulo": {
+                "es": "Síndrome del párpado laxo",
+                "en": "Floppy eyelid syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.2Y",
+            "titulo": {
+                "es": "Otro ectropión especificado del párpado",
+                "en": "Other specified ectropion of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.2Z",
+            "titulo": {
+                "es": "Ectropión del párpado, sin especificación",
+                "en": "Ectropion of eyelid, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.3",
+            "titulo": {
+                "es": "Retracción parpebral",
+                "en": "Eyelid retraction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.40",
+            "titulo": {
+                "es": "Lagoftalmos cicatricial",
+                "en": "Cicatricial lagophthalmos"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.41",
+            "titulo": {
+                "es": "Lagoftalmos mecánico",
+                "en": "Mechanical lagophthalmos"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.42",
+            "titulo": {
+                "es": "Lagoftalmos paralítico",
+                "en": "Paralytic lagophthalmos"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.4Y",
+            "titulo": {
+                "es": "Otro lagoftalmos especificado",
+                "en": "Other specified lagophthalmos"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.4Z",
+            "titulo": {
+                "es": "Lagoftalmos, sin especificación",
+                "en": "Lagophthalmos, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.5",
+            "titulo": {
+                "es": "Dermatocalasia del párpado",
+                "en": "Dermatochalasis of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.Y",
+            "titulo": {
+                "es": "Otra posición anómala adquirida especificada del párpado",
+                "en": "Other specified acquired malposition of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A03.Z",
+            "titulo": {
+                "es": "Posición anómala adquirida del párpado, sin especificación",
+                "en": "Acquired malposition of eyelid, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A04.0",
+            "titulo": {
+                "es": "Triquiasis sin entropión",
+                "en": "Trichiasis without entropion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A04.1",
+            "titulo": {
+                "es": "Madarosis del párpado o de la zona periocular",
+                "en": "Madarosis of eyelid or periocular area"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A04.Y",
+            "titulo": {
+                "es": "Otros trastornos adquiridos especificados de las pestañas",
+                "en": "Other specified acquired disorders of eyelashes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A04.Z",
+            "titulo": {
+                "es": "Trastornos adquiridos de las pestañas, sin especificación",
+                "en": "Acquired disorders of eyelashes, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A05.0",
+            "titulo": {
+                "es": "Mioquimia del párpado",
+                "en": "Myokymia of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A05.1",
+            "titulo": {
+                "es": "Apraxia del párpado",
+                "en": "Eyelid apraxia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A05.Y",
+            "titulo": {
+                "es": "Otros trastornos del movimiento especificados del párpado",
+                "en": "Other specified movement disorders of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A05.Z",
+            "titulo": {
+                "es": "Trastornos del movimiento del párpado, sin especificación",
+                "en": "Movement disorders of eyelid, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.0",
+            "titulo": {
+                "es": "Afectación del párpado por dermatosis no clasificada en otra parte",
+                "en": "Involvement of eyelid by dermatosis classified elsewhere"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.1",
+            "titulo": {
+                "es": "Vitiligo del párpado o de la zona periocular",
+                "en": "Vitiligo of eyelid or periocular area"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.2",
+            "titulo": {
+                "es": "Simbléfaron adquirido",
+                "en": "Symblepharon, acquired"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.3",
+            "titulo": {
+                "es": "Cicatriz traumática del párpado",
+                "en": "Traumatic scar of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.4",
+            "titulo": {
+                "es": "Xantelasma del párpado",
+                "en": "Xanthelasma of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.5",
+            "titulo": {
+                "es": "Deformidad del surco lagrimal",
+                "en": "Tear Trough Deformity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.6",
+            "titulo": {
+                "es": "Deformidad de surco hundido",
+                "en": "Sunken Sulcus Deformity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.70",
+            "titulo": {
+                "es": "Eccema atópico de los párpados",
+                "en": "Atopic eczema of eyelids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.71",
+            "titulo": {
+                "es": "Dermatitis seborreica de los párpados",
+                "en": "Seborrhoeic dermatitis of eyelids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.72",
+            "titulo": {
+                "es": "Blefaroconjuntivitis de contacto alérgica",
+                "en": "Allergic contact blepharoconjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.7Y",
+            "titulo": {
+                "es": "Otra dermatitis especificada o eccema de los párpados",
+                "en": "Other specified dermatitis or eczema of eyelids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.7Z",
+            "titulo": {
+                "es": "Dermatitis o eccema de los párpados, sin especificación",
+                "en": "Dermatitis or eczema of eyelids, type unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.8",
+            "titulo": {
+                "es": "Blefarocalasia",
+                "en": "Blepharochalasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A06.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del párpado",
+                "en": "Other specified disorders of eyelid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del párpado o de la zona periocular",
+                "en": "Other specified disorders of eyelid or peri-ocular area"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A0Z",
+            "titulo": {
+                "es": "Trastornos del párpado o de la zona periocular, sin especificación",
+                "en": "Disorders of eyelid or peri-ocular area, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A10.0",
+            "titulo": {
+                "es": "Infecciones de glándula lagrimal",
+                "en": "Infections of the lacrimal gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A10.1",
+            "titulo": {
+                "es": "Síndrome inflamatorio orbitario",
+                "en": "Orbital inflammatory syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A10.2",
+            "titulo": {
+                "es": "Lesión linfoepitelial benigna de glándula lagrimal",
+                "en": "Benign lymphoepithelial lesion of lacrimal gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A10.3",
+            "titulo": {
+                "es": "Hiperlagrimación",
+                "en": "Hyperlacrimation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A10.4",
+            "titulo": {
+                "es": "Producción insuficiente de lágrimas",
+                "en": "Underproduction of tears"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A10.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la glándula lagrimal",
+                "en": "Other specified disorders of lacrimal gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A10.Z",
+            "titulo": {
+                "es": "Trastornos de la glándula lagrimal, sin especificación",
+                "en": "Disorders of lacrimal gland, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.0",
+            "titulo": {
+                "es": "Eversión del punto lagrimal",
+                "en": "Eversion of lacrimal punctum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.1",
+            "titulo": {
+                "es": "Canaliculitis",
+                "en": "Canaliculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.2",
+            "titulo": {
+                "es": "Dacriocistitis",
+                "en": "Dacryocystitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.3",
+            "titulo": {
+                "es": "Conjuntivocalasia",
+                "en": "Conjunctivochalasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.4",
+            "titulo": {
+                "es": "Estenosis del punto lagrimal",
+                "en": "Punctal stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.5",
+            "titulo": {
+                "es": "Estenosis canalicular nasolagrimal",
+                "en": "Nasolacrimal canalicular stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.6",
+            "titulo": {
+                "es": "Dacriolito",
+                "en": "Dacryolith"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.7",
+            "titulo": {
+                "es": "Estenosis del saco nasolagrimal",
+                "en": "Nasolacrimal sac stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.8",
+            "titulo": {
+                "es": "Obstrucción del conducto nasolagrimal",
+                "en": "Nasolacrimal duct obstruction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del sistema de drenaje lagrimal",
+                "en": "Other specified disorders of lacrimal drainage system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A11.Z",
+            "titulo": {
+                "es": "Trastornos del sistema de drenaje lagrimal, sin especificación",
+                "en": "Disorders of lacrimal drainage system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A1Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del aparato lagrimal",
+                "en": "Other specified disorders of lacrimal apparatus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A1Z",
+            "titulo": {
+                "es": "Trastornos del aparato lagrimal, sin especificación",
+                "en": "Disorders of lacrimal apparatus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A20.00",
+            "titulo": {
+                "es": "Desplazamiento del globo ocular hacia fuera",
+                "en": "Outward displacement of eyeball"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A20.01",
+            "titulo": {
+                "es": "Desplazamiento del globo ocular hacia dentro",
+                "en": "Inward displacement of eyeball"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A20.0Y",
+            "titulo": {
+                "es": "Otro desplazamiento axial especificado del globo ocular",
+                "en": "Other specified axial displacement of eyeball"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A20.0Z",
+            "titulo": {
+                "es": "Desplazamiento axial del globo ocular, sin especificación",
+                "en": "Axial displacement of eyeball, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A20.1",
+            "titulo": {
+                "es": "Desplazamiento no axial del globo ocular",
+                "en": "Non-axial displacement of eyeball"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A20.Y",
+            "titulo": {
+                "es": "Otro desplazamiento especificado del globo ocular",
+                "en": "Other specified displacement of eyeball"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A20.Z",
+            "titulo": {
+                "es": "Desplazamiento del globo ocular, sin especificación",
+                "en": "Displacement of eyeball, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A21.0",
+            "titulo": {
+                "es": "Celulitis orbitaria",
+                "en": "Orbital cellulitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A21.1",
+            "titulo": {
+                "es": "Absceso subperióstico orbitario",
+                "en": "Orbital subperiosteal abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A21.2",
+            "titulo": {
+                "es": "Absceso orbitario",
+                "en": "Orbital abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A21.3",
+            "titulo": {
+                "es": "Periostitis de la órbita",
+                "en": "Periostitis of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A21.Y",
+            "titulo": {
+                "es": "Otra infección orbitaria especificada",
+                "en": "Other specified orbital infection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A21.Z",
+            "titulo": {
+                "es": "Infección orbitaria, sin especificación",
+                "en": "Orbital infection, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A22.0",
+            "titulo": {
+                "es": "Orbitopatía distiroidea",
+                "en": "Dysthyroid orbitopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A22.1",
+            "titulo": {
+                "es": "Inflamación orbitaria difusa",
+                "en": "Diffuse orbital inflammation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A22.2",
+            "titulo": {
+                "es": "Inflamación granulomatosa orbitaria",
+                "en": "Granulomatous orbital inflammation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A22.Y",
+            "titulo": {
+                "es": "Otra inflamación orbitaria especificada",
+                "en": "Other specified orbital inflammation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A22.Z",
+            "titulo": {
+                "es": "Inflamación orbitaria, sin especificación",
+                "en": "Orbital inflammation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A23.0",
+            "titulo": {
+                "es": "Quiste orbitario congénito",
+                "en": "Congenital orbital cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A23.1",
+            "titulo": {
+                "es": "Quiste orbitario adquirido",
+                "en": "Acquired orbital cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A23.Z",
+            "titulo": {
+                "es": "Quiste orbitario, sin especificación",
+                "en": "Orbital cyst, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A24.0",
+            "titulo": {
+                "es": "Contracción de la órbita",
+                "en": "Contraction of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A24.1",
+            "titulo": {
+                "es": "Expansión de la órbita",
+                "en": "Expansion of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A24.3",
+            "titulo": {
+                "es": "Ampliación de la órbita ósea",
+                "en": "Enlargement of bony orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A24.4",
+            "titulo": {
+                "es": "Exostosis de la órbita",
+                "en": "Exostosis of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A24.Y",
+            "titulo": {
+                "es": "Otra deformidad ósea especificada de la órbita",
+                "en": "Other specified bony deformity of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A24.Z",
+            "titulo": {
+                "es": "Deformidad ósea de la órbita, sin especificación",
+                "en": "Bony deformity of orbit, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A25.0",
+            "titulo": {
+                "es": "Órbita anoftálmica",
+                "en": "Anophthalmic socket"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A25.1",
+            "titulo": {
+                "es": "Órbita microftálmica",
+                "en": "Microphthalmic socket"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A25.2",
+            "titulo": {
+                "es": "Órbita contraída",
+                "en": "Contracted socket"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A25.3",
+            "titulo": {
+                "es": "Edema de la órbita",
+                "en": "Oedema of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A25.4",
+            "titulo": {
+                "es": "Hemorragia de la órbita",
+                "en": "Haemorrhage of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A25.5",
+            "titulo": {
+                "es": "Atrofia de partes blandas de la órbita",
+                "en": "Atrophy of soft tissue of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A25.Y",
+            "titulo": {
+                "es": "Otra deformidad especificada de partes blandas de la órbita",
+                "en": "Other specified soft tissue deformity of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A25.Z",
+            "titulo": {
+                "es": "Deformidad de partes blandas de la órbita, sin especificación",
+                "en": "Soft tissue deformity of orbit, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A26",
+            "titulo": {
+                "es": "Deformidad combinada de la órbita (ósea y de partes blandas)",
+                "en": "Combined bony and soft tissue deformity of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la órbita",
+                "en": "Other specified disorders of orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A2Z",
+            "titulo": {
+                "es": "Trastornos de la órbita, sin especificación",
+                "en": "Disorders of orbit, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A4Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de los anexos oculares o de la órbita",
+                "en": "Other specified disorders of the ocular adnexa or orbit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A4Z",
+            "titulo": {
+                "es": "Trastornos anexos oculares o de la órbita, sin especificación",
+                "en": "Disorders of the ocular adnexa or orbit, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.00",
+            "titulo": {
+                "es": "Conjuntivitis papilar gigante",
+                "en": "Giant papillary conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.01",
+            "titulo": {
+                "es": "Conjuntivitis atópica aguda",
+                "en": "Acute atopic conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.02",
+            "titulo": {
+                "es": "Conjuntivitis alérgica",
+                "en": "Allergic conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.0Y",
+            "titulo": {
+                "es": "Otra conjuntivitis papilar especificada",
+                "en": "Other specified papillary conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.0Z",
+            "titulo": {
+                "es": "Conjuntivitis papilar, sin especificación",
+                "en": "Papillary conjunctivitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.1",
+            "titulo": {
+                "es": "Conjuntivitis folicular",
+                "en": "Follicular conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.2",
+            "titulo": {
+                "es": "Conjuntivitis cicatrizante",
+                "en": "Cicatrizing conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.30",
+            "titulo": {
+                "es": "Ulceración de la conjuntiva",
+                "en": "Ulceration of conjunctiva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.31",
+            "titulo": {
+                "es": "Absceso de la conjuntiva",
+                "en": "Abscess of conjunctiva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.32",
+            "titulo": {
+                "es": "Conjuntivitis por bacilo de Koch-Weeks",
+                "en": "Conjunctivitis due to Koch-Weeks bacillus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.33",
+            "titulo": {
+                "es": "Conjuntivitis epidémica aguda",
+                "en": "Acute epidemic conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.3Y",
+            "titulo": {
+                "es": "Otra conjuntivitis mucopurulenta especificada",
+                "en": "Other specified mucopurulent conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.3Z",
+            "titulo": {
+                "es": "Conjuntivitis mucopurulenta, sin especificación",
+                "en": "Mucopurulent conjunctivitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.4",
+            "titulo": {
+                "es": "Blefaroconjuntivitis",
+                "en": "Blepharoconjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.5",
+            "titulo": {
+                "es": "Queratoconjuntivitis vernal",
+                "en": "Vernal keratoconjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.6",
+            "titulo": {
+                "es": "Conjuntivitis serosa no viral",
+                "en": "Serous conjunctivitis, except viral"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.Y",
+            "titulo": {
+                "es": "Otra conjuntivitis especificada",
+                "en": "Other specified conjunctivitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A60.Z",
+            "titulo": {
+                "es": "Conjuntivitis, sin especificación",
+                "en": "Conjunctivitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.0",
+            "titulo": {
+                "es": "Pinguécula",
+                "en": "Pingueculae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.1",
+            "titulo": {
+                "es": "Pterigion",
+                "en": "Pterygium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.2",
+            "titulo": {
+                "es": "Seudopterigion de la conjuntiva",
+                "en": "Pseudopterygium of conjunctiva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.3",
+            "titulo": {
+                "es": "Cicatrices conjuntivales",
+                "en": "Conjunctival scars"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.40",
+            "titulo": {
+                "es": "Anomalías vasculares de la conjuntiva",
+                "en": "Vascular abnormalities of conjunctiva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.4Y",
+            "titulo": {
+                "es": "Otros trastornos vasculares especificados de la conjuntiva",
+                "en": "Other specified conjunctival vascular disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.4Z",
+            "titulo": {
+                "es": "Trastornos vasculares de la conjuntiva, sin especificación",
+                "en": "Conjunctival vascular disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.5",
+            "titulo": {
+                "es": "Hemorragia conjuntival o subconjuntival",
+                "en": "Conjunctival or subconjunctival haemorrhage"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.6",
+            "titulo": {
+                "es": "Degeneraciones o depósitos conjuntivales o subconjuntivales",
+                "en": "Conjunctival or subconjunctival degenerations or deposits"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A61.Z",
+            "titulo": {
+                "es": "Otros trastornos especificados de la conjuntiva, sin especificación",
+                "en": "Certain specified disorders of conjunctiva, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A62",
+            "titulo": {
+                "es": "Penfigoide de la membrana mucosa con compromiso ocular",
+                "en": "Mucous membrane pemphigoid with ocular involvement"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A6Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la conjuntiva",
+                "en": "Other specified disorders of conjunctiva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A6Z",
+            "titulo": {
+                "es": "Trastornos de la conjuntiva, sin especificación",
+                "en": "Disorders of conjunctiva, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A70.0",
+            "titulo": {
+                "es": "Distrofia corneal endotelial",
+                "en": "Endothelial corneal dystrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A70.Y",
+            "titulo": {
+                "es": "Otras distrofias corneales hereditarias especificadas",
+                "en": "Other specified hereditary corneal dystrophies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A70.Z",
+            "titulo": {
+                "es": "Distrofias corneales hereditarias, sin especificación",
+                "en": "Hereditary corneal dystrophies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A71",
+            "titulo": {
+                "es": "Queratitis infecciosa",
+                "en": "Infectious keratitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A72",
+            "titulo": {
+                "es": "Queratitis traumática",
+                "en": "Traumatic keratitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A73",
+            "titulo": {
+                "es": "Queratitis de exposición",
+                "en": "Exposure keratitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A74",
+            "titulo": {
+                "es": "Queratitis neurotrófica",
+                "en": "Neurotrophic keratitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A75",
+            "titulo": {
+                "es": "Queratitis autoinmunitaria",
+                "en": "Autoimmune keratitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A76",
+            "titulo": {
+                "es": "Úlcera corneal",
+                "en": "Corneal ulcer"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A77.0",
+            "titulo": {
+                "es": "Infiltrados corneales asociados a lentes de contacto",
+                "en": "Contact lens-associated corneal infiltrates"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A77.1",
+            "titulo": {
+                "es": "Leucoma adherente",
+                "en": "Adherent leukoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A77.Y",
+            "titulo": {
+                "es": "Otras cicatrices u opacidades corneales especificadas",
+                "en": "Other specified corneal scars or opacities"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A77.Z",
+            "titulo": {
+                "es": "Cicatrices u opacidades corneales, sin especificación",
+                "en": "Corneal scars or opacities, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.0",
+            "titulo": {
+                "es": "Neovascularización corneal",
+                "en": "Corneal neovascularization"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.1",
+            "titulo": {
+                "es": "Pigmentaciones o depósitos corneales",
+                "en": "Corneal pigmentations or deposits"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.20",
+            "titulo": {
+                "es": "Queratopatía vesicular",
+                "en": "Bullous keratopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.21",
+            "titulo": {
+                "es": "Edema corneal secundario",
+                "en": "Secondary corneal oedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.2Y",
+            "titulo": {
+                "es": "Otro edema corneal especificado",
+                "en": "Other specified corneal oedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.2Z",
+            "titulo": {
+                "es": "Edema corneal, sin especificación",
+                "en": "Corneal oedema, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.3",
+            "titulo": {
+                "es": "Cambios en las membranas de la córnea",
+                "en": "Changes in corneal membranes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.4",
+            "titulo": {
+                "es": "Degeneración corneal",
+                "en": "Corneal degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.50",
+            "titulo": {
+                "es": "Queratocono",
+                "en": "Keratoconus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.51",
+            "titulo": {
+                "es": "Estafiloma corneal",
+                "en": "Corneal staphyloma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.5Y",
+            "titulo": {
+                "es": "Otras deformidades corneales especificadas",
+                "en": "Other specified corneal deformities"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.5Z",
+            "titulo": {
+                "es": "Deformidades corneales, sin especificación",
+                "en": "Corneal deformities, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.6",
+            "titulo": {
+                "es": "Anestesia de la córnea",
+                "en": "Anaesthesia of cornea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.7",
+            "titulo": {
+                "es": "Hipoestesia de la córnea",
+                "en": "Hypoesthesia of cornea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A78.8",
+            "titulo": {
+                "es": "Erosión recurrente de la córnea",
+                "en": "Recurrent erosion of cornea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A79",
+            "titulo": {
+                "es": "Queratoconjuntivitis seca",
+                "en": "Keratoconjunctivitis sicca"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A7A",
+            "titulo": {
+                "es": "Absceso corneal",
+                "en": "Corneal abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A7B",
+            "titulo": {
+                "es": "Queratitis esclerosante",
+                "en": "Sclerosing keratitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A7Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la córnea",
+                "en": "Other specified disorders of the cornea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A7Z",
+            "titulo": {
+                "es": "Trastornos de la córnea, sin especificación",
+                "en": "Disorders of the cornea, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A80",
+            "titulo": {
+                "es": "Hipema",
+                "en": "Hyphaema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A81",
+            "titulo": {
+                "es": "Parásitos en la cámara anterior del ojo",
+                "en": "Parasites in the anterior chamber of the eye"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A82",
+            "titulo": {
+                "es": "Quiste en la cámara anterior del ojo",
+                "en": "Cyst in the anterior chamber of the eye"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A83",
+            "titulo": {
+                "es": "Hipotonía del ojo de la cámara anterior plana",
+                "en": "Flat anterior chamber hypotony of eye"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A8Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la cámara anterior",
+                "en": "Other specified disorders of the anterior chamber"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A8Z",
+            "titulo": {
+                "es": "Trastornos de la cámara anterior, sin especificación",
+                "en": "Disorders of the anterior chamber, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A90.0",
+            "titulo": {
+                "es": "Trastornos del ángulo de la cámara",
+                "en": "Disorders of chamber angle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A90.1",
+            "titulo": {
+                "es": "Degeneración del iris",
+                "en": "Degeneration of iris"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A90.2",
+            "titulo": {
+                "es": "Atrofia del iris",
+                "en": "Iris atrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A90.Y",
+            "titulo": {
+                "es": "Otra degeneración especificada del iris o del cuerpo ciliar",
+                "en": "Other specified degeneration of iris or ciliary body"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A90.Z",
+            "titulo": {
+                "es": "Degeneración del iris o del cuerpo ciliar, sin especificación",
+                "en": "Degeneration of iris or ciliary body, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A91",
+            "titulo": {
+                "es": "Quiste del iris o del cuerpo ciliar",
+                "en": "Cyst of iris or ciliary body"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A92",
+            "titulo": {
+                "es": "Membranas pupilares persistentes",
+                "en": "Persistent pupillary membranes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A93",
+            "titulo": {
+                "es": "Adherencias o interrupciones del iris o del cuerpo ciliar",
+                "en": "Adhesions or disruptions of iris or ciliary body"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A94.0",
+            "titulo": {
+                "es": "Rubeosis del iris",
+                "en": "Rubeosis of iris"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A94.1",
+            "titulo": {
+                "es": "Síndrome del iris flácido",
+                "en": "Floppy iris syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A94.2",
+            "titulo": {
+                "es": "Síndrome del iris en meseta",
+                "en": "Plateau iris syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A94.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del iris o del cuerpo ciliar",
+                "en": "Other disorders of iris and ciliary body"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A96.0",
+            "titulo": {
+                "es": "Uveítis anterior no asociada a enfermedades sistémicas",
+                "en": "Anterior uveitis not associated with systemic conditions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A96.1",
+            "titulo": {
+                "es": "Uveítis anterior asociada a enfermedades sistémicas",
+                "en": "Anterior uveitis associated with systemic conditions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A96.2",
+            "titulo": {
+                "es": "Uveítis anterior asociada a infección",
+                "en": "Infection-associated anterior uveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A96.3",
+            "titulo": {
+                "es": "Uveítis anterior primaria",
+                "en": "Primary anterior uveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A96.Y",
+            "titulo": {
+                "es": "Otra uveítis anterior especificada",
+                "en": "Other specified anterior uveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A96.Z",
+            "titulo": {
+                "es": "Uveítis anterior, sin especificación",
+                "en": "Anterior uveitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A9Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la úvea anterior",
+                "en": "Other specified disorders of the anterior uvea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9A9Z",
+            "titulo": {
+                "es": "Trastornos de la úvea anterior, sin especificación",
+                "en": "Disorders of the anterior uvea, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B00.0",
+            "titulo": {
+                "es": "Defectos pupilares aferentes relativos",
+                "en": "Relative afferent pupillary defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B00.1",
+            "titulo": {
+                "es": "Reacción pupilar amaurótica",
+                "en": "Amaurotic pupillary reaction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B00.2",
+            "titulo": {
+                "es": "Reacción pupilar paradójica a la luz o a la oscuridad",
+                "en": "Paradoxical pupillary reaction to light or darkness"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B00.3",
+            "titulo": {
+                "es": "Pupilas de Wernicke",
+                "en": "Wernicke pupils"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B00.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del sistema pupilar aferente",
+                "en": "Other specified disorders of the afferent pupillary system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B00.Z",
+            "titulo": {
+                "es": "Trastornos del sistema pupilar aferente, sin especificación",
+                "en": "Disorders of the afferent pupillary system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.0",
+            "titulo": {
+                "es": "Anisocoria fisiológica",
+                "en": "Physiologic anisocoria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.1",
+            "titulo": {
+                "es": "Pupilas parasimpaticoparéticas",
+                "en": "Parasympathoparetic pupils"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.2",
+            "titulo": {
+                "es": "Inhibición farmacológica de la vía parasimpática",
+                "en": "Pharmacologic inhibition of the parasympathetic pathway"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.3",
+            "titulo": {
+                "es": "Trastornos del esfínter del iris",
+                "en": "Iris sphincter disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.4",
+            "titulo": {
+                "es": "Pupilas parasimpaticotónicas farmacológicas",
+                "en": "Pharmacologic parasympathicotonic pupils"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.5",
+            "titulo": {
+                "es": "Pupilas simpaticoparéticas farmacológicas",
+                "en": "Pharmacologic sympathoparetic pupils"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.6",
+            "titulo": {
+                "es": "Pupilas simpaticotónicas",
+                "en": "Sympathotonic pupils"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.7",
+            "titulo": {
+                "es": "Midriasis unilateral episódica",
+                "en": "Episodic unilateral mydriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del sistema pupilar eferente",
+                "en": "Other specified disorders of the efferent pupillary system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B01.Z",
+            "titulo": {
+                "es": "Trastornos del sistema pupilar eferente, sin especificación",
+                "en": "Disorders of the efferent pupillary system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B02.0",
+            "titulo": {
+                "es": "Pupila de Argyll Robertson",
+                "en": "Argyll Robertson pupil"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B02.1",
+            "titulo": {
+                "es": "Disociaciones pregeniculadas de luz y acomodación",
+                "en": "Pregeniculate light-near dissociations"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B02.2",
+            "titulo": {
+                "es": "Disociaciones mesencefálicas de luz y acomodación",
+                "en": "Mesencephalic light-near dissociations"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B02.Y",
+            "titulo": {
+                "es": "Otras disociaciones de luz y acomodación especificadas",
+                "en": "Other specified light-near dissociations"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B02.Z",
+            "titulo": {
+                "es": "Disociaciones de luz y acomodación, sin especificación",
+                "en": "Light-near dissociations, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B0Y",
+            "titulo": {
+                "es": "Otros trastornos funcionales especificados de la pupila",
+                "en": "Other specified functional disorders of the pupil"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B0Z",
+            "titulo": {
+                "es": "Trastornos funcionales de la pupila, sin especificación",
+                "en": "Functional disorders of the pupil, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.00",
+            "titulo": {
+                "es": "Catarata coronaria relacionada con la edad",
+                "en": "Coronary age-related cataract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.01",
+            "titulo": {
+                "es": "Catarata punteada relacionada con la edad",
+                "en": "Punctate age-related cataract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.02",
+            "titulo": {
+                "es": "Catarata madura relacionada con la edad",
+                "en": "Mature age-related cataract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.0Y",
+            "titulo": {
+                "es": "Otra catarata especificada relacionada con la edad",
+                "en": "Other specified age-related cataract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.0Z",
+            "titulo": {
+                "es": "Catarata relacionada con la edad, sin especificación",
+                "en": "Age-related cataract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.10",
+            "titulo": {
+                "es": "Formas combinadas de catarata infantil o juvenil",
+                "en": "Combined forms of infantile and juvenile cataract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.1Y",
+            "titulo": {
+                "es": "Otra catarata especificada infantil o juvenil",
+                "en": "Other specified infantile or juvenile cataract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.1Z",
+            "titulo": {
+                "es": "Catarata infantil o juvenil, sin especificación",
+                "en": "Infantile or juvenile cataract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.20",
+            "titulo": {
+                "es": "Catarata traumática",
+                "en": "Traumatic cataract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.21",
+            "titulo": {
+                "es": "Catarata diabética",
+                "en": "Diabetic cataract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.22",
+            "titulo": {
+                "es": "Catarata secundaria",
+                "en": "After-cataract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.23",
+            "titulo": {
+                "es": "Manchas glaucomatosas subcapsulares",
+                "en": "Subcapsular glaucomatous flecks"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.2Y",
+            "titulo": {
+                "es": "Otras cataratas especificadas",
+                "en": "Other specified cataracts"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B10.Z",
+            "titulo": {
+                "es": "Catarata, sin especificación",
+                "en": "Cataract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B11.0",
+            "titulo": {
+                "es": "Afaquia",
+                "en": "Aphakia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B11.1",
+            "titulo": {
+                "es": "Luxación del cristalino",
+                "en": "Dislocation of lens"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B11.Y",
+            "titulo": {
+                "es": "Otro(a)(s) algunos trastornos especificados del cristalino especificado(a)(s)",
+                "en": "Other disorders of lens"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B1Z",
+            "titulo": {
+                "es": "Trastornos del cristalino, sin especificación",
+                "en": "Disorders of lens, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B3Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del segmento anterior del globo ocular",
+                "en": "Other specified disorders of the eyeball - anterior segment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B3Z",
+            "titulo": {
+                "es": "Trastornos del segmento anterior del globo ocular, sin especificación",
+                "en": "Disorders of the eyeball - anterior segment, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B50",
+            "titulo": {
+                "es": "Epiescleritis",
+                "en": "Episcleritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B51",
+            "titulo": {
+                "es": "Escleritis",
+                "en": "Scleritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B52",
+            "titulo": {
+                "es": "Estafiloma escleral",
+                "en": "Scleral staphyloma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B5Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la esclerótica",
+                "en": "Other specified disorders of sclera"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B5Z",
+            "titulo": {
+                "es": "Trastornos de la esclerótica, sin especificación",
+                "en": "Disorders of sclera, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B60",
+            "titulo": {
+                "es": "Degeneración coroidea",
+                "en": "Choroidal degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B61",
+            "titulo": {
+                "es": "Distrofia coroidal",
+                "en": "Choroidal dystrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B62",
+            "titulo": {
+                "es": "Cicatrices coriorretinianas",
+                "en": "Chorioretinal scars"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B63",
+            "titulo": {
+                "es": "Hemorragia o ruptura coroidea",
+                "en": "Choroidal haemorrhage or rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B64",
+            "titulo": {
+                "es": "Desprendimiento coroideo",
+                "en": "Choroidal detachment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B65.0",
+            "titulo": {
+                "es": "Uveítis posterior no infecciosa",
+                "en": "Noninfectious posterior uveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B65.1",
+            "titulo": {
+                "es": "coroiditis infecciosa",
+                "en": "Infectious posterior uveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B65.Z",
+            "titulo": {
+                "es": "Uveítis posterior, sin especificación",
+                "en": "Posterior uveitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B66.0",
+            "titulo": {
+                "es": "Uveítis intermedia no infecciosa",
+                "en": "Noninfectious intermediate uveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B66.1",
+            "titulo": {
+                "es": "Uveítis intermedia infecciosa",
+                "en": "Infectious intermediate uveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B66.Z",
+            "titulo": {
+                "es": "Uveítis intermedia, sin especificación",
+                "en": "Intermediate uveitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B6Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la coroides",
+                "en": "Other specified disorders of the choroid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B6Z",
+            "titulo": {
+                "es": "Trastornos de la coroides, sin especificación",
+                "en": "Disorders of the choroid, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B70",
+            "titulo": {
+                "es": "Distrofia retiniana hereditaria",
+                "en": "Inherited retinal dystrophies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.00",
+            "titulo": {
+                "es": "Retinopatía diabética no proliferativa",
+                "en": "Nonproliferative diabetic retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.01",
+            "titulo": {
+                "es": "Retinopatía diabética proliferativa",
+                "en": "Proliferative diabetic retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.0Z",
+            "titulo": {
+                "es": "Retinopatía diabética, sin especificación",
+                "en": "Diabetic retinopathy, unspecified whether nonproliferative or proliferative"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.1",
+            "titulo": {
+                "es": "Retinopatía hipertensiva",
+                "en": "Hypertensive retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.2",
+            "titulo": {
+                "es": "Retinopatía por radiación",
+                "en": "Radiation retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.3",
+            "titulo": {
+                "es": "Retinopatía del prematuro",
+                "en": "Retinopathy of prematurity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.40",
+            "titulo": {
+                "es": "Retinopatía asociada a melanoma",
+                "en": "Melanoma associated retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.4Y",
+            "titulo": {
+                "es": "Otra retinopatía paraneoplásica especificada",
+                "en": "Other specified paraneoplastic retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.4Z",
+            "titulo": {
+                "es": "Retinopatía paraneoplásica, sin especificación",
+                "en": "Paraneoplastic retinopathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.5",
+            "titulo": {
+                "es": "Retinopatía autoinmunitaria",
+                "en": "Autoimmune retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.Y",
+            "titulo": {
+                "es": "Otra retinopatía especificada",
+                "en": "Other specified retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B71.Z",
+            "titulo": {
+                "es": "Retinopatía, sin especificación",
+                "en": "Retinopathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B72.00",
+            "titulo": {
+                "es": "Retinitis por citomegalovirus",
+                "en": "Cytomegaloviral retinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B72.01",
+            "titulo": {
+                "es": "Retinitis por VIH",
+                "en": "HIV retinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B72.0Y",
+            "titulo": {
+                "es": "Otra retinitis viral especificada",
+                "en": "Other specified viral retinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B72.0Z",
+            "titulo": {
+                "es": "Retinitis viral, sin especificación",
+                "en": "Viral retinitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B72.Y",
+            "titulo": {
+                "es": "Otras enfermedades inflamatorias especificadas de la retina",
+                "en": "Other specified inflammatory diseases of the retina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B72.Z",
+            "titulo": {
+                "es": "Enfermedades inflamatorias de la retina, sin especificación",
+                "en": "Inflammatory diseases of the retina, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.0",
+            "titulo": {
+                "es": "Desprendimiento de retina con desgarro",
+                "en": "Retinal detachment with retinal break"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.10",
+            "titulo": {
+                "es": "Retinosquisis del adulto",
+                "en": "Adult retinoschisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.11",
+            "titulo": {
+                "es": "Retinosquisis juvenil",
+                "en": "Juvenile retinoschisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.1Y",
+            "titulo": {
+                "es": "Otra retinosquisis especificada",
+                "en": "Other specified retinoschisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.1Z",
+            "titulo": {
+                "es": "Retinosquisis, sin especificación",
+                "en": "Retinoschisis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.2",
+            "titulo": {
+                "es": "Quiste de la retina",
+                "en": "Retinal cysts"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.3",
+            "titulo": {
+                "es": "Desprendimiento seroso de retina",
+                "en": "Serous retinal detachment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.4",
+            "titulo": {
+                "es": "Roturas retinianas sin desprendimiento",
+                "en": "Retinal breaks without detachment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.Y",
+            "titulo": {
+                "es": "Otros desprendimientos o roturas especificados de la retina",
+                "en": "Other specified retinal detachments or breaks"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B73.Z",
+            "titulo": {
+                "es": "Desprendimientos o roturas de la retina, sin especificación",
+                "en": "Retinal detachments or breaks, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B74.0",
+            "titulo": {
+                "es": "Oclusión arterial retiniana",
+                "en": "Retinal artery occlusions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B74.1",
+            "titulo": {
+                "es": "Oclusión venosa retiniana",
+                "en": "Retinal venous occlusions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B74.2",
+            "titulo": {
+                "es": "Oclusión de arteria y vena retiniana combinada",
+                "en": "Combined retinal arterial and vein occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B74.Y",
+            "titulo": {
+                "es": "Otra oclusión vascular retiniana especificada",
+                "en": "Other specified retinal vascular occlusions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B74.Z",
+            "titulo": {
+                "es": "Oclusión vascular retiniana, sin especificación",
+                "en": "Retinal vascular occlusions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.00",
+            "titulo": {
+                "es": "Degeneración macular incipiente relacionada con la edad.",
+                "en": "Early age-related macular degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.01",
+            "titulo": {
+                "es": "Degeneración macular intermedia relacionada con la edad.",
+                "en": "Intermediate age-related macular degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.03",
+            "titulo": {
+                "es": "Degeneración macular atrófica relacionada con la edad en etapa tardía",
+                "en": "Atrophic late-stage age-related macular degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.04",
+            "titulo": {
+                "es": "Degeneración macular neovascular tardía relacionada con la edad",
+                "en": "Neovascular late-stage age-related macular degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.0Y",
+            "titulo": {
+                "es": "Otra degeneración macular especificada relacionada con la edad avanzada",
+                "en": "Other specified age-related macular degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.0Z",
+            "titulo": {
+                "es": "Degeneración macular relacionada con la edad avanzada, sin especificación",
+                "en": "Age-related macular degeneration, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.1",
+            "titulo": {
+                "es": "Agujero macular no traumático",
+                "en": "Non-traumatic macular hole"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.2",
+            "titulo": {
+                "es": "Coriorretinopatía serosa central",
+                "en": "Central serous chorioretinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.3",
+            "titulo": {
+                "es": "Telangiectasia macular",
+                "en": "Macular telangiectasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.Y",
+            "titulo": {
+                "es": "Otros trastornos maculares especificados",
+                "en": "Other specified macular disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B75.Z",
+            "titulo": {
+                "es": "Trastornos maculares, sin especificación",
+                "en": "Macular disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B76",
+            "titulo": {
+                "es": "Miopía degenerativa alta",
+                "en": "Degenerative high myopia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B77",
+            "titulo": {
+                "es": "Enfermedad de Eales",
+                "en": "Eales disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.0",
+            "titulo": {
+                "es": "Vasculopatía retiniana y leucodistrofia cerebral",
+                "en": "Retinal vasculopathy and cerebral leukodystrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.10",
+            "titulo": {
+                "es": "Cambios en la apariencia vascular retiniana",
+                "en": "Changes in retinal vascular appearance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.11",
+            "titulo": {
+                "es": "Retinopatía exudativa",
+                "en": "Exudative retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.12",
+            "titulo": {
+                "es": "Vasculitis retiniana",
+                "en": "Retinal vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.13",
+            "titulo": {
+                "es": "Telangiectasia retiniana",
+                "en": "Retinal telangiectasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.1Y",
+            "titulo": {
+                "es": "Otra retinopatía de fondo especificada y cambios vasculares retinianos",
+                "en": "Other specified background retinopathy and retinal vascular changes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.1Z",
+            "titulo": {
+                "es": "Retinopatía de fondo y cambios vasculares retinianos, sin especificación",
+                "en": "Background retinopathy and retinal vascular changes, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.2",
+            "titulo": {
+                "es": "Otras retinopatías proliferativas",
+                "en": "Other proliferative retinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.30",
+            "titulo": {
+                "es": "Seudodrusas reticulares",
+                "en": "Reticular pseudodrusen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.3Y",
+            "titulo": {
+                "es": "Otra degeneración especificada de la mácula o del polo posterior",
+                "en": "Other specified degeneration of macula or posterior pole"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.3Z",
+            "titulo": {
+                "es": "Degeneración de la mácula o del polo posterior, sin especificación",
+                "en": "Degeneration of macula or posterior pole, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.4",
+            "titulo": {
+                "es": "Degeneración periférica de la retina",
+                "en": "Peripheral retinal degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.5",
+            "titulo": {
+                "es": "Hemorragia retiniana",
+                "en": "Retinal haemorrhage"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.60",
+            "titulo": {
+                "es": "Desprendimiento seroso del epitelio pigmentario de la retina",
+                "en": "Serous detachment of retinal pigment epithelium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.61",
+            "titulo": {
+                "es": "Desprendimiento hemorrágico del epitelio pigmentario de la retina",
+                "en": "Haemorrhagic detachment of retinal pigment epithelium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.6Y",
+            "titulo": {
+                "es": "Otra separación especificada de las capas de la retina",
+                "en": "Other specified separation of retinal layers"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.6Z",
+            "titulo": {
+                "es": "Separación de las capas de la retina, sin especificación",
+                "en": "Separation of retinal layers, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.7",
+            "titulo": {
+                "es": "Edema retiniano",
+                "en": "Retinal oedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.8",
+            "titulo": {
+                "es": "Isquemia retiniana",
+                "en": "Retinal ischaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B78.9",
+            "titulo": {
+                "es": "Atrofia retiniana",
+                "en": "Retinal atrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B7Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la retina",
+                "en": "Other specified disorders of the retina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B7Z",
+            "titulo": {
+                "es": "Trastornos de la retina, sin especificación",
+                "en": "Disorders of the retina, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B80",
+            "titulo": {
+                "es": "Trastornos vitreorretinianos hereditarios",
+                "en": "Inherited vitreoretinal disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B81",
+            "titulo": {
+                "es": "Desprendimiento de vítreo posterior",
+                "en": "Posterior vitreous detachment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B82",
+            "titulo": {
+                "es": "Prolapso del cuerpo vítreo",
+                "en": "Vitreous prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B83",
+            "titulo": {
+                "es": "Hemorragia vítrea",
+                "en": "Vitreous haemorrhage"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B84",
+            "titulo": {
+                "es": "Opacidades, membranas o hebras vítreas",
+                "en": "Vitreous opacities, membranes or strands"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B8Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del cuerpo vítreo",
+                "en": "Other specified disorders of the vitreous body"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9B8Z",
+            "titulo": {
+                "es": "Trastornos del cuerpo vítreo, sin especificación",
+                "en": "Disorders of the vitreous body, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del segmento posterior del globo ocular",
+                "en": "Other specified disorders of the eyeball - posterior segment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C0Z",
+            "titulo": {
+                "es": "Trastornos del segmento posterior del globo ocular, sin especificación",
+                "en": "Disorders of the eyeball - posterior segment, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C20.0",
+            "titulo": {
+                "es": "Panuveítis no infecciosa",
+                "en": "Noninfectious panuveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C20.1",
+            "titulo": {
+                "es": "Panuveítis infecciosa",
+                "en": "Infectious panuveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C20.2",
+            "titulo": {
+                "es": "Endoftalmitis purulenta",
+                "en": "Purulent endophthalmitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C20.Y",
+            "titulo": {
+                "es": "Otra panuveítis especificada",
+                "en": "Other specified panuveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C20.Z",
+            "titulo": {
+                "es": "Panuveítis, sin especificación",
+                "en": "Panuveitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C21.0",
+            "titulo": {
+                "es": "Uveítis simpática",
+                "en": "Sympathetic uveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C21.Y",
+            "titulo": {
+                "es": "Otra endoftalmitis especificada",
+                "en": "Other specified endophthalmitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C21.Z",
+            "titulo": {
+                "es": "Endoftalmitis, sin especificación",
+                "en": "Endophthalmitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C22.0",
+            "titulo": {
+                "es": "Globo ocular atrófico",
+                "en": "Atrophia bulbi"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C22.1",
+            "titulo": {
+                "es": "Subatrofia del globo ocular",
+                "en": "Phthisis bulbi"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C22.Y",
+            "titulo": {
+                "es": "Otra deformidad del globo ocular especificada",
+                "en": "Other specified eyeball deformity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C22.Z",
+            "titulo": {
+                "es": "Deformidad del globo ocular, sin especificación",
+                "en": "Eyeball deformity, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del globo ocular que afectan los segmentos anterior y posterior",
+                "en": "Other specified disorders of the eyeball affecting both anterior and posterior segments"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C2Z",
+            "titulo": {
+                "es": "Trastornos del globo ocular que afectan los segmentos anterior y posterior, sin especificación",
+                "en": "Disorders of the eyeball affecting both anterior and posterior segments, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.0",
+            "titulo": {
+                "es": "Neuropatía óptica infecciosa",
+                "en": "Infectious optic neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.10",
+            "titulo": {
+                "es": "Neuritis retrobulbar",
+                "en": "Retrobulbar neuritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.1Y",
+            "titulo": {
+                "es": "Otra neuritis óptica especificada",
+                "en": "Other specified optic neuritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.1Z",
+            "titulo": {
+                "es": "Neuritis óptica, sin especificación",
+                "en": "Optic neuritis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.2",
+            "titulo": {
+                "es": "Neurorretinitis",
+                "en": "Neuroretinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.3",
+            "titulo": {
+                "es": "Perineuritis óptica",
+                "en": "Perineuritis of optic nerve"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.40",
+            "titulo": {
+                "es": "Neuropatía óptica isquémica anterior",
+                "en": "Anterior ischemic optic neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.41",
+            "titulo": {
+                "es": "Neuropatía óptica isquémica posterior",
+                "en": "Posterior ischemic optic neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.4Y",
+            "titulo": {
+                "es": "Otra neuropatía óptica isquémica especificada",
+                "en": "Other specified ischaemic optic neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.4Z",
+            "titulo": {
+                "es": "Neuropatía óptica isquémica, sin especificación",
+                "en": "Ischaemic optic neuropathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.5",
+            "titulo": {
+                "es": "Neuropatía óptica compresiva",
+                "en": "Compressive optic neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.6",
+            "titulo": {
+                "es": "Neuropatía óptica infiltrativa",
+                "en": "Infiltrative optic neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.7",
+            "titulo": {
+                "es": "Neuropatía óptica traumática",
+                "en": "Traumatic optic neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.8",
+            "titulo": {
+                "es": "Neuropatía óptica hereditaria",
+                "en": "Hereditary optic neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.9",
+            "titulo": {
+                "es": "Neuropatía óptica glaucomatosa",
+                "en": "Glaucomatous optic neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.A0",
+            "titulo": {
+                "es": "Papiledema",
+                "en": "Papilloedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.A1",
+            "titulo": {
+                "es": "Tumefacción de la papila óptica asociada a uveítis",
+                "en": "Optic disc swelling associated with uveitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.AY",
+            "titulo": {
+                "es": "Otra tumefacción especificada del disco óptico",
+                "en": "Other specified optic disc swelling"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.AZ",
+            "titulo": {
+                "es": "Tumefacción del disco óptico, sin especificación",
+                "en": "Optic disc swelling, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.B0",
+            "titulo": {
+                "es": "Atrofia óptica congénita",
+                "en": "Congenital optic atrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.B1",
+            "titulo": {
+                "es": "Atrofia óptica adquirida",
+                "en": "Acquired optic atrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.BZ",
+            "titulo": {
+                "es": "Atrofia óptica, sin especificación",
+                "en": "Optic atrophy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.Y",
+            "titulo": {
+                "es": "Otro trastorno especificado del nervio óptico",
+                "en": "Other specified disorder of the optic nerve"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C40.Z",
+            "titulo": {
+                "es": "Trastorno del nervio óptico, sin especificación",
+                "en": "Disorder of the optic nerve, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C41",
+            "titulo": {
+                "es": "Trastorno del quiasma óptico",
+                "en": "Disorder of optic chiasm"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C42",
+            "titulo": {
+                "es": "Trastorno de las vías ópticas posquiasmáticas",
+                "en": "Disorder of post chiasmal visual pathways"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C43",
+            "titulo": {
+                "es": "Trastorno de la corteza visual",
+                "en": "Disorder of visual cortex"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C44",
+            "titulo": {
+                "es": "Trastorno de los centros visuales superiores",
+                "en": "Disorder of higher visual centres"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C4Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de las vías o centros ópticos",
+                "en": "Other specified disorders of the visual pathways or centres"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C4Z",
+            "titulo": {
+                "es": "Trastornos de las vías o centros ópticos, sin especificación",
+                "en": "Disorders of the visual pathways or centres, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C60",
+            "titulo": {
+                "es": "Sospecha de glaucoma",
+                "en": "Glaucoma suspect"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.00",
+            "titulo": {
+                "es": "Glaucoma normotensivo",
+                "en": "Normal tension glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.01",
+            "titulo": {
+                "es": "Hipertensión ocular",
+                "en": "Ocular hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.02",
+            "titulo": {
+                "es": "Glaucoma primario de ángulo abierto con presión alta",
+                "en": "High pressure primary open-angle glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.0Y",
+            "titulo": {
+                "es": "Otra glaucoma primario especificado de ángulo abierto",
+                "en": "Other specified primary open-angle glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.0Z",
+            "titulo": {
+                "es": "Glaucoma primario de ángulo abierto, sin especificación",
+                "en": "Primary open-angle glaucoma, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.10",
+            "titulo": {
+                "es": "Sospecha de cierre de ángulo primario o ángulo anatómico estrecho",
+                "en": "Primary angle closure suspect or anatomical narrow angle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.11",
+            "titulo": {
+                "es": "Cierre de ángulo primario",
+                "en": "Primary angle-closure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.12",
+            "titulo": {
+                "es": "Glaucoma primario de ángulo cerrado",
+                "en": "Primary angle closure glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.13",
+            "titulo": {
+                "es": "Cierre de ángulo primario sin bloqueo pupilar",
+                "en": "Primary angle closure without pupillary block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.14",
+            "titulo": {
+                "es": "Cierre de ángulo agudo con bloqueo pupilar",
+                "en": "Acute angle closure with pupillary block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.15",
+            "titulo": {
+                "es": "Cierre de ángulo intermitente",
+                "en": "Intermittent angle-closure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.16",
+            "titulo": {
+                "es": "Ángulo cerrado crónico",
+                "en": "Chronic angle-closure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.17",
+            "titulo": {
+                "es": "Afección tras un episodio agudo de glaucoma de ángulo cerrado",
+                "en": "Condition after acute angle-closure glaucoma attack"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.1Y",
+            "titulo": {
+                "es": "Otro Glaucoma de ángulo cerrado primario o de ángulo cerrado especificado",
+                "en": "Other specified primary angle closure or angle closure glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.1Z",
+            "titulo": {
+                "es": "Glaucoma de ángulo cerrado primario o de ángulo cerrado, sin especificación",
+                "en": "Primary angle closure or angle closure glaucoma, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.20",
+            "titulo": {
+                "es": "Glaucoma seudoexfoliativo de ángulo abierto",
+                "en": "Pseudoexfoliative open-angle glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.21",
+            "titulo": {
+                "es": "Glaucoma pigmentario de ángulo abierto",
+                "en": "Pigmentary open-angle glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.22",
+            "titulo": {
+                "es": "Glaucoma secundario de ángulo abierto inducido por el cristalino",
+                "en": "Lens-induced secondary open-angle glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.23",
+            "titulo": {
+                "es": "Glaucoma asociado a hemorragia intraocular",
+                "en": "Glaucoma associated with intraocular haemorrhage"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.24",
+            "titulo": {
+                "es": "Glaucoma por inflamación ocular",
+                "en": "Glaucoma due to eye inflammation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.25",
+            "titulo": {
+                "es": "Crisis glaucomatociclítica",
+                "en": "Glaucomato-cyclitic crisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.26",
+            "titulo": {
+                "es": "Glaucoma secundario - ángulo abierto por parasitosis ocular",
+                "en": "Secondary open-angle glaucoma due to parasitic eye disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.27",
+            "titulo": {
+                "es": "Glaucoma por tumor intraocular",
+                "en": "Glaucoma due to intraocular tumours"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.28",
+            "titulo": {
+                "es": "Glaucoma asociado a desprendimiento de retina",
+                "en": "Glaucoma associated with retinal detachment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.29",
+            "titulo": {
+                "es": "Glaucoma por traumatismo ocular",
+                "en": "Glaucoma due to eye trauma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.2A",
+            "titulo": {
+                "es": "Glaucoma por medicamentos",
+                "en": "Glaucoma due to drugs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.2B",
+            "titulo": {
+                "es": "Glaucoma por aumento de la presión venosa epiescleral",
+                "en": "Glaucoma caused by increased episcleral venous pressure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.2C",
+            "titulo": {
+                "es": "Glaucoma secundario por masa extraocular",
+                "en": "Secondary glaucoma due to extra-ocular mass"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.2Y",
+            "titulo": {
+                "es": "Otro glaucoma secundario especificado de ángulo abierto",
+                "en": "Other specified secondary open-angle glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.2Z",
+            "titulo": {
+                "es": "Glaucoma secundario de ángulo abierto, sin especificación",
+                "en": "Secondary open-angle glaucoma, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.30",
+            "titulo": {
+                "es": "Glaucoma secundario de ángulo cerrado con bloqueo pupilar",
+                "en": "Secondary angle closure glaucoma with pupillary block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.31",
+            "titulo": {
+                "es": "Glaucoma secundario de ángulo cerrado sin bloqueo pupilar",
+                "en": "Secondary angle closure glaucoma without pupillary block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.32",
+            "titulo": {
+                "es": "Glaucoma secundario neovascular de ángulo cerrado",
+                "en": "Neovascular secondary angle closure glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.33",
+            "titulo": {
+                "es": "Glaucoma secundario de ángulo cerrado por proliferación endotelial",
+                "en": "Secondary angle closure glaucoma due to endothelial overgrowth"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.34",
+            "titulo": {
+                "es": "Glaucoma secundario de ángulo cerrado por penetración epitelial",
+                "en": "Secondary angle closure glaucoma due to epithelial ingrowth"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.35",
+            "titulo": {
+                "es": "Glaucoma por bloqueo ciliar",
+                "en": "Ciliary block glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.36",
+            "titulo": {
+                "es": "Glaucoma secundario de ángulo cerrado por otro desplazamiento anterior del diafragma iridocristaliniano",
+                "en": "Secondary angle closure glaucoma due to other anterior displacement of the lens-iris diaphragm"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.3Y",
+            "titulo": {
+                "es": "Otro glaucoma secundario especificado de ángulo cerrado",
+                "en": "Other specified secondary angle closure glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.3Z",
+            "titulo": {
+                "es": "Glaucoma secundario de ángulo cerrado, sin especificación",
+                "en": "Secondary angle closure glaucoma, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.40",
+            "titulo": {
+                "es": "Glaucoma congénito primario",
+                "en": "Primary congenital glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.41",
+            "titulo": {
+                "es": "Glaucoma infantil primario",
+                "en": "Primary infantile glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.42",
+            "titulo": {
+                "es": "Glaucoma infantil secundario",
+                "en": "Secondary childhood glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.4Y",
+            "titulo": {
+                "es": "Otro glaucoma del desarrollo especificado",
+                "en": "Other specified developmental glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.4Z",
+            "titulo": {
+                "es": "Glaucoma del desarrollo, sin especificación",
+                "en": "Developmental glaucoma, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.Y",
+            "titulo": {
+                "es": "Otro(a)(s) glaucoma especificado(a)(s)",
+                "en": "Other specified glaucoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C61.Z",
+            "titulo": {
+                "es": "Glaucoma, sin especificación",
+                "en": "Glaucoma, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.0",
+            "titulo": {
+                "es": "Estrabismo convergente",
+                "en": "Esotropia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.1",
+            "titulo": {
+                "es": "estrabismo divergente",
+                "en": "Exotropia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.2",
+            "titulo": {
+                "es": "Estrabismo vertical o de torsión",
+                "en": "Vertical or torsional strabismus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.30",
+            "titulo": {
+                "es": "Exotropía divergente intermitente",
+                "en": "Intermittent divergent exotropia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.31",
+            "titulo": {
+                "es": "Esotropía convergente intermitente",
+                "en": "Intermittent convergent esotropia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.3Y",
+            "titulo": {
+                "es": "Otro estrabismo intermitente especificado",
+                "en": "Other specified intermittent strabismus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.3Z",
+            "titulo": {
+                "es": "Estrabismo intermitente, sin especificación",
+                "en": "Intermittent strabismus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.4",
+            "titulo": {
+                "es": "Heteroforia",
+                "en": "Heterophoria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.5",
+            "titulo": {
+                "es": "Estrabismo mecánico",
+                "en": "Mechanical strabismus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.Y",
+            "titulo": {
+                "es": "Otro estrabismo no paralítico especificado",
+                "en": "Other specified non paralytic strabismus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C80.Z",
+            "titulo": {
+                "es": "Estrabismo no paralítico, sin especificación",
+                "en": "Non paralytic strabismus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C81.00",
+            "titulo": {
+                "es": "Parálisis bilateral externa del nervio motor ocular común",
+                "en": "External bilateral paralysis of oculomotor nerve"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C81.0Y",
+            "titulo": {
+                "es": "Otra parálisis especificada del tercer par",
+                "en": "Other specified third nerve palsy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C81.0Z",
+            "titulo": {
+                "es": "Parálisis del tercer par, sin especificación",
+                "en": "Third nerve palsy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C81.1",
+            "titulo": {
+                "es": "Parálisis del cuarto par",
+                "en": "Fourth nerve palsy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C81.2",
+            "titulo": {
+                "es": "Parálisis del sexto par",
+                "en": "Sixth nerve palsy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C81.3",
+            "titulo": {
+                "es": "Oftalmoplejia externa total",
+                "en": "Total external ophthalmoplegia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C81.4",
+            "titulo": {
+                "es": "Síndrome del seno cavernoso",
+                "en": "Cavernous sinus syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C81.Y",
+            "titulo": {
+                "es": "Otras parálisis del nervio motor ocular especificadas",
+                "en": "Palsy of other specified ocular motor nerve"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C81.Z",
+            "titulo": {
+                "es": "Parálisis del nervio motor ocular, sin especificación",
+                "en": "Palsy of unspecified ocular motor nerve"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C82.0",
+            "titulo": {
+                "es": "Oftalmoplejia externa progresiva",
+                "en": "Progressive external ophthalmoplegia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C82.1",
+            "titulo": {
+                "es": "Distrofia muscular con afectación de músculo extraocular",
+                "en": "Muscular dystrophy affecting extraocular muscle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C82.2",
+            "titulo": {
+                "es": "Síndrome de disinervación craneal congénita",
+                "en": "Congenital cranial dysinnervation syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C82.3",
+            "titulo": {
+                "es": "Oftalmopatía restrictiva",
+                "en": "Restrictive ophthalmopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C82.4",
+            "titulo": {
+                "es": "Apraxia oculomotora",
+                "en": "Oculomotor apraxia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C82.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de los músculos extraoculares",
+                "en": "Other specified disorders of extraocular muscles"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C82.Z",
+            "titulo": {
+                "es": "Trastornos de los músculos extraoculares, sin especificación",
+                "en": "Disorders of extraocular muscles, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.00",
+            "titulo": {
+                "es": "Parálisis de la mirada horizontal",
+                "en": "Horizontal gaze palsy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.01",
+            "titulo": {
+                "es": "Parálisis de la mirada vertical",
+                "en": "Vertical gaze palsy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.02",
+            "titulo": {
+                "es": "Parálisis monocular de los elevadores",
+                "en": "Monocular elevator palsy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.0Y",
+            "titulo": {
+                "es": "Otra parálisis especificada de la mirada conjugada",
+                "en": "Other specified palsy of conjugate gaze"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.0Z",
+            "titulo": {
+                "es": "Parálisis de la mirada conjugada, sin especificación",
+                "en": "Palsy of conjugate gaze, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.10",
+            "titulo": {
+                "es": "Desviación conjugada de la mirada horizontal",
+                "en": "Horizontal conjugate gaze deviation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.11",
+            "titulo": {
+                "es": "Desviación de la mirada hacia arriba",
+                "en": "Upward gaze deviation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.12",
+            "titulo": {
+                "es": "Desviación de la mirada hacia abajo",
+                "en": "Downward gaze deviation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.13",
+            "titulo": {
+                "es": "Crisis oculógiras",
+                "en": "Oculogyric crisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.1Y",
+            "titulo": {
+                "es": "Otro espasmo especificado de la mirada conjugada",
+                "en": "Other specified spasm of conjugate gaze"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.1Z",
+            "titulo": {
+                "es": "Espasmo de la mirada conjugada, sin especificación",
+                "en": "Spasm of conjugate gaze, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.2",
+            "titulo": {
+                "es": "Insuficiencia de convergencia",
+                "en": "Convergence insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.3",
+            "titulo": {
+                "es": "Exceso de convergencia",
+                "en": "Convergence excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.4",
+            "titulo": {
+                "es": "Espasmo del reflejo cercano",
+                "en": "Spasm of the near reflex"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.5",
+            "titulo": {
+                "es": "Oftalmoplejia internuclear",
+                "en": "Internuclear ophthalmoplegia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.60",
+            "titulo": {
+                "es": "Insuficiencia de divergencia",
+                "en": "Divergence insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.61",
+            "titulo": {
+                "es": "Parálisis de la divergencia",
+                "en": "Divergence paralysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.62",
+            "titulo": {
+                "es": "Exceso de divergencia",
+                "en": "Divergence excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.63",
+            "titulo": {
+                "es": "Divergencia sinérgica",
+                "en": "Synergistic divergence"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.64",
+            "titulo": {
+                "es": "Desviación oblicua",
+                "en": "Skew deviation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.65",
+            "titulo": {
+                "es": "Reacción ocular de inclinación",
+                "en": "Ocular tilt reaction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.66",
+            "titulo": {
+                "es": "Desviación oblicua alternante",
+                "en": "Alternating skew deviation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.67",
+            "titulo": {
+                "es": "Divergencia vertical disociativa",
+                "en": "Dissociative vertical divergence"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.6Y",
+            "titulo": {
+                "es": "Otras anomalías especificadas de divergencia o desviación del movimiento ocular",
+                "en": "Other specified anomalies of divergence or deviation of eye movement"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.6Z",
+            "titulo": {
+                "es": "Anomalías de divergencia o desviación del movimiento ocular, sin especificación",
+                "en": "Anomalies of divergence or deviation of eye movement, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del movimiento binocular",
+                "en": "Other specified disorders of binocular movement"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C83.Z",
+            "titulo": {
+                "es": "Trastornos del movimiento binocular, sin especificación",
+                "en": "Disorders of binocular movement, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.0",
+            "titulo": {
+                "es": "Nistagmo fisiológico",
+                "en": "Physiological nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.1",
+            "titulo": {
+                "es": "Formas congénitas de nistagmo",
+                "en": "Congenital forms of nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.20",
+            "titulo": {
+                "es": "Nistagmo hacia abajo",
+                "en": "Downbeat nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.21",
+            "titulo": {
+                "es": "Nistagmo hacia arriba",
+                "en": "Upbeat nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.22",
+            "titulo": {
+                "es": "Nistagmo de torsión",
+                "en": "Torsional nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.23",
+            "titulo": {
+                "es": "Nistagmo pervertido",
+                "en": "Perverted nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.2Y",
+            "titulo": {
+                "es": "Otro nistagmo vestibular especificado",
+                "en": "Other specified vestibular nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.2Z",
+            "titulo": {
+                "es": "Nistagmo vestibular, sin especificación",
+                "en": "Vestibular nystagmus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.3",
+            "titulo": {
+                "es": "Nistagmo en balancín",
+                "en": "Seesaw nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.4",
+            "titulo": {
+                "es": "Nistagmo provocado por la mirada",
+                "en": "Gaze-evoked nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.50",
+            "titulo": {
+                "es": "Nistagmo por privación visual",
+                "en": "Visual deprivation nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.51",
+            "titulo": {
+                "es": "Nistagmo divergente",
+                "en": "Divergence nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.52",
+            "titulo": {
+                "es": "Nistagmo de retracción convergente",
+                "en": "Convergence-retraction nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.5Y",
+            "titulo": {
+                "es": "Otro nistagmo especificado en trastornos del sistema visual",
+                "en": "Other specified nystagmus occurring in visual system disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.5Z",
+            "titulo": {
+                "es": "Nistagmo en trastornos del sistema visual, sin especificación",
+                "en": "Nystagmus occurring in visual system disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.6",
+            "titulo": {
+                "es": "Nistagmo palpebral",
+                "en": "Eyelid nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.Y",
+            "titulo": {
+                "es": "Otro nistagmo especificado",
+                "en": "Other specified nystagmus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C84.Z",
+            "titulo": {
+                "es": "Nistagmo, sin especificación",
+                "en": "Nystagmus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C85.00",
+            "titulo": {
+                "es": "Trastornos de pulso sacádico",
+                "en": "Disorders of the saccadic pulse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C85.01",
+            "titulo": {
+                "es": "Trastornos del intervalo sacádico",
+                "en": "Disorders of the saccadic step"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C85.02",
+            "titulo": {
+                "es": "Movimientos sacádicos inadecuados",
+                "en": "Inappropriate saccades"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C85.0Y",
+            "titulo": {
+                "es": "Otras anomalías especificadas de los movimientos oculares sacádicos",
+                "en": "Other specified anomalies of saccadic eye movements"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C85.0Z",
+            "titulo": {
+                "es": "Anomalías de los movimientos oculares sacádicos, sin especificación",
+                "en": "Anomalies of saccadic eye movements, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C85.1",
+            "titulo": {
+                "es": "Anomalías de los movimientos de seguimiento lento",
+                "en": "Anomalies of smooth pursuit movements"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C85.2",
+            "titulo": {
+                "es": "Trastornos no orgánicos de los movimientos oculares",
+                "en": "Nonorganic eye movement disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C85.Y",
+            "titulo": {
+                "es": "Otros movimientos oculares irregulares especificados",
+                "en": "Other specified irregular eye movements"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C85.Z",
+            "titulo": {
+                "es": "Algunos movimientos oculares irregulares especificados, sin especificación",
+                "en": "Irregular eye movements, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C8Y",
+            "titulo": {
+                "es": "Otro estrabismo o trastorno especificado de la movilidad ocular",
+                "en": "Other specified strabismus or ocular motility disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9C8Z",
+            "titulo": {
+                "es": "Estrabismo o trastorno de la movilidad ocular, sin especificación",
+                "en": "Strabismus or ocular motility disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D00.0",
+            "titulo": {
+                "es": "Miopía",
+                "en": "Myopia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D00.1",
+            "titulo": {
+                "es": "Hipermetropía",
+                "en": "Hypermetropia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D00.2",
+            "titulo": {
+                "es": "Astigmatismo",
+                "en": "Astigmatism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D00.3",
+            "titulo": {
+                "es": "Presbicia",
+                "en": "Presbyopia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D00.4",
+            "titulo": {
+                "es": "Anisometropía",
+                "en": "Anisometropia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D00.5",
+            "titulo": {
+                "es": "Aniseiconia",
+                "en": "Aniseikonia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D00.6",
+            "titulo": {
+                "es": "Cambio refractivo transitorio",
+                "en": "Transient refractive change"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D00.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la refracción",
+                "en": "Other specified disorders of refraction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D00.Z",
+            "titulo": {
+                "es": "Trastornos de la refracción, sin especificación",
+                "en": "Disorders of refraction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D01.0",
+            "titulo": {
+                "es": "Oftalmoplejia interna",
+                "en": "Internal ophthalmoplegia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D01.1",
+            "titulo": {
+                "es": "Paresia de acomodación",
+                "en": "Paresis of accommodation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D01.2",
+            "titulo": {
+                "es": "Espasmo de acomodación",
+                "en": "Spasm of accommodation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D01.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la acomodación",
+                "en": "Other specified disorders of accommodation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D01.Z",
+            "titulo": {
+                "es": "Trastornos de la acomodación, sin especificación",
+                "en": "Disorders of accommodation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de refracción o acomodación",
+                "en": "Other specified disorders of refraction or accommodation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D0Z",
+            "titulo": {
+                "es": "Trastornos de refracción o acomodación, sin especificación",
+                "en": "Disorders of refraction or accommodation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D20",
+            "titulo": {
+                "es": "Queratopatía ampollosa afáquica tras cirugía de catarata",
+                "en": "Bullous aphakic keratopathy following cataract surgery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D21",
+            "titulo": {
+                "es": "Fragmentos de catarata en el ojo tras cirugía de catarata",
+                "en": "Cataract lens fragments in eye following cataract surgery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D22",
+            "titulo": {
+                "es": "Cicatrices coriorretinianas tras cirugía por desprendimiento",
+                "en": "Chorioretinal scars after surgery for detachment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D23",
+            "titulo": {
+                "es": "Ampulitis conjuntival tras cirugía de glaucoma",
+                "en": "Conjunctival blebitis after glaucoma surgery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D24",
+            "titulo": {
+                "es": "Complicaciones con dispositivos de drenaje para glaucoma.",
+                "en": "Complications with glaucoma drainage devices"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D25",
+            "titulo": {
+                "es": "Glaucoma por láser o cirugía ocular",
+                "en": "Glaucoma due to ocular surgery or laser"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D41",
+            "titulo": {
+                "es": "Deficiencia del campo visual",
+                "en": "Impairment of visual field"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.20",
+            "titulo": {
+                "es": "Ampliación de la mancha ciega",
+                "en": "Enlarged blind spot"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.21",
+            "titulo": {
+                "es": "Escotoma arqueado",
+                "en": "Arcuate scotoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.22",
+            "titulo": {
+                "es": "Escalón nasal",
+                "en": "Nasal step"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.23",
+            "titulo": {
+                "es": "Escotoma anular",
+                "en": "Ring scotoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.24",
+            "titulo": {
+                "es": "Escotoma periférico aislado",
+                "en": "Isolated peripheral scotoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.2Y",
+            "titulo": {
+                "es": "Otro déficit de campo periférico especificado",
+                "en": "Other specified peripheral field deficit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.2Z",
+            "titulo": {
+                "es": "Déficit de campo periférico, sin especificación",
+                "en": "Peripheral field deficit, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.3",
+            "titulo": {
+                "es": "Defecto hemianópico o cuadrantanópico",
+                "en": "Hemianopic or quadrantic loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.4",
+            "titulo": {
+                "es": "Escotoma central",
+                "en": "Central scotoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.5",
+            "titulo": {
+                "es": "Escotoma paracentral",
+                "en": "Para-central scotoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.60",
+            "titulo": {
+                "es": "Hemianopsia o cuadrantanopsia homónimas del hemicampo derecho",
+                "en": "Right hemi-field homonymous hemianopia or quadrant anopia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.61",
+            "titulo": {
+                "es": "Hemianopsia o cuadrantanopsia homónimas del hemicampo izquierdo",
+                "en": "Left hemi-field homonymous hemianopia or quadrant anopia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.6Y",
+            "titulo": {
+                "es": "Otra hemianopsia o cuadrantanopsia homónimas especificadas",
+                "en": "Other specified homonymous hemianopia or quadrant anopia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.6Z",
+            "titulo": {
+                "es": "Hemianopsia o cuadrantanopsia homónimas, sin especificación",
+                "en": "Homonymous hemianopia or quadrant anopia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.70",
+            "titulo": {
+                "es": "Hemianopsia o cuadrantanopsia heterónimas binasales",
+                "en": "Bi-nasal defects heteronymous hemianopia or quadrant anopia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.71",
+            "titulo": {
+                "es": "Hemianopsia o cuadrantanopsia heterónimas bitemporales",
+                "en": "Bi-temporal defects heteronymous hemianopia or quadrant anopia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.7Y",
+            "titulo": {
+                "es": "Otra hemianopsia o cuadrantanopsia heterónimas especificadas",
+                "en": "Other specified heteronymous hemianopia or quadrant anopia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.7Z",
+            "titulo": {
+                "es": "Hemianopsia o cuadrantanopsia heterónimas, sin especificación",
+                "en": "Heteronymous hemianopia or quadrant anopia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.Y",
+            "titulo": {
+                "es": "Otros patrones especificados de deficiencia del campo visual",
+                "en": "Other specified patterns of visual field impairment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D42.Z",
+            "titulo": {
+                "es": "Patrones de deficiencia del campo visual, sin especificación",
+                "en": "Patterns of visual field impairment, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D43",
+            "titulo": {
+                "es": "Deficiencia de la visión de contraste",
+                "en": "Impairment of contrast vision"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D44",
+            "titulo": {
+                "es": "Deficiencia de la visión cromática",
+                "en": "Impairment of colour vision"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D45",
+            "titulo": {
+                "es": "Deficiencia de la sensibilidad a la luz",
+                "en": "Impairment of light sensitivity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D46",
+            "titulo": {
+                "es": "Deficiencia de las funciones binoculares",
+                "en": "Impairment of binocular functions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D50",
+            "titulo": {
+                "es": "Fatiga ocular",
+                "en": "Visual discomfort"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D51",
+            "titulo": {
+                "es": "Pérdida visual transitoria",
+                "en": "Transient visual loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D52",
+            "titulo": {
+                "es": "Pérdidas de hemicampo",
+                "en": "Hemifield losses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D53",
+            "titulo": {
+                "es": "Fenómenos entópticos",
+                "en": "Entoptic phenomena"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D54",
+            "titulo": {
+                "es": "Ilusiones visuales",
+                "en": "Visual illusions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D55",
+            "titulo": {
+                "es": "Pérdida visual no orgánica",
+                "en": "Nonorganic visual loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D56",
+            "titulo": {
+                "es": "Síndrome de Charles Bonnet",
+                "en": "Visual release hallucinations"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D5Y",
+            "titulo": {
+                "es": "Otras experiencias visuales subjetivas especificadas",
+                "en": "Other specified subjective visual experiences"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D5Z",
+            "titulo": {
+                "es": "Experiencias visuales subjetivas, sin especificación",
+                "en": "Subjective visual experiences, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D7Y",
+            "titulo": {
+                "es": "Otra deficiencia especificada de las funciones visuales",
+                "en": "Other specified impairment of visual functions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D7Z",
+            "titulo": {
+                "es": "Deficiencia de las funciones visuales, sin especificación",
+                "en": "Impairment of visual functions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D90.1",
+            "titulo": {
+                "es": "Deficiencia leve de la visión",
+                "en": "Mild vision impairment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D90.2",
+            "titulo": {
+                "es": "Deficiencia moderada de la visión",
+                "en": "Moderate vision impairment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D90.3",
+            "titulo": {
+                "es": "Deficiencia grave de la visión",
+                "en": "Severe vision impairment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D90.6",
+            "titulo": {
+                "es": "Ceguera",
+                "en": "Blindness"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D90.7",
+            "titulo": {
+                "es": "Deficiencia de visión cercana",
+                "en": "Near vision impairment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D92",
+            "titulo": {
+                "es": "Disfunciones visuales específicas",
+                "en": "Specific vision dysfunctions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D93",
+            "titulo": {
+                "es": "Disfunciones complejas relacionadas con la visión",
+                "en": "Complex vision-related dysfunctions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D94",
+            "titulo": {
+                "es": "Deficiencia de la agudeza visual actual",
+                "en": "Impairment of presenting visual acuity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D95",
+            "titulo": {
+                "es": "Deficiencia de la agudeza visual mejor corregida",
+                "en": "Impairment of best corrected visual acuity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D96",
+            "titulo": {
+                "es": "Deficiencia de la agudeza visual no corregida",
+                "en": "Impairment of uncorrected visual acuity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D9Y",
+            "titulo": {
+                "es": "Otra deficiencia especificada de la visión",
+                "en": "Other specified vision impairment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9D9Z",
+            "titulo": {
+                "es": "Deficiencia de la visión, sin especificación",
+                "en": "Vision impairment, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9E1Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del sistema visual",
+                "en": "Other specified diseases of the visual system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "9E1Z",
+            "titulo": {
+                "es": "Enfermedades del sistema visual, sin especificación",
+                "en": "Diseases of the visual system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

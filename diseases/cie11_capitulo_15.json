@@ -1,0 +1,3259 @@
+{
+    "codigo": "15",
+    "titulo": {
+        "es": "Enfermedades del sistema musculo esquelético o del tejido conjuntivo",
+        "en": "Diseases of the musculoskeletal system or connective tissue"
+    },
+    "subcategorias": [
+        {
+            "codigo": "FA00.0",
+            "titulo": {
+                "es": "Osteoartrosis primaria de la cadera",
+                "en": "Primary osteoarthritis of hip"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA00.1",
+            "titulo": {
+                "es": "Osteoartritis postraumática de la cadera",
+                "en": "Post traumatic osteoarthritis of hip"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA00.2",
+            "titulo": {
+                "es": "Otra osteoartritis secundaria de la cadera",
+                "en": "Other secondary osteoarthritis of hip"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA00.Z",
+            "titulo": {
+                "es": "Osteoartrosis de la cadera, sin especificación",
+                "en": "Osteoarthritis of hip, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA01.0",
+            "titulo": {
+                "es": "Osteoartritis primaria de la rodilla",
+                "en": "Primary osteoarthritis of knee"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA01.1",
+            "titulo": {
+                "es": "Osteoartritis post-traumática de la rodilla.",
+                "en": "Post traumatic osteoarthritis of knee"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA01.2",
+            "titulo": {
+                "es": "Otras osteoartritis secundarias de la rodilla.",
+                "en": "Other secondary osteoarthritis of knee"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA01.Z",
+            "titulo": {
+                "es": "Osteoartritis de la rodilla, sin especificación",
+                "en": "Osteoarthritis of knee, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA02.0",
+            "titulo": {
+                "es": "Osteoartritis primaria de la muñeca o de la mano",
+                "en": "Primary osteoarthritis of wrist or hand"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA02.1",
+            "titulo": {
+                "es": "Osteoartritis postraumática de la muñeca o de la mano",
+                "en": "Post traumatic osteoarthritis of wrist or hand"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA02.2",
+            "titulo": {
+                "es": "Otra osteoartritis secundaria de la muñeca o de la mano",
+                "en": "Other secondary osteoarthritis of wrist or hand"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA02.Z",
+            "titulo": {
+                "es": "Osteoartritis de la muñeca o de la mano, sin especificación",
+                "en": "Osteoarthritis of wrist or hand, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA03.0",
+            "titulo": {
+                "es": "Osteoartritis primaria de otra articulación especificada",
+                "en": "Primary osteoarthritis of other specified joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA03.1",
+            "titulo": {
+                "es": "Osteoartritis postraumática de otra articulación especificada",
+                "en": "Post traumatic osteoarthritis of other specified joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA03.2",
+            "titulo": {
+                "es": "Otra osteoartritis secundaria de otra articulación especificada",
+                "en": "Other secondary osteoarthritis of other specified joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA03.Z",
+            "titulo": {
+                "es": "Osteoartritis de otra articulación especificada, sin especificación",
+                "en": "Osteoarthritis of other specified joint, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA04",
+            "titulo": {
+                "es": "Oligo osteoartritis",
+                "en": "Oligoosteoarthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA05",
+            "titulo": {
+                "es": "Poliosteoartritis",
+                "en": "Polyosteoarthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA0Z",
+            "titulo": {
+                "es": "Osteoartritis, sin especificación",
+                "en": "Osteoarthritis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA10.0",
+            "titulo": {
+                "es": "Infección bacteriana de la articulación",
+                "en": "Bacterial infection of joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA10.1",
+            "titulo": {
+                "es": "Infección viral de la articulación",
+                "en": "Viral infection of joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA10.2",
+            "titulo": {
+                "es": "Infección micótica de la articulación",
+                "en": "Fungal infection of joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA10.Z",
+            "titulo": {
+                "es": "Infecciones directas de las articulaciones, sin especificación",
+                "en": "Direct infections of joint, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA11.0",
+            "titulo": {
+                "es": "Artropatía tras derivación intestinal",
+                "en": "Arthropathy following intestinal bypass"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA11.1",
+            "titulo": {
+                "es": "Artropatía tras la vacunación",
+                "en": "Arthropathy following vaccination"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA11.2",
+            "titulo": {
+                "es": "Artropatía tras infección genitourinaria",
+                "en": "Arthropathy following genitourinary infection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA11.Y",
+            "titulo": {
+                "es": "Otras artropatías reactivas especificadas",
+                "en": "Other specified reactive arthropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA11.Z",
+            "titulo": {
+                "es": "Artropatías reactivas, sin especificación",
+                "en": "Reactive arthropathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA12.0",
+            "titulo": {
+                "es": "Artropatía postinfecciosa bacteriana",
+                "en": "Bacterial postinfectious arthropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA12.1",
+            "titulo": {
+                "es": "Artropatías postinfecciosas virales",
+                "en": "Viral postinfectious arthropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA12.2",
+            "titulo": {
+                "es": "Artropatías postinfecciosas micóticas",
+                "en": "Fungal postinfectious arthropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA12.3",
+            "titulo": {
+                "es": "Artropatías postinfecciosas parasitarias",
+                "en": "Parasitic postinfectious arthropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA12.Y",
+            "titulo": {
+                "es": "Otras artropatías postinfecciosas especificadas",
+                "en": "Other specified postinfectious arthropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA12.Z",
+            "titulo": {
+                "es": "Artropatías postinfecciosas, sin especificación",
+                "en": "Postinfectious arthropathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA13",
+            "titulo": {
+                "es": "Espondiloartritis infecciosa",
+                "en": "Infectious spondyloarthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA1Y",
+            "titulo": {
+                "es": "Otras artropatías especificadas por infección",
+                "en": "Other specified infection related arthropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA1Z",
+            "titulo": {
+                "es": "Artropatías por infección, sin especificación",
+                "en": "Infection related arthropathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA20.0",
+            "titulo": {
+                "es": "Artritis reumatoide seropositiva",
+                "en": "Seropositive rheumatoid arthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA20.1",
+            "titulo": {
+                "es": "Artritis reumatoide seronegativa",
+                "en": "Seronegative rheumatoid arthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA20.Z",
+            "titulo": {
+                "es": "Artritis reumatoide, serología, sin especificación",
+                "en": "Rheumatoid arthritis, serology unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA21.0",
+            "titulo": {
+                "es": "Espondiloartritis psoriásica",
+                "en": "Psoriatic spondyloarthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA21.Y",
+            "titulo": {
+                "es": "Otra artritis psoriásica especificada",
+                "en": "Other specified psoriatic arthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA21.Z",
+            "titulo": {
+                "es": "Artritis psoriásica, sin especificación",
+                "en": "Psoriatic arthritis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA22",
+            "titulo": {
+                "es": "Polimialgia reumática",
+                "en": "Polymyalgia rheumatica"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA23",
+            "titulo": {
+                "es": "Enfermedad de Still de comienzo en el adulto",
+                "en": "Adult-onset Still disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA24.00",
+            "titulo": {
+                "es": "Oligoartritis idiopática juvenil de inicio persistente",
+                "en": "Juvenile idiopathic oligoarthritis, onset persistent"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA24.01",
+            "titulo": {
+                "es": "Oligoartritis idiopática juvenil de inicio prolongado",
+                "en": "Juvenile idiopathic oligoarthritis, onset extended"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA24.0Z",
+            "titulo": {
+                "es": "Oligoartritis idiopática juvenil, sin especificación",
+                "en": "Juvenile idiopathic oligoarthritis, onset unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA24.1",
+            "titulo": {
+                "es": "Poliartritis idiopática juvenil",
+                "en": "Juvenile idiopathic polyarthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA24.2",
+            "titulo": {
+                "es": "Artritis psoriásica juvenil",
+                "en": "Juvenile psoriatic arthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA24.3",
+            "titulo": {
+                "es": "Artritis relacionada con entesitis juvenil",
+                "en": "Juvenile enthesitis related arthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA24.4",
+            "titulo": {
+                "es": "Artritis juvenil sistémica",
+                "en": "Juvenile systemic arthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA24.Y",
+            "titulo": {
+                "es": "Otra artritis idiopática juvenil especificada",
+                "en": "Other specified juvenile idiopathic arthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA24.Z",
+            "titulo": {
+                "es": "Artritis idiopática juvenil, sin especificación",
+                "en": "Juvenile idiopathic arthritis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA25.0",
+            "titulo": {
+                "es": "Gota primaria",
+                "en": "Primary gout"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA25.10",
+            "titulo": {
+                "es": "Gota causada por el plomo",
+                "en": "Lead-induced gout"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA25.11",
+            "titulo": {
+                "es": "Gota provocada por medicamentos",
+                "en": "Drug-induced gout"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA25.12",
+            "titulo": {
+                "es": "Artropatía gotosa debida a defectos enzimáticos u otros trastornos hereditarios",
+                "en": "Gouty arthropathy due to enzyme defects or other inherited disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA25.1Y",
+            "titulo": {
+                "es": "Otra gota secundaria especificada",
+                "en": "Other specified secondary gout"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA25.1Z",
+            "titulo": {
+                "es": "Gota secundaria, sin especificación",
+                "en": "Secondary gout, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA25.20",
+            "titulo": {
+                "es": "Gota tofácea",
+                "en": "Tophaceous gout"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA25.2Y",
+            "titulo": {
+                "es": "Otra gota especificada sin especificación si es primaria o secundaria",
+                "en": "Other specified gout without specification whether primary or secondary"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA25.2Z",
+            "titulo": {
+                "es": "Gota, sin especificación",
+                "en": "Gout, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA26.0",
+            "titulo": {
+                "es": "Enfermedad por depósito de dehidrato pirofosfato de calcio",
+                "en": "Calcium pyrophosphate dehydrate deposition disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA26.1",
+            "titulo": {
+                "es": "Enfermedad por depósito de hidroxiapatita",
+                "en": "Hydroxyapatite deposition disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA26.2",
+            "titulo": {
+                "es": "Condrocalcinosis",
+                "en": "Chondrocalcinosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA26.Y",
+            "titulo": {
+                "es": "Otras artropatías por cristales especificadas",
+                "en": "Other specified crystal arthropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA26.Z",
+            "titulo": {
+                "es": "Artropatías por cristales, sin especificación",
+                "en": "Crystal arthropathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA27.0",
+            "titulo": {
+                "es": "Enfermedad de Kaschin-Beck",
+                "en": "Kashin-Beck disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA27.1",
+            "titulo": {
+                "es": "Sinovitis vellonodular pigmentada",
+                "en": "Pigmented villonodular synovitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA27.2",
+            "titulo": {
+                "es": "Reumatismo palindrómico",
+                "en": "Palindromic rheumatism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA27.3",
+            "titulo": {
+                "es": "Sinovitis transitoria",
+                "en": "Transient synovitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA27.4",
+            "titulo": {
+                "es": "Hidrartros intermitente",
+                "en": "Intermittent hydrarthrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA27.Y",
+            "titulo": {
+                "es": "Otras artropatías inflamatorias especificadas",
+                "en": "Other specified inflammatory arthropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA2Z",
+            "titulo": {
+                "es": "Artropatías inflamatorias, sin especificación",
+                "en": "Inflammatory arthropathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA30.0",
+            "titulo": {
+                "es": "Hallux valgus adquirido",
+                "en": "Acquired hallux valgus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA30.1",
+            "titulo": {
+                "es": "Hallux rigidus",
+                "en": "Hallux rigidus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA30.2",
+            "titulo": {
+                "es": "Dedo del pie en martillo, adquirido",
+                "en": "Acquired hammer toe"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA30.Y",
+            "titulo": {
+                "es": "Otras deformidades adquiridas especificadas de los dedos de las manos o de los pies",
+                "en": "Other specified acquired deformities of fingers or toes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA30.Z",
+            "titulo": {
+                "es": "Deformidades adquiridas de los dedos de las manos o de los pies, sin especificación",
+                "en": "Acquired deformities of fingers or toes, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.0",
+            "titulo": {
+                "es": "Deformidad en valgo, no clasificada en otra parte",
+                "en": "Valgus deformity, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.1",
+            "titulo": {
+                "es": "Deformidad en varo, no clasificada en otra parte",
+                "en": "Varus deformity, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.2",
+            "titulo": {
+                "es": "Deformidad en flexión",
+                "en": "Flexion deformity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.3",
+            "titulo": {
+                "es": "Muñeca caída adquirida",
+                "en": "Acquired wrist drop"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.4",
+            "titulo": {
+                "es": "Pie caído adquirido",
+                "en": "Acquired foot drop"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.5",
+            "titulo": {
+                "es": "Pie plano adquirido",
+                "en": "Acquired pes planus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.6",
+            "titulo": {
+                "es": "Mano en garra o mano zamba adquirida",
+                "en": "Acquired clawhand or clubhand"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.7",
+            "titulo": {
+                "es": "Pie en garra o pie zambo, adquiridos",
+                "en": "Acquired clawfoot or clubfoot"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.8",
+            "titulo": {
+                "es": "Longitud desigual de las extremidades, adquirida",
+                "en": "Acquired unequal limb length"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.Y",
+            "titulo": {
+                "es": "Otras deformidades adquiridas especificadas de los miembros",
+                "en": "Other specified acquired deformities of limbs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA31.Z",
+            "titulo": {
+                "es": "Otras deformidades adquiridas de los miembros, sin especificación",
+                "en": "Acquired deformities of limbs, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA32.0",
+            "titulo": {
+                "es": "Inestabilidad recurrente de la rótula",
+                "en": "Recurrent instability of patella"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA32.1",
+            "titulo": {
+                "es": "Trastornos femororrotulianos",
+                "en": "Patellofemoral disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA32.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la rótula",
+                "en": "Other specified disorders of patella"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA32.Z",
+            "titulo": {
+                "es": "Trastornos de la rótula, sin especificación",
+                "en": "Disorders of patella, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA33.0",
+            "titulo": {
+                "es": "Menisco quístico",
+                "en": "Cystic meniscus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA33.1",
+            "titulo": {
+                "es": "Menisco discoide",
+                "en": "Discoid meniscus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA33.2",
+            "titulo": {
+                "es": "Trastorno del menisco debido a un desgarro o traumatismo antiguo",
+                "en": "Derangement of meniscus due to old tear or injury"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA33.3",
+            "titulo": {
+                "es": "Cuerpo flotante en la rodilla",
+                "en": "Loose body in knee"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA33.40",
+            "titulo": {
+                "es": "Inestabilidad crónica de la rodilla, del ligamento colateral medial, o de otro o de otra parte no especificada del menisco medial",
+                "en": "Chronic instability of knee, medial collateral ligament or other or unspecified part of medial meniscus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA33.4Y",
+            "titulo": {
+                "es": "Otra inestabilidad crónica especificada de la rodilla",
+                "en": "Other specified chronic instability of knee"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA33.4Z",
+            "titulo": {
+                "es": "Inestabilidad crónica de la rodilla, sin especificación",
+                "en": "Chronic instability of knee, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA33.Y",
+            "titulo": {
+                "es": "Otro trastorno interno especificado de la rodilla",
+                "en": "Other specified internal derangement of knee"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA33.Z",
+            "titulo": {
+                "es": "Trastorno interno de la rodilla, sin especificación",
+                "en": "Internal derangement of knee, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA34.0",
+            "titulo": {
+                "es": "Cuerpo flotante en la articulación",
+                "en": "Loose body in joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA34.1",
+            "titulo": {
+                "es": "Trastorno de ligamento",
+                "en": "Disorder of ligament"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA34.2",
+            "titulo": {
+                "es": "Inestabilidad recurrente de una articulación",
+                "en": "Recurrent instability of joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA34.3",
+            "titulo": {
+                "es": "Contractura de la articulación",
+                "en": "Contracture of joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA34.4",
+            "titulo": {
+                "es": "Anquilosis de una articulación",
+                "en": "Ankylosis of joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA34.5",
+            "titulo": {
+                "es": "Síndrome de pinzamiento de la cadera",
+                "en": "Impingement syndrome of hip"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA34.Y",
+            "titulo": {
+                "es": "Algunos otros trastornos articulares especificados",
+                "en": "Other joint derangements"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA35.0",
+            "titulo": {
+                "es": "Desgaste de la superficie de carga de una prótesis articular de cadera",
+                "en": "Wear of articular bearing surface of joint prosthesis of hip"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA35.1",
+            "titulo": {
+                "es": "Desgaste de la superficie de carga de una prótesis articular de rodilla",
+                "en": "Wear of articular bearing surface of joint prosthesis of knee"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA35.2",
+            "titulo": {
+                "es": "Desgaste de la superficie de carga de una prótesis de otra articulación",
+                "en": "Wear of articular bearing surface of joint prosthesis of other joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA35.Z",
+            "titulo": {
+                "es": "Desgaste de la superficie de carga de una prótesis articular en una articulación no especificada",
+                "en": "Wear of articular bearing surface of joint prosthesis of unspecified joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA36.0",
+            "titulo": {
+                "es": "Derrame articular hemorrágico",
+                "en": "Effusion of joint containing blood"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA36.Y",
+            "titulo": {
+                "es": "Otro derrame especificado de la articulación",
+                "en": "Other specified effusion of joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA36.Z",
+            "titulo": {
+                "es": "Derrame de la articulación, sin especificación",
+                "en": "Effusion of joint, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA37.0",
+            "titulo": {
+                "es": "Osteofito",
+                "en": "Osteophyte"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA37.Y",
+            "titulo": {
+                "es": "Otras artropatías especificadas, no clasificadas en otra parte",
+                "en": "Other specified certain joint disorders, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA38.0",
+            "titulo": {
+                "es": "Artropatía diabética",
+                "en": "Diabetic arthropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA38.10",
+            "titulo": {
+                "es": "Artropatía diabética de Charcot",
+                "en": "Diabetic Charcot arthropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA38.1Y",
+            "titulo": {
+                "es": "Otra artropatía neuropática especificada",
+                "en": "Other specified neuropathic arthropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA38.1Z",
+            "titulo": {
+                "es": "Artropatía neuropática, sin especificación",
+                "en": "Neuropathic arthropathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA38.2",
+            "titulo": {
+                "es": "Artropatía en las reacciones de hipersensibilidad clasificadas en otra parte",
+                "en": "Arthropathy in hypersensitivity reactions classified elsewhere"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA38.3",
+            "titulo": {
+                "es": "Artropatía hemofílica",
+                "en": "Haemophilic arthropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA38.Y",
+            "titulo": {
+                "es": "Otra artropatía especificada en enfermedades clasificadas en otra parte",
+                "en": "Arthropathy in other specified diseases classified elsewhere"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA5Z",
+            "titulo": {
+                "es": "Artropatías, sin especificación",
+                "en": "Arthropathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA70.0",
+            "titulo": {
+                "es": "Cifosis",
+                "en": "Kyphosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA70.1",
+            "titulo": {
+                "es": "Escoliosis",
+                "en": "Scoliosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA70.2",
+            "titulo": {
+                "es": "Lordosis",
+                "en": "Lordosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA70.Z",
+            "titulo": {
+                "es": "Deformidades de la columna vertebral, sin especificación",
+                "en": "Spinal deformities, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA71",
+            "titulo": {
+                "es": "Tortícolis",
+                "en": "Torticollis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA72.0",
+            "titulo": {
+                "es": "Hiperostosis anquilosante",
+                "en": "Ankylosing hyperostosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA72.1",
+            "titulo": {
+                "es": "Vértebras en beso)",
+                "en": "Kissing spine"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA72.2",
+            "titulo": {
+                "es": "Espondilopatía traumática",
+                "en": "Traumatic spondylopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA72.3",
+            "titulo": {
+                "es": "Fractura vertebral de fatiga",
+                "en": "Fatigue fracture of vertebra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA72.4",
+            "titulo": {
+                "es": "Vértebra colapsada, no clasificada en otra parte",
+                "en": "Collapsed vertebra, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA72.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de las vértebras",
+                "en": "Other specified disorders of vertebra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA72.Z",
+            "titulo": {
+                "es": "Trastornos de las vértebras, sin especificación",
+                "en": "Disorders of vertebra, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA7Y",
+            "titulo": {
+                "es": "Otros trastornos estructurales especificadas de la columna vertebral",
+                "en": "Other specified structural disorders of spine"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA7Z",
+            "titulo": {
+                "es": "Trastornos estructurales de la columna vertebral, sin especificación",
+                "en": "Structural disorders of spine, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.0",
+            "titulo": {
+                "es": "discopatía cervical degenerativa sin prolapso de disco",
+                "en": "Intervertebral disc degeneration of cervical spine without prolapsed disc"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.1",
+            "titulo": {
+                "es": "Discopatía cervical degenerativa con prolapso de disco",
+                "en": "Intervertebral disc degeneration of cervical spine with prolapsed disc"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.2",
+            "titulo": {
+                "es": "Discopatía cervical degenerativa con espolón óseo en la vértebra",
+                "en": "Intervertebral disc degeneration of cervical spine with bony spur at the vertebra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.3",
+            "titulo": {
+                "es": "Discopatía cervical degenerativa con afectación del sistema nervioso",
+                "en": "Intervertebral disc degeneration of cervical spine with nervous system involvement"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.4",
+            "titulo": {
+                "es": "Discopatía torácica degenerativa sin prolapso de disco",
+                "en": "Intervertebral disc degeneration of thoracic spine without prolapsed disc"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.5",
+            "titulo": {
+                "es": "Discopatía torácica degenerativa con prolapso de disco",
+                "en": "Intervertebral disc degeneration of thoracic spine with prolapsed disc"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.6",
+            "titulo": {
+                "es": "Discopatía torácica degenerativa con espolón óseo en la vértebra",
+                "en": "Intervertebral disc degeneration of thoracic spine with bony spur at the vertebra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.7",
+            "titulo": {
+                "es": "Discopatía torácica degenerativa con afectación del sistema nervioso",
+                "en": "Intervertebral disc degeneration of thoracic spine with nervous system involvement"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.8",
+            "titulo": {
+                "es": "Discopatía lumbar degenerativa sin prolapso de disco",
+                "en": "Intervertebral disc degeneration of lumbar spine without prolapsed disc"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.9",
+            "titulo": {
+                "es": "Discopatía lumbar degenerativa con prolapso de disco",
+                "en": "Intervertebral disc degeneration of lumbar spine with prolapsed disc"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.A",
+            "titulo": {
+                "es": "Discopatía lumbar degenerativa con espolón óseo en la vértebra",
+                "en": "Intervertebral disc degeneration of lumbar spine with bony spur at the vertebra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.B",
+            "titulo": {
+                "es": "Discopatía lumbar degenerativa con afectación del sistema nervioso",
+                "en": "Intervertebral disc degeneration of lumbar spine with nervous system involvement"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.Y",
+            "titulo": {
+                "es": "Otra degeneración especificada del disco intervertebral",
+                "en": "Other specified intervertebral disc degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA80.Z",
+            "titulo": {
+                "es": "Degeneración del disco intervertebral, sin especificación",
+                "en": "Intervertebral disc degeneration, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA81.0",
+            "titulo": {
+                "es": "Espondilólisis con espondilolistesis",
+                "en": "Spondylolysis with slippage"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA81.1",
+            "titulo": {
+                "es": "Espondilólisis sin espondilolistesis",
+                "en": "Spondylolysis without slippage"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA81.Z",
+            "titulo": {
+                "es": "Espondilólisis, sin especificación",
+                "en": "Spondylolysis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA82",
+            "titulo": {
+                "es": "Estenosis del conducto vertebral",
+                "en": "Spinal stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA83",
+            "titulo": {
+                "es": "Osificación de los ligamentos espinales",
+                "en": "Ossification of spinal ligaments"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA84.0",
+            "titulo": {
+                "es": "Espondilolistesis con espondilólisis",
+                "en": "Spondylolisthesis with pars defect"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA84.1",
+            "titulo": {
+                "es": "Espondilolistesis sin espondilólisis",
+                "en": "Spondylolisthesis without pars defect"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA84.Z",
+            "titulo": {
+                "es": "Espondilolistesis, sin especificación",
+                "en": "Spondylolisthesis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA85.0",
+            "titulo": {
+                "es": "Epifisiopatía vertebral sin determinante",
+                "en": "Spinal epiphysiopathy with no determinant"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA85.10",
+            "titulo": {
+                "es": "Anomalía localizada del platillo vertebral central",
+                "en": "Localised central endplate defect"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA85.11",
+            "titulo": {
+                "es": "Anomalía múltiple del platillo vertebral anterior",
+                "en": "Multiple anterior endplate defect"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA85.12",
+            "titulo": {
+                "es": "Separación del anillo apofisario",
+                "en": "Separation of ring apophysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA85.1Y",
+            "titulo": {
+                "es": "Otra epifisiopatía de la columna vertebral especificada con determinantes",
+                "en": "Other specified spinal epiphysiopathy with determinants"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA85.1Z",
+            "titulo": {
+                "es": "Epifisiopatía de la columna vertebral con determinantes, sin especificación",
+                "en": "Spinal epiphysiopathy with determinants, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA85.Y",
+            "titulo": {
+                "es": "Otras defectos de la placa terminal vertebral especificados",
+                "en": "Other specified spinal endplate defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA85.Z",
+            "titulo": {
+                "es": "Defectos de la placa terminal vertebral, sin especificación",
+                "en": "Spinal endplate defects, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA8Y",
+            "titulo": {
+                "es": "Otra enfermedad degenerativa especificada de la columna vertebral",
+                "en": "Other specified degenerative condition of spine"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA8Z",
+            "titulo": {
+                "es": "Enfermedad degenerativa de la columna vertebral, sin especificación",
+                "en": "Degenerative condition of spine, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA90.0",
+            "titulo": {
+                "es": "Infección de la vértebra sin determinantes",
+                "en": "Infection of vertebra with no determinant"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA90.1",
+            "titulo": {
+                "es": "Infección de la vértebra con determinantes",
+                "en": "Infection of vertebra with determinants"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA90.Y",
+            "titulo": {
+                "es": "Otra infección de la vértebra especificada",
+                "en": "Other specified infection of vertebra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA90.Z",
+            "titulo": {
+                "es": "Infección de la vértebra, sin especificación",
+                "en": "Infection of vertebra, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA91",
+            "titulo": {
+                "es": "Infección del disco intervertebral",
+                "en": "Infection of intervertebral disc"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA92.00",
+            "titulo": {
+                "es": "Entesitis vertebral",
+                "en": "Spinal enthesitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA92.01",
+            "titulo": {
+                "es": "Sacroilitis, no clasificada en otra parte",
+                "en": "Sacroiliitis, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA92.0Y",
+            "titulo": {
+                "es": "Otra espondiloartritis axial especificada",
+                "en": "Other specified axial spondyloarthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA92.0Z",
+            "titulo": {
+                "es": "Espondiloartritis axial, sin especificación",
+                "en": "Axial spondyloarthritis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA92.1",
+            "titulo": {
+                "es": "Espondiloartritis periférica",
+                "en": "Peripheral spondyloarthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA92.Y",
+            "titulo": {
+                "es": "Otra espondiloartritis inflamatoria especificada",
+                "en": "Other specified inflammatory spondyloarthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA92.Z",
+            "titulo": {
+                "es": "Espondiloartritis inflamatoria, sin especificación",
+                "en": "Inflammatory spondyloarthritis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA9Y",
+            "titulo": {
+                "es": "Otra inflamación especificada de la columna vertebral",
+                "en": "Other specified inflammation of spine"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FA9Z",
+            "titulo": {
+                "es": "Inflamación de la columna vertebral, sin especificación",
+                "en": "Inflammation of spine, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB00",
+            "titulo": {
+                "es": "Anquilosis de la articulación vertebral",
+                "en": "Ankylosis of spinal joint"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB0Y",
+            "titulo": {
+                "es": "Otras espondilopatías especificadas",
+                "en": "Other specified spondylopathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB0Z",
+            "titulo": {
+                "es": "Espondilopatías, sin especificación",
+                "en": "Spondylopathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB10",
+            "titulo": {
+                "es": "Inestabilidad de la columna vertebral",
+                "en": "Spinal instabilities"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB1Y",
+            "titulo": {
+                "es": "Otras afecciones especificadas asociadas con la columna vertebral",
+                "en": "Other specified conditions associated with the spine"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB1Z",
+            "titulo": {
+                "es": "Afecciones asociadas con la columna vertebral, sin especificación",
+                "en": "Conditions associated with the spine, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB30",
+            "titulo": {
+                "es": "Miositis infecciosa",
+                "en": "Infectious myositis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB31.0",
+            "titulo": {
+                "es": "Heteroplasia ósea progresiva",
+                "en": "Progressive osseous heteroplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB31.1",
+            "titulo": {
+                "es": "Fibrodisplasia osificante progresiva",
+                "en": "Fibrodysplasia ossificans progressiva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB31.Y",
+            "titulo": {
+                "es": "Otra calcificación u osificación especificada del músculo",
+                "en": "Other specified calcification or ossification of muscle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB31.Z",
+            "titulo": {
+                "es": "Calcificación u osificación del músculo, sin especificación",
+                "en": "Calcification or ossification of muscle, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB32.0",
+            "titulo": {
+                "es": "Diástasis del músculo",
+                "en": "Diastasis of muscle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB32.1",
+            "titulo": {
+                "es": "Ruptura espontánea del músculo",
+                "en": "Spontaneous rupture of muscle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB32.20",
+            "titulo": {
+                "es": "Rabdomiólisis idiopática",
+                "en": "Idiopathic rhabdomyolysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB32.2Y",
+            "titulo": {
+                "es": "Otro infarto isquémico especificado de músculo",
+                "en": "Other specified ischaemic infarction of muscle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB32.2Z",
+            "titulo": {
+                "es": "Infarto isquémico de músculo, sin especificación",
+                "en": "Ischaemic infarction of muscle, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB32.3",
+            "titulo": {
+                "es": "Síndrome de inmovilidad",
+                "en": "Immobility syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB32.4",
+            "titulo": {
+                "es": "Contractura muscular",
+                "en": "Contracture of muscle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB32.5",
+            "titulo": {
+                "es": "Distensión o esguince muscular",
+                "en": "Muscle strain or sprain"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB32.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del músculo",
+                "en": "Other specified disorders of muscles"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB33",
+            "titulo": {
+                "es": "trastornos del músculo en enfermedades clasificadas en otra parte",
+                "en": "Secondary disorders of muscle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB3Z",
+            "titulo": {
+                "es": "Trastornos de los músculos, sin especificación",
+                "en": "Disorders of muscles, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB40.0",
+            "titulo": {
+                "es": "Tenosinovitis infecciosa",
+                "en": "Infectious tenosynovitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB40.1",
+            "titulo": {
+                "es": "Fascitis plantar",
+                "en": "Plantar fasciitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB40.2",
+            "titulo": {
+                "es": "Tendinitis tibial posterior",
+                "en": "Posterior tibial tendonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB40.3",
+            "titulo": {
+                "es": "Tendinitis calcificada",
+                "en": "Calcific tendinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB40.4",
+            "titulo": {
+                "es": "Dedo en gatillo",
+                "en": "Trigger finger"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB40.5",
+            "titulo": {
+                "es": "Tenosinovitis estiloide radial",
+                "en": "Radial styloid tenosynovitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB40.Y",
+            "titulo": {
+                "es": "Otra tenosinovitis especificada",
+                "en": "Other specified tenosynovitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB40.Z",
+            "titulo": {
+                "es": "Tenosinovitis, sin especificación",
+                "en": "Tenosynovitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB41.0",
+            "titulo": {
+                "es": "Ruptura espontánea de un quiste poplíteo",
+                "en": "Spontaneous rupture of popliteal cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB41.1",
+            "titulo": {
+                "es": "Ruptura espontánea de la cápsula sinovial",
+                "en": "Spontaneous rupture of synovium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB41.2",
+            "titulo": {
+                "es": "Ruptura espontánea de tendón",
+                "en": "Spontaneous rupture of tendon"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB41.Y",
+            "titulo": {
+                "es": "Otra ruptura espontánea especificada de la membrana sinovial o del tendón",
+                "en": "Other specified spontaneous rupture of synovium or tendon"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB41.Z",
+            "titulo": {
+                "es": "Ruptura espontánea de la membrana sinovial o del tendón, sin especificación",
+                "en": "Spontaneous rupture of synovium or tendon, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB42.0",
+            "titulo": {
+                "es": "Acortamiento del tendón de Aquiles adquirido",
+                "en": "Acquired short Achilles tendon"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB42.1",
+            "titulo": {
+                "es": "Contractura de la vaina del tendón",
+                "en": "Contracture of tendon sheath"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB42.2",
+            "titulo": {
+                "es": "Ganglión",
+                "en": "Ganglion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB42.3",
+            "titulo": {
+                "es": "Hipertrofia sinovial, no clasificada en otra parte",
+                "en": "Synovial hypertrophy, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB43",
+            "titulo": {
+                "es": "Trastornos secundarios de la cápsula sinovial o del tendón",
+                "en": "Secondary disorders of synovium or tendon"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB4Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la membrana sinovial o del tendón",
+                "en": "Other specified disorders of synovium or tendon"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB4Z",
+            "titulo": {
+                "es": "Trastornos de la membrana sinovial o del tendón, sin especificación",
+                "en": "Disorders of synovium or tendon, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB50.0",
+            "titulo": {
+                "es": "Bursitis infecciosa",
+                "en": "Infectious bursitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB50.1",
+            "titulo": {
+                "es": "Bursitis por uso, uso excesivo o tensión",
+                "en": "Bursitis related to use, overuse or pressure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB50.2",
+            "titulo": {
+                "es": "Quiste sinovial del espacio poplíteo",
+                "en": "Synovial cyst of popliteal space"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB50.3",
+            "titulo": {
+                "es": "Depósito de calcio en la bolsa sinovial",
+                "en": "Calcium deposit in bursa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB50.Y",
+            "titulo": {
+                "es": "Otra bursitis especificada",
+                "en": "Other specified bursitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB50.Z",
+            "titulo": {
+                "es": "Bursitis, sin especificación",
+                "en": "Bursitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB51.0",
+            "titulo": {
+                "es": "Fibromatosis de la fascia palmar",
+                "en": "Palmar fascial fibromatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB51.1",
+            "titulo": {
+                "es": "Almohadillas de los nudillos",
+                "en": "Knuckle pads"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB51.2",
+            "titulo": {
+                "es": "Fascitis o fibromatosis",
+                "en": "Fasciitis or fibromatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB51.3",
+            "titulo": {
+                "es": "Reumatismo fibroblástico",
+                "en": "Fibroblastic rheumatism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB51.40",
+            "titulo": {
+                "es": "Fibrosis retroperitoneal primaria",
+                "en": "Primary retroperitoneal fibrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB51.4Y",
+            "titulo": {
+                "es": "Otra fibrosis retroperitoneal especificada",
+                "en": "Other specified retroperitoneal fibrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB51.4Z",
+            "titulo": {
+                "es": "Fibrosis retroperitoneal, sin especificación",
+                "en": "Retroperitoneal fibrosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB51.Y",
+            "titulo": {
+                "es": "Otros trastornos fibroblásticos especificados",
+                "en": "Other specified fibroblastic disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB51.Z",
+            "titulo": {
+                "es": "Trastornos fibroblásticos, sin especificación",
+                "en": "Fibroblastic disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB52",
+            "titulo": {
+                "es": "Trastornos de los tejidos blandos en enfermedades clasificadas en otra parte",
+                "en": "Soft tissue disorders in diseases classified elsewhere"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB53.0",
+            "titulo": {
+                "es": "Capsulitis adhesiva del hombro",
+                "en": "Adhesive capsulitis of shoulder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB53.1",
+            "titulo": {
+                "es": "Síndrome del manguito rotador",
+                "en": "Rotator cuff syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB53.2",
+            "titulo": {
+                "es": "Síndrome de pinzamiento del hombro",
+                "en": "Impingement syndrome of shoulder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB53.Y",
+            "titulo": {
+                "es": "Otras lesiones especificadas del hombro",
+                "en": "Other specified shoulder lesions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB53.Z",
+            "titulo": {
+                "es": "Lesiones del hombro, sin especificación",
+                "en": "Shoulder lesions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB54.0",
+            "titulo": {
+                "es": "Espolón de la cresta ilíaca",
+                "en": "Iliac crest spur"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB54.1",
+            "titulo": {
+                "es": "Síndrome de la cintilla iliotibial",
+                "en": "Iliotibial band syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB54.2",
+            "titulo": {
+                "es": "Bursitis tibial colateral",
+                "en": "Tibial collateral bursitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB54.3",
+            "titulo": {
+                "es": "Espolón calcáneo",
+                "en": "Calcaneal spur"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB54.4",
+            "titulo": {
+                "es": "Metatarsalgia",
+                "en": "Metatarsalgia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB54.Y",
+            "titulo": {
+                "es": "Otras entesopatías especificadas del miembro inferior",
+                "en": "Other specified enthesopathies of lower limb"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB54.Z",
+            "titulo": {
+                "es": "Entesopatías del miembro inferior, sin especificación",
+                "en": "Enthesopathies of lower limb, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB55.0",
+            "titulo": {
+                "es": "Epicondilitis medial del codo",
+                "en": "Medial epicondylitis of elbow"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB55.1",
+            "titulo": {
+                "es": "Epicondilitis lateral del codo",
+                "en": "Lateral epicondylitis of elbow"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB55.2",
+            "titulo": {
+                "es": "Periartritis de la muñeca",
+                "en": "Periarthritis of wrist"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB55.Z",
+            "titulo": {
+                "es": "Entesopatías, sin especificación",
+                "en": "Enthesopathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB56.0",
+            "titulo": {
+                "es": "Granuloma por cuerpo extraño en un tejido blando, no clasificado en otra parte",
+                "en": "Foreign body granuloma of soft tissue, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB56.1",
+            "titulo": {
+                "es": "Cuerpo extraño residual en un tejido blando",
+                "en": "Residual foreign body in soft tissue"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB56.2",
+            "titulo": {
+                "es": "Mialgia",
+                "en": "Myalgia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB56.3",
+            "titulo": {
+                "es": "Hipertrofia del cuerpo adiposo infrarrotuliano",
+                "en": "Hypertrophy of infrapatellar fat pad"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB56.4",
+            "titulo": {
+                "es": "Dolor en una extremidad",
+                "en": "Pain in limb"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB56.6",
+            "titulo": {
+                "es": "Otros trastornos especificados de los tejidos blandos",
+                "en": "Other specified soft tissue disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB6Z",
+            "titulo": {
+                "es": "Trastornos de los tejidos blandos, sin especificación",
+                "en": "Soft tissue disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.0",
+            "titulo": {
+                "es": "Displasia fibrosa ósea",
+                "en": "Fibrous dysplasia of bone"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.1",
+            "titulo": {
+                "es": "Fluorosis esquelética",
+                "en": "Skeletal fluorosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.2",
+            "titulo": {
+                "es": "Osteítis condensante",
+                "en": "Osteitis condensans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.3",
+            "titulo": {
+                "es": "Hiperostosis del cráneo",
+                "en": "Hyperostosis of skull"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.4",
+            "titulo": {
+                "es": "Osteoesclerosis",
+                "en": "Osteosclerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.5",
+            "titulo": {
+                "es": "Quiste óseo único",
+                "en": "Solitary bone cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.6",
+            "titulo": {
+                "es": "Quiste aneurismático de hueso",
+                "en": "Aneurysmal bone cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.7",
+            "titulo": {
+                "es": "Consolidación defectuosa de fractura",
+                "en": "Malunion of fracture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.8",
+            "titulo": {
+                "es": "Falta de consolidación de fractura",
+                "en": "Nonunion of fracture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.9",
+            "titulo": {
+                "es": "Retraso de la consolidación de una fractura",
+                "en": "Delayed union of fracture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.A",
+            "titulo": {
+                "es": "Fractura por sobrecarga, no clasificada en otra parte",
+                "en": "Stress fracture, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.B",
+            "titulo": {
+                "es": "Fractura patológica",
+                "en": "Pathological fracture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la densidad o estructura óseas",
+                "en": "Other specified disorders of bone density or structure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB80.Z",
+            "titulo": {
+                "es": "Trastorno especificado de la densidad o estructura óseas, sin especificación",
+                "en": "Disorder of bone density or structure, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB81.0",
+            "titulo": {
+                "es": "Osteonecrosis aséptica idiopática",
+                "en": "Idiopathic aseptic osteonecrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB81.1",
+            "titulo": {
+                "es": "Osteonecrosis debida a diálisis",
+                "en": "Osteonecrosis due to dialysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB81.2",
+            "titulo": {
+                "es": "Osteonecrosis provocada por medicamentos",
+                "en": "Drug-induced osteonecrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB81.3",
+            "titulo": {
+                "es": "Osteonecrosis traumática",
+                "en": "Osteonecrosis due to trauma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB81.4",
+            "titulo": {
+                "es": "Osteonecrosis por hemoglobinopatía",
+                "en": "Osteonecrosis due to haemoglobinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB81.5",
+            "titulo": {
+                "es": "Osteonecrosis por radiación ionizante",
+                "en": "Osteonecrosis due to ionizing radiation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB81.6",
+            "titulo": {
+                "es": "Osteonecrosis inducida por alcohol",
+                "en": "Alcohol induced osteonecrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB81.Y",
+            "titulo": {
+                "es": "Otra osteonecrosis especificada",
+                "en": "Other specified osteonecrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB81.Z",
+            "titulo": {
+                "es": "Osteonecrosis, sin especificación",
+                "en": "Osteonecrosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB82.00",
+            "titulo": {
+                "es": "Condromalacia rotuliana",
+                "en": "Chondromalacia patellae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB82.0Y",
+            "titulo": {
+                "es": "Otra condromalacia especificada",
+                "en": "Other specified chondromalacia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB82.0Z",
+            "titulo": {
+                "es": "Condromalacia, sin especificación",
+                "en": "Chondromalacia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB82.1",
+            "titulo": {
+                "es": "Osteocondrosis u osteocondritis disecante",
+                "en": "Osteochondrosis or osteochondritis dissecans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB82.2",
+            "titulo": {
+                "es": "Epifisiólisis de la cabeza femoral",
+                "en": "Slipped upper femoral epiphysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB82.3",
+            "titulo": {
+                "es": "Policondritis recidivante",
+                "en": "Relapsing polychondritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB82.Y",
+            "titulo": {
+                "es": "Otras condropatías especificadas",
+                "en": "Other specified chondropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB82.Z",
+            "titulo": {
+                "es": "Condropatías, sin especificación",
+                "en": "Chondropathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.00",
+            "titulo": {
+                "es": "Osteopenia idiopática premenopáusica",
+                "en": "Premenopausal idiopathic osteopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.01",
+            "titulo": {
+                "es": "Osteopenia posmenopáusica",
+                "en": "Postmenopausal osteopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.02",
+            "titulo": {
+                "es": "Osteopenia senil",
+                "en": "Senile osteopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.03",
+            "titulo": {
+                "es": "Osteopenia por desuso",
+                "en": "Osteopenia of disuse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.04",
+            "titulo": {
+                "es": "Osteopenia provocada por medicamentos",
+                "en": "Drug-induced osteopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.0Y",
+            "titulo": {
+                "es": "Otra osteopenia especificada",
+                "en": "Other specified osteopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.0Z",
+            "titulo": {
+                "es": "Osteopenia, sin especificación",
+                "en": "Osteopenia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.10",
+            "titulo": {
+                "es": "Osteoporosis idiopática premenopáusica",
+                "en": "Premenopausal idiopathic osteoporosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.11",
+            "titulo": {
+                "es": "Osteoporosis posmenopáusica",
+                "en": "Postmenopausal osteoporosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.12",
+            "titulo": {
+                "es": "Osteoporosis por desuso",
+                "en": "Osteoporosis of disuse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.13",
+            "titulo": {
+                "es": "Osteoporosis provocada por medicamentos",
+                "en": "Drug-induced osteoporosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.14",
+            "titulo": {
+                "es": "Osteoporosis por a malabsorción",
+                "en": "Osteoporosis due to malabsorption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.1Y",
+            "titulo": {
+                "es": "Otra osteoporosis especificada",
+                "en": "Other specified osteoporosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.1Z",
+            "titulo": {
+                "es": "Osteoporosis, sin especificación",
+                "en": "Osteoporosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.20",
+            "titulo": {
+                "es": "Osteopatía por aluminio",
+                "en": "Aluminium bone disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.21",
+            "titulo": {
+                "es": "Osteomalacia del adulto por desnutrición",
+                "en": "Adult osteomalacia due to malnutrition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.22",
+            "titulo": {
+                "es": "Osteomalacia del adulto provocada por medicamentos",
+                "en": "Drug-induced adult osteomalacia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.2Y",
+            "titulo": {
+                "es": "Otra osteomalacia del adulto especificada",
+                "en": "Other specified adult osteomalacia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB83.2Z",
+            "titulo": {
+                "es": "Osteomalacia del adulto, sin especificación",
+                "en": "Adult osteomalacia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB84.0",
+            "titulo": {
+                "es": "Osteomielitis hematógena aguda",
+                "en": "Acute haematogenous osteomyelitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB84.1",
+            "titulo": {
+                "es": "Otra osteomielitis aguda",
+                "en": "Other acute osteomyelitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB84.2",
+            "titulo": {
+                "es": "Osteomielitis subaguda",
+                "en": "Subacute osteomyelitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB84.3",
+            "titulo": {
+                "es": "Osteomielitis multifocal crónica",
+                "en": "Chronic multifocal osteomyelitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB84.4",
+            "titulo": {
+                "es": "Osteomielitis crónica con fístula supurante",
+                "en": "Chronic osteomyelitis with draining sinus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB84.5",
+            "titulo": {
+                "es": "Otra osteomielitis hematógena crónica",
+                "en": "Other chronic haematogenous osteomyelitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB84.Y",
+            "titulo": {
+                "es": "Otra osteomielitis u osteítis especificada",
+                "en": "Other specified osteomyelitis or osteitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB84.Z",
+            "titulo": {
+                "es": "Osteomielitis u osteítis, sin especificación",
+                "en": "Osteomyelitis or osteitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB85.0",
+            "titulo": {
+                "es": "Enfermedad de Paget juvenil",
+                "en": "Juvenile Paget disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB85.1",
+            "titulo": {
+                "es": "Enfermedad de Paget ósea en las enfermedades neoplásicas",
+                "en": "Paget disease of bone in neoplastic disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB85.Y",
+            "titulo": {
+                "es": "Otra enfermedad de Paget especificada del hueso",
+                "en": "Other specified Paget disease of bone"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB85.Z",
+            "titulo": {
+                "es": "Enfermedad de Paget del hueso, sin especificación",
+                "en": "Paget disease of bone, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB86.0",
+            "titulo": {
+                "es": "Detención del crecimiento epifisario",
+                "en": "Epiphyseal arrest"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB86.10",
+            "titulo": {
+                "es": "Osteoartropatía hipertrófica",
+                "en": "Hypertrophic osteoarthropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB86.11",
+            "titulo": {
+                "es": "Hipertrofia del hueso",
+                "en": "Hypertrophy of bone"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB86.1Y",
+            "titulo": {
+                "es": "Otras hiperplasias óseas especificadas",
+                "en": "Other specified bone hyperplasias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB86.1Z",
+            "titulo": {
+                "es": "Hiperplasias óseas, sin especificación",
+                "en": "Bone hyperplasias, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB86.2",
+            "titulo": {
+                "es": "Osteólisis",
+                "en": "Osteolysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB86.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados asociados con el crecimiento óseo",
+                "en": "Other specified disorders associated with bone growth"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB86.Z",
+            "titulo": {
+                "es": "Trastornos asociados con el crecimiento óseo, sin especificación",
+                "en": "Disorders associated with bone growth, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB8Y",
+            "titulo": {
+                "es": "Otras osteopatías o condropatías especificadas",
+                "en": "Other specified osteopathies or chondropathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FB8Z",
+            "titulo": {
+                "es": "Osteopatías o condropatías, sin especificación",
+                "en": "Osteopathies or chondropathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC00.0",
+            "titulo": {
+                "es": "Deformidad adquirida de la nariz",
+                "en": "Acquired deformity of nose"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC00.1",
+            "titulo": {
+                "es": "Deformidad adquirida del cuello",
+                "en": "Acquired deformity of neck"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC00.2",
+            "titulo": {
+                "es": "Deformidad adquirida del tórax o de las costillas",
+                "en": "Acquired deformity of chest or rib"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC00.3",
+            "titulo": {
+                "es": "Deformidad adquirida de la pelvis",
+                "en": "Acquired deformity of pelvis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC00.4",
+            "titulo": {
+                "es": "Deformidad adquirida del tronco",
+                "en": "Acquired deformity of trunk"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC00.Y",
+            "titulo": {
+                "es": "Otras deformidades adquiridas especificadas del sistema musculoesquelético o del tejido conjuntivo, no clasificadas en otra parte",
+                "en": "Acquired deformities of musculoskeletal system and connective tissue, not classified elsewhere, other specified sites"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.0",
+            "titulo": {
+                "es": "Seudoartrosis tras fusión o artrodesis",
+                "en": "Pseudarthrosis after fusion or arthrodesis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.1",
+            "titulo": {
+                "es": "Síndrome poslaminectomía, no clasificado en otra parte",
+                "en": "Postlaminectomy syndrome, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.2",
+            "titulo": {
+                "es": "Cifosis posradiación",
+                "en": "Post radiation kyphosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.3",
+            "titulo": {
+                "es": "Cifosis poslaminectomía",
+                "en": "Postlaminectomy kyphosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.4",
+            "titulo": {
+                "es": "Lordosis posquirúrgica",
+                "en": "Postsurgical lordosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.5",
+            "titulo": {
+                "es": "Escoliosis postradiación",
+                "en": "Post radiation scoliosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.6",
+            "titulo": {
+                "es": "Fractura de hueso tras la inserción de un implante ortopédico, una prótesis articular o una placa ósea",
+                "en": "Fracture of bone following insertion of orthopaedic implant, joint prosthesis, or bone plate"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.70",
+            "titulo": {
+                "es": "Falta de consolidación ósea tras artrodesis vertebral",
+                "en": "Nonunion after spinal arthrodesis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.7Y",
+            "titulo": {
+                "es": "Otra falta de consolidación ósea tras artrodesis",
+                "en": "Nonunion after arthrodesis of other sites"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.8",
+            "titulo": {
+                "es": "Osteólisis posquirúrgica",
+                "en": "Postsurgical osteolysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.9",
+            "titulo": {
+                "es": "Osteoporosis postooforectomía",
+                "en": "Postoophorectomy osteoporosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC01.A",
+            "titulo": {
+                "es": "Osteoporosis por malabsorción posquirúrgica",
+                "en": "Postsurgical malabsorption osteoporosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC0Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del sistema musculo esquelético o del tejido conjuntivo",
+                "en": "Other specified diseases of the musculoskeletal system or connective tissue"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "FC0Z",
+            "titulo": {
+                "es": "Enfermedades del sistema musculo esquelético o del tejido conjuntivo, sin especificación",
+                "en": "Diseases of the musculoskeletal system or connective tissue, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

@@ -1,0 +1,5923 @@
+{
+    "codigo": "14",
+    "titulo": {
+        "es": "Enfermedades de la piel",
+        "en": "Diseases of the skin"
+    },
+    "subcategorias": [
+        {
+            "codigo": "EA00",
+            "titulo": {
+                "es": "Exantema viral por virus desconocido o no especificado",
+                "en": "Viral exanthem due to unknown or unspecified agent"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA0Y",
+            "titulo": {
+                "es": "Otro exantema viral por especificado",
+                "en": "Viral exanthem due to other specified virus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA10",
+            "titulo": {
+                "es": "Pitiriasis rosada",
+                "en": "Pityriasis rosea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA11",
+            "titulo": {
+                "es": "Síndrome papulopurpúrico en guante y calcetín",
+                "en": "Papular purpuric gloves and socks syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA12",
+            "titulo": {
+                "es": "Acrodermatitis papulosa infantil",
+                "en": "Infantile papular acrodermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA20",
+            "titulo": {
+                "es": "Eritema necrolítico acro",
+                "en": "Necrolytic acral erythema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA3Z",
+            "titulo": {
+                "es": "Trastorno no especificado de la piel atribuible a infección viral",
+                "en": "Unspecified skin disorder attributable to viral infection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA40",
+            "titulo": {
+                "es": "Úlcera fagedénica tropical",
+                "en": "Tropical phagedaenic ulcer"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA50.0",
+            "titulo": {
+                "es": "Eritema marginado reumático",
+                "en": "Erythema marginatum rheumaticum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA50.1",
+            "titulo": {
+                "es": "Eritema perineal estreptocócico mediado por toxinas",
+                "en": "Streptococcal toxin-mediated perineal erythema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA50.2",
+            "titulo": {
+                "es": "Síndrome estafilocócico de la piel escaldada",
+                "en": "Staphylococcal scalded skin syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA50.3",
+            "titulo": {
+                "es": "Escarlatina estafilocócica",
+                "en": "Staphylococcal scarlatina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA50.Y",
+            "titulo": {
+                "es": "Otras reacciones cutáneas especificadas mediadas por toxinas a una infección bacteriana sistémica o a distancia",
+                "en": "Other specified toxin-mediated cutaneous reactions to distant or systemic bacterial infection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA50.Z",
+            "titulo": {
+                "es": "Reacciones cutáneas mediadas por toxinas a una infección bacteriana sistémica o a distancia, sin especificación",
+                "en": "Toxin-mediated cutaneous reactions to distant or systemic bacterial infection, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA51",
+            "titulo": {
+                "es": "Complicaciones cutáneas de la vacunación con BCG",
+                "en": "Skin complications of BCG immunisation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA5Y",
+            "titulo": {
+                "es": "Afectación cutánea por otra infección bacteriana especificada",
+                "en": "Cutaneous involvement by other specified bacterial infection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA5Z",
+            "titulo": {
+                "es": "Afectación cutánea por infección bacteriana, sin especificación",
+                "en": "Cutaneous involvement by unspecified bacterial infection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA60.0",
+            "titulo": {
+                "es": "Micosis subcutáneas",
+                "en": "Subcutaneous mycoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA60.1",
+            "titulo": {
+                "es": "Micosis sistémicas con afectación cutánea",
+                "en": "Systemic mycoses affecting skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA60.Y",
+            "titulo": {
+                "es": "Afectación cutánea en otra infección micótica especificada",
+                "en": "Skin involvement in other specified fungal infection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA60.Z",
+            "titulo": {
+                "es": "Infección micótica de la piel, sin especificación",
+                "en": "Fungal infection of the skin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA6Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la piel atribuibles a infección o infestación",
+                "en": "Cutaneous involvement by other specified infection or infestation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA80.0",
+            "titulo": {
+                "es": "Eccema atópico del lactante",
+                "en": "Infantile atopic eczema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA80.1",
+            "titulo": {
+                "es": "Eccema atópico infantil",
+                "en": "Childhood atopic eczema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA80.2",
+            "titulo": {
+                "es": "Eccema atópico del adulto",
+                "en": "Adult atopic eczema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA80.Y",
+            "titulo": {
+                "es": "Otras formas especificadas de eccema atópico",
+                "en": "Other specified forms of atopic eczema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA80.Z",
+            "titulo": {
+                "es": "Eccema atópico, sin especificación",
+                "en": "Atopic eczema, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA81.0",
+            "titulo": {
+                "es": "Dermatitis seborreica de la cara",
+                "en": "Seborrhoeic dermatitis of face"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA81.1",
+            "titulo": {
+                "es": "Dermatitis seborreica del cuero cabelludo",
+                "en": "Seborrhoeic dermatitis of the scalp"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA81.Y",
+            "titulo": {
+                "es": "Dermatitis seborreica y afecciones relacionadas especificadas",
+                "en": "Seborrhoeic dermatosis of other specified type or distribution"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA81.Z",
+            "titulo": {
+                "es": "Dermatitis seborreica y afecciones relacionadas, sin especificación",
+                "en": "Seborrhoeic dermatitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA82",
+            "titulo": {
+                "es": "Dermatitis numular",
+                "en": "Nummular dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA83.00",
+            "titulo": {
+                "es": "Liquen simple de la vulva",
+                "en": "Lichen simplex of vulva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA83.01",
+            "titulo": {
+                "es": "Liquen simple de los genitales masculinos",
+                "en": "Lichen simplex of male genitalia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA83.02",
+            "titulo": {
+                "es": "Liquen simple perianal",
+                "en": "Perianal lichen simplex"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA83.0Y",
+            "titulo": {
+                "es": "Otro liquen simple especificado",
+                "en": "Lichen simplex of other specified site"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA83.0Z",
+            "titulo": {
+                "es": "Liquen simple, sin especificación",
+                "en": "Lichen simplex of unspecified site"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA83.1",
+            "titulo": {
+                "es": "Liquenización secundaria",
+                "en": "Secondary lichenification"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA84",
+            "titulo": {
+                "es": "Eccema asteatósico",
+                "en": "Asteatotic eczema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA85.0",
+            "titulo": {
+                "es": "Dermatitis vesicular de manos o pies",
+                "en": "Vesicular dermatitis of hands or feet"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA85.1",
+            "titulo": {
+                "es": "Dermatitis hiperqueratósica de manos o pies",
+                "en": "Hyperkeratotic dermatitis of hands or feet"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA85.20",
+            "titulo": {
+                "es": "Eccema atópico de las manos",
+                "en": "Atopic eczema of hands"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA85.2Y",
+            "titulo": {
+                "es": "Otra dermatitis especificada de las manos",
+                "en": "Other specified dermatitis of hands"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA85.2Z",
+            "titulo": {
+                "es": "Dermatitis de las manos, sin especificación",
+                "en": "Dermatitis of hands, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA85.3",
+            "titulo": {
+                "es": "Dermatitis de los pies",
+                "en": "Dermatitis of feet"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA86.0",
+            "titulo": {
+                "es": "Dermatitis de las piernas por estasis",
+                "en": "Stasis dermatitis of lower legs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA86.Z",
+            "titulo": {
+                "es": "Dermatitis o eccema de los miembros inferiores, sin especificación",
+                "en": "Dermatitis or eczema of lower legs, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA87.0",
+            "titulo": {
+                "es": "Dermatitis o eccema de los genitales masculinos",
+                "en": "Dermatitis or eczema of male genitalia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA87.1",
+            "titulo": {
+                "es": "Dermatitis o eccema de los genitales femeninos",
+                "en": "Dermatitis or eczema of female genitalia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA87.2",
+            "titulo": {
+                "es": "Dermatitis o eccema de la región perianal",
+                "en": "Dermatitis or eczema of perianal area"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA87.Z",
+            "titulo": {
+                "es": "Dermatitis o eccema de la región anogenital, sin especificación",
+                "en": "Dermatitis or eczema of anogenital region, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA88.00",
+            "titulo": {
+                "es": "Dermatitis infecciosa infantil asociada al virus linfotrópico de células T humanas tipo 1",
+                "en": "Human T-cell lymphotropic virus type 1 associated infective dermatitis of childhood"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA88.0Y",
+            "titulo": {
+                "es": "Otra dermatitis infecciosa especificada",
+                "en": "Other specified infectious dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA88.0Z",
+            "titulo": {
+                "es": "Dermatitis infecciosa, sin especificación",
+                "en": "Infectious dermatitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA88.1",
+            "titulo": {
+                "es": "Eccema postraumático",
+                "en": "Post traumatic eczema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA88.2",
+            "titulo": {
+                "es": "Eccema secundario diseminado",
+                "en": "Disseminated secondary eczema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA88.3",
+            "titulo": {
+                "es": "Eccema secundario",
+                "en": "Secondary eczema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA88.4",
+            "titulo": {
+                "es": "Pitiriasis alba",
+                "en": "Pityriasis alba"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA89",
+            "titulo": {
+                "es": "Dermatitis eccematosa generalizada de tipo no especificado",
+                "en": "Generalised eczematous dermatitis of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA8Y",
+            "titulo": {
+                "es": "Otra dermatosis eccematosa especificada",
+                "en": "Other specified eczematous dermatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA8Z",
+            "titulo": {
+                "es": "Dermatitis o eccema, sin especificación",
+                "en": "Dermatitis or eczema, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.0",
+            "titulo": {
+                "es": "Psoriasis en placas",
+                "en": "Plaque psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.1",
+            "titulo": {
+                "es": "Psoriasis gotular",
+                "en": "Guttate psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.2",
+            "titulo": {
+                "es": "Psoriasis inestable",
+                "en": "Unstable psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.3",
+            "titulo": {
+                "es": "Psoriasis eritrodérmica",
+                "en": "Erythrodermic psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.40",
+            "titulo": {
+                "es": "Psoriasis pustular generalizada",
+                "en": "Generalised pustular psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.41",
+            "titulo": {
+                "es": "Acropustulosis de Hallopeau",
+                "en": "Acropustulosis of Hallopeau"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.42",
+            "titulo": {
+                "es": "Pustulosis palmoplantar",
+                "en": "Palmoplantar pustulosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.4Y",
+            "titulo": {
+                "es": "Otra psoriasis pustulosa especificada",
+                "en": "Other specified pustular psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.4Z",
+            "titulo": {
+                "es": "Psoriasis pustulosa, sin especificación",
+                "en": "Pustular psoriasis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.50",
+            "titulo": {
+                "es": "Psoriasis de cuero cabelludo",
+                "en": "Scalp psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.51",
+            "titulo": {
+                "es": "Psoriasis ungueal",
+                "en": "Nail psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.52",
+            "titulo": {
+                "es": "Psoriasis intertriginosa y de zonas de flexión",
+                "en": "Flexural and intertriginous psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.53",
+            "titulo": {
+                "es": "Psoriasis anogenital",
+                "en": "Anogenital psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.5Y",
+            "titulo": {
+                "es": "Otra psoriasis especificada de localización o distribución especificada",
+                "en": "Psoriasis of other specified site or distribution"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.Y",
+            "titulo": {
+                "es": "Otras psoriasis especificada",
+                "en": "Other specified forms of psoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA90.Z",
+            "titulo": {
+                "es": "Psoriasis sin especificación",
+                "en": "Psoriasis of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.0",
+            "titulo": {
+                "es": "Liquen plano eruptivo agudo",
+                "en": "Acute eruptive lichen planus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.1",
+            "titulo": {
+                "es": "Liquen plano hipertrófico",
+                "en": "Hypertrophic lichen planus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.2",
+            "titulo": {
+                "es": "Liquen plano folicular",
+                "en": "Follicular lichen planus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.3",
+            "titulo": {
+                "es": "Liquen plano de la piel y las mucosas genitales",
+                "en": "Lichen planus of genital skin and mucous membranes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.40",
+            "titulo": {
+                "es": "Liquen plano bucal no erosivo",
+                "en": "Non-erosive lichen planus of oral mucosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.41",
+            "titulo": {
+                "es": "Liquen plano bucal erosivo",
+                "en": "Erosive oral lichen planus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.42",
+            "titulo": {
+                "es": "Liquen plano bucal no especificado",
+                "en": "Oral lichen planus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.43",
+            "titulo": {
+                "es": "Mucositis liquenoide bucal",
+                "en": "Lichenoid mucositis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.4Y",
+            "titulo": {
+                "es": "Otro liquen plano y reacciones liquenoides especificadas de la mucosa bucal",
+                "en": "Other specified lichenoid reactions of oral mucosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.5",
+            "titulo": {
+                "es": "Liquen plano de las uñas",
+                "en": "Lichen planus of the nails"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.6",
+            "titulo": {
+                "es": "Liquen plano subagudo",
+                "en": "Subacute lichen planus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.Y",
+            "titulo": {
+                "es": "Otro liquen plano especificado",
+                "en": "Other specified lichen planus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA91.Z",
+            "titulo": {
+                "es": "Liquen plano, sin especificación",
+                "en": "Lichen planus of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA92",
+            "titulo": {
+                "es": "Dermatosis liquenoides",
+                "en": "Lichenoid dermatoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA93",
+            "titulo": {
+                "es": "Pitiriasis liquenoide",
+                "en": "Pityriasis lichenoides"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA94",
+            "titulo": {
+                "es": "Pitiriasis rubra pilaris",
+                "en": "Pityriasis rubra pilaris"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EA95",
+            "titulo": {
+                "es": "Parapsoriasis en placas pequeñas",
+                "en": "Small plaque parapsoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB00.0",
+            "titulo": {
+                "es": "Urticaria aguda",
+                "en": "Acute urticaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB00.1",
+            "titulo": {
+                "es": "Urticaria crónica",
+                "en": "Chronic urticaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB00.Z",
+            "titulo": {
+                "es": "Urticaria espontánea, sin especificación",
+                "en": "Spontaneous urticaria, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB01.0",
+            "titulo": {
+                "es": "Dermografismo",
+                "en": "Dermographism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB01.1",
+            "titulo": {
+                "es": "Urticaria por frío",
+                "en": "Cold urticaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB01.2",
+            "titulo": {
+                "es": "Urticaria de presión retardada",
+                "en": "Delayed pressure urticaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB01.3",
+            "titulo": {
+                "es": "Urticaria de contacto",
+                "en": "Contact urticaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB01.Y",
+            "titulo": {
+                "es": "Otra forma especificada de angioedema o urticaria inducible",
+                "en": "Other specified forms of inducible urticaria or angioedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB01.Z",
+            "titulo": {
+                "es": "Angioedema o urticaria inducible, sin especificación",
+                "en": "Inducible urticaria or angioedema, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB02.0",
+            "titulo": {
+                "es": "Urticaria colinérgica",
+                "en": "Cholinergic urticaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB02.Y",
+            "titulo": {
+                "es": "Otros trastornos mediados por activación colinérgica",
+                "en": "Other conditions mediated by cholinergic activation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB03",
+            "titulo": {
+                "es": "Síndromes con reacciones urticariales o angioedema",
+                "en": "Syndromes with urticarial reactions or angioedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB04",
+            "titulo": {
+                "es": "Angioedema idiopático",
+                "en": "Idiopathic angioedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB05",
+            "titulo": {
+                "es": "Urticaria de tipo no especificado",
+                "en": "Urticaria of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB0Y",
+            "titulo": {
+                "es": "Otros trastornos de urticaria especificados",
+                "en": "Other specified urticarial disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB10",
+            "titulo": {
+                "es": "Eritemas inflamatorios difusos",
+                "en": "Diffuse inflammatory erythemas"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB11",
+            "titulo": {
+                "es": "Eritema anular",
+                "en": "Annular erythema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB12.0",
+            "titulo": {
+                "es": "Eritema cutáneo multiforme",
+                "en": "Cutaneous erythema multiforme"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB12.1",
+            "titulo": {
+                "es": "Eritema multiforme mucocutáneo",
+                "en": "Mucocutaneous erythema multiforme"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB12.Y",
+            "titulo": {
+                "es": "Otro eritema multiforme especificado",
+                "en": "Other specified erythema multiforme"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB12.Z",
+            "titulo": {
+                "es": "Eritema multiforme, sin especificación",
+                "en": "Erythema multiforme, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB13.0",
+            "titulo": {
+                "es": "Síndrome de Stevens-Johnson",
+                "en": "Stevens-Johnson syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB13.1",
+            "titulo": {
+                "es": "Necrólisis epidérmica tóxica",
+                "en": "Toxic epidermal necrolysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB13.2",
+            "titulo": {
+                "es": "Síndrome de solapamiento de Stevens-Johnson y necrólisis epidérmica tóxica",
+                "en": "Stevens-Johnson and toxic epidermal necrolysis overlap syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB20",
+            "titulo": {
+                "es": "Dermatosis neutrofílica febril aguda",
+                "en": "Acute febrile neutrophilic dermatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB21",
+            "titulo": {
+                "es": "Piodermia gangrenosa",
+                "en": "Pyoderma gangrenosum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB2Y",
+            "titulo": {
+                "es": "Otras dermatosis neutrofílica especificada",
+                "en": "Other specified neutrophilic dermatoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB30",
+            "titulo": {
+                "es": "Celulitis eosinofílica",
+                "en": "Eosinophilic cellulitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB31",
+            "titulo": {
+                "es": "Eritema nodoso",
+                "en": "Erythema nodosum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB40.00",
+            "titulo": {
+                "es": "Pénfigo bucal",
+                "en": "Oral pemphigus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB40.0Y",
+            "titulo": {
+                "es": "Otro pénfigo vulgar especificado",
+                "en": "Other specified pemphigus vulgaris"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB40.0Z",
+            "titulo": {
+                "es": "Pénfigo vulgar, sin especificación",
+                "en": "Pemphigus vulgaris, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB40.1",
+            "titulo": {
+                "es": "Pénfigo foliáceo",
+                "en": "Pemphigus foliaceus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB40.2",
+            "titulo": {
+                "es": "Pénfigo paraneoplásico",
+                "en": "Paraneoplastic pemphigus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB40.Y",
+            "titulo": {
+                "es": "Otro pénfigo especificado",
+                "en": "Other specified pemphigus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB40.Z",
+            "titulo": {
+                "es": "Pénfigo, sin especificación",
+                "en": "Pemphigus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB41.0",
+            "titulo": {
+                "es": "Penfigoide ampolloso",
+                "en": "Bullous pemphigoid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB41.1",
+            "titulo": {
+                "es": "Penfigoide de la membrana mucosa",
+                "en": "Mucous membrane pemphigoid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB41.Y",
+            "titulo": {
+                "es": "Otro penfigoide especificado",
+                "en": "Other specified pemphigoid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB41.Z",
+            "titulo": {
+                "es": "Penfigoide, sin especificación",
+                "en": "Pemphigoid, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB42",
+            "titulo": {
+                "es": "Dermatosis ampollosa por IgA lineal",
+                "en": "Linear IgA bullous dermatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB43",
+            "titulo": {
+                "es": "Epidermólisis ampollosa adquirida",
+                "en": "Epidermolysis bullosa acquisita"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB44",
+            "titulo": {
+                "es": "Dermatitis herpetiforme",
+                "en": "Dermatitis herpetiformis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB4Y",
+            "titulo": {
+                "es": "Otro trastorno inmunoampolloso especificado",
+                "en": "Other specified immunobullous disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB50",
+            "titulo": {
+                "es": "Lupus eritematoso cutáneo subagudo",
+                "en": "Subacute cutaneous lupus erythematosus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB51.0",
+            "titulo": {
+                "es": "Lupus eritematoso discoide",
+                "en": "Discoid lupus erythematosus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB51.Y",
+            "titulo": {
+                "es": "Otro lupus eritematoso cutáneo crónico especificado",
+                "en": "Other specified chronic cutaneous lupus erythematosus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB51.Z",
+            "titulo": {
+                "es": "Lupus eritematoso cutáneo crónico, sin especificación",
+                "en": "Chronic cutaneous lupus erythematosus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB5Z",
+            "titulo": {
+                "es": "Lupus eritematoso cutáneo sin especificación",
+                "en": "Cutaneous lupus erythematosus of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB60.0",
+            "titulo": {
+                "es": "Liquen escleroso de la vulva",
+                "en": "Lichen sclerosus of vulva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB60.1",
+            "titulo": {
+                "es": "Liquen escleroso del pene",
+                "en": "Lichen sclerosus of penis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB60.Y",
+            "titulo": {
+                "es": "Liquen escleroso en otras localizaciones especificadas",
+                "en": "Lichen sclerosus of other specified sites"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB60.Z",
+            "titulo": {
+                "es": "Liquen escleroso, sin especificación",
+                "en": "Lichen sclerosus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB61.0",
+            "titulo": {
+                "es": "Morfea en placas",
+                "en": "Plaque morphoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB61.1",
+            "titulo": {
+                "es": "Morfea lineal",
+                "en": "Linear morphoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB61.Y",
+            "titulo": {
+                "es": "Otras formas especificadas de morfea",
+                "en": "Other specified forms of morphoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB61.Z",
+            "titulo": {
+                "es": "Morfea, sin especificación",
+                "en": "Morphoea, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB7Y",
+            "titulo": {
+                "es": "Otras dermatosis inflamatorias especificadas",
+                "en": "Other specified inflammatory dermatoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.0",
+            "titulo": {
+                "es": "Lesiones cutáneas diabéticas",
+                "en": "Diabetic skin lesions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.10",
+            "titulo": {
+                "es": "Mixedema pretibial",
+                "en": "Pretibial myxoedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.11",
+            "titulo": {
+                "es": "Liquen mixedematoso",
+                "en": "Lichen myxoedematosus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.12",
+            "titulo": {
+                "es": "Mucinosis eritematosa reticular",
+                "en": "Reticular erythematous mucinosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.1Y",
+            "titulo": {
+                "es": "Otras formas especificadas de mucinosis cutánea",
+                "en": "Other specified forms of cutaneous mucinosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.20",
+            "titulo": {
+                "es": "Xantoma plano",
+                "en": "Plane xanthoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.21",
+            "titulo": {
+                "es": "Xantoma tuberoso",
+                "en": "Tuberous xanthoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.22",
+            "titulo": {
+                "es": "Xantoma eruptivo",
+                "en": "Eruptive xanthoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.23",
+            "titulo": {
+                "es": "Xantoma tendinoso",
+                "en": "Tendinous xanthoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.2Z",
+            "titulo": {
+                "es": "Xantomas cutáneos o subcutáneos, sin especificación",
+                "en": "Cutaneous or subcutaneous xanthomata of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.30",
+            "titulo": {
+                "es": "Seudoporfiria",
+                "en": "Pseudoporphyria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.3Y",
+            "titulo": {
+                "es": "Otra porfiria o seudoporfiria especificada que afecta la piel",
+                "en": "Other specified porphyria or pseudoporphyria affecting the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.40",
+            "titulo": {
+                "es": "Calcificación distrófica de la piel de causa desconocida o no especificada",
+                "en": "Dystrophic calcification of the skin of uncertain or unspecified aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.41",
+            "titulo": {
+                "es": "Paniculitis calcificada",
+                "en": "Calcific panniculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.42",
+            "titulo": {
+                "es": "Arteriolopatía calcificada",
+                "en": "Calcific arteriolopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB90.4Y",
+            "titulo": {
+                "es": "Otra calcificación especificada de la piel o del tejido subcutáneo",
+                "en": "Other specified calcification of skin or subcutaneous tissue"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EB9Y",
+            "titulo": {
+                "es": "Otros trastornos metabólicos o nutricionales especificados que afectan la piel",
+                "en": "Other specified metabolic or nutritional disorders affecting the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC10",
+            "titulo": {
+                "es": "Síndromes genéticos con poiquilodermia",
+                "en": "Genetic syndromes with poikiloderma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC1Y",
+            "titulo": {
+                "es": "Otros síndromes genéticos especificados con afectación de la piel",
+                "en": "Other specified genetic syndromes affecting the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.00",
+            "titulo": {
+                "es": "Ictiosis vulgar",
+                "en": "Ichthyosis vulgaris"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.01",
+            "titulo": {
+                "es": "Ictiosis ligada al cromosoma X",
+                "en": "X-linked ichthyosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.02",
+            "titulo": {
+                "es": "Ictiosis congénita autosómica recesiva",
+                "en": "Autosomal recessive congenital ichthyosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.03",
+            "titulo": {
+                "es": "Ictiosis queratinopáticas",
+                "en": "Keratinopathic ichthyoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.0Y",
+            "titulo": {
+                "es": "Otra ictiosis no sindrómica especificada o inclasificable",
+                "en": "Other specified or unclassifiable non-syndromic ichthyosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.1",
+            "titulo": {
+                "es": "Descamación cutánea hereditaria",
+                "en": "Hereditary skin peeling"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.2",
+            "titulo": {
+                "es": "Dermatosis acantolíticas hereditarias",
+                "en": "Hereditary acantholytic dermatoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.30",
+            "titulo": {
+                "es": "Queratodermia palmoplantar difusa",
+                "en": "Diffuse palmoplantar keratodermas"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.31",
+            "titulo": {
+                "es": "Queratodermia palmoplantar focal",
+                "en": "Focal palmoplantar keratodermas"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.32",
+            "titulo": {
+                "es": "Queratodermia palmoplantar papulosa",
+                "en": "Papular palmoplantar keratodermas"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.3Z",
+            "titulo": {
+                "es": "Queratodermia palmoplantar hereditaria de tipo no especificado",
+                "en": "Hereditary palmoplantar keratoderma of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC20.Y",
+            "titulo": {
+                "es": "Otros trastornos genéticos especificados de la queratinización",
+                "en": "Other specified genetic disorders of keratinisation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC21.0",
+            "titulo": {
+                "es": "Defectos genéticos del tallo del pelo",
+                "en": "Genetic defects of the hair shaft"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC21.1",
+            "titulo": {
+                "es": "Síndromes genéticos con alteraciones del tallo del pelo",
+                "en": "Genetic syndromes with abnormalities of the hair shaft"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC21.2",
+            "titulo": {
+                "es": "Alopecia o hipotricosis hereditarias",
+                "en": "Hereditary alopecia or hypotrichosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC21.3",
+            "titulo": {
+                "es": "Síndromes genéticos con alopecia o hipotricosis",
+                "en": "Genetic syndromes with alopecia or hypotrichosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC21.4",
+            "titulo": {
+                "es": "Hipertricosis genética",
+                "en": "Genetically-determined hypertrichosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC21.Y",
+            "titulo": {
+                "es": "Otros defectos genéticos especificados del pelo o del crecimiento del pelo",
+                "en": "Other specified genetic defects of hair or hair growth"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC21.Z",
+            "titulo": {
+                "es": "Defectos genéticos del pelo o del crecimiento del pelo, sin especificación",
+                "en": "Genetic defects of hair or hair growth, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC22.0",
+            "titulo": {
+                "es": "Deformidades hereditarias de las uñas",
+                "en": "Inherited deformities of nails"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC23.0",
+            "titulo": {
+                "es": "Hipermelanosis o lentiginosis genética no sindrómica",
+                "en": "Non-syndromic genetically-determined hypermelanosis or lentiginosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC23.1",
+            "titulo": {
+                "es": "Hipermelanosis o lentiginosis genética sindrómica",
+                "en": "Syndromic genetically-determined hypermelanosis or lentiginosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC23.20",
+            "titulo": {
+                "es": "Albinismo oculocutáneo",
+                "en": "Oculocutaneous albinism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC23.2Y",
+            "titulo": {
+                "es": "Otros trastornos hipomelanóticos genéticos especificados",
+                "en": "Other specified genetically-determined hypomelanotic disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC23.Y",
+            "titulo": {
+                "es": "Otros trastornos genéticos especificados de la pigmentación de la piel",
+                "en": "Other specified genetic disorders of skin pigmentation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC23.Z",
+            "titulo": {
+                "es": "Trastornos genéticos de la pigmentación de la piel, sin especificación",
+                "en": "Genetic disorders of skin pigmentation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC30",
+            "titulo": {
+                "es": "Epidermólisis ampollosa simple",
+                "en": "Epidermolysis bullosa simplex"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC31",
+            "titulo": {
+                "es": "Epidermólisis ampollosa de la unión",
+                "en": "Junctional epidermolysis bullosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC32",
+            "titulo": {
+                "es": "Epidermólisis ampollosa distrófica",
+                "en": "Dystrophic epidermolysis bullosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC33",
+            "titulo": {
+                "es": "Epidermólisis ampollosa sindrómica",
+                "en": "Syndromic epidermolysis bullosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC3Z",
+            "titulo": {
+                "es": "Epidermólisis ampollosas genéticamente determinada, sin especificación",
+                "en": "Epidermolysis bullosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC40",
+            "titulo": {
+                "es": "Seudoxantoma elástico",
+                "en": "Pseudoxanthoma elasticum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC4Y",
+            "titulo": {
+                "es": "Otros trastornos genéticos especificados por alteración de proteínas de la matriz extracelular de la dermis",
+                "en": "Other specified genetic disorders affecting dermal matrix proteins"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC50",
+            "titulo": {
+                "es": "Alteraciones del desarrollo del ombligo",
+                "en": "Developmental anomalies of the umbilicus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC5Y",
+            "titulo": {
+                "es": "Otras anomalías especificadas del desarrollo con afectación de la piel",
+                "en": "Other specified developmental anomalies affecting the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC7Y",
+            "titulo": {
+                "es": "Otros trastornos genéticos o del desarrollo especificados con afectación de la piel",
+                "en": "Other specified genetic or developmental disorders affecting the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.0",
+            "titulo": {
+                "es": "Prurito por enfermedad de la piel",
+                "en": "Pruritus due to skin disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.10",
+            "titulo": {
+                "es": "Prurito por enfermedad renal crónica",
+                "en": "Uraemic pruritus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.11",
+            "titulo": {
+                "es": "Prurito colestásico",
+                "en": "Cholestatic pruritus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.12",
+            "titulo": {
+                "es": "Prurito asociado a hemodiálisis",
+                "en": "Haemodialysis-associated pruritus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.1Y",
+            "titulo": {
+                "es": "Prurito por otra enfermedad sistémica especificada",
+                "en": "Pruritus due to other specified systemic disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.2",
+            "titulo": {
+                "es": "Prurito provocado por medicamentos",
+                "en": "Drug-induced pruritus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.3",
+            "titulo": {
+                "es": "Prurito por trastorno neurológico",
+                "en": "Pruritus due to neurological disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.4",
+            "titulo": {
+                "es": "Prurito psicógeno",
+                "en": "Psychogenic pruritus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.5",
+            "titulo": {
+                "es": "Prurito anogenital",
+                "en": "Anogenital pruritus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.6",
+            "titulo": {
+                "es": "Prurito de causa desconocida",
+                "en": "Pruritus of unknown cause"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.Y",
+            "titulo": {
+                "es": "Prurito de otro tipo u otra causa especificados",
+                "en": "Pruritus of other specified type or aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC90.Z",
+            "titulo": {
+                "es": "Prurito, sin especificación",
+                "en": "Pruritus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC91.0",
+            "titulo": {
+                "es": "Prurigo nodular",
+                "en": "Nodular prurigo"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC91.1",
+            "titulo": {
+                "es": "Prurigo atópico",
+                "en": "Atopic prurigo"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC91.Z",
+            "titulo": {
+                "es": "Prurigo, sin especificación",
+                "en": "Prurigo, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC92.0",
+            "titulo": {
+                "es": "dolor disestésico escrotal y peneano",
+                "en": "Penoscrotodynia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC92.1",
+            "titulo": {
+                "es": "Disestesia del cuero cabelludo",
+                "en": "Scalp dysaesthesia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EC9Y",
+            "titulo": {
+                "es": "Otras alteraciones especificadas de la sensibilidad cutánea",
+                "en": "Other specified disturbances of cutaneous sensation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED00",
+            "titulo": {
+                "es": "Trastorno cutáneo artefactual",
+                "en": "Artefactual skin disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED01",
+            "titulo": {
+                "es": "Enfermedad cutánea simulada",
+                "en": "Simulated skin disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED02",
+            "titulo": {
+                "es": "Síndrome de Gardner-Diamond",
+                "en": "Painful bruising syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED0Y",
+            "titulo": {
+                "es": "Otros trastornos cutáneos autoinfligidos especificados",
+                "en": "Other specified self-inflicted skin disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED2Y",
+            "titulo": {
+                "es": "Otras condiciones psicológicas o psiquiátricas especificadas con afectación de la piel",
+                "en": "Other specified mental conditions affecting the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED30.0",
+            "titulo": {
+                "es": "Úlcera neuropática",
+                "en": "Neuropathic skin ulceration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED30.Y",
+            "titulo": {
+                "es": "Otro daño cutáneo neuropático especificado",
+                "en": "Other specified neuropathic skin damage"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED31",
+            "titulo": {
+                "es": "Síndrome de los pies ardientes",
+                "en": "Burning feet syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED3Y",
+            "titulo": {
+                "es": "Otras enfermedades neurológicas especificadas con afectación de la piel",
+                "en": "Cutaneous involvement in other specified neurological condition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED50.0",
+            "titulo": {
+                "es": "Ictiosis adquirida",
+                "en": "Acquired ichthyosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED50.Z",
+            "titulo": {
+                "es": "Ictiosis de tipo no especificado",
+                "en": "Ichthyosis of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED51.00",
+            "titulo": {
+                "es": "Acantosis nigricans benigna",
+                "en": "Benign acanthosis nigricans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED51.0Y",
+            "titulo": {
+                "es": "Otra acantosis nigricans especificada",
+                "en": "Other specified acanthosis nigricans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED51.0Z",
+            "titulo": {
+                "es": "Acantosis nigricans, sin especificación",
+                "en": "Acanthosis nigricans, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED51.Y",
+            "titulo": {
+                "es": "Otra hiperqueratosis epidérmica difusa o acantosis",
+                "en": "Other specified hyperkeratotic or acanthotic dermatoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED51.Z",
+            "titulo": {
+                "es": "Hiperqueratosis epidérmica difusa o acantosis, sin especificación",
+                "en": "Diffuse epidermal hyperkeratosis or acanthosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED52",
+            "titulo": {
+                "es": "Poroqueratosis",
+                "en": "Porokeratoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED53",
+            "titulo": {
+                "es": "Descamación de la piel",
+                "en": "Skin peeling"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED54",
+            "titulo": {
+                "es": "Xerosis cutánea o asteatosis",
+                "en": "Xerosis cutis or asteatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED55.0",
+            "titulo": {
+                "es": "Queratodermias palmoplantares adquiridas",
+                "en": "Acquired palmoplantar keratodermas"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED55.Z",
+            "titulo": {
+                "es": "Queratodermia palmoplantar, sin especificación",
+                "en": "Palmoplantar keratoderma, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED56",
+            "titulo": {
+                "es": "Queratosis pilaris",
+                "en": "Keratosis pilaris"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED5Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la queratinización epidérmica",
+                "en": "Other specified disorders of epidermal keratinisation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED60.00",
+            "titulo": {
+                "es": "Bronceado natural",
+                "en": "Suntan"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED60.01",
+            "titulo": {
+                "es": "Bronceado por exposición a fuentes artificiales de radiación ultravioleta",
+                "en": "Tanning due to exposure to artificial sources of ultraviolet radiation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED60.1",
+            "titulo": {
+                "es": "Melasma",
+                "en": "Melasma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED60.2",
+            "titulo": {
+                "es": "Hipermelanosis postinflamatoria",
+                "en": "Postinflammatory hypermelanosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED60.Y",
+            "titulo": {
+                "es": "Otra hipermelanosis adquirida de causa especificada",
+                "en": "Hypermelanosis of other specified aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED60.Z",
+            "titulo": {
+                "es": "Hipermelanosis de causa no especificada",
+                "en": "Hypermelanosis of unspecified aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED61.0",
+            "titulo": {
+                "es": "efélides",
+                "en": "Freckles"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED61.10",
+            "titulo": {
+                "es": "Mácula melanótica del pene",
+                "en": "Penile melanotic macule"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED61.11",
+            "titulo": {
+                "es": "Mácula melanótica vulvar",
+                "en": "Vulval melanotic macule"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED61.1Y",
+            "titulo": {
+                "es": "Otra melanosis mucosa especificada",
+                "en": "Other specified mucosal melanosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED61.1Z",
+            "titulo": {
+                "es": "Melanosis mucosa, sin especificación",
+                "en": "Mucosal melanosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED61.Y",
+            "titulo": {
+                "es": "Otras máculas o léntigos melanóticos adquiridos especificados",
+                "en": "Other specified acquired melanotic macules or lentigines"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED61.Z",
+            "titulo": {
+                "es": "Máculas o léntigos melanóticos adquiridas, sin especificación",
+                "en": "Acquired melanotic macules or lentigines, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED62.0",
+            "titulo": {
+                "es": "Pigmentación de la piel por hemosiderina",
+                "en": "Haemosiderin pigmentation of skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED62.Y",
+            "titulo": {
+                "es": "Otra pigmentación endógena no melánica especificada",
+                "en": "Other specified endogenous non-melanin pigmentation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED62.Z",
+            "titulo": {
+                "es": "Pigmentación endógena no melánica, sin especificación",
+                "en": "Endogenous non-melanin pigmentation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED63.0",
+            "titulo": {
+                "es": "Vitiligo",
+                "en": "Vitiligo"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED63.1",
+            "titulo": {
+                "es": "Hipomelanosis por exposición a sustancias químicas",
+                "en": "Hypomelanosis due to exposure to chemicals"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED63.2",
+            "titulo": {
+                "es": "Hipomelanosis postinflamatoria",
+                "en": "Postinflammatory hypomelanosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED63.3",
+            "titulo": {
+                "es": "Síndrome de Vogt-Koyanagi-Harada",
+                "en": "Vogt-Koyanagi-Harada syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED63.Y",
+            "titulo": {
+                "es": "Otros trastornos hipomelanóticos adquiridos especificados",
+                "en": "Acquired hypomelanosis due to other specified disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED63.Z",
+            "titulo": {
+                "es": "Trastornos hipomelanóticos adquiridos, sin especificación",
+                "en": "Acquired hypomelanosis of unknown or unspecified aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED64",
+            "titulo": {
+                "es": "Pigmentación anormal de la piel",
+                "en": "Abnormal skin pigmentation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED6Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del color de la piel",
+                "en": "Other specified disorders of skin pigmentation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.0",
+            "titulo": {
+                "es": "Alopecia de patrón masculino",
+                "en": "Male pattern hair loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.1",
+            "titulo": {
+                "es": "Alopecia de patrón femenino",
+                "en": "Female pattern hair loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.20",
+            "titulo": {
+                "es": "Alopecia areata en placas del cuero cabelludo",
+                "en": "Patchy alopecia areata of scalp"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.21",
+            "titulo": {
+                "es": "alopecia total",
+                "en": "Alopecia totalis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.2Y",
+            "titulo": {
+                "es": "Otras formas especificadas de alopecia areata",
+                "en": "Other specified forms of alopecia areata"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.2Z",
+            "titulo": {
+                "es": "Alopecia areata, sin especificación",
+                "en": "Alopecia areata, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.30",
+            "titulo": {
+                "es": "Efluvio telógeno agudo",
+                "en": "Acute telogen effluvium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.31",
+            "titulo": {
+                "es": "Efluvio telógeno posparto",
+                "en": "Postpartum telogen effluvium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.3Y",
+            "titulo": {
+                "es": "Telógeno muda de pelo debido a otra causa especificada",
+                "en": "Telogen hair shedding due to other specified cause"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.3Z",
+            "titulo": {
+                "es": "Efluvio telógeno, sin especificación",
+                "en": "Telogen effluvium unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.4",
+            "titulo": {
+                "es": "Efluvio anágeno",
+                "en": "Anagen effluvium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.50",
+            "titulo": {
+                "es": "Foliculitis decalvante",
+                "en": "Folliculitis decalvans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.51",
+            "titulo": {
+                "es": "Celulitis disecante",
+                "en": "Dissecting cellulitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.5Y",
+            "titulo": {
+                "es": "Alopecia cicatricial por otra causa especificada",
+                "en": "Scarring alopecia due to other specified cause"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.5Z",
+            "titulo": {
+                "es": "Alopecia cicatricial, sin especificación",
+                "en": "Scarring alopecia of unknown or unspecified aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.Y",
+            "titulo": {
+                "es": "Otra alopecia o caída del pelo especificada",
+                "en": "Other specified alopecia or hair loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED70.Z",
+            "titulo": {
+                "es": "Alopecia o caída del pelo, sin especificación",
+                "en": "Alopecia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED71",
+            "titulo": {
+                "es": "Hipertricosis",
+                "en": "Hypertrichosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED72.0",
+            "titulo": {
+                "es": "Hirsutismo idiopático",
+                "en": "Constitutional hirsutism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED72.1",
+            "titulo": {
+                "es": "Hirsutismo con hiperandrogenemia",
+                "en": "Hirsutism associated with hyperandrogenaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED72.Z",
+            "titulo": {
+                "es": "Hirsutismo, sin especificación",
+                "en": "Hirsutism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED73.0",
+            "titulo": {
+                "es": "Pelo desgastado",
+                "en": "Weathered hair"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED73.10",
+            "titulo": {
+                "es": "Canicie prematura",
+                "en": "Premature canities"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED73.11",
+            "titulo": {
+                "es": "Poliosis adquirida",
+                "en": "Acquired poliosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED73.1Z",
+            "titulo": {
+                "es": "Cambios adquiridos en el color del cabello, sin especificación",
+                "en": "Acquired changes in hair colour, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED73.Y",
+            "titulo": {
+                "es": "Otros trastornos adquiridos especificadas del tallo del pelo",
+                "en": "Other specified acquired disorders of the hair shaft"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED73.Z",
+            "titulo": {
+                "es": "Trastornos adquiridos del tallo del pelo, sin especificación",
+                "en": "Acquired disorders of the hair shaft, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED7Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del pelo",
+                "en": "Other specified disorders of hair"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.0",
+            "titulo": {
+                "es": "Acné comedononiano",
+                "en": "Comedonal acne"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.1",
+            "titulo": {
+                "es": "Acné mixto superficial comedoniano y papulopustuloso",
+                "en": "Superficial mixed comedonal and papulopustular acne"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.2",
+            "titulo": {
+                "es": "Acné papulopustuloso",
+                "en": "Papulopustular acne"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.3",
+            "titulo": {
+                "es": "Acné nodular",
+                "en": "Nodular acne"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.40",
+            "titulo": {
+                "es": "Acné fulminante",
+                "en": "Acne fulminans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.41",
+            "titulo": {
+                "es": "Acné conglobata",
+                "en": "Acne conglobata"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.4Y",
+            "titulo": {
+                "es": "Otro acné inflamatorio severo especificado",
+                "en": "Other specified severe inflammatory acne"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.4Z",
+            "titulo": {
+                "es": "Acné inflamatorio severo, sin especificación",
+                "en": "Severe inflammatory acne, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.5",
+            "titulo": {
+                "es": "Cicatrices del acné",
+                "en": "Acne scarring"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.6",
+            "titulo": {
+                "es": "Acné del lactante",
+                "en": "Infantile acne"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.Y",
+            "titulo": {
+                "es": "Otro acné especificado",
+                "en": "Other specified acne"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED80.Z",
+            "titulo": {
+                "es": "Acné, sin especificación",
+                "en": "Acne, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED81.0",
+            "titulo": {
+                "es": "Foliculitis crural pustulosa y atrófica",
+                "en": "Folliculitis cruris pustulosa atrophicans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED81.1",
+            "titulo": {
+                "es": "Reacciones acneiformes a los hidrocarburos aromáticos halogenados",
+                "en": "Acneiform reactions to halogenated aromatic hydrocarbons"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED81.Y",
+            "titulo": {
+                "es": "Otros trastornos inflamatorios acneiformes especificados",
+                "en": "Other specified acneiform inflammatory disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED81.Z",
+            "titulo": {
+                "es": "Trastornos inflamatorios acneiformes, sin especificación",
+                "en": "Acneiform inflammatory disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED90.00",
+            "titulo": {
+                "es": "Rosácea eritematotelangiectásica",
+                "en": "Erythematotelangiectatic rosacea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED90.01",
+            "titulo": {
+                "es": "Rosácea papulopustulosa",
+                "en": "Papulopustular rosacea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED90.02",
+            "titulo": {
+                "es": "Rosácea fimatosa",
+                "en": "Phymatous rosacea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED90.0Y",
+            "titulo": {
+                "es": "Otra rosácea especificada",
+                "en": "Other specified rosacea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED90.0Z",
+            "titulo": {
+                "es": "Rosácea, sin especificación",
+                "en": "Rosacea, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED90.1",
+            "titulo": {
+                "es": "Dermatitis periorificial",
+                "en": "Periorificial dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED90.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados parecidos a la rosácea",
+                "en": "Other specified rosacea-like disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED90.Z",
+            "titulo": {
+                "es": "Rosácea o trastornos relacionados, sin especificación",
+                "en": "Rosacea-like disorders unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED91.0",
+            "titulo": {
+                "es": "Glándulas sebáceas heterotópicas",
+                "en": "Heterotopic sebaceous glands"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED91.1",
+            "titulo": {
+                "es": "Hiperplasia de las glándulas sebáceas",
+                "en": "Sebaceous gland hyperplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED91.2",
+            "titulo": {
+                "es": "Seborrea",
+                "en": "Seborrhoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED91.Y",
+            "titulo": {
+                "es": "Otro(a)(s) trastornos de las glándulas sebáceas especificado(a)(s)",
+                "en": "Other specified disorders of the sebaceous gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED91.Z",
+            "titulo": {
+                "es": "Trastornos de las glándulas sebáceas, sin especificación",
+                "en": "Disorders of the sebaceous gland, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED92.0",
+            "titulo": {
+                "es": "Hidradenitis supurativa",
+                "en": "Hidradenitis suppurativa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED92.1",
+            "titulo": {
+                "es": "Trastornos sudoríparos apocrinos",
+                "en": "Apocrine sweat disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED92.Y",
+            "titulo": {
+                "es": "Otro(a)(s) trastornos de la unidad folicular apocrina especificado(a)(s)",
+                "en": "Other specified disorders involving the apocrine follicular unit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED92.Z",
+            "titulo": {
+                "es": "Trastornos de la unidad folicular apocrina, sin especificación",
+                "en": "Disorders involving the apocrine follicular unit, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "ED9Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del folículo piloso",
+                "en": "Other specified disorders involving the hair follicle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE00.00",
+            "titulo": {
+                "es": "Hiperhidrosis palmoplantar",
+                "en": "Palmoplantar hyperhidrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE00.01",
+            "titulo": {
+                "es": "Hiperhidrosis axilar",
+                "en": "Axillary hyperhidrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE00.02",
+            "titulo": {
+                "es": "Hiperhidrosis craneofacial",
+                "en": "Craniofacial hyperhidrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE00.0Y",
+            "titulo": {
+                "es": "Otra hiperhidrosis localizada especificada",
+                "en": "Other specified localised hyperhidrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE00.0Z",
+            "titulo": {
+                "es": "Hiperhidrosis localizada, sin especificación",
+                "en": "Localised hyperhidrosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE00.1",
+            "titulo": {
+                "es": "Hiperhidrosis generalizada primaria",
+                "en": "Primary generalised hyperhidrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE00.Z",
+            "titulo": {
+                "es": "Hiperhidrosis, sin especificación",
+                "en": "Hyperhidrosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE01.0",
+            "titulo": {
+                "es": "Hipohidrosis atribuible a inervación o función sudomotoras defectuosas",
+                "en": "Hypohidrosis attributable to defective sudomotor innervation or function"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE01.1",
+            "titulo": {
+                "es": "Hipohidrosis por anomalías genéticas estructurales o funcionales de las glándulas ecrinas",
+                "en": "Hypohidrosis due to genetic abnormalities of eccrine gland structure or function"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE01.2",
+            "titulo": {
+                "es": "Hipohidrosis de causa indeterminada",
+                "en": "Hypohidrosis of undetermined aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE01.Y",
+            "titulo": {
+                "es": "Otras formas especificadas de hipohidrosis",
+                "en": "Other specified forms of hypohidrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE01.Z",
+            "titulo": {
+                "es": "Hipohidrosis, sin especificación",
+                "en": "Hypohidrosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE02.0",
+            "titulo": {
+                "es": "Miliaria neonatal",
+                "en": "Neonatal miliaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE02.Y",
+            "titulo": {
+                "es": "Otras formas especificadas de miliaria",
+                "en": "Other specified forms of miliaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE02.Z",
+            "titulo": {
+                "es": "Miliaria, sin especificación",
+                "en": "Miliaria, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de las glándulas sudoríparas ecrinas o de la sudación",
+                "en": "Other specified disorders of eccrine sweat glands or sweating"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.0",
+            "titulo": {
+                "es": "Alteración de la forma de la uña",
+                "en": "Abnormality of nail shape"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.10",
+            "titulo": {
+                "es": "Lesiones punteadas en las uñas",
+                "en": "Nail pitting"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.1Y",
+            "titulo": {
+                "es": "Otra alteración especificada de la superficie de la uña",
+                "en": "Other specified abnormality of nail surface"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.1Z",
+            "titulo": {
+                "es": "Alteración de la superficie de la uña, sin especificación",
+                "en": "Abnormality of nail surface, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.2",
+            "titulo": {
+                "es": "Onicólisis",
+                "en": "Onycholysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.3",
+            "titulo": {
+                "es": "Hipertrofia de las uñas",
+                "en": "Nail hypertrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.4",
+            "titulo": {
+                "es": "Atrofia de las uñas",
+                "en": "Nail atrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.5",
+            "titulo": {
+                "es": "Distrofia ungueal SAI",
+                "en": "Nail dystrophy, not otherwise specified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.Y",
+            "titulo": {
+                "es": "Otras deformidades adquiridas especificadas de la lámina ungueal",
+                "en": "Other specified acquired deformities of the nail plate"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE10.Z",
+            "titulo": {
+                "es": "Deformidades adquiridas de la lámina ungueal, sin especificación",
+                "en": "Acquired deformities of the nail plate, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE11.0",
+            "titulo": {
+                "es": "Melanoniquia",
+                "en": "Melanonychia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE11.1",
+            "titulo": {
+                "es": "Síndrome de las uñas amarillas",
+                "en": "Yellow nail syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE11.Y",
+            "titulo": {
+                "es": "Otras alteraciones adquiridas especificadas del color de las uñas",
+                "en": "Other abnormalities of nail colour"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE11.Z",
+            "titulo": {
+                "es": "Alteraciones adquiridas del color de las uñas, sin especificación",
+                "en": "Acquired abnormalities of nail colour, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE12.0",
+            "titulo": {
+                "es": "Paroniquia bacteriana aguda",
+                "en": "Acute bacterial paronychia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE12.1",
+            "titulo": {
+                "es": "Onicomicosis",
+                "en": "Onychomycosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE12.Y",
+            "titulo": {
+                "es": "Otras infecciones especificadas de la uña o del perioniquio",
+                "en": "Other specified infections of the nail or perionychium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE12.Z",
+            "titulo": {
+                "es": "Infecciones de la uña o del perioniquio, sin especificación",
+                "en": "Infections of the nail or perionychium, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.0",
+            "titulo": {
+                "es": "Fragilidad de las uñas",
+                "en": "Nail fragility"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.10",
+            "titulo": {
+                "es": "Uña encarnada del pie",
+                "en": "Ingrowing toenail"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.11",
+            "titulo": {
+                "es": "Uña encarnada del pie infectada",
+                "en": "Infected ingrowing toenail"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.1Y",
+            "titulo": {
+                "es": "Otro(a)(s) uña encarnada del dedo del pie especificado(a)(s)",
+                "en": "Other specified ingrowing nail"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.1Z",
+            "titulo": {
+                "es": "Uña encarnada del dedo del pie, sin especificación",
+                "en": "Ingrowing nail, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.2",
+            "titulo": {
+                "es": "Paroniquia crónica",
+                "en": "Chronic paronychia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.3",
+            "titulo": {
+                "es": "Trastorno de las uñas asociado a dermatosis especificada",
+                "en": "Nail disorder associated with specified dermatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.4",
+            "titulo": {
+                "es": "Trastorno de las uñas asociado a enfermedad sistémica especificada",
+                "en": "Nail disorder associated with specified systemic disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.5",
+            "titulo": {
+                "es": "Distrofia ungueal eccematosa",
+                "en": "Eczematous nail dystrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE13.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de las uñas o del perioniquio",
+                "en": "Other specified nail disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE1Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la uña o del perioniquio",
+                "en": "Other specified disorders of the nail or perionychium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE1Z",
+            "titulo": {
+                "es": "Trastornos de la uña o del perioniquio, sin especificación",
+                "en": "Disorders of the nail or perionychium, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE20",
+            "titulo": {
+                "es": "Síndrome de distensión cutánea aguda",
+                "en": "Acute cutaneous distension syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE21",
+            "titulo": {
+                "es": "Fragilidad epidérmica",
+                "en": "Epidermal fragility"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.0",
+            "titulo": {
+                "es": "Atrofia cutánea inducida por corticosteroides",
+                "en": "Corticosteroid-induced skin atrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.10",
+            "titulo": {
+                "es": "Estrías del embarazo",
+                "en": "Stretch marks of pregnancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.1Y",
+            "titulo": {
+                "es": "Estrías por otra causa especificada",
+                "en": "Stretch marks of other specified aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.1Z",
+            "titulo": {
+                "es": "Estrías, sin especificación",
+                "en": "Stretch marks, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.2",
+            "titulo": {
+                "es": "Cicatrización atrófica de la piel",
+                "en": "Atrophic scarring of the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.30",
+            "titulo": {
+                "es": "Fragilidad de la piel determinada genéticamente",
+                "en": "Genetically-determined skin fragility"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.31",
+            "titulo": {
+                "es": "Fragilidad de la piel relacionada con la edad",
+                "en": "Age-related skin fragility"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.32",
+            "titulo": {
+                "es": "Púrpura o hematomas por fragilidad vascular",
+                "en": "Purpura or bruising due to vascular fragility"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.Y",
+            "titulo": {
+                "es": "Otra atrofia o degeneración especificada del tejido conjuntivo de la dermis o la hipodermis",
+                "en": "Other specified atrophy or degeneration of dermal or subcutaneous connective tissue"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE40.Z",
+            "titulo": {
+                "es": "Atrofia o degeneración del tejido conjuntivo de la dermis o la hipodermis, de tipo no especificado",
+                "en": "Atrophy or degeneration of dermal or subcutaneous connective tissue, unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE41.0",
+            "titulo": {
+                "es": "Piel laxa",
+                "en": "Cutis laxa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE41.1",
+            "titulo": {
+                "es": "Anetodermia",
+                "en": "Anetoderma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE41.Y",
+            "titulo": {
+                "es": "Otras alteraciones especificadas de la elastina dérmica",
+                "en": "Other specified dermatoses characterised by abnormal dermal elastin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE41.Z",
+            "titulo": {
+                "es": "Alteraciones de la elastina dérmica, sin especificación",
+                "en": "Abnormalities of dermal elastin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE50",
+            "titulo": {
+                "es": "Poiquilodermia adquirida",
+                "en": "Acquired poikiloderma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE60.00",
+            "titulo": {
+                "es": "Queloide del lóbulo de la oreja",
+                "en": "Ear-lobe keloid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE60.0Y",
+            "titulo": {
+                "es": "Otro queloide especificado",
+                "en": "Other specified keloid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE60.0Z",
+            "titulo": {
+                "es": "Queloide, sin especificación",
+                "en": "Keloid, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE60.1",
+            "titulo": {
+                "es": "Cicatriz hipertrófica",
+                "en": "Hypertrophic scar"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE60.Y",
+            "titulo": {
+                "es": "Otros trastornos queloideos especificados",
+                "en": "Other specified keloidal disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE61",
+            "titulo": {
+                "es": "Fibromatosis superficiales",
+                "en": "Superficial fibromatoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE6Y",
+            "titulo": {
+                "es": "Otros trastornos fibromatosos especificados de la piel o tejidos blandos",
+                "en": "Other specified fibromatous disorders of skin or soft tissue"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE6Z",
+            "titulo": {
+                "es": "Fibromatosis de la piel o tejidos blandos, sin especificación",
+                "en": "Fibromatosis of skin or soft tissue, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE70.0",
+            "titulo": {
+                "es": "Dermatosis perforante adquirida",
+                "en": "Acquired perforating dermatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE70.Y",
+            "titulo": {
+                "es": "Otras dermatosis perforantes especificadas",
+                "en": "Other specified perforating dermatoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE70.Z",
+            "titulo": {
+                "es": "Dermatosis perforantes, sin especificación",
+                "en": "Perforating dermatoses, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE7Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del tejido conjuntivo cutáneo",
+                "en": "Other specified disorders of cutaneous connective tissue"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE80.0",
+            "titulo": {
+                "es": "Granuloma anular",
+                "en": "Granuloma annulare"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE80.1",
+            "titulo": {
+                "es": "Necrobiosis lipoidea",
+                "en": "Necrobiosis lipoidica"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE80.Z",
+            "titulo": {
+                "es": "Trastornos granulomatosos necrobióticos de la piel, sin especificación",
+                "en": "Necrobiotic granulomatous skin disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE81",
+            "titulo": {
+                "es": "Histiocitosis de dendrocitos dérmicos",
+                "en": "Dermal dendrocyte, Class IIa histiocytoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE8Y",
+            "titulo": {
+                "es": "Otros trastornos histiocíticos-granulomatosos especificados de la piel",
+                "en": "Other specified histiocytic-granulomatous disorders of the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE8Z",
+            "titulo": {
+                "es": "Trastornos histiocíticos-granulomatosos de la piel, sin especificación",
+                "en": "Histiocytic-granulomatous disorders of the skin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE90",
+            "titulo": {
+                "es": "Infiltración linfocítica benigna de la piel",
+                "en": "Benign lymphocytic infiltration of the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EE91",
+            "titulo": {
+                "es": "Linfocitoma cutáneo",
+                "en": "Lymphocytoma cutis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF00.0",
+            "titulo": {
+                "es": "Paniculitis por enzimas pancreáticas",
+                "en": "Pancreatic enzyme panniculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF00.Y",
+            "titulo": {
+                "es": "Paniculitis por otra causa especificada",
+                "en": "Panniculitis of other specified aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF00.Z",
+            "titulo": {
+                "es": "Paniculitis de causa indeterminada o no especificada",
+                "en": "Panniculitis of undetermined or unspecified etiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF01.0",
+            "titulo": {
+                "es": "Lipodistrofia parcial adquirida",
+                "en": "Acquired partial lipodystrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF01.1",
+            "titulo": {
+                "es": "Lipoatrofia localizada o lipodistrofia",
+                "en": "Localised lipoatrophy or lipodystrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF01.Y",
+            "titulo": {
+                "es": "Otras formas especificadas de lipoatrofia o lipodistrofia",
+                "en": "Other specified forms of lipodystrophy and lipoatrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF01.Z",
+            "titulo": {
+                "es": "Lipoatrofia o lipodistrofia, sin especificación",
+                "en": "Lipodystrophy or lipoatrophy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF02.0",
+            "titulo": {
+                "es": "Hipertrofia adiposa",
+                "en": "Fat hypertrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF02.1",
+            "titulo": {
+                "es": "Lipomatosis subcutánea",
+                "en": "Subcutaneous lipomatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF02.2",
+            "titulo": {
+                "es": "Lipoedema",
+                "en": "Lipoedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF02.3",
+            "titulo": {
+                "es": "Dermatopaniculosis deformante",
+                "en": "Cellulite"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF02.Y",
+            "titulo": {
+                "es": "Algunos otros trastornos no inflamatorios especificados del panículo adiposo",
+                "en": "Other specified noninflammatory disorders of subcutaneous fat"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF02.Z",
+            "titulo": {
+                "es": "Algunos trastornos no inflamatorios del panículo adiposo, sin especificación",
+                "en": "Noninflammatory disorders of subcutaneous fat, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del panículo adiposo",
+                "en": "Other specified disorders of subcutaneous fat"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF20.0",
+            "titulo": {
+                "es": "Lago venoso",
+                "en": "Venous lake"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF20.1",
+            "titulo": {
+                "es": "Angioqueratoma",
+                "en": "Angiokeratoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF20.2",
+            "titulo": {
+                "es": "Telangiectasias venosas de las extremidades inferiores",
+                "en": "Lower limb venous telangiectases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF20.3",
+            "titulo": {
+                "es": "Telangiectasia aracniforme",
+                "en": "Spider telangiectasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF20.4",
+            "titulo": {
+                "es": "Telangiectasia esencial generalizada",
+                "en": "Generalised essential telangiectasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF20.Y",
+            "titulo": {
+                "es": "Otras malformaciones adquiridas especificadas de los vasos sanguíneos cutáneos",
+                "en": "Other specified acquired malformations of cutaneous blood vessels"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF20.Z",
+            "titulo": {
+                "es": "Malformaciones adquiridas de los vasos sanguíneos cutáneos, sin especificación",
+                "en": "Acquired malformations of cutaneous blood vessels, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF2Z",
+            "titulo": {
+                "es": "Malformaciones que afectan los vasos sanguíneos cutáneos, sin especificación",
+                "en": "Cutaneous vascular malformation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF30",
+            "titulo": {
+                "es": "Púrpuras o hematomas por trastornos de la coagulación",
+                "en": "Purpura or bruising due to disorders of coagulation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF31",
+            "titulo": {
+                "es": "Púrpuras o hematomas traumáticos",
+                "en": "Traumatic purpura"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF3Y",
+            "titulo": {
+                "es": "Otras púrpuras o hematomas especificados",
+                "en": "Other specified purpura"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF3Z",
+            "titulo": {
+                "es": "Púrpura o hematoma de causa no especificada",
+                "en": "Purpura of unspecified aetiology"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF40.0",
+            "titulo": {
+                "es": "Capilaritis",
+                "en": "Capillaritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF40.10",
+            "titulo": {
+                "es": "Vasculitis urticarial",
+                "en": "Urticarial vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF40.1Y",
+            "titulo": {
+                "es": "Otra vasculitis especificada con afectación de pequeños vasos sanguíneos cutáneos",
+                "en": "Other specified vasculitis affecting small cutaneous blood vessels"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF40.20",
+            "titulo": {
+                "es": "Granuloma facial",
+                "en": "Granuloma faciale"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF40.2Y",
+            "titulo": {
+                "es": "Otra vasculitis cutánea localizada especificada",
+                "en": "Other specified localised cutaneous vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF40.Z",
+            "titulo": {
+                "es": "Vasculitis o capilaritis con afectación cutánea, sin especificación",
+                "en": "Cutaneous vasculitis unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF50",
+            "titulo": {
+                "es": "Vasculopatía livedoide",
+                "en": "Livedoid vasculopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF5Y",
+            "titulo": {
+                "es": "Otras dermatosis especificadas atribuibles a hiperviscosidad u oclusión microvascular",
+                "en": "Other specified dermatoses attributable to hyperviscosity or microvascular occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF60",
+            "titulo": {
+                "es": "Ulceración isquémica de la piel",
+                "en": "Ischaemic ulceration of skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF70",
+            "titulo": {
+                "es": "Eccema venoso de extremidades inferiores",
+                "en": "Lower limb venous eczema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF7Y",
+            "titulo": {
+                "es": "Otras dermatosis por enfermedad venosa especificadas",
+                "en": "Other specified dermatoses due to venous disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF7Z",
+            "titulo": {
+                "es": "Dermatosis por enfermedad venosa, sin especificación",
+                "en": "Dermatoses due to venous disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EF9Y",
+            "titulo": {
+                "es": "Otras dermatosis por insuficiencia vascular especificadas",
+                "en": "Other specified dermatoses resulting from vascular insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG00",
+            "titulo": {
+                "es": "Vasodilatación de las extremidades",
+                "en": "Vasodilatation of extremities"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG01",
+            "titulo": {
+                "es": "Vasoconstricción de extremidades",
+                "en": "Vasoconstriction of extremities"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG02",
+            "titulo": {
+                "es": "Trastornos por rubefacción",
+                "en": "Flushing disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG30.0",
+            "titulo": {
+                "es": "Foliculitis del cuero cabelludo",
+                "en": "Scalp folliculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG30.1",
+            "titulo": {
+                "es": "Dermatosis pustulosa erosiva del cuero cabelludo",
+                "en": "Erosive pustular dermatosis of scalp"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG30.2",
+            "titulo": {
+                "es": "Pitiriasis amiantácea",
+                "en": "Pityriasis amiantacea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG30.Y",
+            "titulo": {
+                "es": "Otros trastornos cutáneos especificados del cuero cabelludo",
+                "en": "Other specified scalp disorders not elsewhere classifiable"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG30.Z",
+            "titulo": {
+                "es": "Trastornos cutáneos del cuero cabelludo, sin especificación",
+                "en": "Skin disorders localised to the scalp, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG40.0",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto del oído externo",
+                "en": "Allergic contact dermatitis of external ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG4Y",
+            "titulo": {
+                "es": "Otro trastorno inflamatorio especificado del oído externo",
+                "en": "Other specified inflammatory disorder of external ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG4Z",
+            "titulo": {
+                "es": "Trastorno inflamatorio del oído externo, sin especificación",
+                "en": "Inflammatory disorder of external ear, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG60",
+            "titulo": {
+                "es": "Prurito anal",
+                "en": "Anal pruritus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG61",
+            "titulo": {
+                "es": "Infecciones del ano o de la piel perianal",
+                "en": "Infections of the anus or perianal skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG62",
+            "titulo": {
+                "es": "Dermatosis inflamatorias de la zona perianal",
+                "en": "Inflammatory dermatoses of the perianal area"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG63.0",
+            "titulo": {
+                "es": "Fístula pilonidal sacrococcígea",
+                "en": "Sacrococcygeal pilonidal sinus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG63.1",
+            "titulo": {
+                "es": "Quiste pilonidal sacrococcígeo",
+                "en": "Sacrococcygeal pilonidal cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG63.2",
+            "titulo": {
+                "es": "Absceso pilonidal sacrococcígeo",
+                "en": "Sacrococcygeal pilonidal abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG63.Z",
+            "titulo": {
+                "es": "Enfermedad pilonidal sacrococcígea, sin especificación",
+                "en": "Sacrococcygeal pilonidal disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG7Y",
+            "titulo": {
+                "es": "Otros trastornos cutáneos especificados de la región genital o perianal",
+                "en": "Other specified skin disorders involving the genital and perianal regions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG9Y",
+            "titulo": {
+                "es": "Trastornos de la piel con afectación de otras regiones corporales específicas",
+                "en": "Skin disorders involving other specific body regions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EG9Z",
+            "titulo": {
+                "es": "Trastornos de la piel con afectación de ciertas regiones corporales específicas, sin especificación",
+                "en": "Skin disorders involving certain specific body regions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH10",
+            "titulo": {
+                "es": "Infecciones virales neonatales con afectación de la piel",
+                "en": "Neonatal viral infections involving the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH11",
+            "titulo": {
+                "es": "Infecciones piógenas neonatales de la piel",
+                "en": "Neonatal pyogenic skin infections"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH12",
+            "titulo": {
+                "es": "Infecciones neonatales por hongos con afectación de la piel",
+                "en": "Neonatal fungal infections involving the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH1Z",
+            "titulo": {
+                "es": "Infección cutánea neonatal, sin especificación",
+                "en": "Neonatal skin infection, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH3Y",
+            "titulo": {
+                "es": "Otros trastornos cutáneos especificados específicos del período perinatal o neonatal",
+                "en": "Other specified skin disorders specific to the perinatal or neonatal period"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.00",
+            "titulo": {
+                "es": "Costra láctea",
+                "en": "Cradle cap"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.01",
+            "titulo": {
+                "es": "Dermatitis seborreica del lactante diseminada",
+                "en": "Disseminated infantile seborrhoeic dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.02",
+            "titulo": {
+                "es": "Dermatitis psoriasiforme del pañal",
+                "en": "Psoriasiform napkin dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.0Z",
+            "titulo": {
+                "es": "Dermatitis seborreica del lactante, sin especificación",
+                "en": "Infantile seborrhoeic dermatitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.10",
+            "titulo": {
+                "es": "Dermatitis irritante primaria del pañal",
+                "en": "Primary irritant napkin dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.1Y",
+            "titulo": {
+                "es": "Otras dermatosis del pañal infantil especificadas",
+                "en": "Other specified infantile napkin dermatoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.1Z",
+            "titulo": {
+                "es": "Dermatosis del pañal infantil, sin especificación",
+                "en": "Infantile napkin dermatoses, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.2",
+            "titulo": {
+                "es": "Eritrodermias del lactante",
+                "en": "Erythrodermas of infancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.3",
+            "titulo": {
+                "es": "Edema hemorrágico agudo del lactante",
+                "en": "Acute haemorrhagic oedema of infancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.Y",
+            "titulo": {
+                "es": "Otras dermatosis especificadas de la infancia",
+                "en": "Other specified dermatoses of infancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH40.Z",
+            "titulo": {
+                "es": "Dermatosis de la infancia, sin especificación",
+                "en": "Dermatoses of infancy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH60",
+            "titulo": {
+                "es": "Erupción exantemática por medicamentos",
+                "en": "Exanthematic drug eruption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH61.0",
+            "titulo": {
+                "es": "Urticaria inducida por medicamentos",
+                "en": "Drug-induced urticaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH61.1",
+            "titulo": {
+                "es": "Angioedema provocado por medicamentos",
+                "en": "Drug-induced angioedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH62",
+            "titulo": {
+                "es": "Erupción liquenoide por medicamentos",
+                "en": "Lichenoid drug eruption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH63.0",
+            "titulo": {
+                "es": "Síndrome de Stevens-Johnson provocado por medicamentos",
+                "en": "Drug-induced Stevens-Johnson syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH63.1",
+            "titulo": {
+                "es": "Necrólisis epidérmica tóxica provocada por medicamentos",
+                "en": "Drug-induced toxic epidermal necrolysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH63.2",
+            "titulo": {
+                "es": "Síndrome mixto de Stevens-Johnson y necrólisis epidérmica tóxica provocado por medicamentos",
+                "en": "Drug-induced Stevens-Johnson and toxic epidermal necrolysis overlap syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH64",
+            "titulo": {
+                "es": "Eritrodermia provocada por medicamentos",
+                "en": "Drug-induced erythroderma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH65",
+            "titulo": {
+                "es": "Síndrome DRESS",
+                "en": "DRESS syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH66",
+            "titulo": {
+                "es": "Erupción medicamentosa fija",
+                "en": "Fixed drug eruption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH67.0",
+            "titulo": {
+                "es": "Pustulosis exantematosa generalizada aguda provocada por medicamentos",
+                "en": "Drug-induced acute generalised exanthematous pustulosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH67.Y",
+            "titulo": {
+                "es": "Otro acné o reacciones acneiformes especificados atribuibles a medicamentos o drogas",
+                "en": "Other specified acne or acneiform reactions attributable to drugs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH67.Z",
+            "titulo": {
+                "es": "Acné o reacciones acneiformes atribuibles a medicamentos o drogas, sin especificación",
+                "en": "Acne or acneiform reactions attributable to drugs, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH6Y",
+            "titulo": {
+                "es": "Otra erupción medicamentosa especificada",
+                "en": "Drug eruption of other specified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH6Z",
+            "titulo": {
+                "es": "Erupción medicamentosa, sin especificación",
+                "en": "Drug eruption of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH70",
+            "titulo": {
+                "es": "Alteraciones pigmentarias de la piel por medicamentos",
+                "en": "Pigmentary abnormalities of skin due to drug"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH71",
+            "titulo": {
+                "es": "Dermatosis precipitadas por el tratamiento farmacológico",
+                "en": "Dermatoses precipitated by drug therapy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH72.00",
+            "titulo": {
+                "es": "Alopecia telógena provocada por medicamentos",
+                "en": "Drug-induced telogen hair loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH72.01",
+            "titulo": {
+                "es": "Alopecia anágena provocada por medicamentos",
+                "en": "Drug-induced anagen effluvium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH72.0Z",
+            "titulo": {
+                "es": "Alopecia provocada por medicamentos, sin especificación",
+                "en": "Drug-induced alopecia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH72.Y",
+            "titulo": {
+                "es": "Otras alteraciones especificadas del pelo provocadas por medicamentos",
+                "en": "Other specified drug-induced hair abnormalities"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH72.Z",
+            "titulo": {
+                "es": "Alteraciones del pelo provocadas por medicamentos, sin especificación",
+                "en": "Drug-induced hair abnormalities, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH73",
+            "titulo": {
+                "es": "Alteraciones de las uñas provocadas por medicamentos",
+                "en": "Drug-induced nail abnormalities"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH74",
+            "titulo": {
+                "es": "Afecciones bucales provocadas por medicamentos",
+                "en": "Drug-induced oral conditions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH75",
+            "titulo": {
+                "es": "Fotosensibilidad por medicamentos",
+                "en": "Photosensitivity due to drug"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH76.0",
+            "titulo": {
+                "es": "Dermatosis ocasionadas por la quimioterapia citotóxica o antineoplásica",
+                "en": "Dermatoses resulting from cytotoxic or cancer chemotherapy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH76.1",
+            "titulo": {
+                "es": "Dermatosis ocasionadas por el tratamiento inmunodepresor",
+                "en": "Dermatoses resulting from immunosuppressive therapy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH76.2",
+            "titulo": {
+                "es": "Dermatosis atribuibles al tratamiento con corticoesteroides",
+                "en": "Dermatoses attributable to corticosteroid therapy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH76.3",
+            "titulo": {
+                "es": "Dermatosis ocasionadas por el tratamiento anticoagulante",
+                "en": "Dermatoses resulting from anticoagulant therapy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH76.Y",
+            "titulo": {
+                "es": "Otras dermatosis asociadas a grupos específicos de medicamentos",
+                "en": "Dermatosis associated with other specific classes of medication"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH77",
+            "titulo": {
+                "es": "Reacciones cutáneas adversas localizadas a la administración de un medicamento",
+                "en": "Localised adverse cutaneous reactions to administration of drug"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH78",
+            "titulo": {
+                "es": "Reacciones cutáneas adversas a plantas medicinales, remedios homeopáticos u otros tratamientos alternativos",
+                "en": "Adverse cutaneous reactions to herbal, homoeopathic or other alternative therapies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH7Y",
+            "titulo": {
+                "es": "Otras reacciones cutáneas adversas especificadas a la medicación",
+                "en": "Other specified adverse cutaneous reactions to medication"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH7Z",
+            "titulo": {
+                "es": "Reacciones cutáneas adversas a la medicación, sin especificación",
+                "en": "Unspecified adverse cutaneous reactions to medication"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH90.0",
+            "titulo": {
+                "es": "Úlcera por presión, de grado 1",
+                "en": "Pressure ulceration grade 1"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH90.1",
+            "titulo": {
+                "es": "Úlcera por presión, de grado 2",
+                "en": "Pressure ulceration grade 2"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH90.2",
+            "titulo": {
+                "es": "Úlcera por presión, de grado 3",
+                "en": "Pressure ulceration grade 3"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH90.3",
+            "titulo": {
+                "es": "Úlcera por presión, de grado 4",
+                "en": "Pressure ulceration grade 4"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH90.4",
+            "titulo": {
+                "es": "Sospecha de daño tisular profundo por presión, de profundidad desconocida",
+                "en": "Suspected deep pressure-induced tissue damage, depth unknown"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH90.5",
+            "titulo": {
+                "es": "Úlcera por presión, de grado desconocido",
+                "en": "Pressure ulceration, ungradable"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH90.Z",
+            "titulo": {
+                "es": "Úlceración por presión, sin especificación",
+                "en": "Pressure ulcer of unspecified grade"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH92.00",
+            "titulo": {
+                "es": "Callo duro",
+                "en": "Hard corn"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH92.01",
+            "titulo": {
+                "es": "Callo blando",
+                "en": "Soft corn"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH92.0Z",
+            "titulo": {
+                "es": "Callo o callosidad, sin especificación",
+                "en": "Corn or callosity, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH92.1",
+            "titulo": {
+                "es": "Ampolla por fricción",
+                "en": "Friction blister"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH92.Y",
+            "titulo": {
+                "es": "Otras dermatosis especificadas por fricción o acción mecánica",
+                "en": "Other specified dermatoses provoked by friction or mechanical stress"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH92.Z",
+            "titulo": {
+                "es": "Dermatosis provocada por fricción o acción mecánica, sin especificación",
+                "en": "Dermatoses provoked by friction or mechanical stress, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH93.0",
+            "titulo": {
+                "es": "Tatuajes o reacciones a los tatuajes en la piel",
+                "en": "Tattoos or tattoo reactions of skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH93.1",
+            "titulo": {
+                "es": "Reacción de cuerpo extraño a materia inorgánica en la piel",
+                "en": "Foreign body reaction to inorganic matter in the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH93.2",
+            "titulo": {
+                "es": "Reacción de cuerpo extraño a materia orgánica en la piel",
+                "en": "Foreign body reaction to organic matter in the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH93.3",
+            "titulo": {
+                "es": "Granuloma por cuerpo extraño en la piel",
+                "en": "Foreign body granuloma of skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH93.Y",
+            "titulo": {
+                "es": "Otra reacción especificada por cuerpos extraños en la piel",
+                "en": "Other specified dermatoses due to foreign bodies in the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH93.Z",
+            "titulo": {
+                "es": "Dermatosis por cuerpos extraños en la piel, sin especificación",
+                "en": "Dermatoses due to foreign bodies in the skin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EH94",
+            "titulo": {
+                "es": "Cicatriz de piel, no clasificada en otra parte",
+                "en": "Scar of skin, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ0Y",
+            "titulo": {
+                "es": "Otras dermatosis especificadas provocadas o exacerbadas por exposición al frío",
+                "en": "Other specified dermatoses provoked or exacerbated by exposure to cold"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ10",
+            "titulo": {
+                "es": "Eritema calórico",
+                "en": "Erythema ab igne"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ1Y",
+            "titulo": {
+                "es": "Otras dermatosis especificadas provocadas por el calor o la electricidad",
+                "en": "Other specified dermatoses provoked by heat or electricity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ20.0",
+            "titulo": {
+                "es": "Elastosis actínica",
+                "en": "Actinic elastosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ20.1",
+            "titulo": {
+                "es": "Lentigo actínico",
+                "en": "Actinic lentigo"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ20.2",
+            "titulo": {
+                "es": "Lentiginosis actínica",
+                "en": "Actinic lentiginosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ20.3",
+            "titulo": {
+                "es": "Telangiectasia actínica",
+                "en": "Actinic telangiectasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ20.Z",
+            "titulo": {
+                "es": "Fotoenvejecimiento de la piel, sin especificación",
+                "en": "Photoaging of the skin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ2Y",
+            "titulo": {
+                "es": "Otros efectos crónicos especificados de la radiación ultravioleta en la piel",
+                "en": "Other specified chronic effects of ultraviolet radiation on the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ30.0",
+            "titulo": {
+                "es": "Erupción polimorfa lumínica",
+                "en": "Polymorphic light eruption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ30.1",
+            "titulo": {
+                "es": "Dermatitis actínica crónica",
+                "en": "Chronic actinic dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ30.Y",
+            "titulo": {
+                "es": "Otras fotodermatosis especificadas",
+                "en": "Other specified photodermatoses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ30.Z",
+            "titulo": {
+                "es": "Fotodermatosis autoinmunitarias y otras, sin especificación",
+                "en": "Photodermatoses, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ40.0",
+            "titulo": {
+                "es": "Eritema solar",
+                "en": "Sunburn erythema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ40.1",
+            "titulo": {
+                "es": "Quemadura solar con ampollas o exudación",
+                "en": "Sunburn with blisters or exudation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ40.Z",
+            "titulo": {
+                "es": "Quemadura solar, sin especificación",
+                "en": "Sunburn, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ41.0",
+            "titulo": {
+                "es": "Quemadura por exposición terapéutica a radiación ultravioleta",
+                "en": "Burn from exposure to therapeutic ultraviolet radiation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ41.Y",
+            "titulo": {
+                "es": "Otra quemadura especificada por exposición a una fuente artificial de radiación ultravioleta",
+                "en": "Other specified burn from exposure to artificial source of ultraviolet radiation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ41.Z",
+            "titulo": {
+                "es": "Quemadura por exposición a una fuente artificial de radiación ultravioleta, sin especificación",
+                "en": "Burn from exposure to artificial source of ultraviolet radiation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ4Z",
+            "titulo": {
+                "es": "Efectos agudos de la radiación ultravioleta en la piel normal, sin especificación",
+                "en": "Acute effects of ultraviolet radiation on normal skin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ6Y",
+            "titulo": {
+                "es": "Otras dermatosis especificadas provocadas por la luz o la radiación ultravioleta",
+                "en": "Other specified dermatoses provoked by light or UV radiation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ71",
+            "titulo": {
+                "es": "Efectos crónicos de la radiación ionizante en la piel",
+                "en": "Chronic effects of ionizing radiation on the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EJ7Z",
+            "titulo": {
+                "es": "Dermatosis por radiación ionizante, sin especificación",
+                "en": "Dermatoses due to ionizing radiation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.0",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por la ropa o el calzado",
+                "en": "Allergic contact dermatitis due to clothing or footwear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.1",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por cosméticos o fragancias",
+                "en": "Allergic contact dermatitis due to cosmetics or fragrances"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.2",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por materiales dentales",
+                "en": "Allergic contact dermatitis due to dental materials"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.3",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por aditivos alimentarios",
+                "en": "Allergic contact dermatitis due to food flavours or additives"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.4",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por productos de peluquería",
+                "en": "Allergic contact dermatitis due to hairdressing products"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.5",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por biocidas, aceites de corte o desinfectantes industriales",
+                "en": "Allergic contact dermatitis due to industrial biocides, cutting oils or disinfectants"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.6",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por metales o sales metálicas",
+                "en": "Allergic contact dermatitis due to metals or metal salts"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.7",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por haptenos alergénicos derivados de plantas u otra materia orgánica",
+                "en": "Allergic contact dermatitis due to allergenic haptens derived from plants or organic matter"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.8",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por plásticos, pegamentos o sistemas resinosos",
+                "en": "Allergic contact dermatitis due to plastics, glues or resin systems"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.9",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por conservantes o biocidas",
+                "en": "Allergic contact dermatitis due to preservatives or biocides"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.A",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por productos químicos de caucho",
+                "en": "Allergic contact dermatitis due to rubber chemicals"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.B",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto por medicamentos sistémicos",
+                "en": "Allergic contact dermatitis due to systemic medicaments"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.C",
+            "titulo": {
+                "es": "Dermatitis de contacto alérgica por medicamentos tópicos",
+                "en": "Allergic contact dermatitis due to topical medicaments"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.Y",
+            "titulo": {
+                "es": "Otra dermatitis alérgica especificada de contacto",
+                "en": "Other specified allergic contact dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK00.Z",
+            "titulo": {
+                "es": "Dermatitis alérgica de contacto , sin especificación",
+                "en": "Allergic contact dermatitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK01",
+            "titulo": {
+                "es": "Dermatitis fotoalérgica de contacto",
+                "en": "Photo-allergic contact dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.00",
+            "titulo": {
+                "es": "Dermatitis irritante de contacto por trabajo en condiciones de humedad",
+                "en": "Irritant contact dermatitis due to wet work"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.01",
+            "titulo": {
+                "es": "Dermatitis irritante de contacto por disolventes",
+                "en": "Irritant contact dermatitis due to solvents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.02",
+            "titulo": {
+                "es": "Dermatitis irritante de contacto por exposición a ácidos, álcalis u otras sustancias químicas irritantes especificadas",
+                "en": "Irritant contact dermatitis due to exposure to acids, alkalis or other specified chemical irritants"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.03",
+            "titulo": {
+                "es": "Dermatitis irritante de contacto por cosméticos o emolientes",
+                "en": "Irritant contact dermatitis due to cosmetics or emollients"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.04",
+            "titulo": {
+                "es": "Dermatitis de contacto irritante por antimicrobianos o medicamentos tópicos",
+                "en": "Irritant contact dermatitis due to topical medicaments or antimicrobials"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.05",
+            "titulo": {
+                "es": "Dermatitis de contacto irritante por plantas u otras materias vegetales",
+                "en": "Irritant contact dermatitis due to plants or other vegetable matter"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.06",
+            "titulo": {
+                "es": "Dermatitis de contacto irritante por alimentos",
+                "en": "Irritant contact dermatitis due to foods"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.20",
+            "titulo": {
+                "es": "Dermatitis intertriginosa por fricción, sudación o contacto con líquidos corporales",
+                "en": "Intertriginous dermatitis due to friction, sweating or contact with body fluids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.21",
+            "titulo": {
+                "es": "Dermatitis irritante de contacto por saliva",
+                "en": "Irritant contact dermatitis due to saliva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.22",
+            "titulo": {
+                "es": "Dermatitis irritante de contacto por incontinencia",
+                "en": "Irritant contact dermatitis due to incontinence"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.23",
+            "titulo": {
+                "es": "Dermatitis irritante de contacto relacionada con estoma o fístula",
+                "en": "Irritant contact dermatitis related to stoma or fistula"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.24",
+            "titulo": {
+                "es": "Dermatitis irritante por contacto con prótesis o aparatos quirúrgicos",
+                "en": "Irritant contact dermatitis related to skin contact with prostheses or surgical appliances"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.Y",
+            "titulo": {
+                "es": "Otra dermatitis irritante de contacto especificada",
+                "en": "Irritant contact dermatitis due to other specified cause"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK02.Z",
+            "titulo": {
+                "es": "Dermatitis irritante de contacto, sin especificación",
+                "en": "Irritant contact dermatitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK10.0",
+            "titulo": {
+                "es": "Síndrome de alergia oral",
+                "en": "Oral allergy syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK10.1",
+            "titulo": {
+                "es": "Urticaria de contacto por alérgenos alimentarios",
+                "en": "Contact urticaria due to food allergen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK10.Y",
+            "titulo": {
+                "es": "Otra urticaria alérgica de contacto especificada",
+                "en": "Other specified allergic contact urticaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK10.Z",
+            "titulo": {
+                "es": "Urticaria alérgica de contacto, sin especificación",
+                "en": "Allergic contact urticaria, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK11",
+            "titulo": {
+                "es": "Dermatitis de contacto por proteínas",
+                "en": "Protein contact dermatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK12",
+            "titulo": {
+                "es": "Sensibilización alérgica de contacto",
+                "en": "Allergic contact sensitisation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK20",
+            "titulo": {
+                "es": "Reacción fototóxica a fragancias o cosméticos",
+                "en": "Phototoxic reaction to fragrance or cosmetics"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK2Y",
+            "titulo": {
+                "es": "Reacción fototóxica por contacto con la piel con otra sustancia fotoactiva especificada",
+                "en": "Phototoxic reaction to skin contact with other specified photoactive agent"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK2Z",
+            "titulo": {
+                "es": "Reacciones fototóxicas por contacto de la piel con sustancias fotoactivas, sin especificación",
+                "en": "Phototoxic dermatitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK50.00",
+            "titulo": {
+                "es": "Urticaria papulosa",
+                "en": "Papular urticaria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK50.01",
+            "titulo": {
+                "es": "Reacción ampollosa a picadura de insecto",
+                "en": "Bullous insect bite reaction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK50.02",
+            "titulo": {
+                "es": "Reacción persistente por picadura de insecto",
+                "en": "Persistent insect bite reaction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK50.0Y",
+            "titulo": {
+                "es": "Otras reacciones cutáneas especificadas a picadura de insectos",
+                "en": "Other specified cutaneous insect bite reactions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK50.0Z",
+            "titulo": {
+                "es": "Reacciones cutáneas a picadura de insectos, sin especificación",
+                "en": "Cutaneous insect bite reactions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK5Y",
+            "titulo": {
+                "es": "Otros trastornos de la piel especificados provocados por factores externos",
+                "en": "Other specified skin disorders provoked by external factors"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK70.00",
+            "titulo": {
+                "es": "Quiste epidermoide infectado",
+                "en": "Infected epidermoid cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK70.0Z",
+            "titulo": {
+                "es": "Quiste epidermoide, sin especificación",
+                "en": "Epidermoid cyst, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK70.1",
+            "titulo": {
+                "es": "Quiste tricolémico",
+                "en": "Trichilemmal cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK70.2",
+            "titulo": {
+                "es": "Seudoquiste mixoide digital",
+                "en": "Digital myxoid pseudocyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK70.3",
+            "titulo": {
+                "es": "Hidrocistoma",
+                "en": "Hidrocystoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK70.Y",
+            "titulo": {
+                "es": "Otros quistes cutáneos especificados",
+                "en": "Other specified cutaneous cysts"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK70.Z",
+            "titulo": {
+                "es": "Quistes cutáneos, sin especificación",
+                "en": "Cutaneous cysts, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK71.0",
+            "titulo": {
+                "es": "Acrocordón",
+                "en": "Fibroepithelial polyp of skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK71.1",
+            "titulo": {
+                "es": "Papilomas cutáneos múltiples",
+                "en": "Multiple skin tags"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK71.Z",
+            "titulo": {
+                "es": "Pólipos o acrocordones no clasificados en otra parte",
+                "en": "Polyp of skin not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK90.0",
+            "titulo": {
+                "es": "Queratosis actínica",
+                "en": "Actinic keratosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK90.1",
+            "titulo": {
+                "es": "Displasia queratinocítica actínica difusa",
+                "en": "Diffuse actinic keratinocyte dysplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK90.Y",
+            "titulo": {
+                "es": "Otras displasias epidérmicas discontinuas",
+                "en": "Other discrete epidermal dysplasias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK91.0",
+            "titulo": {
+                "es": "Parapsoriasis en placas grandes",
+                "en": "Large plaque parapsoriasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK91.1",
+            "titulo": {
+                "es": "Poiquilodermia vascular atrófica",
+                "en": "Poikiloderma vasculare atrophicans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK91.2",
+            "titulo": {
+                "es": "Plasmocitosis cutánea primaria",
+                "en": "Primary cutaneous plasmacytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EK92",
+            "titulo": {
+                "es": "Histiocitosis de potencial maligno incierto",
+                "en": "Histiocytoses of uncertain malignant potential"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL10",
+            "titulo": {
+                "es": "Síndromes paraneoplásicos que afectan la piel",
+                "en": "Paraneoplastic syndromes involving skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL1Y",
+            "titulo": {
+                "es": "Otras marcadores cutáneos especificados de neoplasia maligna interna",
+                "en": "Other specified cutaneous markers of internal malignancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL3Y",
+            "titulo": {
+                "es": "Otros marcadores cutáneos especificados de trastornos internos",
+                "en": "Other specified cutaneous markers of internal disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL50.0",
+            "titulo": {
+                "es": "Cicatriz quirúrgica queloide",
+                "en": "Keloidal surgical scar"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL50.1",
+            "titulo": {
+                "es": "Cicatriz quirúrgica hipertrófica",
+                "en": "Hypertrophic surgical scar"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL50.2",
+            "titulo": {
+                "es": "Cicatriz quirúrgica atrófica",
+                "en": "Atrophic surgical scar"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL50.3",
+            "titulo": {
+                "es": "Cicatriz quirúrgica expandida",
+                "en": "Expanded surgical scar"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL50.Z",
+            "titulo": {
+                "es": "Cicatriz quirúrgica insatisfactoria de la piel, sin especificación",
+                "en": "Unsatisfactory surgical scar of skin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL51",
+            "titulo": {
+                "es": "Necrosis de colgajo cutáneo",
+                "en": "Cutaneous flap necrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL52",
+            "titulo": {
+                "es": "Necrosis de colgajo miocutáneo",
+                "en": "Myocutaneous flap necrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL53",
+            "titulo": {
+                "es": "Fracaso de injerto de piel",
+                "en": "Skin graft failure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL54",
+            "titulo": {
+                "es": "Fracaso de injerto compuesto",
+                "en": "Composite graft failure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL60",
+            "titulo": {
+                "es": "Radiodermitis aguda tras radioterapia",
+                "en": "Acute radiodermatitis following radiotherapy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL61",
+            "titulo": {
+                "es": "Radiodermitis crónica después de la radioterapia",
+                "en": "Chronic radiodermatitis following radiotherapy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL63",
+            "titulo": {
+                "es": "Radionecrosis de la piel debida a la irradiación ionizante terapéutica",
+                "en": "Radionecrosis of skin due to therapeutic ionizing irradiation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL73.0",
+            "titulo": {
+                "es": "Reacción adversa a rellenos dérmicos o profundos",
+                "en": "Adverse reaction to dermal or deep fillers"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL73.1",
+            "titulo": {
+                "es": "Reacción adversa a la exfoliación química",
+                "en": "Adverse reaction to chemical peel"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL73.2",
+            "titulo": {
+                "es": "Reacción adversa a la inyección de neurotoxina",
+                "en": "Adverse reaction to injection of neurotoxin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL73.3",
+            "titulo": {
+                "es": "Resultado insatisfactorio de la cirugía cosmética con láser",
+                "en": "Unsatisfactory outcome from cosmetic laser surgery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL73.4",
+            "titulo": {
+                "es": "Hipomelanosis resultante de procedimiento cosmético",
+                "en": "Hypomelanosis resulting from cosmetic procedure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL73.5",
+            "titulo": {
+                "es": "Despigmentación resultante de procedimiento cosmético",
+                "en": "Dyspigmentation resulting from cosmetic procedure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL73.6",
+            "titulo": {
+                "es": "Fibrosis o cicatriz después del procedimiento cosmético",
+                "en": "Fibrosis or scarring following cosmetic procedure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EL80",
+            "titulo": {
+                "es": "Efectos cutáneos adversos de procedimientos diagnósticos",
+                "en": "Adverse cutaneous effects of diagnostic procedures"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EM0Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas de la piel",
+                "en": "Other specified diseases of the skin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "EM0Z",
+            "titulo": {
+                "es": "Enfermedades de la piel, sin especificación",
+                "en": "Skin disease of unspecified nature"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

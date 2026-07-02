@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "genogramia"
+  },
+  "targets": {
+    "genogramia": {
+      "hosting": {
+        "web": [
+          "genogramia"
+        ],
+        "data": [
+          "cie11-diseases"
+        ]
+      }
+    }
   }
 }

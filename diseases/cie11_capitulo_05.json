@@ -1,0 +1,4861 @@
+{
+    "codigo": "05",
+    "titulo": {
+        "es": "Enfermedades endocrinas, nutricionales o metabólicas",
+        "en": "Endocrine, nutritional or metabolic diseases"
+    },
+    "subcategorias": [
+        {
+            "codigo": "5A00.00",
+            "titulo": {
+                "es": "Hipotiroidismo congénito permanente con bocio difuso",
+                "en": "Permanent congenital hypothyroidism with diffuse goitre"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.01",
+            "titulo": {
+                "es": "Hipotiroidismo congénito permanente sin bocio",
+                "en": "Permanent congenital hypothyroidism without goitre"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.02",
+            "titulo": {
+                "es": "Síndrome de Pendred",
+                "en": "Pendred syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.03",
+            "titulo": {
+                "es": "Hipotiroidismo congénito transitorio",
+                "en": "Transient congenital hypothyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.04",
+            "titulo": {
+                "es": "Hipotiroidismo congénito por carencia de yodo",
+                "en": "Congenital hypothyroidism due to iodine deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.0Y",
+            "titulo": {
+                "es": "Otro hipotiroidismo congénito especificado",
+                "en": "Other specified congenital hypothyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.0Z",
+            "titulo": {
+                "es": "Hipotiroidismo congénito, sin especificación",
+                "en": "Congenital hypothyroidism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.10",
+            "titulo": {
+                "es": "Bocio difuso por carencia de yodo",
+                "en": "Iodine-deficiency-related diffuse goitre"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.11",
+            "titulo": {
+                "es": "Bocio multinodular por carencia de yodo",
+                "en": "Iodine-deficiency-related multinodular goitre"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.1Z",
+            "titulo": {
+                "es": "Trastornos tiroideos relacionados con la carencia de yodo o con problemas afines, sin especificación",
+                "en": "Iodine-deficiency-related thyroid disorders or allied conditions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.20",
+            "titulo": {
+                "es": "Hipotiroidismo por el uso de medicamentos o de otras sustancias exógenas",
+                "en": "Hypothyroidism due to medicaments or other exogenous substances"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.21",
+            "titulo": {
+                "es": "Coma por mixedema",
+                "en": "Myxoedema coma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.22",
+            "titulo": {
+                "es": "Hipotiroidismo asintomático por carencia de yodo",
+                "en": "Subclinical iodine-deficiency hypothyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.2Y",
+            "titulo": {
+                "es": "Otro hipotiroidismo adquirido especificado",
+                "en": "Other specified acquired hypothyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.2Z",
+            "titulo": {
+                "es": "Hipotiroidismo adquirido, sin especificación",
+                "en": "Acquired hypothyroidism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A00.Z",
+            "titulo": {
+                "es": "Hipotiroidismo, sin especificación",
+                "en": "Hypothyroidism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A01.0",
+            "titulo": {
+                "es": "Bocio difuso no tóxico",
+                "en": "Nontoxic diffuse goitre"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A01.1",
+            "titulo": {
+                "es": "Nódulo tiroideo solitario atóxico",
+                "en": "Nontoxic single thyroid nodule"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A01.2",
+            "titulo": {
+                "es": "Bocio multinodular atóxico",
+                "en": "Nontoxic multinodular goitre"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A01.Z",
+            "titulo": {
+                "es": "Bocio atóxico, sin especificación",
+                "en": "Nontoxic goitre, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A02.0",
+            "titulo": {
+                "es": "Tirotoxicosis con bocio difuso",
+                "en": "Thyrotoxicosis with diffuse goitre"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A02.1",
+            "titulo": {
+                "es": "Tirotoxicosis con nódulo tiroideo único tóxico",
+                "en": "Thyrotoxicosis with toxic single thyroid nodule"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A02.2",
+            "titulo": {
+                "es": "Tirotoxicosis con bocio multinodular tóxico",
+                "en": "Thyrotoxicosis with toxic multinodular goitre"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A02.3",
+            "titulo": {
+                "es": "Tirotoxicosis por tejido tiroideo ectópico",
+                "en": "Thyrotoxicosis from ectopic thyroid tissue"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A02.4",
+            "titulo": {
+                "es": "Tirotoxicosis facticia",
+                "en": "Thyrotoxicosis factitia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A02.5",
+            "titulo": {
+                "es": "Crisis tiroidea",
+                "en": "Thyroid crisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A02.6",
+            "titulo": {
+                "es": "Hipertiroidismo secundario",
+                "en": "Secondary hyperthyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A02.Y",
+            "titulo": {
+                "es": "Otra tirotoxicosis especificada",
+                "en": "Other specified thyrotoxicosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A02.Z",
+            "titulo": {
+                "es": "Tirotoxicosis, sin especificación",
+                "en": "Thyrotoxicosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A03.0",
+            "titulo": {
+                "es": "Tiroiditis aguda",
+                "en": "Acute thyroiditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A03.1",
+            "titulo": {
+                "es": "Tiroiditis subaguda",
+                "en": "Subacute thyroiditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A03.20",
+            "titulo": {
+                "es": "Tiroiditis de Hashimoto",
+                "en": "Hashimoto thyroiditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A03.21",
+            "titulo": {
+                "es": "Tiroiditis indolora",
+                "en": "Painless thyroiditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A03.2Y",
+            "titulo": {
+                "es": "Otra tiroiditis autoinmune especificada",
+                "en": "Other specified autoimmune thyroiditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A03.2Z",
+            "titulo": {
+                "es": "Tiroiditis autoinmune, sin especificación",
+                "en": "Autoimmune thyroiditis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A03.Y",
+            "titulo": {
+                "es": "Otra tiroiditis especificada",
+                "en": "Other specified thyroiditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A03.Z",
+            "titulo": {
+                "es": "Tiroiditis, sin especificación",
+                "en": "Thyroiditis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A04",
+            "titulo": {
+                "es": "Hipersecreción de calcitonina",
+                "en": "Hypersecretion of calcitonin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A05",
+            "titulo": {
+                "es": "Resistencia generalizada a la hormona tiroidea",
+                "en": "Generalised resistance to thyroid hormone"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A06",
+            "titulo": {
+                "es": "Síndrome del enfermo eutiroideo",
+                "en": "Sick-euthyroid syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la glándula tiroides o del sistema de hormonas tiroideas",
+                "en": "Other specified disorders of the thyroid gland or thyroid hormones system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A0Z",
+            "titulo": {
+                "es": "Trastornos de la glándula tiroides o del sistema de hormonas tiroideas, sin especificación",
+                "en": "Disorders of the thyroid gland or thyroid hormones system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A10",
+            "titulo": {
+                "es": "Diabetes mellitus tipo 1",
+                "en": "Type 1 diabetes mellitus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A11",
+            "titulo": {
+                "es": "Diabetes mellitus tipo 2",
+                "en": "Type 2 diabetes mellitus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A12",
+            "titulo": {
+                "es": "Diabetes mellitus por malnutrición",
+                "en": "Malnutrition-related diabetes mellitus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A13.0",
+            "titulo": {
+                "es": "Diabetes mellitus por defectos genéticos de la función de las células beta",
+                "en": "Diabetes mellitus due to genetic defects of beta cell function"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A13.1",
+            "titulo": {
+                "es": "Diabetes mellitus por defectos genéticos de la actividad de la insulina",
+                "en": "Diabetes mellitus due to genetic defects in insulin action"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A13.2",
+            "titulo": {
+                "es": "Diabetes mellitus por enfermedades del páncreas exocrino",
+                "en": "Diabetes mellitus due to diseases of the exocrine pancreas"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A13.3",
+            "titulo": {
+                "es": "Diabetes mellitus por endocrinopatías",
+                "en": "Diabetes mellitus due to endocrinopathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A13.4",
+            "titulo": {
+                "es": "Diabetes mellitus por efecto de medicamentos o sustancias químicas",
+                "en": "Diabetes mellitus due to drug or chemical"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A13.5",
+            "titulo": {
+                "es": "Diabetes mellitus por tipos poco comunes de diabetes inmunomediada",
+                "en": "Diabetes mellitus due to uncommon forms of immune-mediated diabetes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A13.6",
+            "titulo": {
+                "es": "Diabetes mellitus por otros síndromes genéticos",
+                "en": "Diabetes mellitus due to other genetic syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A13.7",
+            "titulo": {
+                "es": "Diabetes mellitus debida a subtipos o síndromes con características clínicas definidas",
+                "en": "Diabetes mellitus due to clinically defined subtypes or syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A13.Y",
+            "titulo": {
+                "es": "Otra diabetes mellitus especificada, otro tipo especificado",
+                "en": "Diabetes mellitus due to other specified cause"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A14",
+            "titulo": {
+                "es": "Diabetes mellitus, tipo no especificado",
+                "en": "Diabetes mellitus, type unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A20.0",
+            "titulo": {
+                "es": "Estado hiperglucémico hiperosmolar sin coma",
+                "en": "Hyperosmolar hyperglycaemic state without coma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A20.1",
+            "titulo": {
+                "es": "Estado hiperglucémico hiperosmolar con coma",
+                "en": "Hyperosmolar hyperglycaemic state with coma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A20.Z",
+            "titulo": {
+                "es": "Estado hiperglucémico hiperosmolar diabético, sin especificación",
+                "en": "Diabetic hyperosmolar hyperglycaemic state, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A21.0",
+            "titulo": {
+                "es": "Hipoglucemia en el contexto de la diabetes mellitus sin coma",
+                "en": "Hypoglycaemia in the context of diabetes mellitus without coma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A21.1",
+            "titulo": {
+                "es": "Hipoglucemia en el contexto de la diabetes mellitus con coma",
+                "en": "Hypoglycaemia in the context of diabetes mellitus with coma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A21.Z",
+            "titulo": {
+                "es": "Hipoglucemia en el contexto de la diabetes mellitus, sin especificación",
+                "en": "Hypoglycaemia in the context of diabetes, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A22.0",
+            "titulo": {
+                "es": "Cetoacidosis diabética sin coma",
+                "en": "Diabetic ketoacidosis without coma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A22.1",
+            "titulo": {
+                "es": "Acidosis láctica diabética",
+                "en": "Diabetic lactic acidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A22.2",
+            "titulo": {
+                "es": "Acidosis metabólica diabética",
+                "en": "Diabetic metabolic acidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A22.3",
+            "titulo": {
+                "es": "Cetoacidosis diabética con coma",
+                "en": "Diabetic ketoacidosis with coma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A22.Y",
+            "titulo": {
+                "es": "Otra acidosis diabética especificada",
+                "en": "Other specified diabetic acidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A22.Z",
+            "titulo": {
+                "es": "Acidosis diabética, sin especificación",
+                "en": "Diabetic acidosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A23",
+            "titulo": {
+                "es": "Coma diabético",
+                "en": "Diabetic coma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A24",
+            "titulo": {
+                "es": "Diabetes mellitus no controlada o inestable",
+                "en": "Uncontrolled or unstable diabetes mellitus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A2Y",
+            "titulo": {
+                "es": "Otras complicaciones agudas especificadas de la diabetes mellitus",
+                "en": "Other specified acute complications of diabetes mellitus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A40.0",
+            "titulo": {
+                "es": "Alteración de la glucemia en ayunas",
+                "en": "Impaired fasting glucose"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A40.1",
+            "titulo": {
+                "es": "Tolerancia alterada a la glucosa",
+                "en": "Impaired glucose tolerance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A40.Y",
+            "titulo": {
+                "es": "Otra hiperglucemia intermedia especificada",
+                "en": "Other specified intermediate hyperglycaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A40.Z",
+            "titulo": {
+                "es": "Hiperglucemia intermedia, sin especificación",
+                "en": "Intermediate hyperglycaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A41",
+            "titulo": {
+                "es": "Hipoglucemia sin diabetes asociada",
+                "en": "Hypoglycaemia without associated diabetes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A42",
+            "titulo": {
+                "es": "Aumento de la secreción de glucagón",
+                "en": "Increased secretion of glucagon"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A43.0",
+            "titulo": {
+                "es": "Hipergastrinemia provocada por medicamentos",
+                "en": "Drug-induced hypergastrinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A43.1",
+            "titulo": {
+                "es": "Síndrome de Zollinger-Ellison",
+                "en": "Zollinger-Ellison syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A43.Y",
+            "titulo": {
+                "es": "Otra secreción anormal especificada de gastrina",
+                "en": "Other specified abnormal secretion of gastrin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A43.Z",
+            "titulo": {
+                "es": "Secreción anormal de gastrina, sin especificación",
+                "en": "Abnormal secretion of gastrin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A44",
+            "titulo": {
+                "es": "Síndromes de resistencia a la insulina",
+                "en": "Insulin-resistance syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A45",
+            "titulo": {
+                "es": "Hipoglucemia hiperinsulinémica persistente de la infancia",
+                "en": "Persistent hyperinsulinaemic hypoglycaemia of infancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A4Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la regulación de la glucosa o de la secreción pancreática interna",
+                "en": "Other specified disorders of glucose regulation or pancreatic internal secretion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A4Z",
+            "titulo": {
+                "es": "Otros trastornos de la regulación de la glucosa o de la secreción pancreática interna, sin especificación",
+                "en": "Disorders of glucose regulation or pancreatic internal secretion, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A50.00",
+            "titulo": {
+                "es": "Hipoparatiroidismo idiopático",
+                "en": "Idiopathic hypoparathyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A50.01",
+            "titulo": {
+                "es": "Hipoparatiroidismo secundario",
+                "en": "Secondary hypoparathyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A50.02",
+            "titulo": {
+                "es": "Hipoparatiroidismo por destrucción de las glándulas paratiroides",
+                "en": "Hypoparathyroidism due to destruction of the parathyroid glands"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A50.03",
+            "titulo": {
+                "es": "Hipoparatiroidismo autoinmunitario",
+                "en": "Autoimmune hypoparathyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A50.0Y",
+            "titulo": {
+                "es": "Otro hipoparatiroidismo especificado por alteración de la secreción de la hormona paratiroidea",
+                "en": "Other specified hypoparathyroidism due to impaired parathyroid hormone secretion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A50.0Z",
+            "titulo": {
+                "es": "Hipoparatiroidismo por alteración de la secreción de hormona paratiroidea, sin especificación",
+                "en": "Hypoparathyroidism due to impaired parathyroid hormone secretion, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A50.1",
+            "titulo": {
+                "es": "Seudohipoparatiroidismo",
+                "en": "Pseudohypoparathyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A50.Y",
+            "titulo": {
+                "es": "Otro hipoparatiroidismo especificado",
+                "en": "Other specified hypoparathyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A50.Z",
+            "titulo": {
+                "es": "Hipoparatiroidismo, sin especificación",
+                "en": "Hypoparathyroidism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A51.0",
+            "titulo": {
+                "es": "Hiperparatiroidismo primario",
+                "en": "Primary hyperparathyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A51.1",
+            "titulo": {
+                "es": "Hiperparatiroidismo secundario",
+                "en": "Secondary hyperparathyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A51.2",
+            "titulo": {
+                "es": "Hipercalcemia hipocalciúrica familiar",
+                "en": "Familial hypocalciuric hypercalcaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A51.Y",
+            "titulo": {
+                "es": "Otro hiperparatiroidismo especificado",
+                "en": "Other specified hyperparathyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A51.Z",
+            "titulo": {
+                "es": "Hiperparatiroidismo, sin especificación",
+                "en": "Hyperparathyroidism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A5Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del sistema de la hormona paratiroidea o de la glándulas paratiroides",
+                "en": "Other specified disorders of the parathyroids or parathyroid hormone system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A5Z",
+            "titulo": {
+                "es": "Trastornos del sistema de la hormona paratiroidea o de la paratiroides, sin especificación",
+                "en": "Disorders of the parathyroids or parathyroid hormone system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A60.0",
+            "titulo": {
+                "es": "Acromegalia o gigantismo hipofisario",
+                "en": "Acromegaly or pituitary gigantism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A60.1",
+            "titulo": {
+                "es": "Hiperprolactinemia",
+                "en": "Hyperprolactinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A60.20",
+            "titulo": {
+                "es": "Síndrome nefrógeno de antidiuresis inapropiada",
+                "en": "Nephrogenic syndrome of inappropriate antidiuresis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A60.2Y",
+            "titulo": {
+                "es": "Otro síndrome especificado de secreción inadecuada de hormona antidiurética",
+                "en": "Other specified syndrome of inappropriate secretion of antidiuretic hormone"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A60.2Z",
+            "titulo": {
+                "es": "Síndrome de secreción inadecuada de hormona antidiurética, sin especificación",
+                "en": "Syndrome of inappropriate secretion of antidiuretic hormone, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A60.3",
+            "titulo": {
+                "es": "Pubertad precoz central",
+                "en": "Central precocious puberty"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A60.Y",
+            "titulo": {
+                "es": "Otra hiperfunción especificada de la glándula hipofisaria",
+                "en": "Other specified hyperfunction of pituitary gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A60.Z",
+            "titulo": {
+                "es": "Hiperfunción de la glándula hipofisaria, sin especificación",
+                "en": "Hyperfunction of pituitary gland, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.0",
+            "titulo": {
+                "es": "Hipopituitarismo",
+                "en": "Hypopituitarism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.1",
+            "titulo": {
+                "es": "Insuficiencia de adrenocorticotrofina",
+                "en": "Adrenocorticotropic hormone deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.2",
+            "titulo": {
+                "es": "Insuficiencia de gonadotrofinas",
+                "en": "Gonadotropin deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.3",
+            "titulo": {
+                "es": "Insuficiencia de la hormona de crecimiento",
+                "en": "Growth hormone deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.40",
+            "titulo": {
+                "es": "Hipotiroidismo central adquirido",
+                "en": "Acquired central hypothyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.41",
+            "titulo": {
+                "es": "Hipotiroidismo central congénito",
+                "en": "Congenital central hypothyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.4Y",
+            "titulo": {
+                "es": "Otra deficiencia especificada de la hormona estimulante de la tiroides",
+                "en": "Other specified thyroid stimulating hormone deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.4Z",
+            "titulo": {
+                "es": "Deficiencia de la hormona estimulante de la tiroides, sin especificación",
+                "en": "Thyroid stimulating hormone deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.5",
+            "titulo": {
+                "es": "Diabetes insípida central",
+                "en": "Central diabetes insipidus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.6",
+            "titulo": {
+                "es": "Insuficiencia de oxitocina",
+                "en": "Oxytocin deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A61.Y",
+            "titulo": {
+                "es": "Otra hipofunción especificada u otros trastornos de la glándula hipófisis",
+                "en": "Other specified hypofunction or disorders of pituitary gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A6Z",
+            "titulo": {
+                "es": "Trastornos del sistema de la hormona hipofisaria, sin especificación",
+                "en": "Disorders of the pituitary hormone system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A70.0",
+            "titulo": {
+                "es": "Enfermedad de Cushing dependiente de la hipófisis",
+                "en": "Pituitary-dependent Cushing disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A70.1",
+            "titulo": {
+                "es": "Síndrome de ACTH ectópica",
+                "en": "Ectopic ACTH syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A70.2",
+            "titulo": {
+                "es": "Síndrome de pseudo-Cushing",
+                "en": "Pseudo-Cushing syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A70.3",
+            "titulo": {
+                "es": "Síndrome de Nelson",
+                "en": "Nelson syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A70.Y",
+            "titulo": {
+                "es": "Otro síndrome de Cushing especificado",
+                "en": "Other specified Cushing syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A70.Z",
+            "titulo": {
+                "es": "Síndrome de Cushing, sin especificación",
+                "en": "Cushing syndrome, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A71.00",
+            "titulo": {
+                "es": "Resistencia a los glucocorticoides",
+                "en": "Glucocorticoid resistance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A71.01",
+            "titulo": {
+                "es": "Hiperplasia suprarrenal congénita",
+                "en": "Congenital adrenal hyperplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A71.0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del desarrollo sexual 46,XX provocados por andrógenos de origen fetal",
+                "en": "Other specified 46,XX disorders of sex development induced by androgens of fetal origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A71.0Z",
+            "titulo": {
+                "es": "Trastornos de 46,XX del desarrollo sexual provocados por andrógenos de origen fetal",
+                "en": "46,XX disorders of sex development induced by androgens of fetal origin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A71.1",
+            "titulo": {
+                "es": "Trastornos del desarrollo sexual 46,XX provocados por andrógenos de origen materno",
+                "en": "46,XX disorders of sex development induced by androgens of maternal origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A71.Y",
+            "titulo": {
+                "es": "Otros trastornos adrenogenitales especificados",
+                "en": "Other specified adrenogenital disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A71.Z",
+            "titulo": {
+                "es": "Trastornos adrenogenitales, sin especificación",
+                "en": "Adrenogenital disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A72.0",
+            "titulo": {
+                "es": "Hiperaldosteronismo primario",
+                "en": "Primary hyperaldosteronism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A72.1",
+            "titulo": {
+                "es": "Hiperaldosteronismo secundario",
+                "en": "Secondary hyperaldosteronism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A72.Z",
+            "titulo": {
+                "es": "Hiperaldosteronismo, sin especificación",
+                "en": "Hyperaldosteronism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A73",
+            "titulo": {
+                "es": "Hipoaldosteronismo",
+                "en": "Hypoaldosteronism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A74.0",
+            "titulo": {
+                "es": "Insuficiencia adrenocortical adquirida",
+                "en": "Acquired adrenocortical insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A74.1",
+            "titulo": {
+                "es": "Crisis adrenal",
+                "en": "Adrenal crisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A74.Y",
+            "titulo": {
+                "es": "Otra insuficiencia adrenocortical especificada",
+                "en": "Other specified adrenocortical insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A74.Z",
+            "titulo": {
+                "es": "Insuficiencia adrenocortical, sin especificación",
+                "en": "Adrenocortical insufficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A75",
+            "titulo": {
+                "es": "Hiperfunción medulosuprarrenal",
+                "en": "Adrenomedullary hyperfunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A76.0",
+            "titulo": {
+                "es": "Adrenarquia prematura",
+                "en": "Premature adrenarche"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A76.Y",
+            "titulo": {
+                "es": "Algunos otros trastornos especificados de la glándula suprarrenal",
+                "en": "Other specified disorders of adrenal gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A7Z",
+            "titulo": {
+                "es": "Trastornos de las glándulas suprarrenales o del sistema hormona suprarrenal, sin especificación",
+                "en": "Disorders of the adrenal glands or adrenal hormone system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A80.0",
+            "titulo": {
+                "es": "Hiperandrogenismo clínico",
+                "en": "Clinical hyperandrogenism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A80.1",
+            "titulo": {
+                "es": "Síndrome del ovario poliquístico",
+                "en": "Polycystic ovary syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A80.2",
+            "titulo": {
+                "es": "Ovario poliquístico",
+                "en": "Polycystic ovary"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A80.3",
+            "titulo": {
+                "es": "Anovulación",
+                "en": "Anovulation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A80.4",
+            "titulo": {
+                "es": "Oligoovulación",
+                "en": "Oligo-ovulation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A80.5",
+            "titulo": {
+                "es": "Reserva ovárica disminuida",
+                "en": "Diminished ovarian reserve"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A80.Y",
+            "titulo": {
+                "es": "Otra disfunción ovárica especificada",
+                "en": "Other specified ovarian dysfunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A80.Z",
+            "titulo": {
+                "es": "Disfunción ovárica, sin especificación",
+                "en": "Ovarian dysfunction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A81.0",
+            "titulo": {
+                "es": "Hiperfunción testicular",
+                "en": "Testicular hyperfunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A81.1",
+            "titulo": {
+                "es": "Hipofunción testicular",
+                "en": "Testicular hypofunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A81.Y",
+            "titulo": {
+                "es": "Otra disfunción testicular especificada o trastornos relacionados con la testosterona",
+                "en": "Other specified testicular dysfunction or testosterone-related disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A81.Z",
+            "titulo": {
+                "es": "Disfunción testicular o trastornos relacionados con la testosterona, sin especificación",
+                "en": "Testicular dysfunction or testosterone-related disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A8Z",
+            "titulo": {
+                "es": "Trastornos del sistema hormonal gonadal, sin especificación",
+                "en": "Disorders of the gonadal hormone system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A90",
+            "titulo": {
+                "es": "Trastorno de la pubertad por resistencia a los estrógenos",
+                "en": "Disorder of puberty due to oestrogen resistance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A91",
+            "titulo": {
+                "es": "Pubertad retrasada",
+                "en": "Delayed puberty"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A92",
+            "titulo": {
+                "es": "Pubertad precoz periférica",
+                "en": "Peripheral precocious puberty"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A9Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la pubertad",
+                "en": "Other disorders of puberty"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5A9Z",
+            "titulo": {
+                "es": "Trastornos de la pubertad, sin especificación",
+                "en": "Disorders of puberty, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B00",
+            "titulo": {
+                "es": "Poliendocrinopatía autoinmunitaria",
+                "en": "Autoimmune polyendocrinopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B01",
+            "titulo": {
+                "es": "Hiperfunción poliglandular",
+                "en": "Polyglandular hyperfunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B0Y",
+            "titulo": {
+                "es": "Otra disfunción poliglandular especificada",
+                "en": "Other specified polyglandular dysfunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B0Z",
+            "titulo": {
+                "es": "Disfunción poliglandular, sin especificación",
+                "en": "Polyglandular dysfunction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B10",
+            "titulo": {
+                "es": "Síndrome carcinoide",
+                "en": "Carcinoid syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B11",
+            "titulo": {
+                "es": "Estatura baja, no clasificada en otra parte",
+                "en": "Short stature, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B12",
+            "titulo": {
+                "es": "Estatura alta constitucional",
+                "en": "Constitutional tall stature"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B3Y",
+            "titulo": {
+                "es": "Otras enfermedades endocrinas especificadas",
+                "en": "Other specified endocrine diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B3Z",
+            "titulo": {
+                "es": "Enfermedades endocrinas, sin especificación",
+                "en": "Endocrine diseases, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B50",
+            "titulo": {
+                "es": "Bajo peso en lactantes, niños o adolescentes",
+                "en": "Underweight in infants, children or adolescents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B51",
+            "titulo": {
+                "es": "Consunción en lactantes, niños o adolescentes",
+                "en": "Wasting in infants, children or adolescents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B52",
+            "titulo": {
+                "es": "Desnutrición aguda en lactantes, niños o adolescentes",
+                "en": "Acute malnutrition in infants, children or adolescents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B53",
+            "titulo": {
+                "es": "Retraso del crecimiento en lactantes, niños o adolescentes",
+                "en": "Stunting in infants, children or adolescents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B54",
+            "titulo": {
+                "es": "Peso bajo en adultos",
+                "en": "Underweight in adults"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B55.0",
+            "titulo": {
+                "es": "Deficiencia de vitamina A con ceguera nocturna",
+                "en": "Vitamin A deficiency with night blindness"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B55.1",
+            "titulo": {
+                "es": "Deficiencia de vitamina A con xerosis conjuntival",
+                "en": "Vitamin A deficiency with conjunctival xerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B55.2",
+            "titulo": {
+                "es": "Deficiencia de vitamina A con xerosis conjuntival y manchas de Bitot",
+                "en": "Vitamin A deficiency with conjunctival xerosis and Bitot's spots"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B55.3",
+            "titulo": {
+                "es": "Deficiencia de vitamina A con xerosis corneal",
+                "en": "Vitamin A deficiency with corneal xerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B55.4",
+            "titulo": {
+                "es": "Deficiencia de vitamina A con úlcera corneal o queratomalacia",
+                "en": "Vitamin A deficiency with corneal ulceration or keratomalacia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B55.5",
+            "titulo": {
+                "es": "Deficiencia de vitamina A con cicatrices xeroftálmicas de la córnea o ceguera",
+                "en": "Vitamin A deficiency with xerophthalmic scars of cornea or blindness"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B55.Y",
+            "titulo": {
+                "es": "Deficiencia de vitamina A con otras manifestaciones especificadas",
+                "en": "Vitamin A deficiency with other specified manifestations"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B55.Z",
+            "titulo": {
+                "es": "Deficiencia de vitamina A, sin especificación",
+                "en": "Vitamin A deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B56.0",
+            "titulo": {
+                "es": "Escorbuto",
+                "en": "Scurvy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B56.Y",
+            "titulo": {
+                "es": "Otra deficiencia de vitamina C especificada",
+                "en": "Other specified vitamin C deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B56.Z",
+            "titulo": {
+                "es": "Deficiencia de vitamina C, sin especificación",
+                "en": "Vitamin C deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B57.0",
+            "titulo": {
+                "es": "Raquitismo por deficiencia de vitamina D",
+                "en": "Vitamin D deficiency rickets"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B57.1",
+            "titulo": {
+                "es": "Osteomalacia por deficiencia de vitamina D",
+                "en": "Vitamin D deficiency osteomalacia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B57.Y",
+            "titulo": {
+                "es": "Otra deficiencia de vitamina D especificada",
+                "en": "Other specified vitamin D deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B57.Z",
+            "titulo": {
+                "es": "Deficiencia de vitamina D, sin especificación",
+                "en": "Vitamin D deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B58",
+            "titulo": {
+                "es": "Deficiencia de vitamina E",
+                "en": "Vitamin E deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B59",
+            "titulo": {
+                "es": "Deficiencia de vitamina K",
+                "en": "Vitamin K deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5A.00",
+            "titulo": {
+                "es": "Beriberi seco",
+                "en": "Dry beriberi"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5A.01",
+            "titulo": {
+                "es": "Beriberi húmedo",
+                "en": "Wet beriberi"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5A.0Z",
+            "titulo": {
+                "es": "Beriberi, sin especificación",
+                "en": "Beriberi, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5A.10",
+            "titulo": {
+                "es": "Encefalopatía de Wernicke",
+                "en": "Wernicke encephalopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5A.11",
+            "titulo": {
+                "es": "Síndrome de Korsakoff",
+                "en": "Korsakoff syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5A.1Y",
+            "titulo": {
+                "es": "Otro síndrome de Wernicke-Korsakoff especificado",
+                "en": "Other specified Wernicke-Korsakoff Syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5A.1Z",
+            "titulo": {
+                "es": "Síndrome de Wernicke-Korsakoff, sin especificación",
+                "en": "Wernicke-Korsakoff Syndrome, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5A.Y",
+            "titulo": {
+                "es": "Otra deficiencia de vitamina B1 especificada",
+                "en": "Other specified vitamin B1 deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5A.Z",
+            "titulo": {
+                "es": "Deficiencia de vitamina B1, sin especificación",
+                "en": "Vitamin B1 deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5B",
+            "titulo": {
+                "es": "Deficiencia de vitamina B2",
+                "en": "Vitamin B2 deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5C.0",
+            "titulo": {
+                "es": "Pelagra",
+                "en": "Pellagra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5C.Y",
+            "titulo": {
+                "es": "Otra deficiencia de vitamina B3 especificada",
+                "en": "Other specified vitamin B3 deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5C.Z",
+            "titulo": {
+                "es": "Deficiencia de vitamina B3, sin especificación",
+                "en": "Vitamin B3 deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5D",
+            "titulo": {
+                "es": "Deficiencia de vitamina B6",
+                "en": "Vitamin B6 deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5E",
+            "titulo": {
+                "es": "Deficiencia de folato",
+                "en": "Folate deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5F",
+            "titulo": {
+                "es": "Deficiencia de vitamina B12",
+                "en": "Vitamin B12 deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5G",
+            "titulo": {
+                "es": "Deficiencia de biotina",
+                "en": "Biotin deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5H",
+            "titulo": {
+                "es": "Deficiencia de ácido pantoténico",
+                "en": "Pantothenic acid deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5J",
+            "titulo": {
+                "es": "Deficiencia de colina",
+                "en": "Choline deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.0",
+            "titulo": {
+                "es": "Deficiencia de hierro",
+                "en": "Iron deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.10",
+            "titulo": {
+                "es": "Tetania por deficiencia aguda de calcio",
+                "en": "Tetany due to acute calcium deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.1Y",
+            "titulo": {
+                "es": "Otra deficiencia de calcio especificada",
+                "en": "Other specified calcium deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.1Z",
+            "titulo": {
+                "es": "Deficiencia de calcio, sin especificación",
+                "en": "Calcium deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.2",
+            "titulo": {
+                "es": "Deficiencia de zinc",
+                "en": "Zinc deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.3",
+            "titulo": {
+                "es": "Deficiencia de yodo",
+                "en": "Iodine deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.4",
+            "titulo": {
+                "es": "Deficiencia de flúor",
+                "en": "Fluorine deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.5",
+            "titulo": {
+                "es": "Deficiencia de cloruro de sodio",
+                "en": "Sodium chloride deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.6",
+            "titulo": {
+                "es": "Deficiencia de cobre",
+                "en": "Copper deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.7",
+            "titulo": {
+                "es": "Deficiencia de selenio",
+                "en": "Selenium deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.8",
+            "titulo": {
+                "es": "Deficiencia de cromo",
+                "en": "Chromium deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.9",
+            "titulo": {
+                "es": "Deficiencia de manganeso",
+                "en": "Manganese deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.A",
+            "titulo": {
+                "es": "Deficiencia de molibdeno",
+                "en": "Molybdenum deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.B",
+            "titulo": {
+                "es": "Deficiencia de vanadio",
+                "en": "Vanadium deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.Y",
+            "titulo": {
+                "es": "Otra deficiencia de mineral especificada",
+                "en": "Other specified mineral deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B5K.Z",
+            "titulo": {
+                "es": "Deficiencia de mineral, sin especificación",
+                "en": "Mineral deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B60",
+            "titulo": {
+                "es": "Secuelas de la desnutrición proteínico-energética",
+                "en": "Sequelae of protein-energy malnutrition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B61",
+            "titulo": {
+                "es": "Secuelas de la deficiencia de vitamina A",
+                "en": "Sequelae of vitamin A deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B62",
+            "titulo": {
+                "es": "Secuelas de la deficiencia de vitamina C",
+                "en": "Sequelae of vitamin C deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B63",
+            "titulo": {
+                "es": "Secuelas de raquitismo",
+                "en": "Sequelae of rickets"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B6Y",
+            "titulo": {
+                "es": "Otra secuela de desnutrición especificada o de algunas deficiencias nutricionales especificadas",
+                "en": "Other specified sequelae of malnutrition or certain specified nutritional deficiencies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B6Z",
+            "titulo": {
+                "es": "Secuelas de desnutrición o de algunas deficiencias nutricionales especificadas, sin especificación",
+                "en": "Sequelae of malnutrition or certain specified nutritional deficiencies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B70",
+            "titulo": {
+                "es": "Deficiencia de ácidos grasos esenciales",
+                "en": "Essential fatty acid deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B71",
+            "titulo": {
+                "es": "Deficiencia de proteínas",
+                "en": "Protein deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B7Y",
+            "titulo": {
+                "es": "Otra desnutrición especificada",
+                "en": "Other specified undernutrition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B7Z",
+            "titulo": {
+                "es": "Desnutrición, sin especificación",
+                "en": "Unspecified undernutrition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B80.00",
+            "titulo": {
+                "es": "Sobrepeso en los lactantes, niños o adolescentes",
+                "en": "Overweight in infants, children or adolescents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B80.01",
+            "titulo": {
+                "es": "Sobrepeso en adultos",
+                "en": "Overweight in adults"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B80.0Z",
+            "titulo": {
+                "es": "Sobrepeso, sin especificación",
+                "en": "Overweight, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B80.1",
+            "titulo": {
+                "es": "Adiposidad localizada",
+                "en": "Localised adiposity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B81.00",
+            "titulo": {
+                "es": "Obesidad en niños o adolescentes",
+                "en": "Obesity in children or adolescents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B81.01",
+            "titulo": {
+                "es": "Obesidad en los adultos",
+                "en": "Obesity in adults"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B81.1",
+            "titulo": {
+                "es": "obesidad de origen medicamentoso",
+                "en": "Drug-induced obesity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B81.Y",
+            "titulo": {
+                "es": "Otra obesidad especificada",
+                "en": "Other specified obesity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B81.Z",
+            "titulo": {
+                "es": "Obesidad, sin especificación",
+                "en": "Obesity, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B90.0",
+            "titulo": {
+                "es": "Hipervitaminosis A",
+                "en": "Hypervitaminosis A"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B90.1",
+            "titulo": {
+                "es": "Hipercarotinemia",
+                "en": "Hypercarotenaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B90.2",
+            "titulo": {
+                "es": "Hipervitaminosis D",
+                "en": "Hypervitaminosis D"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B90.3",
+            "titulo": {
+                "es": "Síndrome de megavitamina B6",
+                "en": "Megavitamin-B6 syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B90.Y",
+            "titulo": {
+                "es": "Otros excesos de vitamina especificados",
+                "en": "Other specified vitamin excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B90.Z",
+            "titulo": {
+                "es": "Excesos de vitamina, sin especificación",
+                "en": "Unspecified vitamin excesses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B91.0",
+            "titulo": {
+                "es": "Hipercalcemia",
+                "en": "Hypercalcaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B91.1",
+            "titulo": {
+                "es": "Exceso de zinc",
+                "en": "Zinc excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B91.2",
+            "titulo": {
+                "es": "Exceso de cloruro de sodio",
+                "en": "Sodium chloride excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B91.3",
+            "titulo": {
+                "es": "Exceso de flúor",
+                "en": "Fluorine excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B91.4",
+            "titulo": {
+                "es": "Exceso de aluminio",
+                "en": "Aluminium excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B91.5",
+            "titulo": {
+                "es": "Exceso de manganeso",
+                "en": "Manganese excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B91.Y",
+            "titulo": {
+                "es": "Otros excesos de mineral especificados",
+                "en": "Other specified mineral excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B91.Z",
+            "titulo": {
+                "es": "Excesos de mineral, sin especificación",
+                "en": "Unspecified mineral excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B9Y",
+            "titulo": {
+                "es": "Otros excesos de nutrientes especificados",
+                "en": "Other specified nutrient excesses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5B9Z",
+            "titulo": {
+                "es": "Algunos excesos de nutrientes, sin especificación",
+                "en": "Nutrient excesses, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C1Y",
+            "titulo": {
+                "es": "Otro sobrepeso especificado, obesidad o exceso de nutrientes",
+                "en": "Other specified overweight, obesity or specific nutrient excesses"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C3Y",
+            "titulo": {
+                "es": "Otros trastornos nutricionales especificados",
+                "en": "Other specified nutritional disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C3Z",
+            "titulo": {
+                "es": "Trastornos nutricionales, sin especificación",
+                "en": "Nutritional disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.00",
+            "titulo": {
+                "es": "Fenilcetonuria clásica",
+                "en": "Classical phenylketonuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.01",
+            "titulo": {
+                "es": "Fenilcetonuria atípica",
+                "en": "Nonclassical phenylketonuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.02",
+            "titulo": {
+                "es": "Embriofetopatía por fenilcetonuria materna",
+                "en": "Embryofetopathy due to maternal phenylketonuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.0Y",
+            "titulo": {
+                "es": "Otra fenilcetonuria especificada",
+                "en": "Other specified phenylketonuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.0Z",
+            "titulo": {
+                "es": "Fenilcetonuria, sin especificación",
+                "en": "Phenylketonuria, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.10",
+            "titulo": {
+                "es": "Alcaptonuria",
+                "en": "Alkaptonuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.11",
+            "titulo": {
+                "es": "Tirosinemia de tipo 1",
+                "en": "Tyrosinaemia type 1"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.12",
+            "titulo": {
+                "es": "Tirosinemia de tipo 2",
+                "en": "Tyrosinaemia type 2"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.1Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de la tirosina",
+                "en": "Other specified disorders of tyrosine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.1Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la tirosina, sin especificación",
+                "en": "Disorders of tyrosine metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.20",
+            "titulo": {
+                "es": "Histidinemia",
+                "en": "Histidinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.21",
+            "titulo": {
+                "es": "Aciduria urocánica",
+                "en": "Urocanic aciduria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de la histidina",
+                "en": "Other specified disorders of histidine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.2Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la histidina, sin especificación",
+                "en": "Disorders of histidine metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.3",
+            "titulo": {
+                "es": "Trastornos del metabolismo del triptófano",
+                "en": "Disorders of tryptophan metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.4",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la lisina o de la hidroxilisina",
+                "en": "Disorders of lysine or hydroxylysine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.5",
+            "titulo": {
+                "es": "Trastornos del ciclo del gamma-glutamilo",
+                "en": "Disorders of the gamma-glutamyl cycle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.6",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la serina",
+                "en": "Disorders of serine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.70",
+            "titulo": {
+                "es": "Encefalopatía por glicina",
+                "en": "Glycine encephalopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.71",
+            "titulo": {
+                "es": "Sarcosinemia",
+                "en": "Sarcosinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.7Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de la glicina",
+                "en": "Other specified disorders of glycine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.7Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la glicina, sin especificación",
+                "en": "Disorders of glycine metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.8",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la prolina o de la hidroxiprolina",
+                "en": "Disorders of proline or hydroxyproline metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.9",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la ornitina",
+                "en": "Disorders of ornithine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.A0",
+            "titulo": {
+                "es": "Aciduria argininosuccínica",
+                "en": "Argininosuccinic aciduria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.A1",
+            "titulo": {
+                "es": "Deficiencia de carbamoilfosfato-sintetasa",
+                "en": "Carbamoylphosphate synthetase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.A2",
+            "titulo": {
+                "es": "Argininemia",
+                "en": "Argininaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.A3",
+            "titulo": {
+                "es": "Citrulinemia",
+                "en": "Citrullinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.AY",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo del ciclo de la urea",
+                "en": "Other specified disorders of urea cycle metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.AZ",
+            "titulo": {
+                "es": "Trastornos del metabolismo del ciclo de la urea, sin especificación",
+                "en": "Disorders of urea cycle metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.B",
+            "titulo": {
+                "es": "Trastornos del ciclo de la metionina o del metabolismo de los aminoácidos azufrados",
+                "en": "Disorders of methionine cycle or sulphur amino acid metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.C",
+            "titulo": {
+                "es": "Trastornos del metabolismo de los aminoácidos beta u omega",
+                "en": "Disorders of beta or omega amino acid metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.D0",
+            "titulo": {
+                "es": "Enfermedad de la orina con olor a jarabe de arce",
+                "en": "Maple-syrup-urine disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.DY",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de los aminoácidos de cadena ramificada",
+                "en": "Other specified disorders of branched-chain amino acid metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.DZ",
+            "titulo": {
+                "es": "Trastornos del metabolismo de los aminoácidos de cadena ramificada, sin especificación",
+                "en": "Disorders of branched-chain amino acid metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.E0",
+            "titulo": {
+                "es": "Aciduria orgánica clásica",
+                "en": "Classical organic aciduria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.E1",
+            "titulo": {
+                "es": "Aciduria orgánica cerebral",
+                "en": "Cerebral organic aciduria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.EY",
+            "titulo": {
+                "es": "Otra aciduria orgánica especificada",
+                "en": "Other specified organic aciduria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.EZ",
+            "titulo": {
+                "es": "Aciduria orgánica, sin especificación",
+                "en": "Organic aciduria, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.F0",
+            "titulo": {
+                "es": "Deficiencia de prolidasa",
+                "en": "Prolidase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.F1",
+            "titulo": {
+                "es": "Carnosinemia",
+                "en": "Carnosinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.F2",
+            "titulo": {
+                "es": "Homocarnosinosis",
+                "en": "Homocarnosinosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.FY",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de los péptidos",
+                "en": "Other specified disorders of peptide metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.FZ",
+            "titulo": {
+                "es": "Trastornos del metabolismo de los péptidos, sin especificación",
+                "en": "Disorders of peptide metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.G",
+            "titulo": {
+                "es": "Trimetilaminuria",
+                "en": "Trimethylaminuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados del metabolismo de los aminoácidos u otros ácidos orgánicos",
+                "en": "Other specified inborn errors of amino acid or other organic acid metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C50.Z",
+            "titulo": {
+                "es": "Errores congénitos del metabolismo de los aminoácidos u otros ácidos orgánicos, sin especificación",
+                "en": "Inborn errors of amino acid or other organic acid metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.0",
+            "titulo": {
+                "es": "Trastornos de la vía de las pentosas fosfato",
+                "en": "Disorders of the pentose phosphate pathway"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.1",
+            "titulo": {
+                "es": "Trastornos del metabolismo del glicerol",
+                "en": "Disorders of glycerol metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.20",
+            "titulo": {
+                "es": "Hiperoxaluria primaria de tipo 1",
+                "en": "Primary hyperoxaluria type 1"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo del glioxilato",
+                "en": "Other specified disorders of glyoxylate metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.2Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo del glioxilato, sin especificación",
+                "en": "Disorders of glyoxylate metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.3",
+            "titulo": {
+                "es": "Glucogenosis",
+                "en": "Glycogen storage disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.40",
+            "titulo": {
+                "es": "Deficiencia de galactosa-1-fosfato-uridiltransferasa",
+                "en": "Galactose-1-phosphate uridyltransferase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.41",
+            "titulo": {
+                "es": "Deficiencia de galactocinasa",
+                "en": "Galactokinase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.42",
+            "titulo": {
+                "es": "Intolerancia neonatal a glucosa o galactosa",
+                "en": "Glucose or galactose intolerance of newborn"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.4Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de la galactosa",
+                "en": "Other specified disorders of galactose metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.4Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la galactosa, sin especificación",
+                "en": "Disorders of galactose metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.50",
+            "titulo": {
+                "es": "Intolerancia hereditaria a la fructosa",
+                "en": "Hereditary fructose intolerance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.5Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de la fructosa",
+                "en": "Other specified disorders of fructose metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.5Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la fructosa, sin especificación",
+                "en": "Disorders of fructose metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados del metabolismo de los hidratos de carbono",
+                "en": "Other specified inborn errors of carbohydrate metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C51.Z",
+            "titulo": {
+                "es": "Errores congénitos del metabolismo de los hidratos de carbono, sin especificación",
+                "en": "Inborn errors of carbohydrate metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.00",
+            "titulo": {
+                "es": "Trastornos del transporte de la carnitina o del ciclo de la carnitina",
+                "en": "Disorders of carnitine transport or the carnitine cycle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.01",
+            "titulo": {
+                "es": "Trastornos de la oxidación mitocondrial de los ácidos grasos",
+                "en": "Disorders of mitochondrial fatty acid oxidation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.02",
+            "titulo": {
+                "es": "Trastornos del metabolismo de los cuerpos cetónicos",
+                "en": "Disorders of ketone body metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.03",
+            "titulo": {
+                "es": "Síndrome de Sjögren-Larsson",
+                "en": "Sjögren-Larsson syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.0Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados de la oxidación de los ácidos grasos o del metabolismo de los cuerpos cetónicos",
+                "en": "Other specified inborn errors of fatty acid oxidation or ketone body metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.0Z",
+            "titulo": {
+                "es": "Errores congénitos de la oxidación de los ácidos grasos o del metabolismo de los cuerpos cetónicos, sin especificación",
+                "en": "Inborn errors of fatty acid oxidation or ketone body metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.10",
+            "titulo": {
+                "es": "Trastornos de la síntesis del colesterol",
+                "en": "Disorders of cholesterol synthesis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.11",
+            "titulo": {
+                "es": "Defecto de la síntesis de ácidos biliares con colestasis",
+                "en": "Bile acid synthesis defect with cholestasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.1Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados del metabolismo de los esteroles",
+                "en": "Other specified inborn errors of sterol metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.1Z",
+            "titulo": {
+                "es": "Errores congénitos del metabolismo de los esteroles, sin especificación",
+                "en": "Inborn errors of sterol metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.2",
+            "titulo": {
+                "es": "Enfermedad por depósito de lípidos neutros",
+                "en": "Neutral lipid storage disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados del metabolismo de los lípidos",
+                "en": "Other specified inborn errors of lipid metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C52.Z",
+            "titulo": {
+                "es": "Errores congénitos del metabolismo de los lípidos, sin especificación",
+                "en": "Inborn errors of lipid metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.00",
+            "titulo": {
+                "es": "Deficiencia de piruvato-cinasa",
+                "en": "Pyruvate kinase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.01",
+            "titulo": {
+                "es": "Deficiencia de lactato-deshidrogenasa",
+                "en": "Lactate dehydrogenase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.02",
+            "titulo": {
+                "es": "Deficiencia del complejo piruvato-deshidrogenasa",
+                "en": "Pyruvate dehydrogenase complex deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.03",
+            "titulo": {
+                "es": "Deficiencia de piruvato-carboxilasa",
+                "en": "Pyruvate carboxylase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo del piruvato",
+                "en": "Other specified disorders of pyruvate metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.0Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo del piruvato, sin especificación",
+                "en": "Disorders of pyruvate metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.1",
+            "titulo": {
+                "es": "Trastornos del ciclo del ácido cítrico",
+                "en": "Disorders of the citric acid cycle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.20",
+            "titulo": {
+                "es": "Síndrome de depleción del ADN mitocondrial",
+                "en": "Mitochondrial DNA depletion syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.21",
+            "titulo": {
+                "es": "Síndromes de deleción múltiple del ADN mitocondrial",
+                "en": "Multiple mitochondrial DNA deletion syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.22",
+            "titulo": {
+                "es": "Deficiencia de coenzima Q10",
+                "en": "Coenzyme Q10 deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.23",
+            "titulo": {
+                "es": "Defectos de la traducción de las proteínas mitocondriales",
+                "en": "Mitochondrial protein translation defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.24",
+            "titulo": {
+                "es": "Síndrome de Leigh",
+                "en": "Leigh syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.25",
+            "titulo": {
+                "es": "Deficiencia aislada de ATP-sintasa",
+                "en": "Isolated ATP synthase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la fosforilación oxidativa mitocondrial",
+                "en": "Other specified disorders of mitochondrial oxidative phosphorylation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.2Z",
+            "titulo": {
+                "es": "Trastornos de la fosforilación oxidativa mitocondrial, sin especificación",
+                "en": "Disorders of mitochondrial oxidative phosphorylation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.30",
+            "titulo": {
+                "es": "Trastornos de los transportadores mitocondriales de sustratos",
+                "en": "Mitochondrial substrate carrier disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.31",
+            "titulo": {
+                "es": "Trastornos de la importación mitocondrial de proteínas",
+                "en": "Mitochondrial protein import disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.3Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del transporte a través de las membranas mitocondriales",
+                "en": "Other specified disorders of mitochondrial membrane transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.3Z",
+            "titulo": {
+                "es": "Trastornos del transporte a través de las membranas mitocondriales, sin especificación",
+                "en": "Disorders of mitochondrial membrane transport, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.4",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la creatina",
+                "en": "Disorders of creatine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados del metabolismo energético",
+                "en": "Other specified inborn errors of energy metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C53.Z",
+            "titulo": {
+                "es": "Errores congénitos del metabolismo energético, sin especificación",
+                "en": "Inborn errors of energy metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C54.0",
+            "titulo": {
+                "es": "Trastornos de la N-glicosilación de proteínas",
+                "en": "Disorders of protein N-glycosylation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C54.1",
+            "titulo": {
+                "es": "Trastornos de la O-glicosilación de las proteínas",
+                "en": "Disorders of protein O-glycosylation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C54.2",
+            "titulo": {
+                "es": "Trastornos de la glicosilación múltiple u otras vías",
+                "en": "Disorders of multiple glycosylation or other pathways"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C54.Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados de la glicosilación u otra modificación de las proteínas",
+                "en": "Other specified inborn errors of glycosylation or other specified protein modification"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C54.Z",
+            "titulo": {
+                "es": "Errores congénitos de la glicosilación u otra modificación de las proteínas, sin especificación",
+                "en": "Inborn errors of glycosylation or protein modification, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C55.00",
+            "titulo": {
+                "es": "Xantinuria",
+                "en": "Xanthinuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C55.01",
+            "titulo": {
+                "es": "Síndrome de Lesch-Nyhan",
+                "en": "Lesch-Nyhan syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C55.0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de las purinas",
+                "en": "Other specified disorders of purine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C55.0Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo de las purinas, sin especificación",
+                "en": "Disorders of purine metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C55.1",
+            "titulo": {
+                "es": "Trastornos del metabolismo de las pirimidinas",
+                "en": "Disorders of pyrimidine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C55.2",
+            "titulo": {
+                "es": "Trastornos del metabolismo de los nucleótidos",
+                "en": "Disorders of nucleotide metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C55.Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados del metabolismo de las purinas, pirimidinas o nucleótidos",
+                "en": "Other specified inborn errors of purine, pyrimidine or nucleotide metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C55.Z",
+            "titulo": {
+                "es": "Errores congénitos del metabolismo de las purinas, pirimidinas o nucleótidos, sin especificación",
+                "en": "Inborn errors of purine, pyrimidine or nucleotide metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.00",
+            "titulo": {
+                "es": "Gangliosidosis",
+                "en": "Gangliosidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.01",
+            "titulo": {
+                "es": "Enfermedad de Fabry",
+                "en": "Fabry disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.02",
+            "titulo": {
+                "es": "Leucodistrofia metacromática",
+                "en": "Metachromatic leukodystrophy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.0Y",
+            "titulo": {
+                "es": "Otra esfingolipidosis especificada",
+                "en": "Other specified sphingolipidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.0Z",
+            "titulo": {
+                "es": "Esfingolipidosis, sin especificación",
+                "en": "Sphingolipidosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.1",
+            "titulo": {
+                "es": "Lipofuscinosis ceroidea neuronal",
+                "en": "Neuronal ceroid lipofuscinosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.20",
+            "titulo": {
+                "es": "Mucolipidosis",
+                "en": "Mucolipidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.21",
+            "titulo": {
+                "es": "Oligosacaridosis",
+                "en": "Oligosaccharidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.2Y",
+            "titulo": {
+                "es": "Otra glicoproteinosis especificada",
+                "en": "Other specified glycoproteinosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.2Z",
+            "titulo": {
+                "es": "Glicoproteinosis, sin especificación",
+                "en": "Glycoproteinosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.30",
+            "titulo": {
+                "es": "Mucopolisacaridosis de tipo 1",
+                "en": "Mucopolysaccharidosis type 1"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.31",
+            "titulo": {
+                "es": "Mucopolisacaridosis de tipo 2",
+                "en": "Mucopolysaccharidosis type 2"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.32",
+            "titulo": {
+                "es": "Mucopolisacaridosis de tipo 4",
+                "en": "Mucopolysaccharidosis type 4"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.33",
+            "titulo": {
+                "es": "Mucopolisacaridosis de tipo 6",
+                "en": "Mucopolysaccharidosis type 6"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.3Y",
+            "titulo": {
+                "es": "Otra mucopolisacaridosis especificada",
+                "en": "Other specified mucopolysaccharidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.3Z",
+            "titulo": {
+                "es": "Mucopolisacaridosis, sin especificación",
+                "en": "Mucopolysaccharidosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.4",
+            "titulo": {
+                "es": "Trastornos del metabolismo del ácido siálico",
+                "en": "Disorders of sialic acid metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.Y",
+            "titulo": {
+                "es": "Otras enfermedades lisosomales especificadas",
+                "en": "Other specified lysosomal diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C56.Z",
+            "titulo": {
+                "es": "Enfermedades lisosomales, sin especificación",
+                "en": "Lysosomal diseases, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C57.0",
+            "titulo": {
+                "es": "Trastornos de la biogénesis peroxisomal",
+                "en": "Disorders of peroxisome biogenesis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C57.1",
+            "titulo": {
+                "es": "Trastornos de la alfa- beta- u omega-oxidación peroxisomal",
+                "en": "Disorders of peroxisomal alpha-, beta- or omega-oxidation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C57.Y",
+            "titulo": {
+                "es": "Otras enfermedades peroxisomales especificadas",
+                "en": "Other specified peroxisomal diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C57.Z",
+            "titulo": {
+                "es": "Enfermedades peroxisomales, sin especificación",
+                "en": "Peroxisomal diseases, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.00",
+            "titulo": {
+                "es": "Síndrome de Crigler-Najjar",
+                "en": "Crigler-Najjar syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.01",
+            "titulo": {
+                "es": "Síndrome de Gilbert",
+                "en": "Gilbert syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.02",
+            "titulo": {
+                "es": "Síndrome de Dubin-Johnson",
+                "en": "Dubin-Johnson syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.03",
+            "titulo": {
+                "es": "Colestasis intrahepática familiar progresiva",
+                "en": "Progressive familial intrahepatic cholestasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.04",
+            "titulo": {
+                "es": "Colestasis intrahepática recurrente benigna",
+                "en": "Benign recurrent intrahepatic cholestasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo o excreción de la bilirrubina",
+                "en": "Other specified disorders of bilirubin metabolism or excretion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.0Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo o excreción de la bilirrubina, sin especificación",
+                "en": "Disorders of bilirubin metabolism or excretion, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.10",
+            "titulo": {
+                "es": "Porfiria cutánea tardía",
+                "en": "Porphyria cutanea tarda"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.12",
+            "titulo": {
+                "es": "Porfirias eritropoyéticas",
+                "en": "Erythropoietic porphyrias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.13",
+            "titulo": {
+                "es": "Porfiria variegata",
+                "en": "Variegate porphyria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.1Y",
+            "titulo": {
+                "es": "Otras porfirias especificadas",
+                "en": "Other specified porphyrias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.1Z",
+            "titulo": {
+                "es": "Porfirias, sin especificación",
+                "en": "Porphyrias, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados del metabolismo de las porfirinas o del hemo",
+                "en": "Other specified inborn errors of porphyrin or heme metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C58.Z",
+            "titulo": {
+                "es": "Errores congénitos del metabolismo de las porfirinas o del hemo, sin especificación",
+                "en": "Inborn errors of porphyrin or heme metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C59.00",
+            "titulo": {
+                "es": "Trastornos de la síntesis de catecolaminas",
+                "en": "Disorders of catecholamine synthesis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C59.01",
+            "titulo": {
+                "es": "Trastornos del metabolismo de las pterinas",
+                "en": "Disorders of pterin metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C59.0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de las aminas biógenas",
+                "en": "Other specified disorders of biogenic amine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C59.0Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo de las aminas biógenas, sin especificación",
+                "en": "Disorders of biogenic amine metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C59.1",
+            "titulo": {
+                "es": "Trastornos del metabolismo del GABA",
+                "en": "Disorders of gamma aminobutyric acid metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C59.2",
+            "titulo": {
+                "es": "Trastornos del metabolismo de la piridoxina",
+                "en": "Disorders of pyridoxine metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C59.Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados del metabolismo de los neurotransmisores",
+                "en": "Other specified inborn errors of neurotransmitter metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C59.Z",
+            "titulo": {
+                "es": "Errores congénitos del metabolismo de los neurotransmisores, sin especificación",
+                "en": "Inborn errors of neurotransmitter metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C5A",
+            "titulo": {
+                "es": "Deficiencia de alfa1-antitripsina",
+                "en": "Alpha-1-antitrypsin deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C5Y",
+            "titulo": {
+                "es": "Otros errores congénitos especificados del metabolismo",
+                "en": "Other specified inborn errors of metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C5Z",
+            "titulo": {
+                "es": "Errores congénitos del metabolismo, sin especificación",
+                "en": "Inborn errors of metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C60.0",
+            "titulo": {
+                "es": "Síndrome oculocerebrorrenal",
+                "en": "Oculocerebrorenal syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C60.1",
+            "titulo": {
+                "es": "Cistinosis",
+                "en": "Cystinosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C60.2",
+            "titulo": {
+                "es": "Cistinuria",
+                "en": "Cystinuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C60.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la absorción o el transporte de los aminoácidos",
+                "en": "Other specified disorders of amino acid absorption or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C60.Z",
+            "titulo": {
+                "es": "Trastornos de la absorción o el transporte de los aminoácidos, sin especificación",
+                "en": "Disorders of amino acid absorption or transport, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.0",
+            "titulo": {
+                "es": "Malabsorción de la glucosa y la galactosa",
+                "en": "Glucose-galactose malabsorption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.1",
+            "titulo": {
+                "es": "Deficiencia de maltasa-glucoamilasa",
+                "en": "Maltase-glucoamylase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.2",
+            "titulo": {
+                "es": "Deficiencia congénita de sacarasa-isomaltasa",
+                "en": "Congenital sucrase-isomaltase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.3",
+            "titulo": {
+                "es": "Deficiencia de alfa, alfa-trehalasa",
+                "en": "Alpha, alpha trehalase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.40",
+            "titulo": {
+                "es": "Malabsorción de la fructosa",
+                "en": "Fructose malabsorption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.4Y",
+            "titulo": {
+                "es": "Otra malabsorción adquirida de los monosacáridos especificada",
+                "en": "Other specified acquired monosaccharide malabsorption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.4Z",
+            "titulo": {
+                "es": "Malabsorción adquirida de los monosacáridos, sin especificación",
+                "en": "Acquired monosaccharide malabsorption, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.5",
+            "titulo": {
+                "es": "Trastornos del transporte facilitado de glucosa",
+                "en": "Disorders of facilitated glucose transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.60",
+            "titulo": {
+                "es": "Deficiencia primaria de lactasa",
+                "en": "Primary lactase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.61",
+            "titulo": {
+                "es": "Deficiencia congénita de lactasa",
+                "en": "Congenital lactase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.62",
+            "titulo": {
+                "es": "Deficiencia secundaria de lactasa",
+                "en": "Secondary lactase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.6Z",
+            "titulo": {
+                "es": "Intolerancia a la lactosa, sin especificación",
+                "en": "Lactose intolerance, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la absorción o transporte de hidratos de carbono",
+                "en": "Other specified disorders of carbohydrate absorption or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C61.Z",
+            "titulo": {
+                "es": "Trastornos de la absorción o transporte de hidratos de carbono, sin especificación",
+                "en": "Disorders of carbohydrate absorption or transport, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C62",
+            "titulo": {
+                "es": "Trastornos de la absorción o transporte de lípidos",
+                "en": "Disorders of lipid absorption or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C63.0",
+            "titulo": {
+                "es": "Trastornos del metabolismo o transporte de la cobalamina",
+                "en": "Disorders of cobalamin metabolism or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C63.1",
+            "titulo": {
+                "es": "Trastornos del metabolismo o transporte de folatos",
+                "en": "Disorders of folate metabolism or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C63.20",
+            "titulo": {
+                "es": "Raquitismo hipocalcémico dependiente de la vitamina D",
+                "en": "Hypocalcaemic vitamin D dependent rickets"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C63.21",
+            "titulo": {
+                "es": "Raquitismo hipocalcémico resistente a la vitamina D",
+                "en": "Hypocalcaemic vitamin D resistant rickets"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C63.22",
+            "titulo": {
+                "es": "Raquitismo hipofosfatémico",
+                "en": "Hypophosphataemic rickets"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C63.2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo o transporte de la vitamina D",
+                "en": "Other specified disorders of vitamin D metabolism or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C63.2Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo o transporte de la vitamina D, sin especificación",
+                "en": "Disorders of vitamin D metabolism or transport, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C63.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de absorción o transporte de vitaminas o cofactores no proteínicos",
+                "en": "Other specified disorders of vitamin or non-protein cofactor absorption or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C63.Z",
+            "titulo": {
+                "es": "Trastornos de absorción o transporte de vitaminas o cofactores no proteínicos, sin especificación",
+                "en": "Disorders of vitamin or non-protein cofactor absorption or transport, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.00",
+            "titulo": {
+                "es": "Enfermedad de Willson",
+                "en": "Wilson disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo del cobre",
+                "en": "Other specified disorders of copper metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.0Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo del cobre, sin especificación",
+                "en": "Disorders of copper metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.10",
+            "titulo": {
+                "es": "Enfermedades por sobrecarga de hierro",
+                "en": "Iron overload diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.1Y",
+            "titulo": {
+                "es": "Otros trastornos del metabolismo del hierro especificados",
+                "en": "Other specified disorders of iron metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.1Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo del hierro, sin especificación",
+                "en": "Disorders of iron metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.20",
+            "titulo": {
+                "es": "Acrodermatitis enteropática",
+                "en": "Acrodermatitis enteropathica"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.21",
+            "titulo": {
+                "es": "Síndromes por deficiencia de zinc",
+                "en": "Zinc deficiency syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo del zinc",
+                "en": "Other specified disorders of zinc metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.2Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo del zinc, sin especificación",
+                "en": "Disorders of zinc metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.3",
+            "titulo": {
+                "es": "Trastornos del metabolismo del fósforo o de las fosfatasas",
+                "en": "Disorders of phosphorus metabolism or phosphatases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.40",
+            "titulo": {
+                "es": "Hipermagnesemia",
+                "en": "Hypermagnesaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.41",
+            "titulo": {
+                "es": "Hipomagnesemia",
+                "en": "Hypomagnesaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.4Z",
+            "titulo": {
+                "es": "Trastornos del metabolismo del magnesio, sin especificación",
+                "en": "Disorders of magnesium metabolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.5",
+            "titulo": {
+                "es": "Trastornos del metabolismo del calcio",
+                "en": "Disorders of calcium metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.6",
+            "titulo": {
+                "es": "Trastornos del metabolismo del sodio",
+                "en": "Disorders of sodium metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.7",
+            "titulo": {
+                "es": "Trastornos del metabolismo de los cloruros",
+                "en": "Disorders of chloride metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la absorción o transporte de minerales",
+                "en": "Disorders of other specified mineral absorption or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C64.Z",
+            "titulo": {
+                "es": "Trastornos de la absorción o transporte de minerales, sin especificación",
+                "en": "Disorders of mineral absorption or transport, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C6Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la absorción o transporte de metabolitos",
+                "en": "Other specified disorders of metabolite absorption or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C6Z",
+            "titulo": {
+                "es": "Trastornos de la absorción o transporte de metabolitos, sin especificación",
+                "en": "Disorders of metabolite absorption or transport, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C70.0",
+            "titulo": {
+                "es": "Deshidratación",
+                "en": "Dehydration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C70.1",
+            "titulo": {
+                "es": "Hipovolemia",
+                "en": "Hypovolaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C70.Y",
+            "titulo": {
+                "es": "Otra disminución del volumen especificado",
+                "en": "Other specified volume depletion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C70.Z",
+            "titulo": {
+                "es": "Disminución del volumen, sin especificación",
+                "en": "Volume depletion, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C71",
+            "titulo": {
+                "es": "Hiperosmolalidad o hipernatremia",
+                "en": "Hyperosmolality or hypernatraemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C72",
+            "titulo": {
+                "es": "Hipoosmolalidad o hiponatremia",
+                "en": "Hypo-osmolality or hyponatraemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C73.0",
+            "titulo": {
+                "es": "Acidosis respiratoria aguda",
+                "en": "Acute respiratory acidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C73.1",
+            "titulo": {
+                "es": "Acidosis respiratoria crónica",
+                "en": "Chronic respiratory acidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C73.2",
+            "titulo": {
+                "es": "Acidosis metabólica con brecha aniónica",
+                "en": "Anion gap metabolic acidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C73.Y",
+            "titulo": {
+                "es": "Otra acidosis especificada",
+                "en": "Other specified acidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C73.Z",
+            "titulo": {
+                "es": "Acidosis, sin especificación",
+                "en": "Acidosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C74",
+            "titulo": {
+                "es": "Alcalosis",
+                "en": "Alkalosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C75",
+            "titulo": {
+                "es": "Trastorno mixto del equilibrio ácido-básico",
+                "en": "Mixed disorder of acid-base balance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C76",
+            "titulo": {
+                "es": "Hiperpotasemia",
+                "en": "Hyperkalaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C77",
+            "titulo": {
+                "es": "Hipopotasemia",
+                "en": "Hypokalaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C78",
+            "titulo": {
+                "es": "Sobrecarga de líquidos",
+                "en": "Fluid overload"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C7Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del equilibrio hidroelectrolítico o ácido-básico",
+                "en": "Other specified disorders of fluid, electrolyte or acid-base balance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C7Z",
+            "titulo": {
+                "es": "Trastornos del equilibrio hidroelectrolítico o ácido-básico, sin especificación",
+                "en": "Disorders of fluid, electrolyte or acid-base balance, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C80.00",
+            "titulo": {
+                "es": "Hipercolesterolemia primaria",
+                "en": "Primary hypercholesterolaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C80.01",
+            "titulo": {
+                "es": "Hipercolesterolemia secundaria",
+                "en": "Secondary hypercholesterolaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C80.0Z",
+            "titulo": {
+                "es": "Hipercolesterolemia, sin especificación",
+                "en": "Hypercholesterolaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C80.1",
+            "titulo": {
+                "es": "Hipertrigliceridemia",
+                "en": "Hypertriglyceridaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C80.2",
+            "titulo": {
+                "es": "Hiperlipidemia mixta",
+                "en": "Mixed hyperlipidaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C80.3",
+            "titulo": {
+                "es": "Hiperalfalipoproteinemia",
+                "en": "Hyperalphalipoproteinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C80.Y",
+            "titulo": {
+                "es": "Otra hiperlipoproteinemia especificada",
+                "en": "Other specified hyperlipoproteinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C80.Z",
+            "titulo": {
+                "es": "Hiperlipoproteinemia, sin especificación",
+                "en": "Hyperlipoproteinaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C81.0",
+            "titulo": {
+                "es": "Hipoalfalipoproteinemia",
+                "en": "Hypoalphalipoproteinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C81.1",
+            "titulo": {
+                "es": "Hipobetalipoproteinemia",
+                "en": "Hypobetalipoproteinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C81.Y",
+            "titulo": {
+                "es": "Otra hipolipoproteinemia especificada",
+                "en": "Other specified hypolipoproteinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C81.Z",
+            "titulo": {
+                "es": "Hipolipoproteinemia, sin especificación",
+                "en": "Hypolipoproteinaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C8Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del metabolismo de las lipoproteínas o algunas lipidemias especificadas",
+                "en": "Other specified disorders of lipoprotein metabolism or lipidaemias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C8Z",
+            "titulo": {
+                "es": "Trastornos no especificados del metabolismo de las lipoproteínas o lipidemias",
+                "en": "Unspecified disorders of lipoprotein metabolism or lipidaemias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C90.0",
+            "titulo": {
+                "es": "Hepatopatías por defectos del ciclo de la urea",
+                "en": "Liver diseases due to urea cycle defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C90.1",
+            "titulo": {
+                "es": "Hepatopatías por trastornos del metabolismo o transporte de la porfirina o la bilirrubina",
+                "en": "Liver diseases due to disorders of porphyrin or bilirubin metabolism or transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C90.2",
+            "titulo": {
+                "es": "Hepatopatías por trastornos del metabolismo de los aminoácidos",
+                "en": "Liver diseases due to disorders of amino acid metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C90.3",
+            "titulo": {
+                "es": "Hepatopatías por trastornos del almacenamiento lisosomal",
+                "en": "Liver disease due to disorders of lysosomal storage"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C90.4",
+            "titulo": {
+                "es": "Hepatopatías por trastornos mitocondriales",
+                "en": "Liver diseases due to mitochondrial disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C90.5",
+            "titulo": {
+                "es": "Hepatopatías por trastornos del metabolismo mineral",
+                "en": "Liver diseases due to disorders of mineral metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C90.Y",
+            "titulo": {
+                "es": "Otra enfermedad hepática metabólica especificada o transportadora",
+                "en": "Other specified metabolic or transporter liver disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5C90.Z",
+            "titulo": {
+                "es": "Enfermedad hepática metabólica o transportadora, sin especificación",
+                "en": "Metabolic or transporter liver disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D00.0",
+            "titulo": {
+                "es": "Amiloidosis AL",
+                "en": "AL amyloidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D00.1",
+            "titulo": {
+                "es": "Amiloidosis AA",
+                "en": "AA amyloidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D00.20",
+            "titulo": {
+                "es": "Amiloidosis ATTR hereditaria",
+                "en": "Hereditary ATTR amyloidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D00.21",
+            "titulo": {
+                "es": "Amiloidosis heredofamiliar no neuropática",
+                "en": "Non-neuropathic heredofamilial amyloidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D00.2Y",
+            "titulo": {
+                "es": "Otra amiloidosis hereditaria especificada",
+                "en": "Other specified hereditary amyloidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D00.2Z",
+            "titulo": {
+                "es": "Amiloidosis hereditaria, sin especificación",
+                "en": "Hereditary amyloidosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D00.3",
+            "titulo": {
+                "es": "Amiloidosis asociada a la diálisis",
+                "en": "Dialysis-associated amyloidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D00.Y",
+            "titulo": {
+                "es": "Otra amiloidosis especificada",
+                "en": "Other specified amyloidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D00.Z",
+            "titulo": {
+                "es": "Amiloidosis, sin especificación",
+                "en": "Amyloidosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D01",
+            "titulo": {
+                "es": "Síndrome de lisis tumoral",
+                "en": "Tumour lysis syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D0Y",
+            "titulo": {
+                "es": "Otros trastornos metabólicos especificados",
+                "en": "Other specified metabolic disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D2Z",
+            "titulo": {
+                "es": "Trastornos metabólicos, sin especificación",
+                "en": "Metabolic disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D40.00",
+            "titulo": {
+                "es": "Hipotiroidismo tras ablación con yodo radiactivo",
+                "en": "Hypothyroidism postradioactive iodine ablation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D40.0Y",
+            "titulo": {
+                "es": "Otro hipotiroidismo tras radiación especificado",
+                "en": "Other specified postirradation hypothyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D40.0Z",
+            "titulo": {
+                "es": "Hipotiroidismo tras radiación, sin especificación",
+                "en": "Postirradation hypothyroidism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D40.Y",
+            "titulo": {
+                "es": "Otro hipotiroidismo especificado tras un procedimiento",
+                "en": "Other specified postprocedural hypothyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D40.Z",
+            "titulo": {
+                "es": "Hipotiroidismo tras un procedimiento, sin especificación",
+                "en": "Postprocedural hypothyroidism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D41",
+            "titulo": {
+                "es": "Hipoinsulinemia tras un procedimiento",
+                "en": "Postprocedural hypoinsulinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D42",
+            "titulo": {
+                "es": "Hipoparatiroidismo tras un procedimiento",
+                "en": "Postprocedural hypoparathyroidism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D43",
+            "titulo": {
+                "es": "Hipopituitarismo tras un procedimiento",
+                "en": "Postprocedural hypopituitarism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D44",
+            "titulo": {
+                "es": "Insuficiencia ovárica tras un procedimiento",
+                "en": "Postprocedural ovarian failure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D45",
+            "titulo": {
+                "es": "Hipofunción testicular tras un procedimiento",
+                "en": "Postprocedural testicular hypofunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "5D46",
+            "titulo": {
+                "es": "Hipofunción corticosuprarrenal tras un procedimiento",
+                "en": "Postprocedural adrenocortical hypofunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

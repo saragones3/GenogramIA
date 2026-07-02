@@ -1,0 +1,23 @@
+name: Deploy diseases data
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'diseases/**'
+
+jobs:
+  deploy-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy Data to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_GENOGRAMIA }}
+          channelId: live
+          target: data
+          projectId: genogramia

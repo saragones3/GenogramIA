@@ -1,0 +1,1990 @@
+{
+    "codigo": "03",
+    "titulo": {
+        "es": "Enfermedades de la sangre o de los órganos hematopoyéticos",
+        "en": "Diseases of the blood or blood-forming organs"
+    },
+    "subcategorias": [
+        {
+            "codigo": "3A00.01",
+            "titulo": {
+                "es": "Anemia posthemorrágica crónica",
+                "en": "Chronic posthaemorrhagic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A00.0Z",
+            "titulo": {
+                "es": "Anemia ferropénica adquirida hemorrágica, sin especificación",
+                "en": "Acquired iron deficiency anaemia due to blood loss, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A00.1",
+            "titulo": {
+                "es": "Anemia ferropénica adquirida por ingesta escasa",
+                "en": "Acquired iron deficiency anaemia due to low intake"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A00.2",
+            "titulo": {
+                "es": "Anemia ferropénica adquirida por disminución de la absorción",
+                "en": "Acquired iron deficiency anaemia due to decreased absorption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A00.3",
+            "titulo": {
+                "es": "Anemia ferropénica adquirida por aumento de la demanda",
+                "en": "Acquired iron deficiency anaemia due to increased requirement"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A00.Y",
+            "titulo": {
+                "es": "Otra anemia ferropénica especificada",
+                "en": "Other specified iron deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A00.Z",
+            "titulo": {
+                "es": "Anemia ferropénica, sin especificación",
+                "en": "Iron deficiency anaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.0",
+            "titulo": {
+                "es": "Anemia hereditaria por deficiencia de vitamina B12",
+                "en": "Hereditary vitamin B12 deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.1",
+            "titulo": {
+                "es": "Anemia neonatal por deficiencia de vitamina B12",
+                "en": "Neonatal vitamin B12 deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.2",
+            "titulo": {
+                "es": "Anemia por deficiencia de vitamina B12 debida a baja ingesta",
+                "en": "Vitamin B12 deficiency anaemia due to low intake"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.30",
+            "titulo": {
+                "es": "Anemia perniciosa",
+                "en": "Pernicious anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.3Y",
+            "titulo": {
+                "es": "Otra anemia por deficiencia de vitamina B12 especificada debida a deficiencia del factor intrínseco",
+                "en": "Other specified vitamin B12 deficiency anaemia due to intrinsic factor deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.3Z",
+            "titulo": {
+                "es": "Anemia por deficiencia de vitamina B12 debida a deficiencia del factor intrínseco, sin especificación",
+                "en": "Vitamin B12 deficiency anaemia due to intrinsic factor deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.4",
+            "titulo": {
+                "es": "Anemia por deficiencia de vitamina B12 debida a enfermedad intestinal",
+                "en": "Vitamin B12 deficiency anaemia due to intestinal disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.5",
+            "titulo": {
+                "es": "Anemia por deficiencia de vitamina B12 provocada por medicamentos",
+                "en": "Drug-induced vitamin B12 deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.Y",
+            "titulo": {
+                "es": "Otra anemia megaloblástica especificada por deficiencia de vitamina B12",
+                "en": "Other specified megaloblastic anaemia due to vitamin B12 deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A01.Z",
+            "titulo": {
+                "es": "Anemia megaloblástica por deficiencia de vitamina B12, sin especificación",
+                "en": "Megaloblastic anaemia due to vitamin B12 deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A02.0",
+            "titulo": {
+                "es": "Anemia hereditaria por deficiencia de folatos",
+                "en": "Hereditary folate deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A02.1",
+            "titulo": {
+                "es": "Anemia por deficiencia de folatos debida a baja ingesta",
+                "en": "Folate deficiency anaemia due to low intake"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A02.2",
+            "titulo": {
+                "es": "Anemia por deficiencia de folato debida a un aumento de la demanda",
+                "en": "Folate deficiency anaemia due to increased requirements"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A02.3",
+            "titulo": {
+                "es": "Anemia por deficiencia de folatos debida a disminución de la absorción intestinal",
+                "en": "Folate deficiency anaemia due to decreased intestinal absorption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A02.4",
+            "titulo": {
+                "es": "Anemia por deficiencia de folatos inducida por drogas",
+                "en": "Drug-induced folate deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A02.Y",
+            "titulo": {
+                "es": "Otra anemia especificada por deficiencia de folato",
+                "en": "Other specified folate deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A02.Z",
+            "titulo": {
+                "es": "Anemia por deficiencia de folato, sin especificación",
+                "en": "Folate deficiency anaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.0",
+            "titulo": {
+                "es": "Aciduria orótica hereditaria",
+                "en": "Hereditary orotic aciduria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.1",
+            "titulo": {
+                "es": "Anemia por deficiencia de proteínas",
+                "en": "Protein deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.2",
+            "titulo": {
+                "es": "Anemia escorbútica",
+                "en": "Scorbutic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.3",
+            "titulo": {
+                "es": "Anemia por deficiencia de cobre",
+                "en": "Copper deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.40",
+            "titulo": {
+                "es": "Anemia adquirida por deficiencia de piridoxina",
+                "en": "Acquired pyridoxine deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.41",
+            "titulo": {
+                "es": "Anemia adquirida por deficiencia de riboflavina",
+                "en": "Acquired riboflavin deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.42",
+            "titulo": {
+                "es": "Anemia adquirida por deficiencia de tiamina",
+                "en": "Acquired thiamine deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.4Y",
+            "titulo": {
+                "es": "Otra anemia adquirida especificada por deficiencia de vitamina B",
+                "en": "Other specified acquired other vitamin B deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.5",
+            "titulo": {
+                "es": "Anemia adquirida por deficiencia de vitamina A",
+                "en": "Acquired vitamin A deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.6",
+            "titulo": {
+                "es": "Anemia adquirida por deficiencia de vitamina E",
+                "en": "Acquired vitamin E deficiency anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A03.Y",
+            "titulo": {
+                "es": "Otras anemias especificadas nutricionales o metabólicas",
+                "en": "Other and unspecified nutritional or metabolic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A0Z",
+            "titulo": {
+                "es": "Anemias nutricionales o metabólicas, sin especificación",
+                "en": "Nutritional or metabolic anaemias, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A10.00",
+            "titulo": {
+                "es": "Anemia hemolítica por deficiencia de glucosa-6-fosfato-deshidrogenasa",
+                "en": "Haemolytic anaemia due to glucose-6-phosphate dehydrogenase deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A10.0Y",
+            "titulo": {
+                "es": "Otras anemias hemolíticas especificadas por alteración de la vía hexosa-monofosfato o del metabolismo del glutatión",
+                "en": "Other specified haemolytic anaemias due to hexose monophosphate shunt or glutathione metabolism anomalies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A10.0Z",
+            "titulo": {
+                "es": "Anemias hemolíticas por alteración de la vía hexosa-monofosfato o del metabolismo del glutatión, sin especificación",
+                "en": "Haemolytic anaemias due to hexose monophosphate shunt or glutathione metabolism anomalies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A10.1",
+            "titulo": {
+                "es": "Anemia hemolítica por exceso de adenosina-desaminasa",
+                "en": "Haemolytic anaemia due to adenosine deaminase excess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A10.2",
+            "titulo": {
+                "es": "Eliptocitosis hereditaria",
+                "en": "Hereditary elliptocytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A10.3",
+            "titulo": {
+                "es": "Seudohipercalemia familiar",
+                "en": "Familial pseudohyperkalaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A10.Y",
+            "titulo": {
+                "es": "Otra anemia hemolítica hereditaria especificada",
+                "en": "Other specified hereditary haemolytic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A10.Z",
+            "titulo": {
+                "es": "Anemia hemolítica hereditaria, sin especificación",
+                "en": "Hereditary haemolytic anaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A1Y",
+            "titulo": {
+                "es": "Otra anemia hemolítica congénita especificada",
+                "en": "Other specified congenital haemolytic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A20.0",
+            "titulo": {
+                "es": "Anemia hemolítica autoinmunitaria, tipo caliente",
+                "en": "Autoimmune haemolytic anaemia, warm type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A20.1",
+            "titulo": {
+                "es": "Anemia hemolítica autoinmunitaria, tipo frío",
+                "en": "Autoimmune haemolytic anaemia, cold type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A20.2",
+            "titulo": {
+                "es": "Anemia hemolítica autoinmunitaria de tipo mixto (frío y caliente)",
+                "en": "Autoimmune haemolytic anaemia, mixed type, cold and warm"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A20.3",
+            "titulo": {
+                "es": "Hemoglobinuria paroxística por frío",
+                "en": "Paroxysmal cold haemoglobinuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A20.4",
+            "titulo": {
+                "es": "Anemia hemolítica aloinmunitaria",
+                "en": "Alloimmune haemolytic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A20.5",
+            "titulo": {
+                "es": "Síndrome de Evans",
+                "en": "Evans syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A20.Y",
+            "titulo": {
+                "es": "Otra anemia hemolítica adquirida inmunitaria especificada",
+                "en": "Other specified acquired haemolytic anaemia, immune"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A20.Z",
+            "titulo": {
+                "es": "Anemia hemolítica adquirida, inmunitaria, sin especificación",
+                "en": "Acquired haemolytic anaemia, immune, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A21.0",
+            "titulo": {
+                "es": "Hemoglobinuria paroxística nocturna",
+                "en": "Paroxysmal nocturnal haemoglobinuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A21.1",
+            "titulo": {
+                "es": "Anemia hemolítica microangiopática",
+                "en": "Microangiopathic haemolytic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A21.2",
+            "titulo": {
+                "es": "Síndrome urémico hemolítico",
+                "en": "Haemolytic uraemic syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A21.Y",
+            "titulo": {
+                "es": "Otra anemia hemolítica adquirida especificada, no inmunitaria",
+                "en": "Other specified acquired haemolytic anaemia, non-immune"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A21.Z",
+            "titulo": {
+                "es": "Anemia hemolítica adquirida, no inmunitaria, sin especificación",
+                "en": "Acquired haemolytic anaemia, non-immune, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A2Z",
+            "titulo": {
+                "es": "Anemia hemolítica adquirida, sin especificación",
+                "en": "Acquired haemolytic anaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A4Z",
+            "titulo": {
+                "es": "Anemias hemolíticas, sin especificación",
+                "en": "Haemolytic anaemias, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.00",
+            "titulo": {
+                "es": "Talasemias alfa leves",
+                "en": "Mild alpha thalassaemia diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.01",
+            "titulo": {
+                "es": "Variantes talasémicas de la cadena alfa",
+                "en": "Thalassaemic alpha-chain variants"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.02",
+            "titulo": {
+                "es": "Enfermedad por hemoglobina H (– α/– – incluido)",
+                "en": "Haemoglobin H disease (– α/– – included)"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.03",
+            "titulo": {
+                "es": "Síndrome fetal de hemoglobina de Bart",
+                "en": "Hemoglobin Bart's fetalis syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.0Y",
+            "titulo": {
+                "es": "Otra talasemia alfa especificada",
+                "en": "Other specified alpha thalassaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.0Z",
+            "titulo": {
+                "es": "Talasemia alfa, sin especificación",
+                "en": "Alpha thalassaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.1",
+            "titulo": {
+                "es": "Síndromes relacionados con la talasemia alfa",
+                "en": "Alpha thalassaemia related syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.2",
+            "titulo": {
+                "es": "Talasemia beta",
+                "en": "Beta thalassaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.3",
+            "titulo": {
+                "es": "Talasemia delta, delta-beta o gamma-delta-beta",
+                "en": "Delta, delta-beta or gamma-delta-beta thalassaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.4",
+            "titulo": {
+                "es": "Persistencia hereditaria de hemoglobina fetal",
+                "en": "Hereditary persistence of fetal haemoglobin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.Y",
+            "titulo": {
+                "es": "Otras talasemias especificadas",
+                "en": "Other specified thalassaemias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A50.Z",
+            "titulo": {
+                "es": "Talasemias, sin especificación",
+                "en": "Thalassaemias, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.0",
+            "titulo": {
+                "es": "Rasgo de células falciformes",
+                "en": "Sickle cell trait"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.1",
+            "titulo": {
+                "es": "Anemia de células falciformes sin crisis",
+                "en": "Sickle cell disease without crisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.2",
+            "titulo": {
+                "es": "Anemia de células falciformes con crisis",
+                "en": "Sickle cell disease with crisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.3",
+            "titulo": {
+                "es": "Trastornos drepanocíticos heterocigóticos compuestos sin crisis",
+                "en": "Compound heterozygous sickling disorders without crisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.4",
+            "titulo": {
+                "es": "Trastornos drepanocíticos heterocigóticos compuestos con crisis",
+                "en": "Compound heterozygous sickling disorders with crisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.5",
+            "titulo": {
+                "es": "Hemoglobinopatía C",
+                "en": "Haemoglobin C disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.6",
+            "titulo": {
+                "es": "Hemoglobinopatía D",
+                "en": "Haemoglobin D disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.7",
+            "titulo": {
+                "es": "Hemoglobina de alta afinidad",
+                "en": "High affinity haemoglobin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.8",
+            "titulo": {
+                "es": "Hemoglobina de baja afinidad",
+                "en": "Low affinity haemoglobin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.9",
+            "titulo": {
+                "es": "Hemoglobinopatía O",
+                "en": "Haemoglobin O disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.A",
+            "titulo": {
+                "es": "Hemoglobinopatía E",
+                "en": "Haemoglobin E disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.B",
+            "titulo": {
+                "es": "Heterocigosis compuesta de hemoglobina C y talasemia beta",
+                "en": "Haemoglobin C/beta thalassaemia compound heterozygosity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.Y",
+            "titulo": {
+                "es": "Otros trastornos drepanocíticos o hemoglobinopatías especificados",
+                "en": "Other specified sickle cell disorders or other haemoglobinopathies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A51.Z",
+            "titulo": {
+                "es": "Trastornos drepanocíticos u otras hemoglobinopatías, sin especificación",
+                "en": "Sickle cell disorders or other haemoglobinopathies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A60.0",
+            "titulo": {
+                "es": "Aplasia pura congénita no hereditaria de la serie roja",
+                "en": "Congenital non-inherited pure red cell aplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A60.1",
+            "titulo": {
+                "es": "Aplasia pura hereditaria de la serie roja",
+                "en": "Hereditary pure red cell aplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A60.Z",
+            "titulo": {
+                "es": "Aplasia pura congénita de la serie roja, sin especificación",
+                "en": "Congenital pure red cell aplasia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A61.0",
+            "titulo": {
+                "es": "Aplasia pura adquirida aguda de la serie roja",
+                "en": "Acute acquired pure red cell aplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A61.1",
+            "titulo": {
+                "es": "Aplasia pura adquirida crónica de la serie roja",
+                "en": "Chronic acquired pure red cell aplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A61.Y",
+            "titulo": {
+                "es": "Otra aplasia pura adquirida especificada de la serie roja",
+                "en": "Other specified acquired pure red cell aplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A61.Z",
+            "titulo": {
+                "es": "Aplasia pura adquirida de la serie roja, sin especificación",
+                "en": "Acquired pure red cell aplasia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A6Z",
+            "titulo": {
+                "es": "Aplasia pura de la serie roja, sin especificación",
+                "en": "Pure red cell aplasia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A70.0",
+            "titulo": {
+                "es": "Anemia aplásica congénita",
+                "en": "Congenital aplastic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A70.10",
+            "titulo": {
+                "es": "Anemia aplástica provocada por medicamentos",
+                "en": "Drug-induced aplastic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A70.11",
+            "titulo": {
+                "es": "Anemia aplásica por otros agentes externos",
+                "en": "Aplastic anaemia due to other external agents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A70.12",
+            "titulo": {
+                "es": "Anemia aplásica idiopática",
+                "en": "Idiopathic aplastic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A70.1Y",
+            "titulo": {
+                "es": "Otras anemias aplásicas adquiridas especificadas",
+                "en": "Other specified acquired aplastic anaemias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A70.1Z",
+            "titulo": {
+                "es": "Anemias aplásicas adquiridas, sin especificación",
+                "en": "Acquired aplastic anaemias, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A70.Z",
+            "titulo": {
+                "es": "Anemia aplásica, sin especificación",
+                "en": "Aplastic anaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A71.0",
+            "titulo": {
+                "es": "Anemia en enfermedad neoplásica",
+                "en": "Anaemia in neoplastic disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A71.1",
+            "titulo": {
+                "es": "Anemia en enfermedades infecciosas crónicas",
+                "en": "Anaemia in chronic infectious diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A71.2",
+            "titulo": {
+                "es": "Anemia en enfermedad renal crónica",
+                "en": "Anaemia in chronic kidney disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A71.Y",
+            "titulo": {
+                "es": "Otra anemia especificada debida a una enfermedad crónica",
+                "en": "Anaemia due to other specified chronic disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A71.Z",
+            "titulo": {
+                "es": "Anemia debida a una enfermedad crónica, sin especificación",
+                "en": "Anaemia due to chronic disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A72.00",
+            "titulo": {
+                "es": "Anemias sideroblásticas hereditarias",
+                "en": "Hereditary sideroblastic anaemias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A72.01",
+            "titulo": {
+                "es": "Anemia sideroblástica sindrómica hereditaria",
+                "en": "Hereditary syndromic sideroblastic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A72.0Y",
+            "titulo": {
+                "es": "Otras anemias sideroblásticas congénitas especificadas",
+                "en": "Other specified congenital sideroblastic anaemias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A72.0Z",
+            "titulo": {
+                "es": "Anemias sideroblásticas congénitas, sin especificación",
+                "en": "Congenital sideroblastic anaemias, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A72.1",
+            "titulo": {
+                "es": "Anemias sideroblásticas adquiridas",
+                "en": "Acquired sideroblastic anaemias"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A72.Z",
+            "titulo": {
+                "es": "Anemia sideroblástica, sin especificación",
+                "en": "Sideroblastic anaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A73",
+            "titulo": {
+                "es": "Anemia diseritropoyética congénita",
+                "en": "Congenital dyserythropoietic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A80.0",
+            "titulo": {
+                "es": "Eritrocitosis hereditaria primaria",
+                "en": "Primary inherited erythrocytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A80.Y",
+            "titulo": {
+                "es": "Otra policitemia congénita especificada",
+                "en": "Other specified congenital polycythaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A80.Z",
+            "titulo": {
+                "es": "Policitemia congénita, sin especificación",
+                "en": "Congenital polycythaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A81.0",
+            "titulo": {
+                "es": "Policitemia por hipoxia (incluida hipoxia de las alturas)",
+                "en": "Polycythaemia due to hypoxia, including high altitude"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A81.1",
+            "titulo": {
+                "es": "Policitemia por sobretransfusión o autotransfusión de sangre",
+                "en": "Polycythaemia due to over-transfusion or blood doping"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A81.2",
+            "titulo": {
+                "es": "Policitemia relativa",
+                "en": "Relative polycythaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A81.Y",
+            "titulo": {
+                "es": "Otra policitemia adquirida especificada",
+                "en": "Other specified acquired polycythaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A81.Z",
+            "titulo": {
+                "es": "Policitemia adquirida, sin especificación",
+                "en": "Acquired polycythaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A8Z",
+            "titulo": {
+                "es": "Policitemia, sin especificación",
+                "en": "Polycythaemia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A90",
+            "titulo": {
+                "es": "Anemia debida a enfermedad aguda",
+                "en": "Anaemia due to acute disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A91",
+            "titulo": {
+                "es": "Metahemoglobinemia congénita",
+                "en": "Congenital methaemoglobinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A92",
+            "titulo": {
+                "es": "Metahemoglobinemia hereditaria",
+                "en": "Hereditary methaemoglobinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A93",
+            "titulo": {
+                "es": "Metahemoglobinemia adquirida",
+                "en": "Acquired methaemoglobinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A94",
+            "titulo": {
+                "es": "Anemia posthemorrágica aguda",
+                "en": "Acute posthaemorrhagic anaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A9Y",
+            "titulo": {
+                "es": "Otras anemias o trastornos especificados de los eritrocitos",
+                "en": "Other specified anaemias or erythrocyte disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3A9Z",
+            "titulo": {
+                "es": "Anemias u otros trastornos de los eritocitos, sin especificación",
+                "en": "Anaemias or other erythrocyte disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B10.0",
+            "titulo": {
+                "es": "Hemofilia A",
+                "en": "Haemophilia A"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B10.1",
+            "titulo": {
+                "es": "Deficiencia hereditaria del factor VIII con inhibidores anti-FVIII",
+                "en": "Hereditary factor VIII deficiency with anti-factor VIII inhibitor"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B10.Y",
+            "titulo": {
+                "es": "Otra deficiencia hereditaria especificada del factor VIII",
+                "en": "Other specified hereditary factor VIII deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B10.Z",
+            "titulo": {
+                "es": "Deficiencia hereditaria del factor VIII, sin especificación",
+                "en": "Hereditary factor VIII deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B11.0",
+            "titulo": {
+                "es": "Hemofilia B",
+                "en": "Haemophilia B"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B11.Y",
+            "titulo": {
+                "es": "Otra deficiencia hereditaria especificada del factor IX",
+                "en": "Other specified hereditary factor IX deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B11.Z",
+            "titulo": {
+                "es": "Deficiencia hereditaria del factor IX, sin especificación",
+                "en": "Hereditary factor IX deficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B12",
+            "titulo": {
+                "es": "Enfermedad de Von Willebrand",
+                "en": "Von Willebrand disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B13",
+            "titulo": {
+                "es": "Hemofilia C",
+                "en": "Haemophilia C"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B14.0",
+            "titulo": {
+                "es": "Deficiencia hereditaria del factor I",
+                "en": "Hereditary deficiency of factor I"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B14.1",
+            "titulo": {
+                "es": "Deficiencia hereditaria del factor X",
+                "en": "Hereditary factor X deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B14.2",
+            "titulo": {
+                "es": "Deficiencia combinada de factores de la coagulación dependientes de la vitamina K",
+                "en": "Combined deficiency of vitamin K-dependent clotting factors"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B14.Z",
+            "titulo": {
+                "es": "Otra deficiencia hereditaria de un factor de la coagulación con diátesis hemorrágica, sin especificación",
+                "en": "Other inherited coagulation factor deficiency with bleeding tendency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B15",
+            "titulo": {
+                "es": "Deficiencia hereditaria de un factor de la coagulación sin diátesis hemorrágica",
+                "en": "Inherited coagulation factor deficiency without bleeding tendency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B1Z",
+            "titulo": {
+                "es": "Trastorno hemorrágico congénito o constitucional, sin especificación",
+                "en": "Congenital or constitutional haemorrhagic condition, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B20",
+            "titulo": {
+                "es": "Coagulación intravascular diseminada",
+                "en": "Disseminated intravascular coagulation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B21.0",
+            "titulo": {
+                "es": "Hemorragia por otro inhibidor de la trombina distinto de la heparina",
+                "en": "Haemorrhage due to thrombin inhibitor other than heparin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B21.1",
+            "titulo": {
+                "es": "Hemorragia por inhibidor del factor Xa",
+                "en": "Haemorrhage due to factor Xa inhibitor"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B21.Y",
+            "titulo": {
+                "es": "Trastorno hemorrágico debido a otros anticoagulantes circulantes especificados o factores de la coagulación",
+                "en": "Haemorrhagic disorder due to other specified circulating anticoagulants or coagulation factors"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B21.Z",
+            "titulo": {
+                "es": "Trastorno hemorrágico por anticoagulantes circulantes o factores de la coagulación, no especificados",
+                "en": "Haemorrhagic disorder due to unspecified circulating anticoagulants or coagulation factors"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B22",
+            "titulo": {
+                "es": "Hemofilia adquirida",
+                "en": "Acquired haemophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B2Y",
+            "titulo": {
+                "es": "Otras enfermedades hemorrágicas especificadas por defecto adquirido de un factor de la coagulación",
+                "en": "Other specified haemorrhagic diseases due to acquired coagulation factor defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B4Z",
+            "titulo": {
+                "es": "Defectos de la coagulación, sin especificación",
+                "en": "Coagulation defects, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B50.0",
+            "titulo": {
+                "es": "Deficiencia congénita de antiplasmina alfa-2",
+                "en": "Congenital alpha-2 antiplasmin deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B50.1",
+            "titulo": {
+                "es": "Deficiencia congénita de inhibidor del activador del plasminógeno de tipo 1",
+                "en": "Congenital plasminogen activator inhibitor type 1 deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B50.Y",
+            "titulo": {
+                "es": "Otros defectos hereditarios especificados de la fibrinólisis",
+                "en": "Other specified inherited fibrinolytic defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B50.Z",
+            "titulo": {
+                "es": "Defectos hereditarios de la fibrinólisis, sin especificación",
+                "en": "Inherited fibrinolytic defects, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B51",
+            "titulo": {
+                "es": "Defectos adquiridos de la fibrinólisis",
+                "en": "Acquired fibrinolytic defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B60.0",
+            "titulo": {
+                "es": "Púrpura vascular hereditaria",
+                "en": "Hereditary vascular purpura"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B60.1",
+            "titulo": {
+                "es": "Púrpura vascular adquirida",
+                "en": "Acquired vascular purpura"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B61.00",
+            "titulo": {
+                "es": "Hiperhomocisteinemia",
+                "en": "Hyperhomocysteinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B61.0Y",
+            "titulo": {
+                "es": "Otra trombofilia hereditaria especificada",
+                "en": "Other specified hereditary thrombophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B61.0Z",
+            "titulo": {
+                "es": "Trombofilia hereditaria, sin especificación",
+                "en": "Hereditary thrombophilia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B61.1",
+            "titulo": {
+                "es": "Trombofilia adquirida",
+                "en": "Acquired thrombophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B61.Y",
+            "titulo": {
+                "es": "Otra trombofilia especificada",
+                "en": "Other specified thrombophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B61.Z",
+            "titulo": {
+                "es": "Trombofilia, sin especificación",
+                "en": "Thrombophilia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.00",
+            "titulo": {
+                "es": "Enfermedades de alfa-gránulos",
+                "en": "Alpha-granule diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.01",
+            "titulo": {
+                "es": "Trastorno de plaquetas gigantes heredado",
+                "en": "Inherited giant platelet disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.0Y",
+            "titulo": {
+                "es": "Otros defectos plaquetarios cualitativos hereditarios especificados",
+                "en": "Other specified inherited qualitative platelet defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.0Z",
+            "titulo": {
+                "es": "Defectos plaquetarios cualitativos hereditarios, sin especificación",
+                "en": "Inherited qualitative platelet defects, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.1",
+            "titulo": {
+                "es": "Diátesis hemorrágica por deficiencia en la síntesis de tromboxanos",
+                "en": "Bleeding diathesis due to thromboxane synthesis deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.2",
+            "titulo": {
+                "es": "Trombocitopenia aislada",
+                "en": "Isolated thrombocytopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.3",
+            "titulo": {
+                "es": "Enfermedad de gránulos densos",
+                "en": "Dense granule disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.4",
+            "titulo": {
+                "es": "Deficiencia de gránulos densos alfa-delta",
+                "en": "Alpha-delta dense granule deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.Y",
+            "titulo": {
+                "es": "Otros defectos cualitativos especificados de las plaquetas",
+                "en": "Other specified qualitative platelet defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B62.Z",
+            "titulo": {
+                "es": "Defectos cualitativos de las plaquetas, sin especificación",
+                "en": "Qualitative platelet defects, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B63.0",
+            "titulo": {
+                "es": "Trombocitosis congénita",
+                "en": "Congenital thrombocytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B63.10",
+            "titulo": {
+                "es": "Trombocitosis secundaria",
+                "en": "Secondary thrombocytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B63.1Y",
+            "titulo": {
+                "es": "Otra trombocitosis adquirida especificada",
+                "en": "Other specified acquired thrombocytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B63.1Z",
+            "titulo": {
+                "es": "Trombocitosis adquirida, sin especificación",
+                "en": "Acquired thrombocytosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B63.Y",
+            "titulo": {
+                "es": "Otra trombocitosis especificada",
+                "en": "Other specified thrombocytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B63.Z",
+            "titulo": {
+                "es": "Trombocitosis, sin especificación",
+                "en": "Thrombocytosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.00",
+            "titulo": {
+                "es": "Trombocitopenia congénita no hereditaria",
+                "en": "Congenital non-inherited thrombocytopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.01",
+            "titulo": {
+                "es": "Trombocitopenia hereditaria",
+                "en": "Hereditary thrombocytopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.0Z",
+            "titulo": {
+                "es": "Trombocitopenia congénita, sin especificación",
+                "en": "Congenital thrombocytopenia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.10",
+            "titulo": {
+                "es": "Púrpura trombocitopénica inmunitaria",
+                "en": "Immune thrombocytopenic purpura"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.11",
+            "titulo": {
+                "es": "Púrpura trombocitopénica secundaria",
+                "en": "Secondary thrombocytopenic purpura"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.12",
+            "titulo": {
+                "es": "Púrpura trombocitopénica inducida por medicamentos",
+                "en": "Drug-induced thrombocytopenic purpura"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.13",
+            "titulo": {
+                "es": "Trombocitopenia aloinmunitaria",
+                "en": "Alloimmune thrombocytopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.14",
+            "titulo": {
+                "es": "Púrpura trombocitopénica trombótica",
+                "en": "Thrombotic thrombocytopenic purpura"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.1Y",
+            "titulo": {
+                "es": "Otra trombocitopenia adquirida especificada",
+                "en": "Other specified acquired thrombocytopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.1Z",
+            "titulo": {
+                "es": "Trombocitopenia adquirida, sin especificación",
+                "en": "Acquired thrombocytopenia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B64.Z",
+            "titulo": {
+                "es": "Trombocitopenia, sin especificación",
+                "en": "Thrombocytopenia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B65",
+            "titulo": {
+                "es": "Microangiopatía trombótica, no clasificada en otra parte",
+                "en": "Thrombotic microangiopathy, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B6Y",
+            "titulo": {
+                "es": "Otros defectos especificados de la coagulación, púrpura u otras enfermedades hemorrágicas o afecciones relacionadas",
+                "en": "Other specified coagulation defects, purpura or other haemorrhagic or related conditions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B6Z",
+            "titulo": {
+                "es": "Defectos de la coagulación, púrpura u otras enfermedades hemorrágicas o afecciones relacionadas, sin especificación",
+                "en": "Coagulation defects, purpura or other haemorrhagic or related conditions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B80.0",
+            "titulo": {
+                "es": "Esplenomegalia en las enfermedades por almacenamiento",
+                "en": "Splenomegaly in storage diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.0",
+            "titulo": {
+                "es": "Enfermedades seudotumorales del bazo",
+                "en": "Tumour-like conditions of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.1",
+            "titulo": {
+                "es": "Asplenia posquirúrgica",
+                "en": "Postsurgical asplenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.2",
+            "titulo": {
+                "es": "Atrofia del bazo",
+                "en": "Atrophy of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.3",
+            "titulo": {
+                "es": "Desgarro o rotura no traumáticos del bazo",
+                "en": "Nontraumatic laceration or rupture of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.4",
+            "titulo": {
+                "es": "Esplenosis",
+                "en": "Splenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.50",
+            "titulo": {
+                "es": "Seudoquiste esplénico",
+                "en": "Pseudocyst of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.51",
+            "titulo": {
+                "es": "Quiste esplénico epitelial",
+                "en": "Epithelial cyst of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.5Y",
+            "titulo": {
+                "es": "Otro quiste o seudoquiste esplénico especificado",
+                "en": "Other specified splenic cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.5Z",
+            "titulo": {
+                "es": "Quiste o seudoquiste esplénico, sin especificación",
+                "en": "Splenic cyst, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.6",
+            "titulo": {
+                "es": "Infarto del bazo",
+                "en": "Infarction of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.70",
+            "titulo": {
+                "es": "Esplenitis séptica aguda",
+                "en": "Acute septic splenitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.71",
+            "titulo": {
+                "es": "Absceso del bazo",
+                "en": "Abscess of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.7Y",
+            "titulo": {
+                "es": "Otra infección especificada del bazo",
+                "en": "Other specified infection of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.7Z",
+            "titulo": {
+                "es": "Infección del bazo, sin especificación",
+                "en": "Infection of spleen, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.8",
+            "titulo": {
+                "es": "Torsión del bazo",
+                "en": "Torsion of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.9",
+            "titulo": {
+                "es": "Fibrosis del bazo",
+                "en": "Fibrosis of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.A",
+            "titulo": {
+                "es": "Periesplenitis",
+                "en": "Perisplenitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.B",
+            "titulo": {
+                "es": "Hiperesplenismo",
+                "en": "Hypersplenism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.C",
+            "titulo": {
+                "es": "Esplenomegalia congestiva crónica",
+                "en": "Chronic congestive splenomegaly"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.Y",
+            "titulo": {
+                "es": "Otras enfermedades adquiridas especificadas del bazo",
+                "en": "Other specified acquired disorders of spleen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B81.Z",
+            "titulo": {
+                "es": "Enfermedades adquiridas del bazo, sin especificación",
+                "en": "Acquired disorders of spleen, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3B8Z",
+            "titulo": {
+                "es": "Enfermedades del bazo, sin especificación",
+                "en": "Diseases of spleen, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3C0Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas de la sangre o de los órganos hematopoyéticos",
+                "en": "Other specified diseases of the blood or blood-forming organs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "3C0Z",
+            "titulo": {
+                "es": "Enfermedades de la sangre o de los órganos hematopoyéticos, sin especificación",
+                "en": "Diseases of the blood or blood-forming organs, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

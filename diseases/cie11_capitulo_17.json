@@ -1,0 +1,523 @@
+{
+    "codigo": "17",
+    "titulo": {
+        "es": "Condiciones relacionadas con la salud sexual",
+        "en": "Conditions related to sexual health"
+    },
+    "subcategorias": [
+        {
+            "codigo": "HA00.0",
+            "titulo": {
+                "es": "Disfunción por deseo sexual hipoactivo, de toda la vida, generalizada",
+                "en": "Hypoactive sexual desire dysfunction, lifelong, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA00.1",
+            "titulo": {
+                "es": "Disfunción por deseo sexual hipoactivo, de toda la vida, situacional",
+                "en": "Hypoactive sexual desire dysfunction, lifelong, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA00.2",
+            "titulo": {
+                "es": "Disfunción por deseo sexual hipoactivo, adquirida, generalizada",
+                "en": "Hypoactive sexual desire dysfunction, acquired, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA00.3",
+            "titulo": {
+                "es": "Disfunción por deseo sexual hipoactivo, adquirida, situacional",
+                "en": "Hypoactive sexual desire dysfunction, acquired, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA00.Z",
+            "titulo": {
+                "es": "Disfunción por deseo sexual hipoactivo, sin especificación",
+                "en": "Hypoactive sexual desire dysfunction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.00",
+            "titulo": {
+                "es": "Disfunción de la excitación sexual femenina, de toda la vida, generalizada",
+                "en": "Female sexual arousal dysfunction, lifelong, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.01",
+            "titulo": {
+                "es": "Disfunción de la excitación sexual femenina, de toda la vida, situacional",
+                "en": "Female sexual arousal dysfunction, lifelong, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.02",
+            "titulo": {
+                "es": "Disfunción de la excitación sexual femenina, adquirida, generalizada",
+                "en": "Female sexual arousal dysfunction, acquired, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.03",
+            "titulo": {
+                "es": "Disfunción de la excitación sexual femenina, adquirida, situacional",
+                "en": "Female sexual arousal dysfunction, acquired, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.0Z",
+            "titulo": {
+                "es": "Disfunción de la excitación sexual femenina, sin especificación",
+                "en": "Female sexual arousal dysfunction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.10",
+            "titulo": {
+                "es": "Disfunción eréctil masculina, de toda la vida, generalizada",
+                "en": "Male erectile dysfunction, lifelong, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.11",
+            "titulo": {
+                "es": "Disfunción eréctil masculina, de toda la vida, situacional",
+                "en": "Male erectile dysfunction, lifelong, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.12",
+            "titulo": {
+                "es": "Disfunción eréctil masculina, adquirida, generalizada",
+                "en": "Male erectile dysfunction, acquired, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.13",
+            "titulo": {
+                "es": "Disfunción eréctil masculina, adquirida, situacional",
+                "en": "Male erectile dysfunction, acquired, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.1Z",
+            "titulo": {
+                "es": "Disfunción eréctil masculina, sin especificación",
+                "en": "Male erectile dysfunction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.Y",
+            "titulo": {
+                "es": "Otras disfunciones especificadas de la excitación sexual",
+                "en": "Other specified sexual arousal dysfunctions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA01.Z",
+            "titulo": {
+                "es": "Disfunciones de la excitación sexual, sin especificación",
+                "en": "Sexual arousal dysfunctions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA02.00",
+            "titulo": {
+                "es": "Anorgasmia, de toda la vida, generalizada",
+                "en": "Anorgasmia, lifelong, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA02.01",
+            "titulo": {
+                "es": "Anorgasmia, de toda la vida, situacional",
+                "en": "Anorgasmia, lifelong, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA02.02",
+            "titulo": {
+                "es": "Anorgasmia, adquirida, generalizada",
+                "en": "Anorgasmia, acquired, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA02.03",
+            "titulo": {
+                "es": "Anorgasmia, adquirida, situacional",
+                "en": "Anorgasmia, acquired, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA02.0Z",
+            "titulo": {
+                "es": "Anorgasmia, no especificada",
+                "en": "Anorgasmia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA02.Y",
+            "titulo": {
+                "es": "Otras disfunciones orgásmicas especificadas",
+                "en": "Other specified orgasmic dysfunctions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA02.Z",
+            "titulo": {
+                "es": "Disfunciones orgásmicas, no especificadas",
+                "en": "Orgasmic dysfunctions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.00",
+            "titulo": {
+                "es": "Eyaculación precoz masculina, de toda la vida, generalizada",
+                "en": "Male early ejaculation, lifelong, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.01",
+            "titulo": {
+                "es": "Eyaculación precoz masculina, de toda la vida, situacional",
+                "en": "Male early ejaculation, lifelong, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.02",
+            "titulo": {
+                "es": "Eyaculación precoz masculina, adquirida, generalizada",
+                "en": "Male early ejaculation, acquired, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.03",
+            "titulo": {
+                "es": "Eyaculación precoz masculina, adquirida, situacional",
+                "en": "Male early ejaculation, acquired, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.0Z",
+            "titulo": {
+                "es": "Eyaculación precoz, sin especificación",
+                "en": "Male early ejaculation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.10",
+            "titulo": {
+                "es": "Eyaculación retardada masculina, de toda la vida, generalizada",
+                "en": "Male delayed ejaculation, lifelong, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.11",
+            "titulo": {
+                "es": "Eyaculación retardada masculina, de toda la vida, situacional",
+                "en": "Male delayed ejaculation, lifelong, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.12",
+            "titulo": {
+                "es": "Eyaculación retardada masculina, adquirida, generalizada",
+                "en": "Male delayed ejaculation, acquired, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.13",
+            "titulo": {
+                "es": "Eyaculación retardada masculina, adquirida, situacional",
+                "en": "Male delayed ejaculation, acquired, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.1Z",
+            "titulo": {
+                "es": "Eyaculación retardada masculina, sin especificación",
+                "en": "Male delayed ejaculation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.Y",
+            "titulo": {
+                "es": "Otras disfunciones eyaculatorias especificadas",
+                "en": "Other specified ejaculatory dysfunctions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA03.Z",
+            "titulo": {
+                "es": "Disfunciones eyaculatorias, sin especificación",
+                "en": "Ejaculatory dysfunctions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA0Y",
+            "titulo": {
+                "es": "Otras disfunciones sexuales especificadas",
+                "en": "Other specified sexual dysfunctions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA0Z",
+            "titulo": {
+                "es": "Disfunciones sexuales, sin especificación",
+                "en": "Sexual dysfunctions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA20.0",
+            "titulo": {
+                "es": "Trastorno sexual por dolor asociado a la penetración, de toda la vida, generalizado",
+                "en": "Sexual pain-penetration disorder, lifelong, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA20.1",
+            "titulo": {
+                "es": "Trastorno sexual por dolor asociado a la penetración, de toda la vida, situacional",
+                "en": "Sexual pain-penetration disorder, lifelong, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA20.2",
+            "titulo": {
+                "es": "Trastorno sexual por dolor asociado a la penetración, adquirido, generalizado",
+                "en": "Sexual pain-penetration disorder, acquired, generalised"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA20.3",
+            "titulo": {
+                "es": "Trastorno sexual por dolor asociado a la penetración, adquirido, situacional",
+                "en": "Sexual pain-penetration disorder, acquired, situational"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA20.Z",
+            "titulo": {
+                "es": "Trastorno sexual por dolor asociado a la penetración, sin especificación",
+                "en": "Sexual pain-penetration disorder, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA2Y",
+            "titulo": {
+                "es": "Otros trastornos sexuales por dolor especificados",
+                "en": "Other specified sexual pain disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA2Z",
+            "titulo": {
+                "es": "Trastornos sexuales por dolor, sin especificación",
+                "en": "Sexual pain disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA40.0",
+            "titulo": {
+                "es": "Consideraciones etiológicas asociadas con una afección médica, una lesión o los efectos de una intervención quirúrgica o radioterapia",
+                "en": "Aetiological considerations associated with a medical condition, injury, or the effects of surgery or radiation treatment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA40.1",
+            "titulo": {
+                "es": "Consideraciones etiológicas asociadas con factores psicológicos o de comportamiento, incluidos los trastornos mentales",
+                "en": "Aetiological considerations associated with psychological or behavioural factors, including mental disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA40.2",
+            "titulo": {
+                "es": "Consideraciones etiológicas asociadas con el consumo de medicamentos o sustancias psicoactivas",
+                "en": "Aetiological considerations associated with use of psychoactive substance or medication"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA40.3",
+            "titulo": {
+                "es": "Consideraciones etiológicas asociadas con la falta de conocimiento o experiencia",
+                "en": "Aetiological considerations associated with lack of knowledge or experience"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA40.4",
+            "titulo": {
+                "es": "Consideraciones etiológicas asociadas con factores de la relación de pareja",
+                "en": "Aetiological considerations associated with relationship factors"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA40.5",
+            "titulo": {
+                "es": "Consideraciones etiológicas asociadas con factores culturales",
+                "en": "Aetiological considerations associated with cultural factors"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA40.Y",
+            "titulo": {
+                "es": "Otras consideraciones etiológicas especificadas en las disfunciones sexuales y los trastornos sexuales por dolor",
+                "en": "Other specified aetiological considerations in sexual dysfunctions and sexual pain disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA60",
+            "titulo": {
+                "es": "Discordancia de género en la adolescencia o adultez",
+                "en": "Gender incongruence of adolescence or adulthood"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA61",
+            "titulo": {
+                "es": "Discordancia de género en la infancia",
+                "en": "Gender incongruence of childhood"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA6Z",
+            "titulo": {
+                "es": "Discordancia de género, sin especificación",
+                "en": "Gender incongruence, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA8Y",
+            "titulo": {
+                "es": "Otras condiciones especificadas relacionadas con la salud sexual",
+                "en": "Other specified conditions related to sexual health"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "HA8Z",
+            "titulo": {
+                "es": "Condiciones relacionadas con la salud sexual, sin especificación",
+                "en": "Conditions related to sexual health, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

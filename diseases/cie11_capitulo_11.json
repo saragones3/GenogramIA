@@ -1,0 +1,4411 @@
+{
+    "codigo": "11",
+    "titulo": {
+        "es": "Enfermedades del sistema circulatorio",
+        "en": "Diseases of the circulatory system"
+    },
+    "subcategorias": [
+        {
+            "codigo": "BA00.0",
+            "titulo": {
+                "es": "Hipertensión sistólica y diastólica mixta",
+                "en": "Combined diastolic and systolic hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA00.1",
+            "titulo": {
+                "es": "Hipertensión diastólica aislada",
+                "en": "Isolated diastolic hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA00.2",
+            "titulo": {
+                "es": "Hipertensión sistólica aislada",
+                "en": "Isolated systolic hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA00.Y",
+            "titulo": {
+                "es": "Otra hipertensión esencial especificada",
+                "en": "Other specified essential hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA00.Z",
+            "titulo": {
+                "es": "Hipertensión esencial, sin especificación",
+                "en": "Essential hypertension, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA01",
+            "titulo": {
+                "es": "Enfermedad cardíaca hipertensiva",
+                "en": "Hypertensive heart disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA02",
+            "titulo": {
+                "es": "Enfermedad renal hipertensiva",
+                "en": "Hypertensive renal disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA03",
+            "titulo": {
+                "es": "Crisis hipertensiva",
+                "en": "Hypertensive crisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA04.0",
+            "titulo": {
+                "es": "Hipertensión secundaria combinada diastólica y sistólica",
+                "en": "Combined diastolic and systolic secondary hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA04.1",
+            "titulo": {
+                "es": "Hipertensión diastólica secundaria aislada",
+                "en": "Isolated diastolic secondary hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA04.2",
+            "titulo": {
+                "es": "Hipertensión sistólica secundaria aislada",
+                "en": "Isolated systolic secondary hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA04.Y",
+            "titulo": {
+                "es": "Otra hipertension secundaria especificada",
+                "en": "Other specified secondary hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA04.Z",
+            "titulo": {
+                "es": "Hipertensión secundaria, sin especificación",
+                "en": "Secondary hypertension, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA20",
+            "titulo": {
+                "es": "Hipotensión idiopática",
+                "en": "Idiopathic hypotension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA21",
+            "titulo": {
+                "es": "Hipotensión ortostática",
+                "en": "Orthostatic hypotension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA2Y",
+            "titulo": {
+                "es": "Otra hipotensión especificada",
+                "en": "Other specified hypotension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA2Z",
+            "titulo": {
+                "es": "Hipotensión, sin especificación",
+                "en": "Hypotension, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA40.0",
+            "titulo": {
+                "es": "Angina inestable",
+                "en": "Unstable angina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA40.1",
+            "titulo": {
+                "es": "Angina estable",
+                "en": "Stable angina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA40.Y",
+            "titulo": {
+                "es": "Otra angina de pecho especificada",
+                "en": "Other specified angina pectoris"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA40.Z",
+            "titulo": {
+                "es": "Angina de pecho, sin especificación",
+                "en": "Angina pectoris, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA41.0",
+            "titulo": {
+                "es": "Infarto agudo de miocardio con elevación del segmento ST",
+                "en": "Acute ST elevation myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA41.1",
+            "titulo": {
+                "es": "Infarto agudo de miocardio sin elevación del segmento ST",
+                "en": "Acute non-ST elevation myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA41.Z",
+            "titulo": {
+                "es": "Infarto agudo del miocardio, sin especificación",
+                "en": "Acute myocardial infarction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA42.0",
+            "titulo": {
+                "es": "Infarto subsecuente del miocardio, Infarto del miocardio con elevación del segmento ST",
+                "en": "Subsequent myocardial infarction, ST elevation myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA42.1",
+            "titulo": {
+                "es": "Infarto subsecuente del miocardio, sin elevación del segmento ST",
+                "en": "Subsequent myocardial infarction, non-ST elevation myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA42.Z",
+            "titulo": {
+                "es": "Infarto del miocardio subsecuente, sin especificación",
+                "en": "Subsequent myocardial infarction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA43",
+            "titulo": {
+                "es": "Trombosis coronaria que no conduce a infarto del miocardio",
+                "en": "Coronary thrombosis not resulting in myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA4Z",
+            "titulo": {
+                "es": "Cardiopatía isquémica aguda, sin especificación",
+                "en": "Acute ischaemic heart disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA50",
+            "titulo": {
+                "es": "Infarto del miocardio antiguo",
+                "en": "Old myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA51.0",
+            "titulo": {
+                "es": "Cardiomiopatía dilatada por anomalía congénita de arteria coronaria",
+                "en": "Dilated cardiomyopathy due to congenital anomaly of coronary artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA51.Y",
+            "titulo": {
+                "es": "Otra cardiomiopatía isquémica especificada",
+                "en": "Other specified ischaemic cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA51.Z",
+            "titulo": {
+                "es": "Cardiomiopatía isquémica, sin especificación",
+                "en": "Ischaemic cardiomyopathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA52.0",
+            "titulo": {
+                "es": "Ateroesclerosis de arteria coronaria nativa",
+                "en": "Coronary atherosclerosis of native coronary artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA52.10",
+            "titulo": {
+                "es": "Ateroesclerosis coronaria de injerto de derivación autólogo arterial",
+                "en": "Coronary atherosclerosis of arterial autologous bypass graft"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA52.11",
+            "titulo": {
+                "es": "Ateroesclerosis coronaria de injerto de derivación autólogo venoso",
+                "en": "Coronary atherosclerosis of venous autologous bypass graft"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA52.1Z",
+            "titulo": {
+                "es": "Ateroesclerosis coronaria del injerto de derivación autólogo, sin especificación",
+                "en": "Coronary atherosclerosis of unspecified autologous bypass graft"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA52.2",
+            "titulo": {
+                "es": "Ateroesclerosis coronaria de injerto de derivación no autólogo",
+                "en": "Coronary atherosclerosis of non-autologous bypass graft"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA52.Z",
+            "titulo": {
+                "es": "Ateroesclerosis coronaria, sin especificación",
+                "en": "Coronary atherosclerosis, unspecified site"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA5Y",
+            "titulo": {
+                "es": "Otra cardiopatía isquémica crónica especificada",
+                "en": "Other specified chronic ischaemic heart disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA5Z",
+            "titulo": {
+                "es": "Cardiopatía isquémica crónica, sin especificación",
+                "en": "Chronic ischaemic heart disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.0",
+            "titulo": {
+                "es": "Síndrome de Dressler",
+                "en": "Dressler syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.1",
+            "titulo": {
+                "es": "Otra pericarditis como complicación en curso después de un infarto de miocardio",
+                "en": "Other pericarditis as current complication following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.2",
+            "titulo": {
+                "es": "Aneurisma ventricular como complicación en curso después de un infarto agudo de miocardio",
+                "en": "Ventricular aneurysm as current complication following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.3",
+            "titulo": {
+                "es": "Comunicación interventricular como complicación en curso después de un infarto agudo de miocardio",
+                "en": "Ventricular septal defect as current complication following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.4",
+            "titulo": {
+                "es": "Ruptura cardíaca como complicación en curso después de un infarto agudo de miocardio",
+                "en": "Cardiac rupture as current complication following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.5",
+            "titulo": {
+                "es": "Embolia pulmonar como complicación en curso después de un infarto agudo de miocardio",
+                "en": "Pulmonary embolism as current complication following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.6",
+            "titulo": {
+                "es": "Ruptura del músculo papilar o de las cuerdas tendinosas como complicación actual después de un infarto agudo de miocardio",
+                "en": "Rupture of papillary muscle or chordae tendineae as current complication following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.7",
+            "titulo": {
+                "es": "Trombo parietal como complicación actual después de un infarto agudo de miocardio",
+                "en": "Mural thrombus as current complication following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.8",
+            "titulo": {
+                "es": "Arritmia como complicación en curso después de un infarto agudo del miocardio",
+                "en": "Arrhythmia as current complication following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.9",
+            "titulo": {
+                "es": "Choque cardiogénico, sin relación con una complicación mecánica, como complicación en curso a raíz de un infarto agudo del miocardio",
+                "en": "Cardiogenic shock, unrelated to mechanical complications, as current complication following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.Y",
+            "titulo": {
+                "es": "Algunas otras complicaciones actuales especificadas después de un infarto agudo de miocardio",
+                "en": "Other specified current complications following acute myocardial infarction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA60.Z",
+            "titulo": {
+                "es": "Algunas complicaciones actuales después de un infarto agudo de miocardio, sin especificación",
+                "en": "Certain current complications following acute myocardial infarction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA6Z",
+            "titulo": {
+                "es": "Enfermedades isquémicas del corazón, sin especificación",
+                "en": "Ischaemic heart diseases, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA81.0",
+            "titulo": {
+                "es": "Aneurisma de arteria coronaria con perforación",
+                "en": "Coronary artery aneurysm with perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA81.1",
+            "titulo": {
+                "es": "Aneurisma de la arteria coronaria con ruptura",
+                "en": "Coronary artery aneurysm with rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA81.2",
+            "titulo": {
+                "es": "Aneurisma de arteria coronaria sin mención de perforación o ruptura",
+                "en": "Coronary artery aneurysm without mention of perforation or rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA82",
+            "titulo": {
+                "es": "Disección de arteria coronaria",
+                "en": "Coronary artery dissection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA83",
+            "titulo": {
+                "es": "Fístula adquirida de arteria coronaria",
+                "en": "Coronary artery fistula, acquired"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA84",
+            "titulo": {
+                "es": "Oclusión total crónica de arteria coronaria",
+                "en": "Chronic total occlusion of coronary artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA85.0",
+            "titulo": {
+                "es": "Enfermedad coronaria vasoespástica silenciosa",
+                "en": "Silent coronary vasospastic disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA85.Y",
+            "titulo": {
+                "es": "Otras enfermedades coronarias vasoespásticas especificadas",
+                "en": "Other specified coronary vasospastic disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA85.Z",
+            "titulo": {
+                "es": "Enfermedades coronarias vasoespásticas, sin especificación",
+                "en": "Coronary vasospastic disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA86",
+            "titulo": {
+                "es": "Enfermedad coronaria microvascular",
+                "en": "Coronary microvascular disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA8Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas de la arteria coronaria",
+                "en": "Other specified diseases of coronary artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BA8Z",
+            "titulo": {
+                "es": "Enfermedades de la arteria coronaria, sin especificación",
+                "en": "Diseases of coronary artery, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB00.0",
+            "titulo": {
+                "es": "Tromboembolia pulmonar aguda",
+                "en": "Acute pulmonary thromboembolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB00.1",
+            "titulo": {
+                "es": "Tromboembolia pulmonar crónica",
+                "en": "Chronic pulmonary thromboembolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB00.Z",
+            "titulo": {
+                "es": "Tromboembolia pulmonar, sin especificación",
+                "en": "Pulmonary thromboembolism, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB01.0",
+            "titulo": {
+                "es": "Hipertensión arterial pulmonar",
+                "en": "Pulmonary arterial hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB01.1",
+            "titulo": {
+                "es": "Hipertensión pulmonar por enfermedad del lado izquierdo del corazón",
+                "en": "Pulmonary hypertension due to left heart disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB01.2",
+            "titulo": {
+                "es": "Hipertensión pulmonar por neumopatía o hipoxia",
+                "en": "Pulmonary hypertension due to lung disease or hypoxia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB01.3",
+            "titulo": {
+                "es": "Hipertensión pulmonar tromboembólica crónica",
+                "en": "Chronic thromboembolic pulmonary hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB01.4",
+            "titulo": {
+                "es": "hipertensión pulmonar con mecanismo multifactorial",
+                "en": "Pulmonary hypertension with multifactorial mechanism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB01.5",
+            "titulo": {
+                "es": "Corazón pulmonar",
+                "en": "Cor pulmonale"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB01.Z",
+            "titulo": {
+                "es": "Hipertensión pulmonar, sin especificación",
+                "en": "Pulmonary hypertension, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB02.0",
+            "titulo": {
+                "es": "Fístula arteriovenosa de los vasos pulmonares",
+                "en": "Arteriovenous fistula of pulmonary vessels"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB02.10",
+            "titulo": {
+                "es": "Aneurisma de arteria pulmonar con perforación",
+                "en": "Aneurysm of pulmonary artery with perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB02.11",
+            "titulo": {
+                "es": "Aneurisma de arteria pulmonar con ruptura",
+                "en": "Aneurysm of pulmonary artery with rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB02.12",
+            "titulo": {
+                "es": "Aneurisma de arteria pulmonar sin mención de perforación o ruptura",
+                "en": "Aneurysm of pulmonary artery without mention of perforation or rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB02.1Y",
+            "titulo": {
+                "es": "Otro aneurisma especificado de la arteria pulmonar",
+                "en": "Other specified aneurysm of pulmonary artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB02.1Z",
+            "titulo": {
+                "es": "Aneurisma de la arteria pulmonar, sin especificación",
+                "en": "Aneurysm of pulmonary artery, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB02.2",
+            "titulo": {
+                "es": "Ruptura de los vasos pulmonares",
+                "en": "Rupture of pulmonary vessels"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB02.3",
+            "titulo": {
+                "es": "anomalía adquirida del árbol arterial pulmonar",
+                "en": "Acquired pulmonary arterial tree abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB03.0",
+            "titulo": {
+                "es": "Obstrucción venosa pulmonar adquirida",
+                "en": "Acquired pulmonary venous obstruction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB03.Y",
+            "titulo": {
+                "es": "Otra anomalía venosa pulmonar adquirida específicada",
+                "en": "Other specified acquired pulmonary venous abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB03.Z",
+            "titulo": {
+                "es": "Anomalía venosa pulmonar adquirida, sin especificación",
+                "en": "Acquired pulmonary venous abnormality, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB0Y",
+            "titulo": {
+                "es": "Otra cardiopatía pulmonar o enfermedades de la circulación pulmonar especificados",
+                "en": "Other specified pulmonary heart disease or diseases of pulmonary circulation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB0Z",
+            "titulo": {
+                "es": "Cardiopatía pulmonar o enfermedades de la circulación pulmonar, sin especificación",
+                "en": "Pulmonary heart disease or diseases of pulmonary circulation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB20.0",
+            "titulo": {
+                "es": "Pericarditis infecciosa",
+                "en": "Infectious pericarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB20.1",
+            "titulo": {
+                "es": "Pericarditis neoplásica",
+                "en": "Neoplastic pericarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB20.2",
+            "titulo": {
+                "es": "Miopericarditis",
+                "en": "Myopericarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB20.Y",
+            "titulo": {
+                "es": "Otra pericarditis aguda específicada",
+                "en": "Other specified acute pericarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB20.Z",
+            "titulo": {
+                "es": "Pericarditis aguda, sin especificación",
+                "en": "Acute pericarditis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB21",
+            "titulo": {
+                "es": "Pericarditis reumática crónica",
+                "en": "Chronic rheumatic pericarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB22",
+            "titulo": {
+                "es": "Pericarditis constrictiva",
+                "en": "Constrictive pericarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB23",
+            "titulo": {
+                "es": "Taponamiento cardíaco",
+                "en": "Cardiac tamponade"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB24",
+            "titulo": {
+                "es": "Hemopericardio",
+                "en": "Haemopericardium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB25",
+            "titulo": {
+                "es": "Derrame pericárdico",
+                "en": "Pericardial effusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB2Y",
+            "titulo": {
+                "es": "Otra pericarditis específicada",
+                "en": "Other specified pericarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB2Z",
+            "titulo": {
+                "es": "Pericarditis, sin especificación",
+                "en": "Pericarditis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB40",
+            "titulo": {
+                "es": "Endocarditis infecciosa aguda o subaguda",
+                "en": "Acute or subacute infectious endocarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB41",
+            "titulo": {
+                "es": "Mioendocarditis",
+                "en": "Myoendocarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB42",
+            "titulo": {
+                "es": "Periendocarditis",
+                "en": "Periendocarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB4Y",
+            "titulo": {
+                "es": "Otra endocarditis aguda o subaguda especificada",
+                "en": "Other specified acute or subacute endocarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB4Z",
+            "titulo": {
+                "es": "Endocarditis aguda o subaguda, sin especificación",
+                "en": "Acute or subacute endocarditis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB60.0",
+            "titulo": {
+                "es": "Estenosis reumática de la válvula mitral",
+                "en": "Rheumatic mitral valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB60.1",
+            "titulo": {
+                "es": "Estenosis no reumática de la válvula mitral",
+                "en": "Nonrheumatic mitral valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB60.Z",
+            "titulo": {
+                "es": "Estenosis de la válvula mitral, sin especificación",
+                "en": "Mitral valve stenosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB61.0",
+            "titulo": {
+                "es": "Insuficiencia reumática de la válvula mitral",
+                "en": "Rheumatic mitral valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB61.Y",
+            "titulo": {
+                "es": "Otra insuficiencia de la válvula mitral especificada",
+                "en": "Other specified mitral valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB61.Z",
+            "titulo": {
+                "es": "Insuficiencia de la válvula mitral, sin especificación",
+                "en": "Mitral valve insufficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB62.0",
+            "titulo": {
+                "es": "Prolapso reumático de la válvula mitral",
+                "en": "Rheumatic mitral valve prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB62.1",
+            "titulo": {
+                "es": "Prolapso degenerativo de la válvula mitral",
+                "en": "Degenerative mitral valve prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB62.Y",
+            "titulo": {
+                "es": "Otro prolapso especificado de la válvula mitral",
+                "en": "Other specified nonrheumatic mitral valve prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB62.Z",
+            "titulo": {
+                "es": "Prolapso de la válvula mitral, sin especificación",
+                "en": "Mitral valve prolapse, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB63.0",
+            "titulo": {
+                "es": "Estenosis mitral reumática con insuficiencia",
+                "en": "Rheumatic mitral stenosis with insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB63.1",
+            "titulo": {
+                "es": "Estenosis mitral no reumática con insuficiencia",
+                "en": "Nonrheumatic mitral stenosis with insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB63.Z",
+            "titulo": {
+                "es": "Estenosis de la válvula mitral con insuficiencia, sin especificación",
+                "en": "Mitral valve stenosis with insufficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB64",
+            "titulo": {
+                "es": "Absceso de válvula mitral",
+                "en": "Mitral valvar abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB65",
+            "titulo": {
+                "es": "Ruptura de la válvula mitral",
+                "en": "Mitral valve rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB6Y",
+            "titulo": {
+                "es": "Otra enfermedad de la válvula mitral especificada",
+                "en": "Other specified mitral valve disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB6Z",
+            "titulo": {
+                "es": "Enfermedad de la válvula mitral, sin especificación",
+                "en": "Mitral valve disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB70.0",
+            "titulo": {
+                "es": "Estenosis reumática de la válvula aórtica",
+                "en": "Rheumatic aortic valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB70.1",
+            "titulo": {
+                "es": "Estenosis no reumática de la válvula aórtica",
+                "en": "Nonrheumatic aortic valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB70.Y",
+            "titulo": {
+                "es": "Otra estenosis de la válvula aórtica especificada",
+                "en": "Other specified aortic valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB70.Z",
+            "titulo": {
+                "es": "Estenosis de la válvula aórtica, sin especificación",
+                "en": "Aortic valve stenosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB71.0",
+            "titulo": {
+                "es": "Insuficiencia reumática de la válvula aórtica",
+                "en": "Rheumatic aortic valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB71.Y",
+            "titulo": {
+                "es": "Otra insuficiencia especificada de la válvula aórtica",
+                "en": "Other specified nonrheumatic aortic valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB71.Z",
+            "titulo": {
+                "es": "Insuficiencia de la válvula aórtica, sin especificación",
+                "en": "Aortic valve insufficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB72.0",
+            "titulo": {
+                "es": "Estenosis reumática de la válvula aórtica con insuficiencia",
+                "en": "Rheumatic aortic stenosis with insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB72.1",
+            "titulo": {
+                "es": "Estenosis no reumática de la válvula aórtica con insuficiencia",
+                "en": "Nonrheumatic aortic valve stenosis with insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB72.Z",
+            "titulo": {
+                "es": "Estenosis de la válvula aórtica con insuficiencia, sin especificación",
+                "en": "Aortic valve stenosis with insufficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB73",
+            "titulo": {
+                "es": "Absceso de la válvula aórtica",
+                "en": "Aortic valvar abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB74",
+            "titulo": {
+                "es": "Prolapso de la válvula aórtica",
+                "en": "Aortic valvar prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB7Y",
+            "titulo": {
+                "es": "Otra enfermedad de la válvula aórtica especificada",
+                "en": "Other specified aortic valve disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB7Z",
+            "titulo": {
+                "es": "Enfermedad de la válvula aórtica, sin especificación",
+                "en": "Aortic valve disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB80.0",
+            "titulo": {
+                "es": "Estenosis reumática de la válvula tricúspide",
+                "en": "Rheumatic tricuspid valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB80.Y",
+            "titulo": {
+                "es": "Otra estenosis de la válvula tricúspide especificada",
+                "en": "Other specified nonrheumatic tricuspid valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB80.Z",
+            "titulo": {
+                "es": "Estenosis de la válvula tricúspide, sin especificación",
+                "en": "Tricuspid valve stenosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB81.0",
+            "titulo": {
+                "es": "Insuficiencia reumática de la válvula tricúspide",
+                "en": "Rheumatic tricuspid valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB81.Y",
+            "titulo": {
+                "es": "Otra insuficiencia especificada de la válvula tricúspide",
+                "en": "Other specified nonrheumatic tricuspid valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB81.Z",
+            "titulo": {
+                "es": "Insuficiencia de la válvula tricúspide, sin especificación",
+                "en": "Tricuspid valve insufficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB82.0",
+            "titulo": {
+                "es": "Estenosis reumática de la válvula tricúspide con insuficiencia",
+                "en": "Rheumatic tricuspid valve stenosis with insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB82.Y",
+            "titulo": {
+                "es": "Otra estenosis de la válvula tricúspide especificada con insuficiencia",
+                "en": "Other specified nonrheumatic tricuspid valve stenosis with insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB82.Z",
+            "titulo": {
+                "es": "Estenosis de la válvula tricúspide con insuficiencia, sin especificación",
+                "en": "Tricuspid valve stenosis with insufficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB83",
+            "titulo": {
+                "es": "Absceso válvular tricúspide",
+                "en": "Tricuspid valvular abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB84",
+            "titulo": {
+                "es": "Ruptura de la válvula tricúspide",
+                "en": "Tricuspid valve rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB8Y",
+            "titulo": {
+                "es": "Otra enfermedad de la válvula tricúspide especificada",
+                "en": "Other specified tricuspid valve disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB8Z",
+            "titulo": {
+                "es": "Enfermedad de la válvula tricúspide, sin especificación",
+                "en": "Tricuspid valve disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB90.0",
+            "titulo": {
+                "es": "Estenosis de la válvula pulmonar reumática",
+                "en": "Rheumatic pulmonary valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB90.Y",
+            "titulo": {
+                "es": "Otra estenosis especificada de la válvula pulmonar específica",
+                "en": "Other specified nonrheumatic pulmonary valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB90.Z",
+            "titulo": {
+                "es": "Estenosis de la válvula pulmonar, sin especificación",
+                "en": "Pulmonary valve stenosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB91.0",
+            "titulo": {
+                "es": "Insuficiencia de la válvula pulmonar reumática",
+                "en": "Rheumatic pulmonary valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB91.Y",
+            "titulo": {
+                "es": "Otra insuficiencia especificada de la válvula pulmonar",
+                "en": "Other specified nonrheumatic pulmonary valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB91.Z",
+            "titulo": {
+                "es": "Insuficiencia de la válvula pulmonar, sin especificación",
+                "en": "Pulmonary valve insufficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB92.0",
+            "titulo": {
+                "es": "Estenosis de la válvula pulmonar reumática con insuficiencia",
+                "en": "Rheumatic pulmonary valve stenosis with insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB92.1",
+            "titulo": {
+                "es": "Estenosis no reumática de la válvula pulmonar con insuficiencia",
+                "en": "Nonrheumatic pulmonary valve stenosis with insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB92.Z",
+            "titulo": {
+                "es": "Estenosis de la válvula pulmonar con insuficiencia, sin especificación",
+                "en": "Pulmonary valve stenosis with insufficiency, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB93",
+            "titulo": {
+                "es": "Absceso de la válvula pulmonar",
+                "en": "Pulmonary valvar abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB9Y",
+            "titulo": {
+                "es": "Otra valvulopatía pulmonar especificada",
+                "en": "Other specified pulmonary valve disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BB9Z",
+            "titulo": {
+                "es": "Valvulopatía pulmonar, sin especificación",
+                "en": "Pulmonary valve disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC00",
+            "titulo": {
+                "es": "Enfermedad valvular múltiple",
+                "en": "Multiple valve disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC01",
+            "titulo": {
+                "es": "trastorno de la prótesis valvular cardíaca",
+                "en": "Prosthetic valve disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.0",
+            "titulo": {
+                "es": "Anomalía adquirida de válvula auriculoventricular común en conexiones biventriculares",
+                "en": "Acquired common atrioventricular valvar abnormality in biventricular connections"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.1",
+            "titulo": {
+                "es": "Anomalía adquirida de la válvula troncal",
+                "en": "Acquired truncal valvar abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.2",
+            "titulo": {
+                "es": "Anomalía adquirida de la válvula auriculoventricular común en ventrículo con doble entrada",
+                "en": "Acquired common atrioventricular valvar abnormality in double inlet ventricle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.30",
+            "titulo": {
+                "es": "Estenosis de la válvula neoaórtica de origen pulmonar",
+                "en": "Stenosis of the neoaortic valve of pulmonary origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.31",
+            "titulo": {
+                "es": "Insuficiencia de válvula neoaórtica de origen pulmonar",
+                "en": "Insufficiency of the neoaortic valve of pulmonary origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.3Y",
+            "titulo": {
+                "es": "Otro(a)(s) anomalía adquirida de válvula neoaórtica de origen pulmonar especificado(a)(s)",
+                "en": "Other specified acquired abnormality of neoaortic valve of pulmonary origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.3Z",
+            "titulo": {
+                "es": "Anomalía adquirida de válvula neoaórtica de origen pulmonar, sin especificación",
+                "en": "Acquired abnormality of neoaortic valve of pulmonary origin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.40",
+            "titulo": {
+                "es": "Estenosis adquirida de la válvula neoaórtica de origen troncal",
+                "en": "Acquired stenosis of the neoaortic valve of truncal origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.41",
+            "titulo": {
+                "es": "Insuficiencia adquirida de la válvula neoaórtica de origen troncal",
+                "en": "Acquired regurgitation of the neoaortic valve of truncal origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.4Y",
+            "titulo": {
+                "es": "Otra anomalía adquirida especificada de la válvula neoaórtica de origen troncal",
+                "en": "Other specified acquired abnormality of the neoaortic valve of truncal origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.4Z",
+            "titulo": {
+                "es": "Anomalía adquirida de la válvula neoaórtica de origen troncal, sin especificar",
+                "en": "Acquired abnormality of the neoaortic valve of truncal origin, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.Y",
+            "titulo": {
+                "es": "Otra anomalía adquirida especificada de una válvula con malformación congénita",
+                "en": "Other specified acquired abnormality of congenitally malformed valve"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC02.Z",
+            "titulo": {
+                "es": "Anomalía adquirida de una válvula con malformación congénita, sin especificación",
+                "en": "Acquired abnormality of congenitally malformed valve, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC0Z",
+            "titulo": {
+                "es": "Enfermedades de las válvulas cardíacas, sin especificación",
+                "en": "Heart valve diseases, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC20.0",
+            "titulo": {
+                "es": "Enfermedades reumáticas del endocardio, válvula no especificada",
+                "en": "Rheumatic diseases of endocardium, valve unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC20.Y",
+            "titulo": {
+                "es": "Otras enfermedades cardíacas reumáticas crónicas especificadas",
+                "en": "Other specified chronic rheumatic heart disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC20.Z",
+            "titulo": {
+                "es": "Enfermedades cardíacas reumáticas crónicas, sin especificación",
+                "en": "Chronic rheumatic heart disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC40.0",
+            "titulo": {
+                "es": "Comunicacion interauricular adquirida",
+                "en": "Acquired interatrial communication"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC40.Y",
+            "titulo": {
+                "es": "Otra anomalía auricular adquirida especificada",
+                "en": "Other specified acquired atrial abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC40.Z",
+            "titulo": {
+                "es": "Anomalía auricular adquirida, sin especificación",
+                "en": "Acquired atrial abnormality, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC41.0",
+            "titulo": {
+                "es": "Comunicación interventricular adquirida",
+                "en": "Acquired interventricular communication"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC41.Y",
+            "titulo": {
+                "es": "Otra anomalía ventricular adquirida especificada",
+                "en": "Other specified acquired ventricular abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC41.Z",
+            "titulo": {
+                "es": "Anomalía ventricular adquirida, sin especificación",
+                "en": "Acquired ventricular abnormality, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC42.0",
+            "titulo": {
+                "es": "Miocarditis de células gigantes",
+                "en": "Giant cell myocarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC42.1",
+            "titulo": {
+                "es": "Miocarditis infecciosa",
+                "en": "Infectious myocarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC42.2",
+            "titulo": {
+                "es": "Miocarditis por hipersensibilidad",
+                "en": "Hypersensitivity myocarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC42.3",
+            "titulo": {
+                "es": "Miocarditis reumática",
+                "en": "Rheumatic myocarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC42.Y",
+            "titulo": {
+                "es": "Otra miocarditis especificada",
+                "en": "Other specific myocarditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC42.Z",
+            "titulo": {
+                "es": "Miocarditis, sin especificación",
+                "en": "Myocarditis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.00",
+            "titulo": {
+                "es": "miocardiopatía dilatada familiar",
+                "en": "Familial-genetic dilated cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.01",
+            "titulo": {
+                "es": "Cardiomiopatía dilatada no familiar",
+                "en": "Nonfamilial dilated cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.0Z",
+            "titulo": {
+                "es": "Cardiomiopatía dilatada, sin especificación",
+                "en": "Dilated cardiomyopathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.10",
+            "titulo": {
+                "es": "miocardiopatía hipertrófica familiar",
+                "en": "Familial-genetic hypertrophic cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.11",
+            "titulo": {
+                "es": "Cardiomiopatía hipertrófica no obstructiva",
+                "en": "Non-obstructive hypertrophic cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.12",
+            "titulo": {
+                "es": "Cardiomiopatía hipertrófica obstructiva",
+                "en": "Obstructive hypertrophic cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.1Y",
+            "titulo": {
+                "es": "Otra cardiomiopatía hipertrófica especificada",
+                "en": "Other specified hypertrophic cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.1Z",
+            "titulo": {
+                "es": "Cardiomiopatía hipertrófica, sin especificación",
+                "en": "Hypertrophic cardiomyopathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.20",
+            "titulo": {
+                "es": "Cardiomiopatía restrictiva no familiar",
+                "en": "Nonfamilial restrictive cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.2Y",
+            "titulo": {
+                "es": "Otra cardiomiopatía restrictiva especificada",
+                "en": "Other specified restrictive cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.2Z",
+            "titulo": {
+                "es": "Cardiomiopatía restrictiva, sin especificación",
+                "en": "Restrictive cardiomyopathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.3",
+            "titulo": {
+                "es": "Fibroelastosis endocárdica",
+                "en": "Endocardial fibroelastosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.4",
+            "titulo": {
+                "es": "Cardiomiopatía por drogas u otros agentes externos",
+                "en": "Cardiomyopathy due to drugs or other external agents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.5",
+            "titulo": {
+                "es": "Miocardiopatía por estrés",
+                "en": "Stress-induced cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.6",
+            "titulo": {
+                "es": "Cardiomiopatía arritmogénica ventricular",
+                "en": "Arrhythmogenic ventricular cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.7",
+            "titulo": {
+                "es": "Cardiomiopatía diabética",
+                "en": "Diabetic cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.Y",
+            "titulo": {
+                "es": "Otra cardiomiopatía especificada",
+                "en": "Other specified cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC43.Z",
+            "titulo": {
+                "es": "Cardiomiopatía, sin especificación",
+                "en": "Cardiomyopathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC44",
+            "titulo": {
+                "es": "Cardiomiopatía sin compactación",
+                "en": "Noncompaction cardiomyopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC45",
+            "titulo": {
+                "es": "Cardiomegalia",
+                "en": "Cardiomegaly"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC46",
+            "titulo": {
+                "es": "Trombosis intracardíaca",
+                "en": "Intracardiac thrombosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC4Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del miocardio o de las cavidades cardíacas",
+                "en": "Other specified diseases of the myocardium or cardiac chambers"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC4Z",
+            "titulo": {
+                "es": "Enfermedades del miocardio o de las cavidades cardíacas, sin especificación",
+                "en": "Diseases of the myocardium or cardiac chambers, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC60",
+            "titulo": {
+                "es": "Despolarización auricular prematura",
+                "en": "Atrial premature depolarization"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC61",
+            "titulo": {
+                "es": "Despolarización prematura de la unión AV",
+                "en": "Junctional premature depolarization"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC62",
+            "titulo": {
+                "es": "Vía accesoria",
+                "en": "Accessory pathway"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.0",
+            "titulo": {
+                "es": "Bloqueo auriculoventricular de primer grado",
+                "en": "Atrioventricular block, first degree"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.10",
+            "titulo": {
+                "es": "Bloqueo auriculoventricular de segundo grado de alto grado",
+                "en": "High-grade second degree atrioventricular block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.1Y",
+            "titulo": {
+                "es": "Otro bloqueo auriculoventricular especificado de segundo grado",
+                "en": "Other specified atrioventricular block, second degree"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.1Z",
+            "titulo": {
+                "es": "Bloqueo auriculoventricular de segundo grado, sin especificación",
+                "en": "Atrioventricular block, second degree, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.20",
+            "titulo": {
+                "es": "Bloqueo auriculoventricular completo congénito",
+                "en": "Congenital complete atrioventricular block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.21",
+            "titulo": {
+                "es": "Bloqueo auriculoventricular completo adquirido",
+                "en": "Acquired complete atrioventricular block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.2Z",
+            "titulo": {
+                "es": "Bloqueo auriculoventricular completo, sin especificación",
+                "en": "Complete atrioventricular block, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.3",
+            "titulo": {
+                "es": "Bloqueo de rama derecha",
+                "en": "Right bundle branch block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.40",
+            "titulo": {
+                "es": "Bloqueo fascicular anterior de rama izquierda",
+                "en": "Left anterior fascicular block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.41",
+            "titulo": {
+                "es": "Bloqueo fascicular posterior de rama izquierda",
+                "en": "Left posterior fascicular block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.4Z",
+            "titulo": {
+                "es": "Bloqueo de rama izquierda del Haz, sin especificación del fascículo",
+                "en": "Left bundle branch block, fascicle unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.5",
+            "titulo": {
+                "es": "Retraso de conducción intraventricular inespecífico",
+                "en": "Nonspecific intraventricular conduction delay"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.Y",
+            "titulo": {
+                "es": "Otros trastornos de la conducción especificados",
+                "en": "Other specified conduction disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC63.Z",
+            "titulo": {
+                "es": "Trastornos de la conducción, sin especificación",
+                "en": "Conduction disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC64",
+            "titulo": {
+                "es": "Síndrome de muerte súbita arrítmica",
+                "en": "Sudden arrhythmic death syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC65.0",
+            "titulo": {
+                "es": "Síndrome de QT largo",
+                "en": "Long QT syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC65.1",
+            "titulo": {
+                "es": "Síndrome de Brugada",
+                "en": "Brugada syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC65.2",
+            "titulo": {
+                "es": "Síndrome de QT corto",
+                "en": "Short QT syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC65.3",
+            "titulo": {
+                "es": "Síndrome de repolarización temprana",
+                "en": "Early repolarisation syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC65.4",
+            "titulo": {
+                "es": "Fibrilación ventricular idiopática",
+                "en": "Idiopathic ventricular fibrillation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC65.5",
+            "titulo": {
+                "es": "Taquicardia ventricular polimórfica catecolaminérgica",
+                "en": "Catecholaminergic polymorphic ventricular tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC65.Y",
+            "titulo": {
+                "es": "Otra arritmia cardíaca especificada asociada con un trastorno genético",
+                "en": "Other specified cardiac arrhythmia associated with genetic disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC65.Z",
+            "titulo": {
+                "es": "Arritmia cardíaca asociada con un trastorno genético, sin especificación",
+                "en": "Cardiac arrhythmia associated with genetic disorder, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC70",
+            "titulo": {
+                "es": "Despolarización ventricular prematura",
+                "en": "Ventricular premature depolarization"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.00",
+            "titulo": {
+                "es": "Taquicardia ventricular originada en el infundíbulo derecho",
+                "en": "Right outflow tract ventricular tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.01",
+            "titulo": {
+                "es": "Taquicardia ventricular polimorfa",
+                "en": "Polymorphic ventricular tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.02",
+            "titulo": {
+                "es": "Taquicardia ventricular sostenida",
+                "en": "Sustained ventricular tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.03",
+            "titulo": {
+                "es": "Taquicardia ventricular no sostenida",
+                "en": "Non-sustained ventricular tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.0Y",
+            "titulo": {
+                "es": "Otra taquicardia ventricular especificada",
+                "en": "Other specified ventricular tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.0Z",
+            "titulo": {
+                "es": "Taquicardia ventricular, sin especificación",
+                "en": "Ventricular tachycardia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.1",
+            "titulo": {
+                "es": "Fibrilación ventricular",
+                "en": "Ventricular fibrillation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.2",
+            "titulo": {
+                "es": "Arritmia ventricular por reentrada",
+                "en": "Re-entry ventricular arrhythmia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.Y",
+            "titulo": {
+                "es": "Otra taquiarritmia ventricular especificada",
+                "en": "Other specified ventricular tachyarrhythmia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC71.Z",
+            "titulo": {
+                "es": "Taquiarritmia ventricular, sin especificación",
+                "en": "Ventricular tachyarrhythmia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC7Y",
+            "titulo": {
+                "es": "Otra alteración especificada del ritmo ventricular",
+                "en": "Other specified ventricular rhythm disturbance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC7Z",
+            "titulo": {
+                "es": "Alteración del ritmo ventricular, sin especificación",
+                "en": "Ventricular rhythm disturbance, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC80.0",
+            "titulo": {
+                "es": "Pausa sinusal",
+                "en": "Sinus pause"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC80.1",
+            "titulo": {
+                "es": "Bradicardia sinusal",
+                "en": "Sinus bradycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC80.20",
+            "titulo": {
+                "es": "Síndrome de disfunción sinusal",
+                "en": "Sick sinus syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC80.21",
+            "titulo": {
+                "es": "Bloqueo cardíaco sinoauricular",
+                "en": "Sinoatrial block"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC80.2Y",
+            "titulo": {
+                "es": "Otra disfunción del nódulo sinusal especificada",
+                "en": "Other specified sinus node dysfunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC80.2Z",
+            "titulo": {
+                "es": "Disfunción del nódulo sinusal, sin especificación",
+                "en": "Sinus node dysfunction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC80.Y",
+            "titulo": {
+                "es": "Otra bradiarritmia supraventricular especificada",
+                "en": "Other specified supraventricular bradyarrhythmia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC80.Z",
+            "titulo": {
+                "es": "Bradiarritmia supraventricular, sin especificación",
+                "en": "Supraventricular bradyarrhythmia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.0",
+            "titulo": {
+                "es": "Taquicardia auricular ectópica",
+                "en": "Ectopic atrial tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.1",
+            "titulo": {
+                "es": "Taquicardia ectópica de la unión AV",
+                "en": "Junctional ectopic tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.20",
+            "titulo": {
+                "es": "Taquicardia auricular por rentrada dependiente del istmo cavotricuspídeo",
+                "en": "Cavotricuspid isthmus dependent macroreentry tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.21",
+            "titulo": {
+                "es": "Taquicardia auricular por macrorreentrada no cicatricial, no dependiente del istmo",
+                "en": "Non-scar, non-isthmus dependent macro reentrant atrial tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.22",
+            "titulo": {
+                "es": "Taquicardia auricular por macrorreentrada cicatricial",
+                "en": "Scar mediated macro reentrant atrial tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.2Y",
+            "titulo": {
+                "es": "Otra taquicardia auricular especificada macrorrentrante",
+                "en": "Other specified macro reentrant atrial tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.2Z",
+            "titulo": {
+                "es": "Taquicardia auricular macrorrentrante, sin especificación",
+                "en": "Macro reentrant atrial tachycardia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.30",
+            "titulo": {
+                "es": "Fibrilación auricular paroxística",
+                "en": "Paroxysmal atrial fibrillation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.31",
+            "titulo": {
+                "es": "Fibrilación auricular persistente",
+                "en": "Persistent atrial fibrillation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.32",
+            "titulo": {
+                "es": "Fibrilación auricular permanente",
+                "en": "Permanent atrial fibrillation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.33",
+            "titulo": {
+                "es": "Fibrilación auricular con preexcitación",
+                "en": "Preexcited atrial fibrillation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.3Y",
+            "titulo": {
+                "es": "Otra fibrilación auricular especificada",
+                "en": "Other specified atrial fibrillation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.3Z",
+            "titulo": {
+                "es": "Fibrilación auricular, sin especificación",
+                "en": "Atrial fibrillation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.4",
+            "titulo": {
+                "es": "Síndrome de Wolff-Parkinson-White",
+                "en": "Wolff-Parkinson-White syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.5",
+            "titulo": {
+                "es": "Taquicardia por reentrada del nódulo sinusal",
+                "en": "Sinus node reentrant tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.6",
+            "titulo": {
+                "es": "Taquicardia sinusal inapropiada",
+                "en": "Inappropriate sinus tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.70",
+            "titulo": {
+                "es": "Taquicardia auriculoventricular recíproca ortodrómica",
+                "en": "Atrioventricular reciprocating tachycardia, orthodromic"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.71",
+            "titulo": {
+                "es": "Taquicardia auriculoventricular recíproca antidrómica",
+                "en": "Atrioventricular reciprocating tachycardia, antidromic"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.7Y",
+            "titulo": {
+                "es": "Otra taquicardia auriculoventricular recíproca especificada",
+                "en": "Other specified atrioventricular reciprocating tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.7Z",
+            "titulo": {
+                "es": "Taquicardia auriculoventricular recíproca, sin especificación",
+                "en": "Atrioventricular reciprocating tachycardia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.8",
+            "titulo": {
+                "es": "Taquicardia auriculoventricular por reentrada nodal",
+                "en": "Atrioventricular nodal reentry tachycardia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.Y",
+            "titulo": {
+                "es": "Otra taquiarritmia supraventricular especificada",
+                "en": "Other specified supraventricular tachyarrhythmia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC81.Z",
+            "titulo": {
+                "es": "Taquiarritmia supraventricular, sin especificación",
+                "en": "Supraventricular tachyarrhythmia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC8Y",
+            "titulo": {
+                "es": "Otra alteración especificada del ritmo supraventricular",
+                "en": "Other specified supraventricular rhythm disturbance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC8Z",
+            "titulo": {
+                "es": "Alteración del ritmo supraventricular, sin especificación",
+                "en": "Supraventricular rhythm disturbance, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC90",
+            "titulo": {
+                "es": "Alteración del ritmo a nivel de la unión auriculoventricular",
+                "en": "Rhythm disturbance at level of atrioventricular junction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC91",
+            "titulo": {
+                "es": "Batería de marcapasos o desfibrilador cardioversor implantable al final de su vida útil",
+                "en": "Pacemaker or implantable cardioverter defibrillator battery at end of battery life"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC9Y",
+            "titulo": {
+                "es": "Otra arritmia cardíaca especificada",
+                "en": "Other specified cardiac arrhythmia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BC9Z",
+            "titulo": {
+                "es": "Arritmia cardíaca, sin especificación",
+                "en": "Cardiac arrhythmia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD10",
+            "titulo": {
+                "es": "Insuficiencia cardíaca congestiva",
+                "en": "Congestive heart failure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD11.0",
+            "titulo": {
+                "es": "Insuficiencia ventricular izquierda con fracción de eyección conservada",
+                "en": "Left ventricular failure with preserved ejection fraction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD11.1",
+            "titulo": {
+                "es": "Insuficiencia ventricular izquierda con fracción de eyección intermedia",
+                "en": "Left ventricular failure with mid range ejection fraction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD11.2",
+            "titulo": {
+                "es": "Insuficiencia ventricular izquierda con fracción de eyección reducida",
+                "en": "Left ventricular failure with reduced ejection fraction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD11.Z",
+            "titulo": {
+                "es": "Insuficiencia ventricular izquierda, sin especificación",
+                "en": "Left ventricular failure, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD12",
+            "titulo": {
+                "es": "Síndromes de alto gasto",
+                "en": "High output syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD13",
+            "titulo": {
+                "es": "Insuficiencia ventricular derecha",
+                "en": "Right ventricular failure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD14",
+            "titulo": {
+                "es": "Insuficiencia biventricular",
+                "en": "Biventricular failure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD1Y",
+            "titulo": {
+                "es": "Otra insuficiencia cardíaca especificada",
+                "en": "Other specified heart failure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD1Z",
+            "titulo": {
+                "es": "Insuficiencia cardíaca, sin especificación",
+                "en": "Heart failure, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.00",
+            "titulo": {
+                "es": "Oclusión arterial tromboembólica aguda de la extremidad superior",
+                "en": "Acute thromboembolic upper limb arterial occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.01",
+            "titulo": {
+                "es": "Oclusión arterial trombótica aguda de la extremidad superior",
+                "en": "Acute thrombotic upper limb arterial occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.0Y",
+            "titulo": {
+                "es": "Otra oclusión arterial aguda especificada de la extremidad superior",
+                "en": "Other specified acute upper limb arterial occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.0Z",
+            "titulo": {
+                "es": "Oclusión arterial aguda de la extremidad superior, sin especificación",
+                "en": "Acute upper limb arterial occlusion, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.10",
+            "titulo": {
+                "es": "Oclusión aortoilíaca tromboembólica aguda",
+                "en": "Acute thromboembolic aortoiliac occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.11",
+            "titulo": {
+                "es": "Oclusión aortoilíaca trombótica aguda",
+                "en": "Acute thrombotic aortoiliac occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.1Y",
+            "titulo": {
+                "es": "Otra oclusión aortoilíaca aguda especificada",
+                "en": "Other specified acute aortoiliac occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.1Z",
+            "titulo": {
+                "es": "Oclusión aortoilíaca aguda, sin especificación",
+                "en": "Acute aortoiliac occlusion, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.20",
+            "titulo": {
+                "es": "Oclusión arterial tromboembólica aguda de la extremidad inferior",
+                "en": "Acute thromboembolic lower limb arterial occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.21",
+            "titulo": {
+                "es": "Oclusión arterial trombótica aguda de la extremidad inferior",
+                "en": "Acute thrombotic lower limb arterial occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.2Y",
+            "titulo": {
+                "es": "Otra oclusión arterial aguda especificada de la extremidad inferior",
+                "en": "Other specified acute lower limb arterial occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.2Z",
+            "titulo": {
+                "es": "Oclusión arterial aguda de la extremidad inferior, sin especificación",
+                "en": "Acute lower limb arterial occlusion, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.Y",
+            "titulo": {
+                "es": "Otra oclusión arterial aguda especificada",
+                "en": "Other specified acute arterial occlusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD30.Z",
+            "titulo": {
+                "es": "Oclusión arterial aguda, sin especificación",
+                "en": "Acute arterial occlusion, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD40.0",
+            "titulo": {
+                "es": "Ateroesclerosis de la extremidad inferior",
+                "en": "Lower limb atherosclerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD40.1",
+            "titulo": {
+                "es": "Ateroesclerosis de la aorta",
+                "en": "Atherosclerosis of aorta"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD40.2",
+            "titulo": {
+                "es": "Ateroesclerosis de arteria renal",
+                "en": "Atherosclerosis of renal artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD40.3",
+            "titulo": {
+                "es": "Síndrome de la bifurcación aórtica",
+                "en": "Aortic bifurcation syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD40.Y",
+            "titulo": {
+                "es": "Otra enfermedad oclusiva arterial crónica arterioesclerótica especificada",
+                "en": "Other specified atherosclerotic chronic arterial occlusive disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD40.Z",
+            "titulo": {
+                "es": "Enfermedad oclusiva arterial crónica arterioesclerótica, sin especificación",
+                "en": "Atherosclerotic chronic arterial occlusive disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD41.0",
+            "titulo": {
+                "es": "Displasia fibromuscular arterial",
+                "en": "Arterial fibromuscular dysplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD41.Y",
+            "titulo": {
+                "es": "Otra enfermedad oclusiva arterial crónica no aterosclerótica específicada",
+                "en": "Other specified non-atherosclerotic chronic arterial occlusive disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD41.Z",
+            "titulo": {
+                "es": "Enfermedad arterial oclusiva crónica no aterosclerótica, sin especificación",
+                "en": "Non-atherosclerotic chronic arterial occlusive disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD42.0",
+            "titulo": {
+                "es": "Enfermedad de Raynaud primaria",
+                "en": "Primary Raynaud disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD42.1",
+            "titulo": {
+                "es": "Fenómeno de Raynaud secundario",
+                "en": "Secondary Raynaud phenomenon"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD42.Z",
+            "titulo": {
+                "es": "Fenómeno de Raynaud, sin especificación",
+                "en": "Raynaud phenomenon, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD4Y",
+            "titulo": {
+                "es": "Otra enfermedad oclusiva arterial crónica especificada",
+                "en": "Other specified chronic arterial occlusive disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD4Z",
+            "titulo": {
+                "es": "Enfermedad oclusiva arterial crónica, sin especificación",
+                "en": "Chronic arterial occlusive disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.00",
+            "titulo": {
+                "es": "Disección de la aorta torácica, disección de la aorta ascendente y propagación más allá del cayado aórtico, con perforación",
+                "en": "Thoracic aortic dissection, ascending aorta dissection and propagation beyond arch with perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.01",
+            "titulo": {
+                "es": "Disección de la aorta torácica, disección de la aorta ascendente y propagación más allá del cayado aórtico, con ruptura",
+                "en": "Thoracic aortic dissection, ascending aorta dissection and propagation beyond arch with rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.0Z",
+            "titulo": {
+                "es": "Disección de la aorta torácica, disección de la aorta ascendente y prolongación más allá del cayado aórtico, sin especificación",
+                "en": "Thoracic aortic dissection, ascending aorta dissection and propagation beyond arch, without mention of perforation or rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.10",
+            "titulo": {
+                "es": "Disección de la aorta ascendente que no supera el cayado aórtico, con perforación",
+                "en": "Ascending aorta dissection not beyond arch with perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.11",
+            "titulo": {
+                "es": "Disección de la aorta ascendente que no supera el cayado aórtico, con ruptura",
+                "en": "Ascending aorta dissection not beyond arch with rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.1Z",
+            "titulo": {
+                "es": "Disección de la aorta ascendente que no supera el cayado aórtico, sin mención de perforación o rotura",
+                "en": "Ascending aorta dissection not beyond arch, without mention of perforation or rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.20",
+            "titulo": {
+                "es": "Disección de la aorta descendente y propagación distal, con perforación",
+                "en": "Descending aorta dissection and distal propagation with perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.21",
+            "titulo": {
+                "es": "Disección de la aorta descendente y propagación distal, con ruptura",
+                "en": "Descending aorta dissection and distal propagation with rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.2Y",
+            "titulo": {
+                "es": "Otra disección especificada de la aorta descendente y propagación distal",
+                "en": "Other specified descending aorta dissection and distal propagation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.2Z",
+            "titulo": {
+                "es": "Disección de la aorta descendente y propagación distal, sin especificación",
+                "en": "Descending aorta dissection and distal propagation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.30",
+            "titulo": {
+                "es": "Aneurisma de la aorta torácica con perforación",
+                "en": "Thoracic aortic aneurysm with perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.31",
+            "titulo": {
+                "es": "Aneurisma de la aorta torácica con ruptura",
+                "en": "Thoracic aortic aneurysm with rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.3Z",
+            "titulo": {
+                "es": "Aneurisma de la aorta torácica, sin especificación",
+                "en": "Thoracic aortic aneurysm, without mention of perforation or rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.40",
+            "titulo": {
+                "es": "Aneurisma de la aorta abdominal con perforación",
+                "en": "Abdominal aortic aneurysm with perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.41",
+            "titulo": {
+                "es": "Aneurisma de la aorta abdominal con ruptura",
+                "en": "Abdominal aortic aneurysm with rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.4Z",
+            "titulo": {
+                "es": "Aneurisma de aorta abdominal, sin mención de perforación o rotura",
+                "en": "Abdominal aortic aneurysm, without mention of perforation or rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.50",
+            "titulo": {
+                "es": "Aneurisma aórtico toracoabdominal con perforación",
+                "en": "Thoracoabdominal aortic aneurysm with perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.51",
+            "titulo": {
+                "es": "Aneurisma aórtico toracoabdominal con ruptura",
+                "en": "Thoracoabdominal aortic aneurysm with rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.5Z",
+            "titulo": {
+                "es": "Aneurisma de aorta toracoabdominal, sin mención de perforación o rotura",
+                "en": "Thoracoabdominal aortic aneurysm, without mention of perforation or rupture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD50.Z",
+            "titulo": {
+                "es": "Aneurisma o disección de aorta, sin especificación",
+                "en": "Aortic aneurysm or dissection, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD51.0",
+            "titulo": {
+                "es": "Aneurisma o disección de arteria carótida",
+                "en": "Aneurysm or dissection of carotid artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD51.1",
+            "titulo": {
+                "es": "Aneurisma o disección de arteria vertebral",
+                "en": "Aneurysm or dissection of vertebral artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD51.2",
+            "titulo": {
+                "es": "Aneurisma o disección de otras arterias precerebrales",
+                "en": "Aneurysm or dissection of other precerebral arteries"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD51.3",
+            "titulo": {
+                "es": "Aneurisma o disección de arteria de la extremidad superior",
+                "en": "Aneurysm or dissection of artery of upper extremity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD51.4",
+            "titulo": {
+                "es": "Aneurisma o disección de arteria renal",
+                "en": "Aneurysm or dissection of renal artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD51.5",
+            "titulo": {
+                "es": "Aneurisma o disección de la arteria ilíaca",
+                "en": "Aneurysm or dissection of iliac artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD51.6",
+            "titulo": {
+                "es": "Aneurisma o disección de arteria de la extremidad inferior",
+                "en": "Aneurysm or dissection of artery of lower extremity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD51.Y",
+            "titulo": {
+                "es": "Otro aneurisma o disección arterial especificado, excepto de la aorta",
+                "en": "Aneurysm or dissection of other artery, excluding aorta"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD51.Z",
+            "titulo": {
+                "es": "Aneurisma o disección arterial, excepto de la aorta, sin especificación",
+                "en": "Aneurysm or dissection of unspecified artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.0",
+            "titulo": {
+                "es": "Mediólisis arterial segmentaria",
+                "en": "Segmental arterial mediolysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.1",
+            "titulo": {
+                "es": "Fístula arteriovenosa adquirida",
+                "en": "Arteriovenous fistula, acquired"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.2",
+            "titulo": {
+                "es": "estrechamiento arterial",
+                "en": "Stricture of artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.3",
+            "titulo": {
+                "es": "Rotura de arteria",
+                "en": "Rupture of artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.4",
+            "titulo": {
+                "es": "Necrosis arterial",
+                "en": "Necrosis of artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.5",
+            "titulo": {
+                "es": "Síndrome de compresión del tronco celíaco",
+                "en": "Coeliac artery compression syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.6",
+            "titulo": {
+                "es": "Anomalía adquirida de grandes vasos relacionada con anomalía congénita",
+                "en": "Congenital great vessel related acquired abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.70",
+            "titulo": {
+                "es": "Anomalía adquirida de rama del cayado aórtico",
+                "en": "Acquired abnormality of aortic arch branch"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.71",
+            "titulo": {
+                "es": "Dilatación adquirida de la raíz de la aorta o de la aorta ascendente",
+                "en": "Acquired ascending aorta or root dilation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.7Y",
+            "titulo": {
+                "es": "Otra anomalía adquirida especificada de la aorta",
+                "en": "Other specified acquired abnormalities of aorta"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD52.7Z",
+            "titulo": {
+                "es": "Anomalía adquirida de la aorta, sin especificación",
+                "en": "Acquired abnormalities of aorta, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD53.0",
+            "titulo": {
+                "es": "Arteriopatías quísticas de la media",
+                "en": "Arterial cystic medial diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD53.1",
+            "titulo": {
+                "es": "Síndrome del martillo hipotenar",
+                "en": "Hypothenar hammer syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD53.2",
+            "titulo": {
+                "es": "Arteriopatía ilíaca",
+                "en": "Iliac artery arteriopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD53.3",
+            "titulo": {
+                "es": "Síndrome de compresión de la arteria poplítea",
+                "en": "Popliteal entrapment syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD53.40",
+            "titulo": {
+                "es": "Ateroembolia de colesterol al riñón",
+                "en": "Cholesterol atheroembolism to kidneys"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD53.4Y",
+            "titulo": {
+                "es": "Otra embolia arterial de colesterol especificada",
+                "en": "Cholesterol atheroembolism to other specified sites"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD53.4Z",
+            "titulo": {
+                "es": "Embolia arterial de colesterol, sin especificación",
+                "en": "Cholesterol atheroembolism to unspecified site"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD53.Y",
+            "titulo": {
+                "es": "Otros trastornos secundarios especificados de arterias o arteriolas",
+                "en": "Other specified secondary disorders of arteries or arterioles"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD53.Z",
+            "titulo": {
+                "es": "Trastornos secundarios de arterias o arteriolas, sin especificación",
+                "en": "Secondary disorders of arteries or arterioles, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD54",
+            "titulo": {
+                "es": "Úlcera del pie diabético",
+                "en": "Diabetic foot ulcer"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD55",
+            "titulo": {
+                "es": "Estenosis asintomática de arteria intracraneal o extracraneal",
+                "en": "Asymptomatic stenosis of intracranial or extracranial artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD56",
+            "titulo": {
+                "es": "Oclusión asintomática de arteria intracraneal o extracraneal",
+                "en": "Asymptomatic occlusion of intracranial or extracranial artery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD5Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas de las arterias o arteriolas",
+                "en": "Other specified diseases of arteries or arterioles"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD5Z",
+            "titulo": {
+                "es": "Enfermedades de las arterias y arteriolas, sin especificación",
+                "en": "Diseases of arteries or arterioles, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD70.0",
+            "titulo": {
+                "es": "Tromboflebitis superficial de extremidades inferiores",
+                "en": "Superficial thrombophlebitis of lower limbs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD70.1",
+            "titulo": {
+                "es": "Tromboflebitis superficial de extremidades superiores",
+                "en": "Superficial thrombophlebitis of upper limbs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD70.2",
+            "titulo": {
+                "es": "Tromboflebitis migratoria",
+                "en": "Thrombophlebitis migrans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD70.3",
+            "titulo": {
+                "es": "Enfermedad de Mondor",
+                "en": "Mondor disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD70.Y",
+            "titulo": {
+                "es": "Otra tromboflebitis superficial especificada",
+                "en": "Other specified superficial thrombophlebitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD70.Z",
+            "titulo": {
+                "es": "Tromboflebitis superficial, sin especificación",
+                "en": "Superficial thrombophlebitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD71.0",
+            "titulo": {
+                "es": "Trombosis venosa profunda de la extremidad superior",
+                "en": "Upper limb deep vein thrombosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD71.1",
+            "titulo": {
+                "es": "Trombosis de la vena cava",
+                "en": "Vena caval thrombosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD71.2",
+            "titulo": {
+                "es": "Trombosis de la vena renal",
+                "en": "Renal vein thrombosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD71.3",
+            "titulo": {
+                "es": "Trombosis de las venas ilíacas",
+                "en": "Iliac vein thrombosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD71.4",
+            "titulo": {
+                "es": "Trombosis venosa profunda de la extremidad inferior",
+                "en": "Lower limb deep vein thrombosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD71.Y",
+            "titulo": {
+                "es": "Otras trombosis venosas profundas especificadas",
+                "en": "Other specified deep vein thrombosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD72",
+            "titulo": {
+                "es": "Tromboembolia venosa",
+                "en": "Venous thromboembolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD73.0",
+            "titulo": {
+                "es": "Anomalía adquirida de la vena cava inferior",
+                "en": "Acquired inferior caval vein abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD73.1",
+            "titulo": {
+                "es": "Anomalía adquirida de la vena cava superior",
+                "en": "Acquired superior caval vein abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD73.20",
+            "titulo": {
+                "es": "Obstrucción de una vena periférica",
+                "en": "Obstruction of peripheral vein"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD73.21",
+            "titulo": {
+                "es": "Obstrucción de una vena visceral",
+                "en": "Obstruction of visceral vein"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD73.2Y",
+            "titulo": {
+                "es": "Otra obstrucción venosa sistémica especificada",
+                "en": "Other specified systemic vein obstruction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD73.2Z",
+            "titulo": {
+                "es": "Obstrucción venosa sistémica, sin especificación",
+                "en": "Systemic vein obstruction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD73.3",
+            "titulo": {
+                "es": "Anomalía adquirida del seno coronario",
+                "en": "Acquired coronary sinus abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD73.Y",
+            "titulo": {
+                "es": "Otra anomalía venosa sistémica adquirida especificada",
+                "en": "Other specified acquired systemic vein abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD73.Z",
+            "titulo": {
+                "es": "Anomalía venosa sistémica adquirida, sin especificación",
+                "en": "Acquired systemic vein abnormality, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.0",
+            "titulo": {
+                "es": "Hipertensión venosa de las extremidades inferiores sin complicaciones",
+                "en": "Uncomplicated lower limb venous hypertension"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.10",
+            "titulo": {
+                "es": "Várices con reflujo de la vena safena interna",
+                "en": "Varicose veins with great saphenous reflux"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.11",
+            "titulo": {
+                "es": "Várices con reflujo de la vena safena externa",
+                "en": "Varicose veins with small saphenous reflux"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.12",
+            "titulo": {
+                "es": "Várices con reflujo no troncal",
+                "en": "Varicose veins with non-truncal reflux"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.1Z",
+            "titulo": {
+                "es": "Venas varicosas de las extremidades inferiores, sin otra especificación",
+                "en": "Lower limb varicose veins, not further specified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.2",
+            "titulo": {
+                "es": "Lipodermatoesclerosis",
+                "en": "Lipodermatosclerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.30",
+            "titulo": {
+                "es": "Úlcera venosa primaria de la pierna",
+                "en": "Primary venous leg ulcer"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.31",
+            "titulo": {
+                "es": "Úlcera venosa recurrente de la pierna",
+                "en": "Recurrent venous leg ulcer"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.32",
+            "titulo": {
+                "es": "Úlcera venosa curada de la pierna",
+                "en": "Healed venous leg ulcer"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.3Z",
+            "titulo": {
+                "es": "Úlcera venosa de la pierna, sin especificación",
+                "en": "Venous leg ulcer, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD74.Z",
+            "titulo": {
+                "es": "Insuficiencia venosa periférica crónica de las extremidades inferiores, sin especificación",
+                "en": "Chronic peripheral venous insufficiency of lower extremities, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD75.0",
+            "titulo": {
+                "es": "Várices sublinguales",
+                "en": "Sublingual varices"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD75.1",
+            "titulo": {
+                "es": "Várices escrotales",
+                "en": "Scrotal varices"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD75.2",
+            "titulo": {
+                "es": "Várices vulvares",
+                "en": "Vulval varices"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD75.3",
+            "titulo": {
+                "es": "Várices pélvicas",
+                "en": "Pelvic varices"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD75.Y",
+            "titulo": {
+                "es": "Varicosidades venosas en otras localizaciones especificadas",
+                "en": "Venous varicosities of other specified sites"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD75.Z",
+            "titulo": {
+                "es": "Varicosidades en otras localizaciones. sin especificación",
+                "en": "Venous varicosities of unspecified site"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD7Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas de las venas",
+                "en": "Other specified diseases of veins"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD7Z",
+            "titulo": {
+                "es": "Enfermedades de las venas, sin especificación",
+                "en": "Diseases of veins, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD90.0",
+            "titulo": {
+                "es": "Linfadenitis aguda",
+                "en": "Acute lymphadenitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD90.1",
+            "titulo": {
+                "es": "Linfadenitis mesentérica inespecífica",
+                "en": "Nonspecific mesenteric lymphadenitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD90.20",
+            "titulo": {
+                "es": "Linfadenitis cervical crónica",
+                "en": "Chronic cervical lymphadenitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD90.21",
+            "titulo": {
+                "es": "Linfadenitis axilar crónica",
+                "en": "Chronic axillary lymphadenitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD90.22",
+            "titulo": {
+                "es": "Linfadenitis inguinal crónica",
+                "en": "Chronic inguinal lymphadenitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD90.2Y",
+            "titulo": {
+                "es": "Otra linfadenitis crónica especificada",
+                "en": "Other specified chronic lymphadenitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD90.2Z",
+            "titulo": {
+                "es": "Linfadenitis crónica, sin especificación",
+                "en": "Chronic lymphadenitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD90.Y",
+            "titulo": {
+                "es": "Otra linfadenitis especificada",
+                "en": "Other specified lymphadenitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD90.Z",
+            "titulo": {
+                "es": "Linfadenitis, sin especificación",
+                "en": "Lymphadenitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD91",
+            "titulo": {
+                "es": "Linfangitis",
+                "en": "Lymphangitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD92.0",
+            "titulo": {
+                "es": "Linfangiectasia intestinal",
+                "en": "Intestinal lymphangiectasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD92.1",
+            "titulo": {
+                "es": "Linfangiectasia cutánea",
+                "en": "Cutaneous lymphangiectasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD92.Z",
+            "titulo": {
+                "es": "Linfangiectasia, sin especificación",
+                "en": "Lymphangiectasia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.0",
+            "titulo": {
+                "es": "Linfedema primario",
+                "en": "Primary lymphoedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.10",
+            "titulo": {
+                "es": "linfedema secundario a insuficiencia venosa",
+                "en": "Lymphoedema due to venous insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.11",
+            "titulo": {
+                "es": "Linfedema postural por inmovilidad",
+                "en": "Lymphoedema due to dependency and immobility"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.12",
+            "titulo": {
+                "es": "Linfedema por obesidad",
+                "en": "Lymphoedema due to obesity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.13",
+            "titulo": {
+                "es": "Linfedema por filariosis linfática",
+                "en": "Lymphoedema due to lymphatic filariasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.14",
+            "titulo": {
+                "es": "Linfedema por podoconiosis",
+                "en": "Lymphoedema due to podoconiosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.15",
+            "titulo": {
+                "es": "Linfedema por infiltración maligna",
+                "en": "Lymphoedema due to malignant infiltration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.1Y",
+            "titulo": {
+                "es": "Linfedema secundario especificado",
+                "en": "Lymphoedema secondary to other specified cause"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.1Z",
+            "titulo": {
+                "es": "Linfedema secundario, sin especificación",
+                "en": "Secondary lymphoedema, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.Y",
+            "titulo": {
+                "es": "Otras formas especificadas de linfedema",
+                "en": "Other specified forms of lymphoedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD93.Z",
+            "titulo": {
+                "es": "Linfedema, sin especificación",
+                "en": "Lymphoedema, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD9Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de los vasos y ganglios linfáticos",
+                "en": "Other specified disorders of lymphatic vessels or lymph nodes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BD9Z",
+            "titulo": {
+                "es": "Trastornos de los vasos y ganglios linfáticos, sin especificación",
+                "en": "Disorders of lymphatic vessels or lymph nodes, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE10",
+            "titulo": {
+                "es": "Síndrome de poscardiotomía",
+                "en": "Postcardiotomy syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE11",
+            "titulo": {
+                "es": "Otras alteraciones funcionales tras cirugía cardíaca",
+                "en": "Other functional disturbances following cardiac surgery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE12.0",
+            "titulo": {
+                "es": "Estenosis de la válvula mitral tras un procedimiento",
+                "en": "Postprocedural mitral valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE12.1",
+            "titulo": {
+                "es": "Insuficiencia de la válvula mitral tras un procedimiento",
+                "en": "Postprocedural mitral valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE12.2",
+            "titulo": {
+                "es": "Estenosis de la válvula aórtica tras un procedimiento",
+                "en": "Postprocedural aortic valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE12.3",
+            "titulo": {
+                "es": "Insuficiencia de la válvula aórtica tras un procedimiento",
+                "en": "Postprocedural aortic valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE12.4",
+            "titulo": {
+                "es": "Estenosis de la válvula tricúspide tras un procedimiento",
+                "en": "Postprocedural tricuspid valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE12.5",
+            "titulo": {
+                "es": "Insuficiencia de la válvula tricúspide tras un procedimiento",
+                "en": "Postprocedural tricuspid valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE12.6",
+            "titulo": {
+                "es": "Estenosis de la válvula pulmonar tras un procedimiento",
+                "en": "Postprocedural pulmonary valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE12.7",
+            "titulo": {
+                "es": "Insuficiencia de la válvula pulmonar tras un procedimiento",
+                "en": "Postprocedural pulmonary valve insufficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE13",
+            "titulo": {
+                "es": "Aneurisma aórtico verdadero o falso tras un procedimiento",
+                "en": "Postprocedural true or false aortic aneurysm"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE14.40",
+            "titulo": {
+                "es": "Estenosis de la válvula neopulmonar",
+                "en": "Neopulmonary valve stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE14.41",
+            "titulo": {
+                "es": "insuficiencia de válvula neopulmonar",
+                "en": "Neopulmonary valve regurgitation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE14.5",
+            "titulo": {
+                "es": "Anomalía valvular auriculoventricular derecha en ventrículo con doble entrada tras un procedimiento",
+                "en": "Postprocedural right-sided atrioventricular valvar abnormality in double-inlet ventricle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE14.6",
+            "titulo": {
+                "es": "Anomalía valvular auriculoventricular izquierda en ventrículo con doble entrada tras un procedimiento",
+                "en": "Postprocedural left-sided atrioventricular valvar abnormality in double-inlet ventricle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE14.7",
+            "titulo": {
+                "es": "Anomalía adquirida de la válvula auriculoventricular común en ventrículo con doble entrada tras un procedimiento",
+                "en": "Postprocedural common atrioventricular valvar abnormality in double-inlet ventricle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE14.8",
+            "titulo": {
+                "es": "Trastorno de defecto septal ventricular posprocedimiento",
+                "en": "Postprocedural ventricular septal defect disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE14.9",
+            "titulo": {
+                "es": "Trastorno aórtico posprocedimiento relacionado con anomalía cardíaca congénita",
+                "en": "Postprocedural aortic disorder related to congenital heart anomaly"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE14.A",
+            "titulo": {
+                "es": "Trastorno en el conducto arterioso tras un procedimiento",
+                "en": "Postprocedural arterial duct disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE14.B",
+            "titulo": {
+                "es": "Trastorno posprocedimiento que sigue a un procedimiento de derivación o de conducto cardiovascular",
+                "en": "Postprocedural disorder following cardiovascular conduit or shunt procedure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE15.0",
+            "titulo": {
+                "es": "Estenosis del tronco pulmonar tras un procedimiento",
+                "en": "Postprocedural pulmonary trunk stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE15.1",
+            "titulo": {
+                "es": "Estenosis de la arteria pulmonar derecha tras un procedimiento",
+                "en": "Postprocedural right pulmonary artery stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE16",
+            "titulo": {
+                "es": "Trastorno venoso pulmonar postprocedimiento",
+                "en": "Postprocedural pulmonary venous disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE17",
+            "titulo": {
+                "es": "Comunicación interauricular residual o recurrente tras un procedimiento",
+                "en": "Postprocedural residual or recurrent interatrial communication"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE19",
+            "titulo": {
+                "es": "Anomalía ventricular tras un procedimiento",
+                "en": "Postprocedural ventricular abnormality"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE1A",
+            "titulo": {
+                "es": "Trasplante cardíaco asociado con vasculopatía coronaria del aloinjerto",
+                "en": "Cardiac transplant associated coronary allograft vasculopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE1B.0",
+            "titulo": {
+                "es": "Síndrome de linfedema tras mastectomía",
+                "en": "Postmastectomy lymphoedema syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE1B.1",
+            "titulo": {
+                "es": "Linfedema debido a otros procedimientos médicos o quirúrgicos.",
+                "en": "Lymphoedema due to other medical or surgical procedures"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE1C",
+            "titulo": {
+                "es": "Obstrucción de vena cava inferior por cuerpo extraño",
+                "en": "Inferior caval vein obstruction due to foreign body"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE1D",
+            "titulo": {
+                "es": "Obstrucción de vena cava superior por cuerpo extraño",
+                "en": "Superior caval vein obstruction due to foreign body"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE1E.0",
+            "titulo": {
+                "es": "Perforación auricular derecha tras un procedimiento",
+                "en": "Postprocedural right atrial perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE1E.1",
+            "titulo": {
+                "es": "Erosión auricular derecha debida a dispositivo implantado",
+                "en": "Right atrial erosion due to implanted device"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE1F.0",
+            "titulo": {
+                "es": "Perforación auricular izquierda tras un procedimiento",
+                "en": "Postprocedural left atrial perforation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE1F.1",
+            "titulo": {
+                "es": "Erosión auricular izquierda por un dispositivo implantado",
+                "en": "Left atrial erosion due to implanted device"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE20",
+            "titulo": {
+                "es": "Embolia, según lo indicado.",
+                "en": "Embolism, so stated"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE21",
+            "titulo": {
+                "es": "Tromboembolismo, según lo indicado",
+                "en": "Thromboembolism, so stated"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE2Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del sistema circulatorio",
+                "en": "Other specified diseases of the circulatory system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "BE2Z",
+            "titulo": {
+                "es": "Enfermedades del sistema circulatorio, sin especificación",
+                "en": "Diseases of the circulatory system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

@@ -1,16 +1,27 @@
 {
-  "hosting": {
-    "public": "composeApp/build/dist/wasmJs/productionExecutable",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "web",
+      "public": "composeApp/build/dist/wasmJs/productionExecutable",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "data",
+      "public": "diseases",
+      "ignore": [
+        "firebase.json",
+        "**/.*"
+      ]
+    }
+  ]
 }

@@ -1,0 +1,667 @@
+{
+    "codigo": "07",
+    "titulo": {
+        "es": "Trastornos del sueño y la vigilia",
+        "en": "Sleep-wake disorders"
+    },
+    "subcategorias": [
+        {
+            "codigo": "7A00",
+            "titulo": {
+                "es": "Insomnio crónico",
+                "en": "Chronic insomnia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A01",
+            "titulo": {
+                "es": "Insomnio de corta duración",
+                "en": "Short-term insomnia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A0Z",
+            "titulo": {
+                "es": "Trastornos de insomnio, sin especificación",
+                "en": "Insomnia disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A20.0",
+            "titulo": {
+                "es": "Narcolepsia, tipo 1",
+                "en": "Narcolepsy, Type 1"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A20.1",
+            "titulo": {
+                "es": "Narcolepsia, tipo 2",
+                "en": "Narcolepsy, Type 2"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A20.Z",
+            "titulo": {
+                "es": "Narcolepsia, sin especificación",
+                "en": "Narcolepsy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A21",
+            "titulo": {
+                "es": "Hipersomnia idiopática",
+                "en": "Idiopathic hypersomnia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A22",
+            "titulo": {
+                "es": "Síndrome de Kleine-Levin",
+                "en": "Kleine-Levin syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A23",
+            "titulo": {
+                "es": "Hipersomnia debida a un problema médico",
+                "en": "Hypersomnia due to a medical condition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A24",
+            "titulo": {
+                "es": "Hipersomnia debida a un medicamento o sustancia",
+                "en": "Hypersomnia due to a medication or substance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A25",
+            "titulo": {
+                "es": "Hipersomnia asociada con un trastorno mental",
+                "en": "Hypersomnia associated with a mental disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A26",
+            "titulo": {
+                "es": "Síndrome de sueño insuficiente",
+                "en": "Insufficient sleep syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A2Y",
+            "titulo": {
+                "es": "Otros trastornos de hipersomnolencia especificados",
+                "en": "Other specified hypersomnolence disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A2Z",
+            "titulo": {
+                "es": "Trastornos de hipersomnolencia, sin especificación",
+                "en": "Hypersomnolence disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.0",
+            "titulo": {
+                "es": "Apnea central primaria del sueño",
+                "en": "Primary central sleep apnoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.1",
+            "titulo": {
+                "es": "Apnea central del sueño primaria de la infancia",
+                "en": "Primary central sleep apnoea of infancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.2",
+            "titulo": {
+                "es": "Apnea central del sueño primaria de la prematuridad",
+                "en": "Primary central sleep apnoea of prematurity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.3",
+            "titulo": {
+                "es": "Apnea central del sueño debida a respiración de Cheyne-Stokes",
+                "en": "Central sleep apnea with Cheyne-Stokes breathing"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.4",
+            "titulo": {
+                "es": "Apnea central del sueño debida a un problema médico sin respiración de Cheyne-Stokes",
+                "en": "Central sleep apnoea due to a medical condition without Cheyne-Stokes breathing"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.5",
+            "titulo": {
+                "es": "Apnea central del sueño debida a respiración periódica a grandes alturas",
+                "en": "Central sleep apnoea due to high-altitude periodic breathing"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.6",
+            "titulo": {
+                "es": "Apnea central del sueño debida a un medicamento o sustancia",
+                "en": "Central sleep apnoea due to a medication or substance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.7",
+            "titulo": {
+                "es": "Apnea central del sueño que aparece durante un tratamiento",
+                "en": "Treatment-emergent central sleep apnoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.Y",
+            "titulo": {
+                "es": "Otras apneas centrales del sueño especificadas",
+                "en": "Other specified central sleep apnoeas"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A40.Z",
+            "titulo": {
+                "es": "Apneas centrales del sueño, sin especificación",
+                "en": "Central sleep apnoeas, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A41",
+            "titulo": {
+                "es": "Apnea obstructiva del sueño",
+                "en": "Obstructive sleep apnoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A42.0",
+            "titulo": {
+                "es": "Síndrome de hipoventilación en la obesidad",
+                "en": "Obesity hypoventilation syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A42.1",
+            "titulo": {
+                "es": "Hipoventilación central alveolar congénita relacionada con el sueño",
+                "en": "Congenital central alveolar sleep-related hypoventilation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A42.2",
+            "titulo": {
+                "es": "Hipoventilación central no congénita con anomalías hipotalámicas",
+                "en": "Non-congenital central hypoventilation with hypothalamic abnormalities"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A42.3",
+            "titulo": {
+                "es": "Hipoventilación alveolar central idiopática",
+                "en": "Idiopathic central alveolar hypoventilation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A42.4",
+            "titulo": {
+                "es": "Hipoventilación relacionada con el sueño debida a un medicamento o sustancia",
+                "en": "Sleep-related hypoventilation due to a medication or substance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A42.5",
+            "titulo": {
+                "es": "Hipoventilación durante el sueño debida a un problema médico",
+                "en": "Sleep-related hypoventilation due to medical condition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A42.6",
+            "titulo": {
+                "es": "Hipoxemia relacionada con el sueño debida a una afección médica",
+                "en": "Sleep-related hypoxemia due to a medical condition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A42.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de hipoventilación o hipoxemia relacionados con el sueño",
+                "en": "Other specified sleep-related hypoventilation or hypoxemia disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A42.Z",
+            "titulo": {
+                "es": "Trastornos de hipoventilación o hipoxemia relacionados con el sueño, sin especificación",
+                "en": "Sleep-related hypoventilation or hypoxemia disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A4Y",
+            "titulo": {
+                "es": "Otros trastornos respiratorios especificados relacionados con el sueño",
+                "en": "Other specified sleep-related breathing disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A4Z",
+            "titulo": {
+                "es": "Trastornos respiratorios relacionados con el sueño, sin especificación",
+                "en": "Sleep-related breathing disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A60",
+            "titulo": {
+                "es": "Trastorno por retraso de la fase del sueño y la vigilia",
+                "en": "Delayed sleep-wake phase disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A61",
+            "titulo": {
+                "es": "Trastorno por adelanto de la fase del sueño y la vigilia",
+                "en": "Advanced sleep-wake phase disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A62",
+            "titulo": {
+                "es": "Trastorno por ritmo irregular del sueño y la vigilia",
+                "en": "Irregular sleep-wake rhythm disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A63",
+            "titulo": {
+                "es": "Trastorno por ritmo del sueño y la vigilia distinto de 24 horas",
+                "en": "Non-24 hour sleep-wake rhythm disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A64",
+            "titulo": {
+                "es": "Trastorno del ritmo circadiano del sueño y la vigilia debido al trabajo por turnos",
+                "en": "Circadian rhythm sleep-wake disorder, shift work type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A65",
+            "titulo": {
+                "es": "Trastorno del ritmo circadiano del sueño y la vigilia, del tipo por cambio de zona horaria",
+                "en": "Circadian rhythm sleep-wake disorder, jet lag type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A6Z",
+            "titulo": {
+                "es": "Trastornos del ciclo circadiano del sueño y la vigilia, sin especificación",
+                "en": "Circadian rhythm sleep-wake disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A80",
+            "titulo": {
+                "es": "Síndrome de las piernas inquietas",
+                "en": "Restless legs syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A81",
+            "titulo": {
+                "es": "Trastorno por movimientos periódicos de las extremidades",
+                "en": "Periodic limb movement disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A82",
+            "titulo": {
+                "es": "Calambres en las piernas durante el sueño",
+                "en": "Sleep-related leg cramps"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A83",
+            "titulo": {
+                "es": "Bruxismo durante el sueño",
+                "en": "Sleep-related bruxism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A84",
+            "titulo": {
+                "es": "Movimientos rítmicos durante el sueño",
+                "en": "Sleep-related rhythmic movement disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A85",
+            "titulo": {
+                "es": "Mioclonías benignas del sueño en la lactancia",
+                "en": "Benign sleep myoclonus of infancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A86",
+            "titulo": {
+                "es": "Mioclonía propioespinal al inicio del sueño",
+                "en": "Propriospinal myoclonus at sleep onset"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A87",
+            "titulo": {
+                "es": "Movimientos anormales durante el sueño debido a un problema médico",
+                "en": "Sleep-related movement disorder due to a medical condition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A88",
+            "titulo": {
+                "es": "Trastorno del movimiento relacionado con el sueño debido a un medicamento o sustancia",
+                "en": "Sleep-related movement disorder due to a medication or substance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A8Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del movimiento relacionados con el sueño",
+                "en": "Other specified sleep-related movement disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7A8Z",
+            "titulo": {
+                "es": "Trastornos del movimiento relacionados con el sueño, sin especificación",
+                "en": "Sleep-related movement disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B00.0",
+            "titulo": {
+                "es": "Despertares confusionales",
+                "en": "Confusional arousals"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B00.1",
+            "titulo": {
+                "es": "Trastorno de sonambulismo",
+                "en": "Sleepwalking disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B00.2",
+            "titulo": {
+                "es": "Terror del sueño",
+                "en": "Sleep terrors"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B00.3",
+            "titulo": {
+                "es": "Trastorno de la conducta alimentaria relacionado con el sueño",
+                "en": "Sleep-related eating disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B00.Y",
+            "titulo": {
+                "es": "Otros trastornos del despertar del sueño no REM",
+                "en": "Other specified disorders of arousal from non-REM sleep"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B00.Z",
+            "titulo": {
+                "es": "Trastornos del despertar del sueño no REM, sin especificación",
+                "en": "Disorders of arousal from non-REM sleep, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B01.0",
+            "titulo": {
+                "es": "Trastorno del comportamiento durante el sueño REM",
+                "en": "REM sleep behaviour disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B01.1",
+            "titulo": {
+                "es": "Parálisis del sueño aislada recurrente",
+                "en": "Recurrent isolated sleep paralysis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B01.2",
+            "titulo": {
+                "es": "Pesadillas",
+                "en": "Nightmare disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B01.Y",
+            "titulo": {
+                "es": "Otras parasomnias especificadas relacionadas con el sueño REM",
+                "en": "Other specified parasomnias related to REM sleep"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B01.Z",
+            "titulo": {
+                "es": "Parasomnias relacionadas con el sueño REM, sin especificación",
+                "en": "Parasomnias related to REM sleep, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B02.0",
+            "titulo": {
+                "es": "Síndrome hipnagógico de la cabeza explosiva",
+                "en": "Hypnagogic exploding head syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B02.1",
+            "titulo": {
+                "es": "Alucinaciones durante el sueño",
+                "en": "Sleep-related hallucinations"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B02.2",
+            "titulo": {
+                "es": "Trastorno de parasomnia debido a un problema médico",
+                "en": "Parasomnia disorder due to a medical condition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B02.3",
+            "titulo": {
+                "es": "Trastorno de parasomnia debido a un medicamento o sustancia",
+                "en": "Parasomnia disorder due to a medication or substance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de parasomnia",
+                "en": "Other specified parasomnia disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B0Z",
+            "titulo": {
+                "es": "Trastornos de parasomnia, sin especificación",
+                "en": "Parasomnia disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del sueño y la vigilia",
+                "en": "Other specified sleep-wake disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "7B2Z",
+            "titulo": {
+                "es": "Trastornos del sueño y la vigilia, sin especificación",
+                "en": "Sleep-wake disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

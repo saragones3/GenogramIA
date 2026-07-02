@@ -167,10 +167,16 @@ jobs:
           name: web-distribution
           path: composeApp/build/dist/wasmJs/productionExecutable
 
+      - name: Upload diseases
+        run: |
+          mkdir -p composeApp/build/dist/wasmJs/productionExecutable/api
+          cp -r diseases/* composeApp/build/dist/wasmJs/productionExecutable/api/
+
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_GENOGRAMIA }}
           channelId: live
+          target: web
           projectId: genogramia

@@ -1,0 +1,1936 @@
+{
+    "codigo": "04",
+    "titulo": {
+        "es": "Enfermedades del sistema inmunitario",
+        "en": "Diseases of the immune system"
+    },
+    "subcategorias": [
+        {
+            "codigo": "4A00.00",
+            "titulo": {
+                "es": "Síndrome de inmunodeficiencia de neutrófilos",
+                "en": "Neutrophil immunodeficiency syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.0Y",
+            "titulo": {
+                "es": "Otros defectos funcionales especificados de los neutrófilos",
+                "en": "Other specified functional neutrophil defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.0Z",
+            "titulo": {
+                "es": "Defectos funcionales de los neutrófilos, sin especificación",
+                "en": "Functional neutrophil defects, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.10",
+            "titulo": {
+                "es": "Inmunodeficiencia con deficiencia de un componente inicial del complemento",
+                "en": "Immunodeficiency with an early component of complement deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.11",
+            "titulo": {
+                "es": "Inmunodeficiencia con deficiencia de un componente tardío del complemento",
+                "en": "Immunodeficiency with a late component of complement deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.12",
+            "titulo": {
+                "es": "Inmunodeficiencia con deficiencia del factor B",
+                "en": "Immunodeficiency with factor B deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.13",
+            "titulo": {
+                "es": "Inmunodeficiencia con anomalía del factor D",
+                "en": "Immunodeficiency with factor D anomaly"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.14",
+            "titulo": {
+                "es": "Angioedema hereditario",
+                "en": "Hereditary angioedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.15",
+            "titulo": {
+                "es": "Angioedema adquirido",
+                "en": "Acquired angioedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.1Y",
+            "titulo": {
+                "es": "Otros defectos especificados del sistema del complemento",
+                "en": "Other specified defects in the complement system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.1Z",
+            "titulo": {
+                "es": "Defectos del sistema del complemento, sin especificación",
+                "en": "Defects in the complement system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.2",
+            "titulo": {
+                "es": "Predisposición genética a determinados microbios patógenos",
+                "en": "Genetic susceptibility to particular pathogens"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.3",
+            "titulo": {
+                "es": "Inmunodeficiencia con deficiencia de células NK",
+                "en": "Immunodeficiency with natural-killer cell deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.Y",
+            "titulo": {
+                "es": "Otras inmunodeficiencias primarias especificadas por trastornos de la inmunidad innata",
+                "en": "Other specified primary immunodeficiencies due to disorders of innate immunity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A00.Z",
+            "titulo": {
+                "es": "Inmunodeficiencias primarias por trastornos de la inmunidad innata, sin especificación",
+                "en": "Primary immunodeficiencies due to disorders of innate immunity, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.00",
+            "titulo": {
+                "es": "Agammaglobulinemia hereditaria con linfocitos B ausentes o casi ausentes",
+                "en": "Hereditary agammaglobulinaemia with profoundly reduced or absent B cells"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.01",
+            "titulo": {
+                "es": "Inmunodeficiencias con reducción importante de al menos dos isotipos de inmunoglobulinas séricas con cifra normal o baja de linfocitos B",
+                "en": "Immunodeficiencies with severe reduction in at least two serum immunoglobulin isotypes with normal or low numbers of B cells"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.02",
+            "titulo": {
+                "es": "Deficiencia de anticuerpos específicos con concentración normal de inmunoglobulinas o número normal de linfocitos B",
+                "en": "Specific antibody deficiency with normal immunoglobulin concentrations or normal number of B cells"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.03",
+            "titulo": {
+                "es": "Hipogammaglobulinemia transitoria del lactante",
+                "en": "Transient hypogammaglobulinaemia of infancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.04",
+            "titulo": {
+                "es": "Inmunodeficiencias con deficiencias isotípicas o de cadenas ligeras y cifra normal de linfocitos B",
+                "en": "Immunodeficiencies with isotype or light chain deficiencies with normal number of B cells"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.05",
+            "titulo": {
+                "es": "Inmunodeficiencias con reducción importante de IgG o IgA séricas, con IgM normal o elevada y cifra normal de linfocitos B",
+                "en": "Immunodeficiencies with severe reduction in serum IgG or IgA with normal or elevated IgM and normal numbers of B-cells"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.0Y",
+            "titulo": {
+                "es": "Otras inmunodeficiencias especificadas con defecto predominante de los anticuerpos",
+                "en": "Other specified immunodeficiencies with predominantly antibody defects"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.0Z",
+            "titulo": {
+                "es": "Inmunodeficiencias con defecto predominante de los anticuerpos, sin especificación",
+                "en": "Immunodeficiencies with predominantly antibody defects, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.10",
+            "titulo": {
+                "es": "Inmunodeficiencias combinadas graves",
+                "en": "Severe combined immunodeficiencies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.11",
+            "titulo": {
+                "es": "Deficiencia de complejo principal de histocompatibilidad de clase I",
+                "en": "Major histocompatibility complex class I deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.12",
+            "titulo": {
+                "es": "Deficiencia de complejo principal de histocompatibilidad de clase II",
+                "en": "Major histocompatibility complex class II deficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.1Y",
+            "titulo": {
+                "es": "Otras inmunodeficiencias combinadas especificadas",
+                "en": "Other specified combined immunodeficiencies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.1Z",
+            "titulo": {
+                "es": "Inmunodeficiencias combinadas, sin especificación",
+                "en": "Combined immunodeficiencies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.20",
+            "titulo": {
+                "es": "Trastornos de la regulación inmunitaria con hipopigmentación",
+                "en": "Immune dysregulation syndromes with hypopigmentation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.21",
+            "titulo": {
+                "es": "Trastornos de la regulación inmunitaria con predominio de la autoinmunidad",
+                "en": "Immune dysregulation syndromes presenting primarily with autoimmunity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.22",
+            "titulo": {
+                "es": "Trastornos de la regulación inmunitaria con predominio de la linfoproliferación",
+                "en": "Immune dysregulation syndromes presenting primarily with lymphoproliferation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.23",
+            "titulo": {
+                "es": "Linfohistiocitosis hemofagocítica primaria",
+                "en": "Primary haemophagocytic lymphohistiocytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la regulación inmunitaria",
+                "en": "Other specified diseases of immune dysregulation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.2Z",
+            "titulo": {
+                "es": "Trastornos de la regulación inmunitaria, sin especificación",
+                "en": "Diseases of immune dysregulation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.30",
+            "titulo": {
+                "es": "Inmunodeficiencia por defectos del timo",
+                "en": "Immunodeficiency due to defects of the thymus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.31",
+            "titulo": {
+                "es": "Defectos de reparación del ADN distintos de las inmunodeficiencias combinadas de linfocitos T o B",
+                "en": "DNA repair defects other than combined T-cell or B-cell immunodeficiencies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.32",
+            "titulo": {
+                "es": "Displasia inmunoósea",
+                "en": "Immuno-osseous dysplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.33",
+            "titulo": {
+                "es": "Enfermedad venooclusiva hepática - síndrome de inmunodeficiencia",
+                "en": "Hepatic veno-occlusive disease - immunodeficiency syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.34",
+            "titulo": {
+                "es": "Síndromes de hiper-IgE",
+                "en": "Hyperimmunoglobulin E syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A01.Z",
+            "titulo": {
+                "es": "Inmunodeficiencias primarias por trastornos de la inmunidad adaptativa, sin especificación",
+                "en": "Primary immunodeficiencies due to disorders of adaptive immunity, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A0Y",
+            "titulo": {
+                "es": "Otras inmunodeficiencias primarias especificadas",
+                "en": "Other specified primary immunodeficiencies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A0Z",
+            "titulo": {
+                "es": "Inmunodeficiencias primarias, sin especificación",
+                "en": "Primary immunodeficiencies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A20.0",
+            "titulo": {
+                "es": "Inmunodeficiencia de comienzo en el adulto",
+                "en": "Adult-onset immunodeficiency"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A20.1",
+            "titulo": {
+                "es": "Inmunodeficiencia adquirida por pérdida de inmunoglobulina",
+                "en": "Acquired immunodeficiency due to loss of immunoglobulin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A20.20",
+            "titulo": {
+                "es": "Síndrome hemofagocítico asociado con infección",
+                "en": "Haemophagocytic syndrome associated with infection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A20.21",
+            "titulo": {
+                "es": "Linfohistiocitosis hemofagocítica asociada con una neoplasia maligna",
+                "en": "Haemophagocytic lymphohistiocytosis associated with a malignant disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A20.2Y",
+            "titulo": {
+                "es": "Otra linfohistiocitosis hemofagocítica secundaria especificada",
+                "en": "Other specified secondary haemophagocytic lymphohistiocytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A20.2Z",
+            "titulo": {
+                "es": "Linfohistiocitosis hemofagocítica secundaria, sin especificación",
+                "en": "Secondary haemophagocytic lymphohistiocytosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A20.Y",
+            "titulo": {
+                "es": "Otras inmunodeficiencias adquiridas especificadas",
+                "en": "Other specified acquired immunodeficiencies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A20.Z",
+            "titulo": {
+                "es": "Inmunodeficiencias adquiridas, sin especificación",
+                "en": "Acquired immunodeficiencies, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A40.00",
+            "titulo": {
+                "es": "Lupus eritematoso sistémico con afectación cutánea",
+                "en": "Systemic lupus erythematosus with skin involvement"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A40.0Y",
+            "titulo": {
+                "es": "Otro lupus eritematoso sistémico especificado",
+                "en": "Other specified systemic lupus erythematosus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A40.0Z",
+            "titulo": {
+                "es": "Lupus eritematoso sistémico, sin especificación",
+                "en": "Systemic lupus erythematosus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A40.1",
+            "titulo": {
+                "es": "Lupus eritematoso provocado por medicamentos",
+                "en": "Drug-induced lupus erythematosus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A40.Y",
+            "titulo": {
+                "es": "Otro lupus eritematoso especificado",
+                "en": "Other specified lupus erythematosus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A40.Z",
+            "titulo": {
+                "es": "Lupus eritematoso, sin especificación",
+                "en": "Lupus erythematosus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.00",
+            "titulo": {
+                "es": "Dermatomiositis del adulto",
+                "en": "Adult dermatomyositis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.01",
+            "titulo": {
+                "es": "Dermatomiositis juvenil",
+                "en": "Juvenile dermatomyositis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.0Z",
+            "titulo": {
+                "es": "Dermatomiositis, sin especificación",
+                "en": "Dermatomyositis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.10",
+            "titulo": {
+                "es": "Polimiositis juvenil",
+                "en": "Juvenile polymyositis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.11",
+            "titulo": {
+                "es": "Polimiositis paraneoplásica",
+                "en": "Paraneoplastic polymyositis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.1Y",
+            "titulo": {
+                "es": "Otra polimiositis especificada",
+                "en": "Other specified polymyositis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.1Z",
+            "titulo": {
+                "es": "Polimiositis, sin especificación",
+                "en": "Polymyositis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.20",
+            "titulo": {
+                "es": "Miositis inflamatoria por cuerpos de inclusión",
+                "en": "Inflammatory inclusion body myositis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.21",
+            "titulo": {
+                "es": "Miopatía no inflamatoria por cuerpos de inclusión",
+                "en": "Noninflammatory inclusion body myopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.2Z",
+            "titulo": {
+                "es": "Miopatía por cuerpos de inclusión. sin especificación",
+                "en": "Inclusion body myopathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.Y",
+            "titulo": {
+                "es": "Otra miopatía inflamatoria idiopática especificada",
+                "en": "Other specified idiopathic inflammatory myopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A41.Z",
+            "titulo": {
+                "es": "Miopatía inflamatoria idiopática, sin especificación",
+                "en": "Idiopathic inflammatory myopathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A42.0",
+            "titulo": {
+                "es": "Esclerosis sistémica de comienzo pediátrico",
+                "en": "Paediatric onset systemic sclerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A42.1",
+            "titulo": {
+                "es": "Esclerosis sistémica difusa",
+                "en": "Diffuse systemic sclerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A42.2",
+            "titulo": {
+                "es": "Esclerodermia sistémica localizada",
+                "en": "Limited systemic sclerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A42.Z",
+            "titulo": {
+                "es": "Esclerosis sistémica, sin especificación",
+                "en": "Systemic sclerosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.0",
+            "titulo": {
+                "es": "Enfermedad relacionada con IgG4",
+                "en": "IgG4 related disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.1",
+            "titulo": {
+                "es": "Enfermedad de Mikulicz",
+                "en": "Mikulicz disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.20",
+            "titulo": {
+                "es": "Síndrome de Sjögren primario",
+                "en": "Primary Sjögren syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.21",
+            "titulo": {
+                "es": "Síndrome de Sjögren secundario",
+                "en": "Secondary Sjögren syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.22",
+            "titulo": {
+                "es": "Síndrome de Sjögren de comienzo pediátrico",
+                "en": "Paediatric onset Sjögren syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.2Y",
+            "titulo": {
+                "es": "Otro síndrome de Sjögren especificado",
+                "en": "Other specified sjögren syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.2Z",
+            "titulo": {
+                "es": "Síndrome de Sjögren, sin especificación",
+                "en": "Sjögren syndrome, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.3",
+            "titulo": {
+                "es": "Enfermedad mixta del tejido conjuntivo",
+                "en": "Mixed connective tissue disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.4",
+            "titulo": {
+                "es": "Fascitis eosinofílica difusa",
+                "en": "Diffuse eosinophilic fasciitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.Y",
+            "titulo": {
+                "es": "Otra enfermedad autoinmunitaria sistémica especificada, solapada o indiferenciada, sin especificidad de órgano",
+                "en": "Other specified overlap non-organ specific systemic autoimmune disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A43.Z",
+            "titulo": {
+                "es": "Enfermedad autoinmunitaria sistémica solapada o indiferenciada sin especificidad de órgano, sin especificación",
+                "en": "Undifferentiated non-organ specific systemic autoimmune disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.0",
+            "titulo": {
+                "es": "Seudopoliartritis rizomélica",
+                "en": "Rhizomelic pseudopolyarthritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.1",
+            "titulo": {
+                "es": "Síndrome del cayado aórtico",
+                "en": "Aortic arch syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.2",
+            "titulo": {
+                "es": "Arteritis de células gigantes",
+                "en": "Giant cell arteritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.3",
+            "titulo": {
+                "es": "Vasculitis en un solo órgano",
+                "en": "Single organ vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.4",
+            "titulo": {
+                "es": "Poliarteritis nudosa",
+                "en": "Polyarteritis nodosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.5",
+            "titulo": {
+                "es": "Síndrome ganglionar mucocutáneo",
+                "en": "Mucocutaneous lymph node syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.6",
+            "titulo": {
+                "es": "Síndrome de Sneddon",
+                "en": "Sneddon syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.7",
+            "titulo": {
+                "es": "Angitis primaria del sistema nervioso central",
+                "en": "Primary angiitis of the central nervous system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.8",
+            "titulo": {
+                "es": "Tromboangitis obliterante",
+                "en": "Thromboangiitis obliterans"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.90",
+            "titulo": {
+                "es": "Vasculitis crioglobulinémica",
+                "en": "Cryoglobulinaemic vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.91",
+            "titulo": {
+                "es": "Vasculitis urticarial hipocomplementémica",
+                "en": "Hypocomplementaemic urticarial vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.92",
+            "titulo": {
+                "es": "Vasculitis por IgA",
+                "en": "IgA vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.9Y",
+            "titulo": {
+                "es": "Otra vasculitis especificada de vasos pequeños por inmunocomplejos",
+                "en": "Other specified immune complex small vessel vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.9Z",
+            "titulo": {
+                "es": "Vasculitis de vasos pequeños por inmunocomplejos, sin especificación",
+                "en": "Immune complex small vessel vasculitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.A0",
+            "titulo": {
+                "es": "Poliangiítis microscópica",
+                "en": "Microscopic polyangiitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.A1",
+            "titulo": {
+                "es": "Granulomatosis con poliangitis",
+                "en": "Granulomatosis with polyangiitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.A2",
+            "titulo": {
+                "es": "Granulomatosis eosinofílica con poliangitis",
+                "en": "Eosinophilic granulomatosis with polyangiitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.AY",
+            "titulo": {
+                "es": "Otra vasculitis especificada asociada a anticuerpos citoplasmáticos antineutrófilos",
+                "en": "Other specified antineutrophil cytoplasmic antibody-associated vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.AZ",
+            "titulo": {
+                "es": "Vasculitis asociada a anticuerpos citoplasmáticos antineutrófilos, sin especificación",
+                "en": "Antineutrophil cytoplasmic antibody-associated vasculitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.B0",
+            "titulo": {
+                "es": "Vasculitis leucocitoclástica cutánea",
+                "en": "Cutaneous leukocytoclastic vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.BY",
+            "titulo": {
+                "es": "Otra vasculitis leucocitoclástica especificada",
+                "en": "Other specified leukocytoclastic vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.BZ",
+            "titulo": {
+                "es": "Vasculitis leucocitoclástica, sin especificación",
+                "en": "Leukocytoclastic vasculitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.Y",
+            "titulo": {
+                "es": "Otra vasculitis especificada",
+                "en": "Other specified vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A44.Z",
+            "titulo": {
+                "es": "Vasculitis, sin especificación",
+                "en": "Vasculitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A45.0",
+            "titulo": {
+                "es": "Síndrome antifosfolipídico primario",
+                "en": "Primary antiphospholipid syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A45.1",
+            "titulo": {
+                "es": "Síndrome antifosfolipídico secundario",
+                "en": "Secondary antiphospholipid syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A45.2",
+            "titulo": {
+                "es": "Síndrome antifosfolipídico en el embarazo",
+                "en": "Antiphospholipid syndrome in pregnancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A45.3",
+            "titulo": {
+                "es": "Síndrome de hipoprotrombinemia y anticoagulante lúpico",
+                "en": "Lupus anticoagulant-hypoprothrombinaemia syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A45.Z",
+            "titulo": {
+                "es": "Síndrome antifosfolipídico, sin especificación",
+                "en": "Antiphospholipid syndrome, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A4Y",
+            "titulo": {
+                "es": "Trastornos autoinmunitarios sistémicos especificados sin especificidad de órgano",
+                "en": "Other specified nonorgan specific systemic autoimmune disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A4Z",
+            "titulo": {
+                "es": "Trastornos autoinmunitarios sistémicos sin especificidad de órgano, sin especificación",
+                "en": "Nonorgan specific systemic autoimmune disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A60.0",
+            "titulo": {
+                "es": "Fiebre mediterránea familiar",
+                "en": "Familial Mediterranean fever"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A60.1",
+            "titulo": {
+                "es": "Síndromes periódicos asociados a la criopirina",
+                "en": "Cryopyrin-associated periodic syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A60.2",
+            "titulo": {
+                "es": "Síndrome periódico asociado al receptor 1 del factor de necrosis tumoral (FNT)",
+                "en": "Tumour necrosis factor receptor 1 associated periodic syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A60.Y",
+            "titulo": {
+                "es": "Otros síndromes autoinflamatorios monogénicos especificados",
+                "en": "Other specified monogenic autoinflammatory syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A60.Z",
+            "titulo": {
+                "es": "Síndromes autoinflamatorios monogénicos, sin especificación",
+                "en": "Autoimflammatory syndrome, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A61",
+            "titulo": {
+                "es": "Síndrome SAPHO",
+                "en": "SAPHO syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A62",
+            "titulo": {
+                "es": "Enfermedad de Behçet",
+                "en": "Behçet disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A6Y",
+            "titulo": {
+                "es": "Otros trastornos autoinflamatorios especificados",
+                "en": "Other specified autoinflammatory disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A6Z",
+            "titulo": {
+                "es": "Trastornos autoinflamatorios, sin especificación",
+                "en": "Autoinflammatory disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A80.0",
+            "titulo": {
+                "es": "Broncoespasmo inducido por medicamentos",
+                "en": "Drug-induced bronchospasm"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A80.1",
+            "titulo": {
+                "es": "Broncoespasmo por alergia a alimentos",
+                "en": "Bronchospasm provoked by allergy to food substance"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A80.Y",
+            "titulo": {
+                "es": "Otras enfermedades alérgicas o de hipersensibilidad especificadas con afectación de las vías respiratorias",
+                "en": "Other specified allergic or hypersensitivity disorders involving the respiratory tract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A80.Z",
+            "titulo": {
+                "es": "Enfermedades alérgicas o de hipersensibilidad con afectación de las vías respiratorias, sin especificación",
+                "en": "Allergic or hypersensitivity disorders involving the respiratory tract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A81",
+            "titulo": {
+                "es": "Enfermedades alérgicas o de hipersensibilidad con afectación ocular",
+                "en": "Allergic or hypersensitivity disorders involving the eye"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A82",
+            "titulo": {
+                "es": "Enfermedades alérgicas o de hipersensibilidad con afectación de la piel o las mucosas",
+                "en": "Allergic or hypersensitivity disorders involving skin or mucous membranes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A83.0",
+            "titulo": {
+                "es": "Gastroenteritis eosinofílica inducida por alimentos",
+                "en": "Food-induced eosinophilic gastroenteritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A83.1",
+            "titulo": {
+                "es": "Esofagitis eosinofílica inducida por alimentos",
+                "en": "Food-induced eosinophilic oesophagitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A83.Y",
+            "titulo": {
+                "es": "Otras enfermedades alérgicas o de hipersensibilidad especificadas con afectación del tubo digestivo",
+                "en": "Other specified allergic or hypersensitivity disorders involving the gastrointestinal tract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A83.Z",
+            "titulo": {
+                "es": "Enfermedades alérgicas o de hipersensibilidad con afectación del tubo digestivo, sin especificación",
+                "en": "Allergic or hypersensitivity disorders involving the gastrointestinal tract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.0",
+            "titulo": {
+                "es": "Anafilaxia por reacción alérgica a los alimentos",
+                "en": "Anaphylaxis due to allergic reaction to food"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.1",
+            "titulo": {
+                "es": "Anafilaxia provocada por medicamentos",
+                "en": "Drug-induced anaphylaxis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.2",
+            "titulo": {
+                "es": "Anafilaxia por veneno de insectos",
+                "en": "Anaphylaxis due to insect venom"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.30",
+            "titulo": {
+                "es": "Anafilaxia provocada por el ejercicio",
+                "en": "Exercise-induced anaphylaxis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.31",
+            "titulo": {
+                "es": "Anafilaxia inducida por el frío",
+                "en": "Cold-induced anaphylaxis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.3Y",
+            "titulo": {
+                "es": "Otra anafilaxia provocada por factores físicos especificados",
+                "en": "Anaphylaxis provoked by other specified physical factors"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.3Z",
+            "titulo": {
+                "es": "Anafilaxia provocada por factores físicos, sin especificación",
+                "en": "Anaphylaxis provoked by unspecified physical factors"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.4",
+            "titulo": {
+                "es": "Anafilaxia por alérgenos inhalados",
+                "en": "Anaphylaxis due to inhaled allergens"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.5",
+            "titulo": {
+                "es": "Anafilaxia por contacto con alergenos",
+                "en": "Anaphylaxis due to contact with allergens"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.6",
+            "titulo": {
+                "es": "Anafilaxia secundaria a trastorno de los mastocitos",
+                "en": "Anaphylaxis secondary to mast cell disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.Y",
+            "titulo": {
+                "es": "Otra anafilaxia especificada",
+                "en": "Other specified anaphylaxis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A84.Z",
+            "titulo": {
+                "es": "Anafilaxia, sin especificación",
+                "en": "Anaphylaxis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.00",
+            "titulo": {
+                "es": "Hepatopatía por hipersensibilidad provocada por medicamentos",
+                "en": "Drug-induced liver hypersensitivity disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.01",
+            "titulo": {
+                "es": "Nefropatía por hipersensibilidad provocada por medicamentos",
+                "en": "Drug-induced kidney hypersensitivity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.02",
+            "titulo": {
+                "es": "Citopenia provocada por medicamentos",
+                "en": "Drug-induced cytopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.03",
+            "titulo": {
+                "es": "Vasculitis provocada por medicamentos",
+                "en": "Drug-induced vasculitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.04",
+            "titulo": {
+                "es": "Síndrome de hipersensibilidad a múltiples medicamentos",
+                "en": "Multiple drug hypersensitivity syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.0Y",
+            "titulo": {
+                "es": "Otra hipersensibilidad especificada a medicamentos o agentes farmacológicos",
+                "en": "Drug hypersensitivity of other specified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.0Z",
+            "titulo": {
+                "es": "Hipersensibilidad a medicamentos o agentes farmacológicos, sin especificación",
+                "en": "Drug hypersensitivity of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.1",
+            "titulo": {
+                "es": "Hipersensibilidad a plantas medicinales y terapias médicas alternativas",
+                "en": "Hypersensitivity to herbal or alternative medical therapies"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.20",
+            "titulo": {
+                "es": "Hipersensibilidad gastrointestinal inducida por alimentos",
+                "en": "Food-induced gastrointestinal hypersensitivity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.21",
+            "titulo": {
+                "es": "Urticaria o angioedema inducidos por alimentos",
+                "en": "Food-induced urticaria or angioedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.22",
+            "titulo": {
+                "es": "Dermatitis de contacto alérgica por alérgenos alimentarios",
+                "en": "Allergic contact dermatitis due to food allergen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.2Y",
+            "titulo": {
+                "es": "Otra hipersensibilidad alimentaria especificada",
+                "en": "Other specified food hypersensitivity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.2Z",
+            "titulo": {
+                "es": "Hipersensibilidad alimentaria, sin especificación",
+                "en": "Food hypersensitivity, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.30",
+            "titulo": {
+                "es": "Reacción alérgica sistémica por veneno de himenópteros",
+                "en": "Systemic allergic reaction due to Hymenoptera venom"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.31",
+            "titulo": {
+                "es": "Reacciones cutáneas alérgicas o de hipersensibilidad al veneno de himenópteros",
+                "en": "Cutaneous allergic or hypersensitivity reactions to Hymenoptera venom"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.32",
+            "titulo": {
+                "es": "Reacciones cutáneas alérgicas o de hipersensibilidad a los artrópodos",
+                "en": "Cutaneous allergic or hypersensitivity reactions to arthropods"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.Y",
+            "titulo": {
+                "es": "Otras trastornos alérgicos o de hipersensibilidad complejos especificados",
+                "en": "Other specified complex allergic or hypersensitivity conditions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A85.Z",
+            "titulo": {
+                "es": "Trastornos alérgicos o de hipersensibilidad complejos, sin especificación",
+                "en": "Complex allergic or hypersensitivity conditions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A8Y",
+            "titulo": {
+                "es": "Otras afecciones alérgicas o de hipersensibilidad especificadas",
+                "en": "Allergic or hypersensitivity conditions of other specified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4A8Z",
+            "titulo": {
+                "es": "Afecciones alérgicas o de hipersensibilidad, sin especificación",
+                "en": "Allergic or hypersensitivity conditions of unspecified type"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B00.00",
+            "titulo": {
+                "es": "Neutropenia constitucional",
+                "en": "Constitutional neutropaenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B00.01",
+            "titulo": {
+                "es": "Neutropenia adquirida",
+                "en": "Acquired neutropaenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B00.0Z",
+            "titulo": {
+                "es": "Neutropenia, sin especificación",
+                "en": "Neutropaenia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B00.10",
+            "titulo": {
+                "es": "Neutrofilia constitucional",
+                "en": "Constitutional neutrophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B00.11",
+            "titulo": {
+                "es": "Neutrofilia adquirida",
+                "en": "Acquired neutrophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B00.1Z",
+            "titulo": {
+                "es": "Neutrofilia, sin especificación",
+                "en": "Neutrophilia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B01.00",
+            "titulo": {
+                "es": "Trastornos de la adhesión de los neutrófilos",
+                "en": "Disorders of neutrophil adhesion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B01.01",
+            "titulo": {
+                "es": "Trastornos de la quimiotaxis de los neutrófilos",
+                "en": "Disorders of neutrophil chemotaxis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B01.02",
+            "titulo": {
+                "es": "Trastornos de la formación o liberación de gránulos de los neutrófilos",
+                "en": "Disorders of neutrophil granule formation or release"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B01.03",
+            "titulo": {
+                "es": "Trastorno del metabolismo oxidativo de neutrófilos",
+                "en": "Disorders of neutrophil oxidative metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B01.0Y",
+            "titulo": {
+                "es": "Otros trastornos constitucionales especificados de la función de los neutrófilos",
+                "en": "Other specified constitutional disorders of neutrophil function"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B01.0Z",
+            "titulo": {
+                "es": "Trastornos constitucionales de la función de los neutrófilos, sin especificación",
+                "en": "Constitutional disorders of neutrophil function, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B01.1",
+            "titulo": {
+                "es": "Trastornos adquiridos de la función de los neutrófilos",
+                "en": "Acquired disorders of neutrophil function"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B01.Z",
+            "titulo": {
+                "es": "Trastornos de la función de los neutrófilos, sin especificación",
+                "en": "Disorders of neutrophil function, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B02.0",
+            "titulo": {
+                "es": "Disminución constitucional del número de eosinófilos",
+                "en": "Constitutional decrease in eosinophil number"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B02.1",
+            "titulo": {
+                "es": "Disminución adquirida del número de eosinófilos",
+                "en": "Acquired decrease in eosinophil number"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B02.Z",
+            "titulo": {
+                "es": "Eosinopenia, sin especificación",
+                "en": "Eosinopenia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B03.0",
+            "titulo": {
+                "es": "Eosinofilia constitucional",
+                "en": "Constitutional eosinophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B03.1",
+            "titulo": {
+                "es": "Eosinofilia adquirida",
+                "en": "Acquired eosinophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B03.Z",
+            "titulo": {
+                "es": "Eosinofilia, sin especificación",
+                "en": "Eosinophilia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B04",
+            "titulo": {
+                "es": "Trastornos con disminución del número de monocitos",
+                "en": "Disorders with decreased monocyte counts"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B05",
+            "titulo": {
+                "es": "Trastornos con aumento del número de monocitos",
+                "en": "Disorders with increased monocyte counts"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B06",
+            "titulo": {
+                "es": "Linfopenia adquirida",
+                "en": "Acquired lymphopenia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B07",
+            "titulo": {
+                "es": "Linfocitosis adquirida",
+                "en": "Acquired lymphocytosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del sistema inmunitario con implicación de los linajes de leucocitos",
+                "en": "Other specified immune system disorders involving white cell lineages"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B0Z",
+            "titulo": {
+                "es": "Trastornos del sistema inmunitario con implicación de los linajes de leucocitos, sin especificación",
+                "en": "Immune system disorders involving white cell lineages, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B20.0",
+            "titulo": {
+                "es": "sarcoidosis pulmonar",
+                "en": "Sarcoidosis of lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B20.1",
+            "titulo": {
+                "es": "Sarcoidosis de los ganglios linfáticos",
+                "en": "Sarcoidosis of lymph nodes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B20.2",
+            "titulo": {
+                "es": "Sarcoidosis del aparato digestivo",
+                "en": "Sarcoidosis of the digestive system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B20.3",
+            "titulo": {
+                "es": "Neurosarcoidosis",
+                "en": "Neurosarcoidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B20.4",
+            "titulo": {
+                "es": "Sarcoidosis ocular",
+                "en": "Ocular sarcoidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B20.5",
+            "titulo": {
+                "es": "Sarcoidosis cutánea",
+                "en": "Cutaneous sarcoidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B20.Y",
+            "titulo": {
+                "es": "Otra sarcoidosis especificada",
+                "en": "Other specified sarcoidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B20.Z",
+            "titulo": {
+                "es": "Sarcoidosis, sin especificación",
+                "en": "Sarcoidosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B21",
+            "titulo": {
+                "es": "Hipergammaglobulinemia policlonal",
+                "en": "Polyclonal hypergammaglobulinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B22",
+            "titulo": {
+                "es": "Crioglobulinemia",
+                "en": "Cryoglobulinaemia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B23",
+            "titulo": {
+                "es": "Síndrome inflamatorio de reconstitución inmunitaria",
+                "en": "Immune reconstitution inflammatory syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B24.0",
+            "titulo": {
+                "es": "Enfermedad aguda de injerto contra huésped",
+                "en": "Acute graft-versus-host disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B24.1",
+            "titulo": {
+                "es": "Enfermedad crónica de injerto contra huésped",
+                "en": "Chronic graft-versus-host disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B24.Y",
+            "titulo": {
+                "es": "Otra enfermedad especificada de injerto contra huésped",
+                "en": "Other specified graft-versus-host disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B24.Z",
+            "titulo": {
+                "es": "Enfermedad de injerto contra huésped, sin especificación",
+                "en": "Graft-versus-host disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B2Y",
+            "titulo": {
+                "es": "Otros trastornos especificados que afectan el sistema inmunitario",
+                "en": "Other specified disorders involving the immune system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B40.0",
+            "titulo": {
+                "es": "Hiperplasia persistente del timo",
+                "en": "Persistent hyperplasia of thymus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B40.1",
+            "titulo": {
+                "es": "Absceso del timo",
+                "en": "Abscess of thymus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B40.2",
+            "titulo": {
+                "es": "Síndrome de Good",
+                "en": "Good syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B40.Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del timo",
+                "en": "Other specified diseases of thymus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B40.Z",
+            "titulo": {
+                "es": "Enfermedades del timo, sin especificación",
+                "en": "Diseases of thymus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B4Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del sistema inmunitario",
+                "en": "Other specified diseases of the immune system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "4B4Z",
+            "titulo": {
+                "es": "Enfermedades del sistema inmunitario, sin especificación",
+                "en": "Diseases of the immune system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

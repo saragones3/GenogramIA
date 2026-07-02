@@ -1,0 +1,4159 @@
+{
+    "codigo": "16",
+    "titulo": {
+        "es": "Enfermedades del sistema genitourinario",
+        "en": "Diseases of the genitourinary system"
+    },
+    "subcategorias": [
+        {
+            "codigo": "GA00.0",
+            "titulo": {
+                "es": "Vulvitis aguda",
+                "en": "Acute vulvitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA00.1",
+            "titulo": {
+                "es": "Vulvitis subaguda, crónica o recurrente",
+                "en": "Subacute, chronic or recurrent vulvitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA00.2",
+            "titulo": {
+                "es": "Absceso de la vulva",
+                "en": "Abscess of vulva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA00.3",
+            "titulo": {
+                "es": "Úlcera genital de la vulva",
+                "en": "Genital ulcer of vulva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA00.40",
+            "titulo": {
+                "es": "Ulceración vulvovaginal",
+                "en": "Vulvovaginal ulceration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA00.41",
+            "titulo": {
+                "es": "Inflamación vulvovaginal",
+                "en": "Vulvovaginal inflammation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA00.Z",
+            "titulo": {
+                "es": "Vulvitis, sin especificación",
+                "en": "Vulvitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA01.00",
+            "titulo": {
+                "es": "Endometritis aguda",
+                "en": "Acute endometritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA01.01",
+            "titulo": {
+                "es": "Enfermedad inflamatoria aguda del útero con piometra",
+                "en": "Acute inflammatory disease of uterus with pyometra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA01.0Z",
+            "titulo": {
+                "es": "Enfermedad inflamatoria aguda del útero, sin especificación",
+                "en": "Acute inflammatory disease of uterus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA01.10",
+            "titulo": {
+                "es": "Endometritis crónica",
+                "en": "Chronic endometritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA01.11",
+            "titulo": {
+                "es": "Enfermedad inflamatoria crónica del útero con piometra",
+                "en": "Chronic inflammatory disease of uterus with pyometra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA01.1Z",
+            "titulo": {
+                "es": "Enfermedad inflamatoria crónica del útero, sin especificación",
+                "en": "Chronic inflammatory disease of uterus, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA01.Y",
+            "titulo": {
+                "es": "Otros trastornos inflamatorios especificados del útero, a excepción del cuello uterino",
+                "en": "Other specified inflammatory disorders of the uterus, except cervix"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA01.Z",
+            "titulo": {
+                "es": "Trastornos inflamatorios del útero, a excepción del cuello uterino, sin especificación",
+                "en": "Inflammatory disorders of the uterus, except cervix, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA02.0",
+            "titulo": {
+                "es": "Vaginitis aguda",
+                "en": "Acute vaginitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA02.1",
+            "titulo": {
+                "es": "Vaginitis inflamatoria",
+                "en": "Inflammatory vaginitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA02.2",
+            "titulo": {
+                "es": "Vaginitis subaguda o crónica",
+                "en": "Subacute or chronic vaginitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA02.3",
+            "titulo": {
+                "es": "Úlcera genital de la vagina",
+                "en": "Genital ulcer disease of vagina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA02.Z",
+            "titulo": {
+                "es": "Vaginitis, sin especificación",
+                "en": "Vaginitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA03.0",
+            "titulo": {
+                "es": "Absceso de glándula de Bartolino",
+                "en": "Abscess of Bartholin gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA03.1",
+            "titulo": {
+                "es": "Quiste de glándula de Bartolino",
+                "en": "Cyst of Bartholin gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA03.Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas de la glándula de Bartolino",
+                "en": "Other specified diseases of Bartholin gland"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA03.Z",
+            "titulo": {
+                "es": "Enfermedades de la glándula de Bartolino, sin especificación",
+                "en": "Diseases of Bartholin gland, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA04",
+            "titulo": {
+                "es": "Cervicitis",
+                "en": "Cervicitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA05.0",
+            "titulo": {
+                "es": "Enfermedad inflamatoria pélvica aguda femenina",
+                "en": "Acute female pelvic inflammatory disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA05.1",
+            "titulo": {
+                "es": "Enfermedad inflamatoria pélvica crónica",
+                "en": "Chronic pelvic inflammatory disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA05.2",
+            "titulo": {
+                "es": "Peritonitis pélvica femenina",
+                "en": "Female pelvic peritonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA05.3",
+            "titulo": {
+                "es": "Absceso tuboovárico",
+                "en": "Tuboovarian abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA05.Y",
+            "titulo": {
+                "es": "Otras enfermedades inflamatorias pélvicas femeninas especificadas",
+                "en": "Other specified female pelvic inflammatory diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA05.Z",
+            "titulo": {
+                "es": "Enfermedades inflamatorias pélvicas femeninas, sin especificación",
+                "en": "Female pelvic inflammatory diseases, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA06",
+            "titulo": {
+                "es": "Adherencias peritoneales pélvicas de origen desconocido o combinado",
+                "en": "Pelvic peritoneal adhesions of unknown or combined origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA07.0",
+            "titulo": {
+                "es": "Salpingitis u ooforitis aguda",
+                "en": "Acute salpingitis or oophoritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA07.1",
+            "titulo": {
+                "es": "Salpingitis u ooforitis crónica",
+                "en": "Chronic salpingitis or oophoritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA07.Z",
+            "titulo": {
+                "es": "Salpingitis u ooforitis, sin especificación",
+                "en": "Salpingitis or oophoritis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA0Z",
+            "titulo": {
+                "es": "Trastornos inflamatorios del aparato genital femenino, sin especificación",
+                "en": "Inflammatory disorders of the female genital tract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.B0",
+            "titulo": {
+                "es": "Endometriosis de los ligamentos uterosacros",
+                "en": "Endometriosis of the uterosacral ligaments"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.B1",
+            "titulo": {
+                "es": "Endometriosis de la pared lateral pélvica",
+                "en": "Endometriosis of the pelvic side wall"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.B2",
+            "titulo": {
+                "es": "Endometriosis del tabique rectovaginal o la vagina",
+                "en": "Endometriosis of rectovaginal septum or vagina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.B3",
+            "titulo": {
+                "es": "Endometriosis de la trompa de Falopio",
+                "en": "Endometriosis of fallopian tube"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.B4",
+            "titulo": {
+                "es": "Endometriosis ovárica superficial",
+                "en": "Superficial ovarian endometriosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.B5",
+            "titulo": {
+                "es": "Endometriosis ovárica profunda",
+                "en": "Deep ovarian endometriosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.BY",
+            "titulo": {
+                "es": "Endometriosis de otros sitios del sistema reproductivo",
+                "en": "Endometriosis of other sites of the reproductive system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.BZ",
+            "titulo": {
+                "es": "Endometriosis del sistema reproductivo, sitio sin especificación",
+                "en": "Endometriosis of unspecified site of reproductive system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.C0",
+            "titulo": {
+                "es": "Endometriosis de la vesícula biliar",
+                "en": "Endometriosis of the gallbladder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.C1",
+            "titulo": {
+                "es": "endometriosis de intestino",
+                "en": "Endometriosis of intestine"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.C2",
+            "titulo": {
+                "es": "Endometriosis del peritoneo pélvico",
+                "en": "Endometriosis of pelvic peritoneum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.C3",
+            "titulo": {
+                "es": "Bolsillos peritoneales por endometriosis",
+                "en": "Peritoneal pockets due to endometriosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.CY",
+            "titulo": {
+                "es": "Endometriosis de otros sitios dentro del sistema digestivo.",
+                "en": "Endometriosis of other sites within the digestive system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.CZ",
+            "titulo": {
+                "es": "Endometriosis dentro del sistema digestivo de sitio sin especificación",
+                "en": "Endometriosis of unspecified site within the digestive system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.D0",
+            "titulo": {
+                "es": "Endometriosis de la vejiga",
+                "en": "Endometriosis of the bladder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.DY",
+            "titulo": {
+                "es": "Endometriosis de otros sitios en el sistema urinario",
+                "en": "Endometriosis of other sites in the urinary system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.DZ",
+            "titulo": {
+                "es": "Endometriosis del sistema urinario, sin especificación",
+                "en": "Endometriosis of unspecified site in the urinary system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.E",
+            "titulo": {
+                "es": "Endometriosis del sistema circulatorio",
+                "en": "Endometriosis of the circulatory system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.F",
+            "titulo": {
+                "es": "Endometriosis del sistema nervioso",
+                "en": "Endometriosis of the nervous system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.G",
+            "titulo": {
+                "es": "Endometriosis torácica",
+                "en": "Thoracic endometriosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.H",
+            "titulo": {
+                "es": "Endometriosis en cicatriz cutánea",
+                "en": "Endometriosis in cutaneous scar"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.J",
+            "titulo": {
+                "es": "Adherencias relacionadas con la endometriosis",
+                "en": "Endometriosis-related adhesions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.Y",
+            "titulo": {
+                "es": "Endometriosis en otros sitios especificados",
+                "en": "Endometriosis of other specified sites"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA10.Z",
+            "titulo": {
+                "es": "Endometriosis, de sitio no especificado",
+                "en": "Endometriosis of unspecified site"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA11",
+            "titulo": {
+                "es": "Adenomiosis",
+                "en": "Adenomyosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA12",
+            "titulo": {
+                "es": "Dispareunia femenina",
+                "en": "Female dyspareunia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.0",
+            "titulo": {
+                "es": "Pólipo de la vulva",
+                "en": "Polyp of vulva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.1",
+            "titulo": {
+                "es": "Lesión intraepitelial escamosa de la vulva de bajo grado",
+                "en": "Low grade squamous intraepithelial lesion of vulva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.2",
+            "titulo": {
+                "es": "Hipertrofia de vulva",
+                "en": "Hypertrophy of vulva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.3",
+            "titulo": {
+                "es": "Quiste vulvar",
+                "en": "Vulvar cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.4",
+            "titulo": {
+                "es": "Aglutinación labial vulvar",
+                "en": "Labial agglutination"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.5",
+            "titulo": {
+                "es": "Quiste de conducto de Skene",
+                "en": "Skene duct cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.6",
+            "titulo": {
+                "es": "Laceración vulvar",
+                "en": "Vulvar laceration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.7",
+            "titulo": {
+                "es": "Hematoma vulvar",
+                "en": "Vulvar haematoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.Y",
+            "titulo": {
+                "es": "Otras anomalías adquiridas especificadas de la vulva o del perineo",
+                "en": "Other specified acquired abnormalities of vulva or perineum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA13.Z",
+            "titulo": {
+                "es": "Anomalías adquiridas de la vulva o del perineo, sin especificación",
+                "en": "Acquired abnormalities of vulva or perineum, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA14.0",
+            "titulo": {
+                "es": "Pólipo de la vagina",
+                "en": "Polyp of vagina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA14.1",
+            "titulo": {
+                "es": "Hematocolpos",
+                "en": "Haematocolpos"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA14.2",
+            "titulo": {
+                "es": "Cuerpo extraño vaginal",
+                "en": "Vaginal foreign body"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA14.3",
+            "titulo": {
+                "es": "Hematoma vaginal",
+                "en": "Vaginal haematoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA14.5",
+            "titulo": {
+                "es": "Leucoplasia de vagina",
+                "en": "Leukoplakia of vagina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA14.6",
+            "titulo": {
+                "es": "Lesión intraepitelial escamosa de bajo grado de la vagina",
+                "en": "Low grade squamous intraepithelial lesion of vagina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA14.Y",
+            "titulo": {
+                "es": "Otras anomalías adquiridas especificadas de la vagina",
+                "en": "Other specified acquired abnormalities of vagina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA14.Z",
+            "titulo": {
+                "es": "Anomalías adquiridas de la vagina, sin especificación",
+                "en": "Acquired abnormalities of vagina, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.0",
+            "titulo": {
+                "es": "Pólipo del cuello uterino",
+                "en": "Polyp of cervix uteri"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.1",
+            "titulo": {
+                "es": "Erosión o ectropión del cuello uterino",
+                "en": "Erosion or ectropion of cervix uteri"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.2",
+            "titulo": {
+                "es": "Quiste de Nabothian",
+                "en": "Nabothian cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.3",
+            "titulo": {
+                "es": "Laceración antigua del cuello uterino",
+                "en": "Old laceration of cervix uteri"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.4",
+            "titulo": {
+                "es": "Estrechamiento o estenosis del cuello uterino",
+                "en": "Stricture or stenosis of cervix uteri"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.5",
+            "titulo": {
+                "es": "Elongación hipertrófica del cuello uterino",
+                "en": "Hypertrophic elongation of cervix uteri"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.6",
+            "titulo": {
+                "es": "Insuficiencia del cuello uterino",
+                "en": "Incompetence of cervix uteri"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.7",
+            "titulo": {
+                "es": "Lesión intraepitelial escamosa del cuello uterino de bajo grado",
+                "en": "Low grade squamous intraepithelial lesion of cervix uteri"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.Y",
+            "titulo": {
+                "es": "Otras anomalías adquiridas especificadas del cuello uterino",
+                "en": "Other specified acquired abnormalities of cervix uteri"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA15.Z",
+            "titulo": {
+                "es": "Anomalías adquiridas del cuello uterino, sin especificación",
+                "en": "Acquired abnormalities of cervix uteri, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA16.0",
+            "titulo": {
+                "es": "Hiperplasia glandular endometrial",
+                "en": "Endometrial glandular hyperplasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA16.1",
+            "titulo": {
+                "es": "Posición anómala del útero",
+                "en": "Malposition of uterus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA16.2",
+            "titulo": {
+                "es": "Sinequias intrauterinas",
+                "en": "Intrauterine synechiae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA16.3",
+            "titulo": {
+                "es": "Hematometra",
+                "en": "Haematometra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA16.Y",
+            "titulo": {
+                "es": "Otras anomalías adquiridas especificadas del útero, a excepción del cuello uterino",
+                "en": "Other specified acquired abnormalities of uterus, except cervix"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA16.Z",
+            "titulo": {
+                "es": "Anomalías adquiridas del útero, a excepción del cuello uterino, sin especificación",
+                "en": "Acquired abnormalities of uterus, except cervix, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA17.0",
+            "titulo": {
+                "es": "Quiste parafimbrial adquirido de la trompa de Falopio",
+                "en": "Acquired parafimbrial cyst of the fallopian tube"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA17.1",
+            "titulo": {
+                "es": "Aglutinación fimbrial",
+                "en": "Fimbrial agglutination"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA17.2",
+            "titulo": {
+                "es": "Hidrosalpinge",
+                "en": "Hydrosalpinx"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA17.3",
+            "titulo": {
+                "es": "Hematosalpinge",
+                "en": "Haematosalpinx"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA17.4",
+            "titulo": {
+                "es": "Salpingitis ístmica nudosa",
+                "en": "Salpingitis isthmica nodosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA17.Y",
+            "titulo": {
+                "es": "Otras anomalías adquiridas especificadas de las trompas de Falopio",
+                "en": "Other specified acquired abnormalities of fallopian tube"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA17.Z",
+            "titulo": {
+                "es": "Anomalías adquiridas de las trompas de Falopio, sin especificación",
+                "en": "Acquired abnormalities of fallopian tube, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA18.0",
+            "titulo": {
+                "es": "Quiste folicular del ovario",
+                "en": "Follicular cyst of ovary"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA18.1",
+            "titulo": {
+                "es": "Quiste de cuerpo lúteo",
+                "en": "Corpus luteum cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA18.2",
+            "titulo": {
+                "es": "Quiste luteínico de la teca",
+                "en": "Theca lutein cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA18.4",
+            "titulo": {
+                "es": "Quiste paraovárico",
+                "en": "Para ovarian cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA18.5",
+            "titulo": {
+                "es": "Torsión de ovario, pedículo ovárico o trompa de Falopio",
+                "en": "Torsion of ovary, ovarian pedicle or fallopian tube"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA18.6",
+            "titulo": {
+                "es": "Otros quistes ováricos o no especificados",
+                "en": "Other or unspecified ovarian cysts"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA18.7",
+            "titulo": {
+                "es": "Atrofia adquirida del ovario o de la trompa de Falopio",
+                "en": "Acquired atrophy of ovary or fallopian tube"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA18.Y",
+            "titulo": {
+                "es": "Otras anomalías adquiridas especificadas del ovario",
+                "en": "Other specified acquired abnormalities of ovary"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA18.Z",
+            "titulo": {
+                "es": "Anomalías adquiridas del ovario, sin especificación",
+                "en": "Acquired abnormalities of ovary, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA19.0",
+            "titulo": {
+                "es": "Hematoma del ligamento ancho",
+                "en": "Haematoma of broad ligament"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA19.Y",
+            "titulo": {
+                "es": "Otras anomalías adquiridas especificadas del ligamento ancho",
+                "en": "Other specified acquired abnormalities of broad ligament"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA19.Z",
+            "titulo": {
+                "es": "Anomalías adquiridas del ligamento ancho, sin especificación",
+                "en": "Acquired abnormalities of broad ligament, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA1Y",
+            "titulo": {
+                "es": "Otros trastornos no inflamatorios especificados del aparato genital femenino",
+                "en": "Other specified noninflammatory disorders of female genital tract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA1Z",
+            "titulo": {
+                "es": "Trastornos no inflamatorios del aparato genital femenino, sin especificación",
+                "en": "Noninflammatory disorders of female genital tract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.00",
+            "titulo": {
+                "es": "Amenorrea primaria",
+                "en": "Primary amenorrhoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.01",
+            "titulo": {
+                "es": "Amenorrea secundaria",
+                "en": "Secondary amenorrhoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.02",
+            "titulo": {
+                "es": "Amenorrea de la lactancia",
+                "en": "Lactational amenorrhoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.0Y",
+            "titulo": {
+                "es": "Otra amenorrea especificada",
+                "en": "Other specified amenorrhoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.0Z",
+            "titulo": {
+                "es": "Amenorrea, sin especificación",
+                "en": "Amenorrhoea, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.10",
+            "titulo": {
+                "es": "Sangrado menstrual frecuente",
+                "en": "Frequent menstrual bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.11",
+            "titulo": {
+                "es": "Sangrado menstrual infrecuente",
+                "en": "Infrequent menstrual bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.1Z",
+            "titulo": {
+                "es": "Frecuencia anormal de sangrado uterino, sin especificación",
+                "en": "Abnormal frequency of uterine bleeding, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.20",
+            "titulo": {
+                "es": "Hemorragia intermenstrual",
+                "en": "Intermenstrual bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.2Y",
+            "titulo": {
+                "es": "Otro sangrado por ovulación especificado",
+                "en": "Other specified ovulation bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.2Z",
+            "titulo": {
+                "es": "Sangrado por ovulación, sin especificación",
+                "en": "Ovulation bleeding, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.3",
+            "titulo": {
+                "es": "Regularidad anormal del sangrado uterino",
+                "en": "Abnormal regularity of uterine bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.4",
+            "titulo": {
+                "es": "Duración anormal de sangrado uterino",
+                "en": "Abnormal duration of uterine bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.50",
+            "titulo": {
+                "es": "Sangrado menstrual abundante",
+                "en": "Heavy menstrual bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.51",
+            "titulo": {
+                "es": "Sangrado menstrual escaso",
+                "en": "Light menstrual bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.5Z",
+            "titulo": {
+                "es": "Volumen anormal del sangrado uterino, sin especificación",
+                "en": "Abnormal volume of uterine bleeding, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.Y",
+            "titulo": {
+                "es": "Otros trastornos hemorrágicos del ciclo menstrual especificados",
+                "en": "Other specified menstrual cycle bleeding disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA20.Z",
+            "titulo": {
+                "es": "Trastornos hemorrágicos del ciclo menstrual, sin especificación",
+                "en": "Menstrual cycle bleeding disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA21.0",
+            "titulo": {
+                "es": "Sangrado poscoital o por contacto",
+                "en": "Postcoital or contact bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA21.Y",
+            "titulo": {
+                "es": "Otros trastornos de sangrado no menstruales especificados",
+                "en": "Other specified nonmenstrual bleeding disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA21.Z",
+            "titulo": {
+                "es": "Trastornos de sangrado no menstruales, sin especificación",
+                "en": "Nonmenstrual bleeding disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA22",
+            "titulo": {
+                "es": "Menstruación excesiva con ciclo irregular",
+                "en": "Excessive menstruation with irregular cycle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA23",
+            "titulo": {
+                "es": "Sangrado anovulatorio",
+                "en": "Anovulatory bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA2Y",
+            "titulo": {
+                "es": "Otra hemorragia uterina o vaginal anormal especificada",
+                "en": "Other specified abnormal uterine or vaginal bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA2Z",
+            "titulo": {
+                "es": "Hemorragia uterina o vaginal anormal, sin especificación",
+                "en": "Abnormal uterine or vaginal bleeding, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.00",
+            "titulo": {
+                "es": "Estados de menopausia o de climaterio femenino",
+                "en": "Menopausal or female climacteric states"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.01",
+            "titulo": {
+                "es": "Transición menopaúsica",
+                "en": "Menopausal transition"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.02",
+            "titulo": {
+                "es": "Sangrado menstrual excesivo en el período premenopáusico",
+                "en": "Excessive bleeding in the premenopausal period"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.0Y",
+            "titulo": {
+                "es": "Otra menopausia especificada",
+                "en": "Other specified menopause"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.0Z",
+            "titulo": {
+                "es": "Menopausia, sin especificación",
+                "en": "Menopause, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.1",
+            "titulo": {
+                "es": "Hemorragia uterina posmenopáusica",
+                "en": "Postmenopausal uterine bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.2",
+            "titulo": {
+                "es": "Vaginitis atrófica posmenopáusica",
+                "en": "Postmenopausal atrophic vaginitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.3",
+            "titulo": {
+                "es": "Estados asociados a menopausia artificial",
+                "en": "States associated with artificial menopause"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.4",
+            "titulo": {
+                "es": "Sofocos de la menopausia",
+                "en": "Menopausal hot flush"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.5",
+            "titulo": {
+                "es": "Osteoporosis menopaúsica",
+                "en": "Menopausal osteoporosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.6",
+            "titulo": {
+                "es": "Insuficiencia ovárica prematura",
+                "en": "Premature ovarian failure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.Y",
+            "titulo": {
+                "es": "Otros trastornos menopáusicos o perimenopáusicos especificados",
+                "en": "Other specified menopausal or perimenopausal disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA30.Z",
+            "titulo": {
+                "es": "Menopausia o trastornos perimenopáusicos, sin especificación",
+                "en": "Menopausal or perimenopausal disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA31.00",
+            "titulo": {
+                "es": "Infertilidad femenina primaria de origen uterino",
+                "en": "Primary female infertility of uterine origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA31.01",
+            "titulo": {
+                "es": "Infertilidad femenina primaria de origen tubárico",
+                "en": "Primary female infertility of tubal origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA31.0Y",
+            "titulo": {
+                "es": "Infertilidad femenina primaria especificada",
+                "en": "Primary female infertility of other specified origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA31.0Z",
+            "titulo": {
+                "es": "Infertilidad femenina primaria, sin especificación",
+                "en": "Primary female infertility of unspecified origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA31.10",
+            "titulo": {
+                "es": "Infertilidad femenina secundaria de origen uterino",
+                "en": "Secondary female infertility of uterine origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA31.11",
+            "titulo": {
+                "es": "Infertilidad femenina secundaria de origen tubárico",
+                "en": "Secondary female infertility of tubal origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA31.1Y",
+            "titulo": {
+                "es": "Infertilidad femenina secundaria especificada",
+                "en": "Secondary female infertility of other specified origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA31.1Z",
+            "titulo": {
+                "es": "Infertilidad femenina secundaria, sin especificación",
+                "en": "Secondary female infertility of unspecified origin"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA31.Z",
+            "titulo": {
+                "es": "Infertilidad femenina, sin especificación",
+                "en": "Female infertility without specification whether primary or secondary"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA32.0",
+            "titulo": {
+                "es": "Síndrome de hiperestimulación ovárica",
+                "en": "Ovarian hyperstimulation syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA32.1",
+            "titulo": {
+                "es": "Sangrado tras extraer un óvulo",
+                "en": "Bleeding after egg retrieval"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA32.2",
+            "titulo": {
+                "es": "Infección asociada a reproducción asistida",
+                "en": "Infection associated with medically assisted reproduction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA32.3",
+            "titulo": {
+                "es": "Complicaciones de intento de transferencia de embriones o inseminación asistida",
+                "en": "Complications of attempted embryo transfer or medically assisted insemination"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA32.Y",
+            "titulo": {
+                "es": "Otras complicaciones especificadas asociadas a la reproducción con asistencia médica",
+                "en": "Other specified complications associated with medically assisted reproduction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA32.Z",
+            "titulo": {
+                "es": "Complicaciones asociadas a la reproducción con asistencia médica, sin especificación",
+                "en": "Complications associated with medically assisted reproduction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA33",
+            "titulo": {
+                "es": "Pérdida recurrente de embarazo",
+                "en": "Recurrent pregnancy loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.00",
+            "titulo": {
+                "es": "Dolor vulvar",
+                "en": "Vulval pain"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.01",
+            "titulo": {
+                "es": "Dolor perineal",
+                "en": "Perineal pain"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.02",
+            "titulo": {
+                "es": "Vulvodinia",
+                "en": "Vulvodynia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.0Y",
+            "titulo": {
+                "es": "Otro dolor especificado relacionado con la vulva, la vagina o el suelo de la pelvis",
+                "en": "Other specified pain related to vulva, vagina or pelvic floor"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.0Z",
+            "titulo": {
+                "es": "Dolor relacionado con la vulva, la vagina o el suelo de la pelvis, sin especificación",
+                "en": "Pain related to vulva, vagina or pelvic floor, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.1",
+            "titulo": {
+                "es": "Laxitud vaginal",
+                "en": "Vaginal laxity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.20",
+            "titulo": {
+                "es": "Dolor pélvico cíclico",
+                "en": "Cyclic pelvic pain"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.21",
+            "titulo": {
+                "es": "Dolor pélvico no cíclico",
+                "en": "Noncyclic pelvic pain"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.2Z",
+            "titulo": {
+                "es": "Dolor pélvico femenino, sin especificación",
+                "en": "Female pelvic pain, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.3",
+            "titulo": {
+                "es": "Dismenorrea",
+                "en": "Dysmenorrhoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.40",
+            "titulo": {
+                "es": "Síndrome de tensión premenstrual",
+                "en": "Premenstrual tension syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.41",
+            "titulo": {
+                "es": "Trastorno disfórico premenstrual",
+                "en": "Premenstrual dysphoric disorder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.4Y",
+            "titulo": {
+                "es": "Otros trastornos premenstruales especificados",
+                "en": "Other specified premenstrual disturbances"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.4Z",
+            "titulo": {
+                "es": "Trastornos premenstruales, sin especificación",
+                "en": "Premenstrual disturbances, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.5",
+            "titulo": {
+                "es": "Síndrome de remanente ovárico",
+                "en": "Ovarian remnant syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.6",
+            "titulo": {
+                "es": "Dolor genital femenino",
+                "en": "Female genital pain"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.Y",
+            "titulo": {
+                "es": "Otro dolor pélvico femenino especificado asociado a órganos genitales o ciclo menstrual",
+                "en": "Other specified female pelvic pain associated with genital organs or menstrual cycle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA34.Z",
+            "titulo": {
+                "es": "Dolor pélvico femenino asociado a órganos genitales o ciclo menstrual, sin especificación",
+                "en": "Female pelvic pain associated with genital organs or menstrual cycle, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA40",
+            "titulo": {
+                "es": "Dermatosis inflamatorias de la vulva",
+                "en": "Inflammatory dermatoses of the vulva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA41.0",
+            "titulo": {
+                "es": "Aftosis vulvar",
+                "en": "Vulval aphthosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA41.Y",
+            "titulo": {
+                "es": "Otros trastornos ulcerativos o erosivos especificados de la vulva",
+                "en": "Other specified ulcerative or erosive disorders of the vulva"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA42.0",
+            "titulo": {
+                "es": "Prurito vulvar",
+                "en": "Vulval pruritus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA4Y",
+            "titulo": {
+                "es": "Otras dermatosis especificadas de los genitales femeninos",
+                "en": "Other specified dermatoses of female genitalia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA6Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del aparato genital femenino",
+                "en": "Other specified diseases of the female genital system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA6Z",
+            "titulo": {
+                "es": "Enfermedades del aparato genital femenino, sin especificación",
+                "en": "Diseases of the female genital system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA80.0",
+            "titulo": {
+                "es": "Aftosis del pene o del escroto",
+                "en": "Aphthosis of penis or scrotum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA80.1",
+            "titulo": {
+                "es": "Úlcera del pene de naturaleza incierta",
+                "en": "Ulcer of penis of uncertain nature"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA80.Y",
+            "titulo": {
+                "es": "Otros trastornos ulcerativos especificados del pene o del escroto",
+                "en": "Other specified ulcerative disorders of penis or scrotum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA81.0",
+            "titulo": {
+                "es": "Prurito del pene y del escroto",
+                "en": "Penoscrotal pruritus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA81.Y",
+            "titulo": {
+                "es": "Otras dermatosis especificadas de los genitales masculinos",
+                "en": "Other specified dermatoses of male genitalia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA90",
+            "titulo": {
+                "es": "Hiperplasia de la próstata",
+                "en": "Hyperplasia of prostate"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA91.0",
+            "titulo": {
+                "es": "Prostatitis crónica",
+                "en": "Chronic prostatitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA91.1",
+            "titulo": {
+                "es": "Absceso de la próstata",
+                "en": "Abscess of prostate"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA91.2",
+            "titulo": {
+                "es": "Prostatocistitis",
+                "en": "Prostatocystitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA91.3",
+            "titulo": {
+                "es": "Cálculo en la próstata",
+                "en": "Calculus of prostate"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA91.4",
+            "titulo": {
+                "es": "Hemorragia de la próstata",
+                "en": "Haemorrhage of the prostate"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA91.5",
+            "titulo": {
+                "es": "Atrofia de la próstata",
+                "en": "Atrophy of prostate"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA91.6",
+            "titulo": {
+                "es": "Lesión intraepitelial de próstata de bajo grado\r\nDisplasia de la próstata",
+                "en": "Low grade intraepithelial lesion of prostate"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA91.Y",
+            "titulo": {
+                "es": "Otra inflamación especificada y otras enfermedades de la próstata",
+                "en": "Other specified inflammatory or other diseases of prostate"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GA91.Z",
+            "titulo": {
+                "es": "Inflamación y otras enfermedades de la próstata, sin especificación",
+                "en": "Inflammatory or other diseases of prostate, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB00.0",
+            "titulo": {
+                "es": "Hidrocele enquistado",
+                "en": "Encysted hydrocele"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB00.1",
+            "titulo": {
+                "es": "Hidrocele infectado",
+                "en": "Infected hydrocele"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB00.2",
+            "titulo": {
+                "es": "Espermatocele",
+                "en": "Spermatocele"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB00.Y",
+            "titulo": {
+                "es": "Otro hidrocele o espermatocele especificado",
+                "en": "Other specified hydrocele or spermatocele"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB00.Z",
+            "titulo": {
+                "es": "Hidrocele o espermatocele, sin especificación",
+                "en": "Hydrocele or spermatocele, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB01.0",
+            "titulo": {
+                "es": "Torsión de testículo",
+                "en": "Torsion of testis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB01.1",
+            "titulo": {
+                "es": "Torsión de epidídimo",
+                "en": "Torsion of epididymis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB01.2",
+            "titulo": {
+                "es": "Torsión de hidátides",
+                "en": "Torsion of hydatids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB01.Z",
+            "titulo": {
+                "es": "Torsión de testículo, epidídimo o apéndices, sin especificación",
+                "en": "Torsion of testis, epididymis or appendices, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB02.0",
+            "titulo": {
+                "es": "Orquitis, epididimitis o epididimorquitis con absceso",
+                "en": "Orchitis, epididymitis or epididymo-orchitis with abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB02.1",
+            "titulo": {
+                "es": "Orquitis, epididimitis o epididimo-orquitis sin absceso",
+                "en": "Orchitis, epididymitis or epididymo-orchitis without abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB02.Z",
+            "titulo": {
+                "es": "Orquitis o epididimitis, sin especificación",
+                "en": "Orchitis or epididymitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB03",
+            "titulo": {
+                "es": "Atrofia de testículo",
+                "en": "Atrophy of testis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB04.0",
+            "titulo": {
+                "es": "Azoospermia",
+                "en": "Azoospermia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB04.Y",
+            "titulo": {
+                "es": "Otra infertilidad masculina especificada",
+                "en": "Other specified male infertility"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB04.Z",
+            "titulo": {
+                "es": "Infertilidad masculina, sin especificación",
+                "en": "Male infertility, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB05.0",
+            "titulo": {
+                "es": "Prepucio redundante",
+                "en": "Redundant prepuce"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB05.1",
+            "titulo": {
+                "es": "Frenillo corto",
+                "en": "Frenulum breve"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB05.2",
+            "titulo": {
+                "es": "Fimosis",
+                "en": "Phimosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB05.3",
+            "titulo": {
+                "es": "Parafimosis",
+                "en": "Paraphimosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB05.4",
+            "titulo": {
+                "es": "Prepucio adherente",
+                "en": "Adherent prepuce"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB05.Z",
+            "titulo": {
+                "es": "Prepucio redundante, fimosis o parafimosis, sin especificación",
+                "en": "Redundant prepuce, phimosis or paraphimosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.01",
+            "titulo": {
+                "es": "Balanopostitis irritante",
+                "en": "Irritant balanoposthitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.02",
+            "titulo": {
+                "es": "Balanopostitis por infección",
+                "en": "Balanoposthitis due to infection"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.0Y",
+            "titulo": {
+                "es": "Otras formas especificadas de balanitis o balanopostitis",
+                "en": "Other specified forms of balanitis or balanoposthitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.0Z",
+            "titulo": {
+                "es": "Balanitis o balanopostitis, sin especificación",
+                "en": "Balanitis or balanoposthitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.1",
+            "titulo": {
+                "es": "Priapismo",
+                "en": "Priapism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.2",
+            "titulo": {
+                "es": "Fibromatosis del pene",
+                "en": "Penile fibromatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.3",
+            "titulo": {
+                "es": "enfermedad de Mondor del pene",
+                "en": "Mondor disease of the penis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.4",
+            "titulo": {
+                "es": "Edema crónico del pene",
+                "en": "Chronic penile oedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.5",
+            "titulo": {
+                "es": "Linfangitis esclerosante del pene",
+                "en": "Sclerosing lymphangitis of penis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.Y",
+            "titulo": {
+                "es": "Algunos otros trastornos especificados del pene",
+                "en": "Other specified disorders of penis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB06.Z",
+            "titulo": {
+                "es": "Algunos trastornos del pene, sin especificación",
+                "en": "Disorders of penis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB07.0",
+            "titulo": {
+                "es": "Trastornos inflamatorios de la vesícula seminal",
+                "en": "Inflammatory disorders of seminal vesicle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB07.1",
+            "titulo": {
+                "es": "Trastornos inflamatorios del cordón espermático, la túnica vaginal o el conducto deferente",
+                "en": "Inflammatory disorders of spermatic cord, tunica vaginalis or vas deferens"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB07.2",
+            "titulo": {
+                "es": "Trastornos inflamatorios del escroto",
+                "en": "Inflammatory disorders of scrotum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB07.Y",
+            "titulo": {
+                "es": "Trastornos inflamatorios de otros órganos genitales masculinos especificados",
+                "en": "Inflammatory disorders of other specified male genital organs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB07.Z",
+            "titulo": {
+                "es": "Trastornos inflamatorios de los órganos genitales masculinos, sin especificación",
+                "en": "Inflammatory disorders of unspecified male genital organs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB08",
+            "titulo": {
+                "es": "Trastornos vasculares de los órganos genitales masculinos",
+                "en": "Vascular disorders of male genital organs"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB0Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del aparato genital masculino",
+                "en": "Other specified diseases of the male genital system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB0Z",
+            "titulo": {
+                "es": "Enfermedades del aparato genital masculino, sin especificación",
+                "en": "Diseases of the male genital system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB20.0",
+            "titulo": {
+                "es": "Alteración fibroquística mamaria",
+                "en": "Fibrocystic change of breast"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB20.1",
+            "titulo": {
+                "es": "Fibroadenosis de la mama",
+                "en": "Fibroadenosis of breast"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB20.Y",
+            "titulo": {
+                "es": "Otra enfermedad benigna especificada de la mama",
+                "en": "Other specified benign breast disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB20.Z",
+            "titulo": {
+                "es": "Enfermedad benigna de la mama, sin especificación",
+                "en": "Benign breast disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB21.0",
+            "titulo": {
+                "es": "Absceso de mama",
+                "en": "Breast abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB21.Y",
+            "titulo": {
+                "es": "Otros trastornos inflamatorios especificados de la mama",
+                "en": "Other specified inflammatory disorders of breast"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB21.Z",
+            "titulo": {
+                "es": "Trastornos inflamatorios de la mama, sin especificación",
+                "en": "Inflammatory disorders of breast, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB22",
+            "titulo": {
+                "es": "Hipertrofia de la mama",
+                "en": "Hypertrophy of breast"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB23.0",
+            "titulo": {
+                "es": "Ectasia de conducto mamario",
+                "en": "Mammary duct ectasia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB23.1",
+            "titulo": {
+                "es": "Fisura o fístula del pezón",
+                "en": "Fissure or fistula of nipple"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB23.2",
+            "titulo": {
+                "es": "Necrosis grasa de la mama",
+                "en": "Fat necrosis of breast"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB23.3",
+            "titulo": {
+                "es": "Atrofia de la mama",
+                "en": "Atrophy of breast"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB23.4",
+            "titulo": {
+                "es": "Galactorrea no asociada al parto",
+                "en": "Galactorrhoea not associated with childbirth"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB23.5",
+            "titulo": {
+                "es": "Mastodinia",
+                "en": "Mastodynia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB2Y",
+            "titulo": {
+                "es": "Otro(a)(s) trastornos de la mama especificado(a)(s)",
+                "en": "Other specified disorders of breast"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB40",
+            "titulo": {
+                "es": "Síndrome nefrítico",
+                "en": "Nephritic syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB41",
+            "titulo": {
+                "es": "Síndrome nefrótico",
+                "en": "Nephrotic syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB42.0",
+            "titulo": {
+                "es": "Albuminuria de grado A2",
+                "en": "Albuminuria, Grade A2"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB42.1",
+            "titulo": {
+                "es": "Albuminuria de grado 3",
+                "en": "Albuminuria, Grade A3"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB42.Y",
+            "titulo": {
+                "es": "Otra proteinuria o albuminuria persistente especificada",
+                "en": "Other specified persistent proteinuria or albuminuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB42.Z",
+            "titulo": {
+                "es": "Proteinuria o albuminuria persistente, sin especificación",
+                "en": "Persistent proteinuria or albuminuria, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB4Y",
+            "titulo": {
+                "es": "Otras enfermedades glomerulares especificadas",
+                "en": "Other specified glomerular diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB4Z",
+            "titulo": {
+                "es": "Enfermedades glomerulares, sin especificación",
+                "en": "Glomerular diseases, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB50",
+            "titulo": {
+                "es": "Nefritis tubulointersticial aguda",
+                "en": "Acute tubulo-interstitial nephritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB51",
+            "titulo": {
+                "es": "Pielonefritis aguda",
+                "en": "Acute pyelonephritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB52",
+            "titulo": {
+                "es": "Necrosis tubular aguda",
+                "en": "Acute tubular necrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB53",
+            "titulo": {
+                "es": "Necrosis papilar renal aguda",
+                "en": "Acute renal papillary necrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB54",
+            "titulo": {
+                "es": "Nefritis tubulointersticial, no especificada como aguda o crónica",
+                "en": "Tubulo-interstitial nephritis, not specified as acute or chronic"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB55.0",
+            "titulo": {
+                "es": "Nefropatía de los Balcanes",
+                "en": "Balkan nephropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB55.1",
+            "titulo": {
+                "es": "Nefropatía por metales pesados",
+                "en": "Nephropathy induced by heavy metals"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB55.2",
+            "titulo": {
+                "es": "Nefropatía crónica por uratos",
+                "en": "Chronic urate nephropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB55.Y",
+            "titulo": {
+                "es": "Otra nefritis tubulointersticial crónica especificada",
+                "en": "Other specified chronic tubulo-interstitial nephritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB55.Z",
+            "titulo": {
+                "es": "Nefritis tubulointersticial crónica, sin especificación",
+                "en": "Chronic tubulo-interstitial nephritis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB56.0",
+            "titulo": {
+                "es": "Hidronefrosis con obstrucción de la unión pieloureteral",
+                "en": "Hydronephrosis with ureteropelvic junction obstruction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB56.1",
+            "titulo": {
+                "es": "Hidronefrosis con obstrucción ureteral",
+                "en": "Hydronephrosis with ureteral obstruction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB56.2",
+            "titulo": {
+                "es": "Hidronefrosis con obstrucción del orificio ureteral",
+                "en": "Hydronephrosis with ureteral orifice obstruction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB56.3",
+            "titulo": {
+                "es": "Hidronefrosis por obstrucción vesical",
+                "en": "Hydronephrosis due to bladder obstruction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB56.4",
+            "titulo": {
+                "es": "Otra hidronefrosis o hidronefrosis no especificada",
+                "en": "Other or unspecified hydronephrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB56.5",
+            "titulo": {
+                "es": "Hidronefrosis y nefropatía por reflujo con reflujo vesicoureteral o vesicoureterorrenal",
+                "en": "Hydronephrosis and reflux nephropathy with vesicoureteral or vesico-uretero-renal reflux"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB56.Y",
+            "titulo": {
+                "es": "Otra nefropatía obstructiva o por reflujo especificada",
+                "en": "Other specified obstructive or reflux nephropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB56.Z",
+            "titulo": {
+                "es": "Nefropatía obstructiva o por reflujo, sin especificación",
+                "en": "Obstructive or reflux nephropathy, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB57",
+            "titulo": {
+                "es": "Nefrocalcinosis",
+                "en": "Nephrocalcinosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB58",
+            "titulo": {
+                "es": "Pionefrosis",
+                "en": "Pyonephrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB59",
+            "titulo": {
+                "es": "Absceso renal o perinéfrico",
+                "en": "Renal or perinephric abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB5Y",
+            "titulo": {
+                "es": "Otras nefropatías tubulointersticiales especificadas",
+                "en": "Other specified renal tubulo-interstitial diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB5Z",
+            "titulo": {
+                "es": "Nefropatías tubulointersticiales, sin especificación",
+                "en": "Renal tubulo-interstitial diseases, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB60.0",
+            "titulo": {
+                "es": "Insuficiencia renal aguda de grado 1",
+                "en": "Acute kidney failure, stage 1"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB60.1",
+            "titulo": {
+                "es": "Insuficiencia renal aguda de grado 2",
+                "en": "Acute kidney failure, stage 2"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB60.2",
+            "titulo": {
+                "es": "Insuficiencia renal aguda de grado 3",
+                "en": "Acute kidney failure, stage 3"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB60.Y",
+            "titulo": {
+                "es": "Otra insuficiencia renal aguda especificada",
+                "en": "Other specified acute kidney failure"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB60.Z",
+            "titulo": {
+                "es": "Insuficiencia renal aguda, sin especificación",
+                "en": "Acute kidney failure, stage unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB61.0",
+            "titulo": {
+                "es": "Enfermedad renal crónica de grado 1",
+                "en": "Chronic kidney disease, stage 1"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB61.1",
+            "titulo": {
+                "es": "Insuficiencia renal crónica de grado 2",
+                "en": "Chronic kidney disease, stage 2"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB61.2",
+            "titulo": {
+                "es": "Insuficiencia renal crónica etapa 3a",
+                "en": "Chronic kidney disease, stage 3a"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB61.3",
+            "titulo": {
+                "es": "Insuficiencia renal crónica de grado 3b",
+                "en": "Chronic kidney disease, stage 3b"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB61.4",
+            "titulo": {
+                "es": "Insuficiencia renal crónica de grado 4",
+                "en": "Chronic kidney disease, stage 4"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB61.5",
+            "titulo": {
+                "es": "Enfermedad renal crónica de grado 5",
+                "en": "Chronic kidney disease, stage 5"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB61.Z",
+            "titulo": {
+                "es": "Enfermedad renal crónica, sin especificación de grado",
+                "en": "Chronic kidney disease, stage unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB6Z",
+            "titulo": {
+                "es": "Insuficiencia renal, sin especificación",
+                "en": "Kidney failure, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB70.00",
+            "titulo": {
+                "es": "cálculo coraliforme del riñón",
+                "en": "Staghorn calculus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB70.0Y",
+            "titulo": {
+                "es": "Otro cálculo especificado del riñón",
+                "en": "Other specified calculus of kidney"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB70.0Z",
+            "titulo": {
+                "es": "Cálculo del riñón, sin especificación",
+                "en": "Calculus of kidney, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB70.1",
+            "titulo": {
+                "es": "Cálculo en el uréter",
+                "en": "Calculus of ureter"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB70.Z",
+            "titulo": {
+                "es": "Cálculo en las vías urinarias altas, sin especificación",
+                "en": "Calculus of upper urinary tract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB71.0",
+            "titulo": {
+                "es": "Cálculo en la vejiga",
+                "en": "Calculus in bladder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB71.1",
+            "titulo": {
+                "es": "Cálculo en la uretra",
+                "en": "Calculus in urethra"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB71.2",
+            "titulo": {
+                "es": "Cálculo en segmento intestinal para derivación urinaria",
+                "en": "Calculus of bowel segments for urinary diversion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB71.Z",
+            "titulo": {
+                "es": "Cálculo en las vías urinarias bajas, sin especificación",
+                "en": "Calculus of lower urinary tract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB7Z",
+            "titulo": {
+                "es": "Urolitiasis, sin especificación",
+                "en": "Urolithiasis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB80.0",
+            "titulo": {
+                "es": "Quiste renal simple",
+                "en": "Simple renal cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB80.1",
+            "titulo": {
+                "es": "Quiste renal complejo",
+                "en": "Complex renal cyst"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB80.2",
+            "titulo": {
+                "es": "Urinoma subescapular o perirrenal",
+                "en": "Subscapular or perirenal urinoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB80.Y",
+            "titulo": {
+                "es": "Otra nefropatía quística no genética ni familiar especificada",
+                "en": "Other specified nonfamilial nongenetic cystic kidney disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB80.Z",
+            "titulo": {
+                "es": "Nefropatía quística no genética ni familiar, sin especificación",
+                "en": "Nonfamilial nongenetic cystic kidney disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB81",
+            "titulo": {
+                "es": "Poliquistosis renal autosómica dominante",
+                "en": "Autosomal dominant polycystic kidney disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB82",
+            "titulo": {
+                "es": "Enfermedad tubulointersticial autosómica dominante",
+                "en": "Autosomal dominant tubulointerstitial disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB83",
+            "titulo": {
+                "es": "Nefronoptisis",
+                "en": "Nephronophthisis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB8Y",
+            "titulo": {
+                "es": "Otra nefropatía quística o displásica especificada",
+                "en": "Other specified cystic or dysplastic kidney disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB8Z",
+            "titulo": {
+                "es": "Nefropatía quística o displásica, sin especificación",
+                "en": "Cystic or dysplastic kidney disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.0",
+            "titulo": {
+                "es": "Nefroptosis",
+                "en": "Nephroptosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.1",
+            "titulo": {
+                "es": "Hidrouréter",
+                "en": "Hydroureter"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.2",
+            "titulo": {
+                "es": "Torsión o desviación ureteral sin obstrucción",
+                "en": "Ureteral kinking or deviation without obstruction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.3",
+            "titulo": {
+                "es": "Isquemia o infarto de riñón",
+                "en": "Ischaemia or infarction of kidney"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.40",
+            "titulo": {
+                "es": "Hipotonía y cistinuria de tipo 1",
+                "en": "Hypotonia-cystinuria type 1"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.41",
+            "titulo": {
+                "es": "Seudohipoaldosteronismo de tipo 1",
+                "en": "Pseudohypoaldosteronism type 1"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.42",
+            "titulo": {
+                "es": "Síndrome de Fanconi",
+                "en": "Fanconi syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.43",
+            "titulo": {
+                "es": "Síndrome de Bartter",
+                "en": "Bartter syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.44",
+            "titulo": {
+                "es": "Acidosis tubular renal",
+                "en": "Renal tubular acidosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.45",
+            "titulo": {
+                "es": "Glucosuria renal",
+                "en": "Renal glycosuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.46",
+            "titulo": {
+                "es": "Trastornos tubulares del transporte de sodio o potasio",
+                "en": "Tubular disorders of sodium or potassium transport"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.47",
+            "titulo": {
+                "es": "Aminoaciduria",
+                "en": "Aminoaciduria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.48",
+            "titulo": {
+                "es": "Trastornos de la excreción de calcio o fosfato",
+                "en": "Disorders of calcium or phosphate excretion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.49",
+            "titulo": {
+                "es": "Hipocalciuria renal",
+                "en": "Renal hypocalciuria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.4A",
+            "titulo": {
+                "es": "Diabetes insípida nefrógena",
+                "en": "Nephrogenic diabetes insipidus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.4Y",
+            "titulo": {
+                "es": "Otros trastornos funcionales especificados de los túbulos renales",
+                "en": "Other specified renal tubular function disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.4Z",
+            "titulo": {
+                "es": "Trastornos funcionales de los túbulos renales, sin especificación",
+                "en": "Renal tubular function disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GB90.Y",
+            "titulo": {
+                "es": "Algunos otros trastornos especificados del riñón o del uréter",
+                "en": "Other specified disorders of kidney or ureter"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC00.0",
+            "titulo": {
+                "es": "Trigonitis",
+                "en": "Trigonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC00.1",
+            "titulo": {
+                "es": "Cistitis infecciosa",
+                "en": "Infectious cystitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC00.2",
+            "titulo": {
+                "es": "Vejiga urinaria contraída",
+                "en": "Contracted urinary bladder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC00.3",
+            "titulo": {
+                "es": "Cistitis intersticial",
+                "en": "Interstitial cystitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC00.Y",
+            "titulo": {
+                "es": "Otra cistitis especificada",
+                "en": "Other specified cystitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC00.Z",
+            "titulo": {
+                "es": "Cistitis, sin especificación",
+                "en": "Cystitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC01.0",
+            "titulo": {
+                "es": "Obstrucción del cuello vesical",
+                "en": "Bladder neck obstruction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC01.1",
+            "titulo": {
+                "es": "Fístula vesical, no clasificada en otra parte",
+                "en": "Vesical fistula, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC01.2",
+            "titulo": {
+                "es": "Divertículo vesical",
+                "en": "Diverticulum of bladder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC01.3",
+            "titulo": {
+                "es": "Rotura de la vejiga urinaria no traumática",
+                "en": "Rupture of bladder, nontraumatic"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC01.4",
+            "titulo": {
+                "es": "Disfunción neuromuscular de la vejiga urinaria, no clasificada en otra parte",
+                "en": "Neuromuscular dysfunction of bladder, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC01.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la vejiga urinaria",
+                "en": "Other specified disorders of bladder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC01.Z",
+            "titulo": {
+                "es": "Otros trastornos de la vejiga urinaria, sin especificación",
+                "en": "Disorder of bladder, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC02.0",
+            "titulo": {
+                "es": "Absceso uretral",
+                "en": "Urethral abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC02.1",
+            "titulo": {
+                "es": "Uretritis inespecífica",
+                "en": "Nonspecific urethritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC02.Y",
+            "titulo": {
+                "es": "Otra uretritis o síndrome uretral especificados",
+                "en": "Other specified urethritis and urethral syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC02.Z",
+            "titulo": {
+                "es": "Uretritis o síndrome uretral, sin especificación",
+                "en": "Urethritis and urethral syndrome, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC03",
+            "titulo": {
+                "es": "Estenosis uretral",
+                "en": "Urethral stricture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.0",
+            "titulo": {
+                "es": "Fístula uretral",
+                "en": "Urethral fistula"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.10",
+            "titulo": {
+                "es": "Fístula vesicovaginal",
+                "en": "Vesicovaginal fistula"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.11",
+            "titulo": {
+                "es": "Fístula del intestino delgado a la vagina",
+                "en": "Fistula of small intestine to vagina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.12",
+            "titulo": {
+                "es": "Fístula del intestino grueso a la vagina",
+                "en": "Fistula of large intestine to vagina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.13",
+            "titulo": {
+                "es": "Fístulas del aparato genital femenino a la piel",
+                "en": "Female genital tract-skin fistulae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.14",
+            "titulo": {
+                "es": "Fístula uretrovaginal",
+                "en": "Urethrovaginal fistula"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.15",
+            "titulo": {
+                "es": "Fístula uretrovesicovaginal combinada",
+                "en": "Combined urethrovesicovaginal fistula"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.16",
+            "titulo": {
+                "es": "Fístula rectovaginal",
+                "en": "Rectovaginal fistula"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.17",
+            "titulo": {
+                "es": "Fístula vesicouterina con cicatrización importante o pérdida tisular extensa",
+                "en": "Vesicouterine fistula with severe scar or extensive tissue loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.18",
+            "titulo": {
+                "es": "Otra fístula urinaria combinada con cicatrización importante o pérdida tisular extensa",
+                "en": "Other combined urinary fistula with severe scar or extensive tissue loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.19",
+            "titulo": {
+                "es": "Fístula combinada urinaria y rectal (cloaca incluida), con cicatrización importante o pérdida tisular extensa",
+                "en": "Combined urinary and rectal fistula including cloaca with severe scar or extensive tissue loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.1A",
+            "titulo": {
+                "es": "Estenosis vaginal o ginatresia relacionada con fístula obstétrica",
+                "en": "Vaginal stenosis or gynatresia related to obstetric fistula"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.1Y",
+            "titulo": {
+                "es": "Otras fístulas del aparato genital femenino",
+                "en": "Other specified fistulae involving female genital tract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.1Z",
+            "titulo": {
+                "es": "Fístulas del aparato genital femenino, sin especificación",
+                "en": "Fistulae involving female genital tract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.2",
+            "titulo": {
+                "es": "Fístula ureteral",
+                "en": "Ureteral fistula"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.Y",
+            "titulo": {
+                "es": "Otra fístula especificada del tracto genitourinario",
+                "en": "Other specified fistula of the genitourinary tract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC04.Z",
+            "titulo": {
+                "es": "Fístula del tracto genitourinario, sin especificación",
+                "en": "Fistula of the genitourinary tract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC05",
+            "titulo": {
+                "es": "Prolapso de mucosa uretral",
+                "en": "Prolapsed urethral mucosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC06",
+            "titulo": {
+                "es": "Divertículo uretral",
+                "en": "Urethral diverticulum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC07",
+            "titulo": {
+                "es": "Carúncula uretral",
+                "en": "Urethral caruncle"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC08.0",
+            "titulo": {
+                "es": "Infección urinaria por Escherichia coli, localización no especificada",
+                "en": "Urinary tract infection, site not specified, due to Escherichia coli"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC08.1",
+            "titulo": {
+                "es": "Infección urinaria por Klebsiella pneumoniae, localización no especificada",
+                "en": "Urinary tract infection, site not specified, due to Klebsiella pneumoniae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC08.2",
+            "titulo": {
+                "es": "Infección urinaria por Proteus, localización no especificada",
+                "en": "Urinary tract infection, site not specified, due to Proteus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC08.Y",
+            "titulo": {
+                "es": "Infección urinaria por otro microbio patógeno, localización no especificada",
+                "en": "Urinary tract infection, site not specified due to other agent"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC08.Z",
+            "titulo": {
+                "es": "Infección urinaria, localización y microbio patógeno no especificados",
+                "en": "Urinary tract infection, site and agent not specified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC0Y",
+            "titulo": {
+                "es": "Otras enfermedades del sistema urinario",
+                "en": "Other diseases of urinary system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC2Z",
+            "titulo": {
+                "es": "Enfermedades del sistema urinario, sin especificación",
+                "en": "Diseases of the urinary system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.00",
+            "titulo": {
+                "es": "Prolapso incompleto de pared anterior de la vagina",
+                "en": "Incomplete anterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.01",
+            "titulo": {
+                "es": "Prolapso completo de pared anterior de la vagina",
+                "en": "Complete anterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.0Z",
+            "titulo": {
+                "es": "Prolapso de pared anterior de la vagina, sin especificación",
+                "en": "Prolapse of anterior vaginal wall, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.10",
+            "titulo": {
+                "es": "Prolapso incompleto de pared posterior de la vagina",
+                "en": "Incomplete posterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.11",
+            "titulo": {
+                "es": "Prolapso completo de pared posterior de la vagina",
+                "en": "Complete posterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.1Z",
+            "titulo": {
+                "es": "Prolapso de pared posterior de la vagina, sin especificación",
+                "en": "Prolapse of posterior vaginal wall, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.20",
+            "titulo": {
+                "es": "Prolapso incompleto de cúpula vaginal",
+                "en": "Incomplete apical vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.21",
+            "titulo": {
+                "es": "Prolapso completo de cúpula vaginal",
+                "en": "Complete apical vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.2Z",
+            "titulo": {
+                "es": "Prolapso de cúpula vaginal, sin especificación",
+                "en": "Prolapse of the vaginal apex, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.30",
+            "titulo": {
+                "es": "Prolapso uterovaginal incompleto",
+                "en": "Incomplete uterovaginal prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.31",
+            "titulo": {
+                "es": "Prolapso uterino incompleto con prolapso de la pared anterior de la vagina",
+                "en": "Incomplete uterine prolapse with anterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.32",
+            "titulo": {
+                "es": "Prolapso uterino incompleto con prolapso de la pared posterior de la vagina",
+                "en": "Incomplete uterine prolapse with posterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.33",
+            "titulo": {
+                "es": "Prolapso uterino incompleto con prolapso de las paredes anterior y posterior de la vagina",
+                "en": "Incomplete uterine prolapse with anterior and posterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.34",
+            "titulo": {
+                "es": "Prolapso uterovaginal completo",
+                "en": "Complete uterovaginal prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.35",
+            "titulo": {
+                "es": "Prolapso uterino completo con prolapso de la pared anterior de la vagina",
+                "en": "Complete uterine prolapse with anterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.36",
+            "titulo": {
+                "es": "Prolapso uterino completo con prolapso de la pared posterior de la vagina",
+                "en": "Complete uterine prolapse with posterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.37",
+            "titulo": {
+                "es": "Prolapso uterino completo con prolapso de las paredes anterior y posterior de la vagina",
+                "en": "Complete uterine prolapse with anterior and posterior vaginal wall prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.3Z",
+            "titulo": {
+                "es": "Prolapso uterovaginal, sin especificación",
+                "en": "Uterovaginal prolapse, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.40",
+            "titulo": {
+                "es": "Avulsión del elevador del ano en la sínfisis púbica",
+                "en": "Levator avulsion from symphysis pubis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.4Y",
+            "titulo": {
+                "es": "Otra alteración muscular especificada del suelo de la pelvis",
+                "en": "Other specified pelvic floor muscle disruption"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.4Z",
+            "titulo": {
+                "es": "Alteración muscular del suelo de la pelvis, sin especificación",
+                "en": "Pelvic floor muscle disruption, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.50",
+            "titulo": {
+                "es": "Incontinencia urinaria de esfuerzo asociada a prolapso de órganos pélvicos",
+                "en": "Stress incontinence associated with pelvic organ prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.51",
+            "titulo": {
+                "es": "Incontinencia urinaria de urgencia asociada a prolapso de órganos pélvicos",
+                "en": "Urge incontinence associated with pelvic organ prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.52",
+            "titulo": {
+                "es": "Incontinencia urinaria mixta asociada a prolapso de órganos pélvicos",
+                "en": "Mixed urinary incontinence associated with pelvic organ prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.53",
+            "titulo": {
+                "es": "Incontinencia urinaria por rebosamiento asociada a prolapso de órganos pélvicos",
+                "en": "Overflow incontinence associated with pelvic organ prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.54",
+            "titulo": {
+                "es": "Incontinencia urinaria SAI con prolapso de órganos pélvicos",
+                "en": "Urinary incontinence, not otherwise specified with pelvic organ prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.60",
+            "titulo": {
+                "es": "Vejiga hiperactiva asociada a prolapso de órganos pélvicos",
+                "en": "Overactive bladder associated with pelvic organ prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.6Y",
+            "titulo": {
+                "es": "Otros trastornos funcionales especificados de la vejiga asociados a prolapso de órganos pélvicos",
+                "en": "Other specified functional bladder disorders associated with pelvic organ prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.6Z",
+            "titulo": {
+                "es": "Trastornos funcionales de la vejiga asociados a prolapso de órganos pélvicos, sin especificación",
+                "en": "Functional bladder disorders associated with pelvic organ prolapse, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC40.Z",
+            "titulo": {
+                "es": "Prolapso de órgano pélvico, sin especificación",
+                "en": "Pelvic organ prolapse, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC41",
+            "titulo": {
+                "es": "Disfunción anorrectal asociada a prolapso de órganos pélvicos",
+                "en": "Anorectal dysfunction associated with pelvic organ prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC42.0",
+            "titulo": {
+                "es": "Disminución de la sensibilidad por laxitud de la vagina o del orificio vaginal",
+                "en": "Diminished sensation due to vaginal or introital laxity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC42.1",
+            "titulo": {
+                "es": "Coito obstruido",
+                "en": "Obstructed intercourse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC4Z",
+            "titulo": {
+                "es": "Disfunción del suelo pélvico femenino, sin especificación",
+                "en": "Female pelvic floor dysfunction, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC50.0",
+            "titulo": {
+                "es": "Vejiga hiperactiva",
+                "en": "Overactive bladder"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC50.10",
+            "titulo": {
+                "es": "Sensibilidad vesical ausente o disminuida asociada a prolapso de órganos pélvicos",
+                "en": "Absent or diminished bladder sensation associated with pelvic organ prolapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC50.1Y",
+            "titulo": {
+                "es": "Otra sensibilidad vesical ausente o disminuida especificada",
+                "en": "Other specified absent or diminished bladder sensation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC50.1Z",
+            "titulo": {
+                "es": "Sensibilidad vesical ausente o disminuida, sin especificación",
+                "en": "Absent or diminished bladder sensation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC50.Y",
+            "titulo": {
+                "es": "Otros trastornos funcionales especificados de la vejiga SAI",
+                "en": "Other specified functional bladder disorders, not otherwise specified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC50.Z",
+            "titulo": {
+                "es": "Trastornos funcionales de la vejiga SAI, sin especificación",
+                "en": "Functional bladder disorders, not otherwise specified, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.00",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 1a",
+                "en": "Female Genital Mutilation Type 1a"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.01",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 1b",
+                "en": "Female Genital Mutilation Type 1b"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.0Z",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 1, sin especificación",
+                "en": "Female Genital Mutilation Type 1, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.10",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 2a",
+                "en": "Female Genital Mutilation Type 2a"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.11",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 2b",
+                "en": "Female Genital Mutilation Type 2b"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.12",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 2c",
+                "en": "Female Genital Mutilation Type 2c"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.1Z",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 2, sin especificación",
+                "en": "Female Genital Mutilation Type 2, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.20",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 3a",
+                "en": "Female Genital Mutilation Type 3a"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.21",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 3b",
+                "en": "Female Genital Mutilation Type 3b"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.2Z",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 3, sin especificación",
+                "en": "Female Genital Mutilation Type 3, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.3",
+            "titulo": {
+                "es": "Mutilación genital femenina de tipo 4",
+                "en": "Female Genital Mutilation Type 4"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC51.Z",
+            "titulo": {
+                "es": "Mutilación genital femenina, sin especificación",
+                "en": "Female Genital Mutilation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC70",
+            "titulo": {
+                "es": "Adherencias vaginales postoperatorias",
+                "en": "Postoperative adhesions of vagina"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC71",
+            "titulo": {
+                "es": "Prolapso de la cúpula vaginal tras histerectomía",
+                "en": "Prolapse of vaginal vault after hysterectomy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC72",
+            "titulo": {
+                "es": "Estenosis uretral tras un procedimiento",
+                "en": "Postprocedural urethral stricture"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC73",
+            "titulo": {
+                "es": "Adherencias peritoneales pélvicas tras un procedimiento",
+                "en": "Postprocedural pelvic peritoneal adhesions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC74",
+            "titulo": {
+                "es": "Funcionamiento inadecuado o complicación de estoma externo de vías urinarias",
+                "en": "Malfunction or complication of external stoma of urinary tract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC75",
+            "titulo": {
+                "es": "Funcionamiento inadecuado del segmento aferente de un reservorio urinario continente",
+                "en": "Malfunction of the afferent segment of a continent urinary pouch"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC76",
+            "titulo": {
+                "es": "Funcionamiento inadecuado del segmento eferente de un reservorio urinario continente",
+                "en": "Malfunction of the efferent segment of a continent urinary pouch"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC77",
+            "titulo": {
+                "es": "Metrorragia tras un procedimiento",
+                "en": "Postprocedural nonmenstrual uterine bleeding"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC78",
+            "titulo": {
+                "es": "Enfermedad inflamatoria pélvica femenina aguda tras un procedimiento",
+                "en": "Postprocedural acute female pelvic inflammatory disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC79",
+            "titulo": {
+                "es": "Trastornos de reducción mamaria",
+                "en": "Disorders of breast reduction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC7A",
+            "titulo": {
+                "es": "Trastornos de aumento mamario",
+                "en": "Disorders of breast augmentation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC7B",
+            "titulo": {
+                "es": "Isquemia o infarto renal tras un procedimiento",
+                "en": "Postinterventional ischemia or infarction of kidney"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC7C",
+            "titulo": {
+                "es": "Defecto de la cicatriz de la cesárea en el útero",
+                "en": "Caesarean scar defect of uterus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC8Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del sistema genitourinario",
+                "en": "Other specified diseases of the genitourinary system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "GC8Z",
+            "titulo": {
+                "es": "Enfermedades del sistema genitourinario, sin especificación",
+                "en": "Diseases of the genitourinary system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

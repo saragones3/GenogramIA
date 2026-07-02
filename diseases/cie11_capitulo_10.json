@@ -1,0 +1,1234 @@
+{
+    "codigo": "10",
+    "titulo": {
+        "es": "Enfermedades del oído o de la apófisis mastoides",
+        "en": "Diseases of the ear or mastoid process"
+    },
+    "subcategorias": [
+        {
+            "codigo": "AA00",
+            "titulo": {
+                "es": "Absceso del oído externo",
+                "en": "Abscess of external ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA01",
+            "titulo": {
+                "es": "Celulitis del oído externo",
+                "en": "Cellulitis of external ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA02",
+            "titulo": {
+                "es": "Otitis externa maligna",
+                "en": "Malignant otitis externa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA03",
+            "titulo": {
+                "es": "Otomicosis",
+                "en": "Otomycosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA04",
+            "titulo": {
+                "es": "Pericondritis del oído externo",
+                "en": "Perichondritis of external ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA0Y",
+            "titulo": {
+                "es": "Otras enfermedades infecciosas especificadas del oído externo",
+                "en": "Other specified infectious diseases of external ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA0Z",
+            "titulo": {
+                "es": "Enfermedades infecciosas del oído externo, sin especificación",
+                "en": "Infectious diseases of external ear, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA10",
+            "titulo": {
+                "es": "Otitis seborreica externa",
+                "en": "Seborrhoeic otitis externa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA11",
+            "titulo": {
+                "es": "Otitis externa aguda no infecciosa",
+                "en": "Acute noninfectious otitis externa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA12",
+            "titulo": {
+                "es": "Condrodermatitis nodular",
+                "en": "Chondrodermatitis nodularis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA13",
+            "titulo": {
+                "es": "Otitis externa crónica",
+                "en": "Chronic otitis externa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA1Y",
+            "titulo": {
+                "es": "Otra inflamación no infecciosa especificada del oído externo",
+                "en": "Other specified noninfectious inflammation of external ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA1Z",
+            "titulo": {
+                "es": "Inflamación no infecciosa del oído externo, sin especificación",
+                "en": "Noninfectious inflammation of external ear, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA3Y",
+            "titulo": {
+                "es": "Otro(a)(s) otitis externa especificado(a)(s)",
+                "en": "Other specified otitis externa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA3Z",
+            "titulo": {
+                "es": "Otitis externa, sin especificación",
+                "en": "Otitis externa, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA40.0",
+            "titulo": {
+                "es": "Exostosis del conducto auditivo externo",
+                "en": "Exostosis of external auditory canal"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA40.1",
+            "titulo": {
+                "es": "Estenosis adquirida del conducto auditivo externo",
+                "en": "Acquired stenosis of external auditory canal"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA40.2",
+            "titulo": {
+                "es": "Colesteatoma del conducto auditivo externo",
+                "en": "Cholesteatoma of external auditory canal"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA40.Y",
+            "titulo": {
+                "es": "Otra deformidad adquirida especificada del conducto auditivo externo",
+                "en": "Other specified acquired deformity of external auditory canal"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA40.Z",
+            "titulo": {
+                "es": "Deformidad adquirida del conducto auditivo externo, sin especificación",
+                "en": "Acquired deformity of external auditory canal, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA41.0",
+            "titulo": {
+                "es": "Oreja en coliflor",
+                "en": "Cauliflower ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA41.Y",
+            "titulo": {
+                "es": "Otra deformidad adquirida especificada del pabellón de la oreja",
+                "en": "Other specified acquired deformity of pinna"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA41.Z",
+            "titulo": {
+                "es": "Deformidad adquirida del pabellón de la oreja, sin especificación",
+                "en": "Acquired deformity of pinna, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA42",
+            "titulo": {
+                "es": "Tapón de cerumen en el oído",
+                "en": "Impacted cerumen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA4Y",
+            "titulo": {
+                "es": "Otros trastornos no inflamatorios especificados del oído externo",
+                "en": "Other specified noninflammatory disorders of the external ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA4Z",
+            "titulo": {
+                "es": "Trastornos no inflamatorios del oído externo, sin especificación",
+                "en": "Noninflammatory disorders of the external ear, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA6Z",
+            "titulo": {
+                "es": "Enfermedades del oído externo, sin especificación",
+                "en": "Diseases of external ear, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA80",
+            "titulo": {
+                "es": "Otitis media aguda mucosa o serosa",
+                "en": "Acute serous or mucoid otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA81",
+            "titulo": {
+                "es": "Otitis media no supurativa, no serosa aguda",
+                "en": "Acute nonserous nonsuppurative otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA82",
+            "titulo": {
+                "es": "Otitis media mucoide o serosa crónica",
+                "en": "Chronic serous or mucoid otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA83",
+            "titulo": {
+                "es": "Otitis media no infectada con derrame",
+                "en": "Noninfected otitis media with effusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA8Z",
+            "titulo": {
+                "es": "Otitis media no supurativa, sin especificación",
+                "en": "Nonsuppurative otitis media, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA90",
+            "titulo": {
+                "es": "Otitis media supurativa aguda",
+                "en": "Acute suppurative otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA91.0",
+            "titulo": {
+                "es": "Otitis media supurativa tubo timpánica crónica",
+                "en": "Chronic tubotympanic suppurative otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA91.1",
+            "titulo": {
+                "es": "Otitis media supurativa aticoantral crónica",
+                "en": "Chronic atticoantral suppurative otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA91.2",
+            "titulo": {
+                "es": "Otra otitis media supurativa crónica",
+                "en": "Other chronic suppurative otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA91.Z",
+            "titulo": {
+                "es": "Otitis media supurativa crónica, sin especificación",
+                "en": "Chronic suppurative otitis media, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AA9Z",
+            "titulo": {
+                "es": "Otitis media supurativa, no especificada agunda o crónica",
+                "en": "Suppurative otitis media, unspecified whether acute or chronic"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB00",
+            "titulo": {
+                "es": "Otitis media aguda",
+                "en": "Acute otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB01",
+            "titulo": {
+                "es": "Otitis media crónica",
+                "en": "Chronic otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB0Y",
+            "titulo": {
+                "es": "Otra otitis media especificada",
+                "en": "Other specified otitis media"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB0Z",
+            "titulo": {
+                "es": "Otitis media, sin especificación",
+                "en": "Otitis media, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB10.0",
+            "titulo": {
+                "es": "Divertículo de la trompa de Eustaquio",
+                "en": "Diverticulum of Eustachian tube"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB10.1",
+            "titulo": {
+                "es": "Trompa de Eustaquio distendida",
+                "en": "Patulous Eustachian tube"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB10.2",
+            "titulo": {
+                "es": "Inflamación de la trompa de Eustaquio",
+                "en": "Eustachian salpingitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB10.3",
+            "titulo": {
+                "es": "Obstrucción de la trompa de Eustaquio",
+                "en": "Obstruction of Eustachian tube"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB10.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la trompa de Eustaquio",
+                "en": "Other specified disorders of Eustachian tube"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB10.Z",
+            "titulo": {
+                "es": "Trastornos de la trompa de Eustaquio, sin especificación",
+                "en": "Disorders of Eustachian tube, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB11.0",
+            "titulo": {
+                "es": "Mastoiditis aguda",
+                "en": "Acute mastoiditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB11.1",
+            "titulo": {
+                "es": "Mastoiditis crónica",
+                "en": "Chronic mastoiditis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB11.2",
+            "titulo": {
+                "es": "Petrositis",
+                "en": "Petrositis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB11.3",
+            "titulo": {
+                "es": "Mastoiditis, no especificada como aguda o crónica",
+                "en": "Mastoiditis, unspecified as acute or chronic"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB11.Y",
+            "titulo": {
+                "es": "Otras mastoiditis o afecciones relacionadas especificadas",
+                "en": "Other specified mastoiditis related conditions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB12",
+            "titulo": {
+                "es": "Colesteatoma del oído medio",
+                "en": "Cholesteatoma of middle ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB13.0",
+            "titulo": {
+                "es": "Perforación central de la membrana timpánica",
+                "en": "Central perforation of tympanic membrane"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB13.1",
+            "titulo": {
+                "es": "Perforación del ático de la membrana timpánica",
+                "en": "Attic perforation of tympanic membrane"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB13.2",
+            "titulo": {
+                "es": "Otras perforaciones marginales de la membrana timpánica",
+                "en": "Other marginal perforations of tympanic membrane"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB13.Y",
+            "titulo": {
+                "es": "Otra perforación especificada de la membrana timpánica",
+                "en": "Other specified perforation of tympanic membrane"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB13.Z",
+            "titulo": {
+                "es": "Perforación de la membrana timpánica, sin especificación",
+                "en": "Perforation of tympanic membrane, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB14",
+            "titulo": {
+                "es": "Miringitis aguda",
+                "en": "Acute myringitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB15",
+            "titulo": {
+                "es": "Miringitis crónica",
+                "en": "Chronic myringitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB16",
+            "titulo": {
+                "es": "Timpanoesclerosis",
+                "en": "Tympanosclerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB17",
+            "titulo": {
+                "es": "Enfermedad adhesiva del oído medio",
+                "en": "Adhesive middle ear disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB18",
+            "titulo": {
+                "es": "Discontinuidad o luxación de los huesecillos del oído",
+                "en": "Discontinuity or dislocation of ear ossicles"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB19",
+            "titulo": {
+                "es": "Anomalías adquiridas de los huesecillos del oído que no están relacionados con la discontinuidad o la dislocación",
+                "en": "Acquired abnormalities of ear ossicles not related to discontinuity or dislocation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB1A.0",
+            "titulo": {
+                "es": "Pólipo auricular",
+                "en": "Aural polyp"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB1A.Y",
+            "titulo": {
+                "es": "Otro pólipo especificado del oído medio",
+                "en": "Other specified polyp of middle ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB1A.Z",
+            "titulo": {
+                "es": "Pólipo del oído medio, sin especificación",
+                "en": "Polyp of middle ear, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB1B",
+            "titulo": {
+                "es": "Cicatriz del oído medio",
+                "en": "Middle ear cicatrix"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB1Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del oído medio o de la apófisis mastoides",
+                "en": "Other specified diseases of middle ear or mastoid"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB1Z",
+            "titulo": {
+                "es": "Enfermedades del oído medio o de la apófisis mastoides, sin especificación",
+                "en": "Diseases of middle ear or mastoid, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB30.0",
+            "titulo": {
+                "es": "Neuritis vestibular",
+                "en": "Vestibular neuritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB30.1",
+            "titulo": {
+                "es": "Laberintitis",
+                "en": "Labyrinthitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB30.Y",
+            "titulo": {
+                "es": "Otro síndrome vestibular agudo especificado",
+                "en": "Other specified acute vestibular syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB30.Z",
+            "titulo": {
+                "es": "Síndrome vestibular agudo, sin especificación",
+                "en": "Acute vestibular syndrome, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.0",
+            "titulo": {
+                "es": "Enfermedad de Ménière",
+                "en": "Meniere disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.1",
+            "titulo": {
+                "es": "Migraña vestibular",
+                "en": "Vestibular migraine"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.2",
+            "titulo": {
+                "es": "Vértigo postural paroxístico benigno",
+                "en": "Benign positional paroxysmal vertigo"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.3",
+            "titulo": {
+                "es": "Síndrome de dehiscencia del canal superior",
+                "en": "Superior canal dehiscence syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.4",
+            "titulo": {
+                "es": "Síndrome del desembarco",
+                "en": "Disembarkment syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.5",
+            "titulo": {
+                "es": "Enfermedad del oído interno autoinmunitaria",
+                "en": "Autoimmune inner ear disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.6",
+            "titulo": {
+                "es": "Paroxismia vestibular",
+                "en": "Vestibular paroxysmia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.7",
+            "titulo": {
+                "es": "Síndromes vertiginosos",
+                "en": "Vertiginous syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.Y",
+            "titulo": {
+                "es": "Otro síndrome vestibular episódico especificado",
+                "en": "Other specified episodic vestibular syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB31.Z",
+            "titulo": {
+                "es": "Síndrome vestibular episódico, sin especificación",
+                "en": "Episodic vestibular syndrome, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB32.0",
+            "titulo": {
+                "es": "Mareo postural perceptual persistente",
+                "en": "Persistent Postural-Perceptual Dizziness"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB32.1",
+            "titulo": {
+                "es": "Vestibulopatía unilateral crónica idiopática",
+                "en": "Chronic unilateral idiopathic vestibulopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB32.2",
+            "titulo": {
+                "es": "Vestibulopatía unilateral persistente tras neuronitis vestibular",
+                "en": "Persistent unilateral vestibulopathy after vestibular neuronitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB32.3",
+            "titulo": {
+                "es": "Vestibulopatía unilateral por schwannoma",
+                "en": "Unilateral vestibulopathy due to schwannoma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB32.4",
+            "titulo": {
+                "es": "Vestibulopatía unilateral tras una intervención médica",
+                "en": "Unilateral vestibulopathy after medical intervention"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB32.5",
+            "titulo": {
+                "es": "Vestibulopatía bilateral crónica",
+                "en": "Chronic bilateral vestibulopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB32.Y",
+            "titulo": {
+                "es": "Otro síndrome vestibular crónico especificado",
+                "en": "Other specified chronic vestibular syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB32.Z",
+            "titulo": {
+                "es": "Síndrome vestibular crónico, sin especificación",
+                "en": "Chronic vestibular syndrome, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB33",
+            "titulo": {
+                "es": "Otosclerosis",
+                "en": "Otosclerosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB34.0",
+            "titulo": {
+                "es": "Vestibulopatía bilateral idiopática",
+                "en": "Idiopathic bilateral vestibulopathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB34.1",
+            "titulo": {
+                "es": "Otro vértigo periférico",
+                "en": "Other peripheral vertigo"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB34.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados de la función vestibular",
+                "en": "Other specified disorders of vestibular function"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB34.Z",
+            "titulo": {
+                "es": "Trastornos de la función vestibular, sin especificación",
+                "en": "Disorders of vestibular function, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB35",
+            "titulo": {
+                "es": "Fístula laberíntica",
+                "en": "Labyrinthine fistula"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB36",
+            "titulo": {
+                "es": "Disfunción laberíntica",
+                "en": "Labyrinthine dysfunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB37",
+            "titulo": {
+                "es": "Efectos del ruido en el oído interno",
+                "en": "Noise effects on inner ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB3Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del oído interno",
+                "en": "Other specified diseases of inner ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB3Z",
+            "titulo": {
+                "es": "Enfermedades del oído interno, sin especificación",
+                "en": "Diseases of inner ear, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB50.0",
+            "titulo": {
+                "es": "Sordera de conducción congénita",
+                "en": "Congenital conductive hearing loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB50.1",
+            "titulo": {
+                "es": "Pérdida auditiva neurosensorial congénita",
+                "en": "Congenital sensorineural hearing loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB50.2",
+            "titulo": {
+                "es": "Pérdida congénita mixta de la audición conductiva y neurosensorial",
+                "en": "Congenital mixed conductive and sensorineural hearing loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB50.Y",
+            "titulo": {
+                "es": "Otra deficiencia auditiva congénita especificada",
+                "en": "Other specified congenital hearing impairment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB50.Z",
+            "titulo": {
+                "es": "Deficiencia auditiva congénita, sin especificación",
+                "en": "Congenital hearing impairment, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB51.0",
+            "titulo": {
+                "es": "Sordera de conducción adquirida",
+                "en": "Acquired conductive hearing loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB51.1",
+            "titulo": {
+                "es": "Pérdida de la audición neurosensorial adquirida",
+                "en": "Acquired sensorineural hearing loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB51.2",
+            "titulo": {
+                "es": "Pérdida de la audición sensorioneural y conductiva mixta adquirida",
+                "en": "Acquired mixed conductive and sensorineural hearing loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB51.Y",
+            "titulo": {
+                "es": "Otra deficiencia auditiva adquirida especificada",
+                "en": "Other specified acquired hearing impairment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB51.Z",
+            "titulo": {
+                "es": "Deficiencia auditiva adquirida, sin especificación",
+                "en": "Acquired hearing impairment, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB52",
+            "titulo": {
+                "es": "Sordera no especificada de otra manera",
+                "en": "Deafness not otherwise specified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB53",
+            "titulo": {
+                "es": "Pérdida auditiva ototóxica",
+                "en": "Ototoxic hearing loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB54",
+            "titulo": {
+                "es": "Presbiacusia",
+                "en": "Presbycusis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB55",
+            "titulo": {
+                "es": "Pérdida auditiva repentina idiopática",
+                "en": "Sudden idiopathic hearing loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB56",
+            "titulo": {
+                "es": "Pérdida auditiva hereditaria",
+                "en": "Hereditary hearing loss"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB57",
+            "titulo": {
+                "es": "Sinaptopatía o neuropatía auditiva",
+                "en": "Auditory synaptopathy or neuropathy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB5Y",
+            "titulo": {
+                "es": "Otros trastornos especificados con deficiencia auditiva",
+                "en": "Other specified disorders with hearing impairment"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB5Z",
+            "titulo": {
+                "es": "Trastornos con deficiencia auditiva, sin especificación",
+                "en": "Disorders with hearing impairment, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB70.0",
+            "titulo": {
+                "es": "Otorrea",
+                "en": "Otorrhoea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB70.1",
+            "titulo": {
+                "es": "Otorragia",
+                "en": "Otorrhagia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB70.2",
+            "titulo": {
+                "es": "Otalgia",
+                "en": "Otalgia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB71",
+            "titulo": {
+                "es": "Trastornos degenerativos o vasculares del oído",
+                "en": "Degenerative or vascular disorders of ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB72.0",
+            "titulo": {
+                "es": "Neuritis acústica",
+                "en": "Acoustic neuritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB72.Y",
+            "titulo": {
+                "es": "Otros trastornos especificados del nervio acústico",
+                "en": "Other specified disorders of acoustic nerve"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB72.Z",
+            "titulo": {
+                "es": "Trastornos del nervio acústico, sin especificación",
+                "en": "Disorders of acoustic nerve, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB73",
+            "titulo": {
+                "es": "Oreja atrófica",
+                "en": "Atrophy ear"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB7Y",
+            "titulo": {
+                "es": "Otros trastornos del oído especificados, no clasificados en otra parte",
+                "en": "Other specified disorders of ear, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB90",
+            "titulo": {
+                "es": "Colesteatoma recurrente de la cavidad posmastoidectomía",
+                "en": "Recurrent cholesteatoma of postmastoidectomy cavity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB91",
+            "titulo": {
+                "es": "Quiste mucoso de la cavidad posmastoidectomía",
+                "en": "Mucosal cyst of postmastoidectomy cavity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB92",
+            "titulo": {
+                "es": "Granulación de la cavidad posmastoidectomía",
+                "en": "Granulation of postmastoidectomy cavity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AB93",
+            "titulo": {
+                "es": "Inflamación crónica de la cavidad posmastoidectomía",
+                "en": "Chronic inflammation of postmastoidectomy cavity"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AC0Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del oído o de la apófisis mastoides",
+                "en": "Other specified diseases of the ear or mastoid process"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "AC0Z",
+            "titulo": {
+                "es": "Enfermedades del oído o de la apófisis mastoides, sin especificación",
+                "en": "Diseases of the ear or mastoid process, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}

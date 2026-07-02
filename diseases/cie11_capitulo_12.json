@@ -1,0 +1,2602 @@
+{
+    "codigo": "12",
+    "titulo": {
+        "es": "Enfermedades del sistema respiratorio",
+        "en": "Diseases of the respiratory system"
+    },
+    "subcategorias": [
+        {
+            "codigo": "CA00",
+            "titulo": {
+                "es": "Nasofaringitis aguda",
+                "en": "Acute nasopharyngitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA01",
+            "titulo": {
+                "es": "Sinusitis aguda",
+                "en": "Acute sinusitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA02.0",
+            "titulo": {
+                "es": "Faringitis bacteriana aguda",
+                "en": "Acute bacterial pharyngitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA02.10",
+            "titulo": {
+                "es": "Faringitis por adenovirus",
+                "en": "Pharyngitis due to Adenovirus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA02.1Y",
+            "titulo": {
+                "es": "Otra faringitis viral aguda especificada",
+                "en": "Other specified acute viral pharyngitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA02.1Z",
+            "titulo": {
+                "es": "Faringitis viral aguda, sin especificación",
+                "en": "Acute viral pharyngitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA02.Y",
+            "titulo": {
+                "es": "Otra faringitis aguda especificada",
+                "en": "Other specified acute pharyngitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA02.Z",
+            "titulo": {
+                "es": "Faringitis aguda, sin especificación",
+                "en": "Acute pharyngitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA03.0",
+            "titulo": {
+                "es": "Amigdalitis estreptocócica",
+                "en": "Streptococcal tonsillitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA03.Y",
+            "titulo": {
+                "es": "Otra amigdalitis aguda especificada",
+                "en": "Other specified acute tonsillitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA03.Z",
+            "titulo": {
+                "es": "Amigdalitis aguda, sin especificación",
+                "en": "Acute tonsillitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA04",
+            "titulo": {
+                "es": "Laringofaringitis aguda",
+                "en": "Acute laryngopharyngitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA05.0",
+            "titulo": {
+                "es": "Laringitis aguda",
+                "en": "Acute laryngitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA05.1",
+            "titulo": {
+                "es": "Traqueítis aguda",
+                "en": "Acute tracheitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA05.2",
+            "titulo": {
+                "es": "Laringotraqueítis aguda",
+                "en": "Acute laryngotracheitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA06.0",
+            "titulo": {
+                "es": "Laringitis obstructiva aguda",
+                "en": "Acute obstructive laryngitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA06.1",
+            "titulo": {
+                "es": "Epiglotitis aguda",
+                "en": "Acute epiglottitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA06.Z",
+            "titulo": {
+                "es": "Laringitis obstructiva aguda o epiglotitis, sin especificación",
+                "en": "Acute obstructive laryngitis or epiglottitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA07.0",
+            "titulo": {
+                "es": "Infección respiratoria aguda de las vías altas, sitio no especificado",
+                "en": "Acute upper respiratory infection, site unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA07.1",
+            "titulo": {
+                "es": "Infecciones respiratorias agudas de vías altas, de múltiples sitios",
+                "en": "Acute upper respiratory infections of multiple sites"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.00",
+            "titulo": {
+                "es": "Rinitis alérgica debida al polen",
+                "en": "Allergic rhinitis due to pollen"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.01",
+            "titulo": {
+                "es": "Rinitis alérgica por otros alérgenos estacionales",
+                "en": "Allergic rhinitis due to other seasonal allergens"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.02",
+            "titulo": {
+                "es": "Rinitis alérgica por ácaros del polvo doméstico",
+                "en": "Allergic rhinitis due to house dust mite"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.03",
+            "titulo": {
+                "es": "Otra rinitis alérgica",
+                "en": "Other allergic rhinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.0Z",
+            "titulo": {
+                "es": "Rinitis alérgica, sin especificación",
+                "en": "Allergic rhinitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.10",
+            "titulo": {
+                "es": "Rinitis no alérgica con eosinófilos",
+                "en": "Non-allergic rhinitis with eosinophils"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.1Y",
+            "titulo": {
+                "es": "Otra rinitis no alérgica especificada",
+                "en": "Other specified non-allergic rhinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.1Z",
+            "titulo": {
+                "es": "Rinitis no alérgica, sin especificación",
+                "en": "Non-allergic rhinitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.2",
+            "titulo": {
+                "es": "Rinitis mixta",
+                "en": "Mixed rhinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA08.3",
+            "titulo": {
+                "es": "Rinitis vasomotora",
+                "en": "Vasomotor rhinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA09.0",
+            "titulo": {
+                "es": "Rinitis crónica",
+                "en": "Chronic rhinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA09.1",
+            "titulo": {
+                "es": "Nasofaringitis crónica",
+                "en": "Chronic nasopharyngitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA09.2",
+            "titulo": {
+                "es": "Faringitis crónica",
+                "en": "Chronic pharyngitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0A.0",
+            "titulo": {
+                "es": "Síndrome de Samter",
+                "en": "Samter syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0A.Y",
+            "titulo": {
+                "es": "Otra rinosinusitis crónica especificada",
+                "en": "Other specified chronic rhinosinusitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0A.Z",
+            "titulo": {
+                "es": "Rinosinusitis crónica, sin especificación",
+                "en": "Chronic rhinosinusitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0B",
+            "titulo": {
+                "es": "Síndrome del seno silencioso",
+                "en": "Silent sinus syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0C",
+            "titulo": {
+                "es": "Quiste o mucocele de nariz o seno paranasal",
+                "en": "Cyst or mucocele of nose or nasal sinus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0D",
+            "titulo": {
+                "es": "Desviación del tabique nasal",
+                "en": "Deviated nasal septum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0E",
+            "titulo": {
+                "es": "Hipertrofia de los cornetes nasales",
+                "en": "Hypertrophy of nasal turbinates"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0F.0",
+            "titulo": {
+                "es": "Hipertrofia de amígdalas",
+                "en": "Hypertrophy of tonsils"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0F.1",
+            "titulo": {
+                "es": "Hipertrofia de adenoides",
+                "en": "Hypertrophy of adenoids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0F.3",
+            "titulo": {
+                "es": "Hipertrofia de las amígdalas con hipertrofia de los adenoides",
+                "en": "Hypertrophy of tonsils with hypertrophy of adenoids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0F.Y",
+            "titulo": {
+                "es": "Otras enfermedades crónicas especificadas de las amígdalas palatinas o faríngeas",
+                "en": "Other specified chronic diseases of tonsils or adenoids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0F.Z",
+            "titulo": {
+                "es": "Enfermedades crónicas de las amígdalas palatinas o faríngeas, sin especificación",
+                "en": "Chronic diseases of tonsils or adenoids, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0G",
+            "titulo": {
+                "es": "Laringitis crónica o laringotraqueítis",
+                "en": "Chronic laryngitis or laryngotracheitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0H.0",
+            "titulo": {
+                "es": "Parálisis de las cuerdas vocales o de la laringe",
+                "en": "Paralysis of vocal cords or larynx"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0H.1",
+            "titulo": {
+                "es": "Pólipo de cuerda vocal o de laringe",
+                "en": "Polyp of vocal cord or larynx"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0H.2",
+            "titulo": {
+                "es": "Nódulos de las cuerdas vocales",
+                "en": "Nodules of vocal cords"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0H.3",
+            "titulo": {
+                "es": "Edema de laringe",
+                "en": "Oedema of larynx"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0H.4",
+            "titulo": {
+                "es": "Espasmo laríngeo",
+                "en": "Laryngeal spasm"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0H.5",
+            "titulo": {
+                "es": "Estenosis de laringe",
+                "en": "Stenosis of larynx"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0H.Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas de las cuerdas vocales o de la laringe, no clasificadas en otra parte",
+                "en": "Other specified diseases of vocal cords or larynx, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0H.Z",
+            "titulo": {
+                "es": "Enfermedades de las cuerdas vocales o de la laringe, no clasificadas en otra parte, sin especificación",
+                "en": "Diseases of vocal cords or larynx, not elsewhere classified, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0J.0",
+            "titulo": {
+                "es": "Degeneración polipoidea de senos paranasales",
+                "en": "Polypoid sinus degeneration"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0J.Y",
+            "titulo": {
+                "es": "Otro pólipo nasal especificado",
+                "en": "Other specified nasal polyp"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0J.Z",
+            "titulo": {
+                "es": "Pólipo nasal, sin especificación",
+                "en": "Nasal polyp, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0K.0",
+            "titulo": {
+                "es": "Absceso retrofaríngeo o parafaríngeo",
+                "en": "Retropharyngeal or parapharyngeal abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0K.1",
+            "titulo": {
+                "es": "Absceso periamigdalino",
+                "en": "Peritonsillar abscess"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0K.Y",
+            "titulo": {
+                "es": "Otro absceso especificado de vías respiratorias altas",
+                "en": "Other specified abscess of upper respiratory tract"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0K.Z",
+            "titulo": {
+                "es": "Absceso de vías respiratorias altas, sin especificación",
+                "en": "Abscess of upper respiratory tract, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0Y",
+            "titulo": {
+                "es": "Otros trastornos especificados las vías respiratorias superiores",
+                "en": "Other specified upper respiratory tract disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA0Z",
+            "titulo": {
+                "es": "Trastornos de las vías respiratorias superiores, sin especificación",
+                "en": "Upper respiratory tract disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA20.0",
+            "titulo": {
+                "es": "Bronquitis no infecciosa aguda",
+                "en": "Acute noninfectious bronchitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA20.10",
+            "titulo": {
+                "es": "Bronquitis crónica simple",
+                "en": "Simple chronic bronchitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA20.11",
+            "titulo": {
+                "es": "Bronquitis crónica mucopurulenta",
+                "en": "Mucopurulent chronic bronchitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA20.12",
+            "titulo": {
+                "es": "Bronquitis crónica mixta (simple y mucopurulenta)",
+                "en": "Mixed simple and mucopurulent chronic bronchitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA20.13",
+            "titulo": {
+                "es": "Bronquitis bacteriana persistente",
+                "en": "Protracted bacterial bronchitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA20.1Y",
+            "titulo": {
+                "es": "Otra bronquitis crónica especificada",
+                "en": "Other specified chronic bronchitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA20.1Z",
+            "titulo": {
+                "es": "Bronquitis crónica, sin especificación",
+                "en": "Chronic bronchitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA20.Y",
+            "titulo": {
+                "es": "Otra bronquitis especificada",
+                "en": "Other specified bronchitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA20.Z",
+            "titulo": {
+                "es": "Bronquitis, sin especificación",
+                "en": "Bronchitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA21.0",
+            "titulo": {
+                "es": "Síndrome de MacLeod",
+                "en": "MacLeod syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA21.1",
+            "titulo": {
+                "es": "Enfisema panlobulillar",
+                "en": "Panlobular emphysema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA21.2",
+            "titulo": {
+                "es": "Enfisema centrolobulillar",
+                "en": "Centrilobular emphysema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA21.Y",
+            "titulo": {
+                "es": "Otro enfisema especificado",
+                "en": "Other specified emphysema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA21.Z",
+            "titulo": {
+                "es": "Enfisema, sin especificación",
+                "en": "Emphysema, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA22.0",
+            "titulo": {
+                "es": "Enfermedad pulmonar obstructiva crónica con exacerbación aguda, no especificada",
+                "en": "Chronic obstructive pulmonary disease with acute exacerbation, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA22.1",
+            "titulo": {
+                "es": "Alguna enfermedad pulmonar obstructiva crónica especificada",
+                "en": "Certain specified chronic obstructive pulmonary disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA22.Z",
+            "titulo": {
+                "es": "Enfermedad pulmonar obstructiva crónica, sin especificación",
+                "en": "Chronic obstructive pulmonary disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.00",
+            "titulo": {
+                "es": "Asma alérgica con exacerbación",
+                "en": "Allergic asthma with exacerbation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.01",
+            "titulo": {
+                "es": "Asma alérgica con estado asmático",
+                "en": "Allergic asthma with status asthmaticus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.02",
+            "titulo": {
+                "es": "Asma alérgica sin complicaciones",
+                "en": "Allergic asthma, uncomplicated"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.10",
+            "titulo": {
+                "es": "Asma no alérgica con exacerbación",
+                "en": "Non-allergic asthma with exacerbation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.11",
+            "titulo": {
+                "es": "Asma no alérgica con estado asmático",
+                "en": "Non-allergic asthma with status asthmaticus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.12",
+            "titulo": {
+                "es": "Asma no alérgica sin complicaciones",
+                "en": "Non-allergic asthma, uncomplicated"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.20",
+            "titulo": {
+                "es": "Asma inducida por la aspirina",
+                "en": "Aspirin-induced asthma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.21",
+            "titulo": {
+                "es": "Broncoespasmo inducido por el ejercicio",
+                "en": "Exercise-induced bronchospasm"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.22",
+            "titulo": {
+                "es": "Tos como variante del asma",
+                "en": "Cough variant asthma"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.30",
+            "titulo": {
+                "es": "Asma no especificada con exacerbación",
+                "en": "Unspecified asthma with exacerbation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.31",
+            "titulo": {
+                "es": "Asma no especificada con estado asmático",
+                "en": "Unspecified asthma with status asthmaticus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA23.32",
+            "titulo": {
+                "es": "Asma no especificada sin complicaciones",
+                "en": "Unspecified asthma, uncomplicated"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA24",
+            "titulo": {
+                "es": "Bronquiectasia",
+                "en": "Bronchiectasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA25.0",
+            "titulo": {
+                "es": "Fibrosis quística clásica",
+                "en": "Classical cystic fibrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA25.1",
+            "titulo": {
+                "es": "Fibrosis quística atípica",
+                "en": "Atypical cystic fibrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA25.2",
+            "titulo": {
+                "es": "Fibrosis quística subclínica",
+                "en": "Subclinical cystic fibrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA25.Z",
+            "titulo": {
+                "es": "Fibrosis quística, sin especificación",
+                "en": "Cystic fibrosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA26.0",
+            "titulo": {
+                "es": "Bronquiolitis obliterante crónica",
+                "en": "Chronic obliterative bronchiolitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA26.1",
+            "titulo": {
+                "es": "Panbroquiolitis difusa",
+                "en": "Diffuse panbronchiolitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA26.Y",
+            "titulo": {
+                "es": "Otra bronquiolitis crónica especificada",
+                "en": "Other specified chronic bronchiolitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA26.Z",
+            "titulo": {
+                "es": "Bronquiolitis crónica, sin especificación",
+                "en": "Chronic bronchiolitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA27.0",
+            "titulo": {
+                "es": "Traqueobroncopatía osteocondroplásica",
+                "en": "Tracheobronchopathia osteochondroplastica"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA27.1",
+            "titulo": {
+                "es": "Traqueobroncomegalia",
+                "en": "Tracheobronchomegaly"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA27.Y",
+            "titulo": {
+                "es": "Otra traqueobronquitis especificada",
+                "en": "Other specified tracheobronchitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA27.Z",
+            "titulo": {
+                "es": "Traqueobronquitis, sin especificación",
+                "en": "Tracheobronchitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA2Y",
+            "titulo": {
+                "es": "Otra enfermedad especificada de las vías respiratorias bajas",
+                "en": "Other specified lower respiratory tract disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA2Z",
+            "titulo": {
+                "es": "Enfermedad de las vías respiratorias bajas, sin especificación",
+                "en": "Lower respiratory tract disease, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.00",
+            "titulo": {
+                "es": "Neumonía por Chlamydophila pneumoniae",
+                "en": "Pneumonia due to Chlamydophila pneumoniae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.01",
+            "titulo": {
+                "es": "Neumonía por Escherichia coli",
+                "en": "Pneumonia due to Escherichia coli"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.02",
+            "titulo": {
+                "es": "Neumonía por Haemophilus influenzae",
+                "en": "Pneumonia due to Haemophilus influenzae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.03",
+            "titulo": {
+                "es": "Neumonía por Klebsiella pneumoniae",
+                "en": "Pneumonia due to Klebsiella pneumoniae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.04",
+            "titulo": {
+                "es": "Neumonía por Mycoplasma pneumoniae",
+                "en": "Pneumonia due to Mycoplasma pneumoniae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.05",
+            "titulo": {
+                "es": "Neumonía por Pseudomonas aeruginosa",
+                "en": "Pneumonia due to Pseudomonas aeruginosa"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.06",
+            "titulo": {
+                "es": "Neumonía por estafilococos",
+                "en": "Pneumonia due to Staphylococcus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.07",
+            "titulo": {
+                "es": "Neumonía por Streptococcus pneumoniae",
+                "en": "Pneumonia due to Streptococcus pneumoniae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.08",
+            "titulo": {
+                "es": "Neumonía por especies betahemolíticas de Streptococcus",
+                "en": "Pneumonia due to beta-haemolytic Streptococcus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.0Y",
+            "titulo": {
+                "es": "Otra neumonía bacteriana especificada",
+                "en": "Pneumonia due to other specified bacteria"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.0Z",
+            "titulo": {
+                "es": "Neumonía bacteriana, sin especificación",
+                "en": "Bacterial pneumonia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.10",
+            "titulo": {
+                "es": "Neumonía por adenovirus",
+                "en": "Pneumonia due to Adenovirus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.11",
+            "titulo": {
+                "es": "Neumonía por virus respiratorio sincicial",
+                "en": "Pneumonia due to Respiratory syncytial virus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.12",
+            "titulo": {
+                "es": "Neumonía por virus de parainfluenza",
+                "en": "Pneumonia due to parainfluenza virus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.13",
+            "titulo": {
+                "es": "Neumonía por metaneumovirus humano",
+                "en": "Pneumonia due to Human metapneumovirus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.1Y",
+            "titulo": {
+                "es": "Neumonía por otro virus especificado",
+                "en": "Pneumonia due to other specified virus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.1Z",
+            "titulo": {
+                "es": "Neumonía viral, sin especificación",
+                "en": "Viral pneumonia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.20",
+            "titulo": {
+                "es": "Neumonía por Pneumocystis",
+                "en": "Pneumonia due to pneumocystis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.2Y",
+            "titulo": {
+                "es": "Otra neumonía micótica especificada",
+                "en": "Other specified fungal pneumonia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.2Z",
+            "titulo": {
+                "es": "Neumonía micótica, sin especificación",
+                "en": "Fungal pneumonia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.Y",
+            "titulo": {
+                "es": "Otra neumonía especificada",
+                "en": "Other specified pneumonia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA40.Z",
+            "titulo": {
+                "es": "Neumonía, organismo sin especificación",
+                "en": "Pneumonia, organism unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA41.0",
+            "titulo": {
+                "es": "Bronquiolitis aguda por virus respiratorio sincitial",
+                "en": "Acute bronchiolitis due to respiratory syncytial virus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA41.Y",
+            "titulo": {
+                "es": "Otra bronquiolitis aguda especificada",
+                "en": "Other specified acute bronchiolitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA41.Z",
+            "titulo": {
+                "es": "Bronquiolitis aguda, sin especificación",
+                "en": "Acute bronchiolitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA42.0",
+            "titulo": {
+                "es": "Bronquitis aguda por Streptococcus",
+                "en": "Acute bronchitis due to Streptococcus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA42.1",
+            "titulo": {
+                "es": "Bronquitis aguda por rinovirus",
+                "en": "Acute bronchitis due to Rhinovirus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA42.2",
+            "titulo": {
+                "es": "Bronquitis aguda por virus respiratorio sincitial",
+                "en": "Acute bronchitis due to Respiratory syncytial virus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA42.3",
+            "titulo": {
+                "es": "Bronquitis aguda por virus de parainfluenza",
+                "en": "Acute bronchitis due to Parainfluenza virus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA42.4",
+            "titulo": {
+                "es": "Bronquitis aguda por Haemophilus influenzae",
+                "en": "Acute bronchitis due to Haemophilus influenzae"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA42.5",
+            "titulo": {
+                "es": "Bronquitis aguda por virus Coxsackie",
+                "en": "Acute bronchitis due to Coxsackievirus"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA42.Y",
+            "titulo": {
+                "es": "Otra bronquitis aguda especificada",
+                "en": "Other specified acute bronchitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA42.Z",
+            "titulo": {
+                "es": "Bronquitis aguda, sin especificación",
+                "en": "Acute bronchitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA43.0",
+            "titulo": {
+                "es": "Gangrena o necrosis pulmonar",
+                "en": "Gangrene or necrosis of lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA43.1",
+            "titulo": {
+                "es": "Absceso pulmonar con neumonía",
+                "en": "Abscess of lung with pneumonia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA43.2",
+            "titulo": {
+                "es": "Absceso pulmonar sin neumonía",
+                "en": "Abscess of lung without pneumonia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA43.3",
+            "titulo": {
+                "es": "absceso mediastínico",
+                "en": "Abscess of mediastinum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA43.Y",
+            "titulo": {
+                "es": "Otro absceso pulmonar o mediastínico especificado",
+                "en": "Other specified abscess of lung or mediastinum"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA43.Z",
+            "titulo": {
+                "es": "Absceso pulmonar o mediastínico, sin especificación",
+                "en": "Abscess of lung or mediastinum, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA44",
+            "titulo": {
+                "es": "Piotórax",
+                "en": "Pyothorax"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA45",
+            "titulo": {
+                "es": "Infecciones respiratorias no clasificadas en otra parte",
+                "en": "Respiratory infections, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA4Y",
+            "titulo": {
+                "es": "Otras infecciones pulmonares especificadas",
+                "en": "Other specified lung infections"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA4Z",
+            "titulo": {
+                "es": "Infecciones pulmonares, sin especificación",
+                "en": "Lung infections, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.00",
+            "titulo": {
+                "es": "Neumoconiosis por polvo de talco",
+                "en": "Pneumoconiosis due to talc dust"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.0Y",
+            "titulo": {
+                "es": "Otra neumoconiosis especificada por polvo de sílice",
+                "en": "Other specified pneumoconiosis due to dust containing silica"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.0Z",
+            "titulo": {
+                "es": "Neumoconiosis por polvo de sílice, sin especificación",
+                "en": "Pneumoconiosis due to dust containing silica, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.1",
+            "titulo": {
+                "es": "antracosis",
+                "en": "Coal worker pneumoconiosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.2",
+            "titulo": {
+                "es": "Neumoconiosis por fibras minerales, incluyendo asbestos (amianto)",
+                "en": "Pneumoconiosis due to mineral fibres including asbestos"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.3",
+            "titulo": {
+                "es": "Neumoconiosis asociada con tuberculosis",
+                "en": "Pneumoconiosis associated with tuberculosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.4",
+            "titulo": {
+                "es": "Aluminosis pulmonar",
+                "en": "Aluminosis of lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.5",
+            "titulo": {
+                "es": "Fibrosis pulmonar por bauxita",
+                "en": "Bauxite fibrosis of lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.6",
+            "titulo": {
+                "es": "Beriliosis",
+                "en": "Berylliosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.7",
+            "titulo": {
+                "es": "Fibrosis pulmonar por grafito",
+                "en": "Graphite fibrosis of lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.8",
+            "titulo": {
+                "es": "Siderosis",
+                "en": "Siderosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.9",
+            "titulo": {
+                "es": "Estañosis",
+                "en": "Stannosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.Y",
+            "titulo": {
+                "es": "Otra neumoconiosis especificada",
+                "en": "Other specified pneumoconiosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA60.Z",
+            "titulo": {
+                "es": "Neumoconiosis, sin especificación",
+                "en": "Pneumoconiosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.0",
+            "titulo": {
+                "es": "Pulmón de granjero",
+                "en": "Farmer lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.1",
+            "titulo": {
+                "es": "Bagazosis",
+                "en": "Bagassosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.2",
+            "titulo": {
+                "es": "Pulmón del avicultor",
+                "en": "Bird fancier lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.3",
+            "titulo": {
+                "es": "Suberosis",
+                "en": "Suberosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.4",
+            "titulo": {
+                "es": "Pulmón de los manipuladores de la malta",
+                "en": "Malt worker lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.5",
+            "titulo": {
+                "es": "Pulmón del trabajador con setas, hongos o champiñones",
+                "en": "Mushroom worker lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.6",
+            "titulo": {
+                "es": "Pulmón del descortezador de arce",
+                "en": "Maple bark stripper lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.7",
+            "titulo": {
+                "es": "Pulmón del aire acondicionado o de los humidificadores",
+                "en": "Air conditioner or humidifier lung"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.Y",
+            "titulo": {
+                "es": "Otra neumonitis especificada por hipersensibilidad a polvos orgánicos",
+                "en": "Other specified hypersensitivity pneumonitis due to organic dust"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA70.Z",
+            "titulo": {
+                "es": "Neumonitis por hipersensibilidad a polvos orgánicos, sin especificación",
+                "en": "Hypersensitivity pneumonitis due to organic dust, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA71.0",
+            "titulo": {
+                "es": "Neumonitis por inhalación de comida o vómito",
+                "en": "Pneumonitis due to inhalation of food or vomit"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA71.1",
+            "titulo": {
+                "es": "Neumonitis por aceites o esencias",
+                "en": "Pneumonitis due to oils or essences"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA71.2",
+            "titulo": {
+                "es": "Neumonitis por aspiración de sangre",
+                "en": "Pneumonitis due to aspiration of blood"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA71.3",
+            "titulo": {
+                "es": "Neumonitis lipoidea",
+                "en": "Lipoid pneumonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA71.Y",
+            "titulo": {
+                "es": "Otra neumonitis especificada debida a sólidos o líquidos",
+                "en": "Other specified pneumonitis due to solids or liquids"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA71.Z",
+            "titulo": {
+                "es": "Neumonitis debida a sólidos o líquidos, sin especificación",
+                "en": "Pneumonitis due to solids or liquids, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA72",
+            "titulo": {
+                "es": "Síndrome de Mendelson",
+                "en": "Mendelson syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA7Y",
+            "titulo": {
+                "es": "Otra neumonitis especificada",
+                "en": "Other specified pneumonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA7Z",
+            "titulo": {
+                "es": "Neumonitis, sin especificación",
+                "en": "Pneumonitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA80.0",
+            "titulo": {
+                "es": "Bisinosis debida a exposición al algodón",
+                "en": "Byssinosis due to exposure to cotton"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA80.1",
+            "titulo": {
+                "es": "Enfermedad de los rastrilladores de lino",
+                "en": "Byssinosis due to exposure to flax"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA80.2",
+            "titulo": {
+                "es": "Bisinosis debida a exposición a Cannabis",
+                "en": "Byssinosis due to exposure to cannabis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA80.Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas de las vías aéreas por polvos orgánicos específicos",
+                "en": "Other specified airway disease due to specific organic dust"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA80.Z",
+            "titulo": {
+                "es": "Enfermedades de las vías aéreas por polvos orgánicos específicos, sin especificación",
+                "en": "Airway disease due to specific organic dust, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA81.0",
+            "titulo": {
+                "es": "Bronquitis o neumonitis por sustancias químicas, gases, humos o vapores",
+                "en": "Bronchitis or pneumonitis due to chemicals, gases, fumes or vapours"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA81.1",
+            "titulo": {
+                "es": "Edema pulmonar por sustancias químicas, gases, humos o vapores",
+                "en": "Pulmonary oedema due to chemicals, gases, fumes or vapours"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA81.2",
+            "titulo": {
+                "es": "Inflamación de vías respiratorias altas por sustancias químicas, gases, humos o vapores, no clasificada en otra parte",
+                "en": "Upper respiratory inflammation due to chemicals, gases, fumes or vapours, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA81.Y",
+            "titulo": {
+                "es": "Otras enfermedades respiratorias especificadas por inhalación de sustancias químicas, gases, humos o vapores",
+                "en": "Other specified respiratory conditions due to inhalation of chemicals, gases, fumes or vapours"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA81.Z",
+            "titulo": {
+                "es": "Enfermedades respiratorias por inhalación de sustancias químicas, gases, humos o vapores, sin especificación",
+                "en": "Respiratory conditions due to inhalation of chemicals, gases, fumes or vapours, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA82.0",
+            "titulo": {
+                "es": "Manifestaciones pulmonares agudas por radiación",
+                "en": "Acute pulmonary manifestations due to radiation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA82.1",
+            "titulo": {
+                "es": "Manifestaciones pulmonares crónicas o de otro tipo por radiación",
+                "en": "Chronic or other pulmonary manifestations due to radiation"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA82.2",
+            "titulo": {
+                "es": "Trastornos pulmonares intersticiales agudos provocados por medicamentos",
+                "en": "Acute drug-induced interstitial lung disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA82.3",
+            "titulo": {
+                "es": "Trastornos pulmonares intersticiales crónicos provocados por medicamentos",
+                "en": "Chronic drug-induced interstitial lung disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA82.4",
+            "titulo": {
+                "es": "Afecciones alérgicas o de hipersensibilidad por Aspergillus",
+                "en": "Aspergillus-induced allergic or hypersensitivity conditions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA82.Y",
+            "titulo": {
+                "es": "Otras enfermedades respiratorias especificadas por otros agentes externos",
+                "en": "Other specified respiratory conditions due to other external agents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA82.Z",
+            "titulo": {
+                "es": "Enfermedades respiratorias por otros agentes externos, sin especificación",
+                "en": "Respiratory conditions due to other external agents, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA8Y",
+            "titulo": {
+                "es": "Otras enfermedades pulmonares especificadas por agentes externos",
+                "en": "Other specified lung diseases due to external agents"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CA8Z",
+            "titulo": {
+                "es": "Enfermedades pulmonares por agentes externos, sin especificación",
+                "en": "Lung diseases due to external agents, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB00",
+            "titulo": {
+                "es": "Síndrome de dificultad respiratoria aguda",
+                "en": "Acute respiratory distress syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB01",
+            "titulo": {
+                "es": "Edema pulmonar",
+                "en": "Pulmonary oedema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB02.0",
+            "titulo": {
+                "es": "Eosinofilia pulmonar asmática",
+                "en": "Asthmatic pulmonary eosinophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB02.10",
+            "titulo": {
+                "es": "Neumonitis eosinofílica idiopática aguda",
+                "en": "Idiopathic acute eosinophilic pneumonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB02.11",
+            "titulo": {
+                "es": "Neumonitis eosinofílica idiopática crónica",
+                "en": "Idiopathic chronic eosinophilic pneumonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB02.1Y",
+            "titulo": {
+                "es": "Otra neumonitis eosinofílica idiopática especificada",
+                "en": "Other specified idiopathic eosinophilic pneumonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB02.1Z",
+            "titulo": {
+                "es": "Neumonitis eosinofílica idiopática, sin especificación",
+                "en": "Idiopathic eosinophilic pneumonitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB02.2",
+            "titulo": {
+                "es": "Eosinofilia pulmonar tropical",
+                "en": "Tropical pulmonary eosinophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB02.Y",
+            "titulo": {
+                "es": "Otra eosinofilia pulmonar especificada",
+                "en": "Other specified pulmonary eosinophilia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB02.Z",
+            "titulo": {
+                "es": "Eosinofilia pulmonar, sin especificación",
+                "en": "Pulmonary eosinophilia, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB03.0",
+            "titulo": {
+                "es": "Neumonitis intersticial aguda",
+                "en": "Acute interstitial pneumonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB03.1",
+            "titulo": {
+                "es": "síndrome combinado de fibrosis pulmonar y enfisema",
+                "en": "Combined pulmonary fibrosis and emphysema syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB03.2",
+            "titulo": {
+                "es": "Neumonitis organizada criptogénica",
+                "en": "Cryptogenic organizing pneumonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB03.3",
+            "titulo": {
+                "es": "Neumonitis intersticial descamativa",
+                "en": "Desquamative interstitial pneumonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB03.4",
+            "titulo": {
+                "es": "Fibrosis pulmonar idiopática",
+                "en": "Idiopathic pulmonary fibrosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB03.5",
+            "titulo": {
+                "es": "Neumonía intersticial linfoidea",
+                "en": "Lymphoid interstitial pneumonia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB03.6",
+            "titulo": {
+                "es": "Bronquiolitis respiratoria y enfermedad pulmonar intersticial",
+                "en": "Respiratory bronchiolitis - interstitial lung disease"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB03.Y",
+            "titulo": {
+                "es": "Otra neumonitis intersticial idiopática especificada",
+                "en": "Other specified idiopathic interstitial pneumonitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB03.Z",
+            "titulo": {
+                "es": "Neumonitis intersticial idiopática, sin especificación",
+                "en": "Idiopathic interstitial pneumonitis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.0",
+            "titulo": {
+                "es": "Trastornos del desarrollo pulmonar difusos",
+                "en": "Diffuse pulmonary developmental disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.1",
+            "titulo": {
+                "es": "Síndromes de displasia linfática pulmonar",
+                "en": "Pulmonary lymphatic dysplasia syndromes"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.2",
+            "titulo": {
+                "es": "Trastornos del metabolismo del surfactante",
+                "en": "Disorders of surfactant metabolism"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.30",
+            "titulo": {
+                "es": "Hemosiderosis pulmonar idiopática",
+                "en": "Idiopathic pulmonary haemosiderosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.31",
+            "titulo": {
+                "es": "Proteinosis alveolar pulmonar",
+                "en": "Pulmonary alveolar proteinosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.3Y",
+            "titulo": {
+                "es": "Otras enfermedades alveolares o perialveolares especificadas",
+                "en": "Other specified alveolar or peri-alveolar conditions"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.3Z",
+            "titulo": {
+                "es": "Enfermedades alveolares o perialveolares, sin especificación",
+                "en": "Alveolar or peri-alveolar conditions, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.4",
+            "titulo": {
+                "es": "Capilaritis pulmonar",
+                "en": "Pulmonary capillaritis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.5",
+            "titulo": {
+                "es": "Síndrome de cerebro, pulmón, y tiroides",
+                "en": "Brain-lung-thyroid syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.6",
+            "titulo": {
+                "es": "Neumonitis crónica del lactante",
+                "en": "Chronic pneumonitis of infancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.7",
+            "titulo": {
+                "es": "Hiperplasia de células neuroendocrinas del lactante",
+                "en": "Neuroendocrine cell hyperplasia of infancy"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.Y",
+            "titulo": {
+                "es": "Otras enfermedades pulmonares intersticiales primarias especificadas específicas de la lactancia o la niñez",
+                "en": "Other specified primary interstitial lung diseases specific to infancy or childhood"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB04.Z",
+            "titulo": {
+                "es": "Enfermedades pulmonares intersticiales primarias específicas de la lactancia o la niñez, sin especificación",
+                "en": "Primary interstitial lung diseases specific to infancy or childhood, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.0",
+            "titulo": {
+                "es": "Daño alveolar difuso",
+                "en": "Diffuse alveolar damage"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.1",
+            "titulo": {
+                "es": "Enfermedades pulmonares intersticiales asociadas a enfermedades del tejido conjuntivo",
+                "en": "Interstitial lung diseases associated with connective tissue diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.2",
+            "titulo": {
+                "es": "Enfermedades pulmonares intersticiales asociadas a enfermedades granulomatosas",
+                "en": "Interstitial lung diseases associated with granulomatous diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.3",
+            "titulo": {
+                "es": "Enfermedades pulmonares intersticiales asociadas a enfermedades metabólicas",
+                "en": "Interstitial lung diseases associated with metabolic diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.40",
+            "titulo": {
+                "es": "Trastornos respiratorios en el síndrome de Churg-Strauss",
+                "en": "Respiratory disorders in Churg-Strauss syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.41",
+            "titulo": {
+                "es": "Trastornos respiratorios en poliangitis microscópica",
+                "en": "Respiratory disorders in microscopic polyangiitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.4Y",
+            "titulo": {
+                "es": "Otras enfermedades pulmonares intersticiales especificadas asociadas a vasculitis sistémicas",
+                "en": "Other specified interstitial lung diseases associated with systemic vasculitides"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.4Z",
+            "titulo": {
+                "es": "Enfermedades pulmonares intersticiales asociadas a vasculitis sistémicas, sin especificación",
+                "en": "Interstitial lung diseases associated with systemic vasculitides, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.5",
+            "titulo": {
+                "es": "Hemosiderosis pulmonar secundaria",
+                "en": "Secondary pulmonary haemosiderosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.Y",
+            "titulo": {
+                "es": "Otras enfermedades pulmonares intersticiales especificadas asociadas a enfermedades sistémicas",
+                "en": "Other specified interstitial lung diseases associated with systemic diseases"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB05.Z",
+            "titulo": {
+                "es": "Enfermedades pulmonares intersticiales asociadas a enfermedades sistémicas, sin especificación",
+                "en": "Interstitial lung diseases associated with systemic diseases, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB06",
+            "titulo": {
+                "es": "Microlitiasis alveolar pulmonar",
+                "en": "Pulmonary alveolar microlithiasis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB07.0",
+            "titulo": {
+                "es": "Linfangioliomiomatosis asociada al complejo de esclerosis tuberosa",
+                "en": "Lymphangioleiomyomatosis associated with tuberous sclerosis complex"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB07.1",
+            "titulo": {
+                "es": "Linfangioliomiomatosis esporádica",
+                "en": "Sporadic lymphangioleiomyomatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB07.Y",
+            "titulo": {
+                "es": "Otra linfangioliomiomatosis especificada",
+                "en": "Other specified lymphangioleiomyomatosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB07.Z",
+            "titulo": {
+                "es": "Linfangioliomiomatosis, sin especificación",
+                "en": "Lymphangioleiomyomatosis, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB0Y",
+            "titulo": {
+                "es": "Otras enfermedades respiratorias especificadas que afectan principalmente el intersticio pulmonar",
+                "en": "Other specified respiratory diseases principally affecting the lung interstitium"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB0Z",
+            "titulo": {
+                "es": "Enfermedades respiratorias que afectan principalmente el intersticio pulmonar, sin especificación",
+                "en": "Respiratory diseases principally affecting the lung interstitium, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB20",
+            "titulo": {
+                "es": "Paquipleuritis",
+                "en": "Pleural plaque"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB21.0",
+            "titulo": {
+                "es": "Neumotórax espontáneo a tensión",
+                "en": "Spontaneous tension pneumothorax"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB21.1",
+            "titulo": {
+                "es": "Otros tipos de neumotórax espontáneo",
+                "en": "Other spontaneous pneumothorax"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB21.Y",
+            "titulo": {
+                "es": "Otro neumotórax especificado",
+                "en": "Other specified pneumothorax"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB21.Z",
+            "titulo": {
+                "es": "Neumotórax, sin especificación",
+                "en": "Pneumothorax, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB22.0",
+            "titulo": {
+                "es": "Mediastinitis fibrosante",
+                "en": "Fibrosing mediastinitis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB22.Y",
+            "titulo": {
+                "es": "Otras enfermedades especificadas del mediastino, no clasificadas en otra parte",
+                "en": "Other specified diseases of mediastinum, not elsewhere classified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB22.Z",
+            "titulo": {
+                "es": "Enfermedades del mediastino, no clasificadas en otra parte, sin especificación",
+                "en": "Disease of mediastinum, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB23",
+            "titulo": {
+                "es": "Trastornos del diafragma",
+                "en": "Disorders of diaphragm"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB24",
+            "titulo": {
+                "es": "Quilotórax",
+                "en": "Chylous effusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB25",
+            "titulo": {
+                "es": "Fibrotórax",
+                "en": "Fibrothorax"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB26",
+            "titulo": {
+                "es": "Hemotórax",
+                "en": "Haemothorax"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB27",
+            "titulo": {
+                "es": "Derrame pleural",
+                "en": "Pleural effusion"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB2Y",
+            "titulo": {
+                "es": "Otros trastornos pleurales, diafragmáticos o mediastínicos especificados",
+                "en": "Other specified pleural, diaphragm or mediastinal disorders"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB2Z",
+            "titulo": {
+                "es": "Trastornos pleurales, diafragmáticos o mediastínicos, sin especificación",
+                "en": "Pleural, diaphragm or mediastinal disorders, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB40.0",
+            "titulo": {
+                "es": "Disquinesia ciliar",
+                "en": "Ciliary dyskinesia"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB40.1",
+            "titulo": {
+                "es": "Síndrome de Young",
+                "en": "Young syndrome"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB40.2",
+            "titulo": {
+                "es": "Atelectasia",
+                "en": "Pulmonary collapse"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB40.3",
+            "titulo": {
+                "es": "Enfisema intersticial",
+                "en": "Interstitial emphysema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB40.4",
+            "titulo": {
+                "es": "Enfisema compensatorio",
+                "en": "Compensatory emphysema"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB40.Y",
+            "titulo": {
+                "es": "Algunas otras enfermedades especificadas del sistema respiratorio",
+                "en": "Other specified diseases of the respiratory system"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB41.00",
+            "titulo": {
+                "es": "Insuficiencia respiratoria aguda de tipo I",
+                "en": "Acute respiratory failure, Type I"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB41.01",
+            "titulo": {
+                "es": "Insuficiencia respiratoria aguda de tipo II",
+                "en": "Acute respiratory failure, Type II"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB41.0Z",
+            "titulo": {
+                "es": "Insuficiencia respiratoria aguda, sin especificación",
+                "en": "Acute respiratory failure, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB41.10",
+            "titulo": {
+                "es": "Insuficiencia respiratoria crónica de tipo I",
+                "en": "Chronic respiratory failure, Type I"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB41.11",
+            "titulo": {
+                "es": "Insuficiencia respiratoria crónica de tipo II",
+                "en": "Chronic respiratory failure, Type II"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB41.1Z",
+            "titulo": {
+                "es": "Insuficiencia respiratoria crónica, sin especificación",
+                "en": "Chronic respiratory failure, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB41.20",
+            "titulo": {
+                "es": "Insuficiencia respiratoria de tipo I, no especificada como aguda o crónica",
+                "en": "Respiratory failure, unspecified, Type I"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB41.21",
+            "titulo": {
+                "es": "Insuficiencia respiratoria de tipo II, no especificada como aguda o crónica",
+                "en": "Respiratory failure, unspecified, Type II"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB41.2Z",
+            "titulo": {
+                "es": "Insuficiencia respiratoria, sin especificación",
+                "en": "Respiratory failure, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB60",
+            "titulo": {
+                "es": "Funcionamiento defectuoso de traqueostomía",
+                "en": "Tracheostomy malfunction"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB61",
+            "titulo": {
+                "es": "Insuficiencia pulmonar crónica tras cirugía",
+                "en": "Chronic pulmonary insufficiency following surgery"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB62",
+            "titulo": {
+                "es": "Estenosis subglótica tras un procedimiento",
+                "en": "Postprocedural subglottic stenosis"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB63",
+            "titulo": {
+                "es": "Estenosis traqueal tras un procedimiento",
+                "en": "Postprocedural stenosis of the trachea"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB64",
+            "titulo": {
+                "es": "Lesión pulmonar aguda relacionada con una transfusión",
+                "en": "Transfusion related acute lung injury"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        },
+        {
+            "codigo": "CB7Z",
+            "titulo": {
+                "es": "Enfermedades del sistema respiratorio, sin especificación",
+                "en": "Diseases of the respiratory system, unspecified"
+            },
+            "subcategorias": [],
+            "isGenetic": false
+        }
+    ],
+    "lastSync": "2026-07-03"
+}
