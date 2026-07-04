@@ -84,8 +84,11 @@ kotlin {
             implementation(libs.firebase.auth.android)
             implementation(libs.firebase.firestore.android)
             implementation(libs.kotlinx.coroutines.play.services)
+            implementation(libs.ktor.client.okhttp)
+            implementation(libs.okhttp3.logging.interceptor)
         }
         iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -106,6 +109,11 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
+
+            // Ktor
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -115,9 +123,12 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
+            implementation(libs.ktor.client.okhttp)
+            implementation(libs.okhttp3.logging.interceptor)
         }
         webMain.dependencies {
             implementation(npm("firebase", "10.12.0"))
+            implementation(libs.kotlinx.browser)
         }
     }
 }
@@ -153,6 +164,7 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/versions/9/OSGI-INF/MANIFEST.MF"
         }
     }
     buildTypes {
@@ -166,6 +178,9 @@ android {
             signingConfig = signingConfigs.getByName(name)
             manifestPlaceholders["appName"] = "@string/app_name"
         }
+    }
+    buildFeatures {
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
