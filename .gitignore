@@ -18,3 +18,4 @@ captures
 **/xcshareddata/WorkspaceSettings.xcsettings
 node_modules/
 composeApp/genogramia-keystore.jks
+/core/database/schemas/dev.saragones3.genogramia.core.database.GenogramiaDatabase/*.json
