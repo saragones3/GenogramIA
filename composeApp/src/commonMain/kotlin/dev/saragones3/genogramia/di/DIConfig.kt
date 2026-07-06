@@ -23,6 +23,7 @@ import dev.saragones3.genogramia.domain.usecase.SendPasswordResetEmailUseCase
 import dev.saragones3.genogramia.domain.usecase.SignInUseCase
 import dev.saragones3.genogramia.domain.usecase.SignOutUseCase
 import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
+import dev.saragones3.genogramia.domain.usecase.SyncDiseasesCatalogUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdateTreeUseCase
@@ -134,6 +135,7 @@ private val domainModule =
         factoryOf(::GetPersonUseCase)
         factoryOf(::GetTreesUseCase)
         factoryOf(::GetTreeUseCase)
+        factoryOf(::SyncDiseasesCatalogUseCase)
         factoryOf(::DateFormatter)
     }
 
