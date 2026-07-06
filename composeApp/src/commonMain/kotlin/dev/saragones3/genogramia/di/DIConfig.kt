@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.di
 
+import dev.saragones3.genogramia.data.remote.DiseasesRemoteDataSource
 import dev.saragones3.genogramia.data.repository.AuthRepositoryImpl
 import dev.saragones3.genogramia.data.repository.FirestoreTreeRepository
 import dev.saragones3.genogramia.data.repository.InMemoryTreeRepository
@@ -22,6 +23,7 @@ import dev.saragones3.genogramia.domain.usecase.SendPasswordResetEmailUseCase
 import dev.saragones3.genogramia.domain.usecase.SignInUseCase
 import dev.saragones3.genogramia.domain.usecase.SignOutUseCase
 import dev.saragones3.genogramia.domain.usecase.SignUpUseCase
+import dev.saragones3.genogramia.domain.usecase.SyncDiseasesCatalogUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePasswordUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdateTreeUseCase
@@ -40,10 +42,20 @@ import dev.saragones3.genogramia.presentation.registration.RegistrationViewModel
 import dev.saragones3.genogramia.presentation.settings.SettingsViewModel
 import dev.saragones3.genogramia.presentation.splash.SplashViewModel
 import dev.saragones3.genogramia.presentation.tree.TreeViewModel
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.HttpClientEngine
+import io.ktor.client.plugins.DefaultRequest
+import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.http.ContentType
+import io.ktor.http.URLProtocol
+import io.ktor.serialization.kotlinx.json.json
+import kotlinx.serialization.json.Json
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
+
+private const val BASE_DISEASES_URL = "cie11-diseases.web.app"
 
 private val dataModule =
     module {
@@ -78,6 +90,29 @@ private val dataModule =
         }
 
         single<DateProvider> { RealDateProvider() }
+
+        single<HttpClient> {
+            val httpClientEngine = get<HttpClientEngine>()
+            HttpClient(httpClientEngine) {
+                engine {
+                    httpClientEngine.config
+                }
+            }.config {
+                install(ContentNegotiation) {
+                    json(
+                        json = Json { ignoreUnknownKeys = true },
+                        contentType = ContentType.Application.Json,
+                    )
+                }
+                install(DefaultRequest) {
+                    url {
+                        protocol = URLProtocol.HTTPS
+                        host = BASE_DISEASES_URL
+                    }
+                }
+            }
+        }
+        single { DiseasesRemoteDataSource(get()) }
     }
 
 private val domainModule =
@@ -100,6 +135,7 @@ private val domainModule =
         factoryOf(::GetPersonUseCase)
         factoryOf(::GetTreesUseCase)
         factoryOf(::GetTreeUseCase)
+        factoryOf(::SyncDiseasesCatalogUseCase)
         factoryOf(::DateFormatter)
     }
 
@@ -122,6 +158,7 @@ private val appModule =
 
 fun getSharedModules(): List<Module> =
     listOf(
+        localDataSourceModule(),
         platformDataModule(),
         dataModule,
         domainModule,

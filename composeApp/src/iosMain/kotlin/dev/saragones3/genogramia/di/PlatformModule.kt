@@ -6,6 +6,8 @@ import dev.saragones3.genogramia.data.remote.FirebaseProviderImpl
 import dev.saragones3.genogramia.data.remote.FirestoreDelegate
 import dev.saragones3.genogramia.data.remote.FirestoreProvider
 import dev.saragones3.genogramia.data.remote.FirestoreProviderImpl
+import io.ktor.client.engine.HttpClientEngine
+import io.ktor.client.engine.darwin.Darwin
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
@@ -22,4 +24,11 @@ internal fun iosFirebaseModule(
     module {
         single<FirebaseProvider> { FirebaseProviderImpl(authDelegate) }
         single<FirestoreProvider> { FirestoreProviderImpl(firestoreDelegate) }
+        single<HttpClientEngine> {
+            Darwin.create {
+                configureRequest {
+                    setAllowsCellularAccess(true)
+                }
+            }
+        }
     }

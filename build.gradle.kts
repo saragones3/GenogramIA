@@ -65,6 +65,10 @@ subprojects {
         )
     }
 
+    dependencies {
+        add("detektPlugins", rootProject.libs.detekt.compose.rules)
+    }
+
     tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
         reports {
             xml.required.set(true)
