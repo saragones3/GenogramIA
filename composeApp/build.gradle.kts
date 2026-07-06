@@ -33,12 +33,14 @@ val versionBuild = 0
 kotlin {
     applyHierarchyTemplate {
         common {
-            withAndroidTarget()
-            withJvm()
-            group("ios") {
-                withIosArm64()
-                withIosSimulatorArm64()
+            group("mobile") {
+                withAndroidTarget()
+                group("ios") {
+                    withIosArm64()
+                    withIosSimulatorArm64()
+                }
             }
+            withJvm()
             group("web") {
                 withJs()
                 withWasmJs()
@@ -114,6 +116,11 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
+        }
+        val mobileMain by getting {
+            dependencies {
+                implementation(project(":core:database"))
+            }
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

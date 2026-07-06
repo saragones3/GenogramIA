@@ -156,6 +156,7 @@ private val appModule =
 
 fun getSharedModules(): List<Module> =
     listOf(
+        localDataSourceModule(),
         platformDataModule(),
         dataModule,
         domainModule,
