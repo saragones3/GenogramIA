@@ -46,11 +46,14 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import dev.saragones3.genogramia.domain.model.Person
+import dev.saragones3.genogramia.presentation.components.AddDiseaseBottomSheet
 import dev.saragones3.genogramia.presentation.components.BasicInfoErrors
 import dev.saragones3.genogramia.presentation.components.BasicInfoSection
 import dev.saragones3.genogramia.presentation.components.DateFieldState
 import dev.saragones3.genogramia.presentation.components.DatePickerModal
 import dev.saragones3.genogramia.presentation.components.IdentitySection
+import dev.saragones3.genogramia.presentation.components.MedicalConditionCard
+import dev.saragones3.genogramia.presentation.components.MedicalConditionEmptyCard
 import dev.saragones3.genogramia.presentation.components.MedicalHistorySection
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.Primary
@@ -154,7 +157,24 @@ private fun NewTreeContent(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            MedicalHistorySection()
+            MedicalHistorySection(
+                onAddClick = { onEvent(NewTreeEvent.OnShowAddDiseaseSheet(true)) },
+            ) {
+                if (state.person.medicalHistory.isNotEmpty()) {
+                    state.person.medicalHistory.forEach { condition ->
+                        MedicalConditionCard(
+                            title = condition.diseaseTitle,
+                            subtitle = condition.chapterTitle,
+                            date = condition.diagnosisDateText,
+                            onRemoveClick = {
+                                onEvent(NewTreeEvent.OnRemoveDiseaseFromHistory(condition.diseaseCode))
+                            },
+                        )
+                    }
+                } else {
+                    MedicalConditionEmptyCard()
+                }
+            }
 
             Spacer(modifier = Modifier.height(48.dp))
 
@@ -180,6 +200,36 @@ private fun NewTreeContent(
                 initialDate = state.person.deathDateMillis,
                 onDateSelected = { onEvent(NewTreeEvent.OnDeathDateSelected(it, dateFormat)) },
                 onDismiss = { onEvent(NewTreeEvent.OnShowDeathDatePicker(false)) },
+            )
+        }
+
+        if (state.showAddDiseaseSheet) {
+            AddDiseaseBottomSheet(
+                searchQuery = state.diseaseSearchQuery,
+                searchResults = state.diseaseSearchResults,
+                selectedDisease = state.selectedDisease,
+                diagnosisDateText = state.diagnosisDateText,
+                onSearchQueryChange = { onEvent(NewTreeEvent.OnDiseaseSearchQueryChanged(it)) },
+                onDiseaseSelected = { onEvent(NewTreeEvent.OnDiseaseSelected(it)) },
+                onDiagnosisDateClick = { onEvent(NewTreeEvent.OnShowDiagnosisDatePicker(true)) },
+                onAddClick = {
+                    onEvent(
+                        NewTreeEvent.OnAddDiseaseToHistory(
+                            it,
+                            state.diagnosisDateMillis,
+                            dateFormat,
+                        ),
+                    )
+                },
+                onDismiss = { onEvent(NewTreeEvent.OnShowAddDiseaseSheet(false)) },
+            )
+        }
+
+        if (state.showDiagnosisDatePicker) {
+            DatePickerModal(
+                initialDate = state.diagnosisDateMillis,
+                onDateSelected = { onEvent(NewTreeEvent.OnDiagnosisDateSelected(it, dateFormat)) },
+                onDismiss = { onEvent(NewTreeEvent.OnShowDiagnosisDatePicker(false)) },
             )
         }
     }

@@ -10,6 +10,7 @@ data class Person(
     val sexualOrientation: SexualOrientation = SexualOrientation.UNKNOWN,
     val x: Float = 0f,
     val y: Float = 0f,
+    val medicalHistory: List<MedicalCondition> = emptyList(),
 ) {
     constructor() : this(
         id = "",

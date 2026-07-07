@@ -219,14 +219,21 @@ fun IdentitySection(
 }
 
 @Composable
-fun MedicalHistorySection(content: @Composable (ColumnScope.() -> Unit)? = null) {
+fun MedicalHistorySection(
+    onAddClick: () -> Unit,
+    content: @Composable ColumnScope.() -> Unit = {},
+) {
     SectionCard(
         icon = Icons.Default.MedicalInformation,
         title = stringResource(Res.string.new_tree_section_medical),
         action = {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.clickable { /* TODO: US-017 */ },
+                modifier =
+                    Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .clickable { onAddClick() }
+                        .padding(horizontal = 8.dp, vertical = 4.dp),
             ) {
                 Icon(
                     imageVector = Icons.Default.AddCircle,
@@ -243,43 +250,8 @@ fun MedicalHistorySection(content: @Composable (ColumnScope.() -> Unit)? = null)
                 )
             }
         },
-    ) {
-        if (content != null) {
-            content()
-        } else {
-            Text(
-                text = stringResource(Res.string.new_tree_medical_desc),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Box(
-                modifier =
-                    Modifier
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(12.dp))
-                        .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f))
-                        .padding(24.dp),
-                contentAlignment = Alignment.Center,
-            ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Icon(
-                        imageVector = Icons.Default.HealthAndSafety,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
-                        modifier = Modifier.size(32.dp),
-                    )
-                    Spacer(modifier = Modifier.height(12.dp))
-                    Text(
-                        text = stringResource(Res.string.new_tree_medical_empty),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
-                        textAlign = TextAlign.Center,
-                    )
-                }
-            }
-        }
-    }
+        content = content,
+    )
 }
 
 @Composable
@@ -329,6 +301,110 @@ fun SectionCard(
             )
 
             content()
+        }
+    }
+}
+
+@Composable
+fun MedicalConditionEmptyCard() {
+    Text(
+        text = stringResource(Res.string.new_tree_medical_desc),
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+    )
+    Spacer(modifier = Modifier.height(16.dp))
+    Box(
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(12.dp))
+                .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f))
+                .padding(24.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Icon(
+                imageVector = Icons.Default.HealthAndSafety,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
+                modifier = Modifier.size(32.dp),
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+            Text(
+                text = stringResource(Res.string.new_tree_medical_empty),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                textAlign = TextAlign.Center,
+            )
+        }
+    }
+}
+
+@Composable
+fun MedicalConditionCard(
+    title: String,
+    subtitle: String,
+    date: String,
+    onRemoveClick: () -> Unit,
+) {
+    Card(
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .padding(vertical = 4.dp),
+        shape = RoundedCornerShape(8.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        border = CardDefaults.outlinedCardBorder(),
+    ) {
+        Row(
+            modifier = Modifier.padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Box(
+                modifier =
+                    Modifier
+                        .size(32.dp)
+                        .clip(RoundedCornerShape(8.dp))
+                        .background(Primary.copy(alpha = 0.1f)),
+                contentAlignment = Alignment.Center,
+            ) {
+                Icon(
+                    imageVector = Icons.Default.MedicalInformation,
+                    contentDescription = null,
+                    tint = Primary,
+                    modifier = Modifier.size(16.dp),
+                )
+            }
+            Spacer(modifier = Modifier.width(12.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Bold,
+                )
+                Text(
+                    text = subtitle,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                )
+                if (date.isNotEmpty()) {
+                    Text(
+                        text = date,
+                        style = MaterialTheme.typography.labelSmall,
+                        color = Primary,
+                        fontWeight = FontWeight.Medium,
+                        modifier = Modifier.padding(top = 2.dp),
+                    )
+                }
+            }
+            IconButton(onClick = onRemoveClick) {
+                Icon(
+                    imageVector = Icons.Default.Close,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                    modifier = Modifier.size(20.dp),
+                )
+            }
         }
     }
 }
@@ -629,7 +705,9 @@ private fun IdentitySectionPreview() {
 private fun MedicalHistorySectionEmptyPreview() {
     GenogramiaTheme {
         Box(modifier = Modifier.background(MaterialTheme.colorScheme.surface).padding(16.dp)) {
-            MedicalHistorySection()
+            MedicalHistorySection(onAddClick = {}) {
+                MedicalConditionEmptyCard()
+            }
         }
     }
 }
@@ -639,8 +717,19 @@ private fun MedicalHistorySectionEmptyPreview() {
 private fun MedicalHistorySectionWithContentPreview() {
     GenogramiaTheme {
         Box(modifier = Modifier.background(MaterialTheme.colorScheme.surface).padding(16.dp)) {
-            MedicalHistorySection {
-                Text("Custom Medical Content")
+            MedicalHistorySection(onAddClick = {}) {
+                MedicalConditionCard(
+                    title = "Hipertensión",
+                    subtitle = "Sistema cardiovascular",
+                    date = "15/05/2024",
+                    onRemoveClick = {},
+                )
+                MedicalConditionCard(
+                    title = "Asma",
+                    subtitle = "Sistema respiratorio",
+                    date = "02/10/2026",
+                    onRemoveClick = {},
+                )
             }
         }
     }

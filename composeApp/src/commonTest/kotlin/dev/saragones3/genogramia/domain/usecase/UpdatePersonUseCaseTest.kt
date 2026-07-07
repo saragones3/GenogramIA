@@ -1,6 +1,8 @@
 package dev.saragones3.genogramia.domain.usecase
 
+import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.GenogramTree
+import dev.saragones3.genogramia.domain.model.MedicalCondition
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.fakes.FakeDateProvider
@@ -59,6 +61,29 @@ class UpdatePersonUseCaseTest {
             assertTrue(result.isSuccess)
             val updatedTree = repository.getTree("tree-1")
             assertEquals("John Updated", updatedTree?.centralPerson?.firstName)
+        }
+
+    @Test
+    fun `GIVEN central person WHEN updating medical history THEN medical history is updated`() =
+        runTest {
+            repository.createTree(tree)
+            val disease = Disease("BA00", "Hypertension", "11", "Circulatory System", false)
+            val medicalCondition = MedicalCondition(disease, 1778716800000L)
+            val updatedPerson = centralPerson.copy(medicalHistory = listOf(medicalCondition))
+
+            val result = useCase("tree-1", updatedPerson)
+
+            assertTrue(result.isSuccess)
+            val updatedTree = repository.getTree("tree-1")
+            assertEquals(1, updatedTree?.centralPerson?.medicalHistory?.size)
+            assertEquals(
+                disease,
+                updatedTree
+                    ?.centralPerson
+                    ?.medicalHistory
+                    ?.first()
+                    ?.disease,
+            )
         }
 
     @Test

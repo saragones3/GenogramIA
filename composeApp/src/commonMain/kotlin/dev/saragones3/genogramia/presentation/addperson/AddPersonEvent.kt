@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.presentation.addperson
 
+import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.Person
 
 sealed interface AddPersonEvent {
@@ -39,6 +40,37 @@ sealed interface AddPersonEvent {
 
     data class OnShowDeathDatePicker(
         val show: Boolean,
+    ) : AddPersonEvent
+
+    data class OnShowAddDiseaseSheet(
+        val show: Boolean,
+    ) : AddPersonEvent
+
+    data class OnShowDiagnosisDatePicker(
+        val show: Boolean,
+    ) : AddPersonEvent
+
+    data class OnDiseaseSearchQueryChanged(
+        val query: String,
+    ) : AddPersonEvent
+
+    data class OnDiseaseSelected(
+        val disease: Disease?,
+    ) : AddPersonEvent
+
+    data class OnDiagnosisDateSelected(
+        val millis: Long,
+        val pattern: String,
+    ) : AddPersonEvent
+
+    data class OnAddDiseaseToHistory(
+        val disease: Disease,
+        val dateMillis: Long?,
+        val datePattern: String,
+    ) : AddPersonEvent
+
+    data class OnRemoveDiseaseFromHistory(
+        val diseaseCode: String,
     ) : AddPersonEvent
 
     data class OnSaveClicked(

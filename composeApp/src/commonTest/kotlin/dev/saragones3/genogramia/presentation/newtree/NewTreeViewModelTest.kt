@@ -1,13 +1,16 @@
 package dev.saragones3.genogramia.presentation.newtree
 
 import app.cash.turbine.test
+import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.User
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.NewTreeUseCase
+import dev.saragones3.genogramia.domain.usecase.SearchDiseasesUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.fakes.FakeAuthRepository
 import dev.saragones3.genogramia.fakes.FakeDateProvider
+import dev.saragones3.genogramia.fakes.FakeDiseaseRepository
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -26,6 +29,7 @@ class NewTreeViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val treeRepository = FakeTreeRepository()
     private val authRepository = FakeAuthRepository()
+    private val diseaseRepository = FakeDiseaseRepository()
     private val fakeDateProvider =
         FakeDateProvider().apply {
             currentTimeMillis = 1778716800000L // 14-may-2026
@@ -34,13 +38,29 @@ class NewTreeViewModelTest {
     private val dateFormatter = DateFormatter()
     private val createTreeUseCase = NewTreeUseCase(treeRepository, fakeDateProvider, dateFormatter)
     private val checkSessionUseCase = CheckSessionUseCase(authRepository)
+    private val searchDiseasesUseCase = SearchDiseasesUseCase(diseaseRepository)
     private lateinit var viewModel: NewTreeViewModel
+
+    private val disease =
+        Disease(
+            code = "BA00",
+            title = "Hypertension",
+            chapterCode = "11",
+            chapterTitle = "Circulatory System",
+            isGenetic = false,
+        )
 
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
         authRepository.setCurrentUser(null)
-        viewModel = NewTreeViewModel(createTreeUseCase, checkSessionUseCase, dateFormatter)
+        viewModel =
+            NewTreeViewModel(
+                createTreeUseCase,
+                checkSessionUseCase,
+                searchDiseasesUseCase,
+                dateFormatter,
+            )
     }
 
     @AfterTest
@@ -69,7 +89,13 @@ class NewTreeViewModelTest {
     fun `GIVEN logged in user WHEN view model initialized THEN isGuest is false`() =
         runTest {
             authRepository.setCurrentUser(User("uid", "email@test.com", "User"))
-            val viewModel = NewTreeViewModel(createTreeUseCase, checkSessionUseCase, dateFormatter)
+            val viewModel =
+                NewTreeViewModel(
+                    createTreeUseCase,
+                    checkSessionUseCase,
+                    searchDiseasesUseCase,
+                    dateFormatter,
+                )
 
             assertEquals(false, viewModel.state.value.isGuest)
         }
@@ -195,5 +221,58 @@ class NewTreeViewModelTest {
 
             assertEquals("", viewModel.state.value.person.deathDateText)
             assertNull(viewModel.state.value.person.deathDateMillis)
+        }
+
+    @Test
+    fun `GIVEN disease search query WHEN changed THEN results are updated`() =
+        runTest {
+            diseaseRepository.diseases = listOf(disease)
+
+            viewModel.onEvent(NewTreeEvent.OnDiseaseSearchQueryChanged("Hyp"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertEquals(1, viewModel.state.value.diseaseSearchResults.size)
+            assertEquals(
+                "Hypertension",
+                viewModel.state.value.diseaseSearchResults
+                    .first()
+                    .title,
+            )
+        }
+
+    @Test
+    fun `GIVEN disease selected WHEN added to history THEN medical history is updated`() =
+        runTest {
+            viewModel.onEvent(NewTreeEvent.OnAddDiseaseToHistory(disease, 1778716800000L, "dd/MM/yyyy"))
+
+            assertEquals(1, viewModel.state.value.person.medicalHistory.size)
+            val condition =
+                viewModel.state.value.person.medicalHistory
+                    .first()
+            assertEquals("BA00", condition.diseaseCode)
+            assertEquals("14/05/2026", condition.diagnosisDateText)
+        }
+
+    @Test
+    fun `GIVEN disease in history WHEN removed THEN medical history is updated`() =
+        runTest {
+            viewModel.onEvent(NewTreeEvent.OnAddDiseaseToHistory(disease, null, "dd/MM/yyyy"))
+            assertEquals(1, viewModel.state.value.person.medicalHistory.size)
+
+            viewModel.onEvent(NewTreeEvent.OnRemoveDiseaseFromHistory("BA00"))
+
+            assertEquals(0, viewModel.state.value.person.medicalHistory.size)
+        }
+
+    @Test
+    fun `GIVEN add disease sheet shown WHEN dismissed THEN selection is reset`() =
+        runTest {
+            viewModel.onEvent(NewTreeEvent.OnDiseaseSearchQueryChanged("Hyp"))
+            viewModel.onEvent(NewTreeEvent.OnDiseaseSelected(disease))
+
+            viewModel.onEvent(NewTreeEvent.OnShowAddDiseaseSheet(false))
+
+            assertEquals("", viewModel.state.value.diseaseSearchQuery)
+            assertNull(viewModel.state.value.selectedDisease)
         }
 }

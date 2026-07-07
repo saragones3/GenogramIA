@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.presentation.addperson
 
+import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.Person
 
 data class AddPersonState(
@@ -12,6 +13,13 @@ data class AddPersonState(
     val sexualOrientationError: ValidationError? = null,
     val showBirthDatePicker: Boolean = false,
     val showDeathDatePicker: Boolean = false,
+    val showAddDiseaseSheet: Boolean = false,
+    val showDiagnosisDatePicker: Boolean = false,
+    val diseaseSearchQuery: String = "",
+    val diseaseSearchResults: List<Disease> = emptyList(),
+    val selectedDisease: Disease? = null,
+    val diagnosisDateMillis: Long? = null,
+    val diagnosisDateText: String = "",
     val personId: String? = null,
 ) {
     enum class ValidationError {
@@ -28,6 +36,17 @@ data class AddPersonUi(
     val sexualOrientation: Person.SexualOrientation = Person.SexualOrientation.UNKNOWN,
     val deathDateMillis: Long? = null,
     val deathDateText: String = "",
+    val medicalHistory: List<MedicalConditionUi> = emptyList(),
     val x: Float = 0f,
     val y: Float = 0f,
+)
+
+data class MedicalConditionUi(
+    val diseaseCode: String,
+    val diseaseTitle: String,
+    val chapterCode: String,
+    val chapterTitle: String,
+    val isGenetic: Boolean,
+    val diagnosisDateMillis: Long? = null,
+    val diagnosisDateText: String = "",
 )
