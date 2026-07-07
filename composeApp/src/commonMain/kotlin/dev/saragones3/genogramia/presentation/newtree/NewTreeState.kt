@@ -36,4 +36,15 @@ data class NewTreeUi(
     val sexualOrientation: Person.SexualOrientation = Person.SexualOrientation.UNKNOWN,
     val deathDateMillis: Long? = null,
     val deathDateText: String = "",
+    val medicalHistory: List<MedicalConditionUi> = emptyList(),
+)
+
+data class MedicalConditionUi(
+    val diseaseCode: String,
+    val diseaseTitle: String,
+    val chapterCode: String,
+    val chapterTitle: String,
+    val isGenetic: Boolean,
+    val diagnosisDateMillis: Long? = null,
+    val diagnosisDateText: String = "",
 )

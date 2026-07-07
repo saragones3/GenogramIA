@@ -2,6 +2,8 @@ package dev.saragones3.genogramia.presentation.newtree
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dev.saragones3.genogramia.domain.model.Disease
+import dev.saragones3.genogramia.domain.model.MedicalCondition
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
 import dev.saragones3.genogramia.domain.usecase.NewTreeUseCase
@@ -134,8 +136,8 @@ class NewTreeViewModel(
         when (event) {
             is NewTreeEvent.OnDiseaseSearchQueryChanged -> updateDiseaseSearchQuery(event.query)
             is NewTreeEvent.OnDiseaseSelected -> _state.update { it.copy(selectedDisease = event.disease) }
-            is NewTreeEvent.OnAddDiseaseToHistory -> {}
-            is NewTreeEvent.OnRemoveDiseaseFromHistory -> {}
+            is NewTreeEvent.OnAddDiseaseToHistory -> addDiseaseToHistory(event)
+            is NewTreeEvent.OnRemoveDiseaseFromHistory -> removeDiseaseFromHistory(event.diseaseCode)
             else -> Unit
         }
     }
@@ -217,6 +219,46 @@ class NewTreeViewModel(
         }
     }
 
+    private fun addDiseaseToHistory(event: NewTreeEvent.OnAddDiseaseToHistory) {
+        val medicalConditionUi =
+            MedicalConditionUi(
+                diseaseCode = event.disease.code,
+                diseaseTitle = event.disease.title,
+                chapterCode = event.disease.chapterCode,
+                chapterTitle = event.disease.chapterTitle,
+                isGenetic = event.disease.isGenetic,
+                diagnosisDateMillis = event.dateMillis,
+                diagnosisDateText =
+                    event.dateMillis?.let {
+                        dateFormatter.formatDate(it, event.datePattern)
+                    } ?: "",
+            )
+        _state.update {
+            it.copy(
+                person =
+                    it.person.copy(
+                        medicalHistory = it.person.medicalHistory + medicalConditionUi,
+                    ),
+                showAddDiseaseSheet = false,
+            )
+        }
+        resetDiseaseSelection()
+    }
+
+    private fun removeDiseaseFromHistory(diseaseCode: String) {
+        _state.update {
+            it.copy(
+                person =
+                    it.person.copy(
+                        medicalHistory =
+                            it.person.medicalHistory.filter { condition ->
+                                condition.diseaseCode != diseaseCode
+                            },
+                    ),
+            )
+        }
+    }
+
     private fun resetState() {
         _state.update { currentState ->
             NewTreeState(isGuest = currentState.isGuest)
@@ -285,6 +327,20 @@ class NewTreeViewModel(
                     biologicalSex = personUi.biologicalSex,
                     sexualOrientation = personUi.sexualOrientation,
                     deathDate = personUi.deathDateMillis,
+                    medicalHistory =
+                        personUi.medicalHistory.map { condition ->
+                            MedicalCondition(
+                                disease =
+                                    Disease(
+                                        code = condition.diseaseCode,
+                                        title = condition.diseaseTitle,
+                                        chapterCode = condition.chapterCode,
+                                        chapterTitle = condition.chapterTitle,
+                                        isGenetic = condition.isGenetic,
+                                    ),
+                                diagnosisDate = condition.diagnosisDateMillis,
+                            )
+                        },
                 )
             val result = newTreeUseCase(person = person)
 

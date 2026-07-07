@@ -2,6 +2,8 @@ package dev.saragones3.genogramia.presentation.addperson
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dev.saragones3.genogramia.domain.model.Disease
+import dev.saragones3.genogramia.domain.model.MedicalCondition
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
@@ -145,8 +147,8 @@ class AddPersonViewModel(
         when (event) {
             is AddPersonEvent.OnDiseaseSearchQueryChanged -> updateDiseaseSearchQuery(event.query)
             is AddPersonEvent.OnDiseaseSelected -> _state.update { it.copy(selectedDisease = event.disease) }
-            is AddPersonEvent.OnAddDiseaseToHistory -> {}
-            is AddPersonEvent.OnRemoveDiseaseFromHistory -> {}
+            is AddPersonEvent.OnAddDiseaseToHistory -> addDiseaseToHistory(event)
+            is AddPersonEvent.OnRemoveDiseaseFromHistory -> removeDiseaseFromHistory(event.diseaseCode)
             else -> Unit
         }
     }
@@ -245,6 +247,46 @@ class AddPersonViewModel(
         }
     }
 
+    private fun addDiseaseToHistory(event: AddPersonEvent.OnAddDiseaseToHistory) {
+        val medicalConditionUi =
+            MedicalConditionUi(
+                diseaseCode = event.disease.code,
+                diseaseTitle = event.disease.title,
+                chapterCode = event.disease.chapterCode,
+                chapterTitle = event.disease.chapterTitle,
+                isGenetic = event.disease.isGenetic,
+                diagnosisDateMillis = event.dateMillis,
+                diagnosisDateText =
+                    event.dateMillis?.let {
+                        dateFormatter.formatDate(it, event.datePattern)
+                    } ?: "",
+            )
+        _state.update {
+            it.copy(
+                person =
+                    it.person.copy(
+                        medicalHistory = it.person.medicalHistory + medicalConditionUi,
+                    ),
+                showAddDiseaseSheet = false,
+            )
+        }
+        resetDiseaseSelection()
+    }
+
+    private fun removeDiseaseFromHistory(diseaseCode: String) {
+        _state.update {
+            it.copy(
+                person =
+                    it.person.copy(
+                        medicalHistory =
+                            it.person.medicalHistory.filter { condition ->
+                                condition.diseaseCode != diseaseCode
+                            },
+                    ),
+            )
+        }
+    }
+
     private fun resetDiseaseSelection() {
         _state.update {
             it.copy(
@@ -300,6 +342,21 @@ class AddPersonViewModel(
                                     person.deathDate?.let { date ->
                                         dateFormatter.formatDate(date, datePattern)
                                     } ?: "",
+                                medicalHistory =
+                                    person.medicalHistory.map { condition ->
+                                        MedicalConditionUi(
+                                            diseaseCode = condition.disease.code,
+                                            diseaseTitle = condition.disease.title,
+                                            chapterCode = condition.disease.chapterCode,
+                                            chapterTitle = condition.disease.chapterTitle,
+                                            isGenetic = condition.disease.isGenetic,
+                                            diagnosisDateMillis = condition.diagnosisDate,
+                                            diagnosisDateText =
+                                                condition.diagnosisDate?.let { date ->
+                                                    dateFormatter.formatDate(date, datePattern)
+                                                } ?: "",
+                                        )
+                                    },
                                 x = person.x,
                                 y = person.y,
                             ),
@@ -361,6 +418,20 @@ class AddPersonViewModel(
                 biologicalSex = personUi.biologicalSex,
                 sexualOrientation = personUi.sexualOrientation,
                 deathDate = personUi.deathDateMillis,
+                medicalHistory =
+                    personUi.medicalHistory.map { condition ->
+                        MedicalCondition(
+                            disease =
+                                Disease(
+                                    code = condition.diseaseCode,
+                                    title = condition.diseaseTitle,
+                                    chapterCode = condition.chapterCode,
+                                    chapterTitle = condition.chapterTitle,
+                                    isGenetic = condition.isGenetic,
+                                ),
+                            diagnosisDate = condition.diagnosisDateMillis,
+                        )
+                    },
                 x = personUi.x,
                 y = personUi.y,
             )

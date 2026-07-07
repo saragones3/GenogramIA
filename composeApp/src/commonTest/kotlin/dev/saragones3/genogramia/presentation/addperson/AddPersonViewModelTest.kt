@@ -273,6 +273,30 @@ class AddPersonViewModelTest {
         }
 
     @Test
+    fun `GIVEN disease selected WHEN added to history THEN medical history is updated`() =
+        runTest {
+            viewModel.onEvent(AddPersonEvent.OnAddDiseaseToHistory(disease, 1778716800000L, "dd/MM/yyyy"))
+
+            assertEquals(1, viewModel.state.value.person.medicalHistory.size)
+            val condition =
+                viewModel.state.value.person.medicalHistory
+                    .first()
+            assertEquals("BA00", condition.diseaseCode)
+            assertEquals("14/05/2026", condition.diagnosisDateText)
+        }
+
+    @Test
+    fun `GIVEN disease in history WHEN removed THEN medical history is updated`() =
+        runTest {
+            viewModel.onEvent(AddPersonEvent.OnAddDiseaseToHistory(disease, null, "dd/MM/yyyy"))
+            assertEquals(1, viewModel.state.value.person.medicalHistory.size)
+
+            viewModel.onEvent(AddPersonEvent.OnRemoveDiseaseFromHistory("BA00"))
+
+            assertEquals(0, viewModel.state.value.person.medicalHistory.size)
+        }
+
+    @Test
     fun `GIVEN add disease sheet shown WHEN dismissed THEN selection is reset`() =
         runTest {
             viewModel.onEvent(AddPersonEvent.OnDiseaseSearchQueryChanged("Hyp"))

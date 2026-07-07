@@ -41,6 +41,8 @@ import dev.saragones3.genogramia.presentation.components.BasicInfoSection
 import dev.saragones3.genogramia.presentation.components.DateFieldState
 import dev.saragones3.genogramia.presentation.components.DatePickerModal
 import dev.saragones3.genogramia.presentation.components.IdentitySection
+import dev.saragones3.genogramia.presentation.components.MedicalConditionCard
+import dev.saragones3.genogramia.presentation.components.MedicalConditionEmptyCard
 import dev.saragones3.genogramia.presentation.components.MedicalHistorySection
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
 import dev.saragones3.genogramia.ui.theme.Primary
@@ -257,7 +259,26 @@ private fun AddPersonForm(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        MedicalHistorySection()
+        MedicalHistorySection(
+            onAddClick = { onEvent(AddPersonEvent.OnShowAddDiseaseSheet(true)) },
+        ) {
+            if (state.person.medicalHistory.isNotEmpty()) {
+                Column {
+                    state.person.medicalHistory.forEach { condition ->
+                        MedicalConditionCard(
+                            title = condition.diseaseTitle,
+                            subtitle = condition.chapterTitle,
+                            date = condition.diagnosisDateText,
+                            onRemoveClick = {
+                                onEvent(AddPersonEvent.OnRemoveDiseaseFromHistory(condition.diseaseCode))
+                            },
+                        )
+                    }
+                }
+            } else {
+                MedicalConditionEmptyCard()
+            }
+        }
     }
 }
 
