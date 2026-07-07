@@ -26,9 +26,9 @@ if (keystorePropertiesFile.exists()) {
 val appName = "dev.saragones3.genogramia"
 
 val versionMajor = 1
-val versionMinor = 0
-val versionPatch = 2
-val versionBuild = 1
+val versionMinor = 1
+val versionPatch = 0
+val versionBuild = 0
 
 kotlin {
     applyHierarchyTemplate {
