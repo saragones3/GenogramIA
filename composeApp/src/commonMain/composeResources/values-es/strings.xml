@@ -242,4 +242,15 @@
     <!-- Error Messages for Delete Person -->
     <string name="error_delete_has_descendants">No se puede borrar una persona con descendientes</string>
     <string name="error_delete_has_formal_relationships">No se puede borrar una persona con relaciones de matrimonio, divorcio o viudedad</string>
+
+    <!-- Diseases bottom sheet -->
+    <string name="medical_add_title">Añadir Enfermedad</string>
+    <string name="medical_search_hint">Buscar enfermedad o condición...</string>
+    <string name="medical_diagnosis_date">FECHA DE DIAGNÓSTICO</string>
+    <string name="medical_add_to_history">Añadir al Historial</string>
+    <string name="medical_exact_matches">COINCIDENCIAS EXACTAS</string>
+    <string name="medical_related_conditions">CONDICIONES RELACIONADAS</string>
+    <string name="medical_select_date">Seleccionar fecha</string>
+    <string name="medical_genetic">Genética</string>
+    <string name="medical_common">Común</string>
 </resources>

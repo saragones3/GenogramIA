@@ -242,4 +242,15 @@
     <!-- Error Messages for Delete Person -->
     <string name="error_delete_has_descendants">Cannot delete a person with descendants</string>
     <string name="error_delete_has_formal_relationships">Cannot delete a person with marriage, divorce or widowhood relationships</string>
+
+    <!-- Diseases bottom sheet -->
+    <string name="medical_add_title">Add Condition</string>
+    <string name="medical_search_hint">Search disease or condition...</string>
+    <string name="medical_diagnosis_date">DIAGNOSIS DATE</string>
+    <string name="medical_add_to_history">Add to History</string>
+    <string name="medical_exact_matches">EXACT MATCHES</string>
+    <string name="medical_related_conditions">RELATED CONDITIONS</string>
+    <string name="medical_select_date">Select date</string>
+    <string name="medical_genetic">Genetic</string>
+    <string name="medical_common">Common</string>
 </resources>

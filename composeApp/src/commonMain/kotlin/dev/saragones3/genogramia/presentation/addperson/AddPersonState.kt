@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.presentation.addperson
 
+import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.Person
 
 data class AddPersonState(
@@ -12,6 +13,11 @@ data class AddPersonState(
     val sexualOrientationError: ValidationError? = null,
     val showBirthDatePicker: Boolean = false,
     val showDeathDatePicker: Boolean = false,
+    val showAddDiseaseSheet: Boolean = false,
+    val diseaseSearchQuery: String = "",
+    val diseaseSearchResults: List<Disease> = emptyList(),
+    val selectedDisease: Disease? = null,
+    val diagnosisDateText: String = "",
     val personId: String? = null,
 ) {
     enum class ValidationError {

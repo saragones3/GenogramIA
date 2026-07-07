@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.presentation.newtree
 
+import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.Person
 
 data class NewTreeState(
@@ -13,6 +14,11 @@ data class NewTreeState(
     val navigationEvent: String? = null,
     val showBirthDatePicker: Boolean = false,
     val showDeathDatePicker: Boolean = false,
+    val showAddDiseaseSheet: Boolean = false,
+    val diseaseSearchQuery: String = "",
+    val diseaseSearchResults: List<Disease> = emptyList(),
+    val selectedDisease: Disease? = null,
+    val diagnosisDateText: String = "",
 ) {
     enum class ValidationError {
         EMPTY,

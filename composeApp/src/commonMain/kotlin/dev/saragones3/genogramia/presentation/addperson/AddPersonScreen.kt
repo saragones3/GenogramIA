@@ -35,6 +35,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import dev.saragones3.genogramia.presentation.components.AddDiseaseBottomSheet
 import dev.saragones3.genogramia.presentation.components.BasicInfoErrors
 import dev.saragones3.genogramia.presentation.components.BasicInfoSection
 import dev.saragones3.genogramia.presentation.components.DateFieldState
@@ -169,6 +170,20 @@ private fun AddPersonContent(
                     initialDate = state.person.deathDateMillis,
                     onDateSelected = { onEvent(AddPersonEvent.OnDeathDateSelected(it, dateFormat)) },
                     onDismiss = { onEvent(AddPersonEvent.OnShowDeathDatePicker(false)) },
+                )
+            }
+
+            if (state.showAddDiseaseSheet) {
+                AddDiseaseBottomSheet(
+                    searchQuery = state.diseaseSearchQuery,
+                    searchResults = state.diseaseSearchResults,
+                    selectedDisease = state.selectedDisease,
+                    diagnosisDateText = state.diagnosisDateText,
+                    onSearchQueryChange = {  },
+                    onDiseaseSelected = {  },
+                    onDiagnosisDateClick = {  },
+                    onAddClick = { },
+                    onDismiss = {  },
                 )
             }
         }
