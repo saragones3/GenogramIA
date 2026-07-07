@@ -174,16 +174,34 @@ private fun AddPersonContent(
             }
 
             if (state.showAddDiseaseSheet) {
+                val dateFormat = stringResource(Res.string.date_format)
                 AddDiseaseBottomSheet(
                     searchQuery = state.diseaseSearchQuery,
                     searchResults = state.diseaseSearchResults,
                     selectedDisease = state.selectedDisease,
                     diagnosisDateText = state.diagnosisDateText,
-                    onSearchQueryChange = {  },
-                    onDiseaseSelected = {  },
-                    onDiagnosisDateClick = {  },
-                    onAddClick = { },
-                    onDismiss = {  },
+                    onSearchQueryChange = { onEvent(AddPersonEvent.OnDiseaseSearchQueryChanged(it)) },
+                    onDiseaseSelected = { onEvent(AddPersonEvent.OnDiseaseSelected(it)) },
+                    onDiagnosisDateClick = { onEvent(AddPersonEvent.OnShowDiagnosisDatePicker(true)) },
+                    onAddClick = {
+                        onEvent(
+                            AddPersonEvent.OnAddDiseaseToHistory(
+                                disease = it,
+                                dateMillis = state.diagnosisDateMillis,
+                                datePattern = dateFormat,
+                            ),
+                        )
+                    },
+                    onDismiss = { onEvent(AddPersonEvent.OnShowAddDiseaseSheet(false)) },
+                )
+            }
+
+            if (state.showDiagnosisDatePicker) {
+                val dateFormat = stringResource(Res.string.date_format)
+                DatePickerModal(
+                    initialDate = state.diagnosisDateMillis,
+                    onDateSelected = { onEvent(AddPersonEvent.OnDiagnosisDateSelected(it, dateFormat)) },
+                    onDismiss = { onEvent(AddPersonEvent.OnShowDiagnosisDatePicker(false)) },
                 )
             }
         }

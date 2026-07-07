@@ -1,5 +1,6 @@
 package dev.saragones3.genogramia.presentation.newtree
 
+import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.Person
 
 sealed interface NewTreeEvent {
@@ -39,6 +40,37 @@ sealed interface NewTreeEvent {
 
     data class OnShowDeathDatePicker(
         val show: Boolean,
+    ) : NewTreeEvent
+
+    data class OnShowAddDiseaseSheet(
+        val show: Boolean,
+    ) : NewTreeEvent
+
+    data class OnShowDiagnosisDatePicker(
+        val show: Boolean,
+    ) : NewTreeEvent
+
+    data class OnDiseaseSearchQueryChanged(
+        val query: String,
+    ) : NewTreeEvent
+
+    data class OnDiseaseSelected(
+        val disease: Disease?,
+    ) : NewTreeEvent
+
+    data class OnDiagnosisDateSelected(
+        val millis: Long,
+        val pattern: String,
+    ) : NewTreeEvent
+
+    data class OnAddDiseaseToHistory(
+        val disease: Disease,
+        val dateMillis: Long?,
+        val datePattern: String,
+    ) : NewTreeEvent
+
+    data class OnRemoveDiseaseFromHistory(
+        val diseaseCode: String,
     ) : NewTreeEvent
 
     data object OnCreateTreeClicked : NewTreeEvent

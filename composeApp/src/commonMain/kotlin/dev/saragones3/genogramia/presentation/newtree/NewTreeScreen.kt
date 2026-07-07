@@ -190,11 +190,27 @@ private fun NewTreeContent(
                 searchResults = state.diseaseSearchResults,
                 selectedDisease = state.selectedDisease,
                 diagnosisDateText = state.diagnosisDateText,
-                onSearchQueryChange = {  },
-                onDiseaseSelected = {  },
-                onDiagnosisDateClick = {  },
-                onAddClick = {  },
-                onDismiss = {  },
+                onSearchQueryChange = { onEvent(NewTreeEvent.OnDiseaseSearchQueryChanged(it)) },
+                onDiseaseSelected = { onEvent(NewTreeEvent.OnDiseaseSelected(it)) },
+                onDiagnosisDateClick = { onEvent(NewTreeEvent.OnShowDiagnosisDatePicker(true)) },
+                onAddClick = {
+                    onEvent(
+                        NewTreeEvent.OnAddDiseaseToHistory(
+                            it,
+                            state.diagnosisDateMillis,
+                            dateFormat,
+                        ),
+                    )
+                },
+                onDismiss = { onEvent(NewTreeEvent.OnShowAddDiseaseSheet(false)) },
+            )
+        }
+
+        if (state.showDiagnosisDatePicker) {
+            DatePickerModal(
+                initialDate = state.diagnosisDateMillis,
+                onDateSelected = { onEvent(NewTreeEvent.OnDiagnosisDateSelected(it, dateFormat)) },
+                onDismiss = { onEvent(NewTreeEvent.OnShowDiagnosisDatePicker(false)) },
             )
         }
     }

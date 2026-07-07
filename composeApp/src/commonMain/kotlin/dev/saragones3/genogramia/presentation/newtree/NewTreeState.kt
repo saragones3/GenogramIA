@@ -15,9 +15,11 @@ data class NewTreeState(
     val showBirthDatePicker: Boolean = false,
     val showDeathDatePicker: Boolean = false,
     val showAddDiseaseSheet: Boolean = false,
+    val showDiagnosisDatePicker: Boolean = false,
     val diseaseSearchQuery: String = "",
     val diseaseSearchResults: List<Disease> = emptyList(),
     val selectedDisease: Disease? = null,
+    val diagnosisDateMillis: Long? = null,
     val diagnosisDateText: String = "",
 ) {
     enum class ValidationError {

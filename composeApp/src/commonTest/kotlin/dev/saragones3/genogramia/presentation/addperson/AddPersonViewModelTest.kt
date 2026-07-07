@@ -1,13 +1,16 @@
 package dev.saragones3.genogramia.presentation.addperson
 
 import app.cash.turbine.test
+import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
+import dev.saragones3.genogramia.domain.usecase.SearchDiseasesUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
 import dev.saragones3.genogramia.domain.util.DateFormatter
 import dev.saragones3.genogramia.fakes.FakeDateProvider
+import dev.saragones3.genogramia.fakes.FakeDiseaseRepository
 import dev.saragones3.genogramia.fakes.FakeTreeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -25,6 +28,7 @@ import kotlin.test.assertNull
 class AddPersonViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
     private val treeRepository = FakeTreeRepository()
+    private val diseaseRepository = FakeDiseaseRepository()
 
     private val fakeDateProvider =
         FakeDateProvider().apply {
@@ -35,6 +39,7 @@ class AddPersonViewModelTest {
     private val addPersonUseCase = AddPersonUseCase(treeRepository, fakeDateProvider, dateFormatter)
     private val updatePersonUseCase = UpdatePersonUseCase(treeRepository, fakeDateProvider, dateFormatter)
     private val getPersonUseCase = GetPersonUseCase(treeRepository)
+    private val searchDiseasesUseCase = SearchDiseasesUseCase(diseaseRepository)
     private lateinit var viewModel: AddPersonViewModel
 
     private val tree =
@@ -53,10 +58,26 @@ class AddPersonViewModelTest {
                 ),
         )
 
+    private val disease =
+        Disease(
+            code = "BA00",
+            title = "Hypertension",
+            chapterCode = "11",
+            chapterTitle = "Circulatory System",
+            isGenetic = false,
+        )
+
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = AddPersonViewModel(addPersonUseCase, updatePersonUseCase, getPersonUseCase, dateFormatter)
+        viewModel =
+            AddPersonViewModel(
+                addPersonUseCase,
+                updatePersonUseCase,
+                getPersonUseCase,
+                searchDiseasesUseCase,
+                dateFormatter,
+            )
     }
 
     @AfterTest
@@ -232,5 +253,34 @@ class AddPersonViewModelTest {
 
             assertEquals("", viewModel.state.value.person.deathDateText)
             assertNull(viewModel.state.value.person.deathDateMillis)
+        }
+
+    @Test
+    fun `GIVEN disease search query WHEN changed THEN results are updated`() =
+        runTest {
+            diseaseRepository.diseases = listOf(disease)
+
+            viewModel.onEvent(AddPersonEvent.OnDiseaseSearchQueryChanged("Hyp"))
+            testDispatcher.scheduler.advanceUntilIdle()
+
+            assertEquals(1, viewModel.state.value.diseaseSearchResults.size)
+            assertEquals(
+                "Hypertension",
+                viewModel.state.value.diseaseSearchResults
+                    .first()
+                    .title,
+            )
+        }
+
+    @Test
+    fun `GIVEN add disease sheet shown WHEN dismissed THEN selection is reset`() =
+        runTest {
+            viewModel.onEvent(AddPersonEvent.OnDiseaseSearchQueryChanged("Hyp"))
+            viewModel.onEvent(AddPersonEvent.OnDiseaseSelected(disease))
+
+            viewModel.onEvent(AddPersonEvent.OnShowAddDiseaseSheet(false))
+
+            assertEquals("", viewModel.state.value.diseaseSearchQuery)
+            assertNull(viewModel.state.value.selectedDisease)
         }
 }
