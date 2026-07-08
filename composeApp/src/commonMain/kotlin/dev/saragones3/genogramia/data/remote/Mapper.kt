@@ -1,43 +1,23 @@
 package dev.saragones3.genogramia.data.remote
 
-import dev.saragones3.genogramia.data.remote.model.DiseaseDto
 import dev.saragones3.genogramia.data.remote.model.GenogramTreeDto
 import dev.saragones3.genogramia.data.remote.model.MedicalConditionDto
 import dev.saragones3.genogramia.data.remote.model.PersonDto
 import dev.saragones3.genogramia.data.remote.model.RelationshipDto
-import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.MedicalCondition
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 
-fun Disease.toDto() =
-    DiseaseDto(
-        code = code,
-        title = title,
-        chapterCode = chapterCode,
-        chapterTitle = chapterTitle,
-        isGenetic = isGenetic,
-    )
-
-fun DiseaseDto.toDomain() =
-    Disease(
-        code = code,
-        title = title,
-        chapterCode = chapterCode,
-        chapterTitle = chapterTitle,
-        isGenetic = isGenetic,
-    )
-
 fun MedicalCondition.toDto() =
     MedicalConditionDto(
-        disease = disease.toDto(),
+        diseaseCode = diseaseCode,
         diagnosisDate = diagnosisDate,
     )
 
 fun MedicalConditionDto.toDomain() =
     MedicalCondition(
-        disease = disease.toDomain(),
+        diseaseCode = diseaseCode,
         diagnosisDate = diagnosisDate,
     )
 

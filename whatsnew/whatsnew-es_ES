@@ -1,1 +1,2 @@
-- Redibujadas líneas entre personas para adaptarlas a la realidad de un genograma.
+- Implementada funcionalidad para añadir enfermedades a una persona.
+- Añadido marcador sobre el nodo de una persona en el árbol para indicar si tiene alguna enfermedad.

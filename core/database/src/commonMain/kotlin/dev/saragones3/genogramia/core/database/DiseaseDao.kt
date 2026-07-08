@@ -18,6 +18,9 @@ interface DiseaseDao {
     )
     suspend fun searchDiseases(query: String): List<DiseaseEntity>
 
+    @Query("SELECT * FROM disease WHERE code = :code")
+    suspend fun getDiseaseByCode(code: String): DiseaseEntity?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDiseases(diseases: List<DiseaseEntity>)
 
@@ -34,10 +37,11 @@ interface DiseaseDao {
     suspend fun replaceChapterData(
         chapterCode: String,
         lastSyncDate: String,
+        language: String,
         diseases: List<DiseaseEntity>,
     ) {
         deleteDiseasesByChapter(chapterCode)
         insertDiseases(diseases)
-        insertChapterSync(ChapterSyncEntity(chapterCode, lastSyncDate))
+        insertChapterSync(ChapterSyncEntity(chapterCode, lastSyncDate, language))
     }
 }

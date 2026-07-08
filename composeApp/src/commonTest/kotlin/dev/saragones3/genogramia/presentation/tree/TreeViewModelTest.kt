@@ -3,6 +3,7 @@ package dev.saragones3.genogramia.presentation.tree
 import androidx.compose.ui.geometry.Offset
 import app.cash.turbine.test
 import dev.saragones3.genogramia.domain.model.GenogramTree
+import dev.saragones3.genogramia.domain.model.MedicalCondition
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase
@@ -134,6 +135,7 @@ class TreeViewModelTest {
             assertEquals("1989", centralPerson.deathDateText)
             assertEquals("74", centralPerson.age)
             assertEquals(true, centralPerson.isDeceased)
+            assertEquals(false, centralPerson.hasMedicalHistory)
         }
 
     @Test
@@ -143,8 +145,26 @@ class TreeViewModelTest {
             dateProvider.currentTimeMillis = 1704067200000L // 2024-01-01
 
             // 1980-01-01
-            val person = Person("p1", "John", "Doe", birthDate = 315532800000L)
-            val tree = GenogramTree("t1", 1, "now", person)
+            val person =
+                Person(
+                    id = "p1",
+                    firstName = "John",
+                    lastName = "Doe",
+                    birthDate = 315532800000L,
+                    medicalHistory =
+                        listOf(
+                            MedicalCondition(
+                                diseaseCode = "d1",
+                            ),
+                        ),
+                )
+            val tree =
+                GenogramTree(
+                    id = "t1",
+                    ancestorCount = 1,
+                    lastUpdated = "now",
+                    centralPerson = person,
+                )
             treeRepository.createTree(tree)
 
             viewModel.onEvent(TreeEvent.LoadTree("t1"))
@@ -156,6 +176,7 @@ class TreeViewModelTest {
             assertEquals("", centralPerson.deathDateText)
             assertEquals("44", centralPerson.age)
             assertEquals(false, centralPerson.isDeceased)
+            assertEquals(true, centralPerson.hasMedicalHistory)
         }
 
     @Test

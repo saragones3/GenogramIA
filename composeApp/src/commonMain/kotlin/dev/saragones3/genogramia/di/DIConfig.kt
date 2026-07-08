@@ -15,6 +15,7 @@ import dev.saragones3.genogramia.domain.usecase.DeleteAccountUseCase
 import dev.saragones3.genogramia.domain.usecase.DeletePersonUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteRelationshipUseCase
 import dev.saragones3.genogramia.domain.usecase.DeleteTreeUseCase
+import dev.saragones3.genogramia.domain.usecase.GetDiseaseByCodeUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreeUseCase
 import dev.saragones3.genogramia.domain.usecase.GetTreesUseCase
@@ -137,6 +138,7 @@ private val domainModule =
         factoryOf(::GetTreesUseCase)
         factoryOf(::GetTreeUseCase)
         factoryOf(::SearchDiseasesUseCase)
+        factoryOf(::GetDiseaseByCodeUseCase)
         factoryOf(::SyncDiseasesCatalogUseCase)
         factoryOf(::DateFormatter)
     }

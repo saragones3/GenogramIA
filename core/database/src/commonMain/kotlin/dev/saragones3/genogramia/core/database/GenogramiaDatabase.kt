@@ -10,7 +10,7 @@ import dev.saragones3.genogramia.core.database.model.DiseaseEntity
         DiseaseEntity::class,
         ChapterSyncEntity::class,
     ],
-    version = 1,
+    version = 2,
 )
 abstract class GenogramiaDatabase : RoomDatabase() {
     abstract fun diseaseDao(): DiseaseDao

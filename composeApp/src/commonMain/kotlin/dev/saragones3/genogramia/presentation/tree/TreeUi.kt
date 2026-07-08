@@ -23,6 +23,7 @@ data class PersonNodeUi(
     val age: String = "",
     val isDeceased: Boolean = false,
     val isIndexPerson: Boolean = false,
+    val hasMedicalHistory: Boolean = false,
     val position: Offset = Offset.Zero,
 )
 

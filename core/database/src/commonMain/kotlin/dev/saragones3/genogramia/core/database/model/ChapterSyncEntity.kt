@@ -8,4 +8,5 @@ data class ChapterSyncEntity(
     @PrimaryKey
     val chapterCode: String,
     val lastSyncDate: String,
+    val language: String,
 )
