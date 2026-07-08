@@ -11,11 +11,12 @@ import org.koin.dsl.module
 
 private const val DATABASE_NAME = "GenogramIA"
 
-private val MIGRATION_1_2 = object : Migration(1, 2) {
-    override fun migrate(connection: SQLiteConnection) {
-        connection.execSQL("ALTER TABLE chapter_sync ADD language TEXT NOT NULL DEFAULT en")
+private val MIGRATION_1_2 =
+    object : Migration(1, 2) {
+        override fun migrate(connection: SQLiteConnection) {
+            connection.execSQL("ALTER TABLE chapter_sync ADD language TEXT NOT NULL DEFAULT en")
+        }
     }
-}
 
 val databaseModule =
     module {
