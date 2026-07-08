@@ -20,6 +20,14 @@ sealed interface AddPersonEvent {
         val orientation: Person.SexualOrientation,
     ) : AddPersonEvent
 
+    data class OnSubstanceAbuseChanged(
+        val abuse: Person.SubstanceAbuse,
+    ) : AddPersonEvent
+
+    data class OnMentalHealthProblemChanged(
+        val hasProblem: Boolean,
+    ) : AddPersonEvent
+
     data class OnBirthDateSelected(
         val millis: Long,
         val pattern: String,

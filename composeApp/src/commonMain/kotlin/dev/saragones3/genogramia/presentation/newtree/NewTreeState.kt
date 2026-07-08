@@ -37,6 +37,8 @@ data class NewTreeUi(
     val deathDateMillis: Long? = null,
     val deathDateText: String = "",
     val medicalHistory: List<MedicalConditionUi> = emptyList(),
+    val substanceAbuse: Person.SubstanceAbuse = Person.SubstanceAbuse.NONE,
+    val hasMentalHealthProblem: Boolean = false,
 )
 
 data class MedicalConditionUi(

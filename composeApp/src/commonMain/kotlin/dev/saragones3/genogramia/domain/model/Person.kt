@@ -11,6 +11,8 @@ data class Person(
     val x: Float = 0f,
     val y: Float = 0f,
     val medicalHistory: List<MedicalCondition> = emptyList(),
+    val substanceAbuse: SubstanceAbuse = SubstanceAbuse.NONE,
+    val hasMentalHealthProblem: Boolean = false,
 ) {
     constructor() : this(
         id = "",
@@ -28,5 +30,12 @@ data class Person(
         HETEROSEXUAL,
         OTHER,
         UNKNOWN,
+    }
+
+    enum class SubstanceAbuse {
+        NONE,
+        CONFIRMED,
+        SUSPECTED,
+        RECOVERY,
     }
 }

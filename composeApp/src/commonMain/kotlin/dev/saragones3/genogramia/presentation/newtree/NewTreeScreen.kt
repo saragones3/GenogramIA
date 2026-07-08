@@ -51,6 +51,7 @@ import dev.saragones3.genogramia.presentation.components.BasicInfoErrors
 import dev.saragones3.genogramia.presentation.components.BasicInfoSection
 import dev.saragones3.genogramia.presentation.components.DateFieldState
 import dev.saragones3.genogramia.presentation.components.DatePickerModal
+import dev.saragones3.genogramia.presentation.components.HealthSymbolsSection
 import dev.saragones3.genogramia.presentation.components.IdentitySection
 import dev.saragones3.genogramia.presentation.components.MedicalConditionCard
 import dev.saragones3.genogramia.presentation.components.MedicalConditionEmptyCard
@@ -153,6 +154,15 @@ private fun NewTreeContent(
                 sexualOrientation = state.person.sexualOrientation,
                 onSexualOrientationChange = { onEvent(NewTreeEvent.OnSexualOrientationChanged(it)) },
                 sexualOrientationError = state.sexualOrientationError == NewTreeState.ValidationError.EMPTY,
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            HealthSymbolsSection(
+                substanceAbuse = state.person.substanceAbuse,
+                onSubstanceAbuseChange = { onEvent(NewTreeEvent.OnSubstanceAbuseChanged(it)) },
+                hasMentalHealthProblem = state.person.hasMentalHealthProblem,
+                onMentalHealthProblemChange = { onEvent(NewTreeEvent.OnMentalHealthProblemChanged(it)) },
             )
 
             Spacer(modifier = Modifier.height(16.dp))

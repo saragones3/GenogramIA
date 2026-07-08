@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.Badge
 import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Female
+import androidx.compose.material.icons.filled.Healing
 import androidx.compose.material.icons.filled.HealthAndSafety
 import androidx.compose.material.icons.filled.Male
 import androidx.compose.material.icons.filled.MedicalInformation
@@ -55,6 +56,14 @@ import dev.saragones3.genogramia.ui.theme.Primary
 import dev.saragones3.genogramia.ui.theme.SurfaceContainerHighest
 import genogramia.composeapp.generated.resources.Res
 import genogramia.composeapp.generated.resources.error_empty_fields
+import genogramia.composeapp.generated.resources.health_mental_problem_grave
+import genogramia.composeapp.generated.resources.health_mental_problem_label
+import genogramia.composeapp.generated.resources.health_mental_problem_option_diagnosed
+import genogramia.composeapp.generated.resources.health_substance_abuse_confirmed
+import genogramia.composeapp.generated.resources.health_substance_abuse_label
+import genogramia.composeapp.generated.resources.health_substance_abuse_none
+import genogramia.composeapp.generated.resources.health_substance_abuse_recovery
+import genogramia.composeapp.generated.resources.health_substance_abuse_suspected
 import genogramia.composeapp.generated.resources.new_tree_birth_date_hint
 import genogramia.composeapp.generated.resources.new_tree_birth_date_label
 import genogramia.composeapp.generated.resources.new_tree_death_date_hint
@@ -214,6 +223,63 @@ fun IdentitySection(
                     ),
                 ),
             isError = sexualOrientationError,
+        )
+    }
+}
+
+@Composable
+fun HealthSymbolsSection(
+    substanceAbuse: Person.SubstanceAbuse,
+    onSubstanceAbuseChange: (Person.SubstanceAbuse) -> Unit,
+    hasMentalHealthProblem: Boolean,
+    onMentalHealthProblemChange: (Boolean) -> Unit,
+) {
+    SectionCard(
+        icon = Icons.Default.Healing,
+        title = stringResource(Res.string.health_mental_problem_label),
+    ) {
+        OptionSelector(
+            label = stringResource(Res.string.health_substance_abuse_label),
+            options =
+                listOf(
+                    SelectorOption(
+                        text = stringResource(Res.string.health_substance_abuse_none),
+                        isSelected = substanceAbuse == Person.SubstanceAbuse.NONE,
+                        onClick = { onSubstanceAbuseChange(Person.SubstanceAbuse.NONE) },
+                    ),
+                    SelectorOption(
+                        text = stringResource(Res.string.health_substance_abuse_confirmed),
+                        isSelected = substanceAbuse == Person.SubstanceAbuse.CONFIRMED,
+                        onClick = { onSubstanceAbuseChange(Person.SubstanceAbuse.CONFIRMED) },
+                    ),
+                    SelectorOption(
+                        text = stringResource(Res.string.health_substance_abuse_suspected),
+                        isSelected = substanceAbuse == Person.SubstanceAbuse.SUSPECTED,
+                        onClick = { onSubstanceAbuseChange(Person.SubstanceAbuse.SUSPECTED) },
+                    ),
+                    SelectorOption(
+                        text = stringResource(Res.string.health_substance_abuse_recovery),
+                        isSelected = substanceAbuse == Person.SubstanceAbuse.RECOVERY,
+                        onClick = { onSubstanceAbuseChange(Person.SubstanceAbuse.RECOVERY) },
+                    ),
+                ),
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        OptionSelector(
+            label = stringResource(Res.string.health_mental_problem_grave),
+            options =
+                listOf(
+                    SelectorOption(
+                        text = stringResource(Res.string.health_substance_abuse_none),
+                        isSelected = !hasMentalHealthProblem,
+                        onClick = { onMentalHealthProblemChange(false) },
+                    ),
+                    SelectorOption(
+                        text = stringResource(Res.string.health_mental_problem_option_diagnosed),
+                        isSelected = hasMentalHealthProblem,
+                        onClick = { onMentalHealthProblemChange(true) },
+                    ),
+                ),
         )
     }
 }
@@ -695,6 +761,21 @@ private fun IdentitySectionPreview() {
                 sexualOrientation = Person.SexualOrientation.HETEROSEXUAL,
                 onSexualOrientationChange = {},
                 sexualOrientationError = false,
+            )
+        }
+    }
+}
+
+@Preview
+@Composable
+private fun HealthSymbolsSectionPreview() {
+    GenogramiaTheme {
+        Box(modifier = Modifier.background(MaterialTheme.colorScheme.surface).padding(16.dp)) {
+            HealthSymbolsSection(
+                substanceAbuse = Person.SubstanceAbuse.CONFIRMED,
+                onSubstanceAbuseChange = {},
+                hasMentalHealthProblem = true,
+                onMentalHealthProblemChange = {},
             )
         }
     }

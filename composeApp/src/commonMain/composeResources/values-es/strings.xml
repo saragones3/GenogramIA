@@ -253,4 +253,14 @@
     <string name="medical_select_date">Seleccionar fecha</string>
     <string name="medical_genetic">Genética</string>
     <string name="medical_common">Común</string>
+
+    <!-- Health Symbols -->
+    <string name="health_substance_abuse_label">Abuso de Sustancias</string>
+    <string name="health_substance_abuse_none">Ninguno</string>
+    <string name="health_substance_abuse_confirmed">Confirmado</string>
+    <string name="health_substance_abuse_suspected">Sospecha</string>
+    <string name="health_substance_abuse_recovery">En recuperación</string>
+    <string name="health_mental_problem_label">Problema de Salud</string>
+    <string name="health_mental_problem_grave">Problema mental o físico grave</string>
+    <string name="health_mental_problem_option_diagnosed">Diagnosticado</string>
 </resources>
