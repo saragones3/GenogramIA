@@ -34,10 +34,11 @@ interface DiseaseDao {
     suspend fun replaceChapterData(
         chapterCode: String,
         lastSyncDate: String,
+        language: String,
         diseases: List<DiseaseEntity>,
     ) {
         deleteDiseasesByChapter(chapterCode)
         insertDiseases(diseases)
-        insertChapterSync(ChapterSyncEntity(chapterCode, lastSyncDate))
+        insertChapterSync(ChapterSyncEntity(chapterCode, lastSyncDate, language))
     }
 }
