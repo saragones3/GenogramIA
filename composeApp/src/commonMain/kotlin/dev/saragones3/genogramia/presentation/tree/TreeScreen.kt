@@ -30,6 +30,7 @@ import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.FilterCenterFocus
+import androidx.compose.material.icons.filled.MedicalServices
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -833,13 +834,29 @@ private fun PersonNodeView(
 
         Spacer(modifier = Modifier.height(4.dp))
 
-        PersonShape(
-            person = person,
-            shape = shape,
-            backgroundColor = backgroundColor,
-            size = with(density) { NODE_SIZE.toPx() },
-            modifier = nodeModifier,
-        )
+        Box(contentAlignment = Alignment.Center) {
+            PersonShape(
+                person = person,
+                shape = shape,
+                backgroundColor = backgroundColor,
+                size = with(density) { NODE_SIZE.toPx() },
+                modifier = nodeModifier,
+            )
+
+            if (person.hasMedicalHistory) {
+                Icon(
+                    imageVector = Icons.Default.MedicalServices,
+                    contentDescription = null,
+                    modifier =
+                        Modifier
+                            .align(Alignment.TopEnd)
+                            .size(24.dp)
+                            .background(MaterialTheme.colorScheme.secondary, CircleShape)
+                            .padding(4.dp),
+                    tint = MaterialTheme.colorScheme.onSecondary,
+                )
+            }
+        }
 
         Spacer(modifier = Modifier.height(24.dp))
 
@@ -1055,6 +1072,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                     birthDateText = "1980",
                     age = "44",
                     isIndexPerson = true,
+                    hasMedicalHistory = true,
                     position = Offset(100f, 100f),
                 ),
             persons =

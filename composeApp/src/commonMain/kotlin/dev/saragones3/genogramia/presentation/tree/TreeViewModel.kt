@@ -507,6 +507,7 @@ class TreeViewModel(
             deathDateText = deathYear,
             age = age,
             isDeceased = deathDate != null,
+            hasMedicalHistory = medicalHistory.isNotEmpty(),
             position = Offset(x, y),
         )
     }
