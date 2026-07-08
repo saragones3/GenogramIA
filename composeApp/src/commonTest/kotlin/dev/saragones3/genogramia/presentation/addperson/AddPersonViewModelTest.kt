@@ -5,6 +5,7 @@ import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
+import dev.saragones3.genogramia.domain.usecase.GetDiseaseByCodeUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.SearchDiseasesUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
@@ -40,6 +41,7 @@ class AddPersonViewModelTest {
     private val updatePersonUseCase = UpdatePersonUseCase(treeRepository, fakeDateProvider, dateFormatter)
     private val getPersonUseCase = GetPersonUseCase(treeRepository)
     private val searchDiseasesUseCase = SearchDiseasesUseCase(diseaseRepository)
+    private val getDiseaseByCodeUseCase = GetDiseaseByCodeUseCase(diseaseRepository)
     private lateinit var viewModel: AddPersonViewModel
 
     private val tree =
@@ -76,6 +78,7 @@ class AddPersonViewModelTest {
                 updatePersonUseCase,
                 getPersonUseCase,
                 searchDiseasesUseCase,
+                getDiseaseByCodeUseCase,
                 dateFormatter,
             )
     }

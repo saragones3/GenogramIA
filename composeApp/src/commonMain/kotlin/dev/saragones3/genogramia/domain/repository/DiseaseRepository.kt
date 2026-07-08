@@ -7,5 +7,7 @@ interface DiseaseRepository {
 
     suspend fun searchDiseases(query: String): List<Disease>
 
+    suspend fun getDiseaseByCode(code: String): Disease?
+
     suspend fun syncCatalog()
 }

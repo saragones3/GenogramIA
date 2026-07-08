@@ -2,7 +2,6 @@ package dev.saragones3.genogramia.presentation.newtree
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.MedicalCondition
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.CheckSessionUseCase
@@ -330,14 +329,7 @@ class NewTreeViewModel(
                     medicalHistory =
                         personUi.medicalHistory.map { condition ->
                             MedicalCondition(
-                                disease =
-                                    Disease(
-                                        code = condition.diseaseCode,
-                                        title = condition.diseaseTitle,
-                                        chapterCode = condition.chapterCode,
-                                        chapterTitle = condition.chapterTitle,
-                                        isGenetic = condition.isGenetic,
-                                    ),
+                                diseaseCode = condition.diseaseCode,
                                 diagnosisDate = condition.diagnosisDateMillis,
                             )
                         },

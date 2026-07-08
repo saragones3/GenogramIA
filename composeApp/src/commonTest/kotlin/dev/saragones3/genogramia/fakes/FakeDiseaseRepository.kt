@@ -15,6 +15,8 @@ class FakeDiseaseRepository : DiseaseRepository {
 
     override suspend fun searchDiseases(query: String): List<Disease> = diseases.filter { it.title.contains(query) }
 
+    override suspend fun getDiseaseByCode(code: String): Disease? = diseases.find { it.code == code }
+
     override suspend fun syncCatalog() {
         synced = true
     }

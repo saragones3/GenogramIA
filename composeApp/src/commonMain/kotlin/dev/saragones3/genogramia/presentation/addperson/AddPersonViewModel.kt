@@ -2,10 +2,10 @@ package dev.saragones3.genogramia.presentation.addperson
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.MedicalCondition
 import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.usecase.AddPersonUseCase
+import dev.saragones3.genogramia.domain.usecase.GetDiseaseByCodeUseCase
 import dev.saragones3.genogramia.domain.usecase.GetPersonUseCase
 import dev.saragones3.genogramia.domain.usecase.SearchDiseasesUseCase
 import dev.saragones3.genogramia.domain.usecase.UpdatePersonUseCase
@@ -24,6 +24,7 @@ class AddPersonViewModel(
     private val updatePersonUseCase: UpdatePersonUseCase,
     private val getPersonUseCase: GetPersonUseCase,
     private val searchDiseasesUseCase: SearchDiseasesUseCase,
+    private val getDiseaseByCodeUseCase: GetDiseaseByCodeUseCase,
     private val dateFormatter: DateFormatter,
 ) : ViewModel() {
     private val _state = MutableStateFlow(AddPersonState())
@@ -344,12 +345,13 @@ class AddPersonViewModel(
                                     } ?: "",
                                 medicalHistory =
                                     person.medicalHistory.map { condition ->
+                                        val disease = getDiseaseByCodeUseCase(condition.diseaseCode)
                                         MedicalConditionUi(
-                                            diseaseCode = condition.disease.code,
-                                            diseaseTitle = condition.disease.title,
-                                            chapterCode = condition.disease.chapterCode,
-                                            chapterTitle = condition.disease.chapterTitle,
-                                            isGenetic = condition.disease.isGenetic,
+                                            diseaseCode = condition.diseaseCode,
+                                            diseaseTitle = disease?.title ?: condition.diseaseCode,
+                                            chapterCode = disease?.chapterCode ?: "",
+                                            chapterTitle = disease?.chapterTitle ?: "",
+                                            isGenetic = disease?.isGenetic ?: false,
                                             diagnosisDateMillis = condition.diagnosisDate,
                                             diagnosisDateText =
                                                 condition.diagnosisDate?.let { date ->
@@ -421,14 +423,7 @@ class AddPersonViewModel(
                 medicalHistory =
                     personUi.medicalHistory.map { condition ->
                         MedicalCondition(
-                            disease =
-                                Disease(
-                                    code = condition.diseaseCode,
-                                    title = condition.diseaseTitle,
-                                    chapterCode = condition.chapterCode,
-                                    chapterTitle = condition.chapterTitle,
-                                    isGenetic = condition.isGenetic,
-                                ),
+                            diseaseCode = condition.diseaseCode,
                             diagnosisDate = condition.diagnosisDateMillis,
                         )
                     },

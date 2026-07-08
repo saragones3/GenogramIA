@@ -18,6 +18,9 @@ interface DiseaseDao {
     )
     suspend fun searchDiseases(query: String): List<DiseaseEntity>
 
+    @Query("SELECT * FROM disease WHERE code = :code")
+    suspend fun getDiseaseByCode(code: String): DiseaseEntity?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDiseases(diseases: List<DiseaseEntity>)
 

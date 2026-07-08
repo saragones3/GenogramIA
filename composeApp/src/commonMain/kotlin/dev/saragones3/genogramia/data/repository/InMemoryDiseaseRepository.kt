@@ -21,6 +21,8 @@ class InMemoryDiseaseRepository(
             }
     }
 
+    override suspend fun getDiseaseByCode(code: String): Disease? = cache.values.flatten().find { it.code == code }
+
     override suspend fun syncCatalog() {
         remoteDataSource.getChapters().forEach { chapterCode ->
             try {

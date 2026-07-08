@@ -2,7 +2,6 @@ package dev.saragones3.genogramia.presentation.tree
 
 import androidx.compose.ui.geometry.Offset
 import app.cash.turbine.test
-import dev.saragones3.genogramia.domain.model.Disease
 import dev.saragones3.genogramia.domain.model.GenogramTree
 import dev.saragones3.genogramia.domain.model.MedicalCondition
 import dev.saragones3.genogramia.domain.model.Person
@@ -155,14 +154,7 @@ class TreeViewModelTest {
                     medicalHistory =
                         listOf(
                             MedicalCondition(
-                                disease =
-                                    Disease(
-                                        code = "d1",
-                                        title = "Diabetes",
-                                        chapterCode = "c1",
-                                        chapterTitle = "Chapter 1",
-                                        isGenetic = false,
-                                    ),
+                                diseaseCode = "d1",
                             ),
                         ),
                 )

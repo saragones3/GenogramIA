@@ -19,6 +19,8 @@ class RoomDiseaseRepository(
 
     override suspend fun searchDiseases(query: String): List<Disease> = dao.searchDiseases(query).map { it.toDomain() }
 
+    override suspend fun getDiseaseByCode(code: String): Disease? = dao.getDiseaseByCode(code)?.toDomain()
+
     override suspend fun syncCatalog() {
         val currentLanguage = getAppLanguage()
         remoteDataSource.getChapters().forEach { chapterCode ->
