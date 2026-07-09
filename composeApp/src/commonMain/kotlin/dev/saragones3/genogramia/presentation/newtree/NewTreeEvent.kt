@@ -20,6 +20,14 @@ sealed interface NewTreeEvent {
         val orientation: Person.SexualOrientation,
     ) : NewTreeEvent
 
+    data class OnSubstanceAbuseChanged(
+        val abuse: Person.SubstanceAbuse,
+    ) : NewTreeEvent
+
+    data class OnMentalHealthProblemChanged(
+        val hasProblem: Boolean,
+    ) : NewTreeEvent
+
     data class OnBirthDateSelected(
         val millis: Long,
         val pattern: String,

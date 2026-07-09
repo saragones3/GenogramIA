@@ -31,6 +31,8 @@ fun Person.toDto() =
         sexualOrientation = sexualOrientation.name,
         deathDate = deathDate,
         medicalHistory = medicalHistory.map { it.toDto() },
+        substanceAbuse = substanceAbuse.name,
+        hasMentalHealthProblem = hasMentalHealthProblem,
         x = x,
         y = y,
     )
@@ -53,6 +55,13 @@ fun PersonDto.toDomain() =
             }.getOrDefault(Person.SexualOrientation.UNKNOWN),
         deathDate = deathDate,
         medicalHistory = medicalHistory.map { it.toDomain() },
+        substanceAbuse =
+            runCatching {
+                Person.SubstanceAbuse.valueOf(
+                    substanceAbuse,
+                )
+            }.getOrDefault(Person.SubstanceAbuse.NONE),
+        hasMentalHealthProblem = hasMentalHealthProblem,
         x = x,
         y = y,
     )

@@ -24,6 +24,8 @@ data class PersonNodeUi(
     val isDeceased: Boolean = false,
     val isIndexPerson: Boolean = false,
     val hasMedicalHistory: Boolean = false,
+    val substanceAbuse: Person.SubstanceAbuse = Person.SubstanceAbuse.NONE,
+    val hasMentalHealthProblem: Boolean = false,
     val position: Offset = Offset.Zero,
 )
 

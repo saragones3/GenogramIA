@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -36,11 +37,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 import dev.saragones3.genogramia.presentation.util.drawDeathMark
 import dev.saragones3.genogramia.presentation.util.drawEmotionalBondLine
+import dev.saragones3.genogramia.presentation.util.drawMentalHealthMark
 import dev.saragones3.genogramia.presentation.util.drawSexualOrientationMark
 import dev.saragones3.genogramia.presentation.util.drawStructuralRelationshipLine
+import dev.saragones3.genogramia.presentation.util.drawSubstanceAbuseMark
 import dev.saragones3.genogramia.presentation.util.femaleNode
 import dev.saragones3.genogramia.presentation.util.maleNode
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
@@ -58,6 +62,11 @@ import genogramia.composeapp.generated.resources.emotional_bond_intimate
 import genogramia.composeapp.generated.resources.emotional_bond_intimate_conflictual
 import genogramia.composeapp.generated.resources.emotional_bond_positive
 import genogramia.composeapp.generated.resources.emotional_bond_rupture
+import genogramia.composeapp.generated.resources.legends_health_combined
+import genogramia.composeapp.generated.resources.legends_health_mental_physical
+import genogramia.composeapp.generated.resources.legends_health_recovery
+import genogramia.composeapp.generated.resources.legends_health_substance_abuse
+import genogramia.composeapp.generated.resources.legends_health_suspected_abuse
 import genogramia.composeapp.generated.resources.legends_rel_adoption_desc
 import genogramia.composeapp.generated.resources.legends_rel_cohabitation_desc
 import genogramia.composeapp.generated.resources.legends_rel_divorce_desc
@@ -69,6 +78,7 @@ import genogramia.composeapp.generated.resources.legends_rel_reconciliation_desc
 import genogramia.composeapp.generated.resources.legends_rel_separation_desc
 import genogramia.composeapp.generated.resources.legends_section_basic
 import genogramia.composeapp.generated.resources.legends_section_emotional
+import genogramia.composeapp.generated.resources.legends_section_health
 import genogramia.composeapp.generated.resources.legends_section_relationships
 import genogramia.composeapp.generated.resources.legends_symbol_alive
 import genogramia.composeapp.generated.resources.legends_symbol_deceased
@@ -115,6 +125,9 @@ private fun LegendsContent() {
             }
             item {
                 EmotionalBondsSection()
+            }
+            item {
+                HealthSection()
             }
         }
     }
@@ -863,6 +876,111 @@ private fun EmotionalBondItem(
                 style = Stroke(width = strokeWidth),
             )
             drawAction(squareCenter, circleCenter, nodeSize)
+        }
+    }
+}
+
+@Composable
+private fun HealthSection() {
+    SectionWrapper(
+        title = stringResource(Res.string.legends_section_health),
+        titleColor = Color(0xFF625B71),
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            SymbolCard(
+                modifier = Modifier.weight(1f),
+                label = stringResource(Res.string.legends_health_substance_abuse),
+            ) {
+                Box(
+                    modifier = Modifier.maleNode(size = 48.dp, isSelected = false, isIndex = false),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Canvas(modifier = Modifier.fillMaxSize()) {
+                        drawSubstanceAbuseMark(
+                            type = Person.SubstanceAbuse.CONFIRMED,
+                            shape = RoundedCornerShape(12.dp),
+                        )
+                    }
+                }
+            }
+            SymbolCard(
+                modifier = Modifier.weight(1f),
+                label = stringResource(Res.string.legends_health_suspected_abuse),
+            ) {
+                Box(
+                    modifier = Modifier.femaleNode(size = 48.dp, isSelected = false, isIndex = false),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Canvas(modifier = Modifier.fillMaxSize()) {
+                        drawSubstanceAbuseMark(
+                            type = Person.SubstanceAbuse.SUSPECTED,
+                            shape = CircleShape,
+                        )
+                    }
+                }
+            }
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            SymbolCard(
+                modifier = Modifier.weight(1f),
+                label = stringResource(Res.string.legends_health_recovery),
+            ) {
+                Box(
+                    modifier = Modifier.femaleNode(size = 48.dp, isSelected = false, isIndex = false),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Canvas(modifier = Modifier.fillMaxSize()) {
+                        drawSubstanceAbuseMark(
+                            type = Person.SubstanceAbuse.RECOVERY,
+                            shape = CircleShape,
+                        )
+                    }
+                }
+            }
+            SymbolCard(
+                modifier = Modifier.weight(1f),
+                label = stringResource(Res.string.legends_health_mental_physical),
+            ) {
+                Box(
+                    modifier = Modifier.maleNode(size = 48.dp, isSelected = false, isIndex = false),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Canvas(modifier = Modifier.fillMaxSize()) {
+                        drawMentalHealthMark(shape = RoundedCornerShape(12.dp))
+                    }
+                }
+            }
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            SymbolCard(
+                modifier = Modifier.weight(1f),
+                label = stringResource(Res.string.legends_health_combined),
+            ) {
+                Box(
+                    modifier = Modifier.maleNode(size = 48.dp, isSelected = false, isIndex = false),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Canvas(modifier = Modifier.fillMaxSize()) {
+                        drawSubstanceAbuseMark(
+                            type = Person.SubstanceAbuse.CONFIRMED,
+                            shape = RoundedCornerShape(12.dp),
+                        )
+                        drawMentalHealthMark(shape = RoundedCornerShape(12.dp))
+                    }
+                }
+            }
+            Spacer(modifier = Modifier.weight(1f))
         }
     }
 }

@@ -40,6 +40,8 @@ class AddPersonViewModel(
 
             is AddPersonEvent.OnBiologicalSexChanged,
             is AddPersonEvent.OnSexualOrientationChanged,
+            is AddPersonEvent.OnSubstanceAbuseChanged,
+            is AddPersonEvent.OnMentalHealthProblemChanged,
             -> handleIdentityEvent(event)
 
             is AddPersonEvent.OnBirthDateSelected,
@@ -96,6 +98,18 @@ class AddPersonViewModel(
                         person = it.person.copy(sexualOrientation = event.orientation),
                         sexualOrientationError = null,
                     )
+                }
+            }
+
+            is AddPersonEvent.OnSubstanceAbuseChanged -> {
+                _state.update {
+                    it.copy(person = it.person.copy(substanceAbuse = event.abuse))
+                }
+            }
+
+            is AddPersonEvent.OnMentalHealthProblemChanged -> {
+                _state.update {
+                    it.copy(person = it.person.copy(hasMentalHealthProblem = event.hasProblem))
                 }
             }
 
@@ -359,6 +373,8 @@ class AddPersonViewModel(
                                                 } ?: "",
                                         )
                                     },
+                                substanceAbuse = person.substanceAbuse,
+                                hasMentalHealthProblem = person.hasMentalHealthProblem,
                                 x = person.x,
                                 y = person.y,
                             ),
@@ -427,6 +443,8 @@ class AddPersonViewModel(
                             diagnosisDate = condition.diagnosisDateMillis,
                         )
                     },
+                substanceAbuse = personUi.substanceAbuse,
+                hasMentalHealthProblem = personUi.hasMentalHealthProblem,
                 x = personUi.x,
                 y = personUi.y,
             )

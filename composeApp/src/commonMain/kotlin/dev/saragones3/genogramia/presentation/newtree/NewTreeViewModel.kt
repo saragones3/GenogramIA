@@ -45,6 +45,8 @@ class NewTreeViewModel(
 
             is NewTreeEvent.OnBiologicalSexChanged,
             is NewTreeEvent.OnSexualOrientationChanged,
+            is NewTreeEvent.OnSubstanceAbuseChanged,
+            is NewTreeEvent.OnMentalHealthProblemChanged,
             -> handleIdentityEvent(event)
 
             is NewTreeEvent.OnBirthDateSelected,
@@ -101,6 +103,18 @@ class NewTreeViewModel(
                         person = it.person.copy(sexualOrientation = event.orientation),
                         sexualOrientationError = null,
                     )
+                }
+            }
+
+            is NewTreeEvent.OnSubstanceAbuseChanged -> {
+                _state.update {
+                    it.copy(person = it.person.copy(substanceAbuse = event.abuse))
+                }
+            }
+
+            is NewTreeEvent.OnMentalHealthProblemChanged -> {
+                _state.update {
+                    it.copy(person = it.person.copy(hasMentalHealthProblem = event.hasProblem))
                 }
             }
 
@@ -333,6 +347,8 @@ class NewTreeViewModel(
                                 diagnosisDate = condition.diagnosisDateMillis,
                             )
                         },
+                    substanceAbuse = personUi.substanceAbuse,
+                    hasMentalHealthProblem = personUi.hasMentalHealthProblem,
                 )
             val result = newTreeUseCase(person = person)
 

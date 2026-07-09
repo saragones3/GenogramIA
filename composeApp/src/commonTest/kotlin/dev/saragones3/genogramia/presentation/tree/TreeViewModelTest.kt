@@ -157,6 +157,8 @@ class TreeViewModelTest {
                                 diseaseCode = "d1",
                             ),
                         ),
+                    substanceAbuse = Person.SubstanceAbuse.CONFIRMED,
+                    hasMentalHealthProblem = true,
                 )
             val tree =
                 GenogramTree(
@@ -177,6 +179,8 @@ class TreeViewModelTest {
             assertEquals("44", centralPerson.age)
             assertEquals(false, centralPerson.isDeceased)
             assertEquals(true, centralPerson.hasMedicalHistory)
+            assertEquals(Person.SubstanceAbuse.CONFIRMED, centralPerson.substanceAbuse)
+            assertEquals(true, centralPerson.hasMentalHealthProblem)
         }
 
     @Test

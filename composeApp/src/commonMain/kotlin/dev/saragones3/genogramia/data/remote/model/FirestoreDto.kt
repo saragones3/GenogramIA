@@ -20,6 +20,8 @@ data class PersonDto(
     val biologicalSex: String = Person.BiologicalSex.UNKNOWN.name,
     val sexualOrientation: String = Person.SexualOrientation.UNKNOWN.name,
     val medicalHistory: List<MedicalConditionDto> = emptyList(),
+    val substanceAbuse: String = Person.SubstanceAbuse.NONE.name,
+    val hasMentalHealthProblem: Boolean = false,
     val x: Float = 0f,
     val y: Float = 0f,
 )

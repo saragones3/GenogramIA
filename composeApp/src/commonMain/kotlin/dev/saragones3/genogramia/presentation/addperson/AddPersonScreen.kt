@@ -40,6 +40,7 @@ import dev.saragones3.genogramia.presentation.components.BasicInfoErrors
 import dev.saragones3.genogramia.presentation.components.BasicInfoSection
 import dev.saragones3.genogramia.presentation.components.DateFieldState
 import dev.saragones3.genogramia.presentation.components.DatePickerModal
+import dev.saragones3.genogramia.presentation.components.HealthSymbolsSection
 import dev.saragones3.genogramia.presentation.components.IdentitySection
 import dev.saragones3.genogramia.presentation.components.MedicalConditionCard
 import dev.saragones3.genogramia.presentation.components.MedicalConditionEmptyCard
@@ -255,6 +256,15 @@ private fun AddPersonForm(
             sexualOrientation = state.person.sexualOrientation,
             onSexualOrientationChange = { onEvent(AddPersonEvent.OnSexualOrientationChanged(it)) },
             sexualOrientationError = state.sexualOrientationError != null,
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        HealthSymbolsSection(
+            substanceAbuse = state.person.substanceAbuse,
+            onSubstanceAbuseChange = { onEvent(AddPersonEvent.OnSubstanceAbuseChanged(it)) },
+            hasMentalHealthProblem = state.person.hasMentalHealthProblem,
+            onMentalHealthProblemChange = { onEvent(AddPersonEvent.OnMentalHealthProblemChanged(it)) },
         )
 
         Spacer(modifier = Modifier.height(16.dp))

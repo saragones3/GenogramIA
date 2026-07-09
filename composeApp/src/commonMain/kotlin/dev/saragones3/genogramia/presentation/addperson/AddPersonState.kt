@@ -37,6 +37,8 @@ data class AddPersonUi(
     val deathDateMillis: Long? = null,
     val deathDateText: String = "",
     val medicalHistory: List<MedicalConditionUi> = emptyList(),
+    val substanceAbuse: Person.SubstanceAbuse = Person.SubstanceAbuse.NONE,
+    val hasMentalHealthProblem: Boolean = false,
     val x: Float = 0f,
     val y: Float = 0f,
 )

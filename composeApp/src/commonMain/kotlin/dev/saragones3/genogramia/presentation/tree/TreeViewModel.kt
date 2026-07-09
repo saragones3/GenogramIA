@@ -508,6 +508,8 @@ class TreeViewModel(
             age = age,
             isDeceased = deathDate != null,
             hasMedicalHistory = medicalHistory.isNotEmpty(),
+            substanceAbuse = substanceAbuse,
+            hasMentalHealthProblem = hasMentalHealthProblem,
             position = Offset(x, y),
         )
     }
