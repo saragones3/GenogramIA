@@ -6,11 +6,13 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -601,6 +603,7 @@ data class SelectorOption(
     val onClick: () -> Unit,
 )
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun OptionSelector(
     label: String,
@@ -622,28 +625,31 @@ fun OptionSelector(
             modifier = Modifier.padding(bottom = 12.dp),
         )
 
-        Row(
+        FlowRow(
             modifier =
                 Modifier
                     .fillMaxWidth()
-                    .height(48.dp)
                     .clip(RoundedCornerShape(8.dp))
-                    .background(SurfaceContainerHighest),
-            horizontalArrangement = Arrangement.spacedBy(1.dp),
+                    .background(SurfaceContainerHighest)
+                    .padding(2.dp),
+            horizontalArrangement = Arrangement.spacedBy(2.dp),
+            verticalArrangement = Arrangement.spacedBy(2.dp),
         ) {
             options.forEach { option ->
                 Box(
                     modifier =
                         Modifier
                             .weight(1f)
-                            .fillMaxSize()
-                            .padding(2.dp)
+                            .heightIn(min = 44.dp)
                             .clip(RoundedCornerShape(6.dp))
                             .background(if (option.isSelected) Color.White else Color.Transparent)
                             .clickable(onClick = option.onClick),
                     contentAlignment = Alignment.Center,
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.padding(horizontal = 4.dp),
+                    ) {
                         if (option.icon != null) {
                             Icon(
                                 imageVector = option.icon,
@@ -668,6 +674,7 @@ fun OptionSelector(
                                 },
                             fontWeight = if (option.isSelected) FontWeight.Bold else FontWeight.Normal,
                             style = MaterialTheme.typography.bodyMedium,
+                            textAlign = TextAlign.Center,
                         )
                     }
                 }
