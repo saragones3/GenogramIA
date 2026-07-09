@@ -88,8 +88,10 @@ import dev.saragones3.genogramia.presentation.components.DeletePersonDialog
 import dev.saragones3.genogramia.presentation.components.DeleteTreeDialog
 import dev.saragones3.genogramia.presentation.util.drawDeathMark
 import dev.saragones3.genogramia.presentation.util.drawEmotionalBondLine
+import dev.saragones3.genogramia.presentation.util.drawMentalHealthMark
 import dev.saragones3.genogramia.presentation.util.drawSexualOrientationMark
 import dev.saragones3.genogramia.presentation.util.drawStructuralRelationshipLine
+import dev.saragones3.genogramia.presentation.util.drawSubstanceAbuseMark
 import dev.saragones3.genogramia.presentation.util.femaleNode
 import dev.saragones3.genogramia.presentation.util.maleNode
 import dev.saragones3.genogramia.ui.theme.GenogramiaTheme
@@ -914,6 +916,13 @@ private fun PersonShape(
         modifier = modifier,
         contentAlignment = Alignment.Center,
     ) {
+        Canvas(modifier = Modifier.fillMaxSize()) {
+            drawSubstanceAbuseMark(person.substanceAbuse, shape)
+            if (person.hasMentalHealthProblem) {
+                drawMentalHealthMark(shape)
+            }
+        }
+
         if (person.isDeceased) {
             Canvas(
                 modifier =
@@ -1086,6 +1095,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                         deathDateText = "1989",
                         age = "74",
                         isDeceased = true,
+                        substanceAbuse = Person.SubstanceAbuse.CONFIRMED,
                         position = Offset(300f, 100f),
                     ),
                     PersonNodeUi(
@@ -1098,6 +1108,7 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                         deathDateText = "2021",
                         age = "31",
                         isDeceased = true,
+                        hasMentalHealthProblem = true,
                         position = Offset(125f, 300f),
                     ),
                     PersonNodeUi(
@@ -1108,6 +1119,8 @@ private class TreeStateProvider : PreviewParameterProvider<TreeState> {
                         sexualOrientation = Person.SexualOrientation.OTHER,
                         birthDateText = "2001",
                         age = "25",
+                        substanceAbuse = Person.SubstanceAbuse.SUSPECTED,
+                        hasMentalHealthProblem = true,
                         position = Offset(75f, 500f),
                     ),
                     PersonNodeUi(

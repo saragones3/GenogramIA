@@ -11,16 +11,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import dev.saragones3.genogramia.domain.model.Person
 import dev.saragones3.genogramia.domain.model.Relationship
 
 fun DrawScope.drawStructuralRelationshipLine(
@@ -308,6 +311,76 @@ fun DrawScope.drawDeathMark(
         end = Offset(0f, size.height),
         strokeWidth = strokeWidth.toPx(),
     )
+}
+
+fun DrawScope.drawSubstanceAbuseMark(
+    type: Person.SubstanceAbuse,
+    shape: Shape,
+) {
+    val path =
+        when (val outline = shape.createOutline(size, layoutDirection, this)) {
+            is Outline.Rectangle -> Path().apply { addRect(outline.rect) }
+            is Outline.Rounded -> Path().apply { addRoundRect(outline.roundRect) }
+            is Outline.Generic -> outline.path
+        }
+
+    clipPath(path) {
+        val markPath =
+            Path().apply {
+                moveTo(0f, size.height / 2)
+                lineTo(size.width, size.height / 2)
+                lineTo(size.width, size.height)
+                lineTo(0f, size.height)
+                close()
+            }
+
+        when (type) {
+            Person.SubstanceAbuse.NONE -> {}
+
+            Person.SubstanceAbuse.CONFIRMED -> {
+                drawPath(markPath, Color.Black)
+            }
+
+            Person.SubstanceAbuse.SUSPECTED -> {
+                clipPath(markPath) {
+                    val step = 4.dp.toPx()
+                    for (i in -10..20) {
+                        drawLine(
+                            color = Color.Black,
+                            start = Offset(i * step, 0f),
+                            end = Offset((i + 10) * step, size.height),
+                            strokeWidth = 1.dp.toPx(),
+                        )
+                    }
+                }
+            }
+
+            Person.SubstanceAbuse.RECOVERY -> {
+                drawPath(markPath, Color.Gray)
+            }
+        }
+    }
+}
+
+fun DrawScope.drawMentalHealthMark(shape: Shape) {
+    val path =
+        when (val outline = shape.createOutline(size, layoutDirection, this)) {
+            is Outline.Rectangle -> Path().apply { addRect(outline.rect) }
+            is Outline.Rounded -> Path().apply { addRoundRect(outline.roundRect) }
+            is Outline.Generic -> outline.path
+        }
+
+    clipPath(path) {
+        val markPath =
+            Path().apply {
+                moveTo(0f, 0f)
+                lineTo(size.width / 2, 0f)
+                lineTo(size.width / 2, size.height)
+                lineTo(0f, size.height)
+                close()
+            }
+        drawPath(markPath, Color.Black)
+    }
 }
 
 fun DrawScope.drawSexualOrientationMark(
