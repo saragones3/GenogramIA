@@ -107,6 +107,7 @@
     <string name="legends_section_basic">BASIC SYMBOLS</string>
     <string name="legends_section_relationships">RELATIONSHIPS</string>
     <string name="legends_section_emotional">EMOTIONAL BONDS</string>
+    <string name="legends_section_health">HEALTH AND WELLNESS</string>
 
     <string name="legends_symbol_male">MALE</string>
     <string name="legends_symbol_female">FEMALE</string>
@@ -114,6 +115,12 @@
     <string name="legends_symbol_alive">ALIVE</string>
     <string name="legends_symbol_deceased">DECEASED</string>
     <string name="legends_symbol_orientation">LGBTIQ+</string>
+
+    <string name="legends_health_substance_abuse">SUBSTANCE ABUSE</string>
+    <string name="legends_health_suspected_abuse">SUSPECTED ABUSE</string>
+    <string name="legends_health_recovery">IN RECOVERY</string>
+    <string name="legends_health_mental_physical">MENTAL/PHYSICAL PROBLEM</string>
+    <string name="legends_health_combined">SUBSTANCES + MENTAL/PHYSICAL</string>
 
     <string name="legends_rel_marriage_desc">Formal union</string>
     <string name="legends_rel_cohabitation_desc">Informal union</string>
